@@ -1,0 +1,524 @@
+% ============================================================
+%  BANK SOAL MATEMATIKA SMA — KURIKULUM MERDEKA
+%  BAGIAN 2: FASE F  —  VERSI LENGKAP (REVISI)  |  No. 66–100
+%  - Tanpa banner; opsi A-E tersusun ke bawah
+%  - Intermediate: stimulus tabel/grafik/cerita
+%  - Advanced: 3-4 langkah | Expert: >=5 langkah
+%  Kelas dokumen: exam  |  Kompilasi: pdfLaTeX (Overleaf)
+% ============================================================
+\documentclass[11pt,a4paper]{exam}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[bahasa]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{enumitem}
+\usepackage{array,booktabs}
+
+\geometry{a4paper,margin=2.3cm}
+
+\printanswers
+
+\definecolor{biru}{HTML}{1F4E79}
+\definecolor{hijau}{HTML}{2E7D32}
+\definecolor{oranye}{HTML}{C75B12}
+\definecolor{ungu}{HTML}{6A1B9A}
+
+\pagestyle{headandfoot}
+\runningheadrule
+\firstpageheadrule
+\header{\textbf{\textcolor{biru}{BANK SOAL — VERSI LENGKAP}}}{}{\textbf{FASE F}}
+\footer{}{Halaman \thepage}{}
+
+\renewcommand{\choicelabel}{\Alph{choice}.}
+
+\renewcommand{\choiceshook}{%
+  \setlength{\leftmargin}{2em}%
+  \setlength{\itemsep}{5pt}%
+  \setlength{\topsep}{5pt}%
+  \setlength{\parsep}{0pt}}
+
+\unframedsolutions
+\renewcommand{\solutiontitle}{\par\noindent\textbf{\textcolor{oranye}{Pembahasan:}}\par}
+\SolutionEmphasis{\normalfont}
+
+\newenvironment{langkah}{%
+  \begin{enumerate}[label=\textbf{Langkah \arabic*:},leftmargin=2.6em,
+    itemsep=2pt,topsep=2pt]}{\end{enumerate}}
+
+\newcommand{\Fund}{{\footnotesize\textsf{\textcolor{hijau}{[Fundamental]}}}\ }
+\newcommand{\Inter}{{\footnotesize\textsf{\textcolor{biru}{[Intermediate]}}}\ }
+\newcommand{\Adv}{{\footnotesize\textsf{\textcolor{oranye}{[Advanced]}}}\ }
+\newcommand{\Exp}{{\footnotesize\textsf{\textcolor{ungu}{[Expert]}}}\ }
+
+\newcommand{\topik}[1]{%
+  \par\addvspace{14pt}%
+  \noindent{\large\bfseries\color{biru}#1}\par\addvspace{6pt}}
+
+\begin{document}
+
+\begin{center}
+{\color{biru}\rule{\linewidth}{1.5pt}}\\[4pt]
+{\LARGE\bfseries\color{biru} BANK SOAL MATEMATIKA SMA}\\[2pt]
+{\large Versi Lengkap — Soal, Pembahasan \& Kunci Jawaban}\\[2pt]
+{\large Bagian 2: Fase F (35 Soal, No. 66–100)}\\[4pt]
+{\color{biru}\rule{\linewidth}{1.5pt}}
+\end{center}
+\vspace{4pt}
+
+\noindent\textit{Catatan:} pembahasan \textit{Advanced} 3–4 langkah dan
+\textit{Expert} minimal 5 langkah. Jawaban benar ditandai pada tiap pilihan.
+
+\setcounter{question}{65}
+
+\topik{9. Komposisi Fungsi (7 Soal)}
+
+\begin{questions}
+
+\question \Fund Diketahui $f(x) = 2x+1$ dan $g(x) = x^{2}$. Hasil $(f\circ g)(x)$ adalah \dots
+\begin{choices}
+\choice $(2x+1)^{2}$ \choice $4x^{2}+1$ \CorrectChoice $2x^{2}+1$
+\choice $2x^{2}+2x+1$ \choice $x^{2}+1$
+\end{choices}
+\begin{solution}$(f\circ g)(x) = f(x^{2}) = 2x^{2}+1.$\end{solution}
+
+\question \Fund Diketahui $f(x) = x+3$ dan $g(x) = 2x$. Hasil $(f\circ g)(x)$ adalah \dots
+\begin{choices}
+\CorrectChoice $2x+3$ \choice $2x+6$ \choice $x+6$ \choice $2x$ \choice $6x$
+\end{choices}
+\begin{solution}$(f\circ g)(x) = f(2x) = 2x+3.$\end{solution}
+
+\question \Inter Diketahui $f(x) = x+3$ dan $g(x) = 2x$. Nilai $(g\circ f)(2)$ adalah \dots
+\begin{choices}
+\choice $7$ \choice $8$ \CorrectChoice $10$ \choice $5$ \choice $16$
+\end{choices}
+\begin{solution}$f(2) = 5$, lalu $g(5) = 10.$\end{solution}
+
+\question \Inter Diketahui $f(x) = 2x-1$ dan $g(x) = x+4$. Hasil $(f\circ g)(x)$ adalah \dots
+\begin{choices}
+\choice $2x+3$ \choice $2x+8$ \choice $2x-1$ \CorrectChoice $2x+7$ \choice $x+7$
+\end{choices}
+\begin{solution}$f(x+4) = 2(x+4)-1 = 2x+7.$\end{solution}
+
+\question \Inter Diketahui $(f\circ g)(x) = 4x+5$ dan $g(x) = 2x+1$. Maka $f(x)$ adalah \dots
+\begin{choices}
+\CorrectChoice $2x+3$ \choice $2x+1$ \choice $4x+3$ \choice $2x+5$ \choice $x+3$
+\end{choices}
+\begin{solution}Misal $u=2x+1 \Rightarrow x=\tfrac{u-1}{2}$;
+$f(u)=4\cdot\tfrac{u-1}{2}+5 = 2u+3$, jadi $f(x)=2x+3.$\end{solution}
+
+\question \Adv Diketahui $f(x) = x^{2}+1$ dan $g(x) = x-2$. Nilai $(f\circ g)(3)$ adalah \dots
+\begin{choices}
+\CorrectChoice $2$ \choice $10$ \choice $8$ \choice $5$ \choice $17$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Komposisi $(f\circ g)(3) = f\big(g(3)\big)$.
+\item Hitung dalam: $g(3) = 3-2 = 1$.
+\item Substitusi ke $f$: $f(1) = 1^{2}+1$.
+\item Hasilnya $= 2$.
+\end{langkah}
+\end{solution}
+
+\question \Adv Diketahui $f(x) = 2x+1$ dan $(g\circ f)(x) = 6x+7$. Maka $g(x)$ adalah \dots
+\begin{choices}
+\choice $3x+1$ \choice $6x+4$ \choice $3x+7$ \choice $2x+4$ \CorrectChoice $3x+4$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Misalkan $u = f(x) = 2x+1$, sehingga $x = \tfrac{u-1}{2}$.
+\item Karena $(g\circ f)(x) = g(u) = 6x+7$, nyatakan dalam $u$.
+\item $g(u) = 6\cdot\tfrac{u-1}{2}+7 = 3(u-1)+7$.
+\item $g(u) = 3u+4$, jadi $g(x) = 3x+4$.
+\end{langkah}
+\end{solution}
+
+\topik{10. Fungsi Invers (7 Soal)}
+
+\question \Fund Invers dari fungsi $f(x) = 2x+1$ adalah \dots
+\begin{choices}
+\choice $\dfrac{x+1}{2}$ \CorrectChoice $\dfrac{x-1}{2}$ \choice $2x-1$
+\choice $\dfrac{1-x}{2}$ \choice $\dfrac{x}{2}-1$
+\end{choices}
+\begin{solution}$y=2x+1 \Rightarrow x=\tfrac{y-1}{2}$, jadi $f^{-1}(x)=\tfrac{x-1}{2}.$\end{solution}
+
+\question \Fund Invers dari fungsi $f(x) = x-3$ adalah \dots
+\begin{choices}
+\choice $x-3$ \choice $3-x$ \choice $\dfrac{1}{x-3}$ \CorrectChoice $x+3$ \choice $3x$
+\end{choices}
+\begin{solution}$y=x-3 \Rightarrow x=y+3$, jadi $f^{-1}(x)=x+3.$\end{solution}
+
+\question \Inter Invers dari fungsi $f(x) = \dfrac{x+2}{3}$ adalah \dots
+\begin{choices}
+\choice $3x+2$ \choice $\dfrac{x-2}{3}$ \CorrectChoice $3x-2$
+\choice $3(x-2)$ \choice $\dfrac{x}{3}-2$
+\end{choices}
+\begin{solution}$y=\tfrac{x+2}{3} \Rightarrow x=3y-2$, jadi $f^{-1}(x)=3x-2.$\end{solution}
+
+\question \Inter Diketahui $f(x) = 2x-4$. Nilai $f^{-1}(6)$ adalah \dots
+\begin{choices}
+\choice $8$ \CorrectChoice $5$ \choice $6$ \choice $10$ \choice $2$
+\end{choices}
+\begin{solution}$f^{-1}(x)=\tfrac{x+4}{2}$, maka $f^{-1}(6)=\tfrac{10}{2}=5.$\end{solution}
+
+\question \Inter Diketahui $f(x) = \dfrac{3x-2}{x+1}$, $x \neq -1$. Maka $f^{-1}(x)$ adalah \dots
+\begin{choices}
+\CorrectChoice $\dfrac{x+2}{3-x}$ \choice $\dfrac{x-2}{x+3}$ \choice $\dfrac{3x-2}{x+1}$
+\choice $\dfrac{x+1}{3x-2}$ \choice $\dfrac{2-x}{x-3}$
+\end{choices}
+\begin{solution}$y(x+1)=3x-2 \Rightarrow x(y-3)=-(y+2) \Rightarrow x=\tfrac{y+2}{3-y}$,
+jadi $f^{-1}(x)=\tfrac{x+2}{3-x}.$\end{solution}
+
+\question \Adv Diketahui $f(x) = x^{2}+1$ untuk $x \ge 0$. Maka $f^{-1}(x)$ adalah \dots
+\begin{choices}
+\choice $\sqrt{x+1}$ \choice $x^{2}-1$ \CorrectChoice $\sqrt{x-1}$
+\choice $\sqrt{x}-1$ \choice $(x-1)^{2}$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Tulis $y = x^{2}+1$.
+\item Pindahkan: $x^{2} = y-1$.
+\item Akar (ambil positif karena $x \ge 0$): $x = \sqrt{y-1}$.
+\item Tukar peubah: $f^{-1}(x) = \sqrt{x-1}$.
+\end{langkah}
+\end{solution}
+
+\question \Adv Diketahui $f(x) = 2x+3$ dan $g(x) = x-1$. Maka $(f\circ g)^{-1}(x)$ adalah \dots
+\begin{choices}
+\choice $\dfrac{x+1}{2}$ \CorrectChoice $\dfrac{x-1}{2}$ \choice $\dfrac{x-3}{2}$
+\choice $2x-1$ \choice $x-1$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Cari komposisi: $(f\circ g)(x) = f(x-1) = 2(x-1)+3$.
+\item Sederhanakan: $= 2x+1$.
+\item Tulis $y = 2x+1 \Rightarrow x = \tfrac{y-1}{2}$.
+\item Jadi $(f\circ g)^{-1}(x) = \tfrac{x-1}{2}$.
+\end{langkah}
+\end{solution}
+
+\topik{11. Lingkaran (10 Soal)}
+
+\question \Fund Persamaan lingkaran dengan pusat $O(0,0)$ dan jari-jari 5 adalah \dots
+\begin{choices}
+\choice $x^{2}+y^{2}=5$ \choice $x+y=5$ \CorrectChoice $x^{2}+y^{2}=25$
+\choice $x^{2}+y^{2}=10$ \choice $(x-5)^{2}+y^{2}=25$
+\end{choices}
+\begin{solution}$x^{2}+y^{2}=r^{2}=25.$\end{solution}
+
+\question \Fund Pusat lingkaran $(x-3)^{2}+(y+2)^{2}=16$ adalah \dots
+\begin{choices}
+\choice $(-3,2)$ \CorrectChoice $(3,-2)$ \choice $(3,2)$ \choice $(-3,-2)$ \choice $(2,-3)$
+\end{choices}
+\begin{solution}Bentuk $(x-a)^{2}+(y-b)^{2}=r^{2}$ memberi pusat $(3,-2).$\end{solution}
+
+\question \Fund Jari-jari lingkaran $(x-1)^{2}+(y-2)^{2}=49$ adalah \dots
+\begin{choices}
+\choice $49$ \choice $14$ \choice $\sqrt{7}$ \CorrectChoice $7$ \choice $24{,}5$
+\end{choices}
+\begin{solution}$r=\sqrt{49}=7.$\end{solution}
+
+\question \Inter Persamaan lingkaran berpusat $(2,-1)$ dan berjari-jari 3 adalah \dots
+\begin{choices}
+\CorrectChoice $(x-2)^{2}+(y+1)^{2}=9$
+\choice $(x+2)^{2}+(y-1)^{2}=9$
+\choice $(x-2)^{2}+(y+1)^{2}=3$
+\choice $(x-2)^{2}+(y-1)^{2}=9$
+\choice $(x+2)^{2}+(y+1)^{2}=9$
+\end{choices}
+\begin{solution}$(x-2)^{2}+(y+1)^{2}=3^{2}=9.$\end{solution}
+
+\question \Inter Pusat lingkaran $x^{2}+y^{2}-4x+2y-4=0$ adalah \dots
+\begin{choices}
+\choice $(-2,1)$ \CorrectChoice $(2,-1)$ \choice $(4,-2)$ \choice $(2,1)$ \choice $(-4,2)$
+\end{choices}
+\begin{solution}Pusat $\left(-\tfrac{A}{2},-\tfrac{B}{2}\right)=\left(2,-1\right).$\end{solution}
+
+\question \Inter Jari-jari lingkaran $x^{2}+y^{2}-4x+2y-4=0$ adalah \dots
+\begin{choices}
+\choice $9$ \choice $\sqrt{8}$ \CorrectChoice $3$ \choice $4$ \choice $\sqrt{6}$
+\end{choices}
+\begin{solution}$r=\sqrt{\tfrac{A^{2}}{4}+\tfrac{B^{2}}{4}-C}=\sqrt{4+1+4}=3.$\end{solution}
+
+\question \Inter Perhatikan juring lingkaran berikut dengan jari-jari 6 cm dan
+sudut pusat $60^\circ$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+\draw[thick,biru] (0,0) circle (1.8);
+\fill[biru!15] (0,0)--(1.8,0) arc (0:60:1.8)--cycle;
+\draw[biru,thick] (0,0)--(1.8,0);
+\draw[biru,thick] (0,0)--(60:1.8);
+\node at (1.1,0.45){\small $60^\circ$};
+\node[below] at (0.9,0){\small $r=6$};
+\end{tikzpicture}
+\end{center}
+
+Panjang busur juring tersebut adalah \dots
+\begin{choices}
+\choice $6\pi$ cm \choice $\pi$ cm \choice $12\pi$ cm \CorrectChoice $2\pi$ cm \choice $3\pi$ cm
+\end{choices}
+\begin{solution}Busur $=\dfrac{60}{360}\cdot 2\pi(6)=2\pi$ cm.\end{solution}
+
+\question \Adv Luas juring lingkaran berjari-jari 10 cm dengan sudut pusat
+$72^\circ$ adalah \dots
+\begin{choices}
+\choice $10\pi$ cm$^2$ \CorrectChoice $20\pi$ cm$^2$ \choice $72\pi$ cm$^2$
+\choice $50\pi$ cm$^2$ \choice $25\pi$ cm$^2$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Rumus luas juring: $L = \dfrac{\theta}{360^\circ}\cdot \pi r^{2}$.
+\item Substitusi $\theta=72^\circ$, $r=10$: $L = \dfrac{72}{360}\cdot \pi(100)$.
+\item Sederhanakan pecahan: $\dfrac{72}{360} = \dfrac{1}{5}$.
+\item $L = \dfrac{1}{5}\cdot 100\pi = 20\pi$ cm$^2$.
+\end{langkah}
+\end{solution}
+
+\question \Adv Posisi titik $(5,1)$ terhadap lingkaran $x^{2}+y^{2}-4x+2y-4=0$ adalah \dots
+\begin{choices}
+\choice pada lingkaran
+\choice di dalam lingkaran
+\CorrectChoice di luar lingkaran
+\choice di pusat lingkaran
+\choice tidak dapat ditentukan
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Tentukan pusat dan jari-jari: pusat $(2,-1)$, $r=3$.
+\item Hitung jarak titik ke pusat: $d=\sqrt{(5-2)^{2}+(1-(-1))^{2}}$.
+\item $d = \sqrt{9+4} = \sqrt{13} \approx 3{,}6$.
+\item Bandingkan: $\sqrt{13} > 3 = r$, jadi titik berada di luar lingkaran.
+\end{langkah}
+\end{solution}
+
+\question \Exp Persamaan garis singgung lingkaran $x^{2}+y^{2}=25$ di titik $(3,4)$ adalah \dots
+\begin{choices}
+\CorrectChoice $3x+4y=25$ \choice $4x+3y=25$ \choice $3x+4y=5$
+\choice $3x-4y=25$ \choice $4x+3y=5$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Cek titik pada lingkaran: $3^{2}+4^{2}=25$ (benar, titik singgung sah).
+\item Gunakan rumus garis singgung di $(x_1,y_1)$: $x_1 x + y_1 y = r^{2}$.
+\item Substitusi $x_1=3$, $y_1=4$, $r^{2}=25$.
+\item Diperoleh $3x+4y=25$.
+\item Verifikasi: gradien garis $-\tfrac34$ tegak lurus jari-jari (gradien $\tfrac43$), konsisten.
+\end{langkah}
+\end{solution}
+
+\topik{12. Statistika Bivariat (11 Soal)}
+
+\question \Fund Data dua variabel (bivariat) paling tepat disajikan dengan \dots
+\begin{choices}
+\choice histogram
+\CorrectChoice diagram pencar (scatter plot)
+\choice diagram lingkaran
+\choice box plot
+\choice diagram batang
+\end{choices}
+\begin{solution}Diagram pencar memetakan tiap pasangan $(x,y)$ sebagai satu titik.\end{solution}
+
+\question \Fund Jika titik-titik pada diagram pencar cenderung naik dari kiri bawah
+ke kanan atas, korelasinya bersifat \dots
+\begin{choices}
+\CorrectChoice positif \choice negatif \choice nol \choice tidak ada \choice konstan
+\end{choices}
+\begin{solution}Pola naik $\Rightarrow$ kedua variabel searah $\Rightarrow$ korelasi positif.\end{solution}
+
+\question \Inter Nilai koefisien korelasi $r$ selalu berada pada rentang \dots
+\begin{choices}
+\choice $0 \le r \le 1$ \choice $r \ge 0$ \CorrectChoice $-1 \le r \le 1$
+\choice $-1 \le r \le 0$ \choice $0 \le r \le 100$
+\end{choices}
+\begin{solution}Menurut definisinya $-1 \le r \le 1.$\end{solution}
+
+\question \Inter Nilai $r$ yang mendekati $-1$ menunjukkan \dots
+\begin{choices}
+\choice korelasi positif kuat
+\choice tidak ada korelasi
+\choice korelasi positif lemah
+\CorrectChoice korelasi negatif kuat
+\choice data konstan
+\end{choices}
+\begin{solution}Mendekati $-1$: hubungan kuat berarah negatif.\end{solution}
+
+\question \Inter Perhatikan diagram pencar berikut.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=7.5cm,height=4.8cm,xlabel=$x$,ylabel=$y$,
+  xmin=0,xmax=10,ymin=0,ymax=10,grid=both,grid style={black!12}]
+\addplot[only marks,mark=*,biru,mark size=1.6pt]coordinates{
+(1,9)(2,8)(3,8)(4,6)(5,6)(6,5)(7,3)(8,3)(9,2)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Pola hubungan yang ditunjukkan adalah \dots
+\begin{choices}
+\choice korelasi positif \CorrectChoice korelasi negatif \choice tidak ada korelasi
+\choice korelasi positif sempurna \choice data konstan
+\end{choices}
+\begin{solution}Titik menurun dari kiri atas ke kanan bawah: korelasi negatif.\end{solution}
+
+\question \Inter Tabel berikut mencatat lama belajar dan nilai ujian beberapa siswa.
+
+\begin{center}\small
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Jam belajar ($x$) & 1 & 2 & 3 & 4\\\hline
+Nilai ujian ($y$) & 60 & 70 & 80 & 90\\\hline
+\end{tabular}
+\end{center}
+
+Variabel ``jam belajar'' berperan sebagai \dots
+\begin{choices}
+\CorrectChoice variabel bebas \choice variabel terikat \choice konstanta
+\choice pencilan \choice median
+\end{choices}
+\begin{solution}Jam belajar memengaruhi nilai, jadi merupakan variabel bebas
+(independen); nilai ujian adalah variabel terikat.\end{solution}
+
+\question \Adv Garis tren data (jam belajar $x$, nilai $y$) adalah $\hat{y} = 5x + 50$.
+Prediksi nilai siswa yang belajar 6 jam adalah \dots
+\begin{choices}
+\choice $75$ \CorrectChoice $80$ \choice $85$ \choice $90$ \choice $50$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Gunakan garis tren $\hat{y} = 5x + 50$.
+\item Substitusi $x = 6$: $\hat{y} = 5(6) + 50$.
+\item Hitung: $\hat{y} = 30 + 50 = 80$.
+\end{langkah}
+\end{solution}
+
+\question \Adv Perhatikan diagram pencar berikut.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=7.5cm,height=4.8cm,xlabel=$x$,ylabel=$y$,
+  xmin=0,xmax=6,ymin=0,ymax=10,grid=both,grid style={black!12}]
+\addplot[only marks,mark=*,biru,mark size=1.8pt]coordinates{
+(1,2)(2,3)(3,5)(4,6)(5,7)};
+\addplot[only marks,mark=*,oranye,mark size=2.2pt]coordinates{(3,9)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Titik yang merupakan pencilan (\emph{outlier}) adalah \dots
+\begin{choices}
+\choice $(1,2)$ \CorrectChoice $(3,9)$ \choice $(5,7)$ \choice $(2,3)$ \choice $(4,6)$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Amati pola umum: titik-titik biru hampir membentuk garis naik $y \approx x+1$.
+\item Bandingkan tiap titik dengan pola tersebut.
+\item Titik $(3,9)$ jauh di atas pola (seharusnya $\approx 4$).
+\item Jadi $(3,9)$ adalah pencilan.
+\end{langkah}
+\end{solution}
+
+\question \Adv Sebuah penelitian menemukan korelasi positif kuat antara penjualan
+es krim dan jumlah kasus tenggelam. Kesimpulan yang paling tepat adalah \dots
+\begin{choices}
+\choice penjualan es krim menyebabkan orang tenggelam
+\choice kasus tenggelam menyebabkan orang membeli es krim
+\CorrectChoice keduanya dipengaruhi faktor ketiga (cuaca panas); korelasi bukan sebab-akibat
+\choice data penelitian pasti salah
+\choice tidak ada hubungan apa pun
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Korelasi kuat hanya menunjukkan dua variabel bergerak bersama.
+\item Korelasi tidak otomatis berarti sebab-akibat.
+\item Cuaca panas meningkatkan penjualan es krim sekaligus aktivitas berenang.
+\item Jadi keduanya dipengaruhi faktor ketiga (cuaca), bukan saling menyebabkan.
+\end{langkah}
+\end{solution}
+
+\question \Adv Perhatikan tabel data berpasangan berikut.
+
+\begin{center}\small
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$ & 1 & 2 & 3 & 4\\\hline
+$y$ & 2 & 4 & 6 & 8\\\hline
+\end{tabular}
+\end{center}
+
+Jenis hubungan kedua variabel tersebut adalah \dots
+\begin{choices}
+\choice korelasi negatif
+\choice tidak ada korelasi
+\CorrectChoice korelasi positif sempurna ($r=1$)
+\choice korelasi positif lemah
+\choice $r=0$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Periksa pola: setiap pasangan memenuhi $y = 2x$.
+\item Hubungan tersebut berupa garis lurus naik.
+\item Semua titik tepat pada satu garis $\Rightarrow$ korelasi positif sempurna, $r = 1$.
+\end{langkah}
+\end{solution}
+
+\question \Exp Perhatikan diagram pencar hubungan umur mobil (tahun) dan harga jual
+(juta rupiah) berikut.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=7.5cm,height=4.8cm,xlabel=Umur (tahun),ylabel=Harga (juta),
+  xmin=0,xmax=7,ymin=80,ymax=200,grid=both,grid style={black!12}]
+\addplot[only marks,mark=*,oranye,mark size=1.8pt]coordinates{
+(1,180)(2,165)(3,150)(4,138)(5,122)(6,108)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Perkiraan nilai koefisien korelasi yang paling tepat adalah \dots
+\begin{choices}
+\CorrectChoice $\approx -0{,}9$ \choice $\approx 0{,}9$ \choice $\approx 0{,}1$
+\choice $\approx -0{,}3$ \choice $0$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Amati arah: saat umur naik, harga turun $\Rightarrow$ hubungan negatif.
+\item Amati sebaran: titik-titik hampir membentuk satu garis lurus.
+\item Hubungan yang hampir lurus berarti korelasi kuat.
+\item Korelasi kuat dan negatif berarti $r$ mendekati $-1$.
+\item Pilihan $-0{,}3$ terlalu lemah dan yang positif salah arah; estimasi terbaik $r \approx -0{,}9$.
+\end{langkah}
+\end{solution}
+
+\end{questions}
+
+% ============================================================
+\clearpage
+{\large\bfseries\color{biru} KUNCI JAWABAN (RINGKAS) — FASE F}\par
+\vspace{8pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{|c|*{12}{c|}}
+\hline
+\cellcolor{biru!15}\textbf{No}  & 66 & 67 & 68 & 69 & 70 & 71 & 72 & 73 & 74 & 75 & 76 & 77\\\hline
+\cellcolor{biru!15}\textbf{Kunci} & C & A & C & D & A & A & E & B & D & C & B & A\\\hline\hline
+\cellcolor{biru!15}\textbf{No}  & 78 & 79 & 80 & 81 & 82 & 83 & 84 & 85 & 86 & 87 & 88 & 89\\\hline
+\cellcolor{biru!15}\textbf{Kunci} & C & B & C & B & D & A & B & C & D & B & C & A\\\hline\hline
+\cellcolor{biru!15}\textbf{No}  & 90 & 91 & 92 & 93 & 94 & 95 & 96 & 97 & 98 & 99 & 100 & --\\\hline
+\cellcolor{biru!15}\textbf{Kunci} & B & A & C & D & B & A & B & B & C & C & A & --\\\hline
+\end{tabular}
+\end{center}
+
+\vspace{8pt}
+\begin{center}\small
+\textbf{Rekap tingkat kesulitan Fase F:}
+9 Fundamental \;$\bullet$\; 14 Intermediate \;$\bullet$\; 10 Advanced \;$\bullet$\; 2 Expert
+\end{center}
+
+\end{document}

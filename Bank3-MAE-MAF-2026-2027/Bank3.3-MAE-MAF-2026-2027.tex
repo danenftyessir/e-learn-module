@@ -1,0 +1,472 @@
+% ============================================================
+%  BANK SOAL MATEMATIKA SMA — KURIKULUM MERDEKA
+%  BAGIAN 3 — FASE F+  |  BLOK 3 / KALKULUS (No. 165–200)  |  VERSI LENGKAP
+%  Limit, Turunan, Integral
+%  - Tanpa banner; opsi A-E tersusun ke bawah; posisi jawaban diacak
+%  - Advanced 3-4 langkah | Expert >=5 langkah
+%  Kelas dokumen: exam  |  Kompilasi: pdfLaTeX (Overleaf)
+% ============================================================
+\documentclass[11pt,a4paper]{exam}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[bahasa]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{enumitem}
+\usepackage{array,booktabs}
+
+\geometry{a4paper,margin=2.3cm}
+
+\noprintanswers
+
+\definecolor{biru}{HTML}{1F4E79}
+\definecolor{hijau}{HTML}{2E7D32}
+\definecolor{oranye}{HTML}{C75B12}
+\definecolor{ungu}{HTML}{6A1B9A}
+
+\pagestyle{headandfoot}
+\runningheadrule
+\firstpageheadrule
+\header{\textbf{\textcolor{biru}{BANK SOAL — VERSI LENGKAP}}}{}{\textbf{FASE F+ · Kalkulus}}
+\footer{}{Halaman \thepage}{}
+
+\renewcommand{\choicelabel}{\Alph{choice}.}
+
+\renewcommand{\choiceshook}{%
+  \setlength{\leftmargin}{2em}%
+  \setlength{\itemsep}{5pt}%
+  \setlength{\topsep}{5pt}%
+  \setlength{\parsep}{0pt}}
+
+\unframedsolutions
+\renewcommand{\solutiontitle}{\par\noindent\textbf{\textcolor{oranye}{Pembahasan:}}\par}
+\SolutionEmphasis{\normalfont}
+
+\newenvironment{langkah}{%
+  \begin{enumerate}[label=\textbf{Langkah \arabic*:},leftmargin=2.6em,
+    itemsep=2pt,topsep=2pt]}{\end{enumerate}}
+
+\newcommand{\Fund}{{\footnotesize\textsf{\textcolor{hijau}{[Fundamental]}}}\ }
+\newcommand{\Inter}{{\footnotesize\textsf{\textcolor{biru}{[Intermediate]}}}\ }
+\newcommand{\Adv}{{\footnotesize\textsf{\textcolor{oranye}{[Advanced]}}}\ }
+\newcommand{\Exp}{{\footnotesize\textsf{\textcolor{ungu}{[Expert]}}}\ }
+
+\newcommand{\topik}[1]{%
+  \par\addvspace{14pt}%
+  \noindent{\large\bfseries\color{biru}#1}\par\addvspace{6pt}}
+
+\begin{document}
+
+\begin{center}
+{\color{biru}\rule{\linewidth}{1.5pt}}\\[4pt]
+{\LARGE\bfseries\color{biru} BANK SOAL MATEMATIKA SMA}\\[2pt]
+{\large Versi Lengkap — Fase F+ Blok 3 (Kalkulus)}\\[2pt]
+{\large Limit · Turunan · Integral (No. 165–200)}\\[4pt]
+{\color{biru}\rule{\linewidth}{1.5pt}}
+\end{center}
+\vspace{4pt}
+
+\noindent\textit{Catatan:} pembahasan \textit{Advanced} 3–4 langkah dan
+\textit{Expert} minimal 5 langkah; jawaban benar ditandai pada tiap pilihan.
+
+\setcounter{question}{164}
+
+\topik{20. Kalkulus — Limit (12 Soal)}
+
+\begin{questions}
+
+\question \Fund Nilai $\displaystyle\lim_{x\to 2}(x+3)$ adalah \dots
+\begin{choices}
+\choice $2$ \choice $3$ \CorrectChoice $5$ \choice $6$ \choice $\infty$
+\end{choices}
+\begin{solution}Substitusi langsung: $2+3 = 5.$\end{solution}
+
+\question \Fund Nilai $\displaystyle\lim_{x\to 0}(x^{2}+2x+1)$ adalah \dots
+\begin{choices}
+\choice $0$ \choice $2$ \choice $3$ \CorrectChoice $1$ \choice $\infty$
+\end{choices}
+\begin{solution}Substitusi $x=0$: $0+0+1 = 1.$\end{solution}
+
+\question \Inter Nilai $\displaystyle\lim_{x\to 3}\dfrac{x^{2}-9}{x-3}$ adalah \dots
+\begin{choices}
+\choice $0$ \CorrectChoice $6$ \choice $3$ \choice $9$ \choice $\infty$
+\end{choices}
+\begin{solution}$\dfrac{(x-3)(x+3)}{x-3} = x+3 \to 6.$\end{solution}
+
+\question \Inter Nilai $\displaystyle\lim_{x\to 2}\dfrac{x^{2}-4}{x-2}$ adalah \dots
+\begin{choices}
+\CorrectChoice $4$ \choice $0$ \choice $2$ \choice $8$ \choice $\infty$
+\end{choices}
+\begin{solution}$\dfrac{(x-2)(x+2)}{x-2} = x+2 \to 4.$\end{solution}
+
+\question \Inter Nilai $\displaystyle\lim_{x\to\infty}\dfrac{3x+1}{x-2}$ adalah \dots
+\begin{choices}
+\choice $1$ \choice $\infty$ \CorrectChoice $3$ \choice $0$ \choice $\tfrac{1}{2}$
+\end{choices}
+\begin{solution}Pangkat tertinggi sama; rasio koefisien $\tfrac{3}{1} = 3.$\end{solution}
+
+\question \Inter Nilai $\displaystyle\lim_{x\to\infty}\dfrac{2x^{2}+1}{x^{2}+3}$ adalah \dots
+\begin{choices}
+\CorrectChoice $2$ \choice $1$ \choice $\infty$ \choice $0$ \choice $3$
+\end{choices}
+\begin{solution}Rasio koefisien pangkat tertinggi: $\tfrac{2}{1} = 2.$\end{solution}
+
+\question \Adv Nilai $\displaystyle\lim_{x\to 0}\dfrac{\sin 3x}{\sin 2x}$ adalah \dots
+\begin{choices}
+\choice $1$ \CorrectChoice $\tfrac{3}{2}$ \choice $\tfrac{2}{3}$ \choice $3$ \choice $0$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Untuk $x\to 0$ berlaku $\sin kx \approx kx$.
+\item Maka $\dfrac{\sin 3x}{\sin 2x} \approx \dfrac{3x}{2x}$.
+\item Sederhanakan $= \dfrac{3}{2}$.
+\end{langkah}
+\end{solution}
+
+\question \Adv Nilai $\displaystyle\lim_{x\to 1}\dfrac{x^{2}-1}{x^{2}-x}$ adalah \dots
+\begin{choices}
+\choice $1$ \choice $0$ \CorrectChoice $2$ \choice $\infty$ \choice $\tfrac{1}{2}$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Faktorkan pembilang: $x^{2}-1 = (x-1)(x+1)$.
+\item Faktorkan penyebut: $x^{2}-x = x(x-1)$.
+\item Coret $(x-1)$: tersisa $\dfrac{x+1}{x}$.
+\item Substitusi $x=1$: $\dfrac{2}{1} = 2$.
+\end{langkah}
+\end{solution}
+
+\question \Adv Nilai $\displaystyle\lim_{x\to 4}\dfrac{\sqrt{x}-2}{x-4}$ adalah \dots
+\begin{choices}
+\CorrectChoice $\tfrac{1}{4}$ \choice $\tfrac{1}{2}$ \choice $0$ \choice $\infty$ \choice $4$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Kalikan dengan sekawan $\dfrac{\sqrt{x}+2}{\sqrt{x}+2}$.
+\item Pembilang menjadi $x-4$, penyebut $(x-4)(\sqrt{x}+2)$.
+\item Coret $(x-4)$: tersisa $\dfrac{1}{\sqrt{x}+2}$.
+\item Substitusi $x=4$: $\dfrac{1}{2+2} = \dfrac{1}{4}$.
+\end{langkah}
+\end{solution}
+
+\question \Adv Nilai $\displaystyle\lim_{x\to\infty}\left(\sqrt{x^{2}+x}-x\right)$ adalah \dots
+\begin{choices}
+\choice $0$ \CorrectChoice $\tfrac{1}{2}$ \choice $1$ \choice $\infty$ \choice $2$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Kalikan dengan sekawan $\dfrac{\sqrt{x^{2}+x}+x}{\sqrt{x^{2}+x}+x}$.
+\item Pembilang menjadi $x$, jadi bentuk $\dfrac{x}{\sqrt{x^{2}+x}+x}$.
+\item Bagi pembilang dan penyebut dengan $x$: $\dfrac{1}{\sqrt{1+\frac1x}+1}$.
+\item Untuk $x\to\infty$: $\dfrac{1}{1+1} = \dfrac{1}{2}$.
+\end{langkah}
+\end{solution}
+
+\question \Adv Nilai $\displaystyle\lim_{x\to 0}\dfrac{1-\cos x}{x^{2}}$ adalah \dots
+\begin{choices}
+\choice $0$ \choice $1$ \choice $\infty$ \choice $2$ \CorrectChoice $\tfrac{1}{2}$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Gunakan identitas $1-\cos x = 2\sin^{2}\tfrac{x}{2}$.
+\item Bentuk menjadi $\dfrac{2\sin^{2}(x/2)}{x^{2}}$.
+\item Tulis ulang $= \dfrac{1}{2}\left(\dfrac{\sin(x/2)}{x/2}\right)^{2}$.
+\item Karena $\lim \dfrac{\sin(x/2)}{x/2} = 1$, hasilnya $\dfrac{1}{2}$.
+\end{langkah}
+\end{solution}
+
+\question \Exp Nilai $\displaystyle\lim_{x\to 0}\dfrac{\tan 3x}{2x}$ adalah \dots
+\begin{choices}
+\choice $1$ \choice $3$ \choice $\tfrac{2}{3}$ \CorrectChoice $\tfrac{3}{2}$ \choice $0$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Tulis $\tan 3x = \dfrac{\sin 3x}{\cos 3x}$.
+\item Bentuk menjadi $\dfrac{\sin 3x}{2x\cos 3x}$.
+\item Kalikan-bagi dengan $3x$: $\dfrac{\sin 3x}{3x}\cdot\dfrac{3x}{2x}\cdot\dfrac{1}{\cos 3x}$.
+\item Saat $x\to 0$: $\dfrac{\sin 3x}{3x}\to 1$ dan $\cos 3x \to 1$.
+\item Maka limit $= 1\cdot\dfrac{3}{2}\cdot 1 = \dfrac{3}{2}$.
+\end{langkah}
+\end{solution}
+
+\topik{21. Kalkulus — Turunan (12 Soal)}
+
+\question \Fund Turunan dari $f(x) = x^{3}$ adalah \dots
+\begin{choices}
+\choice $x^{2}$ \choice $3x$ \CorrectChoice $3x^{2}$ \choice $\tfrac{x^{4}}{4}$ \choice $3x^{3}$
+\end{choices}
+\begin{solution}Aturan pangkat: $f'(x) = 3x^{2}.$\end{solution}
+
+\question \Fund Turunan dari $f(x) = 5x^{2} - 3x + 2$ adalah \dots
+\begin{choices}
+\CorrectChoice $10x - 3$ \choice $10x + 3$ \choice $5x - 3$ \choice $10x$ \choice $2x - 3$
+\end{choices}
+\begin{solution}$f'(x) = 10x - 3.$\end{solution}
+
+\question \Fund Turunan dari fungsi konstan $f(x) = 7$ adalah \dots
+\begin{choices}
+\choice $7$ \CorrectChoice $0$ \choice $1$ \choice $7x$ \choice $x$
+\end{choices}
+\begin{solution}Turunan konstanta adalah 0.\end{solution}
+
+\question \Inter Jika $f(x) = x^{3} - 2x^{2} + 5$, maka $f'(2)$ adalah \dots
+\begin{choices}
+\choice $8$ \CorrectChoice $4$ \choice $2$ \choice $6$ \choice $12$
+\end{choices}
+\begin{solution}$f'(x) = 3x^{2}-4x$, $f'(2) = 12-8 = 4.$\end{solution}
+
+\question \Inter Turunan dari $f(x) = (2x+1)^{3}$ adalah \dots
+\begin{choices}
+\CorrectChoice $6(2x+1)^{2}$ \choice $3(2x+1)^{2}$ \choice $(2x+1)^{2}$
+\choice $6(2x+1)$ \choice $2(2x+1)^{2}$
+\end{choices}
+\begin{solution}Aturan rantai: $3(2x+1)^{2}\cdot 2 = 6(2x+1)^{2}.$\end{solution}
+
+\question \Inter Perhatikan kurva $y = x^{2}-3x$ dengan garis singgung di $x=2$ berikut.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle,width=7cm,height=4.8cm,
+  xmin=-1,xmax=4,ymin=-3,ymax=4,xtick={2},ytick=\empty]
+\addplot[very thick,biru,domain=-0.5:3.5,samples=50]{x^2-3*x};
+\addplot[very thick,oranye,domain=0.4:3.4,samples=2]{x-4};
+\fill (2,-2) circle (2pt) node[below right]{\small $x=2$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Gradien garis singgung kurva di $x=2$ adalah \dots
+\begin{choices}
+\CorrectChoice $1$ \choice $4$ \choice $-3$ \choice $2$ \choice $0$
+\end{choices}
+\begin{solution}$y' = 2x-3$, di $x=2$: $4-3 = 1.$\end{solution}
+
+\question \Inter Turunan dari $f(x) = x^{2}(x+1)$ adalah \dots
+\begin{choices}
+\choice $2x(x+1)$ \choice $3x^{2}+x$ \CorrectChoice $3x^{2}+2x$ \choice $x^{2}+2x$ \choice $2x$
+\end{choices}
+\begin{solution}$f(x) = x^{3}+x^{2}$, jadi $f'(x) = 3x^{2}+2x.$\end{solution}
+
+\question \Adv Turunan dari $f(x) = x\sin x$ adalah \dots
+\begin{choices}
+\choice $\cos x$ \CorrectChoice $\sin x + x\cos x$ \choice $x\cos x$
+\choice $\sin x - x\cos x$ \choice $\cos x - x\sin x$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Gunakan aturan hasil kali: $(uv)' = u'v + uv'$.
+\item Ambil $u=x \Rightarrow u'=1$ dan $v=\sin x \Rightarrow v'=\cos x$.
+\item $f'(x) = (1)\sin x + x(\cos x) = \sin x + x\cos x$.
+\end{langkah}
+\end{solution}
+
+\question \Adv Fungsi $f(x) = x^{2} - 4x + 3$ mencapai nilai minimum pada $x = \dots$
+\begin{choices}
+\choice $-2$ \choice $4$ \choice $0$ \CorrectChoice $2$ \choice $1$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Cari turunan: $f'(x) = 2x - 4$.
+\item Titik stasioner: $f'(x) = 0$.
+\item $2x - 4 = 0 \Rightarrow x = 2$.
+\end{langkah}
+\end{solution}
+
+\question \Adv Keuntungan suatu produk dimodelkan $P(x) = -x^{2} + 40x - 100$
+(dalam jutaan rupiah, $x$ ratusan unit). Keuntungan maksimum tercapai saat $x = \dots$
+\begin{choices}
+\choice $40$ \CorrectChoice $20$ \choice $10$ \choice $100$ \choice $30$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Keuntungan maksimum saat $P'(x) = 0$.
+\item $P'(x) = -2x + 40$.
+\item $-2x + 40 = 0 \Rightarrow x = 20$.
+\item Karena koefisien $x^{2}$ negatif, titik ini maksimum.
+\end{langkah}
+\end{solution}
+
+\question \Adv Turunan dari $f(x) = \dfrac{x}{x+1}$ adalah \dots
+\begin{choices}
+\choice $\dfrac{x}{(x+1)^{2}}$ \choice $\dfrac{-1}{(x+1)^{2}}$ \choice $\dfrac{1}{x+1}$
+\CorrectChoice $\dfrac{1}{(x+1)^{2}}$ \choice $\dfrac{2x+1}{(x+1)^{2}}$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Gunakan aturan hasil bagi: $\left(\dfrac{u}{v}\right)' = \dfrac{u'v - uv'}{v^{2}}$.
+\item Ambil $u=x$, $v=x+1$, jadi $u'=1$, $v'=1$.
+\item Pembilang: $(1)(x+1) - x(1) = 1$.
+\item $f'(x) = \dfrac{1}{(x+1)^{2}}$.
+\end{langkah}
+\end{solution}
+
+\question \Exp Sebuah benda bergerak dengan posisi $s(t) = t^{3} - 6t^{2} + 9t$
+(meter, $t$ detik). Benda berhenti sesaat (kecepatan nol) pada saat \dots
+\begin{choices}
+\choice $t=1$ saja \choice $t=3$ saja \choice $t=2$ \CorrectChoice $t=1$ dan $t=3$ \choice $t=0$ dan $t=3$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Kecepatan adalah turunan posisi: $v(t) = s'(t)$.
+\item $v(t) = 3t^{2} - 12t + 9$.
+\item Benda berhenti saat $v(t) = 0$: $3t^{2} - 12t + 9 = 0$.
+\item Bagi 3: $t^{2} - 4t + 3 = 0$.
+\item Faktorkan $(t-1)(t-3) = 0 \Rightarrow t=1$ dan $t=3$.
+\end{langkah}
+\end{solution}
+
+\topik{22. Kalkulus — Integral (12 Soal)}
+
+\question \Fund Hasil $\displaystyle\int x^{2}\,dx$ adalah \dots
+\begin{choices}
+\choice $3x^{2} + C$ \CorrectChoice $\tfrac{x^{3}}{3} + C$ \choice $x^{3} + C$
+\choice $2x + C$ \choice $\tfrac{x^{2}}{2} + C$
+\end{choices}
+\begin{solution}$\displaystyle\int x^{2}\,dx = \tfrac{x^{3}}{3} + C.$\end{solution}
+
+\question \Fund Hasil $\displaystyle\int 2x\,dx$ adalah \dots
+\begin{choices}
+\choice $2x^{2} + C$ \choice $\tfrac{x^{2}}{2} + C$ \CorrectChoice $x^{2} + C$
+\choice $2 + C$ \choice $x + C$
+\end{choices}
+\begin{solution}$\displaystyle\int 2x\,dx = x^{2} + C.$\end{solution}
+
+\question \Fund Hasil $\displaystyle\int dx$ adalah \dots
+\begin{choices}
+\CorrectChoice $x + C$ \choice $1 + C$ \choice $0$ \choice $C$ \choice $x^{2} + C$
+\end{choices}
+\begin{solution}$\displaystyle\int 1\,dx = x + C.$\end{solution}
+
+\question \Inter Hasil $\displaystyle\int (2x+1)\,dx$ adalah \dots
+\begin{choices}
+\choice $2x^{2} + x + C$ \CorrectChoice $x^{2} + x + C$ \choice $x^{2} + C$
+\choice $2 + C$ \choice $x^{2} + x$
+\end{choices}
+\begin{solution}$\displaystyle\int (2x+1)\,dx = x^{2} + x + C.$\end{solution}
+
+\question \Inter Hasil $\displaystyle\int_{0}^{2} (2x+1)\,dx$ adalah \dots
+\begin{choices}
+\choice $4$ \choice $8$ \CorrectChoice $6$ \choice $2$ \choice $10$
+\end{choices}
+\begin{solution}$[x^{2}+x]_{0}^{2} = (4+2)-0 = 6.$\end{solution}
+
+\question \Inter Hasil $\displaystyle\int_{1}^{2} x^{2}\,dx$ adalah \dots
+\begin{choices}
+\CorrectChoice $\tfrac{7}{3}$ \choice $3$ \choice $\tfrac{8}{3}$ \choice $1$ \choice $\tfrac{9}{3}$
+\end{choices}
+\begin{solution}$\left[\tfrac{x^{3}}{3}\right]_{1}^{2} = \tfrac{8}{3}-\tfrac{1}{3} = \tfrac{7}{3}.$\end{solution}
+
+\question \Inter Hasil $\displaystyle\int (3x^{2}-2x)\,dx$ adalah \dots
+\begin{choices}
+\choice $3x^{3} - 2x^{2} + C$ \CorrectChoice $x^{3} - x^{2} + C$ \choice $x^{3} - x^{2}$
+\choice $x^{3} - 2x^{2} + C$ \choice $3x - 2 + C$
+\end{choices}
+\begin{solution}$\displaystyle\int (3x^{2}-2x)\,dx = x^{3} - x^{2} + C.$\end{solution}
+
+\question \Adv Hasil $\displaystyle\int_{0}^{1} (x^{2}+1)\,dx$ adalah \dots
+\begin{choices}
+\choice $1$ \choice $\tfrac{2}{3}$ \choice $\tfrac{5}{3}$ \CorrectChoice $\tfrac{4}{3}$ \choice $\tfrac{1}{3}$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Tentukan antiturunan: $\dfrac{x^{3}}{3} + x$.
+\item Evaluasi di batas atas $x=1$: $\dfrac{1}{3} + 1 = \dfrac{4}{3}$.
+\item Evaluasi di batas bawah $x=0$: $0$.
+\item Hasil $= \dfrac{4}{3} - 0 = \dfrac{4}{3}$.
+\end{langkah}
+\end{solution}
+
+\question \Adv Perhatikan daerah yang diarsir di bawah kurva $y = x^{2}$ berikut.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle,width=6.5cm,height=4.5cm,
+  xlabel=$x$,ylabel=$y$,xmin=-0.5,xmax=3.5,ymin=-0.5,ymax=9.5,
+  xtick={3},ytick=\empty]
+\addplot[very thick,biru,domain=-0.3:3.2,samples=50]{x^2};
+\addplot[draw=none,fill=biru!18,domain=0:3,samples=40]{x^2}\closedcycle;
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Luas daerah di bawah kurva $y = x^{2}$ dari $x = 0$ sampai $x = 3$ adalah \dots
+\begin{choices}
+\choice $27$ \CorrectChoice $9$ \choice $3$ \choice $18$ \choice $6$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Luas $= \displaystyle\int_{0}^{3} x^{2}\,dx$.
+\item Antiturunan: $\dfrac{x^{3}}{3}$.
+\item Evaluasi: $\dfrac{27}{3} - \dfrac{0}{3}$.
+\item Luas $= 9$.
+\end{langkah}
+\end{solution}
+
+\question \Adv Hasil $\displaystyle\int (2x + \cos x)\,dx$ adalah \dots
+\begin{choices}
+\CorrectChoice $x^{2} + \sin x + C$ \choice $2 + \sin x + C$ \choice $x^{2} - \sin x + C$
+\choice $x^{2} + \cos x + C$ \choice $2x^{2} + \sin x + C$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Integralkan suku demi suku.
+\item $\displaystyle\int 2x\,dx = x^{2}$.
+\item $\displaystyle\int \cos x\,dx = \sin x$.
+\item Gabungkan: $x^{2} + \sin x + C$.
+\end{langkah}
+\end{solution}
+
+\question \Adv Perhatikan daerah yang dibatasi kurva $y=x$ dan $y=x^{2}$ dari $x=0$
+sampai $x=1$ berikut.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle,width=6cm,height=4.8cm,
+  xmin=-0.2,xmax=1.4,ymin=-0.2,ymax=1.4,xtick={1},ytick=\empty]
+\addplot[very thick,biru,domain=0:1.2,samples=40]{x};
+\addplot[very thick,oranye,domain=0:1.2,samples=40]{x^2};
+\node at (0.55,0.75){\small $y=x$};
+\node at (1.0,0.45){\small $y=x^{2}$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Luas daerah tersebut adalah \dots
+\begin{choices}
+\choice $\tfrac{1}{2}$ \choice $\tfrac{1}{3}$ \choice $1$ \CorrectChoice $\tfrac{1}{6}$ \choice $\tfrac{5}{6}$
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Pada $0\le x\le 1$, kurva atas $y=x$ dan bawah $y=x^{2}$.
+\item Luas $= \displaystyle\int_{0}^{1}(x - x^{2})\,dx$.
+\item Antiturunan: $\dfrac{x^{2}}{2} - \dfrac{x^{3}}{3}$.
+\item Evaluasi di $x=1$: $\dfrac{1}{2} - \dfrac{1}{3} = \dfrac{1}{6}$.
+\end{langkah}
+\end{solution}
+
+\question \Exp Kecepatan sebuah benda adalah $v(t) = 3t^{2} - 2t$ (m/s). Jarak yang
+ditempuh benda dari $t=0$ sampai $t=2$ adalah \dots
+\begin{choices}
+\choice $8$ m \CorrectChoice $4$ m \choice $2$ m \choice $6$ m \choice $12$ m
+\end{choices}
+\begin{solution}
+\begin{langkah}
+\item Jarak diperoleh dari integral kecepatan: $\displaystyle\int_{0}^{2} v(t)\,dt$.
+\item $= \displaystyle\int_{0}^{2} (3t^{2} - 2t)\,dt$.
+\item Antiturunan: $t^{3} - t^{2}$.
+\item Evaluasi di $t=2$: $8 - 4 = 4$.
+\item Evaluasi di $t=0$: $0$. Jadi jarak $= 4 - 0 = 4$ m.
+\end{langkah}
+\end{solution}
+
+\end{questions}
+
+% ============================================================
+\clearpage
+\end{document}

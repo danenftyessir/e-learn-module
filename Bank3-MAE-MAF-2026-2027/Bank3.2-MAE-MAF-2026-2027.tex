@@ -1,0 +1,343 @@
+% ============================================================
+%  BANK SOAL MATEMATIKA SMA — KURIKULUM MERDEKA
+%  BAGIAN 3 — FASE F+  |  BLOK 2 (No. 129–164)  |  VERSI SOAL
+%  Transformasi, Pemodelan Fungsi, Trigonometri Lanjutan, Irisan Kerucut
+%  - Tanpa banner; opsi A-E tersusun ke bawah
+%  - Sinkron dengan Versi Lengkap (soal & nomor identik)
+%  Kelas dokumen: exam  |  Kompilasi: pdfLaTeX (Overleaf)
+% ============================================================
+\documentclass[11pt,a4paper]{exam}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[bahasa]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{enumitem}
+\usepackage{array,booktabs}
+
+\geometry{a4paper,margin=2.3cm}
+
+% (Versi Soal: TANPA \printanswers)
+
+\definecolor{biru}{HTML}{1F4E79}
+\definecolor{hijau}{HTML}{2E7D32}
+\definecolor{oranye}{HTML}{C75B12}
+\definecolor{ungu}{HTML}{6A1B9A}
+
+\pagestyle{headandfoot}
+\runningheadrule
+\firstpageheadrule
+\header{\textbf{\textcolor{biru}{BANK SOAL MATEMATIKA}}}{}{\textbf{FASE F+ · Blok 2}}
+\footer{}{Halaman \thepage}{}
+
+\renewcommand{\choicelabel}{\Alph{choice}.}
+
+\renewcommand{\choiceshook}{%
+  \setlength{\leftmargin}{2em}%
+  \setlength{\itemsep}{5pt}%
+  \setlength{\topsep}{5pt}%
+  \setlength{\parsep}{0pt}}
+
+\newcommand{\Fund}{{\footnotesize\textsf{\textcolor{hijau}{[Fundamental]}}}\ }
+\newcommand{\Inter}{{\footnotesize\textsf{\textcolor{biru}{[Intermediate]}}}\ }
+\newcommand{\Adv}{{\footnotesize\textsf{\textcolor{oranye}{[Advanced]}}}\ }
+\newcommand{\Exp}{{\footnotesize\textsf{\textcolor{ungu}{[Expert]}}}\ }
+
+\newcommand{\topik}[1]{%
+  \par\addvspace{14pt}%
+  \noindent{\large\bfseries\color{biru}#1}\par\addvspace{6pt}}
+
+\begin{document}
+
+\begin{center}
+{\color{biru}\rule{\linewidth}{1.5pt}}\\[4pt]
+{\LARGE\bfseries\color{biru} BANK SOAL MATEMATIKA SMA}\\[2pt]
+{\large Versi Soal — Fase F+ Blok 2}\\[2pt]
+{\large Transformasi · Pemodelan Fungsi · Trigonometri Lanjutan · Irisan Kerucut (129–164)}\\[4pt]
+{\color{biru}\rule{\linewidth}{1.5pt}}
+\end{center}
+\vspace{4pt}
+
+\noindent\textit{Petunjuk:} Pilih satu jawaban yang paling tepat. Label tingkat
+kesulitan tertera pada awal tiap soal.
+
+\setcounter{question}{128}
+
+\topik{16. Geometri Transformasi (8 Soal)}
+
+\begin{questions}
+
+\question \Fund Bayangan titik $(4,3)$ oleh refleksi terhadap sumbu-$x$ adalah \dots
+\begin{choices}
+\choice $(-4,3)$ \CorrectChoice $(4,-3)$ \choice $(-4,-3)$ \choice $(3,4)$ \choice $(4,3)$
+\end{choices}
+
+\question \Fund Bayangan titik $(2,5)$ oleh refleksi terhadap sumbu-$y$ adalah \dots
+\begin{choices}
+\choice $(2,-5)$ \choice $(-2,-5)$ \CorrectChoice $(-2,5)$ \choice $(5,2)$ \choice $(2,5)$
+\end{choices}
+
+\question \Inter Bayangan titik $(3,1)$ oleh translasi $\begin{pmatrix} -2\\ 4 \end{pmatrix}$ adalah \dots
+\begin{choices}
+\choice $(5,5)$ \choice $(1,-3)$ \choice $(-2,4)$ \CorrectChoice $(1,5)$ \choice $(5,-3)$
+\end{choices}
+
+\question \Inter Bayangan titik $(2,3)$ oleh dilatasi $[O,2]$ adalah \dots
+\begin{choices}
+\choice $(2,3)$ \CorrectChoice $(4,6)$ \choice $(1,\tfrac{3}{2})$ \choice $(6,4)$ \choice $(4,5)$
+\end{choices}
+
+\question \Inter Perhatikan titik $A(3,1)$ berikut yang akan dirotasi $90^\circ$
+berlawanan arah jarum jam terhadap $O$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\draw[->] (-2.5,0)--(4,0) node[right]{$x$};
+\draw[->] (0,-0.6)--(0,4) node[above]{$y$};
+\draw[gray] (0,0)--(3,1);
+\fill[biru] (3,1) circle (2.5pt) node[right]{\small $A(3,1)$};
+\draw[->,oranye,thick] (2.4,0.8) arc (18:100:2.5);
+\node[oranye] at (1.4,2.4){\small $90^\circ$};
+\end{tikzpicture}
+\end{center}
+
+Bayangan titik $A$ adalah \dots
+\begin{choices}
+\choice $(1,-3)$ \choice $(3,-1)$ \choice $(-3,1)$ \CorrectChoice $(-1,3)$ \choice $(1,3)$
+\end{choices}
+
+\question \Adv Bayangan titik $(2,-3)$ oleh refleksi terhadap sumbu-$x$ dilanjutkan
+dilatasi $[O,2]$ adalah \dots
+\begin{choices}
+\choice $(-4,-6)$ \choice $(4,-6)$ \CorrectChoice $(4,6)$ \choice $(-4,6)$ \choice $(6,4)$
+\end{choices}
+
+\question \Adv Matriks untuk rotasi $90^\circ$ berlawanan arah jarum jam terhadap
+$O$ adalah \dots
+\begin{choices}
+\choice $\begin{pmatrix} 0 & 1\\ -1 & 0 \end{pmatrix}$
+\choice $\begin{pmatrix} 1 & 0\\ 0 & -1 \end{pmatrix}$
+\CorrectChoice $\begin{pmatrix} 0 & -1\\ 1 & 0 \end{pmatrix}$
+\choice $\begin{pmatrix} -1 & 0\\ 0 & 1 \end{pmatrix}$
+\choice $\begin{pmatrix} 0 & 1\\ 1 & 0 \end{pmatrix}$
+\end{choices}
+
+\question \Exp Titik $P(1,2)$ dirotasi $90^\circ$ berlawanan arah jarum jam terhadap
+$O$, lalu hasilnya dicerminkan terhadap sumbu-$x$. Bayangan akhirnya adalah \dots
+\begin{choices}
+\choice $(-1,-2)$ \choice $(2,-1)$ \choice $(-2,1)$ \CorrectChoice $(-2,-1)$ \choice $(1,-2)$
+\end{choices}
+
+\topik{17. Fungsi dan Pemodelannya (8 Soal)}
+
+\question \Fund Domain fungsi $f(x) = \sqrt{x-3}$ adalah \dots
+\begin{choices}
+\choice $x > 3$ \choice $x \le 3$ \CorrectChoice $x \ge 3$ \choice $x \ge -3$ \choice semua $x$
+\end{choices}
+
+\question \Fund Domain fungsi $f(x) = \dfrac{1}{x+2}$ adalah \dots
+\begin{choices}
+\choice $x \neq 2$ \CorrectChoice $x \neq -2$ \choice $x \ge -2$ \choice $x \neq 0$ \choice semua $x$
+\end{choices}
+
+\question \Inter Perhatikan grafik fungsi rasional $f(x) = \dfrac{1}{x-1}$ berikut.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle,width=6.5cm,height=4.5cm,
+  xmin=-3,xmax=5,ymin=-4,ymax=4,xtick={1},ytick=\empty]
+\addplot[very thick,biru,domain=-3:0.82,samples=60]{1/(x-1)};
+\addplot[very thick,biru,domain=1.18:5,samples=60]{1/(x-1)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Asimtot tegak grafik tersebut adalah \dots
+\begin{choices}
+\choice $x = 0$ \choice $y = 1$ \CorrectChoice $x = 1$ \choice $x = -1$ \choice $y = 0$
+\end{choices}
+
+\question \Inter Diketahui $f(x) = \begin{cases} x+2, & x<0\\ x^{2}, & x \ge 0 \end{cases}$.
+Nilai $f(-1)$ adalah \dots
+\begin{choices}
+\choice $-1$ \CorrectChoice $1$ \choice $0$ \choice $2$ \choice $3$
+\end{choices}
+
+\question \Inter Dengan fungsi pada soal sebelumnya, nilai $f(2)$ adalah \dots
+\begin{choices}
+\choice $2$ \choice $0$ \CorrectChoice $4$ \choice $1$ \choice $8$
+\end{choices}
+
+\question \Adv Tarif parkir suatu mal: Rp3.000 untuk jam pertama dan Rp2.000 untuk
+setiap jam berikutnya (fungsi tangga). Biaya parkir selama 4 jam adalah \dots
+\begin{choices}
+\choice Rp8.000 \CorrectChoice Rp9.000 \choice Rp11.000 \choice Rp6.000 \choice Rp12.000
+\end{choices}
+
+\question \Adv Nilai minimum fungsi $f(x) = x^{2} - 4x + 7$ adalah \dots
+\begin{choices}
+\choice $7$ \CorrectChoice $3$ \choice $-3$ \choice $4$ \choice $1$
+\end{choices}
+
+\question \Exp Grafik $f(x) = 2^{x}$ dicerminkan terhadap sumbu-$y$, lalu digeser
+3 satuan ke atas menjadi $g(x)$. Asimtot datar grafik $g$ adalah \dots
+\begin{choices}
+\choice $y = 0$ \choice $x = 3$ \CorrectChoice $y = 3$ \choice $y = -3$ \choice $x = 0$
+\end{choices}
+
+\topik{18. Trigonometri Lanjutan (12 Soal)}
+
+\question \Fund Nilai $\sin^{2}\theta + \cos^{2}\theta$ adalah \dots
+\begin{choices}
+\choice $0$ \choice $2$ \CorrectChoice $1$ \choice $\sin\theta\cos\theta$ \choice $\tan\theta$
+\end{choices}
+
+\question \Fund Pada lingkaran satuan, koordinat titik untuk sudut $90^\circ$ adalah \dots
+\begin{choices}
+\CorrectChoice $(0,1)$ \choice $(1,0)$ \choice $(-1,0)$ \choice $(0,-1)$ \choice $(1,1)$
+\end{choices}
+
+\question \Fund Nilai $\cos 0^\circ$ adalah \dots
+\begin{choices}
+\choice $0$ \choice $-1$ \choice $\tfrac{1}{2}$ \CorrectChoice $1$ \choice tak terdefinisi
+\end{choices}
+
+\question \Inter Jika $\sin\theta = 0{,}6$ dan $\cos\theta = 0{,}8$, maka $\tan\theta$ adalah \dots
+\begin{choices}
+\choice $1{,}33$ \choice $0{,}48$ \CorrectChoice $0{,}75$ \choice $1{,}4$ \choice $0{,}6$
+\end{choices}
+
+\question \Inter Perhatikan grafik fungsi periodik berikut.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle,width=8cm,height=3.8cm,
+  xmin=0,xmax=360,ymin=-1.4,ymax=1.4,
+  xtick={0,90,180,270,360},ytick={-1,1},xticklabel style={font=\small}]
+\addplot[very thick,biru,domain=0:360,samples=100]{sin(x)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Periode fungsi tersebut adalah \dots
+\begin{choices}
+\choice $180^\circ$ \CorrectChoice $360^\circ$ \choice $90^\circ$ \choice $720^\circ$ \choice $60^\circ$
+\end{choices}
+
+\question \Inter Nilai maksimum fungsi $y = 3\sin x$ adalah \dots
+\begin{choices}
+\choice $1$ \choice $6$ \CorrectChoice $3$ \choice $-3$ \choice $0$
+\end{choices}
+
+\question \Inter Pada segitiga, $a=7$, $b=5$, dan sudut $C = 60^\circ$. Panjang sisi
+$c$ adalah \dots
+\begin{choices}
+\CorrectChoice $\sqrt{39}$ \choice $6$ \choice $\sqrt{74}$ \choice $7$ \choice $\sqrt{35}$
+\end{choices}
+
+\question \Adv Pada segitiga, $a=10$, $A=30^\circ$, dan $B=45^\circ$. Dengan aturan
+sinus, panjang sisi $b$ adalah \dots
+\begin{choices}
+\choice $5\sqrt{2}$ \choice $10$ \CorrectChoice $10\sqrt{2}$ \choice $20$ \choice $5$
+\end{choices}
+
+\question \Adv Bentuk $\dfrac{1-\cos^{2}\theta}{\sin\theta}$ setara dengan \dots
+\begin{choices}
+\CorrectChoice $\sin\theta$ \choice $\cos\theta$ \choice $\tan\theta$ \choice $1$ \choice $\csc\theta$
+\end{choices}
+
+\question \Adv Nilai $\cos 120^\circ$ adalah \dots
+\begin{choices}
+\choice $\tfrac{1}{2}$ \CorrectChoice $-\tfrac{1}{2}$ \choice $-\tfrac{\sqrt{3}}{2}$
+\choice $\tfrac{\sqrt{3}}{2}$ \choice $-1$
+\end{choices}
+
+\question \Adv Nilai $\sin 150^\circ$ adalah \dots
+\begin{choices}
+\choice $-\tfrac{1}{2}$ \choice $\tfrac{\sqrt{3}}{2}$ \CorrectChoice $\tfrac{1}{2}$
+\choice $-\tfrac{\sqrt{3}}{2}$ \choice $1$
+\end{choices}
+
+\question \Exp Diketahui $\sin\theta + \cos\theta = 1{,}4$. Nilai $\sin 2\theta$ adalah \dots
+\begin{choices}
+\choice $0{,}48$ \choice $1{,}4$ \choice $0{,}7$ \CorrectChoice $0{,}96$ \choice $1{,}96$
+\end{choices}
+
+\topik{19. Irisan Kerucut (8 Soal)}
+
+\question \Fund Persamaan parabola $y^{2} = 4px$ dengan $p = 2$ adalah \dots
+\begin{choices}
+\CorrectChoice $y^{2} = 8x$ \choice $y^{2} = 2x$ \choice $y^{2} = 4x$
+\choice $x^{2} = 8y$ \choice $y^{2} = 16x$
+\end{choices}
+
+\question \Fund Pusat elips $\dfrac{x^{2}}{25} + \dfrac{y^{2}}{9} = 1$ adalah \dots
+\begin{choices}
+\choice $(25,9)$ \choice $(5,3)$ \CorrectChoice $(0,0)$ \choice $(5,0)$ \choice $(0,3)$
+\end{choices}
+
+\question \Inter Panjang sumbu mayor elips $\dfrac{x^{2}}{25} + \dfrac{y^{2}}{9} = 1$ adalah \dots
+\begin{choices}
+\CorrectChoice $10$ \choice $5$ \choice $6$ \choice $3$ \choice $8$
+\end{choices}
+
+\question \Inter Perhatikan grafik elips $\dfrac{x^{2}}{25} + \dfrac{y^{2}}{9} = 1$ berikut.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle,width=6.5cm,height=4cm,
+  xmin=-6,xmax=6,ymin=-4,ymax=4,xtick={-5,5},ytick={-3,3},
+  xticklabel style={font=\small},yticklabel style={font=\small}]
+\addplot[very thick,biru,domain=0:360,samples=80]({5*cos(x)},{3*sin(x)});
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Titik puncak elips pada sumbu-$x$ adalah \dots
+\begin{choices}
+\choice $(\pm 3, 0)$ \choice $(\pm 25, 0)$ \CorrectChoice $(\pm 5, 0)$
+\choice $(0, \pm 5)$ \choice $(\pm 5, \pm 3)$
+\end{choices}
+
+\question \Inter Fokus parabola $y^{2} = 12x$ adalah \dots
+\begin{choices}
+\choice $(12,0)$ \CorrectChoice $(3,0)$ \choice $(0,3)$ \choice $(6,0)$ \choice $(3,3)$
+\end{choices}
+
+\question \Adv Asimtot hiperbola $\dfrac{x^{2}}{16} - \dfrac{y^{2}}{9} = 1$ adalah \dots
+\begin{choices}
+\choice $y = \pm\tfrac{4}{3}x$ \choice $y = \pm\tfrac{9}{16}x$ \CorrectChoice $y = \pm\tfrac{3}{4}x$
+\choice $y = \pm x$ \choice $y = \pm\tfrac{16}{9}x$
+\end{choices}
+
+\question \Adv Persamaan hiperbola dengan $a=4$, $b=3$, sumbu nyata pada sumbu-$x$,
+dan berpusat di $O$ adalah \dots
+\begin{choices}
+\CorrectChoice $\dfrac{x^{2}}{16} - \dfrac{y^{2}}{9} = 1$
+\choice $\dfrac{x^{2}}{9} - \dfrac{y^{2}}{16} = 1$
+\choice $\dfrac{x^{2}}{16} + \dfrac{y^{2}}{9} = 1$
+\choice $\dfrac{y^{2}}{16} - \dfrac{x^{2}}{9} = 1$
+\choice $\dfrac{x^{2}}{4} - \dfrac{y^{2}}{3} = 1$
+\end{choices}
+
+\question \Exp Fokus elips $\dfrac{x^{2}}{25} + \dfrac{y^{2}}{16} = 1$ adalah \dots
+\begin{choices}
+\choice $(\pm 9, 0)$ \choice $(\pm\sqrt{41}, 0)$ \choice $(0, \pm 3)$
+\CorrectChoice $(\pm 3, 0)$ \choice $(\pm 1, 0)$
+\end{choices}
+
+\end{questions}
+
+\vspace{6pt}
+\begin{center}
+{\color{biru}\rule{\linewidth}{1pt}}\\[3pt]
+{\small\textit{Akhir F+ Blok 2 (129–164) — Versi Soal. Kunci \& pembahasan ada pada Versi Lengkap.}}
+\end{center}
+
+\end{document}

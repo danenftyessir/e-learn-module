@@ -1,0 +1,290 @@
+% ============================================================
+%  BANK SOAL MATEMATIKA SMA — KURIKULUM MERDEKA
+%  BAGIAN 3 — FASE F+  |  BLOK 1 (No. 101–128)  |  VERSI SOAL
+%  Bilangan Kompleks, Polinomial, Matriks
+%  - Tanpa banner; opsi A-E tersusun ke bawah
+%  - Sinkron dengan Versi Lengkap (soal & nomor identik)
+%  Kelas dokumen: exam  |  Kompilasi: pdfLaTeX (Overleaf)
+% ============================================================
+\documentclass[11pt,a4paper]{exam}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[bahasa]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{enumitem}
+\usepackage{array,booktabs}
+
+\geometry{a4paper,margin=2.3cm}
+
+% (Versi Soal: TANPA \printanswers)
+
+\definecolor{biru}{HTML}{1F4E79}
+\definecolor{hijau}{HTML}{2E7D32}
+\definecolor{oranye}{HTML}{C75B12}
+\definecolor{ungu}{HTML}{6A1B9A}
+
+\pagestyle{headandfoot}
+\runningheadrule
+\firstpageheadrule
+\header{\textbf{\textcolor{biru}{BANK SOAL MATEMATIKA}}}{}{\textbf{FASE F+ · Blok 1}}
+\footer{}{Halaman \thepage}{}
+
+\renewcommand{\choicelabel}{\Alph{choice}.}
+
+\renewcommand{\choiceshook}{%
+  \setlength{\leftmargin}{2em}%
+  \setlength{\itemsep}{5pt}%
+  \setlength{\topsep}{5pt}%
+  \setlength{\parsep}{0pt}}
+
+\newcommand{\Fund}{{\footnotesize\textsf{\textcolor{hijau}{[Fundamental]}}}\ }
+\newcommand{\Inter}{{\footnotesize\textsf{\textcolor{biru}{[Intermediate]}}}\ }
+\newcommand{\Adv}{{\footnotesize\textsf{\textcolor{oranye}{[Advanced]}}}\ }
+\newcommand{\Exp}{{\footnotesize\textsf{\textcolor{ungu}{[Expert]}}}\ }
+
+\newcommand{\topik}[1]{%
+  \par\addvspace{14pt}%
+  \noindent{\large\bfseries\color{biru}#1}\par\addvspace{6pt}}
+
+\begin{document}
+
+\begin{center}
+{\color{biru}\rule{\linewidth}{1.5pt}}\\[4pt]
+{\LARGE\bfseries\color{biru} BANK SOAL MATEMATIKA SMA}\\[2pt]
+{\large Versi Soal — Fase F+ Blok 1}\\[2pt]
+{\large Bilangan Kompleks · Polinomial · Matriks (No. 101–128)}\\[4pt]
+{\color{biru}\rule{\linewidth}{1.5pt}}
+\end{center}
+\vspace{4pt}
+
+\noindent\textit{Petunjuk:} Pilih satu jawaban yang paling tepat. Label tingkat
+kesulitan tertera pada awal tiap soal.
+
+\setcounter{question}{100}
+
+\topik{13. Bilangan Kompleks (8 Soal)}
+
+\begin{questions}
+
+\question \Fund Nilai $i^{2}$ adalah \dots
+\begin{choices}
+\choice $1$ \choice $i$ \CorrectChoice $-1$ \choice $-i$ \choice $0$
+\end{choices}
+
+\question \Fund Hasil $(3+2i)+(1-4i)$ adalah \dots
+\begin{choices}
+\choice $4+2i$ \choice $2-2i$ \choice $4-6i$ \CorrectChoice $4-2i$ \choice $2+6i$
+\end{choices}
+
+\question \Inter Hasil $(2+i)(3-i)$ adalah \dots
+\begin{choices}
+\choice $6+i$ \choice $5+i$ \CorrectChoice $7+i$ \choice $7-i$ \choice $6-i$
+\end{choices}
+
+\question \Inter Modulus dari $z = 3+4i$ adalah \dots
+\begin{choices}
+\choice $7$ \CorrectChoice $5$ \choice $25$ \choice $\sqrt{7}$ \choice $12$
+\end{choices}
+
+\question \Inter Konjugat dari $z = 5-2i$ adalah \dots
+\begin{choices}
+\choice $-5+2i$ \choice $2-5i$ \choice $-5-2i$ \CorrectChoice $5+2i$ \choice $5-2i$
+\end{choices}
+
+\question \Adv Pada diagram Argand berikut, bilangan kompleks $z$ digambarkan
+sebagai vektor.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+\coordinate (O) at (0,0);
+\coordinate (Z) at (1.5,1.5);
+\draw[->] (-0.3,0)--(2.3,0) node[right]{Re};
+\draw[->] (0,-0.3)--(0,2.3) node[above]{Im};
+\draw[very thick,biru,-{Latex}] (O)--(Z) node[above right]{$z=1+i$};
+\draw[dashed,gray] (1.5,0)--(Z) (0,1.5)--(Z);
+\node[below] at (1.5,0){\small $1$}; \node[left] at (0,1.5){\small $1$};
+\end{tikzpicture}
+\end{center}
+
+Bentuk polar dari $z$ adalah \dots
+\begin{choices}
+\choice $2(\cos 45^\circ + i\sin 45^\circ)$
+\CorrectChoice $\sqrt{2}(\cos 45^\circ + i\sin 45^\circ)$
+\choice $\sqrt{2}(\cos 90^\circ + i\sin 90^\circ)$
+\choice $1(\cos 45^\circ + i\sin 45^\circ)$
+\choice $\sqrt{2}(\cos 60^\circ + i\sin 60^\circ)$
+\end{choices}
+
+\question \Adv Nilai $i^{2023}$ adalah \dots
+\begin{choices}
+\choice $i$ \choice $1$ \choice $-1$ \CorrectChoice $-i$ \choice $0$
+\end{choices}
+
+\question \Exp Modulus dan argumen dari $z = -1+\sqrt{3}\,i$ adalah \dots
+\begin{choices}
+\choice modulus $2$, argumen $60^\circ$
+\choice modulus $4$, argumen $120^\circ$
+\CorrectChoice modulus $2$, argumen $120^\circ$
+\choice modulus $2$, argumen $240^\circ$
+\choice modulus $\sqrt{2}$, argumen $120^\circ$
+\end{choices}
+
+\topik{14. Polinomial (10 Soal)}
+
+\question \Fund Derajat polinomial $3x^{4} - 2x^{2} + 5$ adalah \dots
+\begin{choices}
+\choice $5$ \CorrectChoice $4$ \choice $3$ \choice $2$ \choice $1$
+\end{choices}
+
+\question \Fund Sisa pembagian $P(x) = x^{2}+2x+1$ oleh $(x-1)$ adalah \dots
+\begin{choices}
+\choice $1$ \choice $0$ \CorrectChoice $4$ \choice $3$ \choice $5$
+\end{choices}
+
+\question \Inter Sisa pembagian $P(x) = 2x^{3}+x^{2}-7$ oleh $(x-2)$ adalah \dots
+\begin{choices}
+\choice $9$ \CorrectChoice $13$ \choice $11$ \choice $7$ \choice $15$
+\end{choices}
+
+\question \Inter Faktor $(x-2)$ merupakan faktor dari $P(x)$ jika \dots
+\begin{choices}
+\choice $P(0)=2$ \choice $P(-2)=0$ \CorrectChoice $P(2)=0$ \choice $P(2)=2$ \choice $P'(2)=0$
+\end{choices}
+
+\question \Inter Tabel berikut memuat beberapa nilai $P(x) = x^{3}-2x^{2}-5x+6$.
+
+\begin{center}\small
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & $-2$ & $-1$ & $1$ & $2$ & $3$\\\hline
+$P(x)$ & $0$ & $8$ & $0$ & $-4$ & $0$\\\hline
+\end{tabular}
+\end{center}
+
+Berdasarkan tabel, salah satu faktor $P(x)$ adalah \dots
+\begin{choices}
+\choice $(x+1)$ \CorrectChoice $(x-1)$ \choice $(x-2)$ \choice $(x+3)$ \choice $(x-6)$
+\end{choices}
+
+\question \Inter Akar-akar dari $x^{3}-2x^{2}-5x+6 = 0$ adalah \dots
+\begin{choices}
+\choice $1,\ -3,\ 2$ \choice $-1,\ 3,\ 2$ \CorrectChoice $1,\ 3,\ -2$
+\choice $1,\ 2,\ 3$ \choice $-1,\ -3,\ -2$
+\end{choices}
+
+\question \Adv Hasil bagi $x^{3}-2x^{2}-5x+6$ oleh $(x-1)$ menggunakan skema Horner
+adalah \dots
+\begin{choices}
+\CorrectChoice $x^{2}-x-6$ \choice $x^{2}+x-6$ \choice $x^{2}-3x+6$
+\choice $x^{2}-x+6$ \choice $x^{2}-2x-6$
+\end{choices}
+
+\question \Adv Jumlah akar-akar persamaan $2x^{3}-6x^{2}+4x-1 = 0$ adalah \dots
+\begin{choices}
+\choice $-3$ \choice $2$ \choice $6$ \CorrectChoice $3$ \choice $1$
+\end{choices}
+
+\question \Adv Suatu polinomial $P(x)$ dibagi $(x-1)$ bersisa 3 dan dibagi $(x-2)$
+bersisa 5. Sisa pembagian $P(x)$ oleh $(x-1)(x-2)$ adalah \dots
+\begin{choices}
+\choice $2x-1$ \choice $x+2$ \choice $2x+3$ \CorrectChoice $2x+1$ \choice $x+1$
+\end{choices}
+
+\question \Exp Jika $x = 2$ merupakan akar dari $x^{3}-3x^{2}+kx-4 = 0$, maka nilai
+$k$ adalah \dots
+\begin{choices}
+\choice $2$ \choice $6$ \CorrectChoice $4$ \choice $0$ \choice $8$
+\end{choices}
+
+\topik{15. Matriks (10 Soal)}
+
+\question \Fund Determinan matriks $\begin{pmatrix} 2 & 1\\ 3 & 4 \end{pmatrix}$ adalah \dots
+\begin{choices}
+\CorrectChoice $5$ \choice $11$ \choice $8$ \choice $-5$ \choice $7$
+\end{choices}
+
+\question \Fund Hasil $\begin{pmatrix} 1 & 2\\ 3 & 4 \end{pmatrix} +
+\begin{pmatrix} 2 & 0\\ 1 & 5 \end{pmatrix}$ adalah \dots
+\begin{choices}
+\choice $\begin{pmatrix} 3 & 2\\ 4 & 8 \end{pmatrix}$
+\CorrectChoice $\begin{pmatrix} 3 & 2\\ 4 & 9 \end{pmatrix}$
+\choice $\begin{pmatrix} 2 & 0\\ 3 & 20 \end{pmatrix}$
+\choice $\begin{pmatrix} 3 & 2\\ 3 & 9 \end{pmatrix}$
+\choice $\begin{pmatrix} 1 & 2\\ 4 & 9 \end{pmatrix}$
+\end{choices}
+
+\question \Inter Invers matriks $\begin{pmatrix} 2 & 1\\ 3 & 4 \end{pmatrix}$ adalah \dots
+\begin{choices}
+\choice $\dfrac{1}{5}\begin{pmatrix} 2 & -1\\ -3 & 4 \end{pmatrix}$
+\CorrectChoice $\dfrac{1}{5}\begin{pmatrix} 4 & -1\\ -3 & 2 \end{pmatrix}$
+\choice $\dfrac{1}{5}\begin{pmatrix} 4 & 1\\ 3 & 2 \end{pmatrix}$
+\choice $\begin{pmatrix} 4 & -1\\ -3 & 2 \end{pmatrix}$
+\choice $\dfrac{1}{11}\begin{pmatrix} 4 & -1\\ -3 & 2 \end{pmatrix}$
+\end{choices}
+
+\question \Inter Hasil $2\begin{pmatrix} 1 & -2\\ 0 & 3 \end{pmatrix}$ adalah \dots
+\begin{choices}
+\CorrectChoice $\begin{pmatrix} 2 & -4\\ 0 & 6 \end{pmatrix}$
+\choice $\begin{pmatrix} 2 & -2\\ 0 & 3 \end{pmatrix}$
+\choice $\begin{pmatrix} 3 & 0\\ 2 & 5 \end{pmatrix}$
+\choice $\begin{pmatrix} 1 & -4\\ 0 & 6 \end{pmatrix}$
+\choice $\begin{pmatrix} 2 & -4\\ 0 & 3 \end{pmatrix}$
+\end{choices}
+
+\question \Inter Hasil $\begin{pmatrix} 1 & 2\\ 3 & 4 \end{pmatrix}
+\begin{pmatrix} 1 & 0\\ 0 & 1 \end{pmatrix}$ adalah \dots
+\begin{choices}
+\choice $\begin{pmatrix} 1 & 0\\ 0 & 1 \end{pmatrix}$
+\CorrectChoice $\begin{pmatrix} 1 & 2\\ 3 & 4 \end{pmatrix}$
+\choice $\begin{pmatrix} 1 & 2\\ 0 & 4 \end{pmatrix}$
+\choice $\begin{pmatrix} 4 & 3\\ 2 & 1 \end{pmatrix}$
+\choice $\begin{pmatrix} 2 & 4\\ 6 & 8 \end{pmatrix}$
+\end{choices}
+
+\question \Inter Determinan matriks $\begin{pmatrix} 3 & 2\\ 1 & 4 \end{pmatrix}$ adalah \dots
+\begin{choices}
+\CorrectChoice $10$ \choice $14$ \choice $11$ \choice $-10$ \choice $12$
+\end{choices}
+
+\question \Adv Di sebuah toko, harga 2 buku dan 1 pensil Rp5.000, sedangkan 3 buku
+dan 4 pensil Rp10.000. Dengan metode matriks, harga satu buku adalah \dots
+\begin{choices}
+\CorrectChoice Rp2.000 \choice Rp1.000 \choice Rp3.000 \choice Rp4.000 \choice Rp2.500
+\end{choices}
+
+\question \Adv Matriks $\begin{pmatrix} 2 & k\\ 3 & 6 \end{pmatrix}$ tidak memiliki
+invers (singular) jika $k = \dots$
+\begin{choices}
+\choice $2$ \choice $3$ \choice $6$ \CorrectChoice $4$ \choice $0$
+\end{choices}
+
+\question \Adv Jika $A = \begin{pmatrix} 1 & 2\\ 3 & 4 \end{pmatrix}$, maka $\det(2A)$ adalah \dots
+\begin{choices}
+\choice $-2$ \choice $-4$ \choice $8$ \CorrectChoice $-8$ \choice $-16$
+\end{choices}
+
+\question \Exp Jika $A = \begin{pmatrix} 1 & 1\\ 0 & 1 \end{pmatrix}$, maka $A^{3}$ adalah \dots
+\begin{choices}
+\choice $\begin{pmatrix} 1 & 1\\ 0 & 1 \end{pmatrix}$
+\choice $\begin{pmatrix} 3 & 3\\ 0 & 3 \end{pmatrix}$
+\CorrectChoice $\begin{pmatrix} 1 & 3\\ 0 & 1 \end{pmatrix}$
+\choice $\begin{pmatrix} 1 & 3\\ 0 & 3 \end{pmatrix}$
+\choice $\begin{pmatrix} 3 & 1\\ 0 & 1 \end{pmatrix}$
+\end{choices}
+
+\end{questions}
+
+\vspace{6pt}
+\begin{center}
+{\color{biru}\rule{\linewidth}{1pt}}\\[3pt]
+{\small\textit{Akhir F+ Blok 1 (101–128) — Versi Soal. Kunci \& pembahasan ada pada Versi Lengkap.}}
+\end{center}
+
+\end{document}

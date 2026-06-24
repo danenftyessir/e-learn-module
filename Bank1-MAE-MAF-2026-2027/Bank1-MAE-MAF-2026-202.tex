@@ -1,0 +1,521 @@
+% ============================================================
+%  BANK SOAL MATEMATIKA SMA — KURIKULUM MERDEKA
+%  BAGIAN 1: FASE E  —  VERSI SOAL (REVISI)
+%  - Tanpa banner; opsi A-E tersusun ke bawah
+%  - Sinkron dengan Versi Lengkap (soal & nomor identik)
+%  Kelas dokumen: exam  |  Kompilasi: pdfLaTeX (Overleaf)
+% ============================================================
+\documentclass[11pt,a4paper]{exam}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[bahasa]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{enumitem}
+\usepackage{array,booktabs}
+
+\geometry{a4paper,margin=2.3cm}
+
+% (Versi Soal: TANPA \printanswers)
+
+% ---------- WARNA ----------
+\definecolor{biru}{HTML}{1F4E79}
+\definecolor{hijau}{HTML}{2E7D32}
+\definecolor{oranye}{HTML}{C75B12}
+\definecolor{ungu}{HTML}{6A1B9A}
+
+% ---------- HEADER / FOOTER ----------
+\pagestyle{headandfoot}
+\runningheadrule
+\firstpageheadrule
+\header{\textbf{\textcolor{biru}{BANK SOAL MATEMATIKA}}}{}{\textbf{FASE E}}
+\footer{}{Halaman \thepage}{}
+
+% ---------- LABEL PILIHAN: A. B. C. ----------
+\renewcommand{\choicelabel}{\Alph{choice}.}
+
+% ---------- JARAK ANTAR PILIHAN (tersusun ke bawah) ----------
+\renewcommand{\choiceshook}{%
+  \setlength{\leftmargin}{2em}%
+  \setlength{\itemsep}{5pt}%
+  \setlength{\topsep}{5pt}%
+  \setlength{\parsep}{0pt}}
+
+% ---------- TANDA TINGKAT KESULITAN ----------
+\newcommand{\Fund}{{\footnotesize\textsf{\textcolor{hijau}{[Fundamental]}}}\ }
+\newcommand{\Inter}{{\footnotesize\textsf{\textcolor{biru}{[Intermediate]}}}\ }
+\newcommand{\Adv}{{\footnotesize\textsf{\textcolor{oranye}{[Advanced]}}}\ }
+\newcommand{\Exp}{{\footnotesize\textsf{\textcolor{ungu}{[Expert]}}}\ }
+
+% ---------- JUDUL TOPIK (heading sederhana, tanpa banner) ----------
+\newcommand{\topik}[1]{%
+  \par\addvspace{14pt}%
+  \noindent{\large\bfseries\color{biru}#1}\par\addvspace{6pt}}
+
+\begin{document}
+
+\begin{center}
+{\color{biru}\rule{\linewidth}{1.5pt}}\\[4pt]
+{\LARGE\bfseries\color{biru} BANK SOAL MATEMATIKA SMA}\\[2pt]
+{\large Versi Soal — Bagian 1: Fase E}\\[2pt]
+{\small 65 Soal Pilihan Ganda}\\[4pt]
+{\color{biru}\rule{\linewidth}{1.5pt}}
+\end{center}
+\vspace{4pt}
+
+\noindent\textit{Petunjuk:} Pilih satu jawaban yang paling tepat. Label tingkat
+kesulitan tertera pada awal tiap soal.
+
+\topik{1. Eksponen dan Logaritma (12 Soal)}
+
+\begin{questions}
+
+\question \Fund Nilai dari $\dfrac{3^{7}}{3^{4}}$ adalah \dots
+\begin{choices}
+\choice $9$ \CorrectChoice $27$ \choice $81$ \choice $3$ \choice $343$
+\end{choices}
+
+\question \Fund Nilai dari $16^{3/4}$ adalah \dots
+\begin{choices}
+\CorrectChoice $8$ \choice $12$ \choice $6$ \choice $4$ \choice $64$
+\end{choices}
+
+\question \Fund Nilai dari ${}^{2}\!\log 32$ adalah \dots
+\begin{choices}
+\choice $4$ \CorrectChoice $5$ \choice $6$ \choice $8$ \choice $16$
+\end{choices}
+
+\question \Fund Nilai dari ${}^{3}\!\log 81$ adalah \dots
+\begin{choices}
+\choice $3$ \CorrectChoice $4$ \choice $5$ \choice $9$ \choice $27$
+\end{choices}
+
+\question \Inter Tabel berikut menunjukkan populasi bakteri tiap jam.
+
+\begin{center}\small
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Jam ($t$) & 0 & 1 & 2 & 3\\\hline
+Populasi & 100 & 300 & 900 & 2700\\\hline
+\end{tabular}
+\end{center}
+
+Jika pola berlanjut, populasi pada jam ke-5 adalah \dots
+\begin{choices}
+\choice $8100$ \choice $13500$ \CorrectChoice $24300$ \choice $72900$ \choice $2700$
+\end{choices}
+
+\question \Inter Nilai dari ${}^{2}\!\log 6 + {}^{2}\!\log 4 - {}^{2}\!\log 3$ adalah \dots
+\begin{choices}
+\choice $2$ \CorrectChoice $3$ \choice $4$ \choice $5$ \choice $1$
+\end{choices}
+
+\question \Inter Bentuk sederhana dari $\dfrac{(x^{2}y^{-3})^{2}}{x^{-1}y}$ adalah \dots
+\begin{choices}
+\choice $\dfrac{x^{3}}{y^{5}}$ \CorrectChoice $\dfrac{x^{5}}{y^{7}}$
+\choice $x^{5}y^{7}$ \choice $\dfrac{x^{4}}{y^{6}}$ \choice $\dfrac{x^{5}}{y^{6}}$
+\end{choices}
+
+\question \Inter Diketahui ${}^{a}\!\log 2 = 0{,}3$ dan ${}^{a}\!\log 3 = 0{,}5$.
+Nilai ${}^{a}\!\log 12$ adalah \dots
+\begin{choices}
+\choice $0{,}8$ \choice $0{,}9$ \choice $1{,}0$ \CorrectChoice $1{,}1$ \choice $1{,}3$
+\end{choices}
+
+\question \Adv Jumlah semua nilai $x$ yang memenuhi $4^{x} - 5\cdot 2^{x} + 4 = 0$ adalah \dots
+\begin{choices}
+\choice $1$ \CorrectChoice $2$ \choice $3$ \choice $4$ \choice $5$
+\end{choices}
+
+\question \Adv Grafik fungsi $f(x) = a^{x}$ ($a>1$) melalui titik $(2,9)$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle,width=6.5cm,height=4.2cm,
+  xmin=-1,xmax=3,ymin=-1,ymax=10,xtick={2},ytick={9},
+  xticklabel style={font=\small},yticklabel style={font=\small}]
+\addplot[very thick,biru,domain=-1:2.1,samples=40]{3^x};
+\addplot[only marks,mark=*,oranye,mark size=2pt]coordinates{(2,9)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Nilai $f(4)$ adalah \dots
+\begin{choices}
+\choice $27$ \CorrectChoice $81$ \choice $243$ \choice $9$ \choice $12$
+\end{choices}
+
+\question \Adv Populasi kota dimodelkan $P(t) = 5000\,(1{,}2)^{t}$ ($t$ tahun).
+Tahun pertama populasi melampaui 8000 adalah pada \dots
+\begin{choices}
+\choice tahun ke-2 \CorrectChoice tahun ke-3 \choice tahun ke-4
+\choice tahun ke-5 \choice tahun ke-6
+\end{choices}
+
+\question \Exp Jika ${}^{2}\!\log 3 = p$, maka ${}^{6}\!\log 8$ dinyatakan dalam $p$ adalah \dots
+\begin{choices}
+\CorrectChoice $\dfrac{3}{1+p}$ \choice $\dfrac{3}{p+2}$ \choice $3p$
+\choice $\dfrac{p}{3}$ \choice $\dfrac{1+p}{3}$
+\end{choices}
+
+\topik{2. Barisan dan Deret (10 Soal)}
+
+\question \Fund Suku ke-10 dari barisan aritmetika $4, 7, 10, \dots$ adalah \dots
+\begin{choices}
+\choice $28$ \choice $30$ \CorrectChoice $31$ \choice $33$ \choice $34$
+\end{choices}
+
+\question \Fund Rasio dari barisan geometri $2, 6, 18, \dots$ adalah \dots
+\begin{choices}
+\choice $2$ \CorrectChoice $3$ \choice $4$ \choice $6$ \choice $\tfrac{1}{3}$
+\end{choices}
+
+\question \Fund Jumlah $3 + 6 + 9 + 12 + 15$ adalah \dots
+\begin{choices}
+\choice $30$ \choice $40$ \CorrectChoice $45$ \choice $50$ \choice $75$
+\end{choices}
+
+\question \Inter Pada barisan aritmetika diketahui $U_3 = 10$ dan $U_7 = 26$.
+Beda barisan tersebut adalah \dots
+\begin{choices}
+\choice $2$ \choice $3$ \CorrectChoice $4$ \choice $5$ \choice $6$
+\end{choices}
+
+\question \Inter Jumlah deret geometri tak hingga $9 + 3 + 1 + \cdots$ adalah \dots
+\begin{choices}
+\choice $12$ \choice $13$ \CorrectChoice $13{,}5$ \choice $18$ \choice $27$
+\end{choices}
+
+\question \Inter Seorang siswa menabung Rp2.000 pada hari pertama dan menambah
+tabungan Rp2.000 lebih banyak setiap hari berikutnya. Total tabungan selama
+10 hari adalah \dots
+\begin{choices}
+\choice Rp90.000 \CorrectChoice Rp110.000 \choice Rp100.000
+\choice Rp120.000 \choice Rp55.000
+\end{choices}
+
+\question \Adv Sebuah tali dipotong menjadi 5 bagian yang membentuk barisan
+geometri. Jika potongan terpendek 6 cm dan terpanjang 96 cm, panjang tali
+semula adalah \dots
+\begin{choices}
+\choice $150$ cm \choice $168$ cm \choice $180$ cm \CorrectChoice $186$ cm \choice $192$ cm
+\end{choices}
+
+\question \Adv Sebuah bola dijatuhkan dari ketinggian 10 m dan setiap pantulan
+mencapai $\tfrac{3}{4}$ tinggi sebelumnya. Panjang lintasan total hingga bola
+berhenti adalah \dots
+\begin{choices}
+\choice $40$ m \choice $60$ m \CorrectChoice $70$ m \choice $80$ m \choice $100$ m
+\end{choices}
+
+\question \Adv Jumlah $n$ suku pertama suatu deret adalah $S_n = 2n^{2} + 3n$.
+Suku ke-5 deret tersebut adalah \dots
+\begin{choices}
+\choice $17$ \choice $20$ \CorrectChoice $21$ \choice $23$ \choice $25$
+\end{choices}
+
+\question \Exp Jumlah tak hingga suatu deret geometri adalah 12 dan suku
+pertamanya 8. Suku ke-3 deret tersebut adalah \dots
+\begin{choices}
+\choice $\tfrac{8}{3}$ \choice $\tfrac{4}{3}$ \CorrectChoice $\tfrac{8}{9}$
+\choice $\tfrac{2}{3}$ \choice $24$
+\end{choices}
+
+\topik{3. Vektor (8 Soal)}
+
+\question \Fund Panjang vektor $\vec{a} = (3,4)$ adalah \dots
+\begin{choices}
+\CorrectChoice $5$ \choice $7$ \choice $12$ \choice $25$ \choice $\sqrt{7}$
+\end{choices}
+
+\question \Fund Diketahui $\vec{a} = (2,1)$ dan $\vec{b} = (1,3)$. Hasil $\vec{a} + \vec{b}$ adalah \dots
+\begin{choices}
+\choice $(1,4)$ \choice $(2,3)$ \CorrectChoice $(3,4)$ \choice $(3,3)$ \choice $(1,-2)$
+\end{choices}
+
+\question \Inter Diketahui $\vec{a} = (2,-1)$ dan $\vec{b} = (3,4)$. Hasil $\vec{a}\cdot\vec{b}$ adalah \dots
+\begin{choices}
+\choice $-2$ \CorrectChoice $2$ \choice $6$ \choice $10$ \choice $14$
+\end{choices}
+
+\question \Inter Diketahui $\vec{a} = (1,2)$ dan $\vec{b} = (3,-1)$. Hasil $2\vec{a} - \vec{b}$ adalah \dots
+\begin{choices}
+\CorrectChoice $(-1,5)$ \choice $(5,-1)$ \choice $(-1,3)$ \choice $(1,5)$ \choice $(-5,1)$
+\end{choices}
+
+\question \Inter Vektor $\vec{a} = (2,k)$ tegak lurus terhadap $\vec{b} = (3,-6)$. Nilai $k$ adalah \dots
+\begin{choices}
+\CorrectChoice $1$ \choice $-1$ \choice $2$ \choice $3$ \choice $4$
+\end{choices}
+
+\question \Adv Besar sudut antara vektor $\vec{a} = (1,0)$ dan $\vec{b} = (1,1)$ adalah \dots
+\begin{choices}
+\choice $0^\circ$ \choice $30^\circ$ \CorrectChoice $45^\circ$ \choice $60^\circ$ \choice $90^\circ$
+\end{choices}
+
+\question \Adv Dua gaya $\vec{F_1}$ dan $\vec{F_2}$ bekerja pada satu titik dengan
+$|\vec{F_1}|=3$ N, $|\vec{F_2}|=4$ N, dan sudut antara keduanya $60^\circ$.
+Besar resultannya adalah \dots
+\begin{choices}
+\choice $5$ N \choice $7$ N \choice $\sqrt{13}$ N \CorrectChoice $\sqrt{37}$ N \choice $\sqrt{61}$ N
+\end{choices}
+
+\question \Exp Diketahui titik $A(0,0)$, $B(2,0)$, dan $C(1,\sqrt{3})$. Besar
+sudut $BAC$ adalah \dots
+\begin{choices}
+\choice $30^\circ$ \CorrectChoice $60^\circ$ \choice $45^\circ$
+\choice $90^\circ$ \choice $120^\circ$
+\end{choices}
+
+\topik{4. Trigonometri Dasar (10 Soal)}
+
+\question \Fund Nilai $\sin 30^\circ$ adalah \dots
+\begin{choices}
+\CorrectChoice $\tfrac{1}{2}$ \choice $\tfrac{\sqrt{2}}{2}$ \choice $\tfrac{\sqrt{3}}{2}$ \choice $1$ \choice $0$
+\end{choices}
+
+\question \Fund Nilai $\cos 60^\circ$ adalah \dots
+\begin{choices}
+\CorrectChoice $\tfrac{1}{2}$ \choice $\tfrac{\sqrt{2}}{2}$ \choice $\tfrac{\sqrt{3}}{2}$ \choice $1$ \choice $0$
+\end{choices}
+
+\question \Fund Nilai $\tan 45^\circ$ adalah \dots
+\begin{choices}
+\choice $0$ \CorrectChoice $1$ \choice $\sqrt{3}$ \choice $\tfrac{\sqrt{3}}{3}$ \choice $\tfrac{1}{2}$
+\end{choices}
+
+\question \Fund Pada segitiga siku-siku, sisi depan sudut $\alpha$ adalah 3 dan sisi
+miring 5. Nilai $\sin\alpha$ adalah \dots
+\begin{choices}
+\CorrectChoice $\tfrac{3}{5}$ \choice $\tfrac{4}{5}$ \choice $\tfrac{3}{4}$ \choice $\tfrac{5}{3}$ \choice $\tfrac{4}{3}$
+\end{choices}
+
+\question \Inter Pada segitiga siku-siku, sisi samping $= 8$ dan sisi miring $= 10$.
+Nilai $\cos\alpha$ adalah \dots
+\begin{choices}
+\choice $\tfrac{3}{5}$ \CorrectChoice $\tfrac{4}{5}$ \choice $\tfrac{3}{4}$ \choice $\tfrac{5}{4}$ \choice $\tfrac{4}{3}$
+\end{choices}
+
+\question \Inter Diketahui $\sin\alpha = \tfrac{3}{5}$ dengan $\alpha$ sudut lancip.
+Nilai $\cos\alpha$ adalah \dots
+\begin{choices}
+\CorrectChoice $\tfrac{4}{5}$ \choice $\tfrac{3}{4}$ \choice $\tfrac{5}{4}$ \choice $\tfrac{3}{5}$ \choice $\tfrac{4}{3}$
+\end{choices}
+
+\question \Inter Sebuah tangga sepanjang 5 m bersandar pada dinding membentuk
+sudut $60^\circ$ dengan tanah. Tinggi dinding yang dicapai ujung tangga adalah \dots
+\begin{choices}
+\CorrectChoice $\tfrac{5\sqrt{3}}{2}$ m \choice $\tfrac{5}{2}$ m
+\choice $\tfrac{5\sqrt{2}}{2}$ m \choice $5$ m \choice $5\sqrt{3}$ m
+\end{choices}
+
+\question \Adv Dari sebuah titik yang berjarak 20 m dari kaki gedung, sudut elevasi
+puncak gedung adalah $30^\circ$. Tinggi gedung tersebut adalah \dots
+\begin{choices}
+\choice $10$ m \CorrectChoice $\tfrac{20\sqrt{3}}{3}$ m \choice $10\sqrt{3}$ m
+\choice $20\sqrt{3}$ m \choice $20$ m
+\end{choices}
+
+\question \Adv Nilai dari $\sin 30^\circ \cos 60^\circ + \cos 30^\circ \sin 60^\circ$ adalah \dots
+\begin{choices}
+\choice $0$ \choice $\tfrac{1}{2}$ \choice $\tfrac{\sqrt{3}}{2}$ \CorrectChoice $1$ \choice $\sqrt{3}$
+\end{choices}
+
+\question \Exp Dua pengamat berdiri terpisah 100 m. Sebuah balon di antara keduanya
+terlihat dengan sudut elevasi $30^\circ$ (dari pengamat pertama) dan $45^\circ$
+(dari pengamat kedua). Tinggi balon adalah \dots
+\begin{choices}
+\choice $25$ m \choice $50$ m \CorrectChoice $50(\sqrt{3}-1)$ m
+\choice $50(\sqrt{3}+1)$ m \choice $\tfrac{100}{\sqrt{3}}$ m
+\end{choices}
+
+\topik{5. Sistem Persamaan \& Pertidaksamaan Linear (8 Soal)}
+
+\question \Fund Penyelesaian sistem $x + y = 5$ dan $x - y = 1$ memberikan nilai $x = \dots$
+\begin{choices}
+\choice $1$ \choice $2$ \CorrectChoice $3$ \choice $4$ \choice $5$
+\end{choices}
+
+\question \Fund Diketahui $2x + y = 7$ dan $x = 2$. Nilai $y$ adalah \dots
+\begin{choices}
+\choice $1$ \choice $2$ \CorrectChoice $3$ \choice $4$ \choice $5$
+\end{choices}
+
+\question \Inter Penyelesaian SPLTV $\begin{cases} x+y+z=6\\ x-y+z=2\\ x+y-z=0 \end{cases}$
+memberikan nilai $z = \dots$
+\begin{choices}
+\choice $1$ \choice $2$ \CorrectChoice $3$ \choice $4$ \choice $5$
+\end{choices}
+
+\question \Inter Penyelesaian $x + 2y = 8$ dan $3x - y = 3$ memberikan nilai $x + y = \dots$
+\begin{choices}
+\choice $3$ \choice $4$ \CorrectChoice $5$ \choice $7$ \choice $2$
+\end{choices}
+
+\question \Inter Perhatikan daerah penyelesaian (DP) yang diarsir berikut, dibatasi
+$x+y\le 4$, $x\ge 0$, $y\ge 0$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+\fill[biru!12] (0,0)--(4,0)--(0,4)--cycle;
+\draw[->] (-0.5,0)--(5,0) node[right]{$x$};
+\draw[->] (0,-0.5)--(0,5) node[above]{$y$};
+\draw[very thick,biru] (4,0)--(0,4) node[above right]{\small $x+y=4$};
+\node at (1,1) {\small DP};
+\end{tikzpicture}
+\end{center}
+
+Titik berikut yang berada di dalam daerah penyelesaian adalah \dots
+\begin{choices}
+\CorrectChoice $(1,1)$ \choice $(5,0)$ \choice $(3,3)$ \choice $(0,5)$ \choice $(2,3)$
+\end{choices}
+
+\question \Adv Harga 2 buku dan 3 pensil Rp13.000, sedangkan 3 buku dan 2 pensil
+Rp12.000. Harga satu buku adalah \dots
+\begin{choices}
+\choice Rp1.500 \CorrectChoice Rp2.000 \choice Rp2.500 \choice Rp3.000 \choice Rp4.000
+\end{choices}
+
+\question \Adv Tiga bilangan berjumlah 33. Bilangan terbesar dua kali bilangan
+terkecil, dan bilangan tengah lima lebihnya dari bilangan terkecil. Bilangan
+terbesar adalah \dots
+\begin{choices}
+\choice $7$ \choice $12$ \CorrectChoice $14$ \choice $15$ \choice $16$
+\end{choices}
+
+\question \Exp Sistem $x + y = 4$ dan $ax + y = 6$ tidak memiliki penyelesaian jika
+nilai $a$ sama dengan \dots
+\begin{choices}
+\choice $-1$ \choice $0$ \CorrectChoice $1$ \choice $2$ \choice $4$
+\end{choices}
+
+\topik{6. Fungsi Kuadrat (8 Soal)}
+
+\question \Fund Jumlah akar-akar persamaan $x^{2} - 5x + 6 = 0$ adalah \dots
+\begin{choices}
+\choice $-5$ \choice $1$ \CorrectChoice $5$ \choice $6$ \choice $-1$
+\end{choices}
+
+\question \Fund Hasil kali akar-akar persamaan $x^{2} - 5x + 6 = 0$ adalah \dots
+\begin{choices}
+\choice $-6$ \choice $-5$ \choice $5$ \CorrectChoice $6$ \choice $1$
+\end{choices}
+
+\question \Fund Sumbu simetri grafik $f(x) = x^{2} - 4x + 1$ adalah garis \dots
+\begin{choices}
+\choice $x = -2$ \choice $x = -4$ \choice $x = 1$ \CorrectChoice $x = 2$ \choice $x = 4$
+\end{choices}
+
+\question \Inter Titik puncak grafik $f(x) = x^{2} - 4x + 3$ adalah \dots
+\begin{choices}
+\CorrectChoice $(2,-1)$ \choice $(2,1)$ \choice $(-2,-1)$ \choice $(2,-3)$ \choice $(1,2)$
+\end{choices}
+
+\question \Inter Berdasarkan diskriminan, persamaan $2x^{2} + 3x + 5 = 0$ memiliki \dots
+\begin{choices}
+\choice dua akar real berbeda
+\CorrectChoice tidak memiliki akar real (akar imajiner)
+\choice satu akar real (kembar)
+\choice dua akar real positif
+\choice dua akar real negatif
+\end{choices}
+
+\question \Inter Sebuah parabola terbuka ke bawah, berpuncak di $(1,4)$, dan melalui
+titik $(0,3)$. Persamaannya adalah \dots
+\begin{choices}
+\CorrectChoice $f(x) = -x^{2} + 2x + 3$
+\choice $f(x) = x^{2} - 2x + 3$
+\choice $f(x) = -x^{2} - 2x + 3$
+\choice $f(x) = -x^{2} + 2x - 3$
+\choice $f(x) = x^{2} + 2x + 3$
+\end{choices}
+
+\question \Adv Persamaan $x^{2} + mx + 9 = 0$ memiliki akar kembar untuk nilai $m$
+positif sebesar \dots
+\begin{choices}
+\choice $3$ \CorrectChoice $6$ \choice $9$ \choice $12$ \choice $18$
+\end{choices}
+
+\question \Exp Jika $p$ dan $q$ adalah akar-akar persamaan $x^{2} - 3x + 1 = 0$, maka
+nilai $p^{2} + q^{2}$ adalah \dots
+\begin{choices}
+\choice $3$ \choice $5$ \CorrectChoice $7$ \choice $9$ \choice $11$
+\end{choices}
+
+\topik{7. Statistika (4 Soal)}
+
+\question \Fund Rata-rata (mean) dari data $5, 7, 9, 11$ adalah \dots
+\begin{choices}
+\choice $6$ \choice $7$ \CorrectChoice $8$ \choice $9$ \choice $32$
+\end{choices}
+
+\question \Inter Tabel berikut menunjukkan nilai ulangan 10 siswa.
+
+\begin{center}\small
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Nilai & 60 & 70 & 80 & 90\\\hline
+Frekuensi & 2 & 3 & 4 & 1\\\hline
+\end{tabular}
+\end{center}
+
+Rata-rata nilai tersebut adalah \dots
+\begin{choices}
+\choice $70$ \CorrectChoice $74$ \choice $75$ \choice $72$ \choice $80$
+\end{choices}
+
+\question \Inter Modus dari data $4, 6, 7, 7, 9, 7, 4$ adalah \dots
+\begin{choices}
+\choice $4$ \choice $6$ \CorrectChoice $7$ \choice $9$ \choice $5$
+\end{choices}
+
+\question \Adv Rata-rata 5 nilai ulangan adalah 70. Setelah ditambah satu nilai,
+rata-rata 6 nilai menjadi 72. Nilai yang baru ditambahkan adalah \dots
+\begin{choices}
+\choice $72$ \choice $75$ \choice $80$ \CorrectChoice $82$ \choice $90$
+\end{choices}
+
+\topik{8. Peluang (5 Soal)}
+
+\question \Fund Sebuah dadu dilempar sekali. Peluang muncul mata dadu 5 adalah \dots
+\begin{choices}
+\CorrectChoice $\tfrac{1}{6}$ \choice $\tfrac{1}{3}$ \choice $\tfrac{1}{2}$ \choice $\tfrac{5}{6}$ \choice $1$
+\end{choices}
+
+\question \Fund Sebuah koin dilempar sekali. Peluang muncul sisi angka adalah \dots
+\begin{choices}
+\choice $\tfrac{1}{4}$ \choice $\tfrac{1}{3}$ \CorrectChoice $\tfrac{1}{2}$ \choice $1$ \choice $2$
+\end{choices}
+
+\question \Inter Sebuah dadu dilempar. Peluang muncul mata dadu genap atau lebih
+dari 4 adalah \dots
+\begin{choices}
+\choice $\tfrac{1}{3}$ \choice $\tfrac{1}{2}$ \CorrectChoice $\tfrac{2}{3}$ \choice $\tfrac{5}{6}$ \choice $\tfrac{3}{6}$
+\end{choices}
+
+\question \Inter Sebuah kantong berisi 5 bola merah dan 3 bola putih. Satu bola
+diambil secara acak. Peluang terambil bola putih adalah \dots
+\begin{choices}
+\CorrectChoice $\tfrac{3}{8}$ \choice $\tfrac{5}{8}$ \choice $\tfrac{3}{5}$ \choice $\tfrac{1}{3}$ \choice $\tfrac{8}{3}$
+\end{choices}
+
+\question \Adv Dua buah dadu dilempar bersamaan. Peluang jumlah kedua mata dadu
+sama dengan 7 adalah \dots
+\begin{choices}
+\CorrectChoice $\tfrac{1}{6}$ \choice $\tfrac{1}{9}$ \choice $\tfrac{5}{36}$ \choice $\tfrac{7}{36}$ \choice $\tfrac{1}{12}$
+\end{choices}
+
+\end{questions}
+
+\vspace{6pt}
+\begin{center}
+{\color{biru}\rule{\linewidth}{1pt}}\\[3pt]
+{\small\textit{Akhir Bagian 1 (Fase E) — Versi Soal. Kunci jawaban \& pembahasan ada pada Versi Lengkap.}}
+\end{center}
+
+\end{document}
