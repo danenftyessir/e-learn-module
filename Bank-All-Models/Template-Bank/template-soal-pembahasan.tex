@@ -1,0 +1,234 @@
+% ============================================================
+%  TEMPLATE SOAL DAN PEMBAHASAN LENGKAP  (satu mata pelajaran per PDF)
+%  Cover + Petunjuk Umum dalam satu halaman, lalu soal + pembahasan.
+%  Isi yang perlu diubah ditandai: % <-- UBAH
+% ============================================================
+
+\documentclass[11pt]{article}
+
+% ===================== PACKAGES =====================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.5cm,top=2.8cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{icomma}
+
+% ===================== WARNA =====================
+% Ganti sesuai mata pelajaran:
+%   Fisika      → RGB{40,90,150}   / bg RGB{232,240,252}
+%   Matematika  → RGB{20,110,60}   / bg RGB{228,246,234}
+\definecolor{mapelcolor}{RGB}{40,90,150}       % <-- UBAH
+\definecolor{mapelbg}{RGB}{232,240,252}        % <-- UBAH
+\definecolor{pembcolor}{RGB}{100,50,130}
+\definecolor{pembbg}{RGB}{245,238,252}
+\definecolor{gold}{RGB}{210,160,30}
+
+% ===================== HEADER & FOOTER =====================
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small NAMA UJIAN}                      % <-- UBAH
+\rhead{\small Tahun}                           % <-- UBAH
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ===================== KOTAK SOAL =====================
+\newtcolorbox{soal}[1]{
+  breakable,
+  colback=mapelbg,
+  colframe=mapelcolor,
+  coltitle=white,
+  fonttitle=\bfseries\sffamily,
+  title=Nomor #1,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+% ===================== KOTAK PEMBAHASAN =====================
+\newtcolorbox{pembox}{
+  breakable,
+  colback=pembbg,
+  colframe=pembcolor,
+  coltitle=white,
+  fonttitle=\bfseries\sffamily,
+  title=Pembahasan,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+% ===================== JAWABAN SINGKAT =====================
+\newcommand{\jawaban}[1]{%
+  \noindent\colorbox{gold!30}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+    \textbf{Jawaban:} #1}}%
+  \par\smallskip}
+
+% ===================== KONSEP / TEOREMA =====================
+\newcommand{\konsep}{\noindent\textit{Konsep:}\ \ignorespaces}
+
+% ===================== PILIHAN GANDA =====================
+\newenvironment{pil}{%
+  \begin{enumerate}[label=(\Alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}}
+
+\newenvironment{pilB}{%
+  \par\smallskip
+  \begin{multicols}{2}
+  \begin{enumerate}[label=(\Alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}\end{multicols}}
+
+% ===================== GAMBAR =====================
+\newcommand{\gambar}[2][0.52\textwidth]{%
+  \begin{center}\includegraphics[width=#1]{#2}\end{center}}
+
+\linespread{1.05}
+
+% ===================================================================
+%                         ISI DOKUMEN
+% ===================================================================
+\begin{document}
+\thispagestyle{empty}
+
+% ===================== COVER + PETUNJUK (satu halaman) =====================
+
+\begin{center}
+  \fbox{\parbox{0.55\textwidth}{\centering\bfseries\large LEMBAR SOAL DAN PEMBAHASAN}}
+\end{center}
+\vspace{0.5cm}
+
+\begin{center}
+  {\LARGE\bfseries NAMA MATA PELAJARAN}        % <-- UBAH
+\end{center}
+\vspace{0.5cm}
+
+\begin{center}
+  \begin{tabular}{@{\hspace{2cm}}ll@{\hspace{0.4cm}:@{\hspace{0.4cm}}}l}
+    Jenjang      & & [SMA / Madrasah Aliyah] \\[0.3em]  % <-- UBAH
+    Hari/Tanggal & & [Hari, DD Bulan YYYY]   \\[0.3em]  % <-- UBAH
+    Waktu        & & [X menit]               \\[0.3em]  % <-- UBAH
+    Paket Soal   & & [A / B / --]            \\          % <-- UBAH / hapus baris ini jika tidak ada
+  \end{tabular}
+\end{center}
+
+\vspace{0.6cm}
+\noindent\rule{\linewidth}{0.6pt}
+\vspace{0.3cm}
+
+\noindent\textbf{\underline{PETUNJUK UMUM}}
+\begin{enumerate}[leftmargin=*,itemsep=4pt,topsep=4pt]
+  \item Anda \textbf{tidak} diperbolehkan menggunakan sumber-sumber eksternal,
+        termasuk internet, \textit{large language model} seperti ChatGPT, Claude,
+        LLaMA, Gemini, Meta AI, dan sebagainya. Anda sangat dianjurkan untuk
+        mencoba mengerjakan sendiri terlebih dahulu karena evaluasi ini dibuat
+        untuk \textbf{mengukur} tingkat kepahaman; nilai $<70$ mengindikasikan
+        \textbf{tidak lulus}, dan jika sudah melewati \textit{deadline} maka
+        dianggap tidak mengerjakan yang berarti \textbf{tidak lulus}.
+
+  \item Terdapat 2 tahap pengerjaan, yaitu tahap \textbf{Try Out} dan tahap
+        \textbf{Review}. Try Out bersifat \textit{open book}; Anda diperbolehkan
+        membuka buku apapun selama bersifat \textit{offline} dengan rentang waktu
+        2 jam pada tanggal \underline{\hspace{3cm}}. Setelah itu memasuki
+        tahap Review dengan \textit{schedule} rentang tanggal
+        \underline{\hspace{3cm}}--\underline{\hspace{3cm}}, di mana Anda
+        diharapkan mengerjakan ulang dengan disertakan penjelasan/pembelaan
+        mengapa revisi jawaban adalah pilihan tersebut, dan tetap mencantumkan
+        penjelasan pada soal yang walaupun pada penilaian sudah benar.
+
+  \item Anda dianjurkan untuk mencantumkan caranya walaupun tidak termasuk
+        penilaian, mengingat sifatnya adalah sebagai bahan pembelajaran.
+        Mohon bertanggung jawab atas pekerjaan Anda sendiri.
+
+  \item Bacalah setiap soal dengan teliti dan pilih jawaban yang paling tepat.
+        Terdapat soal yang jawabannya $\geq 1$ opsi.
+
+  \item Soal berjumlah \underline{\;\;X\;\;} butir soal dengan bobot asli per
+        soal adalah \underline{\;\;X\;\;} untuk mendapatkan nilai sempurna
+        sebesar 100. Sebagian pada spesifikasi yang berlabel \textbf{[BONUS]};
+        apabila dikerjakan dan jawaban tersebut tepat maka akan mendapat poin
+        tambahan, dan apabila dikosongkan/salah tidak mengurangi poin. Khusus
+        spesifikasi ini \textbf{diwajibkan} mencantumkan proses pengerjaan dan
+        dikerjakan \textbf{hanya jika} keseluruhan soal terselesaikan.
+
+  \item Silakan bertanya apabila terdapat soal yang ambigu, rancu, atau kurang
+        spesifik selama itu tidak menjurus kepada jawaban soal tersebut. Setiap
+        pertanyaan harus ada jawabannya dan setiap jawaban harus dapat
+        dipertanggungjawabkan. Oleh karena itu terdapat kemungkinan apabila soal
+        dianggap bonus/skor ($+$) apabila jawaban tersebut tidak dapat
+        dipertanggungjawabkan ataupun tidak tercantum dalam pilihan jawaban.
+
+  \item Isilah detail informasi berikut.\\[0.3em]
+        \textbf{Nama}\hspace{0.45cm};\enspace\underline{\hspace{8cm}}
+\end{enumerate}
+
+\vspace{0.7cm}
+\noindent\textit{Dengan menandatangani kolom di bawah ini, saya menyatakan telah membaca,
+memahami, dan menyetujui seluruh peraturan yang tercantum di atas.}
+
+\vspace{0.6cm}
+\noindent\fbox{\parbox{5cm}{\vspace{2.2cm}\centering\small Tanda Tangan Peserta\vspace{0.3cm}}}
+
+\clearpage
+
+% ===================================================================
+%  SOAL DAN PEMBAHASAN
+%  Setiap nomor: kotak soal diikuti langsung kotak pembahasan.
+%  Hapus contoh di bawah dan isi dengan soal yang sebenarnya.
+% ===================================================================
+
+\begin{soal}{1}
+[Teks soal nomor 1]
+\begin{pilB}
+  \item Opsi A \item Opsi B \item Opsi C \item Opsi D \item Opsi E
+\end{pilB}
+\end{soal}
+
+\begin{pembox}
+\jawaban{(D) Opsi D}
+\konsep Tuliskan konsep atau teorema yang digunakan.
+
+Uraian pembahasan langkah demi langkah:
+\[
+  F = ma
+\]
+Substitusi nilai yang diketahui menghasilkan jawaban (D).
+\end{pembox}
+
+% ---
+
+\begin{soal}{2}
+[Teks soal nomor 2 --- contoh dengan gambar]
+\gambar[0.48\textwidth]{images/X/nama-gambar.png}
+\begin{pil}
+  \item Opsi A \item Opsi B \item Opsi C \item Opsi D \item Opsi E
+\end{pil}
+\end{soal}
+
+\begin{pembox}
+\jawaban{(C) Opsi C}
+\konsep Tuliskan konsep yang digunakan.
+
+Uraian pembahasan:
+\[
+  v = v_0 + at
+\]
+Sehingga diperoleh jawaban (C).
+\end{pembox}
+
+% ---
+
+\begin{soal}{3}
+[Teks soal nomor 3 --- isian singkat, tanpa pilihan]
+Nilai dari $\displaystyle\lim_{x\to 0}\frac{\sin 3x}{x}$ adalah \ldots
+\end{soal}
+
+\begin{pembox}
+\jawaban{$3$}
+\konsep $\displaystyle\lim_{x\to 0}\frac{\sin ax}{x} = a$.
+
+Karena $a = 3$, diperoleh nilai limit $= 3$.
+\end{pembox}
+
+% ... tambahkan pasangan soal + pembox untuk nomor-nomor selanjutnya ...
+
+\end{document}
