@@ -1,0 +1,373 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.2cm,top=2.6cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage[some]{background}
+\usepackage{icomma}
+
+\definecolor{navy}{RGB}{18,52,86}
+\definecolor{gold}{RGB}{233,170,40}
+\definecolor{soalblue}{RGB}{40,90,150}
+\definecolor{pembgreen}{RGB}{30,120,80}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small Soal Asli SM-SSU ITB 2025}
+\chead{\small www.tiktok.com/@result\_han}
+\rhead{\small @result\_han}
+\cfoot{\small Halaman \thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\backgroundsetup{scale=6,color=black!7,opacity=0.7,angle=45,
+  position=current page.center,contents={@result\_han}}
+
+\newtcolorbox{soalbox}[1]{breakable,colback=soalblue!4,colframe=soalblue,
+  coltitle=white,fonttitle=\bfseries\sffamily,title=Nomor #1,
+  boxrule=0.8pt,arc=3pt,left=3mm,right=3mm,top=2mm,bottom=2mm}
+\newtcolorbox{pembox}{breakable,colback=pembgreen!5,colframe=pembgreen,
+  coltitle=white,fonttitle=\bfseries\sffamily,title=Pembahasan,
+  boxrule=0.8pt,arc=3pt,left=3mm,right=3mm,top=2mm,bottom=2mm}
+\newtcolorbox{catatanbox}{colback=gold!8,colframe=gold!85!black,
+  coltitle=black,fonttitle=\bfseries\sffamily,title=Catatan redaksi,
+  boxrule=0.8pt,arc=3pt,left=3mm,right=3mm,top=1.5mm,bottom=1.5mm}
+
+\newenvironment{pil}{\begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}{\end{enumerate}}
+\newcommand{\jw}[1]{\par\smallskip\noindent\textbf{Jawaban:} #1}
+\newcommand{\gambar}[2][0.5\textwidth]{\begin{center}\includegraphics[width=#1]{#2}\end{center}}
+\linespread{1.04}
+
+\begin{document}
+
+% ---------- SAMPUL ----------
+\thispagestyle{empty}
+\noindent\begin{tikzpicture}\fill[navy](0,0)rectangle(\textwidth,-1.5);
+\fill[gold](0,-1.5)rectangle(\textwidth,-1.62);
+\node[anchor=north west,text=white,font=\sffamily\bfseries\large]at(0.3,-0.45){Seleksi Mandiri ITB 2025};
+\node[anchor=north east,text=white,font=\sffamily]at(\textwidth-0.3,-0.5){@result\_han};
+\end{tikzpicture}
+\vspace{1.5cm}
+\begin{center}
+\includegraphics[width=0.28\textwidth]{images/4/4-1.png}\\[1.2em]
+{\Huge\bfseries Paket Soal dan Pembahasan}\\[0.5em]
+{\LARGE\bfseries Fisika}\\[0.4em]
+{\large SM-SSU ITB 2025}\\[1.2em]
+\fbox{\parbox{0.75\textwidth}{\centering
+Format \textbf{Soal - Pembahasan - Soal - Pembahasan}\\[0.3em]
+\small Soal cerita, pilihan ganda, dan informasi gambar diketik ulang secara rapi untuk bahan belajar.}}
+\end{center}
+\vfill
+\begin{center}
+Pengetikan ulang dan pemformatan: \textbf{@result\_han}\\
+TikTok: \textbf{www.tiktok.com/@result\_han}
+\end{center}
+\clearpage
+
+{\noindent\Large\bfseries Fisika\par}\medskip
+
+\begin{soalbox}{1}
+\gambar[0.32\textwidth]{images/4/4-n1.png}
+Sebuah roda berbentuk silinder pejal memiliki poros di titik $O$. Dua buah gaya $F_1$ dan $F_2$ bekerja pada roda dan menyebabkan roda berotasi terhadap porosnya. Kedua gaya tersebut bekerja selama 20 detik. Jika setelah itu gaya $F_2$ dihilangkan dan roda berhenti berotasi setelah 40 detik kemudian, dihitung dari roda mulai berotasi, perbandingan nilai $F_2/F_1$ adalah \ldots
+\begin{pil}\item $3:2$ \item $2:1$ \item $1:3$ \item $2:3$ \item $1:2$\end{pil}
+\end{soalbox}
+\begin{pembox}
+Torsi oleh gaya tangensial pada jari-jari $R$ adalah $\tau=FR$. Dari gambar, torsi $F_1$ dan $F_2$ berlawanan arah. Selama 20 s pertama, percepatan sudutnya $\alpha_1=\dfrac{(F_2-F_1)R}{I}$, sehingga kecepatan sudut setelah 20 s adalah $\omega=\dfrac{(F_2-F_1)R}{I}(20)$. Setelah $F_2$ dihilangkan, perlambatan sudut $\alpha_2=\dfrac{F_1 R}{I}$ selama 20 s membuat roda berhenti:
+\[ \frac{(F_2-F_1)R}{I}(20)=\frac{F_1 R}{I}(20). \]
+Maka $F_2-F_1=F_1$, sehingga $F_2=2F_1$ dan $\dfrac{F_2}{F_1}=\dfrac{2}{1}$.
+\jw{(b) $2:1$}
+\end{pembox}
+
+\begin{soalbox}{2}
+Pada ujung sebuah pegas yang digantung pada statif, digantungkan beban sebesar $M$ gram sehingga panjang pegas bertambah sebesar 11,9 cm hingga mencapai posisi setimbang. Kemudian, pegas ditarik sejauh 1,25 cm lalu dilepaskan sehingga mengalami gerak harmonik sederhana. Jika frekuensi osilasi pegas tersebut adalah 11 kali frekuensi osilasi sebuah bandul bermassa $0{,}5M$ gram, panjang tali bandul tersebut adalah \ldots\ cm.
+\begin{pil}\item 1,9 \item 20,9 \item 0,2 \item 229,9 \item 4,57\end{pil}
+\end{soalbox}
+\begin{pembox}
+Untuk pegas vertikal, $k\Delta l=Mg$, sehingga $\dfrac{k}{M}=\dfrac{g}{\Delta l}$. Frekuensi pegas $f_s=\dfrac{1}{2\pi}\sqrt{\dfrac{g}{\Delta l}}$ dan frekuensi bandul $f_b=\dfrac{1}{2\pi}\sqrt{\dfrac{g}{L}}$ (massa bandul tidak berpengaruh). Dari $f_s=11f_b$, $\sqrt{\dfrac{g}{\Delta l}}=11\sqrt{\dfrac{g}{L}}$, sehingga $L=121\,\Delta l$. Jika $\Delta l=11{,}9$ cm, $L=121(11{,}9)=1439{,}9$ cm, yang tidak ada pada pilihan.
+\begin{catatanbox}
+Dengan redaksi 11,9 cm, tidak ada opsi yang sesuai. Opsi (d) 229,9 cm muncul jika pertambahan panjang pegas yang dimaksud adalah 1,9 cm, karena $121(1{,}9)=229{,}9$ cm. Jadi kemungkinan terdapat salah ketik pada angka pertambahan panjang pegas.
+\end{catatanbox}
+\jw{Tidak ada opsi yang sesuai untuk redaksi 11,9 cm; jika dibaca 1,9 cm, jawabannya (d) 229,9 cm.}
+\end{pembox}
+
+\begin{soalbox}{3}
+Pilihlah persamaan untuk $y$ sebagai fungsi dari $x$ dan $t$ yang menggambarkan gelombang sinusoidal merambat sepanjang tali dalam arah negatif $x$ dengan karakteristik berikut: amplitudo $=10$ cm, panjang gelombang $=314$ cm, frekuensi $=2$ Hz, dan $y(x,0)=0$ pada posisi $x=10$ cm.
+\begin{pil}\item $y=0{,}1\sin(2x-4\pi t-0{,}2)$ \item $y=0{,}1\sin(2x+4\pi t)$ \item $y=0{,}1\sin(2x+4\pi t-0{,}2)$ \item $y=0{,}1\sin(2x+4\pi t+0{,}2)$ \item $y=0{,}1\sin(2x-4\pi t)$\end{pil}
+\end{soalbox}
+\begin{pembox}
+Gelombang merambat ke arah negatif $x$: $y=A\sin(kx+\omega t+\phi)$. Amplitudo $0{,}1$ m. Panjang gelombang $3{,}14$ m memberi $k=\dfrac{2\pi}{\lambda}\approx\dfrac{2\pi}{3{,}14}=2$ rad/m. Frekuensi 2 Hz memberi $\omega=2\pi f=4\pi$ rad/s. Syarat $y(x,0)=0$ pada $x=0{,}1$ m: $0=0{,}1\sin(0{,}2+\phi)$, sehingga $\phi=-0{,}2$. Jadi $y=0{,}1\sin(2x+4\pi t-0{,}2)$.
+\jw{(c)}
+\end{pembox}
+
+\begin{soalbox}{4}
+Sebuah balok $A$ bermassa $M$ digantung oleh sebuah tali dengan panjang $L$. Balok disimpangkan hingga ketinggian $H$ dan kemudian dilepaskan. Pada bagian terendah dari lintasannya, balok $A$ menumbuk benda $B$ bermassa $m$ yang mula-mula diam di permukaan mendatar licin. Apabila setelah bertumbukan keduanya saling menempel, ketinggian maksimum yang akan dicapai keduanya adalah \ldots\ $H$.
+\gambar[0.3\textwidth]{images/4/4-2.png}
+\begin{pil}\item $\left(\dfrac{M+m}{m}\right)^2$ \item $\left(\dfrac{M}{M+m}\right)^2$ \item $\left(\dfrac{m}{M+m}\right)^2$ \item $\left(\dfrac{M}{M+m}\right)$ \item $\left(\dfrac{M+m}{M}\right)^2$\end{pil}
+\end{soalbox}
+\begin{pembox}
+Kekekalan energi pada balok $A$ sebelum tumbukan: $MgH=\tfrac{1}{2}Mv^2$, sehingga $v=\sqrt{2gH}$. Tumbukan tidak lenting sama sekali (menempel), momentum horizontal kekal: $Mv=(M+m)v'$, sehingga $v'=\dfrac{M}{M+m}v$. Setelah tumbukan, energi kinetik gabungan menjadi energi potensial pada tinggi $h$: $\tfrac{1}{2}(M+m)v'^2=(M+m)gh$, sehingga $h=\dfrac{v'^2}{2g}=\left(\dfrac{M}{M+m}\right)^2\dfrac{v^2}{2g}$. Karena $\dfrac{v^2}{2g}=H$, maka $h=\left(\dfrac{M}{M+m}\right)^2 H$.
+\jw{(b) $\left(\dfrac{M}{M+m}\right)^2$}
+\end{pembox}
+
+\begin{soalbox}{5}
+Apa pengaruh angin terhadap efek Doppler pada suara yang merambat di udara?
+\begin{pil}\item Efek Doppler terjadi selama ada angin meskipun sumber dan pengamat diam.
+\item Angin dapat mengubah besar efek Doppler, tetapi tidak dapat menyebabkannya.
+\item Angin dapat menyebabkan efek Doppler, seperti halnya sumber yang bergerak.
+\item Angin tidak memengaruhi efek Doppler sama sekali.
+\item Efek Doppler hanya terjadi jika angin bertiup ke arah pengamat.\end{pil}
+\end{soalbox}
+\begin{pembox}
+Efek Doppler terjadi karena gerak relatif sumber atau pengamat terhadap medium (udara). Jika sumber dan pengamat sama-sama diam terhadap tanah dan angin seragam, angin hanya mengubah cepat rambat bunyi relatif terhadap tanah, tetapi tidak membuat sumber dan pengamat saling mendekat/menjauh terhadap medium dengan cara yang menghasilkan pergeseran frekuensi. Namun jika sumber atau pengamat bergerak terhadap udara, angin dapat mengubah kecepatan efektif relatif terhadap medium, sehingga besar efek Doppler dapat berubah. Jadi angin dapat memengaruhi besar efek Doppler yang sudah ada, tetapi angin seragam saja tidak menyebabkannya jika sumber dan pengamat diam.
+\jw{(b)}
+\end{pembox}
+
+\begin{soalbox}{6}
+Sebuah balok berada di bidang datar kasar. Balok ditarik dengan sebuah gaya sehingga bergerak. Gaya tersebut memiliki arah $0^\circ<\alpha<80^\circ$ terhadap arah perpindahan balok. Tinjau empat pernyataan: (1) Kerja oleh gaya gesek pada balok bertanda positif. (2) Peningkatan energi kinetik balok sebanding dengan perpindahan balok. (3) Jika besar sudut $\alpha$ berubah, maka hanya kerja dari gaya $F$ yang terpengaruh. (4) Kerja dari gaya gravitasi dan gaya normal bernilai sama. Pernyataan yang benar adalah \ldots
+\begin{pil}\item (3) dan (4) \item (2) dan (4) \item (1) dan (3) \item Tidak ada satupun pernyataan yang benar \item (1) dan (2)\end{pil}
+\end{soalbox}
+\begin{pembox}
+Kerja $W=Fs\cos\theta$. Gaya gesek berlawanan arah perpindahan, sehingga kerjanya bertanda negatif; pernyataan (1) salah. Teorema usaha-energi $\Delta K=W_{\text{net}}$, dan $W_{\text{net}}$ sebanding perpindahan untuk gaya konstan, sehingga (2) benar. Jika $\alpha$ berubah, komponen vertikal gaya juga berubah, mengubah gaya normal dan gaya gesek, jadi bukan hanya kerja $F$ yang terpengaruh; (3) salah. Kerja gaya gravitasi dan normal keduanya nol karena tegak lurus perpindahan horizontal; (4) benar.
+\jw{(b) (2) dan (4)}
+\end{pembox}
+
+\begin{soalbox}{7}
+Persamaan gelombang berdiri dengan ujung terikat adalah $y=0{,}2\sin(5\pi x)\cos(2\pi t)$, dengan $x$ dan $y$ dalam cm dan $t$ dalam sekon. Perhatikan empat pernyataan: (1) Periode gelombang adalah 1 sekon. (2) Amplitudo gelombang bernilai konstan, yaitu 0,2 cm. (3) Pada jarak 0,4 cm dari ujung terikat terbentuk simpul. (4) Cepat rambat gelombang adalah 0,4 m/s. Pernyataan yang benar adalah \ldots
+\begin{pil}\item (1) dan (3) \item Hanya (1) \item (2) dan (4) \item (1), (2), (3), dan (4) \item (1), (2), dan (3)\end{pil}
+\end{soalbox}
+\begin{pembox}
+Bentuk umum $y=A\sin(kx)\cos(\omega t)$ dengan $k=5\pi$ rad/cm dan $\omega=2\pi$ rad/s. Periode $T=\dfrac{2\pi}{\omega}=1$ s, jadi (1) benar. Amplitudo bergantung posisi $A_{\text{lokal}}=0{,}2|\sin(5\pi x)|$, tidak konstan, jadi (2) salah. Simpul saat $\sin(5\pi x)=0$, yaitu $x=\dfrac{n}{5}=0{,}2n$ cm; untuk $x=0{,}4$ cm ($n=2$) terbentuk simpul, jadi (3) benar. Panjang gelombang $\lambda=\dfrac{2\pi}{5\pi}=0{,}4$ cm; dengan $f=1$ Hz, $v=f\lambda=0{,}4$ cm/s $=0{,}004$ m/s, jadi (4) salah.
+\jw{(a) (1) dan (3)}
+\end{pembox}
+
+\begin{soalbox}{8}
+Balok $A$ beratnya 100 N berada di atas balok $B$ dan diikat dengan tali mendatar di titik $C$. Diketahui balok $B$ beratnya 500 N dan koefisien gesekan statik dan kinetik antara $A$ dan $B$ masing-masing 0,2 dan 0,1, sedangkan koefisien gesekan statis dan kinetik antara $B$ dengan lantai masing-masing 0,6 dan 0,5. Besar gaya mendatar $F$ minimum yang dibutuhkan untuk menggeser balok $B$ adalah \ldots\ N.
+\gambar[0.42\textwidth]{images/4/4-n8.png}
+\begin{pil}\item 380 \item 400 \item 420 \item 440 \item 460\end{pil}
+\end{soalbox}
+\begin{pembox}
+Balok $A$ diikat ke dinding, sehingga saat $B$ bergerak ke kanan, gesekan dari $A$ pada $B$ arahnya ke kiri. Normal lantai pada $B$ menahan berat total $A+B$: $N_{\text{lantai}}=100+500=600$ N. Gesek statik maksimum lantai: $f^{\max}_{s,\text{lantai}}=0{,}6(600)=360$ N. Normal antara $A$ dan $B$ sama dengan berat $A$, yaitu 100 N, sehingga gesek statik maksimum antara $A$ dan $B$: $f^{\max}_{s,AB}=0{,}2(100)=20$ N. Maka $F_{\min}=360+20=380$ N.
+\jw{(a) 380}
+\end{pembox}
+
+\begin{soalbox}{9}
+Dua buah vektor $A$ dan $B$ terletak pada bidang $xy$, seperti yang ditunjukkan pada gambar. Jika diketahui bahwa komponen resultan kedua vektor pada sumbu $x$ sama dengan nol, besar vektor $A$ adalah \ldots\ N.
+\gambar[0.4\textwidth]{images/4/4-n9.png}
+\begin{pil}\item 6 \item 8 \item 10 \item 12 \item 14\end{pil}
+\end{soalbox}
+\begin{pembox}
+Komponen resultan pada sumbu $x$ nol berarti komponen $x$ vektor $A$ sama besar dan berlawanan arah dengan komponen $x$ vektor 20 N. Komponen $x$ vektor 20 N adalah $20\cos37^\circ$ ke kiri, dan komponen $x$ vektor $A$ adalah $A\cos\alpha$ ke kanan. Maka $A\cos\alpha=20\cos37^\circ$, sehingga $A=\dfrac{20\cos37^\circ}{\cos\alpha}$, masih bergantung pada $\alpha$.
+\begin{catatanbox}
+Dengan gambar yang tersedia, soal ini kekurangan data. Diperlukan nilai $\alpha$ atau informasi tambahan, sehingga tidak ada pilihan jawaban yang dapat dipastikan secara akademik.
+\end{catatanbox}
+\jw{Tidak dapat ditentukan dari data yang diberikan.}
+\end{pembox}
+
+\begin{soalbox}{10}
+Persamaan posisi suatu partikel diberikan oleh $x(t)=6t^2-4t+2$, dengan $x$ dalam meter dan $t$ dalam sekon. Kecepatan partikel pada $t=3$ s adalah \ldots\ m/s.
+\begin{pil}\item 24 \item 32 \item 36 \item 40 \item 44\end{pil}
+\end{soalbox}
+\begin{pembox}
+Kecepatan sesaat $v(t)=\dfrac{dx}{dt}=12t-4$. Pada $t=3$ s, $v(3)=12(3)-4=36-4=32$ m/s.
+\jw{(b) 32}
+\end{pembox}
+
+\begin{soalbox}{11}
+Partikel $Z$ memiliki energi total sebesar 17,0 GeV. Jika massa diam partikel tersebut 8,0 GeV/$c^2$, energi kinetiknya adalah \ldots\ GeV.
+\begin{pil}\item 17,0 \item 25,0 \item 136,0 \item 8,0 \item 9,0\end{pil}
+\end{soalbox}
+\begin{pembox}
+Dalam relativitas khusus, energi total $E=E_0+K$. Energi diam $E_0=m_0 c^2=8{,}0$ GeV. Dengan $E=17{,}0$ GeV, energi kinetik $K=E-E_0=17{,}0-8{,}0=9{,}0$ GeV.
+\jw{(e) 9,0}
+\end{pembox}
+
+\begin{soalbox}{12}
+Dua bola identik dilemparkan lurus horizontal ke arah dinding vertikal licin dengan kelajuan awal yang sama. Bola $P$ menumbuk dinding lalu memantul kembali dengan besar kecepatan yang sama seperti semula. Bola $Q$ menumbuk dinding lalu berhenti. Jika $\Delta t_P$ dan $\Delta t_Q$ masing-masing adalah lama tumbukan bola $P$ dan bola $Q$, perbandingan impuls $I_P/I_Q$ adalah \ldots\ dan perbandingan gaya rata-rata $F_P/F_Q$ adalah \ldots
+\begin{pil}\item $I_P/I_Q=1$ dan $F_P/F_Q=1$ \item $I_P/I_Q=1$ dan $F_P/F_Q=2$ \item $I_P/I_Q=2$ dan $F_P/F_Q=1$ \item $I_P/I_Q=2$ dan $F_P/F_Q=2$ \item $I_P/I_Q=2$ dan $F_P/F_Q=\Delta t_Q/\Delta t_P$\end{pil}
+\end{soalbox}
+\begin{pembox}
+Impuls $I=|\Delta p|$. Bola $P$ membalik arah: $I_P=|-mv-mv|=2mv$. Bola $Q$ berhenti: $I_Q=|0-mv|=mv$. Jadi $\dfrac{I_P}{I_Q}=2$. Gaya rata-rata $F=\dfrac{I}{\Delta t}$, sehingga $\dfrac{F_P}{F_Q}=\dfrac{I_P/\Delta t_P}{I_Q/\Delta t_Q}=2\dfrac{\Delta t_Q}{\Delta t_P}$.
+\begin{catatanbox}
+Hasil dari konsep impuls adalah $I_P/I_Q=2$ dan $F_P/F_Q=2\Delta t_Q/\Delta t_P$. Pilihan (e) memuat perbandingan impuls yang benar, tetapi faktor 2 pada perbandingan gaya rata-rata tidak tercantum.
+\end{catatanbox}
+\jw{Tidak ada opsi yang sepenuhnya sesuai; hasilnya $I_P/I_Q=2$ dan $F_P/F_Q=2\Delta t_Q/\Delta t_P$.}
+\end{pembox}
+
+\begin{soalbox}{13}
+Sebuah bola karet bermassa 0,20 kg dijatuhkan dari ketinggian 1,8 m tepat di atas pegas vertikal. Saat kompresi maksimum, gaya pegas terbesar yang masih aman untuk bola adalah 36 N. Abaikan hambatan udara dan ambil $g=10$ m/s$^2$. Konstanta pegas minimum agar syarat tersebut terpenuhi adalah \ldots\ N/m.
+\gambar[0.26\textwidth]{images/4/4-3.png}
+\begin{pil}\item 80 \item 120 \item 160 \item 200 \item 240\end{pil}
+\end{soalbox}
+\begin{pembox}
+Pada kompresi maksimum $x$, bola turun sejauh $h+x$, sehingga $mg(h+x)=\tfrac{1}{2}kx^2$. Gaya pegas maksimum $F_{\max}=kx$, dengan batas 36 N, sehingga $x=F/k$. Substitusi: $mg\left(h+\dfrac{F}{k}\right)=\dfrac{1}{2}k\left(\dfrac{F}{k}\right)^2$. Kalikan $k$: $mghk+mgF=\tfrac{1}{2}F^2$, sehingga $k=\dfrac{\tfrac{1}{2}F^2-mgF}{mgh}$. Dengan $m=0{,}20$, $g=10$, $h=1{,}8$, $F=36$: $k=\dfrac{\tfrac{1}{2}(36)^2-(0{,}20)(10)(36)}{(0{,}20)(10)(1{,}8)}=\dfrac{648-72}{3{,}6}=160$ N/m.
+\jw{(c) 160}
+\end{pembox}
+
+\begin{soalbox}{14}
+Dua bola kecil digantung pada tali yang sama panjang. Bola $P$ bermassa 0,30 kg diangkat hingga beda tinggi 20 cm dari titik terendah lalu dilepas. Bola $Q$ bermassa 0,20 kg mula-mula diam di titik terendah. Setelah bertumbukan, keduanya menempel. Tinggi maksimum yang dicapai sistem gabungan setelah tumbukan adalah \ldots\ cm.
+\gambar[0.32\textwidth]{images/4/4-4.png}
+\begin{pil}\item 2,4 \item 4,8 \item 7,2 \item 9,6 \item 12\end{pil}
+\end{soalbox}
+\begin{pembox}
+Kecepatan $P$ di titik terendah: $m_P gh=\tfrac{1}{2}m_P v^2$, sehingga $v=\sqrt{2gh}$. Tumbukan menempel, momentum kekal: $m_P v=(m_P+m_Q)v'$, sehingga $v'=\dfrac{0{,}30}{0{,}50}v=0{,}6v$. Setelah tumbukan, $h'=\dfrac{v'^2}{2g}=(0{,}6)^2\dfrac{v^2}{2g}=0{,}36h$. Karena $h=20$ cm, $h'=0{,}36(20)=7{,}2$ cm.
+\jw{(c) 7,2}
+\end{pembox}
+
+\begin{soalbox}{15}
+Suatu planet $X$ mempunyai jari-jari 1,5 kali jari-jari Bumi dan massa jenis rata-rata 2 kali massa jenis Bumi. Jika berat suatu benda di permukaan Bumi adalah $W$, berat benda yang sama di permukaan planet $X$ adalah \ldots
+\begin{pil}\item $\tfrac{2}{3}W$ \item $W$ \item $\tfrac{3}{2}W$ \item $2W$ \item $\tfrac{2}{3}$\end{pil}
+\end{soalbox}
+\begin{pembox}
+Berat sebanding percepatan gravitasi permukaan: $W\propto g=\dfrac{GM}{R^2}$. Massa dari massa jenis: $M=\rho\left(\tfrac{4}{3}\pi R^3\right)$, sehingga $g=\tfrac{4}{3}\pi G\rho R$, yaitu sebanding dengan $\rho R$. Untuk planet $X$: $\dfrac{g_X}{g_B}=\dfrac{\rho_X R_X}{\rho_B R_B}=2(1{,}5)=3$, sehingga $W_X=3W$.
+\begin{catatanbox}
+Hasil fisika dari data yang tertulis adalah $3W$, tetapi nilai ini tidak tersedia pada pilihan jawaban.
+\end{catatanbox}
+\jw{Tidak ada opsi yang sesuai; hasilnya $3W$.}
+\end{pembox}
+
+\begin{soalbox}{16}
+Sebuah batang homogen panjang 4 m dan berat 100 N ditumpu di kedua ujungnya. Seorang anak berat 300 N berdiri 1 m dari ujung kiri, dan beban 200 N digantung 0,5 m dari ujung kanan. Besar gaya tumpu pada ujung kanan adalah \ldots\ N.
+\gambar[0.5\textwidth]{images/4/4-5.png}
+\begin{pil}\item 200 \item 250 \item 300 \item 350 \item 400\end{pil}
+\end{soalbox}
+\begin{pembox}
+Ambil momen terhadap ujung kiri $A$ agar gaya tumpu $A$ tidak masuk. Jarak gaya dari ujung kiri: anak 300 N pada 1 m, berat batang 100 N pada 2 m (tengah), beban 200 N pada 3,5 m, gaya tumpu kanan $R_B$ pada 4 m. Syarat momen nol terhadap $A$:
+\[ R_B(4)=300(1)+100(2)+200(3{,}5)=300+200+700=1200. \]
+Maka $R_B=300$ N.
+\jw{(c) 300}
+\end{pembox}
+
+\begin{soalbox}{17}
+Dua pegas identik masing-masing berkonstanta $k$ disusun seri. Saat sistem ditarik sejauh 20 cm dari posisi setimbang, usaha yang diperlukan adalah 4 J. Nilai $k$ untuk setiap pegas adalah \ldots\ N/m.
+\gambar[0.45\textwidth]{images/4/4-6.png}
+\begin{pil}\item 100 \item 200 \item 300 \item 400 \item 500\end{pil}
+\end{soalbox}
+\begin{pembox}
+Untuk dua pegas identik seri, $\dfrac{1}{k_{\text{eq}}}=\dfrac{1}{k}+\dfrac{1}{k}=\dfrac{2}{k}$, sehingga $k_{\text{eq}}=\dfrac{k}{2}$. Usaha menarik pegas sejauh $x$ sama dengan energi potensial elastik $W=\tfrac{1}{2}k_{\text{eq}}x^2$. Dengan $x=0{,}20$ m dan $W=4$ J: $4=\tfrac{1}{2}\left(\dfrac{k}{2}\right)(0{,}20)^2=\dfrac{k}{4}(0{,}04)=0{,}01k$, sehingga $k=400$ N/m.
+\jw{(d) 400}
+\end{pembox}
+
+\begin{soalbox}{18}
+Gaya interaksi pada sebuah bola selama tumbukan dinyatakan oleh grafik $F$-$t$ berbentuk segitiga, dengan puncak 160 N dan lama tumbukan 0,010 s. Sebelum tumbukan, bola bermassa 0,05 kg bergerak mendekati dinding dengan kelajuan 12 m/s. Setelah tumbukan, bola berbalik arah. Besar kelajuan bola sesudah tumbukan adalah \ldots\ m/s.
+\gambar[0.42\textwidth]{images/4/4-n18.png}
+\begin{pil}\item 2 \item 4 \item 6 \item 8 \item 10\end{pil}
+\end{soalbox}
+\begin{pembox}
+Luas daerah di bawah grafik gaya terhadap waktu adalah impuls $I=\int F\,dt$. Karena segitiga, $I=\tfrac{1}{2}(0{,}010)(160)=0{,}8$ N\,s. Impuls sama dengan perubahan momentum. Ambil arah menuju dinding positif; setelah tumbukan bola berbalik, sehingga $I=m|v_f-v_i|$. Dengan $m=0{,}05$ kg dan $v_i=12$ m/s, $\dfrac{I}{m}=\dfrac{0{,}8}{0{,}05}=16$ m/s. Karena impuls berlawanan arah gerak awal, $v_f=12-16=-4$ m/s, sehingga $|v_f|=4$ m/s.
+\jw{(b) 4}
+\end{pembox}
+
+\begin{soalbox}{19}
+Energi potensial pegas mengikuti $U=\tfrac{1}{2}kx^2$. Jika pada simpangan $x=10$ cm energi potensialnya 0,80 J, sebuah benda bermassa 0,50 kg yang berosilasi pada pegas itu memiliki periode \ldots\ s.
+\begin{pil}\item 0,20 \item 0,35 \item 0,50 \item 0,80 \item 1,00\end{pil}
+\end{soalbox}
+\begin{pembox}
+Dengan $U=\tfrac{1}{2}kx^2$, $0{,}80=\tfrac{1}{2}k(0{,}10)^2=0{,}005k$, sehingga $k=160$ N/m. Periode osilasi massa-pegas $T=2\pi\sqrt{\dfrac{m}{k}}=2\pi\sqrt{\dfrac{0{,}50}{160}}=2\pi\sqrt{0{,}003125}\approx2\pi(0{,}0559)\approx0{,}35$ s.
+\jw{(b) 0,35}
+\end{pembox}
+
+\begin{soalbox}{20}
+Dua getaran harmonik pada satu garis lurus diberikan oleh $y_1=4\sin(10t)$ cm dan $y_2=3\cos(10t)$ cm. Amplitudo resultan kedua getaran adalah \ldots\ cm.
+\begin{pil}\item 1 \item 3 \item 4 \item 5 \item 7\end{pil}
+\end{soalbox}
+\begin{pembox}
+Kedua getaran berfrekuensi sudut sama tetapi berbeda fase $90^\circ$. Resultan $y=4\sin(10t)+3\cos(10t)$. Untuk $y=A\sin(\omega t)+B\cos(\omega t)$, amplitudo resultan $R=\sqrt{A^2+B^2}=\sqrt{4^2+3^2}=\sqrt{25}=5$ cm.
+\jw{(d) 5}
+\end{pembox}
+
+\begin{soalbox}{21}
+Sebuah partikel melakukan gerak harmonik sederhana dengan amplitudo 6 cm dan frekuensi 0,5 Hz. Pada saat $t=0$ partikel tepat di titik setimbang dan bergerak ke kiri. Posisi partikel 0,5 s kemudian adalah $x=\ldots$ cm.
+\gambar[0.4\textwidth]{images/4/4-7.png}
+\begin{pil}\item $-6$ \item $-3$ \item 0 \item 3 \item 6\end{pil}
+\end{soalbox}
+\begin{pembox}
+Frekuensi 0,5 Hz berarti $T=\dfrac{1}{f}=2$ s, sehingga 0,5 s sama dengan seperempat periode. Pada $t=0$ partikel di titik setimbang dan bergerak ke kiri. Dalam GHS, setelah seperempat periode dari titik setimbang, partikel mencapai simpangan maksimum pada arah geraknya. Karena geraknya ke kiri, posisinya $x=-A=-6$ cm.
+\jw{(a) $-6$}
+\end{pembox}
+
+\begin{soalbox}{22}
+Sebuah pipa organa terbuka memiliki panjang 85 cm. Jika cepat rambat bunyi di udara 340 m/s, frekuensi nada atas kedua yang dapat dihasilkan pipa tersebut adalah \ldots\ Hz.
+\begin{pil}\item 200 \item 300 \item 400 \item 500 \item 600\end{pil}
+\end{soalbox}
+\begin{pembox}
+Pipa organa terbuka di kedua ujung memiliki frekuensi harmonik $f_n=n\dfrac{v}{2L}$, $n=1,2,3,\ldots$ Panjang $L=0{,}85$ m, sehingga frekuensi dasar $f_1=\dfrac{340}{2(0{,}85)}=\dfrac{340}{1{,}70}=200$ Hz. Nada atas kedua adalah harmonik ketiga, $f_3=3f_1=600$ Hz.
+\jw{(e) 600}
+\end{pembox}
+
+\begin{soalbox}{23}
+Gelombang pada tali dinyatakan oleh $y=0{,}04\sin(\pi x-20\pi t)$, dengan $x$ dan $y$ dalam meter serta $t$ dalam sekon. Jika massa tali 0,80 g dan panjang tali 2,0 m, tegangan tali adalah \ldots\ N.
+\begin{pil}\item 0,08 \item 0,16 \item 0,32 \item 0,64 \item 1,28\end{pil}
+\end{soalbox}
+\begin{pembox}
+Dari $y=A\sin(kx-\omega t)$, $k=\pi$ rad/m dan $\omega=20\pi$ rad/s. Cepat rambat $v=\dfrac{\omega}{k}=\dfrac{20\pi}{\pi}=20$ m/s. Massa jenis linear $\mu=\dfrac{m}{L}=\dfrac{0{,}80\times10^{-3}}{2{,}0}=4{,}0\times10^{-4}$ kg/m. Pada tali tegang, $v=\sqrt{\dfrac{T}{\mu}}$, sehingga $T=\mu v^2=(4{,}0\times10^{-4})(20)^2=(4{,}0\times10^{-4})(400)=0{,}16$ N.
+\jw{(b) 0,16}
+\end{pembox}
+
+\begin{soalbox}{24}
+Sebuah gelombang transversal merambat ke kiri dengan amplitudo 5 cm, panjang gelombang 2 m, dan frekuensi 4 Hz. Pada $x=0$ dan $t=0$, simpangan bernilai nol dan titik medium bergerak ke atas. Persamaan gelombang yang sesuai adalah $y=\ldots$
+\begin{pil}\item $0{,}05\sin(\pi x-8\pi t)$ \item $0{,}05\sin(\pi x+8\pi t)$ \item $0{,}05\cos(\pi x-8\pi t)$ \item $0{,}05\cos(\pi x+8\pi t)$ \item $0{,}05\sin(2\pi x+4\pi t)$\end{pil}
+\end{soalbox}
+\begin{pembox}
+Gelombang ke kiri: $y=A\sin(kx+\omega t+\phi)$. Amplitudo $0{,}05$ m. Panjang gelombang 2 m memberi $k=\dfrac{2\pi}{2}=\pi$ rad/m. Frekuensi 4 Hz memberi $\omega=8\pi$ rad/s. Pada $x=0$, $t=0$ simpangan nol, sehingga $\phi=0$. Kecepatan medium $\dfrac{\partial y}{\partial t}=A\omega\cos(kx+\omega t)$; pada $x=0$, $t=0$ bernilai positif (bergerak ke atas), sesuai. Jadi $y=0{,}05\sin(\pi x+8\pi t)$.
+\jw{(b)}
+\end{pembox}
+
+\begin{soalbox}{25}
+Pada sebuah tali, terbentuk gelombang stasioner dengan persamaan $y=10\sin(4\pi x)\cos(50\pi t)$, dengan $x$ dalam meter dan $y$ dalam cm. Jarak antara dua simpul yang berurutan adalah \ldots\ m.
+\begin{pil}\item 0,125 \item 0,25 \item 0,50 \item 1,00 \item 2,00\end{pil}
+\end{soalbox}
+\begin{pembox}
+Simpul terjadi saat amplitudo lokal nol, yaitu $\sin(4\pi x)=0$. Maka $4\pi x=n\pi$, sehingga $x=\dfrac{n}{4}$. Dua simpul berurutan berselisih satu nilai $n$, sehingga jaraknya $\Delta x=\dfrac{1}{4}=0{,}25$ m.
+\jw{(b) 0,25}
+\end{pembox}
+
+\begin{soalbox}{26}
+Dalam suatu foto sesaat tampak gelombang pada tali. Jarak antara puncak pertama dan puncak ketiga adalah 1,2 m. Jika selama 4 s sumber menghasilkan 8 gelombang penuh, cepat rambat gelombang adalah \ldots\ m/s.
+\gambar[0.5\textwidth]{images/4/4-8.png}
+\begin{pil}\item 0,3 \item 0,6 \item 1,2 \item 2,4 \item 4,8\end{pil}
+\end{soalbox}
+\begin{pembox}
+Jarak puncak pertama ke puncak ketiga mencakup dua panjang gelombang: $2\lambda=1{,}2$ m, sehingga $\lambda=0{,}6$ m. Sumber menghasilkan 8 gelombang penuh selama 4 s, sehingga $f=\dfrac{8}{4}=2$ Hz. Cepat rambat $v=f\lambda=2(0{,}6)=1{,}2$ m/s.
+\jw{(c) 1,2}
+\end{pembox}
+
+\begin{soalbox}{27}
+Dua gelombang pada tali dinyatakan oleh $y_1=3\cos(kx-\omega t)$ dan $y_2=3\cos(kx+\omega t)$. Pernyataan yang benar tentang superposisinya adalah \ldots\ (1) resultannya merupakan gelombang stasioner; (2) amplitudo maksimum resultan adalah 6; (3) simpul terjadi saat $kx=(2n+1)\pi/2$; (4) kedua gelombang mempunyai frekuensi yang sama.
+\begin{pil}\item (1), (2), dan (3) saja \item (1), (2), dan (4) saja \item (1), (3), dan (4) saja \item (2), (3), dan (4) saja \item (1), (2), (3), dan (4)\end{pil}
+\end{soalbox}
+\begin{pembox}
+Gunakan identitas $\cos A+\cos B=2\cos\left(\dfrac{A+B}{2}\right)\cos\left(\dfrac{A-B}{2}\right)$. Dengan $A=kx-\omega t$ dan $B=kx+\omega t$, $y=3\cos(kx-\omega t)+3\cos(kx+\omega t)=6\cos(kx)\cos(\omega t)$. Ini gelombang stasioner, jadi (1) benar. Amplitudo lokal $A_{\text{lokal}}=6|\cos(kx)|$, maksimumnya 6, jadi (2) benar. Simpul saat $\cos(kx)=0$, yaitu $kx=\dfrac{(2n+1)\pi}{2}$, jadi (3) benar. Kedua gelombang memiliki $\omega$ sama, sehingga frekuensinya sama, jadi (4) benar.
+\jw{(e) (1), (2), (3), dan (4)}
+\end{pembox}
+
+\begin{soalbox}{28}
+Dua gelombang dengan frekuensi dan panjang gelombang sama merambat berlawanan arah: $y_1=4\cos(kx-\omega t)$ dan $y_2=6\cos(kx+\omega t)$. Amplitudo maksimum dan amplitudo minimum resultan berturut-turut adalah \ldots
+\begin{pil}\item 2 dan 10 \item 4 dan 6 \item 6 dan 4 \item 10 dan 2 \item 12 dan 0\end{pil}
+\end{soalbox}
+\begin{pembox}
+Jika dua gelombang berfrekuensi dan panjang gelombang sama merambat berlawanan arah, amplitudo resultan bervariasi terhadap posisi. Amplitudo maksimum saat keduanya sefase: $A_{\max}=A_1+A_2=4+6=10$. Amplitudo minimum saat berlawanan fase: $A_{\min}=|A_2-A_1|=|6-4|=2$. Jadi berturut-turut 10 dan 2.
+\jw{(d) 10 dan 2}
+\end{pembox}
+
+\begin{soalbox}{29}
+Sebuah jendela terbuka luas 0,40 m$^2$ dilewati bunyi dengan taraf intensitas 80 dB. Jika $I_0=10^{-12}$ W/m$^2$, daya akustik yang masuk melalui jendela adalah $4\times\ldots$ W.
+\begin{pil}\item $10^{-6}$ \item $10^{-5}$ \item $10^{-4}$ \item $10^{-3}$ \item $10^{-1}$\end{pil}
+\end{soalbox}
+\begin{pembox}
+Taraf intensitas $\beta=10\log\left(\dfrac{I}{I_0}\right)$. Dengan $\beta=80$ dB, $\log\left(\dfrac{I}{10^{-12}}\right)=8$, sehingga $I=10^{-4}$ W/m$^2$. Daya akustik melewati jendela $P=IA=(10^{-4})(0{,}40)=4{,}0\times10^{-5}$ W. Karena soal menuliskan bentuk $4\times\ldots$ W, bagian yang kosong adalah $10^{-5}$.
+\jw{(b) $10^{-5}$}
+\end{pembox}
+
+\begin{soalbox}{30}
+Sebuah speaker titik memancarkan daya akustik tetap ke segala arah. Jika taraf intensitas bunyi pada jarak 2 m adalah 70 dB, taraf intensitas bunyi pada jarak 20 m adalah \ldots\ dB.
+\begin{pil}\item 30 \item 40 \item 50 \item 60 \item 80\end{pil}
+\end{soalbox}
+\begin{pembox}
+Untuk sumber titik, $I\propto\dfrac{1}{r^2}$. Jarak naik dari 2 m ke 20 m, yaitu 10 kali, sehingga intensitas turun $10^2=100$ kali. Perubahan taraf $\Delta\beta=10\log\left(\dfrac{1}{100}\right)=-20$ dB. Maka $\beta_2=70-20=50$ dB.
+\jw{(c) 50}
+\end{pembox}
+
+\end{document}

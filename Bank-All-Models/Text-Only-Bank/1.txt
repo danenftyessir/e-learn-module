@@ -1,0 +1,1395 @@
+\documentclass[11pt]{article}
+
+% ===================== PACKAGES =====================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.3cm,top=2.6cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage[some]{background}
+\usepackage{icomma} % koma desimal Indonesia
+
+% ===================== WARNA =====================
+\definecolor{bannerblue}{RGB}{13,53,94}
+\definecolor{bannerpurple}{RGB}{122,28,140}
+
+% ===================== HEADER & FOOTER =====================
+\pagestyle{fancy}
+\fancyhf{}
+\newcommand{\settipe}[1]{\lhead{\small SSU-ITB 2024 Tipe #1}}
+\settipe{A}
+\chead{\small tiktok.com/@result\_han}
+\rhead{\small @result\_han}
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% ===================== WATERMARK =====================
+\backgroundsetup{
+  scale=6,
+  color=black!7,
+  opacity=0.7,
+  angle=45,
+  position=current page.center,
+  contents={@result\_han}
+}
+
+% ===================== PERINTAH BANTU =====================
+% Halaman sampul tiap paket: \paketcover[Mata Pelajaran]{Tipe}
+\newcommand{\paketcover}[2][Fisika]{%
+  \clearpage
+  \settipe{#2}%
+  \thispagestyle{empty}%
+  \setcounter{page}{1}%
+  \noindent\begin{tikzpicture}
+    \fill[bannerblue] (0,0) rectangle (\textwidth,-3.2);
+    \fill[bannerpurple] (0,-3.2) rectangle (\textwidth,-3.45);
+    \node[anchor=north east,text=white,font=\sffamily\bfseries] at (\textwidth-0.3,-0.35) {#1};
+    \node[anchor=north west,text=white,font=\sffamily\bfseries\Large] at (0.55,-1.05) {Soal dan Pembahasan};
+    \node[anchor=north west,text=white,font=\sffamily\bfseries\LARGE] at (0.4,-2.55) {Seleksi Siswa Unggul ITB 2024};
+  \end{tikzpicture}%
+  \vspace{2.6cm}
+  \begin{center}
+    {\Large\bfseries Soal dan Pembahasan Paket #1}\\[0.5em]
+    {\large SSU-ITB 2024 Tipe #2}
+  \end{center}
+  \vspace{0.7cm}
+  \begin{center}
+    \fbox{\parbox{0.66\textwidth}{\centering
+      \textbf{Sumber soal:} Gradient\\[0.3em]
+      \textbf{Pembahasan dan pemformatan:} @result\_han\\[0.3em]
+      \textbf{TikTok:} www.tiktok.com/@result\_han}}
+  \end{center}
+  \clearpage
+}
+
+% Judul tiap nomor
+\newcommand{\nomor}[1]{%
+  \bigskip
+  {\noindent\Large\bfseries Nomor #1\par}
+  \nopagebreak\medskip
+}
+\newcommand{\soal}{\noindent\textbf{Soal.}\par\nobreak}
+\newcommand{\pembahasan}{\noindent\textbf{Pembahasan.}\ \ignorespaces}
+\newcommand{\konsep}{\textbf{Konsep/teorema:}\ \ignorespaces}
+
+% Kotak jawaban singkat
+\newcommand{\jawaban}[1]{%
+  \par\medskip\noindent
+  \fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+    \textbf{Jawaban singkat:} #1}}%
+  \par\medskip
+}
+
+% Garis pemisah antar nomor
+\newcommand{\pemisah}{\par\medskip\noindent\rule{\linewidth}{0.4pt}\par\medskip}
+
+% Gambar terpusat
+\newcommand{\gambar}[2][0.6\textwidth]{%
+  \begin{center}\includegraphics[width=#1]{#2}\end{center}}
+
+\setlist[enumerate]{leftmargin=*,topsep=2pt,itemsep=1pt}
+\linespread{1.05}
+
+% ===================== ISI =====================
+\begin{document}
+
+%==================== PAKET TIPE A ====================
+\paketcover{A}
+
+\nomor{1}
+\soal
+Sebuah partikel bergerak sepanjang sumbu $x$. Pada $t=0$, partikel mulai bergerak ke arah sumbu $x$ positif. Gerak partikel tersebut dapat dilihat dari grafik antara kecepatan terhadap waktu seperti berikut.
+\gambar[0.62\textwidth]{images/1/1-1.png}
+Perhatikan lima pernyataan berikut:
+\begin{enumerate}
+  \item Pada selang waktu 20--60 s, jarak tempuh sama dengan nol.
+  \item Pada selang waktu 20--60 s, percepatan partikel tetap.
+  \item Pada selang waktu 40--60 s, partikel bergerak dipercepat.
+  \item Antara selang waktu 10--20 s dengan 60--70 s, partikel bergerak dengan kelajuan sama.
+  \item Pada $t=70$ s partikel berada di sumbu $x$ negatif.
+\end{enumerate}
+Pernyataan yang benar mengenai kondisi gerak partikel yang sesuai dengan grafik di atas adalah \ldots
+\jawaban{Pernyataan benar: 2, 3, dan 4.}
+\pembahasan
+\konsep Pada grafik kecepatan--waktu, kemiringan grafik adalah percepatan, luas bertanda adalah perpindahan, sedangkan luas mutlak adalah jarak tempuh.
+
+Dari grafik, pada 20--60 s kecepatan berubah linear dari $v$ ke $-v$, sehingga percepatannya konstan. Jadi pernyataan 2 benar.
+
+Pada 40--60 s, kecepatan bernilai negatif dan percepatan juga negatif. Karena arah percepatan searah dengan arah gerak, kelajuan bertambah. Jadi pernyataan 3 benar.
+
+Pada 10--20 s kelajuannya $v$, dan pada 60--70 s kelajuannya juga $v$. Jadi pernyataan 4 benar.
+
+Pernyataan 1 salah karena jarak tempuh pada 20--60 s tidak nol; yang nol adalah perpindahan bersih pada interval tersebut. Pernyataan 5 salah karena luas bertanda total sampai 70 s masih positif, sehingga partikel belum berada di sumbu $x$ negatif.
+\pemisah
+
+\nomor{2}
+\soal
+Sebuah partikel bermassa 500 gram mula-mula bergerak dengan kelajuan 2,8 m/s. Partikel tersebut kemudian ditarik oleh sebuah gaya konstan $F$ sehingga dipercepat 2 m/s$^2$ selama 8 detik. Besar usaha yang dilakukan oleh gaya $F$ selama dipercepat adalah \ldots\ joule.
+\jawaban{Usaha $=86{,}4$ J.}
+\pembahasan Massa partikel $m=500$ g $=0{,}5$ kg. Kecepatan awal $u=2{,}8$ m/s, percepatan $a=2$ m/s$^2$, dan waktu $t=8$ s. Kecepatan akhir
+\[ v = u + at = 2{,}8 + 2(8) = 18{,}8 \text{ m/s}. \]
+\konsep Teorema usaha-energi menyatakan $W=\Delta K$.
+
+Maka
+\[ W = \tfrac{1}{2}m(v^2-u^2) = \tfrac{1}{2}(0{,}5)(18{,}8^2-2{,}8^2) = 86{,}4 \text{ J}. \]
+\pemisah
+
+\nomor{3}
+\soal
+Sebuah bola dilepaskan dari atas gedung dan pada saat yang bersamaan sebuah batu dilemparkan secara horizontal dari ketinggian yang sama. Jika gesekan udara diabaikan, maka pernyataan di bawah ini yang paling benar adalah \ldots
+\jawaban{Keduanya mencapai tanah pada waktu yang sama.}
+\pembahasan Bola pertama dijatuhkan, sedangkan batu kedua dilempar horizontal dari ketinggian yang sama. Jika hambatan udara diabaikan, gerak horizontal dan vertikal saling independen. Waktu jatuh hanya ditentukan oleh gerak vertikal:
+\[ h = \tfrac{1}{2}gt^2. \]
+Keduanya memiliki kecepatan vertikal awal nol dan percepatan vertikal yang sama, yaitu $g$. Oleh karena itu keduanya menyentuh tanah pada saat yang sama. Batu yang dilempar horizontal hanya memiliki tambahan gerak horizontal, sehingga lintasannya berbeda dan laju akhirnya lebih besar.
+\pemisah
+
+\nomor{4}
+\soal
+Pada sebuah eksperimen diperoleh data berupa jari-jari lintasan dan percepatan sentripetal dari sebuah partikel yang bergerak melingkar beraturan.
+\begin{center}
+\begin{tabular}{ccc}
+\hline
+No & Jari-jari (m) & Percepatan sentripetal (m/s$^2$)\\
+\hline
+1 & 0,2 & 45 \\
+2 & 0,4 & 22,5 \\
+3 & 0,6 & 15 \\
+4 & 0,8 & 11,25 \\
+5 & 1   & 9 \\
+\hline
+\end{tabular}
+\end{center}
+Kelajuan linier partikel pada eksperimen tersebut adalah \ldots\ m/s.
+\jawaban{Kelajuan linear $v=3$ m/s.}
+\pembahasan
+\konsep Pada gerak melingkar beraturan, percepatan sentripetal memenuhi $a_s=\dfrac{v^2}{r}$.
+
+Maka $v^2=a_s r$. Dari data pertama:
+\[ v^2 = (45)(0{,}2) = 9. \]
+Jadi
+\[ v = 3 \text{ m/s}. \]
+Data lain juga memberi hasil yang sama, misalnya $22{,}5(0{,}4)=9$.
+\pemisah
+
+\nomor{5}
+\soal
+Sebuah benda bergerak melingkar beraturan. Manakah pernyataan yang benar mengenai percepatan benda?
+\jawaban{Percepatan selalu menuju pusat lingkaran, besarnya tetap, tetapi arahnya berubah.}
+\pembahasan Pada gerak melingkar beraturan, kelajuan benda konstan, tetapi arah kecepatannya terus berubah. Perubahan arah kecepatan inilah yang menyebabkan adanya percepatan sentripetal:
+\[ a_s = \frac{v^2}{r} = \omega^2 r. \]
+Arah percepatan selalu menuju pusat lintasan dan tegak lurus terhadap kecepatan sesaat. Jadi percepatannya bukan nol, meskipun kelajuannya tetap.
+\pemisah
+
+\nomor{6}
+\soal
+Dua buah balok bermassa $m_1=2$ kg dan $m_2=3$ kg terikat pada tali yang melalui sebuah katrol seperti pada gambar. Massa katrol, massa tali, dan gesekan katrol diabaikan. Balok $m_1$ berada di atas meja horizontal kasar dengan koefisien gesek statik dan kinetik masing-masing adalah 0,5 dan 0,4. Apabila percepatan gravitasi adalah $g=10$ m/s$^2$, maka besar gaya tegangan tali adalah \ldots
+\gambar[0.42\textwidth]{images/1/1-2.png}
+\jawaban{Tegangan tali $T=16{,}8$ N.}
+\pembahasan Gaya berat balok tergantung adalah $m_2 g = 3(10) = 30$ N. Gaya gesek statik maksimum pada $m_1$:
+\[ f_{s,\max} = \mu_s m_1 g = 0{,}5(2)(10) = 10 \text{ N}. \]
+Karena $30>10$, sistem bergerak, sehingga gesekan yang bekerja adalah gesekan kinetik:
+\[ f_k = \mu_k m_1 g = 0{,}4(2)(10) = 8 \text{ N}. \]
+Persamaan untuk sistem:
+\[ m_2 g - f_k = (m_1+m_2)a. \]
+Maka
+\[ 30 - 8 = 5a \Rightarrow a = 4{,}4 \text{ m/s}^2. \]
+Untuk balok $m_1$:
+\[ T - f_k = m_1 a \Rightarrow T = 2(4{,}4)+8 = 16{,}8 \text{ N}. \]
+\pemisah
+
+\nomor{7}
+\soal
+Sebuah balok bermassa 2,5 kg meluncur turun sejauh 1 meter dari puncak dengan sudut kemiringan $\alpha$ $\left(\tan\alpha=\tfrac{3}{4}\right)$ terhadap horizontal. Koefisien gesek statis dan kinetis antara balok dengan permukaan lintasan masing-masing adalah 0,5 dan 0,2. Jika percepatan gravitasi adalah $g=10$ m/s$^2$, usaha yang dilakukan gaya nonkonservatif adalah \ldots\ J.
+\jawaban{Usaha gaya nonkonservatif $=-4$ J.}
+\pembahasan
+\konsep Pada bidang miring, gaya gesek kinetik adalah $f_k=\mu_k N=\mu_k mg\cos\alpha$, dan usaha gesek bernilai negatif.
+
+Diketahui $\tan\alpha=\tfrac{3}{4}$, sehingga
+\[ \sin\alpha=\frac{3}{5}, \qquad \cos\alpha=\frac{4}{5}. \]
+Gaya nonkonservatif pada gerak ini adalah gaya gesek. Untuk perpindahan $s=1$ m,
+\[ W_{\text{gesek}} = -\mu_k mg\cos\alpha\, s. \]
+Maka
+\[ W_{\text{gesek}} = -0{,}2(2{,}5)(10)\left(\frac{4}{5}\right)(1) = -4 \text{ J}. \]
+\pemisah
+
+\nomor{8}
+\soal
+Seorang anak laki-laki dengan berat 50 kg sedang berdiri di dalam lift.
+\gambar[0.32\textwidth]{images/1/1-3.png}
+Berikut beberapa pernyataan tentang gaya yang bekerja pada kaki anak tersebut:
+\begin{enumerate}[label=\alph*.]
+  \item Jika elevator dalam keadaan diam, maka besar gaya yang bekerja pada kaki anak tersebut sama dengan berat anak tersebut.
+  \item Jika elevator bergerak dipercepat ke atas, maka besar gaya yang bekerja pada kaki anak tersebut lebih besar daripada berat anak tersebut dan arah gayanya ke atas.
+  \item Jika elevator bergerak ke atas dengan kecepatan tetap, maka gaya yang bekerja pada kaki anak tersebut lebih kecil daripada berat anak tersebut dan arah gayanya ke atas.
+  \item Jika elevator bergerak dipercepat ke bawah, maka gaya yang bekerja pada kaki anak tersebut lebih kecil daripada berat anak tersebut dan arah gayanya ke bawah.
+\end{enumerate}
+Pernyataan yang benar adalah \ldots
+\begin{enumerate}[label=\Alph*.]
+  \item a, b, dan c
+  \item a, b, c, dan d
+  \item a saja
+  \item a dan b
+  \item Tidak ada pernyataan yang benar
+\end{enumerate}
+\jawaban{Pernyataan benar: a dan b.}
+\pembahasan Gaya yang dibahas adalah gaya normal lantai lift pada kaki anak. Jika lift diam, percepatan nol, sehingga
+\[ N = mg. \]
+Pernyataan a benar.
+
+Jika lift dipercepat ke atas, persamaan gaya pada anak adalah
+\[ N - mg = ma \Rightarrow N = m(g+a) > mg. \]
+Arah gaya normal ke atas, sehingga b benar.
+
+Jika lift bergerak ke atas dengan kecepatan tetap, percepatan nol, sehingga $N=mg$, bukan lebih kecil dari berat. Maka c salah.
+
+Jika lift dipercepat ke bawah, $N=m(g-a)<mg$, tetapi arah gaya normal tetap ke atas, bukan ke bawah. Maka d salah.
+\pemisah
+
+\nomor{9}
+\soal
+Dua buah partikel identik A dan B masing-masing sedang bergerak melingkar. Nilai percepatan sentripetal terhadap jari-jari lintasan dari kedua partikel dapat dilihat pada gambar berikut.
+\gambar[0.42\textwidth]{images/1/1-4.png}
+Besar selisih kelajuan sudut partikel A dan B adalah \ldots\ rad/s.
+\jawaban{$\omega_B-\omega_A=\sqrt{2}-1$ rad/s.}
+\pembahasan
+\konsep Grafik $a_s$ terhadap $r$ pada gerak melingkar beraturan memiliki kemiringan $\omega^2$, karena $a_s=\omega^2 r$.
+
+Dari grafik, garis A memiliki kemiringan sekitar 1, sehingga
+\[ \omega_A^2 = 1 \Rightarrow \omega_A = 1 \text{ rad/s}. \]
+Garis B memiliki kemiringan sekitar 2, sehingga
+\[ \omega_B^2 = 2 \Rightarrow \omega_B = \sqrt{2} \text{ rad/s}. \]
+Jadi selisih kelajuan sudutnya
+\[ \omega_B - \omega_A = \sqrt{2} - 1 \text{ rad/s}. \]
+\pemisah
+
+\nomor{10}
+\soal
+Sebuah balok yang diam bermassa 4,7 kg ditarik oleh gaya horizontal konstan $F=10$ N. Jika permukaan lantai horizontal dan kasar dengan koefisien gesek statik dan kinetik masing-masing adalah 0,6 dan 0,4, maka percepatan balok adalah \ldots\ m/s$^2$. Gunakan $g=10$ m/s$^2$.
+\gambar[0.5\textwidth]{images/1/1-5.png}
+\jawaban{Percepatan balok $0$ m/s$^2$.}
+\pembahasan Gaya tarik $F=10$ N. Gaya gesek statik maksimum adalah
+\[ f_{s,\max} = \mu_s mg = 0{,}6(4{,}7)(10) = 28{,}2 \text{ N}. \]
+Karena $F<f_{s,\max}$, gaya gesek statik masih mampu menahan balok agar tetap diam. Jadi resultan gaya nol dan percepatan balok
+\[ a = 0 \text{ m/s}^2. \]
+\pemisah
+
+\nomor{11}
+\soal
+Manakah pernyataan-pernyataan di bawah ini yang benar?
+\begin{enumerate}
+  \item Momentum sistem bisa kekal, meskipun energi mekanik sistem tidak kekal.
+  \item Agar momentum sistem kekal, maka tidak boleh ada gaya luar yang bekerja pada sistem.
+  \item Kecepatan pusat massa sistem berubah hanya ketika ada gaya luar total yang bekerja pada sistem.
+\end{enumerate}
+\jawaban{Pernyataan benar: 1 dan 3.}
+\pembahasan Pernyataan 1 benar. Pada tumbukan tidak lenting sempurna, momentum sistem dapat kekal walaupun energi mekanik tidak kekal, karena sebagian energi mekanik berubah menjadi panas, suara, atau deformasi.
+
+Pernyataan 2 perlu hati-hati. Syarat momentum sistem kekal adalah resultan gaya luar nol:
+\[ \sum \vec{F}_{\text{luar}} = 0. \]
+Jadi bukan berarti sama sekali tidak boleh ada gaya luar; gaya luar boleh ada selama resultannya nol. Karena kalimat soal terlalu kuat, pernyataan 2 tidak tepat.
+
+Pernyataan 3 benar karena gerak pusat massa memenuhi
+\[ \sum \vec{F}_{\text{luar}} = M\vec{a}_{\text{CM}}. \]
+Kecepatan pusat massa berubah hanya jika ada resultan gaya luar.
+\pemisah
+
+\nomor{12}
+\soal
+Dua buah bola identik A dan B dilepaskan dari atap sebuah gedung. Bola A dilepaskan 1 detik sebelum bola B. Jika hambatan di udara diabaikan dan percepatan gravitasi adalah 10 m/s$^2$, maka pernyataan yang benar pada saat bola B dilepaskan adalah \ldots
+\jawaban{Saat bola B dilepaskan, bola A sudah bergerak turun dengan $v_A=10$ m/s dan berada 5 m di bawah titik awal.}
+\pembahasan Bola A dilepaskan 1 detik lebih dahulu. Karena mula-mula dilepaskan dari keadaan diam dan $g=10$ m/s$^2$, maka setelah 1 s:
+\[ v_A = gt = 10(1) = 10 \text{ m/s}. \]
+Jarak yang sudah ditempuh bola A:
+\[ s_A = \tfrac{1}{2}gt^2 = \tfrac{1}{2}(10)(1)^2 = 5 \text{ m}. \]
+Pada saat itu bola B baru dilepaskan, sehingga $v_B=0$. Setelah itu keduanya memiliki percepatan yang sama, sehingga kecepatan relatifnya tetap.
+\pemisah
+
+\nomor{13}
+\soal
+Sebuah balok bermassa 2,5 kg meluncur dari puncak bidang miring dengan kemiringan $\alpha$ $\left(\tan\alpha=\tfrac{3}{4}\right)$ terhadap bidang datar dengan laju awal 1 m/s. Koefisien gesek statis dan kinetis antara balok dengan permukaan lintasan masing-masing adalah 0,50 dan 0,20. Jika percepatan gravitasi adalah $g=10$ m/s$^2$, maka kelajuan balok setelah meluncur sejauh 1 meter adalah \ldots\ m/s.
+\jawaban{$v=\sqrt{9{,}8}\approx 3{,}13$ m/s.}
+\pembahasan Komponen percepatan sepanjang bidang miring adalah
+\[ a = g\sin\alpha - \mu_k g\cos\alpha. \]
+Dengan $\tan\alpha=\tfrac{3}{4}$, diperoleh $\sin\alpha=\tfrac{3}{5}$ dan $\cos\alpha=\tfrac{4}{5}$. Maka
+\[ a = 10\left(\frac{3}{5}\right) - 0{,}20(10)\left(\frac{4}{5}\right) = 6 - 1{,}6 = 4{,}4 \text{ m/s}^2. \]
+Gunakan persamaan kinematika $v^2=u^2+2as$, dengan $u=1$ m/s dan $s=1$ m:
+\[ v^2 = 1^2 + 2(4{,}4)(1) = 9{,}8. \]
+Jadi
+\[ v = \sqrt{9{,}8} \approx 3{,}13 \text{ m/s}. \]
+\pemisah
+
+\nomor{14}
+\soal
+Dua buah balok dengan massa masing-masing $m=7{,}6$ kg dan $M=2$ kg dihubungkan oleh sebuah tali yang melalui sebuah katrol seperti pada gambar. Koefisien gesek statis dan kinetis antara dua permukaan balok adalah $\mu_s=1{,}1$ dan $\mu_k=0{,}77$, tetapi lantai licin. Besar gaya horizontal maksimum $F$ sehingga sistem masih berada dalam kesetimbangan adalah \ldots\ N.
+\gambar[0.5\textwidth]{images/1/1-6.png}
+\jawaban{$F_{\max}=167{,}2$ N.}
+\pembahasan Pada keadaan setimbang, gaya tegang tali $T$ menarik balok atas dan balok bawah ke arah kanan. Gaya $F$ menarik balok atas ke kiri. Gesekan antara dua balok menahan kecenderungan gerak relatif.
+
+Untuk balok bawah, kesetimbangan horizontal memberi
+\[ T = f. \]
+Untuk balok atas,
+\[ F = T + f. \]
+Gabungkan keduanya:
+\[ F = 2f. \]
+Agar sistem masih setimbang, gesekan maksimum adalah
+\[ f_{\max} = \mu_s N = \mu_s mg = 1{,}1(7{,}6)(10) = 83{,}6 \text{ N}. \]
+Maka
+\[ F_{\max} = 2 f_{\max} = 167{,}2 \text{ N}. \]
+\pemisah
+
+\nomor{15}
+\soal
+Dadang melakukan perjalanan dari kota A ke kota B dengan kecepatan rata-rata 58 km/jam. Kemudian ia kembali lagi dari kota B ke kota A dengan kecepatan rata-rata 75 km/jam. Jika jarak antara kota A dan kota B adalah 156 km, maka laju rata-rata seluruh perjalanan Dadang adalah \ldots\ km/jam.
+\jawaban{$\bar{v}\approx 65{,}4$ km/jam.}
+\pembahasan Untuk perjalanan pergi-pulang dengan jarak sama, laju rata-rata adalah
+\[ \bar{v} = \frac{2d}{d/v_1 + d/v_2} = \frac{2}{1/v_1 + 1/v_2}. \]
+Dengan $v_1=58$ km/jam dan $v_2=75$ km/jam,
+\[ \bar{v} = \frac{2}{\frac{1}{58}+\frac{1}{75}} = \frac{8700}{133} \approx 65{,}4 \text{ km/jam}. \]
+\pemisah
+
+\nomor{16}
+\soal
+Gambar merupakan sebuah grafik yang menyatakan simpangan gelombang berjalan pada $t=0$ yang merambat ke kanan. Jika frekuensi gelombang adalah 5 Hz, maka persamaan simpangan gelombang tersebut adalah dalam satuan SI.
+\gambar[0.55\textwidth]{images/1/1-7.png}
+\jawaban{$y(x,t)=2\cos(\pi x - 10\pi t)$ dalam SI.}
+\pembahasan Dari grafik, amplitudo gelombang $A=2$ m. Puncak berulang dari $x=0$ ke $x=2$, sehingga panjang gelombang
+\[ \lambda = 2 \text{ m}. \]
+Bilangan gelombang
+\[ k = \frac{2\pi}{\lambda} = \pi \text{ rad/m}. \]
+Frekuensi $f=5$ Hz, sehingga
+\[ \omega = 2\pi f = 10\pi \text{ rad/s}. \]
+Karena gelombang merambat ke kanan, bentuknya $y=A\cos(kx-\omega t)$. Jadi
+\[ y(x,t) = 2\cos(\pi x - 10\pi t). \]
+\pemisah
+
+\nomor{17}
+\soal
+Sebuah sumber bunyi dengan frekuensi $f_s$ diletakkan di titik $x=0$. Sumber bunyi tersebut kemudian berosilasi harmonik sepanjang sumbu $x$ dengan amplitudo osilasi $A_0$ dan frekuensi osilasi $f_0$. Sebuah detektor bunyi diletakkan pada posisi $x=1{,}5A_0$ \ldots
+\jawaban{Informasi pada soal belum cukup untuk jawaban numerik tunggal.}
+\pembahasan Dari teks yang tersedia, sumber bunyi berfrekuensi $f_s$ berosilasi harmonik sepanjang sumbu $x$ dengan amplitudo $A_0$ dan frekuensi osilasi $f_0$, sedangkan detektor berada pada $x=1{,}5A_0$. Untuk menentukan frekuensi teramati secara numerik, diperlukan informasi tambahan seperti cepat rambat bunyi dan apakah yang diminta frekuensi maksimum, minimum, rata-rata, atau ekspresi fungsi waktu.
+
+Konsep yang digunakan adalah efek Doppler untuk sumber bergerak:
+\[ f' = f_s\,\frac{v}{v \mp v_s}, \]
+dengan $v_s$ adalah komponen kecepatan sumber sepanjang garis sumber-detektor. Karena sumber berosilasi harmonik, kecepatan maksimumnya
+\[ v_{s,\max} = 2\pi f_0 A_0. \]
+Tanpa pertanyaan akhir yang lengkap, hasil numeriknya tidak dapat ditentukan.
+\pemisah
+
+\nomor{18}
+\soal
+Gelombang bunyi dengan frekuensi 200 Hz dimasukkan ke bagian atas tabung vertikal berisi air dengan level ketinggian air yang dapat diatur. Jika gelombang berdiri dihasilkan pada dua ketinggian air berturut-turut 30 cm dan 90 cm, berapakah laju gelombang bunyi pada bagian tabung yang berisi udara?
+\jawaban{Laju bunyi $v=240$ m/s.}
+\pembahasan Tabung berisi air berperilaku sebagai tabung terbuka-tertutup: ujung atas terbuka dan permukaan air menjadi ujung tertutup. Dua resonansi berurutan memiliki selisih panjang kolom udara
+\[ \Delta L = \frac{\lambda}{2}. \]
+Perubahan tinggi air berturut-turut 30 cm dan 90 cm memberi selisih panjang kolom udara sebesar
+\[ \Delta L = 90 \text{ cm} - 30 \text{ cm} = 60 \text{ cm} = 0{,}60 \text{ m}. \]
+Maka
+\[ \frac{\lambda}{2} = 0{,}60 \Rightarrow \lambda = 1{,}20 \text{ m}. \]
+Dengan frekuensi $f=200$ Hz, laju bunyi
+\[ v = f\lambda = 200(1{,}20) = 240 \text{ m/s}. \]
+\pemisah
+
+\nomor{19}
+\soal
+Sebuah gelombang berjalan merambat sepanjang tali dengan persamaan simpangannya adalah
+\[ y(x,t) = (2\,\text{m})\sin\!\left(2\pi x - 3\pi t - \frac{\pi}{3}\right) \]
+Dengan $t$ dalam sekon dan $x$ dalam meter. Pernyataan yang benar mengenai gelombang berjalan ini adalah \ldots
+\jawaban{Gelombang merambat ke arah $+x$, dengan $A=2$ m, $\lambda=1$ m, $f=1{,}5$ Hz, dan $v=1{,}5$ m/s.}
+\pembahasan Persamaan gelombang
+\[ y(x,t) = 2\sin\!\left(2\pi x - 3\pi t - \frac{\pi}{3}\right). \]
+Bentuk umum gelombang berjalan ke kanan adalah
+\[ y = A\sin(kx - \omega t + \phi). \]
+Jadi gelombang merambat ke arah $+x$. Amplitudonya $A=2$ m, bilangan gelombang $k=2\pi$, dan frekuensi sudut $\omega=3\pi$. Maka
+\[ \lambda = \frac{2\pi}{k} = 1 \text{ m}, \qquad f = \frac{\omega}{2\pi} = \frac{3}{2} = 1{,}5 \text{ Hz}. \]
+Laju rambatnya
+\[ v = \frac{\omega}{k} = \frac{3\pi}{2\pi} = 1{,}5 \text{ m/s}. \]
+\pemisah
+
+\nomor{20}
+\soal
+Persamaan simpangan sebuah gelombang berjalan transversal pada tali adalah
+\[ y(x,t) = 0{,}28\sin\!\left(\frac{\pi x}{5} + 8\pi t\right) \]
+Dengan $t$ dalam sekon dan $x$ dalam meter. Laju transversal pada tali di posisi $x=1{,}5$ m saat $t=0{,}5$ s adalah \ldots\ m/s.
+\jawaban{Laju transversal $\approx 4{,}14$ m/s.}
+\pembahasan Kecepatan transversal diperoleh dari turunan simpangan terhadap waktu:
+\[ v_y = \frac{\partial y}{\partial t}. \]
+Diketahui
+\[ y = 0{,}28\sin\!\left(\frac{\pi x}{5} + 8\pi t\right). \]
+Maka
+\[ v_y = 0{,}28(8\pi)\cos\!\left(\frac{\pi x}{5} + 8\pi t\right). \]
+Untuk $x=1{,}5$ dan $t=0{,}5$:
+\[ \frac{\pi x}{5} + 8\pi t = \frac{1{,}5\pi}{5} + 4\pi = 0{,}3\pi + 4\pi. \]
+Karena $\cos(0{,}3\pi + 4\pi) = \cos(0{,}3\pi)$, diperoleh
+\[ v_y = 0{,}28(8\pi)\cos(0{,}3\pi) \approx 4{,}14 \text{ m/s}. \]
+\pemisah
+
+%==================== PAKET TIPE B ====================
+\paketcover{B}
+
+\nomor{1}
+\soal
+Seorang pelempar akan melemparkan sebuah bola dengan laju 30 m/s dan sudut elevasi $\alpha$ $\left(\tan\alpha=\tfrac{3}{4}\right)$. Seorang penangkap berada pada jarak 60 m dari pelempar. Jika percepatan gravitasi $g=10$ m/s$^2$ dan penangkap dapat berlari dengan kecepatan konstan, maka agar penangkap dapat menangkap bola, dia harus berlari dengan laju minimum sebesar \ldots
+\jawaban{Laju minimum penangkap $=\dfrac{22}{3}\approx 7{,}33$ m/s.}
+\pembahasan Diketahui $v_0=30$ m/s dan $\tan\alpha=\tfrac{3}{4}$, sehingga
+\[ \sin\alpha=\frac{3}{5}, \qquad \cos\alpha=\frac{4}{5}. \]
+Komponen kecepatan awal:
+\[ v_x = 30\left(\frac{4}{5}\right) = 24 \text{ m/s}, \qquad v_y = 30\left(\frac{3}{5}\right) = 18 \text{ m/s}. \]
+Waktu bola kembali ke ketinggian semula:
+\[ t = \frac{2v_y}{g} = \frac{2(18)}{10} = 3{,}6 \text{ s}. \]
+Jangkauan bola:
+\[ R = v_x t = 24(3{,}6) = 86{,}4 \text{ m}. \]
+Penangkap mula-mula berada pada $x=60$ m, sehingga harus berlari sejauh
+\[ 86{,}4 - 60 = 26{,}4 \text{ m}. \]
+Maka laju minimumnya
+\[ v = \frac{26{,}4}{3{,}6} = \frac{22}{3} \approx 7{,}33 \text{ m/s}. \]
+\pemisah
+
+\nomor{2}
+\soal
+Dua buah balok A dan B dengan massa masing-masing 2,7 kg dan 5,9 kg. Balok A terhubung pada sebuah tali dengan panjang 8,2 m yang terikat pada sebuah pasak di salah satu ujungnya. Balok B terhubung dengan balok A melalui sebuah tali dengan panjang 5,1 m. Sistem berada pada sebuah meja horizontal licin, dan bergerak melingkar dengan laju sudut 15 rad/s. Jika gaya tegangan tali A adalah $T_a$ dan gaya tegangan tali B adalah $T_b$, maka nilai perbandingan $T_a/T_b$ adalah \ldots
+\gambar[0.5\textwidth]{images/1/1-8.png}
+\jawaban{$T_a/T_b \approx 1{,}28$.}
+\pembahasan Balok A berada pada radius
+\[ r_A = 8{,}2 \text{ m}, \]
+sedangkan balok B berada pada radius
+\[ r_B = 8{,}2 + 5{,}1 = 13{,}3 \text{ m}. \]
+Tegangan tali B menyediakan gaya sentripetal untuk balok B:
+\[ T_b = m_B \omega^2 r_B. \]
+Untuk balok A, gaya radial resultannya adalah
+\[ T_a - T_b = m_A \omega^2 r_A. \]
+Maka
+\[ T_a = T_b + m_A \omega^2 r_A. \]
+Perbandingan:
+\[ \frac{T_a}{T_b} = \frac{m_B r_B + m_A r_A}{m_B r_B} = \frac{5{,}9(13{,}3) + 2{,}7(8{,}2)}{5{,}9(13{,}3)} \approx 1{,}28. \]
+\pemisah
+
+\nomor{3}
+\soal
+Sebuah partikel dengan massa 4 gram bertumbukan dengan sebuah partikel lain dengan massa 2 gram yang sedang dalam keadaan diam. Jika kedua partikel tersebut menempel satu sama lain setelah tumbukan, maka perbandingan antara energi yang hilang akibat tumbukan dengan energi kinetik awal adalah \ldots
+\jawaban{Perbandingan energi hilang terhadap energi kinetik awal adalah $\tfrac{1}{3}$.}
+\pembahasan Tumbukan menempel adalah tumbukan tidak lenting sama sekali. Misalkan massa pertama $m_1=4$ gram bergerak dengan kecepatan awal $u$, dan massa kedua $m_2=2$ gram diam.
+
+Dari kekekalan momentum:
+\[ m_1 u = (m_1+m_2)v \Rightarrow v = \frac{m_1}{m_1+m_2}u. \]
+Energi kinetik akhir terhadap energi kinetik awal:
+\[ \frac{K_f}{K_i} = \frac{\tfrac{1}{2}(m_1+m_2)v^2}{\tfrac{1}{2}m_1 u^2} = \frac{m_1}{m_1+m_2} = \frac{4}{6} = \frac{2}{3}. \]
+Jadi fraksi energi yang hilang
+\[ 1 - \frac{2}{3} = \frac{1}{3}. \]
+\pemisah
+
+\nomor{4}
+\soal
+Sebuah partikel dapat bergerak sepanjang sumbu $x$. Diketahui pada saat awal partikel berada dalam keadaan diam di $x=0$ m. Partikel bergerak dengan percepatan seperti pada grafik berikut:
+\gambar[0.55\textwidth]{images/1/1-9.png}
+Perhatikan lima pernyataan di bawah ini:
+\begin{enumerate}
+  \item Pada selang waktu 5--10 s partikel tidak bergerak.
+  \item Pada selang waktu 10--15 s partikel selalu bergerak diperlambat.
+  \item Pada selang waktu 0--5 s partikel bergerak ke sumbu $x$ positif.
+  \item Pada saat $t=5$ s dan $t=10$ s partikel memiliki kecepatan yang sama.
+  \item Pada $t=12$ s partikel berada di sumbu $x$ negatif.
+\end{enumerate}
+Pernyataan yang benar mengenai kondisi gerak partikel yang sesuai dengan grafik di atas adalah \ldots
+\jawaban{Pernyataan benar: 3 dan 4.}
+\pembahasan Dari grafik, percepatan adalah 2 m/s$^2$ pada 0--5 s, nol pada 5--10 s, dan $-3$ m/s$^2$ pada 10--15 s. Kecepatan awal nol.
+
+Pada 0--5 s, kecepatan bertambah positif, sehingga partikel bergerak ke arah $+x$. Pernyataan 3 benar.
+
+Kecepatan pada $t=5$ s:
+\[ v(5) = 0 + 2(5) = 10 \text{ m/s}. \]
+Pada 5--10 s percepatan nol, sehingga kecepatannya tetap 10 m/s. Maka $v(10)=10$ m/s. Pernyataan 4 benar.
+
+Pernyataan 1 salah karena pada 5--10 s partikel tetap bergerak dengan kecepatan 10 m/s. Pernyataan 2 salah karena pada 10--15 s partikel awalnya melambat sampai berhenti, lalu bergerak balik dengan kelajuan bertambah. Pernyataan 5 salah karena posisi pada $t=12$ s masih positif.
+\pemisah
+
+\nomor{5}
+\soal
+Sebuah partikel bergerak dari pusat koordinat menuju arah sumbu $x$ positif dengan besar kecepatan 4 m/s selama 50 sekon. Kemudian tanpa mengubah arah, besar kecepatannya 5 m/s untuk 20 sekon berikutnya. Partikel tersebut kemudian berbalik arah selama 30 sekon bergerak dengan kecepatan 3 m/s. Besar kecepatan rata-rata partikel dalam 100 sekon tersebut adalah \ldots\ m/s.
+\jawaban{Besar kecepatan rata-rata $=2{,}1$ m/s. Jika yang dimaksud kelajuan rata-rata, nilainya 3,9 m/s.}
+\pembahasan Perpindahan total:
+\[ \Delta x = 4(50) + 5(20) - 3(30) = 200 + 100 - 90 = 210 \text{ m}. \]
+Waktu total 100 s. Maka besar kecepatan rata-rata adalah
+\[ |\bar{v}| = \frac{|\Delta x|}{\Delta t} = \frac{210}{100} = 2{,}1 \text{ m/s}. \]
+Jika yang dimaksud adalah kelajuan rata-rata, maka jarak totalnya
+\[ s = 4(50) + 5(20) + 3(30) = 390 \text{ m}, \]
+sehingga kelajuan rata-rata $=3{,}9$ m/s.
+\pemisah
+
+\nomor{6}
+\soal
+Balok bermassa 5 kg ditekan pada dinding dengan koefisien gesek 0,3 dengan gaya tertentu seperti ditunjukkan pada gambar. Gaya minimum yang diperlukan untuk menghentikan balok agar tidak terjatuh adalah \ldots
+\gambar[0.5\textwidth]{images/1/1-10.png}
+\jawaban{Gaya minimum $F_{\min}\approx 166{,}7$ N.}
+\pembahasan Balok ditekan horizontal ke dinding, sehingga gaya normal dinding pada balok adalah $N=F$. Agar balok tidak jatuh, gaya gesek maksimum harus mampu menahan berat balok:
+\[ f_{s,\max} = \mu N = \mu F \geq mg. \]
+Maka
+\[ F \geq \frac{mg}{\mu} = \frac{5(10)}{0{,}3} = 166{,}7 \text{ N}. \]
+\pemisah
+
+\nomor{7}
+\soal
+Suatu bola dilemparkan secara tegak lurus dari ketinggian 50 meter di atas permukaan tanah dan kemudian memantul sehingga ketinggiannya menjadi $\tfrac{1}{2}$ ketinggian sebelumnya. Jika bola tersebut bergerak secara tegak lurus, maka panjang lintasan yang ditempuh bola tersebut akan lebih dari 137 meter tepat setelah pantulan ke \ldots
+\jawaban{Pantulan ke-4.}
+\pembahasan Lintasan awal sebelum pantulan pertama adalah 50 m. Setelah pantulan, tinggi maksimum selalu setengah tinggi sebelumnya.
+
+Total lintasan tepat saat mencapai pantulan ke-1:
+\[ S_1 = 50. \]
+Tepat saat pantulan ke-2:
+\[ S_2 = 50 + 2(25) = 100. \]
+Tepat saat pantulan ke-3:
+\[ S_3 = 50 + 2(25 + 12{,}5) = 125. \]
+Tepat saat pantulan ke-4:
+\[ S_4 = 50 + 2(25 + 12{,}5 + 6{,}25) = 137{,}5. \]
+Karena $137{,}5 > 137$, lintasan pertama kali lebih dari 137 m tepat setelah pantulan ke-4.
+\pemisah
+
+\nomor{8}
+\soal
+Sebuah balok kecil bermassa 102 gram dilepaskan dari titik A. Balok kemudian bergerak melewati lintasan lengkung AB yang berbentuk seperempat lingkaran dengan jari-jari $R$. Setelah balok itu bergerak di lintasan datar BC dengan koefisien gesek kinetis 0,45 dan tepat berhenti di C. Rasio antara jari-jari kelengkungan lintasan AB dengan jarak lintasan datar BC adalah \ldots
+\gambar[0.55\textwidth]{images/1/1-11.png}
+\jawaban{$R/BC = 0{,}45 = \dfrac{9}{20}$.}
+\pembahasan Pada lintasan lengkung AB, balok turun setinggi $R$. Energi potensial yang hilang adalah
+\[ \Delta E_p = mgR. \]
+Di lintasan datar BC, energi ini habis oleh kerja gesek sampai balok berhenti:
+\[ W_f = \mu_k mg(BC). \]
+Dengan kekekalan energi mekanik yang disertai kerja gesek:
+\[ mgR = \mu_k mg(BC). \]
+Maka
+\[ \frac{R}{BC} = \mu_k = 0{,}45. \]
+\pemisah
+
+\nomor{9}
+\soal
+Pada $t=0$ s, ambulans bergerak dengan kecepatan konstan $v_s$ m/s menuju suatu perempatan yang berjarak 1 km di depannya. Ambulans tersebut membunyikan sirine dengan frekuensi 1000 Hz. Tepat saat 1 menit, frekuensi sirine yang dideteksi oleh suatu sensor yang dipasang di perempatan tersebut adalah \ldots\ Hz. Cepat rambat bunyi di udara sebesar 340 m/s.
+\jawaban{Frekuensi terdeteksi $\approx 1051{,}5$ Hz.}
+\pembahasan Dalam 1 menit ambulans menempuh 1 km, sehingga kecepatannya
+\[ v_s = \frac{1000}{60} = 16{,}67 \text{ m/s}. \]
+Untuk sumber bunyi mendekati detektor diam, efek Doppler:
+\[ f' = f\,\frac{v}{v - v_s}. \]
+Dengan $f=1000$ Hz dan $v=340$ m/s:
+\[ f' = 1000\,\frac{340}{340 - 16{,}67} \approx 1051{,}5 \text{ Hz}. \]
+\pemisah
+
+\nomor{10}
+\soal
+Sebuah balok dengan massa $m_1$ yang meluncur di atas meja licin yang terhubung oleh tali tak bermassa melalui katrol tak bermassa dan bebas gesekan ke bola yang tergantung dengan massa $m_2$ seperti yang ditunjukkan pada gambar di atas. Besar dari gaya tegangan dalam tali haruslah \ldots
+\gambar[0.5\textwidth]{images/1/1-12.png}
+\jawaban{$T = \dfrac{m_1 m_2 g}{m_1 + m_2}$.}
+\pembahasan Untuk balok $m_1$ di meja licin:
+\[ T = m_1 a. \]
+Untuk massa tergantung $m_2$:
+\[ m_2 g - T = m_2 a. \]
+Substitusi $T=m_1 a$ ke persamaan kedua:
+\[ m_2 g = (m_1+m_2)a \Rightarrow a = \frac{m_2 g}{m_1 + m_2}. \]
+Maka tegangan tali
+\[ T = m_1 a = \frac{m_1 m_2 g}{m_1 + m_2}. \]
+\pemisah
+
+\nomor{11}
+\soal
+Sebuah pesawat pengebom terbang dalam arah horizontal dengan laju konstan $v_p=60$ m/s, pada ketinggian $h=128$ m. Ketika tepat di atas titik O sebuah bom dilepaskan dan mengenai truk T yang sedang bergerak di sebuah jalan mendatar dengan kecepatan konstan. Pada saat bom dilepaskan truk berada pada jarak $x_0=100$ m dari O. Jika tinggi truk adalah 3 m maka laju truk adalah \ldots\ m/s.
+\gambar[0.55\textwidth]{images/1/1-13.png}
+\jawaban{Laju truk $=40$ m/s.}
+\pembahasan Bom mengenai bagian atas truk, sehingga jarak jatuh vertikalnya
+\[ 128 - 3 = 125 \text{ m}. \]
+Waktu jatuh:
+\[ 125 = \frac{1}{2}gt^2 = 5t^2 \Rightarrow t = 5 \text{ s}. \]
+Selama 5 s, bom bergerak horizontal sejauh
+\[ x_b = v_p t = 60(5) = 300 \text{ m}. \]
+Truk mula-mula berada pada $x_0=100$ m. Agar bertemu bom:
+\[ 100 + v_T(5) = 300. \]
+Maka
+\[ v_T = 40 \text{ m/s}. \]
+\pemisah
+
+\nomor{12}
+\soal
+Sebuah balok dengan massa $m=2$ kg diberi gaya konstan sebesar $F=50$ N dengan arah seperti pada gambar $\left(\tan\theta=\tfrac{3}{4}\right)$. Jika diketahui koefisien gesek statis dan kinetis antara balok dan meja masing-masing adalah 0,4 dan 0,3, dan percepatan gravitasi adalah $g=10$ m/s$^2$, besar percepatan balok adalah \ldots\ m/s$^2$.
+\gambar[0.55\textwidth]{images/1/1-14.png}
+\jawaban{Percepatan balok $=12{,}5$ m/s$^2$.}
+\pembahasan Karena $\tan\theta=\tfrac{3}{4}$, maka
+\[ \sin\theta=\frac{3}{5}, \qquad \cos\theta=\frac{4}{5}. \]
+Gaya $F=50$ N memiliki komponen horizontal
+\[ F_x = 50\left(\frac{4}{5}\right) = 40 \text{ N}, \]
+dan komponen vertikal ke bawah
+\[ F_y = 50\left(\frac{3}{5}\right) = 30 \text{ N}. \]
+Gaya normal:
+\[ N = mg + F_y = 2(10) + 30 = 50 \text{ N}. \]
+Gaya gesek statik maksimum:
+\[ f_{s,\max} = 0{,}4(50) = 20 \text{ N}. \]
+Karena $F_x = 40$ N $> 20$ N, balok bergerak, sehingga gesekan kinetik
+\[ f_k = 0{,}3(50) = 15 \text{ N}. \]
+Resultan horizontal:
+\[ F_{\text{net}} = 40 - 15 = 25 \text{ N}. \]
+Maka
+\[ a = \frac{25}{2} = 12{,}5 \text{ m/s}^2. \]
+\pemisah
+
+\nomor{13}
+\soal
+Mobil pemadam kebakaran bergerak menuju suatu perempatan jalan dengan kelajuan 72 km/jam sambil menyalakan sirine. Sensor bunyi yang ditempatkan di perempatan mendeteksi perubahan frekuensi sirine tepat sebelum dan setelah mobil pemadam melewatinya sebesar 87 Hz. Diketahui cepat rambat bunyi di udara saat itu 340 m/s. Frekuensi sirine mobil pemadam kebakaran tersebut adalah \ldots\ Hz.
+\jawaban{Frekuensi sirine $\approx 736{,}9$ Hz.}
+\pembahasan Kecepatan mobil pemadam
+\[ v_s = 72 \text{ km/jam} = 20 \text{ m/s}. \]
+Frekuensi saat mendekat:
+\[ f_1 = f\,\frac{v}{v - v_s}. \]
+Frekuensi saat menjauh:
+\[ f_2 = f\,\frac{v}{v + v_s}. \]
+Selisihnya 87 Hz:
+\[ 87 = fv\left(\frac{1}{v-v_s} - \frac{1}{v+v_s}\right) = fv\,\frac{2v_s}{v^2 - v_s^2}. \]
+Maka
+\[ f = 87\,\frac{v^2 - v_s^2}{2vv_s} = 87\,\frac{340^2 - 20^2}{2(340)(20)} \approx 736{,}9 \text{ Hz}. \]
+\pemisah
+
+\nomor{14}
+\soal
+Jika sebuah benda bermassa 6 kg memiliki energi kinetik sebesar 200 J sesaat sebelum menumbuk tanah, maka benda tersebut dijatuhkan dari ketinggian \ldots\ meter.
+\jawaban{$h = \dfrac{10}{3} \approx 3{,}33$ m.}
+\pembahasan Jika benda dijatuhkan dari keadaan diam dan hambatan udara diabaikan, energi potensial berubah menjadi energi kinetik:
+\[ mgh = K. \]
+Maka
+\[ h = \frac{K}{mg} = \frac{200}{6(10)} = \frac{10}{3} \text{ m}. \]
+\pemisah
+
+\nomor{15}
+\soal
+Perhatikan sistem pada gambar berikut. Massa benda A adalah 10 kg dan massa benda B adalah 5 kg. Jika benda A ditarik ke atas sehingga sistem bergerak ke atas dengan percepatan konstan sebesar 2 m/s$^2$ dan besar percepatan gravitasi $g=10$ m/s$^2$, maka berapa besar tegangan tali $T_1$ adalah \ldots
+\gambar[0.32\textwidth]{images/1/1-15.png}
+\jawaban{$T_1 = 180$ N.}
+\pembahasan Anggap sistem A dan B sebagai satu kesatuan. Massa total
+\[ M = 10 + 5 = 15 \text{ kg}. \]
+Sistem bergerak ke atas dengan percepatan $a=2$ m/s$^2$. Gaya luar vertikal pada sistem adalah $T_1$ ke atas dan berat total $Mg$ ke bawah. Maka
+\[ T_1 - Mg = Ma. \]
+Jadi
+\[ T_1 = M(g+a) = 15(10+2) = 180 \text{ N}. \]
+\pemisah
+
+\nomor{16}
+\soal
+Sebuah gelombang transversal pada tali memiliki persamaan simpangan sebagai berikut:
+\[ y(t,x) = (0{,}23\,\text{m})\sin\!\left(\frac{\pi x}{5} - 8\pi t\right) \]
+Dengan $t$ dalam sekon dan $x$ dalam meter. Laju getaran transversal tali di posisi $x=1{,}5$ m saat $t=0{,}5$ s adalah \ldots\ m/s.
+\jawaban{Laju transversal $\approx 3{,}40$ m/s.}
+\pembahasan Diketahui
+\[ y(t,x) = 0{,}23\sin\!\left(\frac{\pi x}{5} - 8\pi t\right). \]
+Kecepatan transversal:
+\[ v_y = \frac{\partial y}{\partial t} = -0{,}23(8\pi)\cos\!\left(\frac{\pi x}{5} - 8\pi t\right). \]
+Untuk $x=1{,}5$ dan $t=0{,}5$:
+\[ \frac{\pi x}{5} - 8\pi t = 0{,}3\pi - 4\pi = -3{,}7\pi. \]
+Karena $\cos(-3{,}7\pi) = \cos(0{,}3\pi)$, maka besar kecepatannya
+\[ |v_y| = 0{,}23(8\pi)\cos(0{,}3\pi) \approx 3{,}40 \text{ m/s}. \]
+\pemisah
+
+\nomor{17}
+\soal
+Gelombang stasioner yang dihasilkan pada seutas tali dinyatakan oleh persamaan
+\[ y = 5\cos\!\left(\frac{\pi x}{3}\right)\sin(40\pi t) \]
+di mana $x$ dan $y$ dalam cm dan $t$ dalam detik. Jarak antara dua simpul beruntun adalah \ldots\ cm.
+\jawaban{Jarak dua simpul beruntun $=3$ cm.}
+\pembahasan Gelombang stasioner:
+\[ y = 5\cos\!\left(\frac{\pi x}{3}\right)\sin(40\pi t). \]
+Simpul terjadi saat amplitudo ruangnya nol:
+\[ \cos\!\left(\frac{\pi x}{3}\right) = 0. \]
+Maka
+\[ \frac{\pi x}{3} = \frac{(2n+1)\pi}{2} \Rightarrow x = \frac{3(2n+1)}{2}. \]
+Jarak dua nilai $x$ berurutan adalah
+\[ \Delta x = 3 \text{ cm}. \]
+\pemisah
+
+\nomor{18}
+\soal
+Gambar merupakan sebuah grafik yang menyatakan simpangan gelombang berjalan pada $t=0$ yang merambat ke kanan. Jika frekuensi gelombang adalah 5 Hz maka persamaan simpangan gelombang tersebut adalah \ldots
+\gambar[0.55\textwidth]{images/1/1-16.png}
+\jawaban{$y(x,t)=2\cos(\pi x - 10\pi t)$.}
+\pembahasan Dari grafik, amplitudo $A=2$ m, dan jarak antara dua puncak berturut-turut adalah $\lambda=2$ m. Maka
+\[ k = \frac{2\pi}{\lambda} = \pi. \]
+Frekuensi $f=5$ Hz, sehingga
+\[ \omega = 2\pi f = 10\pi. \]
+Karena gelombang merambat ke kanan, bentuknya
+\[ y = A\cos(kx - \omega t). \]
+Jadi
+\[ y(x,t) = 2\cos(\pi x - 10\pi t). \]
+\pemisah
+
+\nomor{19}
+\soal
+Gelombang stasioner yang dihasilkan pada seutas tali dinyatakan oleh persamaan
+\[ y = 5\cos\!\left(\frac{\pi x}{3}\right)\sin(40\pi t) \]
+di mana $x$ dan $y$ dalam cm dan $t$ dalam detik. Jarak antara dua simpul beruntun adalah \ldots\ cm.
+\jawaban{Jarak dua simpul beruntun $=3$ cm.}
+\pembahasan Soal ini sama dengan Nomor 17. Simpul terjadi ketika
+\[ \cos\!\left(\frac{\pi x}{3}\right) = 0. \]
+Solusinya
+\[ x = \frac{3(2n+1)}{2}. \]
+Selisih dua simpul berurutan adalah
+\[ 3 \text{ cm}. \]
+\pemisah
+
+\nomor{20}
+\soal
+Sebuah senar gitar nilon dengan panjang 90 cm dijepit kedua ujungnya sehingga menghasilkan gelombang berdiri dengan total 4 buah simpul. Laju rambat gelombang transversal pada senar tersebut adalah 132 m/s. Frekuensi dari gelombang berjalan penyusun gelombang berdiri tersebut adalah \ldots\ Hz.
+\jawaban{Frekuensi $=220$ Hz.}
+\pembahasan Senar dijepit di kedua ujungnya. Jika total simpul ada 4, maka termasuk dua ujung tetap. Jumlah perut gelombang adalah 3, sehingga harmonik yang terbentuk adalah $n=3$.
+
+Untuk senar panjang $L=0{,}90$ m, panjang gelombang harmonik ke-3:
+\[ \lambda = \frac{2L}{n} = \frac{2(0{,}90)}{3} = 0{,}60 \text{ m}. \]
+Dengan laju rambat $v=132$ m/s, frekuensi gelombang penyusunnya
+\[ f = \frac{v}{\lambda} = \frac{132}{0{,}60} = 220 \text{ Hz}. \]
+\pemisah
+
+%==================== PAKET MATEMATIKA TIPE A ====================
+\paketcover[Matematika]{A}
+
+\nomor{21}
+\soal
+Jika titik $P(a,b)$ berada pada kurva $y=x^3+5x-7$ di kuadran pertama sehingga gradien garis singgung kurva tersebut di $P$ adalah 17, maka nilai $a+b$ adalah \ldots
+\jawaban{$a+b=13$.}
+\pembahasan Gradien garis singgung kurva $y=x^3+5x-7$ adalah turunan pertama:
+\[ y' = 3x^2 + 5. \]
+Di titik $P(a,b)$, gradiennya 17, sehingga
+\[ 3a^2 + 5 = 17 \Rightarrow a^2 = 4. \]
+Karena $P$ berada di kuadran pertama, $a>0$, maka $a=2$. Substitusi ke kurva memberi
+\[ b = 2^3 + 5(2) - 7 = 8 + 10 - 7 = 11. \]
+Jadi $a+b = 2+11 = 13$.
+\pemisah
+
+\nomor{22a}
+\soal
+Perhatikan gambar berikut.
+\gambar[0.46\textwidth]{images/1/1-17.png}
+Jika $L(a)$ menyatakan luas persegi panjang di atas, maka $L(8)$ adalah \ldots
+\jawaban{$L(8)=96$.}
+\pembahasan
+\konsep Jika titik sudut kanan atas persegi panjang adalah $(a,b)$ pada setengah lingkaran $x^2+y^2=100$, maka $b=\sqrt{100-a^2}$.
+
+Lebar persegi panjang adalah $2a$, sedangkan tingginya $b$. Maka
+\[ L(a) = 2a\sqrt{100-a^2}. \]
+Untuk $a=8$, diperoleh
+\[ L(8) = 2(8)\sqrt{100-64} = 16\sqrt{36} = 16(6) = 96. \]
+\pemisah
+
+\nomor{22b}
+\soal
+Perhatikan gambar berikut.
+\gambar[0.46\textwidth]{images/1/1-17.png}
+Jika $c$ memenuhi $L'(c)$, maka nilai $2\sqrt{2}\,c$ adalah \ldots
+\jawaban{$2\sqrt{2}\,c=20$.}
+\pembahasan Dari Nomor 22a,
+\[ L(a) = 2a(100-a^2)^{1/2}. \]
+Turunannya adalah
+\[ L'(a) = 2\sqrt{100-a^2} - \frac{2a^2}{\sqrt{100-a^2}} = \frac{200-4a^2}{\sqrt{100-a^2}}. \]
+Syarat titik kritis $L'(c)=0$ memberi
+\[ 200 - 4c^2 = 0 \Rightarrow c^2 = 50 \Rightarrow c = 5\sqrt{2}. \]
+Maka
+\[ 2\sqrt{2}\,c = 2\sqrt{2}(5\sqrt{2}) = 20. \]
+\pemisah
+
+\nomor{22c}
+\soal
+Perhatikan gambar berikut.
+\gambar[0.46\textwidth]{images/1/1-17.png}
+Luas persegi panjang maksimum yang mungkin termuat pada daerah setengah lingkaran di atas adalah \ldots
+\jawaban{Luas maksimum $=100$.}
+\pembahasan Luas maksimum terjadi saat $L'(a)=0$, yaitu $a=5\sqrt{2}$. Tingginya
+\[ b = \sqrt{100-a^2} = \sqrt{100-50} = 5\sqrt{2}. \]
+Maka luas maksimum
+\[ L_{\max} = 2ab = 2(5\sqrt{2})(5\sqrt{2}) = 100. \]
+\pemisah
+
+\nomor{23}
+\soal
+Dua bola diambil sekaligus dari suatu kotak yang berisi 5 bola biru dan 6 bola kuning. Jika peluang terambil paling banyak 1 bola kuning adalah $\dfrac{A}{11\times 10}$, maka nilai $A$ adalah \ldots
+\jawaban{$A=80$.}
+\pembahasan
+\konsep Peluang pengambilan dua bola sekaligus dapat dihitung dengan kombinasi, atau dengan urutan terhitung lalu dibagi total urutan.
+
+Peluang terambil paling banyak 1 bola kuning berarti kasusnya: tidak ada bola kuning atau tepat 1 bola kuning. Dengan kombinasi:
+\[ P = \frac{\binom{5}{2} + \binom{6}{1}\binom{5}{1}}{\binom{11}{2}} = \frac{10+30}{55} = \frac{40}{55} = \frac{8}{11}. \]
+Karena bentuk soal ditulis $\frac{A}{11\times 10}$, penyebutnya adalah 110. Maka
+\[ \frac{8}{11} = \frac{80}{110} = \frac{A}{11\times 10}. \]
+Jadi $A=80$.
+\pemisah
+
+\nomor{24}
+\soal
+Diberikan empat pernyataan berikut.
+\begin{enumerate}
+  \item Hiperbola $y^2-x^2=1$ memotong sumbu $y$ di dua titik.
+  \item Hiperbola $y^2-x^2=1$ merupakan grafik suatu fungsi.
+  \item Hiperbola $y^2-x^2=1$ tidak memotong sumbu $x$.
+  \item Hiperbola $y^2-x^2=1$ tidak memiliki asimtot miring.
+\end{enumerate}
+Pernyataan yang benar adalah \ldots
+\jawaban{Pernyataan benar: 1 dan 3.}
+\pembahasan Untuk hiperbola
+\[ y^2 - x^2 = 1. \]
+Pernyataan 1 benar karena saat $x=0$, diperoleh $y^2=1$, sehingga $y=\pm 1$. Jadi grafik memotong sumbu $y$ di dua titik.
+
+Pernyataan 2 salah karena untuk setiap $x$, nilai $y$ dapat berupa $\pm\sqrt{x^2+1}$, sehingga grafik tidak memenuhi syarat fungsi $y=f(x)$.
+
+Pernyataan 3 benar karena saat $y=0$, diperoleh $-x^2=1$, yang tidak memiliki solusi real.
+
+Pernyataan 4 salah karena hiperbola tersebut memiliki asimtot miring $y=x$ dan $y=-x$.
+\pemisah
+
+\nomor{25}
+\soal
+Jika $\cos(2x)=-\dfrac{7}{25}$ dengan $0<x<\pi$, maka $25\sin(x)$ adalah \ldots
+\jawaban{$25\sin x = 20$.}
+\pembahasan
+\konsep Identitas sudut ganda: $\cos 2x = 1 - 2\sin^2 x$.
+
+Diketahui $\cos(2x)=-\tfrac{7}{25}$. Maka
+\[ 1 - 2\sin^2 x = -\frac{7}{25} \Rightarrow 2\sin^2 x = \frac{32}{25} \Rightarrow \sin^2 x = \frac{16}{25}. \]
+Karena $0<x<\pi$, maka $\sin x>0$, sehingga $\sin x=\tfrac{4}{5}$. Jadi
+\[ 25\sin x = 25\cdot\frac{4}{5} = 20. \]
+\pemisah
+
+\nomor{26}
+\soal
+Diberikan titik $A(1,-3,3)$ dan titik $B(-5,-2,3)$. Jika $P(p_1,p_2,p_3)$ adalah suatu titik sehingga vektor $\overrightarrow{BP}=-4\overrightarrow{PA}$, maka nilai $-3p_2$ adalah \ldots
+\jawaban{$-3p_2=10$.}
+\pembahasan Diketahui $A=(1,-3,3)$, $B=(-5,-2,3)$, dan $P=(p_1,p_2,p_3)$. Karena
+\[ \overrightarrow{BP} = -4\overrightarrow{PA}, \]
+maka
+\[ P - B = -4(A - P) = 4P - 4A. \]
+Jadi
+\[ 3P = 4A - B. \]
+Maka
+\[ P = \frac{4A-B}{3} = \frac{(4,-12,12)-(-5,-2,3)}{3} = \left(3,-\frac{10}{3},3\right). \]
+Dengan demikian
+\[ -3p_2 = -3\left(-\frac{10}{3}\right) = 10. \]
+\pemisah
+
+\nomor{27}
+\soal
+Diketahui suku ke-10 dan suku ke-20 suatu barisan aritmetika, berturut-turut, adalah 84 dan 174. Suku ke-15 barisan tersebut adalah \ldots
+\jawaban{Suku ke-15 adalah 129.}
+\pembahasan Pada barisan aritmetika $U_n = a + (n-1)d$. Diketahui
+\[ U_{20} - U_{10} = 10d = 174 - 84 = 90. \]
+Maka $d=9$. Suku ke-15 adalah
+\[ U_{15} = U_{10} + 5d = 84 + 5(9) = 129. \]
+\pemisah
+
+\nomor{28}
+\soal
+Daerah asal (domain) fungsi
+\[ f(x) = \sqrt{8-|3x-7|} \]
+adalah \ldots
+\jawaban{Domain $\left[-\tfrac{1}{3},5\right]$.}
+\pembahasan Agar fungsi
+\[ f(x) = \sqrt{8-|3x-7|} \]
+terdefinisi, bagian di dalam akar harus tidak negatif:
+\[ 8 - |3x-7| \geq 0 \Rightarrow |3x-7| \leq 8. \]
+Maka
+\[ -8 \leq 3x-7 \leq 8 \Rightarrow -1 \leq 3x \leq 15 \Rightarrow -\frac{1}{3} \leq x \leq 5. \]
+\pemisah
+
+\nomor{29}
+\soal
+Jika $f(x)={}^{13}\log(x)$, maka
+\[ f(5x) + f\left(\frac{5}{x}\right) = \ldots \]
+\jawaban{${}^{13}\log 25$.}
+\pembahasan Notasi ${}^{13}\log(x)$ dibaca sebagai $\log_{13} x$. Dengan sifat logaritma,
+\[ f(5x) + f\left(\frac{5}{x}\right) = \log_{13}(5x) + \log_{13}\left(\frac{5}{x}\right) = \log_{13}\left(5x\cdot\frac{5}{x}\right) = \log_{13} 25. \]
+\pemisah
+
+\nomor{30}
+\soal
+Data 90 dari 100 mahasiswa baru suatu perguruan tinggi disajikan pada tabel berikut.
+\begin{center}
+\begin{tabular}{l|ccc}
+Jalur & Kota A & Kota B & Selain Kota A dan Kota B\\
+\hline
+SNMPTN & 10 & 12 & 8 \\
+UTBK   & 9  & 4  & 17 \\
+Mandiri & 11 & 14 & 5 \\
+\end{tabular}
+\end{center}
+Adapun 10 mahasiswa sisanya diketahui bukan berasal dari Kota A dan bukan dari jalur SNMPTN. Misalkan $X$ adalah mahasiswa jalur UTBK yang dipilih secara acak dari 100 mahasiswa tersebut. Berdasarkan informasi yang diberikan, manakah hubungan antara kuantitas $P$ dan $Q$ berikut yang benar?
+\begin{center}
+\begin{tabular}{c|c}
+$P$ & $Q$\\
+\hline
+Peluang $X$ berasal dari Kota B & $\tfrac{1}{12}$\\
+\end{tabular}
+\end{center}
+\jawaban{Hubungan $P$ dan $Q$ tidak dapat ditentukan secara unik.}
+\pembahasan Data 90 mahasiswa tercantum pada tabel, sedangkan 10 mahasiswa sisanya hanya diketahui bukan berasal dari Kota A dan bukan dari jalur SNMPTN. Artinya, 10 mahasiswa tambahan itu masih dapat berada pada jalur UTBK atau Mandiri, dan dapat berasal dari Kota B atau selain Kota A dan Kota B.
+
+Jika $X$ dipahami sebagai mahasiswa jalur UTBK, maka peluang $X$ berasal dari Kota B bergantung pada berapa dari 10 mahasiswa sisa yang masuk jalur UTBK dan berasal dari Kota B. Informasi itu tidak diberikan.
+
+Karena nilai $P$ dapat berubah sesuai distribusi 10 mahasiswa sisa, hubungan $P$ terhadap $Q=\tfrac{1}{12}$ tidak dapat dipastikan.
+\pemisah
+
+\nomor{31}
+\soal
+Persamaan parabola yang grafiknya melalui titik $(-4,0)$ dan $(4,0)$, serta titik maksimumnya terletak pada garis $y=23x+48$, adalah \ldots
+\jawaban{$y=-3x^2+48$.}
+\pembahasan Akar-akar parabola berada di $(-4,0)$ dan $(4,0)$, sehingga bentuknya
+\[ y = k(x+4)(x-4) = k(x^2-16). \]
+Sumbu simetri parabola adalah $x=0$. Titik maksimum berada pada garis $y=23x+48$, sehingga saat $x=0$, diperoleh $y=48$. Maka
+\[ 48 = k(0^2-16) = -16k \Rightarrow k = -3. \]
+Jadi persamaan parabolanya
+\[ y = -3x^2 + 48. \]
+\pemisah
+
+\nomor{32}
+\soal
+Tentukan nilai
+\[ \lim_{x\to 3}\frac{\sin(21-7x)}{x-3}. \]
+\jawaban{$-7$.}
+\pembahasan Gunakan pendekatan $\sin u \sim u$ saat $u\to 0$. Ketika $x\to 3$,
+\[ 21 - 7x = -7(x-3) \to 0. \]
+Maka
+\[ \lim_{x\to 3}\frac{\sin(21-7x)}{x-3} = \lim_{x\to 3}\frac{-7(x-3)}{x-3} = -7. \]
+\pemisah
+
+\nomor{33}
+\soal
+Jika
+\[ \int_{-7}^{-3} f(x)\,dx = 12, \]
+maka
+\[ \int_{3}^{5} f(3-2x)\,dx \]
+adalah \ldots
+\jawaban{$6$.}
+\pembahasan Gunakan substitusi
+\[ u = 3-2x, \qquad du = -2\,dx, \qquad dx = -\frac{1}{2}\,du. \]
+Batas berubah sebagai berikut: saat $x=3$, $u=-3$; saat $x=5$, $u=-7$. Maka
+\[ \int_{3}^{5} f(3-2x)\,dx = \int_{-3}^{-7} f(u)\left(-\frac{1}{2}\right)du = \frac{1}{2}\int_{-7}^{-3} f(u)\,du. \]
+Karena $\int_{-7}^{-3} f(x)\,dx = 12$, hasilnya
+\[ \frac{1}{2}(12) = 6. \]
+\pemisah
+
+\nomor{34}
+\soal
+Perhatikan grafik fungsi $f$ berikut.
+\gambar[0.5\textwidth]{images/1/1-18.png}
+Jika $a=6$, maka
+\[ \lim_{x\to a}\frac{f(x)-6x}{x-a} \]
+adalah \ldots
+\jawaban{$-6$.}
+\pembahasan Dari grafik, titik puncak berada pada $(a,36)$. Jika $a=6$, maka $f(a)=36=6a$, sehingga pembilang bernilai nol di $x=a$. Limitnya dapat ditulis sebagai
+\[ \lim_{x\to a}\frac{f(x)-6x}{x-a} = \left[\lim_{x\to a}\frac{f(x)-f(a)}{x-a}\right] - 6 = f'(a) - 6. \]
+Karena $a$ adalah titik maksimum, $f'(a)=0$. Jadi limitnya
+\[ 0 - 6 = -6. \]
+\pemisah
+
+\nomor{35}
+\soal
+Jika $x^3-4x^2+9x+a=(x-1)g(x)$ dengan $a$ adalah suatu konstanta bilangan real, maka tentukan nilai $a$ dan $g(1)$.
+\jawaban{$a=-6$ dan $g(1)=4$.}
+\pembahasan Karena
+\[ x^3 - 4x^2 + 9x + a = (x-1)g(x), \]
+polinom di ruas kiri habis dibagi $x-1$. Berdasarkan teorema faktor,
+\[ P(1) = 0. \]
+Maka
+\[ 1 - 4 + 9 + a = 0 \Rightarrow 6 + a = 0 \Rightarrow a = -6. \]
+Untuk mencari $g(1)$, gunakan fakta jika $P(x)=(x-1)g(x)$, maka $P'(1)=g(1)$. Turunan $P$ adalah
+\[ P'(x) = 3x^2 - 8x + 9. \]
+Jadi
+\[ g(1) = P'(1) = 3 - 8 + 9 = 4. \]
+\pemisah
+
+\nomor{36}
+\soal
+Jika fungsi $y=6\cos\left(\dfrac{\pi t}{3}\right)+9$ memiliki periode $P$ dan nilai minimumnya $A$, maka $10P+A$ adalah \ldots
+\jawaban{$10P+A=63$.}
+\pembahasan Fungsi
+\[ y = 6\cos\!\left(\frac{\pi t}{3}\right) + 9 \]
+memiliki frekuensi sudut $\omega=\dfrac{\pi}{3}$. Periode fungsi kosinus adalah
+\[ P = \frac{2\pi}{\omega} = \frac{2\pi}{\pi/3} = 6. \]
+Nilai minimum terjadi saat $\cos(\cdot)=-1$, sehingga
+\[ A = 6(-1) + 9 = 3. \]
+Maka
+\[ 10P + A = 10(6) + 3 = 63. \]
+\pemisah
+
+\nomor{37}
+\soal
+Jika $f(x)=(a+1)x^3+x^2+12$ dan $f'(1)=32$, maka nilai $a$ adalah \ldots
+\jawaban{$a=9$.}
+\pembahasan Diketahui
+\[ f(x) = (a+1)x^3 + x^2 + 12. \]
+Turunannya
+\[ f'(x) = 3(a+1)x^2 + 2x. \]
+Substitusi $x=1$ dan $f'(1)=32$:
+\[ 3(a+1) + 2 = 32 \Rightarrow 3a + 5 = 32 \Rightarrow a = 9. \]
+\pemisah
+
+\nomor{38}
+\soal
+Jika $f(x)=ax^2+b$, $\displaystyle\int_0^1 f(x)\,dx=6$, dan $\displaystyle\int_1^2 f(x)\,dx=12$, maka nilai $2a+3b$ adalah \ldots
+\jawaban{$2a+3b=21$.}
+\pembahasan Diketahui $f(x)=ax^2+b$. Maka
+\[ \int_0^1 f(x)\,dx = \frac{a}{3} + b = 6, \]
+dan
+\[ \int_1^2 f(x)\,dx = \frac{7a}{3} + b = 12. \]
+Kurangkan persamaan kedua dengan pertama:
+\[ 2a = 6 \Rightarrow a = 3. \]
+Substitusi ke $\dfrac{a}{3}+b=6$:
+\[ 1 + b = 6 \Rightarrow b = 5. \]
+Jadi
+\[ 2a + 3b = 2(3) + 3(5) = 21. \]
+\pemisah
+
+\nomor{39}
+\soal
+Diberikan transformasi $T$ dengan matriks penyajian $M$ berukuran $2\times 2$, yaitu untuk tiap titik $X=\begin{bmatrix} x\\ y\end{bmatrix}$ berlaku $T(X)=MX$. Diketahui bahwa
+\[ T\left(\begin{bmatrix} 3\\ -2\end{bmatrix}\right) = \begin{bmatrix} 1\\ 1\end{bmatrix} \]
+dan
+\[ T\left(\begin{bmatrix} -1\\ 1\end{bmatrix}\right) = \begin{bmatrix} 4\\ 2\end{bmatrix}. \]
+Jika
+\[ T(X) = \begin{bmatrix} 9\\ 5\end{bmatrix}, \]
+maka $X$ adalah \ldots
+\jawaban{$X=\begin{bmatrix} 1\\ 0\end{bmatrix}$.}
+\pembahasan Karena transformasi linear, tuliskan $X$ sebagai kombinasi linear dari dua vektor yang diketahui:
+\[ X = \alpha\begin{bmatrix} 3\\ -2\end{bmatrix} + \beta\begin{bmatrix} -1\\ 1\end{bmatrix}. \]
+Maka
+\[ T(X) = \alpha\begin{bmatrix} 1\\ 1\end{bmatrix} + \beta\begin{bmatrix} 4\\ 2\end{bmatrix}. \]
+Diketahui $T(X)=\begin{bmatrix} 9\\ 5\end{bmatrix}$, sehingga
+\[ \alpha + 4\beta = 9, \qquad \alpha + 2\beta = 5. \]
+Dari dua persamaan ini, $\beta=2$ dan $\alpha=1$. Maka
+\[ X = \begin{bmatrix} 3\\ -2\end{bmatrix} + 2\begin{bmatrix} -1\\ 1\end{bmatrix} = \begin{bmatrix} 1\\ 0\end{bmatrix}. \]
+\pemisah
+
+\nomor{40}
+\soal
+Diberikan limas persegi $T.ABCD$ seperti pada gambar berikut.
+\gambar[0.55\textwidth]{images/1/1-19.png}
+Diketahui $|AB|=2\sqrt{2}$ dan tinggi limas adalah 4. Misalkan titik $P$ adalah titik tengah $\overline{AT}$ dan titik $Q$ pada $\overline{CT}$ sehingga $|CT|=4|CQ|$. Tangen sudut antara garis $\overline{AC}$ dan garis $\overline{PQ}$ adalah \ldots
+\jawaban{$\tan\theta=\dfrac{2}{5}$.}
+\pembahasan Ambil koordinat alas persegi dengan pusat di titik asal dan sisi $s=2\sqrt{2}$:
+\[ A=(-\sqrt{2},-\sqrt{2},0), \quad C=(\sqrt{2},\sqrt{2},0), \quad T=(0,0,4). \]
+Titik $P$ adalah titik tengah $AT$, sehingga
+\[ P = \frac{A+T}{2} = \left(-\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2},2\right). \]
+Karena $|CT|=4|CQ|$, maka $Q$ berada seperempat perjalanan dari $C$ menuju $T$:
+\[ Q = C + \frac{1}{4}(T-C) = \left(\frac{3\sqrt{2}}{4},\frac{3\sqrt{2}}{4},1\right). \]
+Vektor arah garis $AC$ dan $PQ$ adalah
+\[ \vec{AC} = (2\sqrt{2},2\sqrt{2},0), \qquad \vec{PQ} = \left(\frac{5\sqrt{2}}{4},\frac{5\sqrt{2}}{4},-1\right). \]
+Dengan rumus
+\[ \tan\theta = \frac{\|\vec{AC}\times\vec{PQ}\|}{|\vec{AC}\cdot\vec{PQ}|}, \]
+diperoleh
+\[ \tan\theta = \frac{2}{5}. \]
+\pemisah
+
+%==================== PAKET MATEMATIKA TIPE B ====================
+\paketcover[Matematika]{B}
+
+\nomor{21}
+\soal
+Diketahui garis dengan persamaan $y=16-4x$ dan kurva dengan persamaan $y=16-x^2$. Jika titik potong garis dan kurva adalah $(0,a)$ dan $(b,c)$, kemudian luas daerah tertutup yang dibatasi kurva tersebut adalah $L$, maka nilai $a+b$ dan $6L$ adalah \ldots
+\jawaban{$a+b=20$ dan $6L=64$. Jika yang diminta jumlahnya, $a+b+6L=84$.}
+\pembahasan Titik potong garis dan kurva diperoleh dari
+\[ 16 - 4x = 16 - x^2. \]
+Maka
+\[ x^2 - 4x = 0 \Rightarrow x(x-4) = 0, \]
+sehingga $x=0$ atau $x=4$. Titik potongnya adalah $(0,16)$ dan $(4,0)$. Jadi $a=16$ dan $b=4$, sehingga
+\[ a+b = 20. \]
+Luas daerah tertutup adalah luas antara kurva dan garis pada $0\leq x\leq 4$:
+\[ L = \int_0^4 \left[(16-x^2)-(16-4x)\right]dx = \int_0^4 (4x-x^2)\,dx. \]
+Maka
+\[ L = \left[2x^2 - \frac{x^3}{3}\right]_0^4 = 32 - \frac{64}{3} = \frac{32}{3}. \]
+Jadi $6L=64$.
+\pemisah
+
+\nomor{22}
+\soal
+Diberikan balok $ABCD.EFGH$ dengan panjang sisi alas adalah $|AB|=3$ dan $|BC|=|AE|=7$.
+\gambar[0.5\textwidth]{images/1/1-20.png}
+Misalkan $P$ adalah titik pada $BC$ dan titik $Q$ pada $CG$ sehingga $|BP|=|GQ|=1$. Kosinus sudut antara garis $\overline{AP}$ dan garis $\overline{HQ}$ adalah \ldots
+\jawaban{$\cos\theta=\dfrac{9}{10}$.}
+\pembahasan Gunakan koordinat balok:
+\[ A=(0,0,0), \quad B=(3,0,0), \quad C=(3,7,0), \quad H=(0,7,7), \quad G=(3,7,7). \]
+Karena $|BP|=1$, maka $P=(3,1,0)$. Karena $|GQ|=1$, maka $Q=(3,7,6)$. Vektor arah garis $AP$ dan $HQ$ adalah
+\[ \vec{AP} = (3,1,0), \qquad \vec{HQ} = Q-H = (3,0,-1). \]
+Rumus kosinus sudut dua vektor:
+\[ \cos\theta = \frac{\vec{AP}\cdot\vec{HQ}}{|\vec{AP}|\,|\vec{HQ}|}. \]
+Maka
+\[ \cos\theta = \frac{9}{\sqrt{10}\sqrt{10}} = \frac{9}{10}. \]
+\pemisah
+
+\nomor{23}
+\soal
+Misalkan $s$ adalah simpangan baku dari data terurut enam bilangan: $4$, $6-a$, $6$, $8$, $8+a$, dan $10$. Berdasarkan informasi yang diberikan, manakah hubungan antara kuantitas $P$ dan $Q$ berikut yang benar?
+\begin{center}
+\begin{tabular}{c|c}
+$P$ & $Q$\\
+\hline
+$s^2$ & $6$\\
+\end{tabular}
+\end{center}
+\jawaban{Hubungan $P$ dan $Q$ tidak dapat ditentukan secara tunggal.}
+\pembahasan Data terurutnya adalah
+\[ 4,\ 6-a,\ 6,\ 8,\ 8+a,\ 10. \]
+Karena data terurut, $0\leq a\leq 2$. Rata-ratanya
+\[ \bar{x} = \frac{4+(6-a)+6+8+(8+a)+10}{6} = 7. \]
+Jumlah kuadrat simpangan terhadap rata-rata adalah
+\[ (4-7)^2+(6-a-7)^2+(6-7)^2+(8-7)^2+(8+a-7)^2+(10-7)^2 = 22+4a+2a^2. \]
+Jika digunakan varians populasi, maka
+\[ s^2 = \frac{22+4a+2a^2}{6} = \frac{a^2+2a+11}{3}. \]
+Untuk $a=0$, $s^2=\tfrac{11}{3}<6$. Untuk $a=2$, $s^2=\tfrac{19}{3}>6$. Jadi $P=s^2$ dapat lebih kecil atau lebih besar dari $Q=6$, sehingga hubungan tidak dapat ditentukan.
+\pemisah
+
+\nomor{24}
+\soal
+Jika $r_{1,2}=6\pm\sqrt{2}$ adalah akar-akar persamaan kuadrat
+\[ x^2 - Px + Q = 0, \]
+maka $P+Q$ adalah \ldots
+\jawaban{$P+Q=46$.}
+\pembahasan Jika akar-akar persamaan $x^2-Px+Q=0$ adalah
+\[ r_1 = 6+\sqrt{2}, \qquad r_2 = 6-\sqrt{2}, \]
+maka menurut rumus Vieta:
+\[ P = r_1 + r_2 = 12, \qquad Q = r_1 r_2 = (6+\sqrt{2})(6-\sqrt{2}) = 36 - 2 = 34. \]
+Jadi
+\[ P + Q = 12 + 34 = 46. \]
+\pemisah
+
+\nomor{25}
+\soal
+Jika $y=x^2-16x+61$ dengan $x>8$, maka $x=C+\sqrt{y+D}$ dengan $C$ dan $D$ merupakan dua konstanta bilangan real. Nilai $10C+D$ adalah \ldots
+\jawaban{$10C+D=83$.}
+\pembahasan Lengkapi kuadrat:
+\[ y = x^2 - 16x + 61 = (x-8)^2 - 3. \]
+Maka
+\[ y + 3 = (x-8)^2. \]
+Karena $x>8$, maka $x-8>0$, sehingga
+\[ x = 8 + \sqrt{y+3}. \]
+Jadi $C=8$ dan $D=3$. Maka
+\[ 10C + D = 10(8) + 3 = 83. \]
+\pemisah
+
+\nomor{26}
+\soal
+Jika $\cos(2x)=-\dfrac{34}{64}$ dengan $0<x<\pi$, maka $64\sin(x)$ adalah \ldots
+\jawaban{$64\sin x=56$.}
+\pembahasan Diketahui
+\[ \cos(2x) = -\frac{34}{64} = -\frac{17}{32}. \]
+Gunakan identitas $\cos 2x = 1 - 2\sin^2 x$:
+\[ 1 - 2\sin^2 x = -\frac{17}{32} \Rightarrow 2\sin^2 x = \frac{49}{32} \Rightarrow \sin^2 x = \frac{49}{64}. \]
+Karena $0<x<\pi$, $\sin x>0$, maka $\sin x=\tfrac{7}{8}$. Jadi
+\[ 64\sin x = 64\cdot\frac{7}{8} = 56. \]
+\pemisah
+
+\nomor{27}
+\soal
+Diketahui $AB$ adalah diameter suatu lingkaran dengan $A=(10,16)$ dan $B=(-2,0)$. Tentukan jari-jari lingkaran dan titik pusat lingkaran.
+\jawaban{Jari-jari 10, titik pusat $(4,8)$.}
+\pembahasan Karena $AB$ adalah diameter, titik pusat adalah titik tengah $A(10,16)$ dan $B(-2,0)$:
+\[ O = \left(\frac{10+(-2)}{2},\frac{16+0}{2}\right) = (4,8). \]
+Panjang diameter:
+\[ AB = \sqrt{(10-(-2))^2+(16-0)^2} = \sqrt{12^2+16^2} = 20. \]
+Maka jari-jari lingkaran adalah 10.
+\pemisah
+
+\nomor{28}
+\soal
+Nilai fungsi $f(x)$ dan $g(x)$ serta turunannya di $x=0$ dan $x=1$ diberikan pada tabel berikut.
+\begin{center}
+\begin{tabular}{c|cccc}
+$x$ & $f(x)$ & $g(x)$ & $f'(x)$ & $g'(x)$\\
+\hline
+$0$ & $2$ & $1$ & $3$ & $\tfrac{2}{3}$\\
+$1$ & $3$ & $-5$ & $-\tfrac{1}{4}$ & $-1$\\
+\end{tabular}
+\end{center}
+Jika
+\[ h(x) = \frac{2f(x)}{g(x)+1}, \]
+maka $h'(0)$ adalah \ldots
+\jawaban{$h'(0)=\dfrac{7}{3}$.}
+\pembahasan Diketahui
+\[ h(x) = \frac{2f(x)}{g(x)+1}. \]
+Dari tabel saat $x=0$: $f(0)=2$, $g(0)=1$, $f'(0)=3$, dan $g'(0)=\tfrac{2}{3}$. Dengan aturan hasil bagi,
+\[ h'(x) = \frac{2f'(x)(g(x)+1) - 2f(x)g'(x)}{(g(x)+1)^2}. \]
+Maka
+\[ h'(0) = \frac{2(3)(2) - 2(2)(2/3)}{2^2} = \frac{12 - 8/3}{4} = \frac{7}{3}. \]
+\pemisah
+
+\nomor{29}
+\soal
+Tabel berikut menyajikan nilai fungsi $f$ dan turunannya di beberapa titik.
+\begin{center}
+\begin{tabular}{c|cccc}
+$x$ & $0$ & $4$ & $5$ & $23$\\
+\hline
+$f(x)$ & $23$ & $0$ & $7$ & $0$\\
+$f'(x)$ & $7$ & $8$ & $3$ & $6$\\
+\end{tabular}
+\end{center}
+Maka tentukan nilai
+\[ \lim_{x\to 4}\frac{f(5x+3)}{x-4}. \]
+\jawaban{$30$.}
+\pembahasan Saat $x\to 4$, argumen fungsi adalah $5x+3\to 23$. Dari tabel, $f(23)=0$ dan $f'(23)=6$. Untuk $x$ dekat 4,
+\[ f(5x+3) \approx f(23) + f'(23)(5x+3-23) = 6\cdot 5(x-4) = 30(x-4). \]
+Maka
+\[ \lim_{x\to 4}\frac{f(5x+3)}{x-4} = 30. \]
+\pemisah
+
+\nomor{30}
+\soal
+Tentukan nilai
+\[ \lim_{x\to 9}\frac{x+5\sqrt{x}-36}{\sqrt{x}-4}. \]
+\jawaban{$12$.}
+\pembahasan Karena penyebut tidak nol saat $x=9$, limit dapat dihitung dengan substitusi langsung:
+\[ \lim_{x\to 9}\frac{x+5\sqrt{x}-36}{\sqrt{x}-4} = \frac{9+5(3)-36}{3-4} = \frac{-12}{-1} = 12. \]
+\pemisah
+
+\nomor{31}
+\soal
+Jika
+\[ \int_5^8 f(x)\,dx = 3 \quad \text{dan} \quad \int_8^5 g(x)\,dx = 5, \]
+maka
+\[ \int_5^8 \left[3f(x)-2g(x)\right]dx \]
+adalah \ldots
+\jawaban{$19$.}
+\pembahasan Diketahui
+\[ \int_5^8 f(x)\,dx = 3, \qquad \int_8^5 g(x)\,dx = 5. \]
+Karena membalik batas integral mengubah tanda,
+\[ \int_5^8 g(x)\,dx = -5. \]
+Maka
+\[ \int_5^8 [3f(x)-2g(x)]\,dx = 3\int_5^8 f(x)\,dx - 2\int_5^8 g(x)\,dx = 3(3) - 2(-5) = 19. \]
+\pemisah
+
+\nomor{32}
+\soal
+Jika
+\[ x^6 - 5x^3 + 6x^2 + ax + b = (x^2-1)g(x), \]
+maka $10a+b$ adalah \ldots
+\jawaban{$10a+b=43$.}
+\pembahasan Karena polinom
+\[ P(x) = x^6 - 5x^3 + 6x^2 + ax + b \]
+habis dibagi $x^2-1=(x-1)(x+1)$, maka $P(1)=0$ dan $P(-1)=0$. Untuk $x=1$:
+\[ 1 - 5 + 6 + a + b = 0 \Rightarrow a + b = -2. \]
+Untuk $x=-1$:
+\[ 1 + 5 + 6 - a + b = 0 \Rightarrow -a + b = -12. \]
+Dari sistem tersebut diperoleh $a=5$ dan $b=-7$. Jadi
+\[ 10a + b = 50 - 7 = 43. \]
+\pemisah
+
+\nomor{33}
+\soal
+Dari data penerimaan mahasiswa ITB didapatkan informasi berikut:
+\begin{enumerate}
+  \item Sebanyak 46\% dari seluruh mahasiswa pernah mengunjungi Kampus Ganesha.
+  \item Sebanyak 31\% dari seluruh mahasiswa pernah mengunjungi Kampus Jatinangor.
+  \item Sebanyak 39\% dari seluruh mahasiswa pernah mengunjungi Kampus Ganesha tetapi belum pernah mengunjungi Kampus Jatinangor.
+\end{enumerate}
+Jika dipilih satu mahasiswa acak, peluang mahasiswa tersebut belum pernah mengunjungi Kampus Ganesha maupun Kampus Jatinangor adalah \ldots
+\jawaban{Peluang $=30\%$ atau $0{,}30$.}
+\pembahasan Misalkan $G$ adalah pernah mengunjungi Kampus Ganesha dan $J$ adalah pernah mengunjungi Kampus Jatinangor. Diketahui
+\[ P(G)=46\%, \qquad P(J)=31\%, \qquad P(G\cap J^c)=39\%. \]
+Maka yang pernah mengunjungi keduanya:
+\[ P(G\cap J) = P(G) - P(G\cap J^c) = 46\% - 39\% = 7\%. \]
+Kemudian
+\[ P(G\cup J) = P(G) + P(J) - P(G\cap J) = 46\% + 31\% - 7\% = 70\%. \]
+Jadi peluang belum pernah mengunjungi keduanya adalah
+\[ 1 - P(G\cup J) = 30\%. \]
+\pemisah
+
+\nomor{34}
+\soal
+Misalkan $x=60\sin t$ dan $y=10\cos t$. Jika $t=\dfrac{3\pi}{4}$, maka $(x+y)\sqrt{2}$ adalah \ldots
+\jawaban{$50$.}
+\pembahasan Untuk $t=\tfrac{3\pi}{4}$,
+\[ \sin\frac{3\pi}{4} = \frac{\sqrt{2}}{2}, \qquad \cos\frac{3\pi}{4} = -\frac{\sqrt{2}}{2}. \]
+Maka
+\[ x = 60\sin t = 30\sqrt{2}, \qquad y = 10\cos t = -5\sqrt{2}. \]
+Sehingga
+\[ (x+y)\sqrt{2} = (25\sqrt{2})\sqrt{2} = 50. \]
+\pemisah
+
+\nomor{35}
+\soal
+Misalkan $P$ adalah bidang yang melalui tiga titik $A(2,8,3)$, $B(2,0,0)$, dan $C(0,2,0)$. Titik $X(2,2,w)$ berada pada bidang $P$ jika nilai $w$ adalah \ldots
+\jawaban{$w=\dfrac{3}{4}$.}
+\pembahasan Persamaan bidang melalui $A(2,8,3)$, $B(2,0,0)$, dan $C(0,2,0)$. Vektor
+\[ \vec{AB} = (0,-8,-3), \qquad \vec{AC} = (-2,-6,-3). \]
+Vektor normal bidang dapat diperoleh dari $\vec{AB}\times\vec{AC}$, yaitu searah dengan
+\[ (6,6,-16). \]
+Maka persamaan bidangnya
+\[ 6x + 6y - 16z - 12 = 0. \]
+Substitusi $X(2,2,w)$:
+\[ 6(2) + 6(2) - 16w - 12 = 0 \Rightarrow 12 - 16w = 0 \Rightarrow w = \frac{3}{4}. \]
+\pemisah
+
+\nomor{36}
+\soal
+Diketahui vektor-vektor $\vec{a}=(1,x,1)$, $\vec{b}=(y,3,-5)$, dan $\vec{c}=(xy,-12,z)$. Jika vektor $\vec{a}$ tegak lurus dengan vektor $\vec{b}$ dan vektor $\vec{b}$ sejajar dengan vektor $\vec{c}$, maka nilai $y+z$ adalah \ldots
+\jawaban{Jika diasumsikan $y\neq 0$, maka $y+z=37$. Tanpa asumsi itu, ada kemungkinan lain $y+z=20$.}
+\pembahasan Diketahui
+\[ \vec{a}=(1,x,1), \quad \vec{b}=(y,3,-5), \quad \vec{c}=(xy,-12,z). \]
+Syarat $\vec{a}\perp\vec{b}$ memberi
+\[ \vec{a}\cdot\vec{b} = y + 3x - 5 = 0. \]
+Syarat $\vec{b}\parallel\vec{c}$ berarti $\vec{c}=k\vec{b}$. Dari komponen kedua:
+\[ -12 = 3k \Rightarrow k = -4. \]
+Maka dari komponen ketiga
+\[ z = (-4)(-5) = 20. \]
+Dari komponen pertama
+\[ xy = -4y \Rightarrow y(x+4) = 0. \]
+Jika diasumsikan $y\neq 0$, maka $x=-4$. Substitusi ke $y+3x-5=0$:
+\[ y + 3(-4) - 5 = 0 \Rightarrow y = 17. \]
+Maka $y+z = 17 + 20 = 37$.
+
+Namun, secara aljabar $y=0$ juga memenuhi syarat sejajar. Jika $y=0$, maka $3x-5=0$, $x=\tfrac{5}{3}$, dan tetap $z=20$, sehingga $y+z=20$. Jadi soal ini memerlukan asumsi tambahan agar jawabannya tunggal.
+\pemisah
+
+\nomor{37}
+\soal
+Jika
+\[ \int_0^3 5f(x)\,dx + \int_0^1 8f(x)\,dx = 18 \]
+dan
+\[ \int_0^3 5f(x)\,dx + \int_1^3 8f(x)\,dx = 18, \]
+maka tentukan
+\[ \int_1^3 f(x)\,dx. \]
+\jawaban{$\displaystyle\int_1^3 f(x)\,dx = 1$.}
+\pembahasan Misalkan
+\[ A = \int_0^3 f(x)\,dx, \quad B = \int_0^1 f(x)\,dx, \quad C = \int_1^3 f(x)\,dx. \]
+Karena $A=B+C$, dua persamaan pada soal menjadi
+\[ 5A + 8B = 18, \qquad 5A + 8C = 18. \]
+Kurangkan kedua persamaan:
+\[ 8B - 8C = 0 \Rightarrow B = C. \]
+Maka $A=B+C=2C$. Substitusi ke persamaan kedua:
+\[ 5(2C) + 8C = 18 \Rightarrow 18C = 18 \Rightarrow C = 1. \]
+Jadi
+\[ \int_1^3 f(x)\,dx = 1. \]
+\pemisah
+
+\nomor{38}
+\soal
+Jika $x_1$ dan $x_2$ adalah dua solusi persamaan
+\[ x^{2\log x - 24} = \frac{x^{10}}{10^5}, \]
+maka $x_1 x_2 = 10^x$ dengan $x$ adalah \ldots
+\jawaban{$x=17$.}
+\pembahasan Persamaan pada soal adalah
+\[ x^{2\log x - 24} = \frac{x^{10}}{10^5}. \]
+Ambil $x=10^t$, sehingga $\log x = t$. Maka
+\[ (10^t)^{2t-24} = \frac{(10^t)^{10}}{10^5}. \]
+Ini menjadi
+\[ 10^{2t^2 - 24t} = 10^{10t-5}. \]
+Karena basis sama, eksponennya sama:
+\[ 2t^2 - 24t = 10t - 5 \Rightarrow 2t^2 - 34t + 5 = 0. \]
+Jika akar-akar persamaan ini adalah $t_1$ dan $t_2$, maka
+\[ t_1 + t_2 = \frac{34}{2} = 17. \]
+Karena $x_1=10^{t_1}$ dan $x_2=10^{t_2}$,
+\[ x_1 x_2 = 10^{t_1+t_2} = 10^{17}. \]
+Jadi nilai $x$ pada $x_1 x_2 = 10^x$ adalah 17.
+\pemisah
+
+\nomor{40}
+\soal
+Misalkan $S_n$ adalah jumlah parsial $n$ suku pertama suatu deret geometri. Jika $S_2=16$ dan $S_4=160$, maka suku ke-2 deret tersebut adalah \ldots
+\jawaban{Jika rasio positif, suku ke-2 adalah 12. Tanpa syarat rasio positif, ada dua kemungkinan: 12 atau 24.}
+\pembahasan Misalkan suku pertama $a$ dan rasio $r$. Maka
+\[ S_2 = a(1+r) = 16. \]
+Selain itu,
+\[ S_4 = a(1+r+r^2+r^3) = a(1+r)(1+r^2) = 160. \]
+Dengan membagi $S_4$ oleh $S_2$, diperoleh
+\[ 1 + r^2 = \frac{160}{16} = 10 \Rightarrow r^2 = 9 \Rightarrow r = \pm 3. \]
+Jika $r=3$, maka $a(4)=16$, sehingga $a=4$ dan suku kedua $ar=12$. Jika $r=-3$, maka $a(-2)=16$, sehingga $a=-8$ dan suku kedua $ar=24$. Jadi jawaban tunggal 12 diperoleh jika soal mengasumsikan rasio positif.
+\pemisah
+
+\end{document}

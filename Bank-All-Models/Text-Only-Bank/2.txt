@@ -1,0 +1,1148 @@
+\documentclass[11pt]{article}
+
+% ===================== PACKAGES =====================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.3cm,top=2.6cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage[some]{background}
+\usepackage{icomma}
+
+% ===================== WARNA =====================
+\definecolor{bannerblue}{RGB}{13,53,94}
+\definecolor{bannergold}{RGB}{233,170,40}
+
+% ===================== HEADER & FOOTER =====================
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small SSU-ITB 2025 Fisika}
+\chead{\small tiktok.com/@result\_han}
+\rhead{\small @result\_han}
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% ===================== WATERMARK =====================
+\backgroundsetup{scale=6,color=black!7,opacity=0.7,angle=45,
+  position=current page.center,contents={@result\_han}}
+
+% ===================== PERINTAH BANTU =====================
+% Sampul tiap set
+\newcommand{\setcover}[2]{% #1 = nomor set, #2 = subjudul kecil
+  \clearpage\thispagestyle{empty}\setcounter{page}{1}%
+  \noindent\begin{tikzpicture}
+    \fill[bannerblue] (0,0) rectangle (\textwidth,-2.6);
+    \fill[bannergold] (0,-2.6) rectangle (\textwidth,-2.75);
+    \node[anchor=north west,text=white,font=\sffamily\bfseries\LARGE] at (0.4,-0.7) {Seleksi Mandiri ITB};
+    \node[anchor=north east,text=white,font=\sffamily\bfseries] at (\textwidth-0.3,-0.45) {2025};
+    \node[anchor=north west,text=white,font=\sffamily] at (0.45,-1.7) {FISIKA -- Set #1};
+  \end{tikzpicture}%
+  \vspace{2.6cm}
+  \begin{center}
+    {\LARGE\bfseries Fisika Set #1}\\[0.5em]
+    {\large Paket Soal dan Pembahasan}\\[0.3em]
+    {#2}
+  \end{center}
+  \vspace{0.8cm}
+  \begin{center}\fbox{\parbox{0.66\textwidth}{\centering
+    \textbf{Pengetikan ulang dan pemformatan:} @result\_han\\[0.3em]
+    \textbf{TikTok:} www.tiktok.com/@result\_han}}\end{center}
+  \clearpage
+}
+
+\newcommand{\nomor}[1]{\bigskip{\noindent\Large\bfseries Nomor #1\par}\nopagebreak\medskip}
+\newcommand{\soal}{\noindent\textbf{Soal.}\ \ignorespaces}
+\newcommand{\pembahasan}{\par\medskip\noindent\textbf{Pembahasan.}\ \ignorespaces}
+
+% pilihan ganda 2 kolom
+\newenvironment{pilihan}{\par\smallskip\begin{multicols}{2}\begin{enumerate}[label=(\Alph*),leftmargin=*,itemsep=2pt,topsep=2pt]}{\end{enumerate}\end{multicols}}
+% pilihan 1 kolom (untuk opsi panjang)
+\newenvironment{pilihanA}{\par\smallskip\begin{enumerate}[label=(\Alph*),leftmargin=*,itemsep=2pt,topsep=2pt]}{\end{enumerate}}
+
+% kotak jawaban akhir
+\newcommand{\jawaban}[1]{\par\medskip\noindent
+  \fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\textbf{Jawaban:} #1}}\par\medskip}
+
+% catatan redaksi
+\newcommand{\catatan}[1]{\par\medskip\noindent
+  \fcolorbox{red!60!black}{red!4}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+  \textbf{\textcolor{red!60!black}{Catatan redaksi.}}\ #1}}\par\medskip}
+
+\newcommand{\pemisah}{\par\medskip\noindent\rule{\linewidth}{0.4pt}\par\medskip}
+\newcommand{\gambar}[2][0.5\textwidth]{\begin{center}\includegraphics[width=#1]{#2}\end{center}}
+\linespread{1.05}
+
+\begin{document}
+
+%==================== SET 1 ====================
+\setcover{1}{Format soal--jawab berurutan}
+
+\nomor{1}
+\soal Sebuah pesawat pengebom terbang dalam arah horizontal dengan laju konstan $v_P=60$ m/s pada ketinggian $h=128$ m. Ketika tepat di atas titik $O$, sebuah bom dilepaskan dan mengenai truk $T$ yang sedang bergerak di sebuah jalan mendatar dengan kecepatan konstan. Pada saat bom dilepaskan, truk berada pada jarak $x_0=100$ m dari $O$. Jika tinggi truk tersebut adalah 3 m, maka laju truk $v_T$ adalah
+\gambar[0.55\textwidth]{images/2/2-p2.png}
+\begin{pilihan}
+  \item 65 m/s \item 60 m/s \item 40 m/s \item 50 m/s \item 30 m/s
+\end{pilihan}
+\pembahasan Gerak bom setelah dilepaskan adalah gerak parabola. Pada arah horizontal, bom membawa kecepatan pesawat $v_P=60$ m/s. Karena tinggi truk 3 m, jarak jatuh vertikal bom adalah
+\[ \Delta y = 128 - 3 = 125 \text{ m}. \]
+Dengan $g=10$ m/s$^2$,
+\[ 125 = \tfrac{1}{2}(10)t^2 = 5t^2 \Rightarrow t = 5 \text{ s}. \]
+Posisi horizontal bom: $x_{\text{bom}} = v_P t = 60(5) = 300$ m. Agar bom mengenai truk, $100 + v_T(5) = 300$, sehingga
+\[ v_T = 40 \text{ m/s}. \]
+\jawaban{(C) $40$ m/s.}
+\pemisah
+
+\nomor{2}
+\soal Sebuah batu dilepaskan dari atas gedung dari kondisi diam. Pada saat yang bersamaan dari ketinggian yang sama, sebuah bola dilemparkan secara horizontal. Jika gesekan udara diabaikan, manakah pernyataan berikut ini yang paling benar?
+\begin{pilihanA}
+  \item Waktu sampai bola dan batu di tanah bergantung pada massanya masing-masing.
+  \item Batu akan memiliki kelajuan yang lebih besar ketika sampai di tanah.
+  \item Bola akan sampai di tanah terlebih dahulu.
+  \item Batu akan sampai di tanah lebih dahulu.
+  \item Batu dan bola sampai di tanah pada waktu bersamaan.
+\end{pilihanA}
+\pembahasan Waktu jatuh benda ditentukan oleh gerak vertikalnya. Untuk keduanya berlaku $h=\tfrac{1}{2}gt^2$, yang tidak memuat massa maupun kecepatan horizontal. Karena ketinggian awal sama dan komponen kecepatan vertikal awal sama (nol), waktu jatuh kedua benda sama. Kecepatan horizontal hanya membuat bola jatuh di titik yang lebih jauh.
+\jawaban{(E) Batu dan bola sampai di tanah pada waktu bersamaan.}
+\pemisah
+
+\nomor{3}
+\soal Jika sebuah benda bermassa 5 kg memiliki energi kinetik sebesar 200 J sesaat sebelum menumbuk tanah, maka dari ketinggian berapakah benda tersebut dijatuhkan? Gunakan $g=10$ m/s$^2$.
+\begin{pilihan}
+  \item 2 m \item 10 m \item 4 m \item 8 m \item 6 m
+\end{pilihan}
+\pembahasan Benda dijatuhkan dari keadaan diam. Dengan kekekalan energi mekanik, $mgh=E_k$, sehingga
+\[ (5)(10)h = 200 \Rightarrow 50h = 200 \Rightarrow h = 4 \text{ m}. \]
+\jawaban{(C) $4$ m.}
+\pemisah
+
+\nomor{4}
+\soal Dua buah balok dengan massa masing-masing $m=3{,}6$ kg dan $M=2$ kg dihubungkan oleh sebuah tali yang melalui katrol seperti pada gambar. Koefisien gesek statik dan kinetik antara dua permukaan balok adalah $\mu_s=0{,}8$ dan $\mu_k=0{,}6$, tetapi lantai licin. Besar gaya horizontal maksimum $F$ sehingga sistem masih berada dalam kesetimbangan adalah \ldots\ N. Gunakan $g=10$ m/s$^2$.
+\gambar[0.5\textwidth]{images/2/2-p4.png}
+\begin{pilihan}
+  \item 61,60 \item 28,80 \item 86,40 \item 57,60 \item 64,80
+\end{pilihan}
+\pembahasan Agar sistem setimbang, gesekan antara balok $m$ dan $M$ berupa gesekan statik. Nilai maksimumnya $f_{s,\max}=\mu_s N$. Karena $m$ di atas $M$, gaya normal antarbalok $N=mg=(3{,}6)(10)=36$ N, sehingga $f_{s,\max}=0{,}8(36)=28{,}8$ N.
+
+Pada balok $M$ (lantai licin), gaya horizontal hanya tegangan tali $T$ dan gesekan dari balok atas, sehingga $T=f_s$. Pada balok $m$, $F=T+f_s$. Karena $T=f_s$, maka $F=2f_s$. Gaya maksimum saat $f_s=f_{s,\max}$:
+\[ F_{\max} = 2(28{,}8) = 57{,}6 \text{ N}. \]
+\jawaban{(D) $57{,}60$ N.}
+\pemisah
+
+\nomor{5}
+\soal Balok kecil $m_1=1$ kg dihubungkan dengan tali ke balok $m_2=4$ kg melalui katrol licin tak bermassa. Sistem terletak pada lantai datar seperti gambar. Koefisien gesek statis $m_1$ ke $m_2$ adalah 0,20 dan koefisien gesek kinetik $m_2$ ke lantai adalah 0,30. Jika $m_2$ ditarik dengan gaya mendatar $F=30$ N ke kiri, besar percepatan $m_1$ relatif terhadap lantai selama bergerak di atas $m_2$ adalah
+\gambar[0.5\textwidth]{images/2/2-p5.png}
+\begin{pilihan}
+  \item 2,2 m/s$^2$ \item 2,4 m/s$^2$ \item 2,6 m/s$^2$ \item 3,0 m/s$^2$ \item 4,4 m/s$^2$
+\end{pilihan}
+\pembahasan Tali menghubungkan $m_1$ dan $m_2$ melalui katrol tetap, sehingga jika $m_2$ dipercepat ke kiri dengan percepatan $a$, maka $m_1$ dipercepat ke kanan dengan besar $a$ yang sama. Gaya gesek antara $m_1$ dan $m_2$:
+\[ f_{12} = \mu(m_1 g) = 0{,}20(1)(10) = 2 \text{ N}. \]
+Gaya gesek lantai pada $m_2$:
+\[ f_{\text{lantai}} = \mu_k(m_1+m_2)g = 0{,}30(1+4)(10) = 15 \text{ N}. \]
+Untuk $m_1$ (arah kanan positif): $T - f_{12} = m_1 a \Rightarrow T - 2 = a$, jadi $T=a+2$.
+
+Untuk $m_2$ (arah kanan positif, dipercepat ke kiri $\Rightarrow -a$): $T + f_{12} + f_{\text{lantai}} - F = m_2(-a)$. Substitusi:
+\[ T + 2 + 15 - 30 = -4a \Rightarrow T - 13 = -4a. \]
+Masukkan $T=a+2$: $a+2-13=-4a \Rightarrow 5a=11 \Rightarrow a=2{,}2$ m/s$^2$.
+\jawaban{(A) $2{,}2$ m/s$^2$.}
+\pemisah
+
+\nomor{6}
+\soal Balok $m_1=1$ kg dihubungkan dengan tali ke balok $m_2=3$ kg melalui katrol yang licin dan tak bermassa. Sistem pada lantai datar yang kasar. Koefisien gesek kinetik antara $m_1$ ke $m_2$ dan antara $m_2$ ke lantai berturut-turut adalah 0,25 dan 0,30. Jika $m_1$ ditarik dengan gaya mendatar $F=35$ N, besar percepatan $m_2$ terhadap lantai selama balok $m_1$ bergerak di atas $m_2$ adalah
+\gambar[0.5\textwidth]{images/2/2-p6.png}
+\begin{pilihan}
+  \item 5,375 m/s$^2$ \item 4,625 m/s$^2$ \item 3,850 m/s$^2$ \item 3,500 m/s$^2$ \item 2,000 m/s$^2$
+\end{pilihan}
+\pembahasan Arah gerak yang konsisten: $m_1$ tertarik ke kiri dan $m_2$ bergerak ke kanan dengan besar percepatan sama, $a$. Gaya gesek kinetik antara $m_1$ dan $m_2$:
+\[ f_{12} = \mu_{12}m_1 g = 0{,}25(1)(10) = 2{,}5 \text{ N}. \]
+Gaya gesek lantai pada $m_2$:
+\[ f_{\text{lantai}} = \mu_{2L}(m_1+m_2)g = 0{,}30(1+3)(10) = 12 \text{ N}. \]
+Untuk $m_1$ (arah kanan positif, dipercepat ke kiri $\Rightarrow -a$): $T + f_{12} - F = m_1(-a) \Rightarrow T = 32{,}5 - a$.
+
+Untuk $m_2$ (arah kanan positif): $T - f_{12} - f_{\text{lantai}} = m_2 a \Rightarrow T - 14{,}5 = 3a$. Substitusi:
+\[ 32{,}5 - a - 14{,}5 = 3a \Rightarrow 18 = 4a \Rightarrow a = 4{,}5 \text{ m/s}^2. \]
+\catatan Dengan data yang tertulis pada soal, hasilnya $4{,}5$ m/s$^2$, tetapi nilai ini tidak muncul pada pilihan jawaban.
+\jawaban{Tidak ada opsi yang tepat untuk data tertulis; hasil fisikanya $4{,}5$ m/s$^2$.}
+\pemisah
+
+\nomor{7}
+\soal Persamaan gelombang mekanik di bawah ini yang berpanjang gelombang 0,75 m dan merambat dengan laju 15 m/s adalah:
+\begin{pilihanA}
+  \item $y(t,x)=(0{,}40)\sin 2\pi\left(20t-\dfrac{4x}{3}+\dfrac{1}{3}\right)$ m
+  \item $y(t,x)=(0{,}40)\sin 2\pi\left(20t-\dfrac{3x}{4}+\dfrac{1}{6}\right)$ m
+  \item $y(t,x)=(0{,}40)\sin 2\pi\left(10t-\dfrac{4x}{3}+\dfrac{1}{5}\right)$ m
+  \item $y(t,x)=(0{,}40)\sin 2\pi\left(10t-\dfrac{3x}{4}+\dfrac{1}{2}\right)$ m
+  \item $y(t,x)=(0{,}40)\sin 2\pi\left(10t+\dfrac{4x}{3}+\dfrac{1}{2}\right)$ m
+\end{pilihanA}
+\pembahasan Bentuk umum gelombang berjalan ke arah $+x$ adalah $y=A\sin 2\pi\left(ft-\dfrac{x}{\lambda}+\phi\right)$. Diketahui $\lambda=0{,}75=\tfrac{3}{4}$ m, sehingga $\dfrac{1}{\lambda}=\dfrac{4}{3}$. Laju $v=f\lambda$, sehingga
+\[ f=\frac{v}{\lambda}=\frac{15}{0{,}75}=20 \text{ Hz}. \]
+Jadi bagian yang benar memuat $20t-\dfrac{4x}{3}$. Fase awal tidak memengaruhi $\lambda$ dan $v$, sehingga pilihan yang sesuai adalah (A).
+\jawaban{(A) $y(t,x)=(0{,}40)\sin 2\pi\left(20t-\tfrac{4x}{3}+\tfrac{1}{3}\right)$ m.}
+\pemisah
+
+\nomor{8}
+\soal Persamaan simpangan sebuah gelombang berjalan adalah
+\[ y(t,x) = 10\,\text{m}\,\sin\!\left(10\pi x + 15\pi t + \frac{\pi}{3}\right), \]
+dengan $t$ dalam sekon dan $x$ dalam meter. Pernyataan yang benar adalah
+\begin{pilihanA}
+  \item Tidak ada jawaban yang benar.
+  \item Gelombang merambat ke arah sumbu $x$ positif dengan panjang gelombang 0,2 m.
+  \item Gelombang merambat ke arah sumbu $x$ positif dengan laju rambat 1,5 m/s.
+  \item Gelombang merambat ke arah sumbu $x$ negatif dengan panjang gelombang 0,3 m.
+  \item Gelombang merambat ke arah sumbu $x$ negatif dengan laju rambat 1,5 m/s.
+\end{pilihanA}
+\pembahasan Bandingkan dengan bentuk umum $y=A\sin(kx+\omega t+\phi)$. Tanda $kx+\omega t$ menunjukkan gelombang merambat ke arah $x$ negatif. Dari soal, $k=10\pi$ rad/m dan $\omega=15\pi$ rad/s. Maka
+\[ \lambda=\frac{2\pi}{k}=\frac{2\pi}{10\pi}=0{,}2 \text{ m}, \qquad v=\frac{\omega}{k}=\frac{15\pi}{10\pi}=1{,}5 \text{ m/s}. \]
+Arah rambat menuju sumbu $x$ negatif dengan laju 1,5 m/s.
+\jawaban{(E) Gelombang merambat ke arah sumbu $x$ negatif dengan laju rambat 1,5 m/s.}
+\pemisah
+
+\nomor{9}
+\soal Gambar merupakan grafik yang menyatakan simpangan gelombang berjalan pada $t=0$ yang merambat ke kanan. Jika frekuensi gelombang 5 Hz, maka persamaan simpangan gelombang tersebut adalah dalam SI.
+\gambar[0.55\textwidth]{images/2/2-p8.png}
+\begin{pilihan}
+  \item $y(x,t)=2\cos(2\pi(5t-0{,}5x))$
+  \item $y(x,t)=2\cos(2\pi(2t-x))$
+  \item $y(x,t)=2\cos(2\pi(5t-x))$
+  \item $y(x,t)=2\cos(2\pi(10t-2x))$
+  \item $y(x,t)=2\cos(2\pi(10t-x))$
+\end{pilihan}
+\pembahasan Dari grafik, amplitudo $A=2$ m dan jarak antara dua puncak berturut-turut dari $x=0$ ke $x=2$, sehingga $\lambda=2$ m. Gelombang merambat ke kanan, bentuknya $y=A\cos 2\pi\left(ft-\dfrac{x}{\lambda}\right)$. Dengan $f=5$ Hz dan $\lambda=2$ m, $\dfrac{x}{\lambda}=0{,}5x$, sehingga
+\[ y = 2\cos 2\pi(5t-0{,}5x). \]
+\jawaban{(A) $y(x,t)=2\cos(2\pi(5t-0{,}5x))$.}
+\pemisah
+
+\nomor{10}
+\soal Balok 2 kg pada gambar di bawah meluncur menuruni suatu lorong melengkung yang licin dari keadaan diam pada ketinggian 3 m. Balok kemudian bergerak pada permukaan horizontal $BC$ yang kasar dan berhenti di $C$. Berapakah koefisien gesek antara balok dan permukaan horizontal?
+\gambar[0.5\textwidth]{images/2/2-p9.png}
+\begin{pilihan}
+  \item $\tfrac{1}{4}$ \item $\tfrac{1}{3}$ \item $\tfrac{1}{2}$ \item $\tfrac{2}{5}$ \item $\tfrac{3}{5}$
+\end{pilihan}
+\pembahasan Lintasan lengkung $A$ ke $B$ licin, sehingga energi potensial di ketinggian $h=3$ m berubah menjadi energi kinetik di $B$: $E_B=mgh$. Pada lintasan horizontal $BC$ ($L=9$ m), balok berhenti karena usaha gesek $W_f=\mu_k mgL$. Dengan kekekalan energi,
+\[ mgh = \mu_k mgL \Rightarrow \mu_k = \frac{h}{L} = \frac{3}{9} = \frac{1}{3}. \]
+\jawaban{(B) $\tfrac{1}{3}$.}
+\pemisah
+
+\nomor{11}
+\soal Sebuah balok kecil bermassa 102 gram dilepaskan dari titik $A$. Balok bergerak melewati lintasan lengkung $AB$ yang licin berbentuk seperempat lingkaran. Setelah itu balok bergerak di lintasan datar $BC$ dengan koefisien gesek kinetis 0,22 dan tepat berhenti di titik $C$. Rasio antara jari-jari kelengkungan lintasan $AB$ dengan jarak lintasan datar $BC$ adalah \ldots\ Gunakan $g=10$ m/s$^2$.
+\gambar[0.5\textwidth]{images/2/2-p10.png}
+\begin{pilihan}
+  \item 0,44 \item 0,11 \item 1,10 \item 0,22 \item 4,55
+\end{pilihan}
+\pembahasan Penurunan tinggi dari $A$ ke $B$ sama dengan jari-jari $R$. Energi potensial yang berubah menjadi energi kinetik di $B$: $E_B=mgR$. Pada lintasan datar $BC=s$, energi kinetik habis oleh gesekan: $W_f=\mu_k mgs$. Dengan $mgR=\mu_k mgs$,
+\[ \frac{R}{BC} = \mu_k = 0{,}22. \]
+\jawaban{(D) $0{,}22$.}
+\pemisah
+
+\nomor{12}
+\soal Sebuah balok meluncur pada bidang yang licin dari $P$ menuju $Q$. Jika $g=10$ m/s$^2$, berapakah kelajuan balok di $P$ agar saat mencapai titik $Q$ kelajuannya 7 m/s?
+\gambar[0.5\textwidth]{images/2/2-p11.png}
+\begin{pilihan}
+  \item 13 m/s \item 12 m/s \item 11 m/s \item 10 m/s \item 9 m/s
+\end{pilihan}
+\pembahasan Lintasan licin sehingga energi mekanik kekal. Tinggi $h_P=4$ m, $h_Q=10$ m, $v_Q=7$ m/s. Dengan kekekalan energi,
+\[ \tfrac{1}{2}v_P^2 + g h_P = \tfrac{1}{2}v_Q^2 + g h_Q. \]
+\[ \tfrac{1}{2}v_P^2 + 40 = \tfrac{49}{2} + 100 \Rightarrow \tfrac{1}{2}v_P^2 = 84{,}5 \Rightarrow v_P^2 = 169 \Rightarrow v_P = 13 \text{ m/s}. \]
+\jawaban{(A) $13$ m/s.}
+\pemisah
+
+\nomor{13}
+\soal Sebuah balok yang diam bermassa 9,8 kg ditarik oleh gaya horizontal konstan $F=10$ N. Jika permukaan lantai datar dan kasar dengan koefisien gesek statik dan kinetik masing-masing 0,6 dan 0,4, maka percepatan balok adalah \ldots\ m/s$^2$. Gunakan $g=10$ m/s$^2$.
+\gambar[0.45\textwidth]{images/2/2-p12.png}
+\begin{pilihan}
+  \item 3,12 \item 0,00 \item 0,88 \item 5,12 \item 4,00
+\end{pilihan}
+\pembahasan Gaya normal $N=mg=(9{,}8)(10)=98$ N. Gesek statik maksimum $f_{s,\max}=\mu_s N=0{,}6(98)=58{,}8$ N. Gaya tarik 10 N lebih kecil dari 58,8 N, sehingga gesek statik masih mampu menahan balok. Resultan gaya nol, sehingga
+\[ a = 0 \text{ m/s}^2. \]
+\jawaban{(B) $0{,}00$ m/s$^2$.}
+\pemisah
+
+\nomor{14}
+\soal Sebuah balok ditarik oleh gaya $F$ menaiki bidang miring. Massa balok $m=5$ kg, sudut kemiringan $\theta=37^\circ$, koefisien gesek kinetik $\mu_k=0{,}25$. Jika $F=45$ N sejajar bidang, besar percepatan balok adalah
+\gambar[0.5\textwidth]{images/2/2-p13.png}
+\begin{pilihan}
+  \item 0,0 m/s$^2$ \item 1,0 m/s$^2$ \item 1,5 m/s$^2$ \item 2,0 m/s$^2$ \item 3,0 m/s$^2$
+\end{pilihan}
+\pembahasan Komponen berat sejajar bidang $mg\sin\theta$, gaya normal $N=mg\cos\theta$, gesek kinetik $f_k=\mu_k mg\cos\theta$ (arah turun bidang). Dengan $\sin 37^\circ=0{,}6$ dan $\cos 37^\circ=0{,}8$, Hukum II Newton sepanjang bidang (arah naik positif):
+\[ F - mg\sin\theta - \mu_k mg\cos\theta = ma. \]
+\[ 45 - (5)(10)(0{,}6) - 0{,}25(5)(10)(0{,}8) = 5a \Rightarrow 45 - 30 - 10 = 5a \Rightarrow a = 1{,}0 \text{ m/s}^2. \]
+\jawaban{(B) $1{,}0$ m/s$^2$.}
+\pemisah
+
+\nomor{15}
+\soal Sebuah balok didorong oleh gaya $F$ \emph{horizontal} menaiki bidang miring. Massa balok $m=5$ kg, sudut kemiringan $\theta=37^\circ$, koefisien gesek kinetik $\mu_k=0{,}20$. Jika $F=75$ N, besar percepatan balok adalah \ldots\ m/s$^2$.
+\gambar[0.5\textwidth]{images/2/2-p14.png}
+\begin{pilihan}
+  \item 3,6 \item 3,2 \item 3,0 \item 2,6 \item 2,4
+\end{pilihan}
+\pembahasan Karena $F$ horizontal, uraikan terhadap bidang. Komponen $F$ sejajar bidang (mendorong naik) $F\cos\theta$, komponen yang menekan bidang $F\sin\theta$. Gaya normal
+\[ N = mg\cos\theta + F\sin\theta. \]
+Gesek kinetik $f_k=\mu_k N$. Hukum II Newton sepanjang bidang (naik positif):
+\[ F\cos\theta - mg\sin\theta - \mu_k(mg\cos\theta+F\sin\theta) = ma. \]
+Dengan $\sin 37^\circ=0{,}6$, $\cos 37^\circ=0{,}8$: $F\cos\theta=60$ N, $mg\sin\theta=30$ N, $N=40+45=85$ N, $f_k=0{,}20(85)=17$ N. Maka
+\[ 5a = 60 - 30 - 17 = 13 \Rightarrow a = 2{,}6 \text{ m/s}^2. \]
+\jawaban{(D) $2{,}6$ m/s$^2$.}
+\pemisah
+
+\begin{center}\textbf{\large Daftar Jawaban Singkat --- Set 1}\end{center}
+\begin{center}
+\begin{tabular}{c|ccccccccccccccc}
+Nomor & 1&2&3&4&5&6&7&8&9&10&11&12&13&14&15\\
+\hline
+Jawaban & C&E&C&D&A&--&A&E&A&B&D&A&B&B&D\\
+\end{tabular}
+\end{center}
+
+%==================== SET 2 ====================
+\setcover{2}{}
+
+\nomor{1}
+\soal Sebuah partikel bermassa 500 gram mula-mula bergerak dengan kecepatan 6,5 m/s. Partikel tersebut kemudian ditarik oleh sebuah gaya konstan $F$ sehingga dipercepat 2 m/s$^2$ selama 7 detik. Besar usaha yang dilakukan oleh gaya $F$ selama dipercepat adalah \ldots\ Joule.
+\begin{pilihan}
+  \item 5,12 \item 3,50 \item 105,6 \item 47,25 \item 94,50
+\end{pilihan}
+\pembahasan Massa $m=0{,}5$ kg, $v_0=6{,}5$ m/s, $a=2$ m/s$^2$, $t=7$ s. Kecepatan akhir $v=v_0+at=6{,}5+2(7)=20{,}5$ m/s. Dengan teorema usaha-energi,
+\[ W=\Delta K=\tfrac{1}{2}m(v^2-v_0^2)=\tfrac{1}{2}(0{,}5)(20{,}5^2-6{,}5^2)=0{,}25(420{,}25-42{,}25)=94{,}50 \text{ J}. \]
+\jawaban{(E) $94{,}50$ J.}
+\pemisah
+
+\nomor{2}
+\soal Gaya $F_x$ bekerja pada balok $m=2$ kg yang berada pada bidang datar licin seperti gambar. Kelajuan balok saat di $x=0$ adalah 4 m/s ke sumbu $x$ positif. Berapakah kelajuan balok saat di $x=5$ m?
+\gambar[0.5\textwidth]{images/2/2-p16.png}
+\begin{pilihan}
+  \item 1,0 m/s \item 1,5 m/s \item 2,0 m/s \item 2,5 m/s \item 3,0 m/s
+\end{pilihan}
+\pembahasan Pada grafik gaya terhadap posisi, usaha sama dengan luas aljabar di bawah kurva. Dari $x=0$ sampai $x=2$, luas positif dan negatif segitiga saling meniadakan sehingga usahanya nol. Dari $x=2$ sampai $x=5$, gaya konstan $-4$ N, sehingga $W_{2\to5}=(-4)(5-2)=-12$ J.
+
+Energi kinetik awal $K_0=\tfrac{1}{2}(2)(4^2)=16$ J. Maka $K_f=K_0+W=16-12=4$ J. Karena $K_f=\tfrac{1}{2}mv_f^2$,
+\[ 4=\tfrac{1}{2}(2)v_f^2 \Rightarrow v_f=2{,}0 \text{ m/s}. \]
+\jawaban{(C) $2{,}0$ m/s.}
+\pemisah
+
+\nomor{3}
+\soal Sebuah balok bermassa $m=4$ kg ditarik dengan gaya $F=25$ N pada bidang datar (arah $F$ membentuk sudut $37^\circ$ terhadap horizontal). Koefisien gesek kinetik antara balok dan bidang adalah $\mu_k=0{,}20$. Selama 4 detik, usaha yang diberikan oleh gaya $F$ ke balok adalah \ldots\ Joule.
+\begin{pilihan}
+  \item 150 \item 300 \item 450 \item 600 \item 750
+\end{pilihan}
+\pembahasan Komponen vertikal gaya mengurangi gaya normal: $N=mg-F\sin 37^\circ=4(10)-25(0{,}6)=40-15=25$ N. Gaya gesek kinetik $f_k=\mu_k N=0{,}20(25)=5$ N. Komponen horizontal $F_x=F\cos 37^\circ=25(0{,}8)=20$ N. Resultan horizontal $\Sigma F_x=20-5=15$ N, sehingga $a=\tfrac{15}{4}=3{,}75$ m/s$^2$.
+
+Jika balok mula-mula diam, perpindahan dalam 4 detik $s=\tfrac{1}{2}at^2=\tfrac{1}{2}(3{,}75)(16)=30$ m. Usaha oleh $F$:
+\[ W_F=(F\cos 37^\circ)s=20(30)=600 \text{ J}. \]
+\jawaban{(D) $600$ J.}
+\pemisah
+
+\nomor{4}
+\soal Sebuah partikel bergerak dari pusat koordinat menuju arah sumbu $x$ positif dengan besar kecepatan 4 m/s selama 50 sekon. Kemudian tanpa mengubah arah, besar kecepatannya menjadi 5 m/s untuk 20 sekon berikutnya. Partikel tersebut kemudian berbalik arah dan selama 30 sekon bergerak dengan besar kecepatan 6 m/s. Besar kecepatan rata-rata partikel dalam 100 sekon tersebut adalah \ldots\ m/s.
+\begin{pilihan}
+  \item 4,80 \item 0,03 \item 1,00 \item 1,20 \item 5,00
+\end{pilihan}
+\pembahasan Kecepatan rata-rata memakai perpindahan. $\Delta x_1=4(50)=200$ m, $\Delta x_2=5(20)=100$ m, $\Delta x_3=-6(30)=-180$ m. Perpindahan total $\Delta x=200+100-180=120$ m. Maka
+\[ |\bar v|=\frac{|\Delta x|}{\Delta t}=\frac{120}{100}=1{,}20 \text{ m/s}. \]
+\jawaban{(D) $1{,}20$ m/s.}
+\pemisah
+
+\nomor{5}
+\soal Sebuah bus berangkat menuju kota tertentu dengan kecepatan tetap 30 km/jam. Setelah tiba di kota tujuan, tanpa istirahat langsung kembali ke kota asal dengan kecepatan tetap 60 km/jam. Kelajuan rata-rata bus selama perjalanan tersebut adalah \ldots\ km/jam.
+\begin{pilihan}
+  \item 35 \item 40 \item 45 \item 50 \item 55
+\end{pilihan}
+\pembahasan Untuk perjalanan pergi-pulang dengan jarak sama, kelajuan rata-rata adalah harmonik:
+\[ \bar v=\frac{2}{\frac{1}{30}+\frac{1}{60}}=40 \text{ km/jam}. \]
+\jawaban{(B) $40$ km/jam.}
+\pemisah
+
+\nomor{6}
+\soal Dari keadaan diam, sebuah bus dipercepat dengan besar percepatan 2 m/s$^2$ selama 10 sekon, lalu dengan kecepatan tetap selama 5 sekon, kemudian diperlambat 4 m/s$^2$ sampai berhenti. Jika lintasan bus adalah garis lurus, kelajuan rata-rata bus sejak dipercepat sampai berhenti kembali adalah \ldots\ m/s.
+\begin{pilihan}
+  \item 12,5 \item 15,0 \item 17,5 \item 20,0 \item 22,5
+\end{pilihan}
+\pembahasan Setelah dipercepat 10 s: $v=at=2(10)=20$ m/s, jaraknya $s_1=\tfrac{1}{2}(2)(10^2)=100$ m. Saat konstan 5 s: $s_2=20(5)=100$ m. Saat diperlambat dari 20 m/s ($4$ m/s$^2$): $t_3=\tfrac{20}{4}=5$ s, $s_3=\tfrac{v^2}{2a}=\tfrac{400}{8}=50$ m. Jarak total $250$ m, waktu total $20$ s, sehingga $\bar v=\tfrac{250}{20}=12{,}5$ m/s.
+\jawaban{(A) $12{,}5$ m/s.}
+\pemisah
+
+\nomor{7}
+\soal Jika
+\[ y(x,t)=(6\,\text{mm})\sin\!\left[2\pi\left(0{,}2x-\frac{5t}{3}\right)\right] \]
+mendeskripsikan gelombang transversal pada seutas tali, berapa lama waktu minimum yang diperlukan sebuah titik pada tali untuk bergeser dari $y=+3$ mm ke $y=-3$ mm?
+\begin{pilihan}
+  \item 0,1 s \item 0,2 s \item 0,3 s \item 0,4 s \item 0,6 s
+\end{pilihan}
+\pembahasan Pada satu titik tali, gerak adalah harmonik sederhana terhadap waktu dengan amplitudo $A=6$ mm, sehingga $y=+3$ mm berarti $y/A=+1/2$ dan $y=-3$ mm berarti $y/A=-1/2$. Frekuensi sudut dari koefisien $t$:
+\[ \omega=2\pi\left(\frac{5}{3}\right)=\frac{10\pi}{3} \text{ rad/s}. \]
+Perubahan fase minimum dari $+A/2$ ke $-A/2$ adalah $\Delta\phi=\tfrac{\pi}{3}$. Maka
+\[ \Delta t=\frac{\Delta\phi}{\omega}=\frac{\pi/3}{10\pi/3}=0{,}1 \text{ s}. \]
+\jawaban{(A) $0{,}1$ s.}
+\pemisah
+
+\nomor{8}
+\soal Persamaan simpangan sebuah gelombang berjalan transversal pada tali adalah
+\[ y(t,x)=(0{,}9\,\text{m})\sin\!\left(\frac{\pi x}{5}+8\pi t\right), \]
+dengan $t$ dalam sekon dan $x$ dalam meter. Laju transversal pada tali di posisi $x=1{,}5$ m saat $t=0{,}5$ s adalah \ldots\ m/s.
+\begin{pilihan}
+  \item 0,53 \item 13,29 \item 0,73 \item 18,29 \item 1,66
+\end{pilihan}
+\pembahasan Laju transversal adalah turunan simpangan terhadap waktu:
+\[ v_y=\frac{\partial y}{\partial t}=(0{,}9)(8\pi)\cos\!\left(\frac{\pi x}{5}+8\pi t\right). \]
+Fase: $\phi=\tfrac{\pi(1{,}5)}{5}+8\pi(0{,}5)=0{,}3\pi+4\pi=4{,}3\pi$. Karena $\cos(4{,}3\pi)=\cos(0{,}3\pi)\approx0{,}588$,
+\[ v_y\approx 0{,}9(8\pi)(0{,}588)\approx 13{,}29 \text{ m/s}. \]
+\jawaban{(B) $13{,}29$ m/s.}
+\pemisah
+
+\nomor{9}
+\soal Gelombang merambat pada tali dengan persamaan $y=15\cos(4x-20t)$, dengan $x$ dalam meter, $y$ dalam cm, dan $t$ dalam sekon. Kelajuan getar tali pada posisi vertikal 12 cm adalah \ldots
+\begin{pilihan}
+  \item 120 cm/s \item 150 cm/s \item 180 cm/s \item 200 cm/s \item 240 cm/s
+\end{pilihan}
+\pembahasan Kelajuan getar tali adalah laju gerak titik secara vertikal:
+\[ v_y=\frac{\partial y}{\partial t}=15(20)\sin(4x-20t)=300\sin\phi. \]
+Pada posisi vertikal $y=12$ cm: $12=15\cos\phi\Rightarrow\cos\phi=0{,}8$, sehingga $|\sin\phi|=\sqrt{1-0{,}8^2}=0{,}6$. Maka $|v_y|=300(0{,}6)=180$ cm/s.
+\jawaban{(C) $180$ cm/s.}
+\pemisah
+
+\nomor{10}
+\soal Pada $t=0$ s, ambulans bergerak dengan kecepatan konstan 35 m/s menuju suatu perempatan yang berjarak 1 km di depannya. Ambulans membunyikan sirine dengan frekuensi 1000 Hz. Tepat saat 1 menit, frekuensi sirine yang dideteksi oleh sebuah sensor yang dipasang di perempatan tersebut adalah \ldots\ Hz. Cepat rambat bunyi di udara 340 m/s.
+\begin{pilihan}
+  \item 906,67 \item 1000,00 \item 897,06 \item 1102,94 \item 1114,75
+\end{pilihan}
+\pembahasan Dalam 60 s ambulans menempuh $s=35(60)=2100$ m. Karena perempatan hanya 1000 m di depan ambulans, pada $t=60$ s ambulans sudah melewati perempatan dan menjauhi sensor. Untuk sumber yang menjauhi pengamat diam,
+\[ f'=f_s\frac{v}{v+v_s}=1000\frac{340}{340+35}\approx 906{,}67 \text{ Hz}. \]
+\jawaban{(A) $906{,}67$ Hz.}
+\pemisah
+
+\nomor{11}
+\soal Sebuah sumber bunyi dengan frekuensi $f_s$ diletakkan di titik $x=0$. Sumber bunyi tersebut kemudian berosilasi harmonik sepanjang sumbu $x$ dengan amplitudo osilasi $A_0$ dan frekuensi osilasi $f_0$. Sebuah detektor bunyi diletakkan pada posisi $x=1{,}5A_0$.
+\begin{pilihanA}
+  \item frekuensi yang ditangkap oleh detektor saat sumber tepat berada di titik $x=A_0$ lebih besar dibanding saat sumber tepat di $x=-A_0$
+  \item frekuensi yang ditangkap oleh detektor saat sumber tepat berada di titik $x=A_0$ dan $x=-A_0$ sama
+  \item frekuensi yang ditangkap oleh detektor saat sumber tepat berada di titik $x=0$ dan sedang menuju $x=-A_0$ merupakan frekuensi maksimum yang terdeteksi
+  \item frekuensi yang ditangkap oleh detektor saat sumber tepat berada di titik $x=0$ dan sedang menuju $x=A_0$ merupakan frekuensi minimum yang terdeteksi
+  \item frekuensi yang ditangkap oleh detektor saat sumber tepat berada di titik $x=A_0$ lebih kecil dibanding saat sumber tepat di $x=-A_0$
+\end{pilihanA}
+\pembahasan Efek Doppler bergantung pada komponen kecepatan sumber relatif terhadap detektor, bukan posisinya. Pada gerak harmonik, di titik balik $x=A_0$ dan $x=-A_0$ kecepatan sumber sama dengan nol, sehingga frekuensi yang diterima sama dengan $f_s$ di kedua titik. Jadi frekuensi di $x=A_0$ dan $x=-A_0$ sama. (Saat sumber di $x=0$ menuju $x=A_0$, sumber mendekati detektor sehingga frekuensi justru maksimum.)
+\jawaban{(B) frekuensi di $x=A_0$ dan $x=-A_0$ sama.}
+\pemisah
+
+\nomor{12}
+\soal Sebuah sensor yang dipasang di halte mendeteksi frekuensi sirine mobil ambulans yang melintas berubah dari 544 Hz menjadi 480 Hz. Laju bunyi di udara saat itu 320 m/s. Jika ambulans melintas dengan kecepatan tetap, besar kecepatannya adalah \ldots
+\begin{pilihan}
+  \item 20 km/jam \item 30 km/jam \item 54 km/jam \item 72 km/jam \item 80 km/jam
+\end{pilihan}
+\pembahasan Saat mendekati: $f_{\text{dekat}}=f_s\dfrac{v}{v-v_s}$; saat menjauhi: $f_{\text{jauh}}=f_s\dfrac{v}{v+v_s}$. Ambil perbandingan agar $f_s$ hilang:
+\[ \frac{544}{480}=\frac{v+v_s}{v-v_s}=\frac{17}{15}. \]
+Maka $17(320-v_s)=15(320+v_s)\Rightarrow 5440-17v_s=4800+15v_s\Rightarrow 640=32v_s$, sehingga $v_s=20$ m/s $=72$ km/jam.
+\jawaban{(D) $72$ km/jam.}
+\pemisah
+
+\nomor{13}
+\soal Sebuah partikel dengan massa 7,6 gram bertumbukan dengan sebuah partikel lain dengan massa 3,8 gram yang sedang dalam keadaan diam. Jika kedua partikel menempel satu sama lain setelah tumbukan, maka perbandingan antara energi yang hilang akibat tumbukan dengan energi kinetik awal adalah \ldots
+\begin{pilihan}
+  \item 0,50 \item 0,25 \item 0,33 \item 0,00 \item 0,67
+\end{pilihan}
+\pembahasan Tumbukan menempel adalah tidak lenting sama sekali. Dari kekekalan momentum $m_1u=(m_1+m_2)v$, fraksi energi kinetik yang tersisa adalah $\dfrac{K_f}{K_i}=\dfrac{m_1}{m_1+m_2}$. Maka fraksi energi yang hilang:
+\[ 1-\frac{m_1}{m_1+m_2}=\frac{m_2}{m_1+m_2}=\frac{3{,}8}{7{,}6+3{,}8}=\frac{1}{3}\approx0{,}33. \]
+\jawaban{(C) $0{,}33$.}
+\pemisah
+
+\nomor{14}
+\soal Pada tumbukan dua buah benda, diketahui energi kinetik sistem kekal. Manakah pernyataan yang benar mengenai momentum sistem setelah tumbukan?
+\begin{pilihanA}
+  \item momentum sistem mungkin kekal
+  \item momentum sistem berkurang setengahnya
+  \item momentum sistem pasti kekal
+  \item momentum sistem naik menjadi dua kali momentum sebelum tumbukan
+  \item momentum sistem sama dengan energi kinetik sistem
+\end{pilihanA}
+\pembahasan Dalam tumbukan antar dua benda yang dianggap sebagai satu sistem tertutup, gaya selama tumbukan adalah gaya internal yang tidak mengubah momentum total. Jadi momentum sistem pasti kekal selama tidak ada impuls eksternal resultan, terlepas dari apakah energi kinetik kekal atau tidak.
+\jawaban{(C) momentum sistem pasti kekal.}
+\pemisah
+
+\nomor{15}
+\soal Sebuah benda 5 kg dengan kelajuan 4,0 m/s menabrak secara sentral benda 10 kg yang bergerak ke arahnya dengan kelajuan 3,0 m/s. Jika setelah tumbukan benda 10 kg berhenti, maka koefisien restitusi tumbukan dua benda itu adalah \ldots
+\begin{pilihan}
+  \item $\tfrac{2}{3}$ \item $\tfrac{4}{7}$ \item $\tfrac{3}{7}$ \item $\tfrac{1}{3}$ \item $\tfrac{2}{7}$
+\end{pilihan}
+\pembahasan Ambil arah gerak benda 5 kg positif: $m_1=5,u_1=+4,m_2=10,u_2=-3$. Setelah tumbukan $v_2=0$. Kekekalan momentum: $5(4)+10(-3)=5v_1+10(0)\Rightarrow 20-30=5v_1\Rightarrow v_1=-2$ m/s. Koefisien restitusi:
+\[ e=\frac{v_2-v_1}{u_1-u_2}=\frac{0-(-2)}{4-(-3)}=\frac{2}{7}. \]
+\jawaban{(E) $\tfrac{2}{7}$.}
+\pemisah
+
+\begin{center}\textbf{\large Daftar Jawaban Singkat --- Set 2}\end{center}
+\begin{center}
+\begin{tabular}{c|ccccccccccccccc}
+Nomor & 1&2&3&4&5&6&7&8&9&10&11&12&13&14&15\\
+\hline
+Jawaban & E&C&D&D&B&A&A&B&C&A&B&D&C&C&E\\
+\end{tabular}
+\end{center}
+
+%==================== SET 3 ====================
+\setcover{3}{}
+
+\nomor{1}
+\soal Bola ditendang dari tanah dengan sudut elevasi $\theta$ terhadap tanah. Bola jatuh di tanah pada jarak mendatar yang sama dengan empat kali tinggi maksimum yang dicapai bola. Jika gesekan dengan udara diabaikan, maka \ldots
+\begin{pilihan}
+  \item $\theta=30^\circ$ \item $\theta=37^\circ$ \item $\theta=45^\circ$ \item $\theta=53^\circ$ \item $\theta=60^\circ$
+\end{pilihan}
+\pembahasan Untuk gerak parabola yang berangkat dan mendarat pada ketinggian yang sama, $R=\dfrac{v_0^2\sin 2\theta}{g}$ dan $H=\dfrac{v_0^2\sin^2\theta}{2g}$. Diketahui $R=4H$:
+\[ \frac{v_0^2\sin 2\theta}{g}=4\cdot\frac{v_0^2\sin^2\theta}{2g}\Rightarrow \sin 2\theta=2\sin^2\theta. \]
+Karena $\sin 2\theta=2\sin\theta\cos\theta$, maka $2\sin\theta\cos\theta=2\sin^2\theta$. Untuk $\sin\theta\neq0$, $\cos\theta=\sin\theta\Rightarrow\theta=45^\circ$.
+\jawaban{(C) $\theta=45^\circ$.}
+\pemisah
+
+\nomor{2}
+\soal Sebuah proyektil ditembakkan dari tanah di $A$ ke arah benda $B$. Pada saat yang sama, $B$ dilepaskan. Jarak $AC=45$ m dan tinggi $B$ adalah 60 m vertikal di atas $C$. Berapa laju awal proyektil saat ditembakkan agar tepat mengenai $B$ saat berada 15 m di atas tanah?
+\gambar[0.42\textwidth]{images/2/2-p27.png}
+\begin{pilihan}
+  \item 20 m/s \item 25 m/s \item 30 m/s \item 40 m/s \item 45 m/s
+\end{pilihan}
+\pembahasan Ini variasi klasik ``pemburu dan monyet''. Proyektil ditembakkan ke arah posisi awal $B$; karena keduanya jatuh bebas dengan percepatan sama, arah tembakan tetap menuju titik pertemuan. $B$ mula-mula di 60 m dan tertumbuk di 15 m, jadi telah jatuh 45 m. Dengan $g=10$ m/s$^2$, $45=\tfrac{1}{2}gt^2=5t^2\Rightarrow t=3$ s.
+
+Proyektil menempuh perpindahan horizontal 45 m dalam 3 s, sehingga $v_{0x}=\tfrac{45}{3}=15$ m/s. Arah tembakan menuju $B$ memberi perbandingan horizontal:vertikal $=45:60=3:4$, sehingga $\cos\theta=3/5$. Karena $v_{0x}=v_0\cos\theta$, $15=v_0(3/5)\Rightarrow v_0=25$ m/s.
+\jawaban{(B) $25$ m/s.}
+\pemisah
+
+\nomor{3}
+\soal Seorang pelempar akan melemparkan sebuah bola dengan laju 30 m/s dan sudut elevasi $\alpha$ dengan $\tan\alpha=3/4$. Seorang penangkap berada pada jarak 60 m dari pelempar. Jika $g=10$ m/s$^2$ dan penangkap dapat berlari dengan kecepatan konstan, maka agar penangkap dapat menangkap bola, dia harus berlari dengan laju minimum sebesar \ldots\ m/s.
+\begin{pilihan}
+  \item 10,0 \item 5,66 \item 4,33 \item 7,33 \item 24,0
+\end{pilihan}
+\pembahasan Dengan $\tan\alpha=3/4$ (segitiga 3-4-5), $\sin\alpha=3/5$, $\cos\alpha=4/5$. Komponen awal $v_{0x}=30(4/5)=24$ m/s, $v_{0y}=30(3/5)=18$ m/s. Waktu di udara $t=\dfrac{2v_{0y}}{g}=\dfrac{36}{10}=3{,}6$ s. Jangkauan $R=v_{0x}t=24(3{,}6)=86{,}4$ m. Penangkap berada di 60 m, harus berlari $86{,}4-60=26{,}4$ m, sehingga laju minimumnya $v=\dfrac{26{,}4}{3{,}6}\approx7{,}33$ m/s.
+\jawaban{(D) $7{,}33$ m/s.}
+\pemisah
+
+\nomor{4}
+\soal Balok bermassa 5 kg ditekan pada dinding dengan koefisien gesek 0,3 dengan gaya tertentu seperti gambar. Gaya minimum yang diperlukan untuk menghentikan balok agar tidak jatuh adalah \ldots\ N. Gunakan $g=10$ m/s$^2$.
+\begin{pilihan}
+  \item 200,0 \item 142,9 \item 133,3 \item 166,7 \item 100,0
+\end{pilihan}
+\pembahasan Gaya tekan horizontal menghasilkan gaya normal dinding $N=F$. Agar balok tidak jatuh, gaya gesek maksimum harus menahan berat: $\mu_s F\geq mg$, sehingga $0{,}3F=5(10)=50\Rightarrow F=\dfrac{50}{0{,}3}=166{,}7$ N.
+\jawaban{(D) $166{,}7$ N.}
+\pemisah
+
+\nomor{5}
+\soal Untuk menjaga agar kotak kayu bermassa 10 kg tetap menempel diam pada dinding tegak, kotak didorong dengan gaya $F$ yang membentuk sudut $37^\circ$ terhadap garis datar. Koefisien gesek statis antara kotak dan dinding 0,25. Batas nilai $F$ adalah \ldots
+\begin{pilihanA}
+  \item $105\,\text{N}\leq F\leq 270\,\text{N}$
+  \item $110\,\text{N}\leq F\leq 265\,\text{N}$
+  \item $125\,\text{N}\leq F\leq 250\,\text{N}$
+  \item $120\,\text{N}\leq F\leq 255\,\text{N}$
+  \item $115\,\text{N}\leq F\leq 260\,\text{N}$
+\end{pilihanA}
+\pembahasan Komponen horizontal menekan kotak ke dinding: $N=F\cos 37^\circ=0{,}8F$. Gesek statik maksimum $f_{s,\max}=\mu_s N=0{,}25(0{,}8F)=0{,}2F$. Komponen vertikal ke atas $F_y=F\sin 37^\circ=0{,}6F$. Agar diam, $f_s=mg-0{,}6F=100-0{,}6F$ dengan $|f_s|\leq 0{,}2F$:
+\[ |100-0{,}6F|\leq 0{,}2F. \]
+Batas atas: $100-0{,}6F\geq-0{,}2F\Rightarrow F\leq 250$ N. Batas bawah: $100-0{,}6F\leq 0{,}2F\Rightarrow F\geq 125$ N. Jadi $125\,\text{N}\leq F\leq 250\,\text{N}$.
+\jawaban{(C) $125\,\text{N}\leq F\leq 250\,\text{N}$.}
+\pemisah
+
+\nomor{6}
+\soal Balok $B$ bermassa $M=50$ kg di atas lantai datar yang licin. Balok $A$ bermassa $m=10$ kg didorong dengan gaya mendatar $F$ sehingga kontak ke balok $B$. Koefisien gesek statis antara $A$ dan $B$ adalah 0,40. Berapa nilai minimum $F$ agar balok $A$ tidak mengalami slip terhadap balok $B$?
+\begin{pilihan}
+  \item 300 N \item 325 N \item 350 N \item 400 N \item 600 N
+\end{pilihan}
+\pembahasan Percepatan sistem dua balok $a=\dfrac{F}{m+M}$. Untuk balok $B$, satu-satunya gaya horizontal adalah gaya normal $N$ dari $A$, sehingga $N=Ma=M\dfrac{F}{m+M}$. Agar $A$ tidak slip ke bawah, $f_{s,\max}\geq mg$, dengan $f_{s,\max}=\mu_s N$:
+\[ \mu_s M\frac{F}{m+M}\geq mg \Rightarrow F\geq\frac{mg(m+M)}{\mu_s M}=\frac{10(10)(60)}{0{,}40(50)}=300 \text{ N}. \]
+\jawaban{(A) $300$ N.}
+\pemisah
+
+\nomor{7}
+\soal Pada gambar (a), batang homogen yang beratnya $W_1$ dan panjangnya $L$ setimbang horizontal karena ujung kiri diengselkan ke dinding sedangkan ujung kanan ditahan oleh kabel tipis takbermassa. Pada batang diletakkan beban yang beratnya $W_2$ pada jarak $x$ dari dinding, dengan $W_1+W_2=700$ N. Gambar (b) menunjukkan besar tegangan $T$ pada kabel terhadap rasio $x/L$. Maka $W_2=\ldots$
+\begin{pilihan}
+  \item 100 N \item 200 N \item 300 N \item 400 N \item 500 N
+\end{pilihan}
+\pembahasan Ambil momen terhadap engsel kiri. Komponen tegangan yang menghasilkan momen adalah $T\sin\theta$ di ujung kanan:
+\[ T\sin\theta\cdot L=W_1\left(\frac{L}{2}\right)+W_2 x. \]
+Bagi dengan $L$: $T=\dfrac{W_1/2+W_2(x/L)}{\sin\theta}$, yaitu garis lurus terhadap $x/L$ dengan intersep $\dfrac{W_1}{2\sin\theta}$ dan gradien $\dfrac{W_2}{\sin\theta}$.
+
+Dari grafik, saat $x/L=0$, $T=400$ N dan saat $x/L=1$, $T=1000$ N (gradien 600 N). Maka $\dfrac{W_1}{2\sin\theta}=400\Rightarrow W_1=800\sin\theta$ dan $\dfrac{W_2}{\sin\theta}=600\Rightarrow W_2=600\sin\theta$. Dengan $W_1+W_2=700$: $1400\sin\theta=700\Rightarrow\sin\theta=\tfrac{1}{2}$. Maka $W_2=600(\tfrac{1}{2})=300$ N.
+\jawaban{(C) $300$ N.}
+\pemisah
+
+\nomor{8}
+\soal Batang $AB$ yang homogen beratnya 200 N bertumpu ke lantai datar yang kasar di $A$ sedangkan ujung $B$ terikat ke tali ringan. Di ujung $B$ digantung beban yang beratnya $W=600$ N. Saat itu batang setimbang hampir tergelincir di $A$. Koefisien gesek statis antara $A$ dengan lantai adalah \ldots\ ($\sin 37^\circ=0{,}6$ dan $\sin 53^\circ=0{,}8$).
+\begin{pilihan}
+  \item 0,40 \item 0,50 \item 0,60 \item 0,75 \item 0,80
+\end{pilihan}
+\pembahasan Gaya yang bekerja: berat batang 200 N di titik tengah, beban 600 N di $B$, tegangan tali $T$ di $B$, serta reaksi lantai $N$ dan gesek $f$ di $A$. Dengan mengambil momen terhadap $A$ dan kesetimbangan gaya, hasil eksak (jika berat batang ikut diperhitungkan penuh) memberi $\mu_s=\dfrac{f}{N}=\dfrac{1200}{1700}\approx0{,}706$.
+\catatan Nilai 0,706 tidak tersedia pada pilihan. Jika berat batang 200 N diabaikan pada momen dan kesetimbangan vertikal, hasilnya menjadi $\mu_s=0{,}75$, yang sesuai dengan opsi (D). Jadi pilihan yang paling mungkin dimaksud penyusun soal adalah (D).
+\jawaban{(D) $0{,}75$ sebagai jawaban opsi/intended.}
+\pemisah
+
+\nomor{9}
+\soal Sebuah papan iklan homogen dan persegi panjang sisinya $L=2{,}0$ m dan beratnya 600 N. Papan ditahan oleh batang tak bermassa panjangnya 3,0 m serta posisinya horizontal. Ujung kiri batang diengselkan ke dinding sedangkan ujung kanan ditahan oleh kabel takbermassa seperti gambar. Berapakah gaya tegangan pada kabel?
+\gambar[0.4\textwidth]{images/2/2-p31.png}
+\begin{pilihan}
+  \item 750 N \item 1000 N \item 1250 N \item 1500 N \item 2000 N
+\end{pilihan}
+\pembahasan Batang horizontal panjang 3 m dan kabel membentuk segitiga 3-4-5, sehingga komponen vertikal tegangan $T_y=T\sin\theta=T(4/5)$. Ambil momen terhadap engsel kiri; gaya berat papan bekerja pada ujung batang dengan lengan 3 m:
+\[ T_y(3)=600(3)\Rightarrow \left(\frac{4}{5}T\right)(3)=600(3)\Rightarrow T=600\left(\frac{5}{4}\right)=750 \text{ N}. \]
+\jawaban{(A) $750$ N.}
+\pemisah
+
+\nomor{10}
+\soal Suatu sumber bunyi memiliki daya akustik $1\,\mu$W. Jika intensitas ambang pendengaran $10^{-12}$ W/m$^2$, maka tingkat intensitas pada jarak 10 m dari sumber bunyi adalah \ldots\ dB.
+\begin{pilihan}
+  \item 40 \item 45 \item 50 \item 60 \item 80
+\end{pilihan}
+\pembahasan Tingkat intensitas $\beta=10\log\left(\dfrac{I}{I_0}\right)$ dengan $I_0=10^{-12}$ W/m$^2$. Menggunakan penyederhanaan $I=\dfrac{P}{r^2}$ (lazim pada soal sekolah): $I=\dfrac{10^{-6}}{10^2}=10^{-8}$ W/m$^2$. Maka
+\[ \beta=10\log\left(\frac{10^{-8}}{10^{-12}}\right)=10\log(10^4)=40 \text{ dB}. \]
+\catatan Jika sumber memancar merata dalam ruang ($I=P/4\pi r^2$), hasilnya sekitar 29 dB; karena opsi memuat 40 dB, soal memakai penyederhanaan $I=P/r^2$.
+\jawaban{(A) $40$ dB.}
+\pemisah
+
+\nomor{11}
+\soal Seorang siswa mengukur taraf intensitas bunyi dari sebuah sumber. Pada jarak 10 m dari sumber siswa mengukur 60 dB. Berapa taraf intensitas bunyi pada jarak 100 m dari sumber bunyi tersebut?
+\begin{pilihan}
+  \item 6 dB \item 10 dB \item 40 dB \item 45 dB \item 50 dB
+\end{pilihan}
+\pembahasan Untuk sumber titik, $I\propto\dfrac{1}{r^2}$. Jarak menjadi 10 kali lebih besar, sehingga intensitas menjadi $\left(\tfrac{10}{100}\right)^2=\tfrac{1}{100}$ dari semula. Penurunan taraf: $\Delta\beta=10\log\left(\tfrac{1}{100}\right)=-20$ dB. Jadi $\beta_2=60-20=40$ dB.
+\jawaban{(C) $40$ dB.}
+\pemisah
+
+\nomor{12}
+\soal Agar taraf intensitas bunyi dari sebuah sumber berkurang dari 57 dB menjadi 47 dB, maka daya akustik sumber bunyi itu harus dikurangi sebanyak \ldots
+\begin{pilihan}
+  \item 10\% \item 20\% \item 50\% \item 80\% \item 90\%
+\end{pilihan}
+\pembahasan Penurunan taraf 10 dB berarti rasio daya berubah faktor 10: $\Delta\beta=10\log\left(\dfrac{P_2}{P_1}\right)$. Dari $47-57=-10=10\log\left(\dfrac{P_2}{P_1}\right)$, diperoleh $\dfrac{P_2}{P_1}=10^{-1}=0{,}1$. Jadi daya akhir hanya 10\% dari semula, sehingga daya harus dikurangi $100\%-10\%=90\%$.
+\jawaban{(E) $90\%$.}
+\pemisah
+
+\nomor{13}
+\soal Gelombang stasioner yang dihasilkan pada seutas tali dinyatakan oleh $y=5\cos\left(\dfrac{\pi x}{3}\right)\sin(40\pi t)$, dengan $x$ dan $y$ dalam cm dan $t$ dalam detik. Jarak antara dua simpul berurutan adalah \ldots\ cm.
+\begin{pilihan}
+  \item 3 \item 5 \item 20 \item $\pi$ \item 40
+\end{pilihan}
+\pembahasan Simpul terjadi pada titik yang amplitudonya nol, yaitu $\cos\left(\dfrac{\pi x}{3}\right)=0$. Untuk faktor ruang $\cos(kx)$, bilangan gelombang $k=\pi/3$, sehingga $\lambda=\dfrac{2\pi}{k}=6$ cm. Jarak dua simpul berurutan adalah setengah panjang gelombang: $\dfrac{\lambda}{2}=3$ cm.
+\jawaban{(A) $3$ cm.}
+\pemisah
+
+\nomor{14}
+\soal Seutas kawat yang tipis panjangnya 9 m dan bermassa 0,15 kg direntangkan dengan kedua ujungnya terikat kuat. Gaya tegangan pada kawat itu 135 N. Frekuensi minimum gelombang pada kawat adalah \ldots
+\begin{pilihan}
+  \item 2 Hz \item 5 Hz \item 6 Hz \item 8 Hz \item 10 Hz
+\end{pilihan}
+\pembahasan Frekuensi minimum (dasar) untuk kawat dengan kedua ujung terikat: $f_1=\dfrac{v}{2L}$ dengan $v=\sqrt{\dfrac{T}{\mu}}$. Massa jenis linear $\mu=\dfrac{m}{L}=\dfrac{0{,}15}{9}=\dfrac{1}{60}$ kg/m. Maka $v=\sqrt{\dfrac{135}{1/60}}=\sqrt{8100}=90$ m/s, sehingga $f_1=\dfrac{90}{2(9)}=5$ Hz.
+\jawaban{(B) $5$ Hz.}
+\pemisah
+
+\nomor{15}
+\soal Gempa bumi menghasilkan dua jenis gelombang yang merambat di tanah, yaitu gelombang longitudinal P dengan laju 8,5 km/det dan gelombang transversal S dengan laju 5,5 km/det. Apabila kedua gelombang terdeteksi seismograf berselisih 2 menit, maka jarak antara seismograf terhadap pusat gempa itu kira-kira \ldots\ km.
+\begin{pilihan}
+  \item 1870 \item 1680 \item 1020 \item 660 \item 360
+\end{pilihan}
+\pembahasan Gelombang P lebih cepat sehingga tiba lebih dahulu. Jika jarak $d$, maka $t_S-t_P=120$ s:
+\[ \frac{d}{5{,}5}-\frac{d}{8{,}5}=120 \Rightarrow d\left(\frac{1}{5{,}5}-\frac{1}{8{,}5}\right)=120 \Rightarrow d\approx 1870 \text{ km}. \]
+\jawaban{(A) $1870$ km.}
+\pemisah
+
+\begin{center}\textbf{\large Daftar Jawaban Singkat --- Set 3}\end{center}
+\begin{center}
+\begin{tabular}{c|ccccccccccccccc}
+Nomor & 1&2&3&4&5&6&7&8&9&10&11&12&13&14&15\\
+\hline
+Jawaban & C&B&D&D&C&A&C&D&A&A&C&E&A&B&A\\
+\end{tabular}
+\end{center}
+
+%==================== SET 4 ====================
+\setcover{4}{}
+
+\nomor{1}
+\soal Dua buah partikel identik A dan B masing-masing sedang bergerak melingkar. Nilai percepatan sentripetal terhadap jari-jari lintasan dari kedua partikel dapat dilihat pada gambar di bawah. Rasio besar kecepatan sudut A terhadap besar kecepatan sudut B adalah
+\gambar[0.45\textwidth]{images/2/2-p34.png}
+\begin{pilihan}
+  \item $2:1$ \item $\sqrt{2}:1$ \item $3:1$ \item $1:\sqrt{2}$ \item $1:2$
+\end{pilihan}
+\pembahasan Pada gerak melingkar beraturan $a_s=\omega^2 r$, sehingga kemiringan garis $a_s$ terhadap $r$ sama dengan $\omega^2$. Dari grafik, garis A berkemiringan $\approx1$ dan garis B berkemiringan $\approx2$. Maka
+\[ \frac{\omega_A}{\omega_B}=\sqrt{\frac{\omega_A^2}{\omega_B^2}}=\sqrt{\frac{1}{2}}=\frac{1}{\sqrt{2}}. \]
+\jawaban{(D) $1:\sqrt{2}$.}
+\pemisah
+
+\nomor{2}
+\soal Sebuah benda yang massanya 8 kg bergerak secara beraturan dalam lintasan melingkar dengan laju 5 m/s. Bila jari-jari lingkaran itu 1 m, maka \ldots
+\begin{pilihanA}
+  \item gaya sentripetalnya adalah 200 N
+  \item waktu putarnya adalah 0,4 sekon
+  \item vektor kecepatannya tidak tetap
+  \item besar percepatan sentripetalnya 25 m/s$^2$
+\end{pilihanA}
+Pernyataan yang benar: (A) hanya a, b, dan c; (B) hanya a dan c; (C) hanya b dan d; (D) hanya d; (E) semua pernyataan benar.
+\pembahasan $a_s=\dfrac{v^2}{r}=\dfrac{25}{1}=25$ m/s$^2$, sehingga $F_s=ma_s=8(25)=200$ N. Waktu satu putaran $T=\dfrac{2\pi r}{v}=\dfrac{2\pi(1)}{5}\approx1{,}26$ s, bukan 0,4 s. Pada gerak melingkar arah kecepatan berubah, sehingga vektor kecepatan tidak tetap. Jadi pernyataan yang benar adalah a, c, dan d.
+\catatan Kombinasi a, c, dan d tidak tersedia pada pilihan jawaban, sehingga kemungkinan terdapat kekeliruan pada opsi atau pada pernyataan b.
+\jawaban{tidak ada opsi yang sesuai; pernyataan benar adalah a, c, dan d.}
+\pemisah
+
+\nomor{3}
+\soal Sebuah bola diikat dengan tali lalu diputar pada bidang vertikal. Massa bola 300 g, radius lintasannya 75 cm. Jika bola berputar dengan laju tetap 4,0 m/s, besarnya gaya tegangan pada tali saat bola di puncak lintasannya adalah \ldots\ N.
+\begin{pilihan}
+  \item 3,4 \item 3,6 \item 4,5 \item 6,4 \item 9,4
+\end{pilihan}
+\pembahasan Di puncak lintasan, gaya yang mengarah ke pusat (ke bawah) adalah berat $mg$ dan tegangan $T$: $T+mg=\dfrac{mv^2}{r}$. Dengan $m=0{,}3$ kg, $r=0{,}75$ m, $v=4$ m/s:
+\[ T=\frac{(0{,}3)(4^2)}{0{,}75}-(0{,}3)(10)=6{,}4-3=3{,}4 \text{ N}. \]
+\jawaban{(A) $3{,}4$ N.}
+\pemisah
+
+\nomor{4}
+\soal Seorang pemain menendang bola bermassa 0,40 kg. Bola meninggalkan kaki pemain dengan laju awal 25 m/s. Jika antara bola dan kaki terjadi kontak selama 8 ms, besar gaya rata-rata yang diberikan kaki ke bola selama terjadinya kontak adalah \ldots\ N.
+\begin{pilihan}
+  \item 950 \item 1150 \item 1250 \item 1500 \item 1750
+\end{pilihan}
+\pembahasan Dengan impuls-momentum, $F_{\text{rata}}\Delta t=m\Delta v$. Selang waktu $8$ ms $=0{,}008$ s, sehingga
+\[ F_{\text{rata}}=\frac{(0{,}40)(25)}{0{,}008}=1250 \text{ N}. \]
+\jawaban{(C) $1250$ N.}
+\pemisah
+
+\nomor{5}
+\soal Mobil mainan bermassa 5 kg mula-mula diam di titik asal. Kemudian pada mobil mainan tersebut diberikan gaya mendatar $F_x$ yang berubah terhadap waktu sesuai gambar di bawah. Kelajuan mobil mainan itu saat $t=9{,}0$ s adalah
+\gambar[0.5\textwidth]{images/2/2-p44.png}
+\begin{pilihan}
+  \item 12 m/s \item $2\sqrt{5}$ m/s \item $5\sqrt{2}$ m/s \item $2\sqrt{3}$ m/s \item $3\sqrt{2}$ m/s
+\end{pilihan}
+\pembahasan Pada grafik gaya terhadap waktu, luas aljabar menyatakan impuls $J=\int F\,dt=\Delta p=m\Delta v$. Luas positif (0--6 s): $J_+=\tfrac{1}{2}(2)(10)+(2)(10)+\tfrac{1}{2}(2)(10)=40$ N\,s. Luas negatif (6--9 s): $J_-=-\left[\tfrac{1}{2}(1)(5)+(1)(5)+\tfrac{1}{2}(1)(5)\right]=-10$ N\,s. Impuls total $J=30$ N\,s. Karena mula-mula diam, $v=\dfrac{J}{m}=\dfrac{30}{5}=6$ m/s.
+\catatan Dengan pembacaan grafik sebagaimana tertulis, kelajuan yang diperoleh 6 m/s, tetapi nilai ini tidak tersedia pada pilihan jawaban.
+\jawaban{$6$ m/s; tidak ada opsi yang sesuai.}
+\pemisah
+
+\nomor{6}
+\soal Balok bermassa 2,0 kg bergerak dengan kecepatan $(2{,}0\hat{\imath}-3{,}0\hat{\jmath})$ m/s dan balok bermassa 3,0 kg bergerak dengan kecepatan $(1{,}0\hat{\imath}+6{,}0\hat{\jmath})$ m/s. Kecepatan pusat massa sistem dua balok tersebut adalah \ldots\ m/s.
+\begin{pilihanA}
+  \item $(7{,}0\hat{\imath}+12{,}0\hat{\jmath})$
+  \item $(1{,}4\hat{\imath}+2{,}4\hat{\jmath})$
+  \item $(7{,}0\hat{\imath}+2{,}4\hat{\jmath})$
+  \item $(1{,}4\hat{\imath}-2{,}4\hat{\jmath})$
+  \item $(-1{,}4\hat{\imath}+2{,}4\hat{\jmath})$
+\end{pilihanA}
+\pembahasan Kecepatan pusat massa $\vec{v}_{\text{pm}}=\dfrac{m_1\vec{v}_1+m_2\vec{v}_2}{m_1+m_2}=\dfrac{2(2\hat{\imath}-3\hat{\jmath})+3(\hat{\imath}+6\hat{\jmath})}{5}$. Komponen: $v_x=\dfrac{4+3}{5}=1{,}4$; $v_y=\dfrac{-6+18}{5}=2{,}4$. Jadi $\vec{v}_{\text{pm}}=(1{,}4\hat{\imath}+2{,}4\hat{\jmath})$ m/s.
+\jawaban{(B) $(1{,}4\hat{\imath}+2{,}4\hat{\jmath})$ m/s.}
+\pemisah
+
+\nomor{7}
+\soal Seorang anak laki-laki berdiri di timbangan yang berada di dalam lift. Ketika lift bergerak naik jarum timbangan menunjuk angka 621 N, sedangkan saat lift akan berhenti jarum timbangan menunjuk angka 459 N. Diketahui $g=10$ m/s$^2$. Besar percepatan saat lift naik sama dengan besar perlambatan saat lift akan berhenti. Massa anak laki-laki itu adalah \ldots\ kg.
+\begin{pilihan}
+  \item 50 kg \item 52 kg \item 54 kg \item 58 kg \item 60 kg
+\end{pilihan}
+\pembahasan Timbangan membaca gaya normal $N$. Saat dipercepat ke atas, $N_1=m(g+a)=621$; saat diperlambat (percepatan ke bawah), $N_2=m(g-a)=459$. Jumlahkan: $N_1+N_2=2mg$, sehingga $1080=2m(10)\Rightarrow m=54$ kg.
+\jawaban{(C) $54$ kg.}
+\pemisah
+
+\nomor{8}
+\soal Seorang anak bermassa 40 kg, ketika ditimbang di dalam lift yang bergerak vertikal massanya seolah-olah menjadi 60 kg. Hal itu berarti lift sedang bergerak \ldots
+\begin{pilihanA}
+  \item naik, dengan perlambatan 0,5 m/s$^2$
+  \item turun, dengan perlambatan 0,5 m/s$^2$
+  \item naik, dengan percepatan 1,0 m/s$^2$
+  \item turun, dengan percepatan 1,0 m/s$^2$
+  \item naik, dengan kecepatan tetap
+\end{pilihanA}
+\pembahasan Pembacaan $N=60g=600$ N, sedangkan berat sebenarnya $mg=400$ N. Karena $N>mg$, percepatan lift ke atas. Dari $N-mg=ma$, $600-400=40a\Rightarrow a=5$ m/s$^2$ ke atas.
+\catatan Hasil yang konsisten dengan data adalah lift berakselerasi ke atas sebesar $5$ m/s$^2$. Nilai ini tidak tersedia pada pilihan, sehingga kemungkinan terdapat kekeliruan pada opsi atau angka soal.
+\jawaban{lift dipercepat ke atas dengan $a=5$ m/s$^2$; tidak ada opsi yang sesuai.}
+\pemisah
+
+\nomor{9}
+\soal Perhatikan sistem pada gambar. Massa benda A adalah 10 kg dan massa benda B adalah 5 kg. Jika benda A ditarik ke atas sehingga sistem bergerak ke atas dengan percepatan konstan sebesar 2 m/s$^2$ dan $g=10$ m/s$^2$, maka besar tegangan tali $T_1$ adalah
+\begin{pilihan}
+  \item 30 N \item 90 N \item 10 N \item 180 N \item 60 N
+\end{pilihan}
+\pembahasan Ambil sistem A+B sebagai satu kesatuan. Gaya luar vertikal adalah $T_1$ ke atas dan berat total ke bawah. Karena sistem bergerak ke atas dengan percepatan $a$,
+\[ T_1-(m_A+m_B)g=(m_A+m_B)a \Rightarrow T_1=(10+5)(10+2)=180 \text{ N}. \]
+\jawaban{(D) $180$ N.}
+\pemisah
+
+\nomor{10}
+\soal Dua buah balok bermassa $m_1=5$ kg dan $m_2=8$ kg terikat pada tali yang melalui sebuah katrol seperti gambar. Massa katrol, massa tali, dan gesekan katrol diabaikan. Balok $m_1$ berada di atas meja horizontal kasar dengan koefisien gesek statik dan kinetik 0,5 dan 0,4. Jika $g=10$ m/s$^2$, maka besar gaya tegangan pada tali adalah \ldots\ N.
+\gambar[0.42\textwidth]{images/2/2-p40.png}
+\begin{pilihan}
+  \item 186,7 \item 14,0 \item 8,6 \item 18,5 \item 43,1
+\end{pilihan}
+\pembahasan Berat balok gantung $m_2 g=80$ N; gesek statik maksimum pada $m_1$ adalah $f_{s,\max}=\mu_s m_1 g=0{,}5(5)(10)=25$ N. Karena $80>25$, sistem bergerak dan gesekan kinetik $f_k=\mu_k m_1 g=0{,}4(5)(10)=20$ N. Untuk sistem: $m_2 g-f_k=(m_1+m_2)a\Rightarrow 80-20=13a\Rightarrow a=\dfrac{60}{13}$ m/s$^2$. Untuk $m_1$: $T-f_k=m_1 a\Rightarrow T=20+5\left(\dfrac{60}{13}\right)=43{,}1$ N.
+\jawaban{(E) $43{,}1$ N.}
+\pemisah
+
+\nomor{11}
+\soal Tiga balok bermassa $m_A=30$ kg, $m_B=40$ kg, dan $m_C=10$ kg dihubungkan dengan tali melalui katrol takbermassa seperti gambar. Koefisien gesek kinetis antara balok A dengan meja adalah 0,20. Besar gaya tegangan pada tali yang menghubungkan B ke C adalah \ldots\ N.
+\gambar[0.4\textwidth]{images/2/2-p45.png}
+\begin{pilihan}
+  \item 35 \item 40 \item 45 \item 225 \item 375
+\end{pilihan}
+\pembahasan Ketiga balok memiliki percepatan sama. Gaya luar pendorong adalah berat B dan C dikurangi gesekan pada A: $f_k=\mu_k m_A g=0{,}20(30)(10)=60$ N. Untuk sistem A+B+C: $(m_B+m_C)g-f_k=(m_A+m_B+m_C)a\Rightarrow(50)(10)-60=80a\Rightarrow a=5{,}5$ m/s$^2$. Untuk balok C: $m_C g-T_{BC}=m_C a\Rightarrow T_{BC}=m_C(g-a)=10(10-5{,}5)=45$ N.
+\jawaban{(C) $45$ N.}
+\pemisah
+
+\nomor{12}
+\soal Kotak bermassa $m_2=3{,}5$ kg diam pada permukaan meja licin dan dihubungkan ke kotak $m_1=1{,}5$ kg dan kotak $m_3=2{,}5$ kg dengan tali ringan yang melalui katrol licin takbermassa. Jika $g=10$ m/s$^2$, besar percepatan kotak $m_1$ adalah \ldots\ m/s$^2$.
+\gambar[0.42\textwidth]{images/2/2-p46.png}
+\begin{pilihan}
+  \item $5/4$ \item $4/3$ \item $3/2$ \item $2$ \item $1$
+\end{pilihan}
+\pembahasan Karena $m_3>m_1$, sistem bergerak dengan $m_3$ turun, $m_1$ naik, dan $m_2$ bergerak ke kanan, ketiganya berpercepatan sama. Gaya luar penyebab gerak adalah selisih berat massa gantung:
+\[ (m_3-m_1)g=(m_1+m_2+m_3)a\Rightarrow(2{,}5-1{,}5)(10)=(1{,}5+3{,}5+2{,}5)a\Rightarrow 10=7{,}5a\Rightarrow a=\frac{4}{3} \text{ m/s}^2. \]
+\jawaban{(B) $4/3$.}
+\pemisah
+
+\nomor{13}
+\soal Proyektil ditembakkan dari tanah tegak lurus ke atas dengan laju awal 60 m/s. Gesekan udara diabaikan dan $g=10$ m/s$^2$. Kelajuan proyektil saat mencapai posisi yang tingginya setengah dari tinggi maksimum adalah \ldots\ m/s.
+\begin{pilihan}
+  \item 30 \item 35 \item $30\sqrt{2}$ \item 40 \item 44
+\end{pilihan}
+\pembahasan Tinggi maksimum $H_{\max}=\dfrac{v_0^2}{2g}=\dfrac{3600}{20}=180$ m, setengahnya 90 m. Dengan $v^2=v_0^2-2gh=60^2-2(10)(90)=3600-1800=1800$, maka $v=\sqrt{1800}=30\sqrt{2}$ m/s.
+\jawaban{(C) $30\sqrt{2}$ m/s.}
+\pemisah
+
+\nomor{14}
+\soal Jika bola jatuh bebas dari ketinggian tertentu, maka bola tersebut menumbuk tanah dengan laju 30 m/s. Gesekan udara diabaikan. Jika bola dari tempat yang sama dilemparkan vertikal ke bawah dengan laju awal 40 m/s, maka bola akan menumbuk tanah dengan kelajuan \ldots\ m/s.
+\begin{pilihan}
+  \item 45 \item 50 \item 55 \item 60 \item 70
+\end{pilihan}
+\pembahasan Untuk jatuh bebas, $v^2=2gh=30^2=900$. Jika dilempar ke bawah dengan $v_0=40$ m/s dari ketinggian sama, $v^2=v_0^2+2gh=40^2+900=1600+900=2500$, sehingga $v=50$ m/s.
+\jawaban{(B) $50$ m/s.}
+\pemisah
+
+\nomor{15}
+\soal Dari ketinggian 120 m di atas tanah sebuah bola dilepaskan jatuh bebas. Pada saat yang sama, bola lain dilemparkan vertikal ke atas dari tanah dengan laju awal 60 m/s. Kedua bola itu berpapasan pada ketinggian \ldots\ m di atas tanah.
+\begin{pilihan}
+  \item 100 m \item 90 m \item 80 m \item 70 m \item 80 m
+\end{pilihan}
+\pembahasan Ambil tanah $y=0$, arah ke atas positif. Bola atas: $y_1=120-5t^2$. Bola bawah: $y_2=60t-5t^2$. Saat berpapasan $y_1=y_2$: $120-5t^2=60t-5t^2\Rightarrow120=60t\Rightarrow t=2$ s. Ketinggian pertemuan $y=60(2)-5(2^2)=120-20=100$ m.
+\jawaban{(A) $100$ m.}
+\pemisah
+
+\begin{center}\textbf{\large Daftar Jawaban Singkat --- Set 4}\end{center}
+\begin{center}
+\begin{tabular}{c|ccccccccccccccc}
+Nomor & 1&2&3&4&5&6&7&8&9&10&11&12&13&14&15\\
+\hline
+Jawaban & D&--&A&C&--&B&C&--&D&E&C&B&C&B&A\\
+\end{tabular}
+\end{center}
+
+%==================== SET 5 ====================
+\setcover{5}{}
+
+\nomor{1}
+\soal Grafik di bawah mendeskripsikan kecepatan sebuah partikel yang bergerak pada sumbu $x$. Gerak partikel dimulai dari titik asal ($x=0$ m) ke arah sumbu $x$ positif. Kelajuan rata-rata partikel pada selang waktu $t=0$ s sampai $t=9$ s adalah \ldots
+\gambar[0.5\textwidth]{images/2/2-s5n1.png}
+\begin{pilihan}
+  \item $28/9$ m/s \item $30/9$ m/s \item $36/9$ m/s \item $40/9$ m/s \item $44/9$ m/s
+\end{pilihan}
+\pembahasan Kelajuan rata-rata adalah jarak total dibagi waktu total; jarak total adalah luas di bawah grafik dengan nilai mutlak. Dari 0--3 s: $s_1=\tfrac{1}{2}(3)(8)=12$ m. Dari 3--5 s: $s_2=(2)(8)=16$ m. Dari 5--9 s grafik turun dari $+8$ ke $-8$ memotong sumbu di $t=7$ s, jarak $s_3=\tfrac{1}{2}(2)(8)+\tfrac{1}{2}(2)(8)=16$ m. Jarak total $s=44$ m, sehingga $\bar v_{\text{laju}}=\dfrac{44}{9}$ m/s.
+\jawaban{(E) $44/9$ m/s.}
+\pemisah
+
+\nomor{2}
+\soal Partikel yang mula-mula rehat di titik asal lalu mengalami percepatan searah sumbu $x$. Grafik antara besar percepatan terhadap waktu ditunjukkan pada gambar. Pada selang waktu $t=0$ sampai $t=40$ s, kelajuan rata-rata dan kecepatan rata-rata partikel secara berurutan adalah
+\gambar[0.5\textwidth]{images/2/2-s5n2.png}
+\begin{pilihanA}
+  \item $+7{,}5000$ m/s, $0$ m/s
+  \item $+7{,}8125$ m/s, $-0{,}3125$ m/s
+  \item $+7{,}8125$ m/s, $+0{,}3125$ m/s
+  \item $-0{,}3125$ m/s, $+7{,}8125$ m/s
+  \item $+7{,}5000$ m/s, $-7{,}5000$ m/s
+\end{pilihanA}
+\pembahasan Telusuri kecepatan: 0--5 s ($a=2$) kecepatan naik $0\to10$; 5--15 s tetap 10; 15--25 s ($a=-2$) berubah $10\to-10$ (sempat berhenti di tengah); 25--35 s tetap $-10$; 35--40 s ($a=1$) berubah $-10\to-5$. Perpindahan total (luas bertanda) $\Delta x=25+100+0-100-37{,}5=-12{,}5$ m, sehingga $\bar v=\dfrac{-12{,}5}{40}=-0{,}3125$ m/s. Jarak total (luas mutlak) $s=25+100+25+25+100+37{,}5=312{,}5$ m, sehingga $\bar v_{\text{laju}}=\dfrac{312{,}5}{40}=7{,}8125$ m/s.
+\jawaban{(B) $+7{,}8125$ m/s dan $-0{,}3125$ m/s.}
+\pemisah
+
+\nomor{3}
+\soal Saat lampu lalu lintas menyala hijau, mobil sedan yang berhenti mulai bergerak dengan percepatan tetap $3{,}2$ m/s$^2$. Pada saat bersamaan, sebuah truk melintas di samping sedan dengan kecepatan tetap 20 m/s. Perhatikan pernyataan berikut: (1) sedan tepat menyusul truk pada $t=12{,}5$ detik; (2) sedan tepat menyusul truk saat bergerak sejauh 250 m; (3) sedan tepat menyusul truk saat kecepatan sedan 20 m/s. Pernyataan yang benar adalah \ldots
+\begin{pilihan}
+  \item hanya (1) \item hanya (2) \item hanya (3) \item hanya (1) dan (2) \item (1), (2), dan (3) benar
+\end{pilihan}
+\pembahasan Posisi sedan $x_s=\tfrac{1}{2}(3{,}2)t^2=1{,}6t^2$, posisi truk $x_t=20t$. Saat menyusul $1{,}6t^2=20t\Rightarrow t=12{,}5$ s. Jarak saat itu $x=20(12{,}5)=250$ m. Kecepatan sedan $v_s=at=3{,}2(12{,}5)=40$ m/s, bukan 20 m/s. Jadi pernyataan benar adalah (1) dan (2).
+\jawaban{(D) hanya (1) dan (2).}
+\pemisah
+
+\nomor{4}
+\soal Sebuah batu dilepaskan di tepi puncak sebuah gedung. Dua detik kemudian di tempat yang sama sebuah bola dilemparkan dengan laju awal 30 m/s tegak lurus ke bawah. Diketahui $g=10$ m/s$^2$. Jika batu dan bola mencapai tanah pada saat yang bersamaan, tinggi gedung tersebut adalah \ldots\ m.
+\begin{pilihan}
+  \item 60 \item 70 \item 80 \item 90 \item 100
+\end{pilihan}
+\pembahasan Misalkan waktu tempuh batu $T$. Batu jatuh dari diam: $h=\tfrac{1}{2}gT^2=5T^2$. Bola dilempar 2 detik kemudian dengan waktu gerak $T-2$: $h=v_0(T-2)+\tfrac{1}{2}g(T-2)^2$. Substitusi $5T^2=30(T-2)+5(T-2)^2$ memberi $10T=40\Rightarrow T=4$ s. Maka $h=5(4^2)=80$ m.
+\jawaban{(C) $80$ m.}
+\pemisah
+
+\nomor{5}
+\soal Tiga buah vektor gaya masing-masing $\vec{F}_1=(-2{,}0\hat{\imath}+2{,}0\hat{\jmath})$ N, $\vec{F}_2=(5{,}0\hat{\imath}-3{,}0\hat{\jmath})$ N, dan $\vec{F}_3=(-45{,}0\hat{\imath})$ N bekerja pada sebuah benda. Jika akibat ketiga gaya itu benda mengalami percepatan yang besarnya $3{,}75$ m/s$^2$, maka massa benda itu adalah \ldots\ kg.
+\begin{pilihan}
+  \item 10,5 kg \item 11,2 kg \item 12,3 kg \item 12,6 kg \item 13,2 kg
+\end{pilihan}
+\pembahasan Resultan $\vec{F}_{\text{res}}=(-2+5-45)\hat{\imath}+(2-3)\hat{\jmath}=(-42\hat{\imath}-1\hat{\jmath})$ N. Besarnya $F_{\text{res}}=\sqrt{42^2+1^2}=\sqrt{1765}\approx42{,}01$ N. Dari $F_{\text{res}}=ma$, $m=\dfrac{42{,}01}{3{,}75}\approx11{,}2$ kg.
+\jawaban{(B) $11{,}2$ kg.}
+\pemisah
+
+\nomor{6}
+\soal Sebuah beban bermassa $m=50$ g digantung di dalam truk yang sedang rehat di jalan datar. Saat truk dipercepat dengan percepatan $a$ ke kanan, beban menyimpang ke kiri sampai tali mengapit sudut $\theta=37^\circ$. Jika $g=10$ m/s$^2$, maka $a=\ldots$ m/s$^2$.
+\gambar[0.45\textwidth]{images/2/2-p53.png}
+\begin{pilihan}
+  \item 6,00 \item 6,25 \item 7,00 \item 7,50 \item 8,00
+\end{pilihan}
+\pembahasan Dalam kerangka truk yang dipercepat, beban seolah-olah mendapat gaya semu $ma$ ke kiri. Kesetimbangan arah horizontal dan vertikal: $T\sin\theta=ma$ dan $T\cos\theta=mg$. Membagi keduanya: $\tan\theta=\dfrac{a}{g}$. Dengan $\tan 37^\circ\approx3/4$,
+\[ a=g\tan 37^\circ=10\left(\frac{3}{4}\right)=7{,}50 \text{ m/s}^2. \]
+\jawaban{(D) $7{,}50$ m/s$^2$.}
+\pemisah
+
+\nomor{7}
+\soal Tiga balok bermassa $m_1=2$ kg, $m_2=3$ kg, dan $m_3=4$ kg disusun pada bidang datar licin, selanjutnya didorong oleh gaya $F=18$ N seperti gambar. Besar gaya kontak $m_1$ ke $m_2$ serta gaya kontak $m_2$ ke $m_3$ secara berurutan adalah
+\gambar[0.45\textwidth]{images/2/2-p56.png}
+\begin{pilihanA}
+  \item 4 N ; 8 N \item 4 N ; 10 N \item 14 N ; 10 N \item 16 N ; 8 N \item 14 N ; 8 N
+\end{pilihanA}
+\pembahasan Percepatan sistem $a=\dfrac{F}{m_1+m_2+m_3}=\dfrac{18}{9}=2$ m/s$^2$. Gaya kontak $m_1$ pada $m_2$ harus mempercepat $m_2+m_3$: $F_{12}=(m_2+m_3)a=(3+4)(2)=14$ N. Gaya kontak $m_2$ pada $m_3$: $F_{23}=m_3 a=4(2)=8$ N.
+\jawaban{(E) 14 N ; 8 N.}
+\pemisah
+
+\nomor{8}
+\soal Empat balok pada lantai datar dihubungkan oleh tali ringan seperti gambar. Koefisien gesek kinetis tiap balok ke lantai masing-masing 0,1. Jika susunan itu ditarik dengan gaya mendatar $F=50$ N, maka gaya tegangan pada tali (2) adalah \ldots\ N. Gunakan $g=10$ m/s$^2$. (Susunan dari belakang ke depan: 10 kg --- 3 kg --- 5 kg --- 2 kg, lalu $F$.)
+\begin{pilihan}
+  \item 32,5 \item 22,5 \item 19,5 \item 17,5 \item 15,5
+\end{pilihan}
+\pembahasan Massa total $M=10+3+5+2=20$ kg, gesek total $f=\mu_k Mg=0{,}1(20)(10)=20$ N, sehingga $a=\dfrac{F-f}{M}=\dfrac{50-20}{20}=1{,}5$ m/s$^2$. Tali (2) menarik kelompok belakang (10 kg dan 3 kg): $T_2-\mu_k(10+3)g=(10+3)a\Rightarrow T_2-13=13(1{,}5)\Rightarrow T_2=32{,}5$ N.
+\jawaban{(A) $32{,}5$ N.}
+\pemisah
+
+\nomor{9}
+\soal Sebuah inti atom yang tidak stabil bermassa $17{,}0\times10^{-27}$ kg mula-mula rehat. Sesaat kemudian inti tersebut meluruh menjadi tiga partikel. Partikel pertama bermassa $5{,}0\times10^{-27}$ kg bergerak pada arah sumbu $y$ positif dengan kelajuan $6{,}0\times10^{6}$ m/s. Partikel kedua bermassa $8{,}4\times10^{-27}$ kg bergerak pada arah sumbu $x$ negatif dengan kelajuan $4{,}0\times10^{6}$ m/s. Hitung kecepatan partikel ketiga.
+\begin{pilihanA}
+  \item $(9{,}33\hat{\imath}+8{,}33\hat{\jmath})10^6$ m/s
+  \item $(-9{,}33\hat{\imath}+8{,}33\hat{\jmath})10^6$ m/s
+  \item $(-9{,}33\hat{\imath}-8{,}33\hat{\jmath})10^6$ m/s
+  \item $(9{,}33\hat{\imath}-8{,}33\hat{\jmath})10^6$ m/s
+  \item $(9{,}33\hat{\imath}-8{,}33\hat{k})10^6$ m/s
+\end{pilihanA}
+\pembahasan Momentum total awal nol, sehingga $\vec{p}_1+\vec{p}_2+\vec{p}_3=0$. Massa partikel ketiga $m_3=(17-5-8{,}4)\times10^{-27}=3{,}6\times10^{-27}$ kg. $\vec{p}_1=30\times10^{-21}\hat{\jmath}$, $\vec{p}_2=-33{,}6\times10^{-21}\hat{\imath}$. Maka $\vec{p}_3=33{,}6\times10^{-21}\hat{\imath}-30\times10^{-21}\hat{\jmath}$, sehingga $\vec{v}_3=\dfrac{\vec{p}_3}{m_3}=(9{,}33\hat{\imath}-8{,}33\hat{\jmath})10^6$ m/s.
+\jawaban{(D) $(9{,}33\hat{\imath}-8{,}33\hat{\jmath})10^6$ m/s.}
+\pemisah
+
+\nomor{10}
+\soal Sebuah balok bermassa 3,0 kg bergerak dengan kecepatan awal $5{,}0\hat{\imath}$ m/s, bertumbukan dengan balok bermassa 2,0 kg yang kecepatan awalnya $-3{,}0\hat{\jmath}$ m/s. Setelah bertumbukan, kedua balok menjadi satu dan bergerak dengan kelajuan \ldots\ m/s.
+\begin{pilihan}
+  \item 3,10 \item 3,23 \item 3,56 \item 3,65 \item 3,75
+\end{pilihan}
+\pembahasan Tumbukan menyatu, momentum kekal secara vektor: $\vec{p}_{\text{total}}=3(5\hat{\imath})+2(-3\hat{\jmath})=15\hat{\imath}-6\hat{\jmath}$. Massa gabungan 5 kg, sehingga $\vec{v}=3\hat{\imath}-1{,}2\hat{\jmath}$. Kelajuannya $|\vec{v}|=\sqrt{3^2+1{,}2^2}=\sqrt{10{,}44}\approx3{,}23$ m/s.
+\jawaban{(B) $3{,}23$ m/s.}
+\pemisah
+
+\nomor{11}
+\soal Gelombang sinus yang merambat di kawat yang ditegangkan horizontal dinyatakan melalui persamaan $y=0{,}20\sin(0{,}75\pi x+18\pi t)$, dengan $x$ dan $y$ dalam meter dan $t$ dalam detik. Jika kerapatan linier kawat 0,25 kg/m, besar gaya tegangan pada kawat adalah \ldots\ N.
+\begin{pilihan}
+  \item 72 \item 144 \item 164 \item 212 \item 360
+\end{pilihan}
+\pembahasan Dari persamaan, $k=0{,}75\pi$ rad/m dan $\omega=18\pi$ rad/s, sehingga $v=\dfrac{\omega}{k}=\dfrac{18\pi}{0{,}75\pi}=24$ m/s. Untuk gelombang pada kawat, $v=\sqrt{\dfrac{T}{\mu}}\Rightarrow T=\mu v^2=0{,}25(24^2)=144$ N.
+\jawaban{(B) $144$ N.}
+\pemisah
+
+\nomor{12}
+\soal Dua tali yang kerapatannya $\mu_1=0{,}10$ kg/m dan $\mu_2=0{,}20$ kg/m disambungkan pada suatu titik lalu ditegangkan. Rasio panjang gelombang pada kedua kawat adalah \ldots
+\begin{pilihan}
+  \item $1:2$ \item $1:4$ \item $1:\sqrt{2}$ \item $2:1$ \item $1:2\sqrt{2}$
+\end{pilihan}
+\pembahasan Pada dua tali yang disambungkan dan ditegangkan oleh tegangan yang sama, $v=\sqrt{T/\mu}$. Frekuensi tetap saat melewati sambungan, sehingga $\lambda=v/f$. Maka
+\[ \frac{\lambda_1}{\lambda_2}=\frac{v_1}{v_2}=\sqrt{\frac{\mu_2}{\mu_1}}=\sqrt{\frac{0{,}20}{0{,}10}}=\sqrt{2}. \]
+Jadi $\lambda_1:\lambda_2=\sqrt{2}:1$.
+\catatan Jika rasio diminta dalam urutan tali 1 : tali 2, hasilnya $\sqrt{2}:1$. Opsi (C) $1:\sqrt{2}$ merupakan rasio kebalikannya ($\lambda_2:\lambda_1$).
+\jawaban{$\lambda_1:\lambda_2=\sqrt{2}:1$; tidak ada opsi yang sesuai untuk urutan ini.}
+\pemisah
+
+\nomor{13}
+\soal Ujung seutas tali dihubungkan ke osilator di $P$, ujung lainnya ditahan di $Q$, lalu tali ditegangkan oleh beban bermassa $m$. Jarak $PQ$ adalah $L=1{,}20$ m, osilator berfrekuensi 150 Hz, sedangkan kerapatan jenis tali $\mu=2{,}0$ g/m. Jika gelombang berdiri yang timbul di tali memuat empat perut, maka $m=\ldots$ kg.
+\begin{pilihan}
+  \item 1,62 \item 1,75 \item 1,84 \item 2,12 \item 2,25
+\end{pilihan}
+\pembahasan Sepanjang $PQ$ terdapat empat perut, sehingga $L=4\left(\dfrac{\lambda}{2}\right)=2\lambda\Rightarrow\lambda=\dfrac{1{,}20}{2}=0{,}60$ m. Laju gelombang $v=f\lambda=150(0{,}60)=90$ m/s. Tegangan $T=\mu v^2=0{,}002(90^2)=16{,}2$ N. Karena $T=mg$, $m=\dfrac{16{,}2}{10}=1{,}62$ kg.
+\jawaban{(A) $1{,}62$ kg.}
+\pemisah
+
+\nomor{14}
+\soal Jika intensitas gelombang gempa yang terukur pada jarak 100 km dari sumbernya adalah $1\times10^{6}$ W/m$^2$, intensitas gelombang gempa itu pada jarak 400 km dari sumbernya adalah \ldots\ W/m$^2$.
+\begin{pilihan}
+  \item $2{,}50\times10^4$ \item $2{,}50\times10^5$ \item $6{,}25\times10^4$ \item $6{,}25\times10^5$ \item $7{,}50\times10^5$
+\end{pilihan}
+\pembahasan Untuk sumber yang energinya menyebar ke segala arah, $I\propto\dfrac{1}{r^2}$, sehingga $\dfrac{I_2}{I_1}=\left(\dfrac{r_1}{r_2}\right)^2$. Maka
+\[ I_2=10^6\left(\frac{100}{400}\right)^2=10^6\left(\frac{1}{4}\right)^2=6{,}25\times10^4 \text{ W/m}^2. \]
+\jawaban{(C) $6{,}25\times10^4$ W/m$^2$.}
+\pemisah
+
+\nomor{15}
+\soal Pada jarak 30 m dari suatu mesin jet yang beroperasi terukur intensitas suara $1$ W/m$^2$. Intensitas suara yang tidak mengganggu percakapan maksimum adalah $100\,\mu$W/m$^2$. Pada jarak berapa agar suara mesin jet tidak mengganggu percakapan?
+\begin{pilihan}
+  \item minimum 3.000 m \item maksimum 3.000 m \item minimum 30.000 m \item maksimum 30.000 m \item minimum 300 m
+\end{pilihan}
+\pembahasan Intensitas bunyi sumber titik mengikuti hukum kuadrat terbalik, $\dfrac{I_2}{I_1}=\left(\dfrac{r_1}{r_2}\right)^2$. Batas $I_2=100\,\mu$W/m$^2=10^{-4}$ W/m$^2$, dengan $I_1=1$ W/m$^2$ pada $r_1=30$ m:
+\[ 10^{-4}=\left(\frac{30}{r_2}\right)^2\Rightarrow r_2=30\sqrt{10^4}=3000 \text{ m}. \]
+Agar tidak mengganggu, jarak harus minimal 3000 m.
+\jawaban{(A) minimum 3.000 m.}
+\pemisah
+
+\begin{center}\textbf{\large Daftar Jawaban Singkat --- Set 5}\end{center}
+\begin{center}
+\begin{tabular}{c|ccccccccccccccc}
+Nomor & 1&2&3&4&5&6&7&8&9&10&11&12&13&14&15\\
+\hline
+Jawaban & E&B&D&C&B&D&E&A&D&B&B&--&A&C&A\\
+\end{tabular}
+\end{center}
+
+%==================== SET 6 ====================
+\setcover{6}{}
+
+\nomor{1}
+\soal Sebuah partikel bergerak pada sumbu $x$. Saat $t=0$ posisinya di $x=+5$ m, saat $t=6$ s di $x=-7$ m, dan saat $t=10$ s di $x=+2$ m. Kelajuan rata-rata partikel pada selang waktu antara $t=0$ sampai $t=10$ s adalah \ldots\ m/s.
+\begin{pilihan}
+  \item 0,3 \item 1,2 \item 2,1 \item 2,6 \item 2,7
+\end{pilihan}
+\pembahasan Kelajuan rata-rata memakai jarak tempuh total. Dari $x=+5$ ke $x=-7$ menempuh $|-7-5|=12$ m; dari $x=-7$ ke $x=+2$ menempuh $|2-(-7)|=9$ m. Jarak total $21$ m selama 10 s, sehingga $\bar v_{\text{laju}}=\dfrac{21}{10}=2{,}1$ m/s.
+\jawaban{(C) $2{,}1$ m/s.}
+\pemisah
+
+\nomor{2}
+\soal Posisi $x$ sebuah partikel yang bergerak pada sumbu $x$ dinyatakan dengan $x(t)=3t^2-12t+3$ (dalam meter). Pada selang waktu dari $t=0$ s sampai $t=5$ s, kelajuan rata-rata partikel adalah \ldots\ m/s.
+\begin{pilihan}
+  \item 2,4 \item 3,0 \item 4,8 \item 5,4 \item 7,8
+\end{pilihan}
+\pembahasan Kelajuan rata-rata memakai jarak total. Kecepatan sesaat $v(t)=6t-12$, nol di $t=2$ s (titik balik). Posisi: $x(0)=3$, $x(2)=-9$, $x(5)=18$. Jarak total $=|x(2)-x(0)|+|x(5)-x(2)|=|-9-3|+|18-(-9)|=12+27=39$ m. Maka $\bar v_{\text{laju}}=\dfrac{39}{5}=7{,}8$ m/s.
+\jawaban{(E) $7{,}8$ m/s.}
+\pemisah
+
+\nomor{3}
+\soal Bola dipukul agar masuk ke parit $ab$ yang berada di lembah seperti pada gambar. Sesaat setelah dipukul bola bergerak mendatar dengan laju $v_0$. Batas nilai $v_0$ agar bola masuk ke parit $ab$ adalah \ldots\ (kedalaman 3,2 m; tepi $a$ pada jarak mendatar 2,0 m dan lebar parit $ab=1{,}2$ m).
+\begin{pilihanA}
+  \item $2{,}5<v_0<4{,}5$ m/s \item $2{,}5<v_0<4{,}0$ m/s \item $1{,}5<v_0<4{,}0$ m/s
+  \item $3{,}2<v_0<4{,}2$ m/s \item $2{,}0<v_0<4{,}0$ m/s
+\end{pilihanA}
+\pembahasan Gerak bola adalah parabola dengan kecepatan awal horizontal. Waktu turun setinggi 3,2 m: $3{,}2=\tfrac{1}{2}gt^2=5t^2\Rightarrow t^2=0{,}64\Rightarrow t=0{,}8$ s. Agar jatuh ke dalam parit, posisi mendatar saat mencapai dasar harus antara tepi $a$ dan $b$: $2{,}0<x<2{,}0+1{,}2=3{,}2$ m. Karena $x=v_0 t$, $2{,}0<v_0(0{,}8)<3{,}2\Rightarrow 2{,}5<v_0<4{,}0$ m/s.
+\jawaban{(B) $2{,}5<v_0<4{,}0$ m/s.}
+\pemisah
+
+\nomor{4}
+\soal Sebuah bola kecil diikat dengan tali kemudian diputar dengan kecepatan sudut yang tetap pada radius 0,25 m. Lintasan batu pada bidang horizontal yang tingginya 1,25 m di atas lantai. Diketahui $g=10$ m/s$^2$. Pada suatu saat tali putus, akibatnya bola jatuh pada jarak mendatar 2,0 m dari posisi saat tali putus. Laju sudut bola saat berputar adalah \ldots\ rad/s.
+\begin{pilihan}
+  \item 16 \item 18 \item 20 \item 24 \item 25
+\end{pilihan}
+\pembahasan Saat tali putus, bola bergerak horizontal dengan laju tangensial $v=\omega r$. Setelah itu bola menjadi proyektil horizontal dari ketinggian 1,25 m: $1{,}25=5t^2\Rightarrow t=0{,}5$ s. Jarak mendatar $x=vt\Rightarrow v=\dfrac{2{,}0}{0{,}5}=4$ m/s. Maka $\omega=\dfrac{v}{r}=\dfrac{4}{0{,}25}=16$ rad/s.
+\jawaban{(A) $16$ rad/s.}
+\pemisah
+
+\nomor{5}
+\soal Balon udara turun vertikal dengan laju tetap 20 m/s. Pada ketinggian tertentu, dari balon dilemparkan sebuah batu secara mendatar dengan laju 15 m/s. Diamati bahwa batu menumbuk tanah enam detik sejak dilemparkan. Pernyataan: (1) saat batu dilemparkan, posisi balon 300 m di atas tanah; (2) saat batu menyentuh tanah, posisi balon 120 m di atas tanah; (3) batu menumbuk tanah pada jarak mendatar 90 m dari posisi saat dilemparkan. Pernyataan yang benar adalah \ldots
+\begin{pilihan}
+  \item hanya (1) \item hanya (2) \item hanya (3) \item hanya (1) dan (3) \item (1), (2), dan (3)
+\end{pilihan}
+\pembahasan Batu memiliki komponen kecepatan vertikal awal sama dengan balon, yaitu 20 m/s ke bawah. Ambil arah ke atas positif, tinggi awal batu $H$: $0=H-20(6)-\tfrac{1}{2}(10)(6^2)\Rightarrow H=300$ m, jadi (1) benar. Setelah 6 s, balon yang terus turun 20 m/s berada pada $300-20(6)=180$ m, bukan 120 m, jadi (2) salah. Gerak horizontal batu beraturan: $x=15(6)=90$ m, jadi (3) benar.
+\jawaban{(D) hanya (1) dan (3).}
+\pemisah
+
+\nomor{6}
+\soal Balon udara sedang bergerak naik vertikal dengan laju 10 m/s. Pada saat balon 40 m di atas tanah, sebuah bola dilemparkan dari balon dengan kecepatan awal $v_0$ dan arahnya tegak lurus terhadap lintasan balon. Jika bola jatuh pada jarak mendatar 60 m dari garis lintasan balon, maka $v_0=\ldots$ m/s.
+\begin{pilihan}
+  \item 10 \item 15 \item 20 \item 22 \item 25
+\end{pilihan}
+\pembahasan Arah tegak lurus lintasan balon berarti arah horizontal, namun bola tetap memiliki kecepatan vertikal awal 10 m/s ke atas (ikut balon). Gerak vertikal (ke atas positif): $0=40+10t-\tfrac{1}{2}(10)t^2\Rightarrow t^2-2t-8=0\Rightarrow t=4$ s. Gerak horizontal beraturan: $60=v_0(4)\Rightarrow v_0=15$ m/s.
+\jawaban{(B) $15$ m/s.}
+\pemisah
+
+\nomor{7}
+\soal Peluru bermassa $m$ ditembakkan ke arah balok yang rehat dan bermassa $M$ dan berada di tepi meja yang tingginya $h$. Peluru bersarang di dalam balok, dan menyebabkan balok jatuh ke lantai pada jarak mendatar $d$. Laju peluru saat menumbuk balok adalah \ldots
+\gambar[0.45\textwidth]{images/2/2-p61.png}
+\begin{pilihanA}
+  \item $\left(\dfrac{m+M}{M}\right)d\sqrt{\dfrac{g}{2h}}$
+  \item $\left(\dfrac{M}{m}\right)d\sqrt{\dfrac{g}{2h}}$
+  \item $\left(\dfrac{m+M}{m}\right)d\sqrt{\dfrac{g}{2h}}$
+  \item $\left(\dfrac{m+M}{m}\right)d\sqrt{\dfrac{2g}{h}}$
+  \item $\left(\dfrac{m}{M}\right)d\sqrt{\dfrac{g}{2h}}$
+\end{pilihanA}
+\pembahasan Setelah tumbukan, sistem balok-peluru jatuh sebagai proyektil horizontal. Waktu jatuh dari ketinggian $h$: $t=\sqrt{\dfrac{2h}{g}}$. Kecepatan gabungan tepat setelah tumbukan $V=\dfrac{d}{t}=d\sqrt{\dfrac{g}{2h}}$. Momentum horizontal kekal saat tumbukan: $mu=(m+M)V$, sehingga
+\[ u=\frac{m+M}{m}V=\left(\frac{m+M}{m}\right)d\sqrt{\frac{g}{2h}}. \]
+\jawaban{(C) $\left(\dfrac{m+M}{m}\right)d\sqrt{\dfrac{g}{2h}}$.}
+\pemisah
+
+\nomor{8}
+\soal Proyektil bermassa $m=10$ g ditembakkan ke atas dengan laju $v=1000$ m/s. Proyektil itu menumbuk balok bermassa $M=5$ kg yang mula-mula rehat. Proyektil menembus balok melalui pusat massa dan keluar dengan kecepatan 400 m/s menyebabkan balok naik setinggi maksimum $h$ dari posisi awalnya. Jika $g=10$ m/s$^2$, maka $h=\ldots$
+\begin{pilihan}
+  \item 5,0 cm \item 6,5 cm \item 7,0 cm \item 7,2 cm \item 7,5 cm
+\end{pilihan}
+\pembahasan Selama proyektil menembus balok, momentum vertikal sistem kekal. Massa proyektil $0{,}010$ kg; perubahan momentum proyektil berpindah ke balok: $MV=m(v_{\text{masuk}}-v_{\text{keluar}})$, sehingga $5V=0{,}010(1000-400)=6\Rightarrow V=1{,}2$ m/s. Setelah itu balok naik sampai energi kinetiknya menjadi energi potensial: $\tfrac{1}{2}MV^2=Mgh\Rightarrow h=\dfrac{V^2}{2g}=\dfrac{1{,}2^2}{20}=0{,}072$ m $=7{,}2$ cm.
+\jawaban{(D) $7{,}2$ cm.}
+\pemisah
+
+\nomor{9}
+\soal Balok bermassa $m_1$ dilepaskan di titik $A$ yang tingginya $h=2{,}7$ m. Balok meluncur pada bidang lengkung yang licin kemudian menumbuk lenting sempurna balok bermassa $m_2=2m_1$ yang awalnya diam di $B$. Akibat tumbukan itu balok B meluncur pada bidang datar kasar yang koefisien gesek kinetiknya 0,50. Balok $m_2$ meluncur pada bidang kasar sejauh \ldots\ meter.
+\gambar[0.45\textwidth]{images/2/2-p63.png}
+\begin{pilihan}
+  \item 2,1 \item 2,2 \item 2,3 \item 2,4 \item 2,5
+\end{pilihan}
+\pembahasan Energi mekanik $m_1$ kekal pada bidang licin: $v_1^2=2gh=2(10)(2{,}7)=54$. Untuk tumbukan lenting sempurna $m_1$ menumbuk $m_2$ diam, $v_2'=\dfrac{2m_1}{m_1+m_2}v_1=\dfrac{2m_1}{3m_1}v_1=\dfrac{2}{3}v_1$, sehingga $(v_2')^2=\dfrac{4}{9}(54)=24$. Di bidang kasar, energi kinetik $m_2$ habis oleh gesek: $\tfrac{1}{2}m_2(v_2')^2=\mu_k m_2 g s\Rightarrow s=\dfrac{(v_2')^2}{2\mu_k g}=\dfrac{24}{2(0{,}50)(10)}=2{,}4$ m.
+\jawaban{(D) $2{,}4$ m.}
+\pemisah
+
+\nomor{10}
+\soal Gambar di bawah menunjukkan sebuah meja bundar yang berputar pada sumbu vertikal dengan laju sudut tetap $\omega=2{,}5$ rad/s. Massa meja 25 kg dan radiusnya $R=60$ cm. Sebuah balok kecil bermassa 200 g diletakkan di meja pada jarak $r$ dari sumbu rotasi sedemikian sehingga balok tidak mengalami slip terhadap meja. Jika koefisien gesek balok ke meja 0,25, maka $r=\ldots$ cm.
+\gambar[0.5\textwidth]{images/2/2-p66.png}
+\begin{pilihan}
+  \item 30 \item 35 \item 40 \item 45 \item 50
+\end{pilihan}
+\pembahasan Agar balok ikut berputar tanpa slip, gaya gesek menyediakan gaya sentripetal: $f_{\max}=m\omega^2 r$ dengan $f_{\max}=\mu mg$. Maka
+\[ \mu mg=m\omega^2 r\Rightarrow r=\frac{\mu g}{\omega^2}=\frac{0{,}25(10)}{(2{,}5)^2}=\frac{2{,}5}{6{,}25}=0{,}40 \text{ m}=40 \text{ cm}. \]
+\catatan Kondisi ``tidak slip'' secara konsep memakai batas gesek statik. Naskah menuliskan koefisien gesek kinetik, tetapi perhitungan opsi mengikuti penggunaan koefisien gesek sebagai batas gaya gesek maksimum.
+\jawaban{(C) $40$ cm.}
+\pemisah
+
+\nomor{11}
+\soal Sebuah mobil melintasi sebuah tikungan datar berupa busur lingkaran berjari-jari 30 m. Besar koefisien gesek statik antara ban dan jalan adalah $\mu_s=0{,}75$ dan $g=10$ m/s$^2$. Laju maksimum mobil melewati tikungan agar tidak mengalami slip adalah \ldots\ m/s.
+\begin{pilihan}
+  \item 15 \item 20 \item 25 \item 30 \item 40
+\end{pilihan}
+\pembahasan Pada tikungan datar, gaya sentripetal disediakan oleh gesek statik: $\dfrac{mv^2}{R}\leq\mu_s mg$. Pada laju maksimum, $v_{\max}=\sqrt{\mu_s gR}=\sqrt{(0{,}75)(10)(30)}=\sqrt{225}=15$ m/s.
+\jawaban{(A) $15$ m/s.}
+\pemisah
+
+\nomor{12}
+\soal Sebuah balok bermassa $m_1=2$ kg diikatkan pada tali yang panjangnya $L_1=50$ cm dengan salah satu ujung tali terikat. Massa itu bergerak dalam lintasan lingkaran horizontal pada meja yang licin. Balok kedua bermassa $m_2=3$ kg diikatkan pada balok pertama dengan tali yang panjangnya $L_2=50$ cm. Kedua balok berotasi bersama-sama dengan kelajuan sudut $\omega_1=\omega_2=5$ rad/s. Tegangan pada tali yang menghubungkan $m_1$ ke pusat rotasi adalah \ldots\ N.
+\begin{pilihan}
+  \item 25,0 \item 62,5 \item 75,0 \item 82,5 \item 100,0
+\end{pilihan}
+\pembahasan Jari-jari $m_1$ adalah $r_1=L_1=0{,}50$ m, dan $m_2$ adalah $r_2=L_1+L_2=1{,}00$ m. Untuk $m_2$, gaya radial ke pusat adalah tegangan tali luar $T_2=m_2\omega^2 r_2=3(5^2)(1{,}00)=75$ N. Untuk $m_1$, $T_1-T_2=m_1\omega^2 r_1$, sehingga $T_1=75+2(5^2)(0{,}50)=75+25=100$ N.
+\jawaban{(E) $100{,}0$ N.}
+\pemisah
+
+\nomor{13}
+\soal Partikel bermassa $m$ terikat pada tali dan berputar horizontal di atas meja yang kasar dengan kelajuan linier mula-mula $v_0$. Saat menyelesaikan satu putaran penuh, kelajuan partikel turun menjadi $\tfrac{2}{3}v_0$ akibat gaya gesek kinetik. Berapa putaran lagi yang dapat dilakukan partikel sampai berhenti?
+\begin{pilihan}
+  \item 0,6 \item 0,8 \item 1 \item 1,5 \item 2
+\end{pilihan}
+\pembahasan Usaha gesek per putaran $W_f$ sama untuk tiap putaran. Energi awal $K_0=\tfrac{1}{2}mv_0^2$. Setelah satu putaran $K_1=\tfrac{1}{2}m\left(\tfrac{2}{3}v_0\right)^2=\tfrac{2}{9}mv_0^2$. Maka $W_f=K_0-K_1=\tfrac{1}{2}mv_0^2-\tfrac{2}{9}mv_0^2=\tfrac{5}{18}mv_0^2$. Energi sisa $K_1=\tfrac{2}{9}mv_0^2$, sehingga jumlah putaran tambahan
+\[ n=\frac{K_1}{W_f}=\frac{2/9}{5/18}=\frac{2}{9}\cdot\frac{18}{5}=\frac{4}{5}=0{,}8. \]
+\jawaban{(B) $0{,}8$.}
+\pemisah
+
+\nomor{14}
+\soal Sebuah derek listrik harus menghasilkan energi 120 Wh saat digunakan mengangkat balok besi 7200 N dari permukaan tanah tegak lurus ke atas. Jika efisiensi kerja derek itu hanya 60\%, tinggi maksimum yang dicapai balok besi dari permukaan tanah adalah \ldots\ m.
+\begin{pilihan}
+  \item 24 \item 28 \item 30 \item 36 \item 48
+\end{pilihan}
+\pembahasan Energi listrik 120 Wh. Karena efisiensi 60\%, energi mekanik berguna $E_{\text{guna}}=0{,}60(120)=72$ Wh $=72(3600)=259200$ J. Energi ini menjadi energi potensial: $E_{\text{guna}}=Wh$ dengan $W=7200$ N, sehingga $h=\dfrac{259200}{7200}=36$ m.
+\jawaban{(D) $36$ m.}
+\pemisah
+
+\nomor{15}
+\soal Air terjun yang tingginya 100 m mengalir dengan debit 200 m$^3$/s. Di dasar air terjun dipasang generator pembangkit listrik yang efisiensi kerjanya 75\%. Besar percepatan gravitasi setempat 10 m/s$^2$. Daya keluaran generator tersebut adalah \ldots\ MW.
+\begin{pilihan}
+  \item 100 \item 150 \item 200 \item 250 \item 300
+\end{pilihan}
+\pembahasan Daya hidrolik sebelum efisiensi $P_{\text{hid}}=\rho Qgh$ dengan $\rho=1000$ kg/m$^3$: $P_{\text{hid}}=1000(200)(10)(100)=2{,}0\times10^8$ W $=200$ MW. Dengan efisiensi 75\%, $P_{\text{keluar}}=0{,}75(200)=150$ MW.
+\jawaban{(B) $150$ MW.}
+\pemisah
+
+\begin{center}\textbf{\large Daftar Jawaban Singkat --- Set 6}\end{center}
+\begin{center}
+\begin{tabular}{c|ccccccccccccccc}
+Nomor & 1&2&3&4&5&6&7&8&9&10&11&12&13&14&15\\
+\hline
+Jawaban & C&E&B&A&D&B&C&D&D&C&A&E&B&D&B\\
+\end{tabular}
+\end{center}
+
+\end{document}
