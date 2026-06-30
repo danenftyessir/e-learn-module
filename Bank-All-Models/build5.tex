@@ -1,0 +1,566 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.2cm,top=2.6cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage[some]{background}
+\usepackage{icomma}
+
+\definecolor{navy}{RGB}{18,52,86}
+\definecolor{gold}{RGB}{233,170,40}
+\definecolor{soalblue}{RGB}{40,90,150}
+\definecolor{pembgreen}{RGB}{30,120,80}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small Soal Asli SM-SSU ITB 2025}
+\chead{\small www.tiktok.com/@result\_han}
+\rhead{\small @result\_han}
+\cfoot{\small Halaman \thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\backgroundsetup{scale=6,color=black!7,opacity=0.7,angle=45,
+  position=current page.center,contents={@result\_han}}
+
+\newtcolorbox{soalbox}[1]{breakable,colback=soalblue!4,colframe=soalblue,
+  coltitle=white,fonttitle=\bfseries\sffamily,title=Nomor #1,
+  boxrule=0.8pt,arc=3pt,left=3mm,right=3mm,top=2mm,bottom=2mm}
+\newtcolorbox{pembox}{breakable,colback=pembgreen!5,colframe=pembgreen,
+  coltitle=white,fonttitle=\bfseries\sffamily,title=Pembahasan,
+  boxrule=0.8pt,arc=3pt,left=3mm,right=3mm,top=2mm,bottom=2mm}
+\newtcolorbox{catatanbox}{colback=gold!8,colframe=gold!85!black,
+  coltitle=black,fonttitle=\bfseries\sffamily,title=Catatan redaksi,
+  boxrule=0.8pt,arc=3pt,left=3mm,right=3mm,top=1.5mm,bottom=1.5mm}
+
+\newenvironment{pil}{\begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}{\end{enumerate}}
+\newcommand{\jw}[1]{\par\smallskip\noindent\textbf{Jawaban:} #1}
+\newcommand{\gambar}[2][0.42\textwidth]{\begin{center}\includegraphics[width=#1]{#2}\end{center}}
+\linespread{1.04}
+
+\begin{document}
+
+\thispagestyle{empty}
+\noindent\begin{tikzpicture}\fill[navy](0,0)rectangle(\textwidth,-1.5);
+\fill[gold](0,-1.5)rectangle(\textwidth,-1.62);
+\node[anchor=north west,text=white,font=\sffamily\bfseries\large]at(0.3,-0.45){Seleksi Mandiri ITB 2025};
+\node[anchor=north east,text=white,font=\sffamily]at(\textwidth-0.3,-0.5){@result\_han};
+\end{tikzpicture}
+\vspace{1.5cm}
+\begin{center}
+\includegraphics[width=0.28\textwidth]{images/5/5-1.png}\\[1.2em]
+{\Huge\bfseries Paket Soal dan Pembahasan}\\[0.5em]
+{\LARGE\bfseries Matematika}\\[0.4em]
+{\large SM-SSU ITB 2025}\\[1.2em]
+\fbox{\parbox{0.75\textwidth}{\centering
+Format \textbf{Soal - Pembahasan - Soal - Pembahasan}\\[0.3em]
+\small Semua soal, pilihan ganda, dan informasi gambar diketik ulang secara rapi untuk bahan belajar.}}
+\end{center}
+\vfill
+\begin{center}
+Pengetikan ulang dan pemformatan: \textbf{@result\_han}\\
+TikTok: \textbf{www.tiktok.com/@result\_han}
+\end{center}
+\clearpage
+
+{\noindent\Large\bfseries Matematika\par}\medskip
+
+\begin{soalbox}{1}
+Diketahui $a$ adalah bilangan real. Di bawah ini, manakah pernyataan yang benar?
+\begin{pil}
+\item Jika $a\geq0$, $\dfrac{a}{a+1}>\dfrac{a+1}{a+2}$.
+\item Jika $a<0$ dan $a\neq-1$, $\dfrac{1}{a+1}<\dfrac{1}{a}$.
+\item Jika $a<0$, $2+a<1-a$.
+\item Jika $a>0$, $a>1-a$.
+\item Jika $a>0$, $-\dfrac{1}{a}<-\dfrac{1}{a+1}$.
+\end{pil}
+\end{soalbox}
+\begin{pembox}
+Satu contoh penyangkal cukup untuk menyatakan suatu pernyataan salah. Untuk (a), $\dfrac{a}{a+1}>\dfrac{a+1}{a+2}\Leftrightarrow a(a+2)>(a+1)^2$, yaitu $a^2+2a>a^2+2a+1$ yang salah. Untuk (b), ambil $a=-\tfrac{1}{2}$: $\tfrac{1}{a+1}=2$ dan $\tfrac{1}{a}=-2$, sehingga $2<-2$ salah. Untuk (c), $2+a<1-a\Leftrightarrow a<-\tfrac{1}{2}$, tidak selalu benar untuk $a<0$. Untuk (d), $a>1-a\Leftrightarrow a>\tfrac{1}{2}$, tidak selalu benar untuk $a>0$. Untuk (e), jika $a>0$ maka $a+1>a$ sehingga $\tfrac{1}{a}>\tfrac{1}{a+1}$; mengalikan dengan $-1$ membalik tanda: $-\tfrac{1}{a}<-\tfrac{1}{a+1}$, selalu benar untuk $a>0$.
+\jw{(e)}
+\end{pembox}
+
+\begin{soalbox}{2}
+Nilai $x$ berikut sehingga $f(x)=\dfrac{1}{\sqrt{2x^2-5x-3}}$ terdefinisi adalah \ldots
+\begin{pil}\item 0 \item 1 \item 3 \item 4 \item 5\end{pil}
+\end{soalbox}
+\begin{pembox}
+Fungsi berbentuk pecahan dengan akar di penyebut terdefinisi jika bagian di dalam akar positif (tidak boleh nol). Maka $2x^2-5x-3>0$. Faktorkan: $(2x+1)(x-3)>0$, terpenuhi untuk $x<-\tfrac{1}{2}$ atau $x>3$. Dari pilihan, $x=4$ dan $x=5$ sama-sama memenuhi.
+\begin{catatanbox}
+Dengan redaksi fungsi pada naskah, terdapat dua pilihan yang benar, yaitu (d) dan (e). Jadi soal ini tidak memiliki jawaban tunggal jika diperlakukan sebagai pilihan ganda satu jawaban.
+\end{catatanbox}
+\jw{(d) dan (e)}
+\end{pembox}
+
+\begin{soalbox}{3}
+Di suatu pusat perbelanjaan, terdapat rumah makan, toko buku, dan toko mainan. Misalkan kejadian seseorang untuk makan, membeli buku, dan membeli mainan bersifat saling bebas dan memiliki peluang berturut-turut $\dfrac{2}{5}$, $\dfrac{3}{7}$, $\dfrac{7}{8}$. Peluang seseorang untuk membeli buku atau membeli mainan, tetapi tidak makan adalah $\dfrac{P}{840}$ dengan $P=\ldots$
+\end{soalbox}
+\begin{pembox}
+Misalkan $M$ makan, $B$ membeli buku, $T$ membeli mainan. Yang diminta $P((B\cup T)\cap M^c)$. Karena bebas, $P(B\cap T)=\tfrac{3}{7}\cdot\tfrac{7}{8}=\tfrac{3}{8}$, sehingga $P(B\cup T)=\tfrac{3}{7}+\tfrac{7}{8}-\tfrac{3}{8}=\tfrac{3}{7}+\tfrac{1}{2}=\tfrac{13}{14}$. Peluang tidak makan $P(M^c)=1-\tfrac{2}{5}=\tfrac{3}{5}$. Jadi peluang yang diminta $\tfrac{13}{14}\cdot\tfrac{3}{5}=\tfrac{39}{70}=\tfrac{468}{840}$, sehingga $P=468$.
+\jw{468}
+\end{pembox}
+
+\begin{soalbox}{4}
+Jika titik-titik potong kurva $y=(x+3)^2$ dengan garis $y=px+9$ adalah $(-3,0)$ dan $(r,s)$, nilai $p+r+s=\ldots$
+\end{soalbox}
+\begin{pembox}
+Karena $(-3,0)$ pada garis $y=px+9$: $0=p(-3)+9$, sehingga $p=3$. Garisnya $y=3x+9$. Titik potong: $(x+3)^2=3x+9\Rightarrow x^2+6x+9=3x+9\Rightarrow x^2+3x=0\Rightarrow x(x+3)=0$. Nilai $x=-3$ dan $x=0$. Titik kedua: $r=0$, $s=3(0)+9=9$. Maka $p+r+s=3+0+9=12$.
+\jw{12}
+\end{pembox}
+
+\begin{soalbox}{5}
+Diberikan sebuah kerucut tegak seperti gambar berikut. Jika tinggi kerucut adalah $\sqrt{77}$ cm dan diameter kerucut adalah 4 cm, panjang garis pelukis $s$ adalah \ldots\ cm.
+\gambar[0.24\textwidth]{images/5/5-2.png}
+\begin{pil}\item 9 \item 11 \item 13 \item 8 \item 10\end{pil}
+\end{soalbox}
+\begin{pembox}
+Pada kerucut tegak, garis pelukis $s$, tinggi $t$, dan jari-jari $r$ membentuk segitiga siku-siku: $s^2=t^2+r^2$. Dengan $t=\sqrt{77}$ dan jari-jari $r=\tfrac{4}{2}=2$, maka $s^2=(\sqrt{77})^2+2^2=77+4=81$, sehingga $s=9$ cm.
+\jw{(a) 9}
+\end{pembox}
+
+\begin{soalbox}{6}
+Jika $y=\dfrac{3x+7}{x+9}$, maka $x=\ldots$
+\begin{pil}\item $\dfrac{7-9y}{y-3}$ \item $\dfrac{7+9y}{y+3}$ \item $\dfrac{y+3}{9+7y}$ \item $\dfrac{y+3}{9-7y}$ \item $\dfrac{9-7y}{y-3}$\end{pil}
+\end{soalbox}
+\begin{pembox}
+Kalikan silang: $y(x+9)=3x+7$, sehingga $yx+9y=3x+7$. Kumpulkan suku $x$: $yx-3x=7-9y$, sehingga $x(y-3)=7-9y$. Jadi $x=\dfrac{7-9y}{y-3}$.
+\jw{(a)}
+\end{pembox}
+
+\begin{soalbox}{7}
+Di antara sistem persamaan berikut, manakah yang mempunyai solusi $(x,y)=(2,3)$?
+\begin{pil}
+\item $2x+y=7$, \quad $x-2y=-4$
+\item $2x+y=6$, \quad $x-2y=-4$
+\item $2x+y=-4$, \quad $x-2y=7$
+\item $2x+y=6$, \quad $x-2y=-3$
+\item $2x+y=7$, \quad $x-2y=-3$
+\end{pil}
+\end{soalbox}
+\begin{pembox}
+Substitusikan $x=2$, $y=3$: $2x+y=2(2)+3=7$ dan $x-2y=2-6=-4$. Jadi sistem yang cocok adalah $2x+y=7$ dan $x-2y=-4$.
+\jw{(a)}
+\end{pembox}
+
+\begin{soalbox}{8}
+Misalkan $f(x)=a^{x+b}$ untuk suatu konstanta $a$ dan $b$. Jika $f(1)=3$ dan $f(3)=18$, nilai $a^4=\ldots$
+\end{soalbox}
+\begin{pembox}
+Dari $f(1)=3$: $a^{1+b}=3$. Dari $f(3)=18$: $a^{3+b}=18$. Bagi: $\dfrac{a^{3+b}}{a^{1+b}}=\dfrac{18}{3}$, sehingga $a^2=6$. Yang ditanya $a^4=(a^2)^2=6^2=36$.
+\jw{36}
+\end{pembox}
+
+\begin{soalbox}{9}
+Jika garis $l$ mempunyai gradien $\dfrac{1}{5}$ dan melalui titik $P(7,3)$ dan $Q(k,5)$, nilai $k=\ldots$
+\end{soalbox}
+\begin{pembox}
+Gradien $m=\dfrac{y_2-y_1}{x_2-x_1}$. Untuk $P(7,3)$ dan $Q(k,5)$: $\dfrac{5-3}{k-7}=\dfrac{1}{5}$, sehingga $\dfrac{2}{k-7}=\dfrac{1}{5}$. Kalikan silang: $10=k-7$, sehingga $k=17$.
+\jw{17}
+\end{pembox}
+
+\begin{soalbox}{10}
+Perhatikan gambar berikut. Jika $AB=13$, $CD=5$, dan $EF=10$ serta ketiganya sejajar, maka $AE:ED=\ldots$
+\gambar[0.4\textwidth]{images/5/5-4.png}
+\begin{pil}\item $3:5$ \item $13:10$ \item $8:5$ \item $13:5$ \item $10:5$\end{pil}
+\end{soalbox}
+\begin{pembox}
+Panjang ruas sejajar dalam trapesium berubah linear dari sisi atas ke sisi bawah. Misalkan posisi $EF$ diukur dari $CD$ menuju $AB$ dengan fraksi $t=\dfrac{DE}{DA}$. Maka $EF=CD+t(AB-CD)$, sehingga $10=5+t(13-5)=5+8t$, jadi $t=\tfrac{5}{8}$. Artinya $\dfrac{DE}{DA}=\tfrac{5}{8}$. Karena $DA=DE+AE$, maka $DE:AE=5:3$, sehingga $AE:ED=3:5$.
+\jw{(a) $3:5$}
+\end{pembox}
+
+\begin{soalbox}{11}
+Perhatikan daerah yang diarsir berikut. Jika luas satu persegi kecil adalah lima, total luas daerah yang diarsir adalah \ldots
+\gambar[0.5\textwidth]{images/5/5-5.png}
+\begin{pil}\item $200+\dfrac{125}{4}\pi$ \item $20+\dfrac{15}{2}\pi$ \item $200+\dfrac{75}{2}\pi$ \item $40+\dfrac{25}{4}\pi$ \item $40+\dfrac{15}{2}\pi$\end{pil}
+\end{soalbox}
+\begin{pembox}
+Misalkan sisi persegi kecil $s$, dengan $s^2=5$. Terdapat 8 persegi kecil penuh yang diarsir: $8s^2=8(5)=40$. Bagian kiri memuat satu lingkaran penuh berdiameter $s$ (jari-jari $\tfrac{s}{2}$): $\pi\left(\tfrac{s}{2}\right)^2=\tfrac{1}{4}\pi s^2=\tfrac{5}{4}\pi$. Bagian tengah memuat setengah lingkaran jari-jari $s$: $\tfrac{1}{2}\pi s^2=\tfrac{5}{2}\pi$. Bagian kanan juga setengah lingkaran jari-jari $s$: $\tfrac{5}{2}\pi$. Total lengkung $\tfrac{5}{4}\pi+\tfrac{5}{2}\pi+\tfrac{5}{2}\pi=\tfrac{25}{4}\pi$. Jadi total luas $40+\tfrac{25}{4}\pi$.
+\jw{(d) $40+\dfrac{25}{4}\pi$}
+\end{pembox}
+
+\begin{soalbox}{12}
+Jika $\displaystyle\int x^{2/6}\,dx=ax^b+C$ dan $a-b=\dfrac{p}{48}$, maka $p=\ldots$
+\end{soalbox}
+\begin{pembox}
+Gunakan $\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C$. Karena $\tfrac{2}{6}=\tfrac{1}{3}$, $\int x^{1/3}\,dx=\dfrac{x^{4/3}}{4/3}+C=\tfrac{3}{4}x^{4/3}+C$. Maka $a=\tfrac{3}{4}$, $b=\tfrac{4}{3}$, sehingga $a-b=\tfrac{3}{4}-\tfrac{4}{3}=\tfrac{9-16}{12}=-\tfrac{7}{12}$. Dari $\tfrac{p}{48}=-\tfrac{7}{12}$, $p=-28$.
+\jw{$-28$}
+\end{pembox}
+
+\begin{soalbox}{13}
+Suatu data berisi 20 bilangan dan memiliki rata-rata 42. Apabila $n$ bilangan dengan rata-rata 35 ditambahkan, rata-rata dari data baru yang berisi $20+n$ bilangan adalah 40. Nilai $n=\ldots$
+\end{soalbox}
+\begin{pembox}
+Jumlah data $=$ rata-rata $\times$ banyak data. Jumlah 20 bilangan awal $=20(42)=840$. Jumlah $n$ bilangan tambahan $=35n$. Setelah digabung, $\dfrac{840+35n}{20+n}=40$. Kalikan silang: $840+35n=800+40n$, sehingga $40=5n$, jadi $n=8$.
+\jw{8}
+\end{pembox}
+
+\begin{soalbox}{14}
+Diberikan grafik $y=f(x)$ seperti pada gambar. Jika $g(x)=f(x-2)+12$, maka $g(4)=\ldots$
+\gambar[0.4\textwidth]{images/5/5-6.png}
+\begin{pil}\item 15 \item 12 \item 16 \item 13 \item 14\end{pil}
+\end{soalbox}
+\begin{pembox}
+Karena $g(x)=f(x-2)+12$, maka $g(4)=f(4-2)+12=f(2)+12$. Dari grafik, $f(2)=3$. Jadi $g(4)=3+12=15$.
+\jw{(a) 15}
+\end{pembox}
+
+\begin{soalbox}{15}
+Jumlah dari 50 suku pertama dari barisan aritmetika dengan suku-suku $a_n=4n+7$, $n=1,2,3,\ldots$ adalah \ldots
+\end{soalbox}
+\begin{pembox}
+$\sum_{n=1}^{50}(4n+7)=4\sum_{n=1}^{50}n+7\sum_{n=1}^{50}1$. Dengan $\sum_{n=1}^{50}n=\dfrac{50\cdot51}{2}=1275$, diperoleh $4(1275)+7(50)=5100+350=5450$.
+\jw{5450}
+\end{pembox}
+
+\begin{soalbox}{16}
+Jika $f(x)=\dfrac{8}{x}$, maka $\dfrac{f(7+h)-f(7)}{h}=\ldots$
+\begin{pil}\item $\dfrac{8}{7h-49}$ \item $\dfrac{8}{7h+49}$ \item $-\dfrac{8}{7h+49}$ \item $\dfrac{8}{-7h+49}$ \item $\dfrac{8}{7h+7}$\end{pil}
+\end{soalbox}
+\begin{pembox}
+$\dfrac{f(7+h)-f(7)}{h}=\dfrac{\tfrac{8}{7+h}-\tfrac{8}{7}}{h}$. Samakan penyebut pembilang: $\dfrac{8}{7+h}-\dfrac{8}{7}=\dfrac{56-8(7+h)}{7(7+h)}=\dfrac{-8h}{7(7+h)}$. Maka hasilnya $\dfrac{-8h}{7(7+h)}\cdot\dfrac{1}{h}=-\dfrac{8}{7(7+h)}=-\dfrac{8}{7h+49}$.
+\jw{(c)}
+\end{pembox}
+
+\begin{soalbox}{17}
+Jika $\dfrac{1}{x+1}+\dfrac{8}{x^2+3}=\dfrac{x^2+Fx+G}{x^3+Cx^2+Dx+E}$, maka $C+D+E+F+G=\ldots$
+\begin{pil}\item 26 \item 29 \item 31 \item 27 \item 25\end{pil}
+\end{soalbox}
+\begin{pembox}
+Penyebut persekutuan $(x+1)(x^2+3)$. Maka $\dfrac{1}{x+1}+\dfrac{8}{x^2+3}=\dfrac{x^2+3+8(x+1)}{(x+1)(x^2+3)}$. Pembilang $x^2+8x+11$ dan penyebut $x^3+x^2+3x+3$. Jadi $F=8$, $G=11$, $C=1$, $D=3$, $E=3$. Maka $C+D+E+F+G=1+3+3+8+11=26$.
+\jw{(a) 26}
+\end{pembox}
+
+\begin{soalbox}{18}
+Jika $(x+y)^2=50$ dan $xy=6$, maka $x^2+y^2=\ldots$
+\begin{pil}\item 62 \item 38 \item 50 \item 44 \item 56\end{pil}
+\end{soalbox}
+\begin{pembox}
+$(x+y)^2=x^2+2xy+y^2$, sehingga $x^2+y^2=(x+y)^2-2xy=50-2(6)=50-12=38$.
+\jw{(b) 38}
+\end{pembox}
+
+\begin{soalbox}{19}
+Himpunan penyelesaian dari pertidaksamaan $\dfrac{5}{2}\leq\dfrac{6-x}{2}<6$ adalah \ldots
+\begin{pil}\item $\{x\mid-1<x\leq6\}$ \item $\{x\mid-6<x\leq1\}$ \item $\{x\mid-1\leq x<6\}$ \item $\{x\mid-6\leq x<1\}$ \item $\{x\mid1\leq x<6\}$\end{pil}
+\end{soalbox}
+\begin{pembox}
+Kalikan seluruh ruas dengan 2 (positif, arah tetap): $5\leq6-x<12$. Dari bagian kiri, $5\leq6-x\Rightarrow x\leq1$. Dari bagian kanan, $6-x<12\Rightarrow x>-6$. Gabungan: $-6<x\leq1$.
+\jw{(b) $\{x\mid-6<x\leq1\}$}
+\end{pembox}
+
+\begin{soalbox}{20}
+Misalkan $ABCD$ adalah jajargenjang dengan keliling 34. Jika luas $ABCD$ adalah 33 dan $BC=6$, jarak titik $D$ ke garis $AB$ adalah \ldots
+\gambar[0.4\textwidth]{images/5/5-7.png}
+\begin{pil}\item 11 \item 12 \item 6 \item 9 \item 3\end{pil}
+\end{soalbox}
+\begin{pembox}
+Keliling jajargenjang $K=2(AB+BC)$. Dengan $K=34$, $BC=6$: $2(AB+6)=34$, sehingga $AB=11$. Luas jajargenjang $L=\text{alas}\times\text{tinggi}$. Dengan alas $AB=11$ dan luas 33, jarak $D$ ke $AB$ adalah tinggi: $33=11h$, sehingga $h=3$.
+\jw{(e) 3}
+\end{pembox}
+
+\begin{soalbox}{21}
+Persamaan garis singgung kurva $y=5(x-1)^8$ pada $x=2$ adalah \ldots
+\begin{pil}\item $y+80=40x$ \item $y+80=5x$ \item Tidak ada yang benar \item $y+75=5x$ \item $y+75=40x$\end{pil}
+\end{soalbox}
+\begin{pembox}
+Nilai fungsi di $x=2$: $y=5(2-1)^8=5$. Turunan $y'=5\cdot8(x-1)^7=40(x-1)^7$, sehingga gradien $y'(2)=40(1)^7=40$. Garis singgung melalui $(2,5)$ dengan gradien 40: $y-5=40(x-2)\Rightarrow y-5=40x-80\Rightarrow y+75=40x$.
+\jw{(e) $y+75=40x$}
+\end{pembox}
+
+\begin{soalbox}{22}
+Misalkan $g$ adalah fungsi yang dapat diturunkan dan didefinisikan $f(x)=2x\cdot g(x)$. Jika $g(2)=2$ dan $g'(2)=6$, maka $f'(2)=\ldots$
+\end{soalbox}
+\begin{pembox}
+Gunakan aturan hasil kali $(uv)'=u'v+uv'$ dengan $u=2x$, $v=g(x)$: $f'(x)=2g(x)+2xg'(x)$. Substitusi $x=2$: $f'(2)=2g(2)+2(2)g'(2)=2(2)+4(6)=4+24=28$.
+\jw{28}
+\end{pembox}
+
+\begin{soalbox}{23}
+Jika $z:y=2:3$ dan $z^2=\dfrac{1}{6}$, maka $y^2=\ldots$
+\begin{pil}\item $\dfrac{3}{12}$ \item $\dfrac{2}{18}$ \item $\dfrac{1}{6}$ \item $\dfrac{4}{54}$ \item $\dfrac{9}{24}$\end{pil}
+\end{soalbox}
+\begin{pembox}
+Dari $z:y=2:3$, $\dfrac{z}{y}=\dfrac{2}{3}$, sehingga $y=\tfrac{3}{2}z$. Kuadratkan: $y^2=\left(\tfrac{3}{2}\right)^2 z^2=\tfrac{9}{4}z^2$. Karena $z^2=\tfrac{1}{6}$, $y^2=\tfrac{9}{4}\cdot\tfrac{1}{6}=\tfrac{9}{24}$.
+\jw{(e) $\dfrac{9}{24}$}
+\end{pembox}
+
+\begin{soalbox}{24}
+Titik-titik di bawah ini yang \textbf{tidak} dilalui oleh garis $x+3y=12$ adalah \ldots
+\begin{pil}\item $(6,1)$ \item $(0,4)$ \item $(12,0)$ \item $(-3,5)$ \item $(3,3)$\end{pil}
+\end{soalbox}
+\begin{pembox}
+Suatu titik dilalui garis jika koordinatnya memenuhi persamaan. Untuk $(6,1)$, $x+3y=6+3(1)=9\neq12$, sehingga tidak dilalui. Titik lain memenuhi: $0+3(4)=12$, $12+3(0)=12$, $-3+3(5)=12$, $3+3(3)=12$.
+\jw{(a) $(6,1)$}
+\end{pembox}
+
+\begin{soalbox}{25}
+Misalkan $p(x)$ adalah fungsi bernilai positif yang grafik turunannya $y=p'(x)$ sebagai berikut. Jika interval terbesar sehingga $f(x)=\sqrt{p(x)+3x+1}$ turun adalah interval $(k,l)$, maka $l-k=\ldots$
+\gambar[0.5\textwidth]{images/5/5-9.png}
+\end{soalbox}
+\begin{pembox}
+Suatu fungsi turun pada interval ketika turunannya negatif. Untuk $f(x)=\sqrt{p(x)+3x+1}$, $f'(x)=\dfrac{p'(x)+3}{2\sqrt{p(x)+3x+1}}$. Penyebut positif, sehingga tanda $f'(x)$ ditentukan oleh $p'(x)+3$. Agar $f$ turun, $p'(x)+3<0\Leftrightarrow p'(x)<-3$. Dari grafik $y=p'(x)$, kurva berada di bawah garis $y=-3$ pada interval $(2,8)$. Maka $k=2$, $l=8$, sehingga $l-k=6$.
+\jw{6}
+\end{pembox}
+
+\begin{soalbox}{26}
+Jika $a>0$ dan $\displaystyle\lim_{x\to\pi/a}\dfrac{1-\cos(ax-\pi)}{\left(x-\tfrac{\pi}{a}\right)^2}=8$, maka $a^2+a=\ldots$
+\end{soalbox}
+\begin{pembox}
+Gunakan limit dasar $1-\cos u\sim\tfrac{u^2}{2}$ untuk $u\to0$. Saat $x\to\tfrac{\pi}{a}$, $u=ax-\pi=a\left(x-\tfrac{\pi}{a}\right)\to0$. Maka $1-\cos(ax-\pi)\sim\dfrac{a^2\left(x-\tfrac{\pi}{a}\right)^2}{2}$, sehingga limitnya $\dfrac{a^2}{2}$. Karena bernilai 8, $\dfrac{a^2}{2}=8\Rightarrow a^2=16$. Karena $a>0$, $a=4$. Jadi $a^2+a=16+4=20$.
+\jw{20}
+\end{pembox}
+
+\begin{soalbox}{27}
+Diketahui $f(x)=\log_2 x$ untuk $x>0$. Nilai dari $2f(4x)-f\left(\dfrac{2}{x^2}\right)$ adalah \ldots
+\begin{pil}\item $f(8)+f(x^4)$ \item $f(8)-f(x^4)$ \item $2f(2)+f(x^4)$ \item $f(4)\times f(x^2)$ \item $f(2)+f(x^3)$\end{pil}
+\end{soalbox}
+\begin{pembox}
+Bentuknya $2\log_2(4x)-\log_2\left(\tfrac{2}{x^2}\right)$. Gunakan $2\log_2 A=\log_2 A^2$: $2\log_2(4x)=\log_2(16x^2)$. Maka $\log_2(16x^2)-\log_2\left(\tfrac{2}{x^2}\right)=\log_2\left(\dfrac{16x^2}{2/x^2}\right)=\log_2(8x^4)=\log_2 8+\log_2 x^4=f(8)+f(x^4)$.
+\jw{(a)}
+\end{pembox}
+
+\begin{soalbox}{28}
+Diketahui segitiga $ABC$ siku-siku di $B$ dan $AB=BC$. Jika panjang $AC=8$, luas segitiga $ABC$ adalah \ldots
+\gambar[0.3\textwidth]{images/5/5-10.png}
+\begin{pil}\item 18 \item 22 \item 16 \item 20 \item 32\end{pil}
+\end{soalbox}
+\begin{pembox}
+Segitiga siku-siku sama kaki dengan $AB=BC=s$. Sisi miring $AC=s\sqrt{2}$. Dari $s\sqrt{2}=8$, $s=\dfrac{8}{\sqrt{2}}=4\sqrt{2}$. Luas $L=\tfrac{1}{2}AB\cdot BC=\tfrac{1}{2}s^2=\tfrac{1}{2}(4\sqrt{2})^2=\tfrac{1}{2}(32)=16$.
+\jw{(c) 16}
+\end{pembox}
+
+\begin{soalbox}{29}
+Himpunan penyelesaian dari pertidaksamaan $\left|\dfrac{x}{3}-9\right|\leq1$ adalah $\{x\mid A\leq x\leq B\}$. Nilai $A+B=\ldots$
+\begin{pil}\item 54 \item 30 \item $-18$ \item 0 \item 78\end{pil}
+\end{soalbox}
+\begin{pembox}
+$|u|\leq1\Leftrightarrow-1\leq u\leq1$. Dengan $u=\tfrac{x}{3}-9$: $-1\leq\tfrac{x}{3}-9\leq1$. Tambahkan 9: $8\leq\tfrac{x}{3}\leq10$. Kalikan 3: $24\leq x\leq30$. Jadi $A=24$, $B=30$, sehingga $A+B=54$.
+\jw{(a) 54}
+\end{pembox}
+
+\begin{soalbox}{30}
+Jumlah semua nilai $n$ yang memenuhi persamaan $\log_9(89-n^2)=\log_3(n+3)$ adalah \ldots
+\end{soalbox}
+\begin{pembox}
+Syarat domain $89-n^2>0$ dan $n+3>0$. Karena $9=3^2$, $\log_9 A=\tfrac{1}{2}\log_3 A$. Maka $\tfrac{1}{2}\log_3(89-n^2)=\log_3(n+3)$, sehingga $\log_3(89-n^2)=2\log_3(n+3)=\log_3((n+3)^2)$. Karena basis sama dan argumen positif, $89-n^2=(n+3)^2=n^2+6n+9$, sehingga $2n^2+6n-80=0\Rightarrow n^2+3n-40=0\Rightarrow(n-5)(n+8)=0$. Maka $n=5$ atau $n=-8$. Syarat $n+3>0$ menolak $n=-8$, sehingga hanya $n=5$ yang valid.
+\jw{5}
+\end{pembox}
+
+\begin{soalbox}{31}
+Persamaan garis singgung pada grafik $y=2x^3-3x^2+11$ di titik $P(-1,q)$ adalah \ldots
+\begin{pil}\item $y=12x+18$ \item $y=17x-12$ \item $y=-18x+12$ \item $y=-12x+17$ \item $y=12x+17$\end{pil}
+\end{soalbox}
+\begin{pembox}
+Untuk $x=-1$, $q=2(-1)^3-3(-1)^2+11=-2-3+11=6$, jadi titik singgung $(-1,6)$. Turunan $y'=6x^2-6x$, gradien $y'(-1)=6(1)-6(-1)=12$. Garis singgung: $y-6=12(x+1)\Rightarrow y-6=12x+12\Rightarrow y=12x+18$.
+\jw{(a)}
+\end{pembox}
+
+\begin{soalbox}{32}
+Gambar berikut menunjukkan layang-layang $ABCD$ dengan titik $A(4,3)$ dan $C(20,1)$. Diagonal $BD$ merupakan sumbu simetri layang-layang. Jika persamaan garis $BD$ adalah $y=mx+c$, maka nilai $m+c=\ldots$
+\gambar[0.4\textwidth]{images/5/5-12.png}
+\end{soalbox}
+\begin{pembox}
+Pada layang-layang, diagonal sumbu simetri tegak lurus dan membagi dua diagonal lainnya. Gradien $AC=\dfrac{1-3}{20-4}=-\tfrac{1}{8}$. Karena $BD\perp AC$, gradien $BD$ adalah kebalikan negatif: $m=8$. Titik tengah $AC$: $\left(\tfrac{4+20}{2},\tfrac{3+1}{2}\right)=(12,2)$. Garis $BD$ melalui $(12,2)$ dengan gradien 8: $y-2=8(x-12)\Rightarrow y=8x-94$. Jadi $m=8$, $c=-94$, sehingga $m+c=-86$.
+\jw{$-86$}
+\end{pembox}
+
+\begin{soalbox}{33}
+Diketahui $\displaystyle\int_0^2 5(3a+bx)\,dx=\int_0^2 8x^2(3a+bx)\,dx=40$. Nilai $a-b=\ldots$
+\end{soalbox}
+\begin{pembox}
+Integral pertama: $\int_0^2 5(3a+bx)\,dx=5\left[3ax+\tfrac{b}{2}x^2\right]_0^2=5(6a+2b)=40$, sehingga $3a+b=4$ \;(1). Integral kedua: $\int_0^2 8x^2(3a+bx)\,dx=\int_0^2(24ax^2+8bx^3)\,dx=24a\cdot\tfrac{8}{3}+8b\cdot4=64a+32b=40$, sehingga $8a+4b=5$ \;(2). Dari (1), $b=4-3a$; substitusi ke (2): $8a+4(4-3a)=5\Rightarrow8a+16-12a=5\Rightarrow-4a=-11\Rightarrow a=\tfrac{11}{4}$. Maka $b=4-3\left(\tfrac{11}{4}\right)=-\tfrac{17}{4}$. Jadi $a-b=\tfrac{11}{4}+\tfrac{17}{4}=\tfrac{28}{4}=7$.
+\jw{7}
+\end{pembox}
+
+\begin{soalbox}{34}
+Diberikan dua titik $P(24,7)$ dan $A(28,9)$. Titik $A$ diputar dengan pusat $P$ sebesar $90^\circ$ berlawanan arah jarum jam, kemudian hasilnya dicerminkan terhadap sumbu-$x$. Jika bayangan akhirnya adalah titik $B(a,b)$, maka nilai $a+b=\ldots$
+\end{soalbox}
+\begin{pembox}
+Vektor dari $P$ ke $A$: $\vec{PA}=(28-24,9-7)=(4,2)$. Rotasi $90^\circ$ berlawanan arah jarum jam: $(u,v)\mapsto(-v,u)$, sehingga $(4,2)\mapsto(-2,4)$. Hasil rotasi terhadap $P$: $(24,7)+(-2,4)=(22,11)$. Pencerminan terhadap sumbu-$x$: $(x,y)\mapsto(x,-y)$, sehingga $(22,11)\mapsto(22,-11)$. Jadi $B(22,-11)$ dan $a+b=22+(-11)=11$.
+\jw{11}
+\end{pembox}
+
+\begin{soalbox}{35}
+Gambar berikut menunjukkan sebuah trapesium sama kaki dengan $AB$ sejajar $CD$ dan $|AB|<|CD|$. Misalkan $K$ adalah keliling trapesium. Jika $|AD|=15$, $\sin\angle ADC=\dfrac{4}{5}$, dan $K=78$, maka luas trapesium adalah $L=\ldots$
+\gambar[0.42\textwidth]{images/5/5-13.png}
+\end{soalbox}
+\begin{pembox}
+Karena trapesium sama kaki, $AD=BC=15$. Tinggi trapesium $h=AD\cdot\sin\angle ADC=15\cdot\tfrac{4}{5}=12$. Komponen horizontal kaki $AD$ adalah $\sqrt{15^2-12^2}=\sqrt{225-144}=9$. Karena sama kaki, $CD-AB=2(9)=18$. Keliling $K=AB+BC+CD+AD$, dengan $K=78$, $AD=BC=15$: $AB+CD+30=78$, sehingga $AB+CD=48$. Dari $CD-AB=18$ dan $AB+CD=48$, diperoleh $CD=33$, $AB=15$. Luas $L=\tfrac{1}{2}(AB+CD)h=\tfrac{1}{2}(15+33)(12)=24\cdot12=288$.
+\jw{288}
+\end{pembox}
+
+\begin{soalbox}{36}
+Misalkan $R_{P,\theta}$ menyatakan rotasi terhadap titik $P$ sebesar sudut $\theta$. Diketahui lingkaran $C$ dengan persamaan $x^2-6x+y^2-2y+6=0$. Jika $R_{(3,-4),\pi/2}(C)$ adalah lingkaran yang berpusat di titik $(k,l)$, maka nilai $k=\ldots$ dan $l=\ldots$
+\end{soalbox}
+\begin{pembox}
+Rotasi memindahkan pusat lingkaran, jari-jari tetap. Lengkapi kuadrat: $x^2-6x+y^2-2y+6=0\Rightarrow(x-3)^2-9+(y-1)^2-1+6=0\Rightarrow(x-3)^2+(y-1)^2=4$. Pusat awal $(3,1)$. Pusat rotasi $R=(3,-4)$. Vektor dari $R$ ke pusat lingkaran: $(3,1)-(3,-4)=(0,5)$. Rotasi $\tfrac{\pi}{2}$ berlawanan arah jarum jam: $(u,v)\mapsto(-v,u)$, sehingga $(0,5)\mapsto(-5,0)$. Tambahkan kembali pusat rotasi: $(3,-4)+(-5,0)=(-2,-4)$. Jadi $k=-2$, $l=-4$.
+\jw{$k=-2$ dan $l=-4$}
+\end{pembox}
+
+\begin{soalbox}{37}
+Jika $\displaystyle\int(3x^4-2x^3)\,dx=\dfrac{1}{60}(ax^b+cx^d)+C$, maka nilai $a-b+c-d=\ldots$
+\end{soalbox}
+\begin{pembox}
+Integralkan tiap suku: $\int(3x^4-2x^3)\,dx=\tfrac{3}{5}x^5-\tfrac{1}{2}x^4+C$. Agar berbentuk $\tfrac{1}{60}(ax^b+cx^d)$, tulis koefisien berpenyebut 60: $\tfrac{3}{5}x^5=\tfrac{36}{60}x^5$, $-\tfrac{1}{2}x^4=-\tfrac{30}{60}x^4$. Jadi $\tfrac{1}{60}(36x^5-30x^4)$, sehingga $a=36$, $b=5$, $c=-30$, $d=4$. Maka $a-b+c-d=36-5-30-4=-3$.
+\jw{$-3$}
+\end{pembox}
+
+\begin{soalbox}{38}
+Grafik fungsi $f(x)$ diberikan sebagai berikut. Pernyataan yang benar tentang fungsi $f(x)$ adalah \ldots
+\gambar[0.45\textwidth]{images/5/5-14.png}
+\begin{pil}\item $\lim_{x\to-2}f(x)=2$ \item $\lim_{x\to2^-}f(x)=0$ \item $\lim_{x\to2^+}f(x)=0$ \item $f(5)=2$ \item $\lim_{x\to5}f(x)=3$\end{pil}
+\end{soalbox}
+\begin{pembox}
+Pada $x=-2$, dari kiri grafik mendekati 2 dan dari kanan mendekati 4, sehingga limitnya tidak ada; (a) salah. Pada $x=2$ dari kiri, grafik biru mendekati $(2,0)$, sehingga $\lim_{x\to2^-}f(x)=0$; (b) benar. Dari kanan menuju 2, grafik merah pada nilai 1, sehingga $\lim_{x\to2^+}f(x)=1$, bukan 0; (c) salah. Pada $x=5$ terdapat titik di $y=3$, sehingga $f(5)=3$, bukan 2; (d) salah. Nilai grafik di sekitar $x=5$ mengikuti ruas $y=2$, sehingga $\lim_{x\to5}f(x)=2$, bukan 3; (e) salah.
+\jw{(b)}
+\end{pembox}
+
+\begin{soalbox}{39}
+Jika $a$, $b$, dan $c$ adalah bilangan bulat sehingga $\dfrac{2^a\cdot3^b\cdot5^c}{12^a\cdot10^b}=\dfrac{20}{1}$, maka nilai $a+b+c=\ldots$
+\begin{pil}\item $-2$ \item $-1$ \item 0 \item 1 \item 2\end{pil}
+\end{soalbox}
+\begin{pembox}
+Faktorkan penyebut: $12^a=2^{2a}3^a$, $10^b=2^b5^b$. Maka ruas kiri $\dfrac{2^a3^b5^c}{2^{2a}3^a2^b5^b}=2^{-a-b}3^{b-a}5^{c-b}=20=2^2\cdot5^1$. Penyamaan pangkat prima: $-a-b=2$, $b-a=0$, $c-b=1$. Dari $b=a$ dan $-2a=2$, $a=-1$, sehingga $b=-1$ dan $c=0$. Maka $a+b+c=-1-1+0=-2$.
+\jw{(a) $-2$}
+\end{pembox}
+
+\begin{soalbox}{40}
+Diketahui $f(x)=\begin{cases}x+3, & x<0\\ x^2-4x+5, & 0\leq x\leq3\\ 2x-4, & x>3\end{cases}$. Banyak bilangan bulat $x$ dengan $-3\leq x\leq6$ yang memenuhi $f(f(x))=2$ adalah \ldots
+\begin{pil}\item 0 \item 1 \item 2 \item 3 \item 4\end{pil}
+\end{soalbox}
+\begin{pembox}
+Cari dahulu masukan $t$ yang membuat $f(t)=2$. Untuk $t<0$: $t+3=2\Rightarrow t=-1$ (valid). Untuk $0\leq t\leq3$: $t^2-4t+5=2\Rightarrow t^2-4t+3=0\Rightarrow(t-1)(t-3)=0$, jadi $t=1$ atau $t=3$ (keduanya valid). Untuk $t>3$: $2t-4=2\Rightarrow t=3$ (tidak valid). Jadi $f(x)\in\{-1,1,3\}$. Uji $x=-3,\ldots,6$: nilai $f(x)$ berturut $0,1,2,5,2,1,2,4,6,8$. Nilai yang termasuk $\{-1,1,3\}$ terjadi pada $x=-2$ dan $x=2$. Jadi ada 2 bilangan bulat.
+\jw{(c) 2}
+\end{pembox}
+
+\begin{soalbox}{41}
+Domain fungsi $g(x)=\dfrac{\sqrt{(x^2-5x+6)(x-1)}}{x^2-4x+3}$ adalah \ldots
+\begin{pil}\item $(-\infty,1)\cup[2,3)$ \item $(1,2]\cup(3,\infty)$ \item $[1,2]\cup[3,\infty)$ \item $(1,3)\cup\{2\}$ \item $(1,\infty)\cup\{3\}$\end{pil}
+\end{soalbox}
+\begin{pembox}
+Bagian di dalam akar tidak negatif: $(x^2-5x+6)(x-1)=(x-2)(x-3)(x-1)\geq0$, terpenuhi pada $[1,2]\cup[3,\infty)$. Penyebut tidak nol: $x^2-4x+3=(x-1)(x-3)\neq0$, sehingga $x\neq1$ dan $x\neq3$. Akibatnya domain $(1,2]\cup(3,\infty)$.
+\jw{(b)}
+\end{pembox}
+
+\begin{soalbox}{42}
+Diketahui $f(1)=2$ dan $f'(1)=-3$. Jika $h(x)=x^2 f\left(\dfrac{1}{x}\right)$, maka nilai $h'(1)$ adalah \ldots
+\begin{pil}\item 3 \item 5 \item 6 \item 7 \item 8\end{pil}
+\end{soalbox}
+\begin{pembox}
+Gunakan aturan hasil kali dan rantai: $h'(x)=2xf\left(\tfrac{1}{x}\right)+x^2 f'\left(\tfrac{1}{x}\right)\left(-\tfrac{1}{x^2}\right)=2xf\left(\tfrac{1}{x}\right)-f'\left(\tfrac{1}{x}\right)$. Substitusi $x=1$: $h'(1)=2(1)f(1)-f'(1)=2(2)-(-3)=4+3=7$.
+\jw{(d) 7}
+\end{pembox}
+
+\begin{soalbox}{43}
+Diketahui $f(x)=\begin{cases}\dfrac{x^3-1}{x-1}, & x<1\\ k, & x=1\\ ax+b, & x>1\end{cases}$. Jika $f$ kontinu dan turunan kiri di $x=1$ sama dengan dua kali turunan kanan di $x=1$, maka nilai $k+a+b$ adalah \ldots
+\begin{pil}\item 4 \item 5 \item 6 \item 7 \item 8\end{pil}
+\end{soalbox}
+\begin{pembox}
+Untuk $x<1$, $\dfrac{x^3-1}{x-1}=x^2+x+1$. Agar kontinu di $x=1$, $k=\lim_{x\to1^-}(x^2+x+1)=3$. Limit kanan $a+b=3$ \;(1). Turunan kiri $2x+1$ bernilai $2(1)+1=3$ di $x=1$. Turunan kanan adalah $a$. Diketahui turunan kiri $=2\times$ turunan kanan: $3=2a$, sehingga $a=\tfrac{3}{2}$. Dari (1), $b=3-\tfrac{3}{2}=\tfrac{3}{2}$. Jadi $k+a+b=3+\tfrac{3}{2}+\tfrac{3}{2}=6$.
+\jw{(c) 6}
+\end{pembox}
+
+\begin{soalbox}{44}
+Diketahui $H(x)=\displaystyle\int_0^{x^2+1}g(t)\,dt$, $g(2)=5$, dan $g'(2)=-1$. Nilai $H''(1)$ adalah \ldots
+\begin{pil}\item 2 \item 4 \item 6 \item 8 \item 10\end{pil}
+\end{soalbox}
+\begin{pembox}
+Dengan Teorema Dasar Kalkulus dan aturan rantai, $H'(x)=g(x^2+1)\cdot2x$. Turunkan lagi: $H''(x)=2g(x^2+1)+2x\cdot g'(x^2+1)\cdot2x=2g(x^2+1)+4x^2 g'(x^2+1)$. Untuk $x=1$, batas atas $1^2+1=2$, sehingga $H''(1)=2g(2)+4g'(2)=2(5)+4(-1)=10-4=6$.
+\jw{(c) 6}
+\end{pembox}
+
+\begin{soalbox}{45}
+Jika $\sqrt{23-6\sqrt{10}}=\sqrt{a}-\sqrt{b}$, dengan $a$ dan $b$ bilangan bulat positif serta $a>b$, maka nilai $a+b$ adalah \ldots
+\begin{pil}\item 17 \item 19 \item 21 \item 23 \item 25\end{pil}
+\end{soalbox}
+\begin{pembox}
+Kuadratkan ruas kanan: $(\sqrt{a}-\sqrt{b})^2=a+b-2\sqrt{ab}$. Maka $23-6\sqrt{10}=a+b-2\sqrt{ab}$. Samakan: $a+b=23$ dan $2\sqrt{ab}=6\sqrt{10}$, sehingga $\sqrt{ab}=3\sqrt{10}$ dan $ab=90$. Bilangan bulat positif dengan jumlah 23 dan hasil kali 90 adalah 18 dan 5. Karena $a>b$, $a=18$, $b=5$. Nilai yang diminta $a+b=23$.
+\jw{(d) 23}
+\end{pembox}
+
+\begin{soalbox}{46}
+Jika $\sin(\pi x)=\cos(2\pi x)$ dan $0<x<\dfrac{1}{2}$, maka nilai $\cos\left(\dfrac{\pi}{4}-\pi x\right)$ adalah \ldots
+\begin{pil}\item $\dfrac{\sqrt{6}+\sqrt{2}}{4}$ \item $\dfrac{\sqrt{6}-\sqrt{2}}{4}$ \item $\dfrac{\sqrt{2}}{2}$ \item $\dfrac{\sqrt{3}}{2}$ \item $\dfrac{1}{2}$\end{pil}
+\end{soalbox}
+\begin{pembox}
+Misalkan $\theta=\pi x$, dengan $0<\theta<\tfrac{\pi}{2}$. Persamaan menjadi $\sin\theta=\cos2\theta=1-2\sin^2\theta$. Misalkan $s=\sin\theta$: $2s^2+s-1=0\Rightarrow(2s-1)(s+1)=0$. Karena $\sin\theta>0$, $s=\tfrac{1}{2}$, sehingga $\theta=\tfrac{\pi}{6}$, jadi $x=\tfrac{1}{6}$. Maka $\cos\left(\tfrac{\pi}{4}-\pi x\right)=\cos\left(\tfrac{\pi}{4}-\tfrac{\pi}{6}\right)=\cos\tfrac{\pi}{12}=\cos(45^\circ-30^\circ)=\cos45^\circ\cos30^\circ+\sin45^\circ\sin30^\circ=\dfrac{\sqrt{2}}{2}\cdot\dfrac{\sqrt{3}}{2}+\dfrac{\sqrt{2}}{2}\cdot\dfrac{1}{2}=\dfrac{\sqrt{6}+\sqrt{2}}{4}$.
+\jw{(a)}
+\end{pembox}
+
+\begin{soalbox}{47}
+Diketahui kurva parametrik $\begin{cases}x=t^2+t\\ y=t^3-3t\end{cases}$. Nilai $\dfrac{d^2y}{dx^2}$ saat $t=1$ adalah \ldots
+\begin{pil}\item $\dfrac{1}{3}$ \item $\dfrac{1}{2}$ \item $\dfrac{2}{3}$ \item 1 \item $\dfrac{4}{3}$\end{pil}
+\end{soalbox}
+\begin{pembox}
+$\dfrac{dx}{dt}=2t+1$, $\dfrac{dy}{dt}=3t^2-3$, sehingga $\dfrac{dy}{dx}=\dfrac{3t^2-3}{2t+1}$. Turunan kedua $\dfrac{d^2y}{dx^2}=\dfrac{\frac{d}{dt}\left(\frac{dy}{dx}\right)}{dx/dt}$. Hitung $\dfrac{d}{dt}\left(\dfrac{3t^2-3}{2t+1}\right)=\dfrac{6t(2t+1)-2(3t^2-3)}{(2t+1)^2}=\dfrac{6t^2+6t+6}{(2t+1)^2}=\dfrac{6(t^2+t+1)}{(2t+1)^2}$. Maka $\dfrac{d^2y}{dx^2}=\dfrac{6(t^2+t+1)}{(2t+1)^3}$. Untuk $t=1$: $\dfrac{6(3)}{3^3}=\dfrac{18}{27}=\dfrac{2}{3}$.
+\jw{(c) $\dfrac{2}{3}$}
+\end{pembox}
+
+\begin{soalbox}{48}
+Himpunan nilai $a$ yang menyebabkan sistem $\begin{cases}x^2+2xy=3\\ x+y=a\end{cases}$ memiliki dua solusi real berbeda untuk $x$ adalah \ldots
+\begin{pil}\item $a<-\sqrt{3}$ atau $a>\sqrt{3}$ \item $-\sqrt{3}\leq a\leq\sqrt{3}$ \item $a\neq-\sqrt{3}$ dan $a\neq\sqrt{3}$ \item semua bilangan real $a$ \item hanya $a=-\sqrt{3}$ atau $a=\sqrt{3}$\end{pil}
+\end{soalbox}
+\begin{pembox}
+Dari persamaan kedua, $y=a-x$. Substitusi: $x^2+2x(a-x)=3\Rightarrow x^2+2ax-2x^2=3\Rightarrow-x^2+2ax-3=0$, atau $x^2-2ax+3=0$. Agar memiliki dua solusi real berbeda, diskriminan positif: $\Delta=(-2a)^2-4(1)(3)=4a^2-12>0$, sehingga $a^2>3\Leftrightarrow|a|>\sqrt{3}$. Jadi $a<-\sqrt{3}$ atau $a>\sqrt{3}$.
+\jw{(a)}
+\end{pembox}
+
+\begin{soalbox}{49}
+Jika $a$ dan $b$ bilangan real serta $\displaystyle\lim_{x\to1}\dfrac{\sqrt{x^2+\tfrac{1}{x}}-\sqrt{ax+b}}{x-1}=L$ dengan limit berhingga, maka nilai $\displaystyle\lim_{x\to1}\dfrac{\sqrt{x^4+\tfrac{1}{x^2}}-\sqrt{ax^2+b}}{x-1}$ adalah \ldots
+\begin{pil}\item $\dfrac{L}{2}$ \item $L$ \item $2L$ \item $3L$ \item $4L$\end{pil}
+\end{soalbox}
+\begin{pembox}
+Agar limit pertama berhingga, pembilang menuju 0 saat $x\to1$: $\sqrt{1+1}-\sqrt{a+b}=0$, sehingga $a+b=2$. Karena pembilang nol di $x=1$, limit pertama sama dengan selisih turunan: $L=A'(1)-B'(1)$ dengan $A(x)=\sqrt{x^2+\tfrac{1}{x}}$, $B(x)=\sqrt{ax+b}$. $A'(1)=\dfrac{2-1}{2\sqrt{2}}=\dfrac{1}{2\sqrt{2}}$, $B'(1)=\dfrac{a}{2\sqrt{2}}$, sehingga $L=\dfrac{1-a}{2\sqrt{2}}$.
+
+Untuk limit kedua dengan $C(x)=\sqrt{x^4+\tfrac{1}{x^2}}$, $D(x)=\sqrt{ax^2+b}$: $C'(1)=\dfrac{4-2}{2\sqrt{2}}=\dfrac{1}{\sqrt{2}}$, $D'(1)=\dfrac{2a}{2\sqrt{2}}=\dfrac{a}{\sqrt{2}}$, sehingga limit kedua $=\dfrac{1-a}{\sqrt{2}}=2\cdot\dfrac{1-a}{2\sqrt{2}}=2L$.
+\jw{(c) $2L$}
+\end{pembox}
+
+\begin{soalbox}{50}
+Banyak bilangan bulat $k$ sehingga polinom $p_k(x)=x^3-3x+k$ memiliki tiga akar real berlainan adalah \ldots
+\begin{pil}\item 1 \item 2 \item 3 \item 4 \item 5\end{pil}
+\end{soalbox}
+\begin{pembox}
+Untuk kubik $p_k(x)=x^3-3x+k$, tiga akar real berlainan terjadi jika nilai maksimum lokal positif dan minimum lokal negatif. Turunan $p_k'(x)=3x^2-3=3(x-1)(x+1)$, titik kritis $x=-1$ dan $x=1$. Nilai $p_k(-1)=-1+3+k=k+2$ dan $p_k(1)=1-3+k=k-2$. Syarat $p_k(-1)>0$ dan $p_k(1)<0$: $k+2>0\Rightarrow k>-2$ dan $k-2<0\Rightarrow k<2$. Gabungan $-2<k<2$, sehingga $k=-1,0,1$, yaitu 3 nilai.
+\jw{(c) 3}
+\end{pembox}
+
+\begin{center}\textbf{\large Daftar Jawaban Singkat}\end{center}
+\begin{center}\small
+\begin{tabular}{cc@{\qquad}cc}
+\hline
+No. & Jawaban & No. & Jawaban\\
+\hline
+1 & (e) & 26 & 20\\
+2 & (d) dan (e) & 27 & (a)\\
+3 & 468 & 28 & (c)\\
+4 & 12 & 29 & (a)\\
+5 & (a) & 30 & 5\\
+6 & (a) & 31 & (a)\\
+7 & (a) & 32 & $-86$\\
+8 & 36 & 33 & 7\\
+9 & 17 & 34 & 11\\
+10 & (a) & 35 & 288\\
+11 & (d) & 36 & $k=-2,\ l=-4$\\
+12 & $-28$ & 37 & $-3$\\
+13 & 8 & 38 & (b)\\
+14 & (a) & 39 & (a)\\
+15 & 5450 & 40 & (c)\\
+16 & (c) & 41 & (b)\\
+17 & (a) & 42 & (d)\\
+18 & (b) & 43 & (c)\\
+19 & (b) & 44 & (c)\\
+20 & (e) & 45 & (d)\\
+21 & (e) & 46 & (a)\\
+22 & 28 & 47 & (c)\\
+23 & (e) & 48 & (a)\\
+24 & (a) & 49 & (c)\\
+25 & 6 & 50 & (c)\\
+\hline
+\end{tabular}
+\end{center}
+
+\end{document}

@@ -1,0 +1,375 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.3cm,top=2.6cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage[some]{background}
+\usepackage{icomma}
+
+\definecolor{intenblue}{RGB}{0,70,160}
+\definecolor{boxgreen}{RGB}{20,110,70}
+
+\pagestyle{fancy}\fancyhf{}
+\newcommand{\settipe}[1]{\lhead{\small Latihan Matematika INTEN Set #1}}
+\settipe{1}
+\chead{\small tiktok.com/@result\_han}
+\rhead{\small @result\_han}
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\backgroundsetup{scale=6,color=black!7,opacity=0.7,angle=45,
+  position=current page.center,contents={@result\_han}}
+
+% sampul tiap set
+\newcommand{\intencover}[2]{% #1 nomor set, #2 label (MANDIRI/KUIS ...)
+  \clearpage\thispagestyle{empty}\setcounter{page}{1}\settipe{#1}
+  \begin{center}
+    \includegraphics[width=0.22\textwidth]{images/3/3-1.png}\\[1.2em]
+    {\bfseries Latihan Matematika}\\[0.3em]
+    {\LARGE\bfseries Seleksi Mandiri ITB / SSU 2026}\\[0.4em]
+    {\large #2 - Set #1}\\[1em]
+    \fbox{\parbox{0.7\textwidth}{\centering
+      \textbf{Sumber soal:} Bimbingan Belajar INTEN\\[0.2em]
+      \textbf{Pengetikan ulang, pemformatan, dan pembahasan:} @result\_han\\[0.2em]
+      \textbf{TikTok:} www.tiktok.com/@result\_han}}
+  \end{center}
+  \vfill
+  \begin{center}\small\itshape Dokumen disusun ulang dalam format soal-pembahasan untuk keperluan belajar.\end{center}
+  \clearpage
+}
+
+\newcommand{\nomor}[1]{\bigskip{\noindent\large\bfseries\color{intenblue} Nomor #1\par}\nopagebreak\smallskip}
+\newcommand{\soal}{\noindent\textbf{Soal.}\ \ignorespaces}
+\newenvironment{pil}{\begin{enumerate}[label=(\Alph*),leftmargin=*,itemsep=1pt,topsep=2pt]}{\end{enumerate}}
+% kotak jawaban + pembahasan (hijau)
+\newcommand{\jp}[2]{\par\smallskip\noindent
+  \fcolorbox{boxgreen}{green!4}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+    \textbf{Jawaban.} #1\par\smallskip\textbf{Pembahasan.} #2}}\par\medskip}
+\newcommand{\pemisah}{\par\smallskip\noindent\rule{\linewidth}{0.4pt}\par\smallskip}
+\newcommand{\gambar}[2][0.45\textwidth]{\begin{center}\includegraphics[width=#1]{#2}\end{center}}
+\linespread{1.05}
+
+\begin{document}
+
+%==================== SET 1 ====================
+\intencover{1}{MATEMATIKA MANDIRI SM ITB}
+
+\nomor{1}\soal Jika $9^{1/6}\cdot x=3$, maka nilai $x$ adalah \ldots
+\begin{pil}\item $3^{4/6}$ \item $3^{4/36}$ \item $3^{6/2}$ \item $3^6$ \item $3^6$\end{pil}
+\jp{(A) $3^{4/6}$}{Sifat pangkat $a^m a^n=a^{m+n}$ dan $(a^m)^n=a^{mn}$. Karena $9^{1/6}=(3^2)^{1/6}=3^{1/3}$, maka $3^{1/3}x=3^1$. Jadi $x=3^{1-1/3}=3^{2/3}=3^{4/6}$.}
+\pemisah
+
+\nomor{2}\soal Jika titik $A(4,15)$ terletak pada grafik fungsi $g(x)=\dfrac{2x+7}{x^2-b}$, maka nilai $b$ adalah \ldots
+\begin{pil}\item 16 \item 14 \item 13 \item 15 \item 12\end{pil}
+\jp{(D) 15}{Substitusi titik ke fungsi. Karena $A(4,15)$ pada grafik, $g(4)=15$. Maka $15=\dfrac{2(4)+7}{4^2-b}=\dfrac{15}{16-b}$, sehingga $16-b=1$ dan $b=15$.}
+\pemisah
+
+\nomor{3}\soal Diketahui $x_0,x_1,x_2,\ldots,x_{100}$ adalah barisan aritmetika dengan $x_0=3$ dan $x_{100}=9$. Nilai $x_{50}$ adalah \ldots
+\begin{pil}\item 2 \item 4 \item 6 \item 8 \item 10\end{pil}
+\jp{(C) 6}{Pada barisan aritmetika, suku tengah sama dengan rata-rata dua suku yang simetris. Karena $x_{50}$ tepat di tengah antara $x_0$ dan $x_{100}$, maka $x_{50}=\dfrac{x_0+x_{100}}{2}=\dfrac{3+9}{2}=6$.}
+\pemisah
+
+\nomor{4}\soal Jika $f(x)=\dfrac{5x^2-9x+3}{(x-1)^6}$, maka $f'(2)$ adalah \ldots
+\begin{pil}\item $-19$ \item $-20$ \item 0 \item 19 \item 20\end{pil}
+\jp{(A) $-19$}{Tulis $f(x)=(5x^2-9x+3)(x-1)^{-6}$. Maka $f'(x)=(10x-9)(x-1)^{-6}-6(5x^2-9x+3)(x-1)^{-7}$. Substitusi $x=2$: $f'(2)=11-6(5)=-19$.}
+\pemisah
+
+\nomor{5}\soal Jika $x^3-2x+5$ dibagi oleh $1-x$, maka sisanya adalah \ldots
+\begin{pil}\item 4 \item 5 \item 6 \item 7 \item 8\end{pil}
+\jp{(A) 4}{Teorema sisa: sisa pembagian $P(x)$ oleh $x-a$ adalah $P(a)$. Pembagi $1-x$ memiliki akar $x=1$, sehingga sisanya $P(1)=1^3-2(1)+5=4$.}
+\pemisah
+
+\nomor{6}\soal Diketahui $f(x)=x^3+(a-1)x^2-2$. Jika $f(-2)=26$, maka nilai $a$ adalah \ldots
+\begin{pil}\item 5 \item 10 \item 15 \item 20 \item 25\end{pil}
+\jp{(B) 10}{Substitusi $x=-2$: $f(-2)=-8+4(a-1)-2=4a-14$. Karena $f(-2)=26$, maka $4a-14=26$, sehingga $4a=40$ dan $a=10$.}
+\pemisah
+
+\nomor{7}\soal Tiga buah dadu enam sisi dilempar bersamaan. Peluang jumlah mata dadu yang keluar bernilai 7 adalah \ldots
+\begin{pil}\item $15/216$ \item $25/216$ \item $27/216$ \item $30/216$ \item $34/216$\end{pil}
+\jp{(A) $15/216$}{Ruang sampel pelemparan tiga dadu adalah $6^3=216$. Banyak cara agar jumlah tiga mata dadu bernilai 7 sama dengan banyak solusi positif $a+b+c=7$, yaitu $\binom{6}{2}=15$. Tidak ada solusi yang melebihi 6. Jadi peluangnya $15/216$.}
+\pemisah
+
+\nomor{8}\soal Diberikan trapesium $ABCD$ seperti pada gambar. Jika panjang $AB=11$, $CD=7$, $BC=5$, dan luas trapesium adalah 27, maka keliling trapesium adalah \ldots
+\gambar[0.4\textwidth]{images/3/3-2.png}
+\begin{pil}\item 21 \item 24 \item 26 \item 27 \item 30\end{pil}
+\jp{(C) 26}{Luas trapesium $L=\tfrac{1}{2}(AB+CD)h$. Diperoleh $27=\tfrac{1}{2}(11+7)h=9h$, sehingga $h=3$. Sisi miring $BC=5$ membentuk segitiga siku-siku dengan tinggi 3, sehingga selisih horizontal kedua alas $\sqrt{5^2-3^2}=4$. Karena $AD$ tegak (tinggi trapesium), $AD=3$. Keliling $=AB+BC+CD+AD=11+5+7+3=26$.}
+\pemisah
+
+\nomor{9}\soal Diberikan persamaan lingkaran $(x+5)^2+(y-3)^2=9$. Titik pusat dan jari-jari lingkaran tersebut adalah \ldots
+\begin{pil}\item Titik pusat $(5,3)$ dan jari-jari 9 \item Titik pusat $(-5,3)$ dan jari-jari 3 \item Titik pusat $(5,3)$ dan jari-jari 3 \item Titik pusat $(5,-3)$ dan jari-jari 9 \item Titik pusat $(-5,-3)$ dan jari-jari 3\end{pil}
+\jp{(B) Titik pusat $(-5,3)$ dan jari-jari 3}{Bentuk baku lingkaran $(x-h)^2+(y-k)^2=r^2$. Dari $(x+5)^2+(y-3)^2=9$ diperoleh pusat $(-5,3)$ dan $r=\sqrt{9}=3$.}
+\pemisah
+
+\nomor{10}\soal Jika $\dfrac{A}{2-\sqrt{5}}+\dfrac{B}{2+\sqrt{5}}=1+2\sqrt{5}$ dengan $A$ dan $B$ bilangan real, maka nilai $A$ adalah \ldots
+\begin{pil}\item $-1{,}25$ \item $-1$ \item $-0{,}5$ \item $-0{,}25$ \item 0\end{pil}
+\jp{(A) $-1{,}25$}{Rasionalisasi: $\dfrac{1}{2-\sqrt{5}}=-(2+\sqrt{5})$ dan $\dfrac{1}{2+\sqrt{5}}=\sqrt{5}-2$. Ruas kiri menjadi $(-2A-2B)+(-A+B)\sqrt{5}$. Samakan koefisien dengan $1+2\sqrt{5}$: $-2(A+B)=1$ dan $-A+B=2$. Dari sini $A+B=-\tfrac{1}{2}$ dan $B=A+2$, sehingga $2A+2=-\tfrac{1}{2}$ dan $A=-\tfrac{5}{4}=-1{,}25$.}
+\pemisah
+
+%==================== SET 2 ====================
+\intencover{2}{MATEMATIKA KUIS SM ITB}
+
+\nomor{1}\soal Jika sistem persamaan $\begin{cases}px+qy=8\\ 3x-qy=38\end{cases}$ memiliki penyelesaian $(x,y)=(2,4)$, maka nilai $p$ adalah \ldots
+\begin{pil}\item 40 \item 22,5 \item 21,5 \item 20 \item 8\end{pil}
+\jp{(D) 20}{Substitusi $(x,y)=(2,4)$. Persamaan pertama memberi $2p+4q=8$, atau $p+2q=4$. Persamaan kedua memberi $6-4q=38$, sehingga $q=-8$. Maka $p+2(-8)=4$, sehingga $p=20$.}
+\pemisah
+
+\nomor{2}\soal Jika $a=\sqrt{7}+3$ dan $b=\sqrt{7}-3$, maka $a^3+b^3$ adalah \ldots
+\begin{pil}\item $60\sqrt{7}$ \item $62\sqrt{7}$ \item $64\sqrt{7}$ \item $66\sqrt{7}$ \item $68\sqrt{7}$\end{pil}
+\jp{(E) $68\sqrt{7}$}{Gunakan identitas $a^3+b^3=(a+b)^3-3ab(a+b)$. Diperoleh $a+b=2\sqrt{7}$ dan $ab=(\sqrt{7}+3)(\sqrt{7}-3)=7-9=-2$. Jadi $a^3+b^3=(2\sqrt{7})^3-3(-2)(2\sqrt{7})=56\sqrt{7}+12\sqrt{7}=68\sqrt{7}$.}
+\pemisah
+
+\nomor{3}\soal Jika $a<x<b$ adalah solusi dari $\dfrac{x^2+x+3}{x^2-x-2}<0$, maka nilai $b-2a$ adalah \ldots
+\begin{pil}\item 1 \item 2 \item 3 \item 4 \item 5\end{pil}
+\jp{(D) 4}{Pembilang $x^2+x+3$ selalu positif karena diskriminannya $1-12<0$. Jadi pecahan bernilai negatif saat penyebut negatif. Penyebut $x^2-x-2=(x-2)(x+1)<0$ untuk $-1<x<2$. Maka $a=-1$ dan $b=2$, sehingga $b-2a=2-2(-1)=4$.}
+\pemisah
+
+\nomor{4}\soal Jika $A=\begin{pmatrix} a & b & c\\ 1 & -1 & 1\end{pmatrix}$, $B=\begin{pmatrix} 1 & 2\\ 1 & -1\\ 0 & 1\end{pmatrix}$, dan determinan matriks $AB$ adalah 4, maka nilai $a+b$ adalah \ldots
+\begin{pil}\item $-2$ \item $-1$ \item 0 \item 1 \item 2\end{pil}
+\jp{(D) 1}{Kalikan matriks. Baris kedua dari $AB$ adalah $(0,4)$, sedangkan baris pertama adalah $(a+b,\,2a-b+c)$. Maka $AB=\begin{pmatrix} a+b & 2a-b+c\\ 0 & 4\end{pmatrix}$, sehingga $\det(AB)=4(a+b)$. Karena determinannya 4, maka $4(a+b)=4$ dan $a+b=1$.}
+\pemisah
+
+\nomor{5}\soal Agar persamaan kuadrat $ax^2+bx+b=0$ mempunyai dua akar real berbeda untuk $b<0$ atau $b>8$, maka nilai $a$ adalah \ldots
+\begin{pil}\item 1 \item 2 \item $-2$ \item 3 \item $-3$\end{pil}
+\jp{(B) 2}{Syarat dua akar real berbeda adalah diskriminan positif: $\Delta=b^2-4ab=b(b-4a)>0$. Himpunan nilai $b$ yang memenuhi adalah $b<0$ atau $b>4a$. Pada soal diberikan batas $b<0$ atau $b>8$, sehingga $4a=8$ dan $a=2$.}
+\pemisah
+
+\nomor{6}\soal Jika $f(x)=3x^2+9x+12$ dan $\dfrac{f(x+h)-f(x)}{h}=Ax+B+Ch$, maka $100A+10B+C$ adalah \ldots
+\begin{pil}\item 493 \item 583 \item 580 \item 690 \item 693\end{pil}
+\jp{(E) 693}{Hitung selisih fungsi: $f(x+h)-f(x)=3[(x+h)^2-x^2]+9h=6xh+3h^2+9h$. Bagi dengan $h$ sehingga diperoleh $6x+9+3h$. Maka $A=6$, $B=9$, dan $C=3$. Jadi $100A+10B+C=600+90+3=693$.}
+\pemisah
+
+\nomor{7}\soal Misalkan $f(x)=\begin{cases}x^2-x+2, & x\geq1\\ x+1, & x<1\end{cases}$. Maka nilai $\lim_{x\to1}f(x)$ adalah \ldots
+\begin{pil}\item $-2$ \item $-1$ \item Tidak ada \item 1 \item 2\end{pil}
+\jp{(E) 2}{Limit kiri menggunakan rumus $x+1$, sehingga $\lim_{x\to1^-}f(x)=2$. Limit kanan menggunakan rumus $x^2-x+2$, sehingga $\lim_{x\to1^+}f(x)=1-1+2=2$. Karena limit kiri dan kanan sama, limitnya adalah 2.}
+\pemisah
+
+\nomor{8}\soal Jika $f(3)=6$, $f'(3)=4$, $g(3)=10$, dan $g'(3)=-6$, maka $\left(\dfrac{f}{g}\right)'(3)$ adalah \ldots
+\begin{pil}\item 0,76 \item 0,82 \item 0,91 \item 0,95 \item 1\end{pil}
+\jp{(A) 0,76}{Gunakan aturan turunan hasil bagi $\left(\dfrac{f}{g}\right)'=\dfrac{f'g-fg'}{g^2}$. Substitusi pada $x=3$: $\dfrac{4(10)-6(-6)}{10^2}=\dfrac{76}{100}=0{,}76$.}
+\pemisah
+
+\nomor{9}\soal Jika $\int_1^9 f(x)\,dx=5$, maka $\int_1^3 8x\,f(x^2)\,dx$ adalah \ldots
+\begin{pil}\item 10 \item 15 \item 20 \item 25 \item 30\end{pil}
+\jp{(C) 20}{Gunakan substitusi $u=x^2$, sehingga $du=2x\,dx$. Maka $8x\,dx=4\,du$. Batas berubah dari $x=1$ ke $u=1$ dan dari $x=3$ ke $u=9$. Jadi integralnya $4\int_1^9 f(u)\,du=4(5)=20$.}
+\pemisah
+
+\nomor{10}\soal Berapa banyak bilangan bulat yang tidak memenuhi pertidaksamaan $|x-7|\geq3$?
+\begin{pil}\item 5 \item 6 \item 7 \item 8 \item 9\end{pil}
+\jp{(A) 5}{Bilangan yang tidak memenuhi $|x-7|\geq3$ berarti memenuhi $|x-7|<3$. Maka $-3<x-7<3$, sehingga $4<x<10$. Bilangan bulatnya adalah $5,6,7,8,9$, berjumlah 5.}
+\pemisah
+
+%==================== SET 3 ====================
+\intencover{3}{MATEMATIKA MANDIRI SM ITB}
+
+\nomor{1}\soal Jika $9^m=4$, maka $4\cdot3^{m+1}-27^m$ adalah \ldots
+\begin{pil}\item 8 \item 12 \item 16 \item 18 \item 24\end{pil}
+\jp{(C) 16}{Dari $9^m=(3^2)^m=3^{2m}=4$, diperoleh $3^m=2$. Maka $4\cdot3^{m+1}=4\cdot3\cdot3^m=24$, sedangkan $27^m=(3^3)^m=(3^m)^3=8$. Hasilnya $24-8=16$.}
+\pemisah
+
+\nomor{2}\soal Nilai $a$ yang memenuhi $\dfrac{1}{\log_{10}a}+\dfrac{1}{\log_{\sqrt{10}}a}+\dfrac{1}{\log_{\sqrt{\sqrt{10}}}a}+\cdots=200$ adalah \ldots
+\begin{pil}\item $1/100$ \item $1/10$ \item $\sqrt{10}$ \item $10^{1/100}$ \item $10^{1/10}$\end{pil}
+\jp{(D) $10^{1/100}$}{Gunakan identitas $\dfrac{1}{\log_b a}=\log_a b$. Basis pada deret adalah $10,10^{1/2},10^{1/4},\ldots$. Maka jumlahnya $\log_a 10\left(1+\tfrac{1}{2}+\tfrac{1}{4}+\cdots\right)=2\log_a 10$. Karena nilainya 200, maka $\log_a 10=100$, sehingga $a^{100}=10$ dan $a=10^{1/100}$.}
+\pemisah
+
+\nomor{3}\soal Diberikan persamaan $\sin x=\dfrac{a-1{,}5}{2-0{,}5a}$. Banyaknya bilangan bulat $a$ sehingga persamaan tersebut mempunyai penyelesaian adalah \ldots
+\begin{pil}\item 1 \item 2 \item 3 \item 4 \item 6\end{pil}
+\jp{(D) 4}{Agar persamaan sinus mempunyai solusi real, ruas kanan harus pada interval $[-1,1]$ dan penyebut tidak nol. Ruas kanan dapat ditulis $\dfrac{2a-3}{4-a}$. Untuk $a<4$, syarat $-1\leq\dfrac{2a-3}{4-a}\leq1$ menghasilkan $-1\leq a\leq\tfrac{7}{3}$. Bilangan bulatnya $-1,0,1,2$, yaitu 4 bilangan. Untuk $a>4$ tidak ada solusi.}
+\pemisah
+
+\nomor{4}\soal Nilai $\sum_{k=1}^{100}2k+\sum_{k=1}^{100}(3k+2)$ adalah \ldots
+\begin{pil}\item 25.450 \item 25.550 \item 25.700 \item 50.500 \item 50.750\end{pil}
+\jp{(A) 25.450}{Gunakan rumus $\sum_{k=1}^{100}k=\dfrac{100\cdot101}{2}=5050$. Jumlah pertama $=2(5050)=10100$. Jumlah kedua $=3(5050)+2(100)=15150+200=15350$. Totalnya $10100+15350=25450$.}
+\pemisah
+
+\nomor{5}\soal Banyaknya bilangan bulat negatif yang memenuhi $(x+1)(x^2+2x-7)\geq x^2-1$ adalah \ldots
+\begin{pil}\item 0 \item 1 \item 2 \item 3 \item 4\end{pil}
+\jp{(D) 3}{Pindahkan semua ke kiri: $(x+1)(x^2+2x-7)-(x^2-1)\geq0$, sehingga $x^3+2x^2-5x-6\geq0$. Faktorkan menjadi $(x-2)(x+1)(x+3)\geq0$. Tanda positif terjadi pada interval $[-3,-1]$ dan $[2,\infty)$. Bilangan bulat negatifnya $-3,-2,-1$, berjumlah 3.}
+\pemisah
+
+\nomor{6}\soal Hasil penjualan buku selama 10 hari terakhir bulan Juni adalah $8,7,8,6,8,8,9,8,10,8$. Jika rata-rata penjualan pada bulan Juni adalah 10, maka rata-rata penjualan pada 20 hari pertama adalah \ldots
+\begin{pil}\item 8 \item 9 \item 10 \item 11 \item 13\end{pil}
+\jp{(D) 11}{Total penjualan 30 hari adalah $30\cdot10=300$. Jumlah 10 hari terakhir adalah $8+7+8+6+8+8+9+8+10+8=80$. Maka jumlah 20 hari pertama adalah $300-80=220$, sehingga rata-ratanya $220/20=11$.}
+\pemisah
+
+\nomor{7}\soal Diketahui persamaan $x^7-10x^6+24x^5=0$ memiliki tiga akar real $r_1,r_2,r_3$ dengan $r_1<r_2<r_3$. Nilai $r_1+r_3$ adalah \ldots
+\begin{pil}\item 6 \item 8 \item 10 \item 12 \item 14\end{pil}
+\jp{(A) 6}{Faktorkan: $x^7-10x^6+24x^5=x^5(x^2-10x+24)=x^5(x-4)(x-6)$. Akar real berbedanya $0,4,6$. Maka $r_1=0$, $r_2=4$, $r_3=6$, sehingga $r_1+r_3=6$.}
+\pemisah
+
+\nomor{8}\soal Jika persamaan garis singgung kurva $y=3x^2+C$ di suatu titik adalah $y=24x$, maka nilai $C$ adalah \ldots
+\begin{pil}\item 50 \item 46 \item 47 \item 48 \item 49\end{pil}
+\jp{(D) 48}{Gradien kurva $y=3x^2+C$ adalah $y'=6x$. Garis singgung $y=24x$ memiliki gradien 24, sehingga titik singgung memenuhi $6x=24$ atau $x=4$. Pada garis, $y=24(4)=96$. Pada kurva, $y=3(4)^2+C=48+C$. Maka $48+C=96$, sehingga $C=48$.}
+\pemisah
+
+\nomor{9}\soal Parabola $y=(x-1)^2$ diperoleh dengan menggeser parabola $y=x^2$ ke \ldots
+\begin{pil}\item kanan 1 satuan dan ke atas 1 satuan \item atas 1 satuan \item bawah 1 satuan \item kiri 1 satuan \item kanan 1 satuan\end{pil}
+\jp{(E) kanan 1 satuan}{Transformasi $y=(x-h)^2$ merupakan pergeseran grafik $y=x^2$ sejauh $h$ satuan ke kanan. Karena $h=1$, grafik bergeser ke kanan 1 satuan.}
+\pemisah
+
+\nomor{10}\soal Bilangan bulat yang nilainya paling dekat dengan $5\sqrt{2}$ adalah \ldots
+\jp{7}{Karena $\sqrt{2}\approx1{,}414$, maka $5\sqrt{2}\approx7{,}07$. Bilangan bulat terdekat adalah 7.}
+\pemisah
+
+%==================== SET 4 ====================
+\intencover{4}{MATEMATIKA MANDIRI SM ITB}
+
+\nomor{1}\soal Diketahui $f(x)=\sqrt{1+x}$. Nilai $\lim_{h\to0}\dfrac{f(3+2h^2)-f(3-3h^2)}{h^2}$ adalah \ldots
+\begin{pil}\item 0 \item $2/3$ \item $6/7$ \item $9/8$ \item $5/4$\end{pil}
+\jp{(E) $5/4$}{Untuk perubahan kecil, $f(a+u)-f(a+v)\approx f'(a)(u-v)$. Di sini $a=3$, $u=2h^2$, $v=-3h^2$, dan $f'(x)=\dfrac{1}{2\sqrt{1+x}}$, sehingga $f'(3)=\tfrac{1}{4}$. Maka limitnya $\dfrac{1}{h^2}\cdot\tfrac{1}{4}(5h^2)=\tfrac{5}{4}$.}
+\pemisah
+
+\nomor{2}\soal Nilai $x$ yang memenuhi $\cos(3x+15^\circ)=\sin(x+25^\circ)$ untuk $0^\circ<x<90^\circ$ adalah \ldots
+\begin{pil}\item $12{,}5^\circ$ \item $15^\circ$ \item $17{,}5^\circ$ \item $22{,}5^\circ$ \item $25^\circ$\end{pil}
+\jp{(A) $12{,}5^\circ$}{Gunakan identitas $\sin\theta=\cos(90^\circ-\theta)$. Maka $\sin(x+25^\circ)=\cos(65^\circ-x)$. Solusi yang sesuai interval diperoleh dari $3x+15^\circ=65^\circ-x$, sehingga $4x=50^\circ$ dan $x=12{,}5^\circ$.}
+\pemisah
+
+\nomor{3}\soal Fungsi $f(x)=\sqrt{\dfrac{x^2-5x}{1-x}}$ terdefinisi pada daerah \ldots
+\begin{pil}\item $0<x<1$ atau $x>5$ \item $0\leq x<1$ atau $x\geq5$ \item $x<0$ atau $1<x<5$ \item $x\leq0$ atau $1<x\leq5$ \item $x\leq0$ atau $1\leq x\leq5$\end{pil}
+\jp{(D) $x\leq0$ atau $1<x\leq5$}{Agar akar real, harus berlaku $\dfrac{x(x-5)}{1-x}\geq0$ dan $x\neq1$. Titik kritisnya $0,1,5$. Uji tanda pada interval menghasilkan daerah yang memenuhi $(-\infty,0]$ dan $(1,5]$.}
+\pemisah
+
+\nomor{4}\soal Jika $\int_0^1\dfrac{x}{1+x}\,dx=a$, maka $\int_0^1\dfrac{1}{1+x}\,dx$ adalah \ldots
+\begin{pil}\item $1-a$ \item $a-\tfrac{1}{2}$ \item $a$ \item $2a$ \item $a/2$\end{pil}
+\jp{(A) $1-a$}{Perhatikan bahwa $\dfrac{x}{1+x}+\dfrac{1}{1+x}=1$. Maka $\int_0^1\dfrac{x}{1+x}\,dx+\int_0^1\dfrac{1}{1+x}\,dx=\int_0^1 1\,dx=1$. Karena integral pertama $a$, integral kedua $1-a$.}
+\pemisah
+
+\nomor{5}\soal Jika fungsi kuadrat $f(x)$ memenuhi $f(x)\geq0$ untuk semua real $x$, $f(1)=0$, dan $f(2)=2$, maka nilai $f(0)+f(4)$ adalah \ldots
+\begin{pil}\item 5 \item 10 \item 15 \item 20 \item 25\end{pil}
+\jp{(D) 20}{Karena $f(x)\geq0$ dan $f(1)=0$, maka $x=1$ adalah titik minimum dan akar kembar, sehingga $f(x)=k(x-1)^2$. Dari $f(2)=2$ diperoleh $k=2$. Maka $f(0)=2$ dan $f(4)=2(3)^2=18$, sehingga jumlahnya 20.}
+\pemisah
+
+\nomor{6}\soal Misalkan $A$ dan $B$ berada pada lingkaran berpusat $O(0,0)$, $\alpha=\angle AOB$, $A(a,b)$ di kuadran I, dan $B=(25,0)$. Jika $\sin\alpha=\tfrac{4}{5}$, maka $b$ dan $5\cos\alpha$ adalah \ldots
+\begin{pil}\item 20 dan 3 \item 15 dan 3 \item 20 dan 5 \item 15 dan 4 \item 20 dan 4\end{pil}
+\jp{(A) 20 dan 3}{Jari-jari lingkaran adalah $OB=25$. Karena $A$ di lingkaran yang sama dan kuadran I, koordinatnya dapat ditulis $(25\cos\alpha,25\sin\alpha)$. Maka $b=25\sin\alpha=25\cdot\tfrac{4}{5}=20$. Selain itu $\cos\alpha=\tfrac{3}{5}$, sehingga $5\cos\alpha=3$.}
+\pemisah
+
+\nomor{7}\soal Diketahui suku barisan aritmetika $U_6=\log_8 96$ dan $U_2=\log_8 6$. Jika $U_{12}-U_4=\log_8(c)$, maka $c$ adalah \ldots
+\begin{pil}\item 196 \item 256 \item 421 \item 625 \item 650\end{pil}
+\jp{(B) 256}{Pada barisan aritmetika, $U_6-U_2=4d=\log_8 96-\log_8 6=\log_8 16$. Jadi $d=\tfrac{1}{4}\log_8 16$. Selanjutnya $U_{12}-U_4=8d=2\log_8 16=\log_8(16^2)=\log_8 256$. Maka $c=256$.}
+\pemisah
+
+\nomor{8}\soal Misalkan fungsi $f$ memenuhi $f(-x)=f(x)$. Jika $\int_0^5 f(x)\,dx=7$ dan $\int_5^6 f(x)\,dx=8$, maka $\int_{-5}^6 f(x)\,dx$ adalah \ldots
+\begin{pil}\item 22 \item 21 \item 20 \item 19 \item 18\end{pil}
+\jp{(A) 22}{Sifat $f(-x)=f(x)$ berarti fungsi genap, sehingga $\int_{-5}^0 f(x)\,dx=\int_0^5 f(x)\,dx=7$. Maka $\int_{-5}^6 f(x)\,dx=7+7+8=22$.}
+\pemisah
+
+\nomor{9}\soal Jika $\lim_{x\to0}\dfrac{f(x)}{3x}=5$, maka nilai $\lim_{x\to0}\left[\dfrac{2f(x)}{x^2}-\dfrac{f(x)\cos2x}{x(1+x)}-\dfrac{2f(x)}{x^2(1+x)}\right]$ adalah \ldots
+\begin{pil}\item 15 \item 10 \item 0 \item $-10$ \item $-15$\end{pil}
+\jp{(A) 15}{Dari $\lim\dfrac{f(x)}{3x}=5$ diperoleh $\lim\dfrac{f(x)}{x}=15$. Ekspresi limit dapat difaktorkan menjadi $\dfrac{f(x)}{x}\left[\dfrac{2}{x}-\dfrac{\cos2x}{1+x}-\dfrac{2}{x(1+x)}\right]$. Bagian dalam kurung sama dengan $\dfrac{2-\cos2x}{1+x}$, yang limitnya 1. Jadi limit totalnya $15\cdot1=15$.}
+\pemisah
+
+\nomor{10}\soal Misalkan $l$ adalah garis $y=x$ dan $k$ adalah garis $y=-\tfrac{5}{3}x$. Titik $A$ berada pada garis $k$ dan $B$ adalah proyeksi titik $A$ pada garis $l$. Jika jarak dari titik asal $O$ ke $B$ adalah 1, maka jarak $A$ ke $B$ adalah \ldots
+\begin{pil}\item $7/3$ \item $1/3$ \item 1 \item 3 \item 4\end{pil}
+\jp{(E) 4}{Ambil vektor satuan sepanjang garis $y=x$, yaitu $u=(1,1)/\sqrt{2}$, dan vektor tegak lurusnya $n=(1,-1)/\sqrt{2}$. Karena $OB=1$, dapat diambil $B=u$. Titik $A$ berada pada garis tegak lurus melalui $B$, sehingga $A=B+sn$. Syarat $A$ berada pada $y=-\tfrac{5}{3}x$ menghasilkan $s=-4$, sehingga jarak $AB=|s|=4$.}
+\pemisah
+
+%==================== SET 5 ====================
+\intencover{5}{MATEMATIKA MANDIRI SM ITB}
+
+\nomor{1}\soal Truk $A$ dan $B$ masing-masing memuat 4 ton. Truk $C$ dan $D$ masing-masing memuat 6 ton. Jika truk $E$ memuat 1 ton lebih dari rata-rata muatan kelima truk, maka muatan truk $A$ ditambah muatan truk $E$ adalah \ldots
+\begin{pil}\item 8,17 \item 9 \item 10 \item 10,25 \item 10,5\end{pil}
+\jp{(D) 10,25}{Misalkan muatan truk $E$ adalah $e$ ton. Rata-rata kelima truk adalah $\dfrac{4+4+6+6+e}{5}=\dfrac{20+e}{5}$. Karena $e$ satu ton lebih dari rata-rata, $e=\dfrac{20+e}{5}+1$. Maka $5e=25+e$, sehingga $e=6{,}25$. Jadi $A+E=4+6{,}25=10{,}25$.}
+\pemisah
+
+\nomor{2}\soal Satu dadu dilempar 3 kali. Peluang mata dadu 6 muncul sedikitnya sekali adalah \ldots
+\begin{pil}\item $1/216$ \item $3/216$ \item $12/216$ \item $18/216$ \item $91/216$\end{pil}
+\jp{(E) $91/216$}{Gunakan komplemen. Peluang tidak muncul angka 6 dalam satu lemparan adalah $5/6$. Untuk tiga kali lemparan, peluang tidak muncul 6 sama sekali adalah $(5/6)^3=125/216$. Maka peluang muncul sedikitnya sekali adalah $1-125/216=91/216$.}
+\pemisah
+
+\nomor{3}\soal Suku banyak $x^3+3x^2+9x+3$ membagi habis $x^4+4x^3+2ax^2+4bx+c$. Nilai $a+b$ adalah \ldots
+\begin{pil}\item 12 \item 10 \item 9 \item 6 \item 3\end{pil}
+\jp{(C) 9}{Karena pembagi berderajat 3 dan yang dibagi berderajat 4, hasil bagi berbentuk $x+k$. Kalikan $(x^3+3x^2+9x+3)(x+k)$. Koefisien $x^3$ adalah $k+3=4$, sehingga $k=1$. Koefisien $x^2$ menjadi $3k+9=12=2a$, maka $a=6$. Koefisien $x$ menjadi $9k+3=12=4b$, maka $b=3$. Jadi $a+b=9$.}
+\pemisah
+
+\nomor{4}\soal Parabola $y=2x^2+1$ dicerminkan terhadap sumbu $x$, kemudian digeser ke kanan sejauh 2 satuan. Jika persamaan akhirnya $y=ax^2+bx+c$, maka $a+b+c$ adalah \ldots
+\begin{pil}\item 15 \item 1 \item $-1$ \item $-3$ \item $-19$\end{pil}
+\jp{(D) $-3$}{Pencerminan terhadap sumbu $x$ mengubah $y=2x^2+1$ menjadi $y=-2x^2-1$. Pergeseran ke kanan 2 satuan mengganti $x$ dengan $x-2$, sehingga $y=-2(x-2)^2-1=-2x^2+8x-9$. Maka $a+b+c=-2+8-9=-3$.}
+\pemisah
+
+\nomor{5}\soal Nilai dari $\sqrt[3]{9+4\sqrt{5}}+\sqrt[3]{9-4\sqrt{5}}$ adalah \ldots
+\begin{pil}\item 1 \item 2 \item 3 \item 4 \item 5\end{pil}
+\jp{(C) 3}{Misalkan $s=\sqrt[3]{9+4\sqrt{5}}+\sqrt[3]{9-4\sqrt{5}}$. Hasil kali kedua akar pangkat tiga adalah $\sqrt[3]{(9+4\sqrt{5})(9-4\sqrt{5})}=\sqrt[3]{1}=1$. Maka $s^3=(9+4\sqrt{5})+(9-4\sqrt{5})+3s=18+3s$. Jadi $s^3-3s-18=0$, dan $s=3$ memenuhi persamaan tersebut.}
+\pemisah
+
+\nomor{6}\soal Nilai $\lim_{x\to5}\dfrac{\sin(30-6x)}{x^2-25}$ adalah \ldots
+\begin{pil}\item $-0{,}2$ \item $-0{,}4$ \item $-0{,}6$ \item $-0{,}8$ \item $-1$\end{pil}
+\jp{(C) $-0{,}6$}{Saat $x\to5$, sudut $30-6x\to0$. Dengan limit dasar $\sin u\sim u$, pembilang mendekati $30-6x=-6(x-5)$. Penyebut $x^2-25=(x-5)(x+5)$. Jadi limitnya $\lim_{x\to5}\dfrac{-6(x-5)}{(x-5)(x+5)}=-\dfrac{6}{10}=-0{,}6$.}
+\pemisah
+
+\nomor{7}\soal Persamaan parabola melalui titik $(-4,0)$ dan $(2,0)$, serta titik minimumnya terletak pada garis $y=23x+20$, adalah \ldots
+\begin{pil}\item $y=\tfrac{1}{3}(x+4)(x-2)$ \item $y=\tfrac{1}{2}(x+4)(x-2)$ \item $y=-(x+4)(x-2)$ \item $y=\tfrac{1}{2}(x-4)(x+2)$ \item $y=\tfrac{1}{3}(x-4)(x+2)$\end{pil}
+\jp{(A) $y=\tfrac{1}{3}(x+4)(x-2)$}{Karena akarnya $-4$ dan 2, bentuk parabola $y=k(x+4)(x-2)$. Sumbu simetrinya $x=\dfrac{-4+2}{2}=-1$. Titik minimum pada garis $y=23x+20$, sehingga ordinat titik puncak saat $x=-1$ adalah $-23+20=-3$. Pada $x=-1$, $(x+4)(x-2)=3(-3)=-9$, maka $-9k=-3$ dan $k=\tfrac{1}{3}$.}
+\pemisah
+
+\nomor{8}\soal Jika rata-rata lima bilangan $5,4,c+11,c-1$, dan 5 adalah 10, maka $c$ adalah \ldots
+\begin{pil}\item 18 \item 17 \item 16 \item 15 \item 13\end{pil}
+\jp{(E) 13}{Jumlah lima bilangan adalah $5\cdot10=50$. Sementara itu jumlahnya $5+4+(c+11)+(c-1)+5=2c+24$. Maka $2c+24=50$, sehingga $c=13$.}
+\pemisah
+
+\nomor{9}\soal Misalkan $s$ adalah simpangan baku dari data terurut enam bilangan $4,6-a,6,8,8+a$, dan 10. Manakah hubungan antara $P=s^2$ dan $Q=5$ yang benar?
+\begin{pil}\item $P>Q$ \item $P<Q$ \item $P=Q$ \item Tidak dapat dinyatakan hubungannya\end{pil}
+\jp{(D) Tidak dapat dinyatakan hubungannya}{Karena data terurut, berlaku $0\leq a\leq2$. Rata-ratanya tetap 7. Varians populasi adalah $s^2=\dfrac{(-3)^2+(-1-a)^2+(-1)^2+1^2+(1+a)^2+3^2}{6}=\dfrac{11+2a+a^2}{3}$. Untuk $a=0$, $s^2=11/3<5$, sedangkan untuk $a=2$, $s^2=19/3>5$. Jadi hubungan $P$ dan $Q$ tidak tunggal.}
+\pemisah
+
+\nomor{10}\soal Suatu data terdiri atas tiga bilangan positif dengan median 20. Data tersebut ditambahkan empat bilangan positif $a,b,c,d$ sehingga terbentuk data baru berisi tujuh bilangan. Apakah median data baru lebih kecil daripada 20? Pernyataan: (1) $a+b=40$ dan (2) $c+d=40$.
+\jp{Kedua pernyataan bersama-sama cukup, tetapi masing-masing tidak cukup.}{Median tujuh data adalah data ke-4 setelah diurutkan. Agar median baru lebih kecil dari 20, harus ada sedikitnya empat data yang lebih kecil dari 20. Data awal yang median 20 hanya menjamin paling banyak satu data awal lebih kecil dari 20. Satu pasangan positif yang jumlahnya 40 tidak dapat memberi dua bilangan yang keduanya lebih kecil dari 20. Jadi jika kedua pernyataan dipakai bersama, empat bilangan tambahan memberi paling banyak dua bilangan yang lebih kecil dari 20; totalnya paling banyak tiga. Maka median baru tidak mungkin lebih kecil dari 20. Namun masing-masing pernyataan saja tidak cukup karena dua bilangan lain yang tidak diatur dapat mengubah kesimpulan.}
+\pemisah
+
+%==================== SET 6 ====================
+\intencover{6}{MATEMATIKA MANDIRI SM ITB}
+
+\nomor{1}\soal Jika nilai maksimum dari $\dfrac{m}{15\sin x-8\cos x+25}$ adalah 2, maka nilai $m$ adalah \ldots
+\begin{pil}\item 4 \item 16 \item 36 \item 64 \item 84\end{pil}
+\jp{(B) 16}{Bentuk $15\sin x-8\cos x$ memiliki nilai minimum $-\sqrt{15^2+8^2}=-17$. Jadi penyebut minimum adalah $25-17=8$. Untuk $m>0$, nilai maksimum pecahan adalah $m/8$. Karena maksimum sama dengan 2, maka $m/8=2$ dan $m=16$.}
+\pemisah
+
+\nomor{2}\soal Jika $f(x^2+3x+1)=\log_2(2x^3-x^2+7)$ dan $x\geq0$, maka $f(5)$ adalah \ldots
+\begin{pil}\item 1 \item 2 \item 3 \item 4 \item 5\end{pil}
+\jp{(C) 3}{Agar input fungsi bernilai 5, cari $x$ dari $x^2+3x+1=5$. Diperoleh $x^2+3x-4=0$, sehingga $x=1$ atau $x=-4$. Karena $x\geq0$, ambil $x=1$. Maka $f(5)=\log_2(2(1)^3-1^2+7)=\log_2 8=3$.}
+\pemisah
+
+\nomor{3}\soal Nilai $\lim_{x\to\infty}\left(\sqrt{4x^2+8x}-\sqrt{x^2+1}-\sqrt{x^2+x}\right)$ adalah \ldots
+\begin{pil}\item $1/2$ \item 1 \item $3/2$ \item 2 \item $5/2$\end{pil}
+\jp{(C) $3/2$}{Untuk $x\to\infty$, gunakan pendekatan $\sqrt{x^2+ax+b}=x+\tfrac{a}{2}+o(1)$. Maka $\sqrt{4x^2+8x}=2x+2+o(1)$, $\sqrt{x^2+1}=x+o(1)$, dan $\sqrt{x^2+x}=x+\tfrac{1}{2}+o(1)$. Jadi limitnya $(2x+2)-x-(x+\tfrac{1}{2})=\tfrac{3}{2}$.}
+\pemisah
+
+\nomor{4}\soal Grafik $y=\tfrac{1}{3}x^3-\tfrac{3}{2}x^2+2x$ mempunyai garis singgung mendatar pada titik $P$ dan $Q$. Jumlah ordinat titik $P$ dan $Q$ adalah \ldots
+\begin{pil}\item $2/3$ \item $5/6$ \item $3/2$ \item $5/3$ \item $8/3$\end{pil}
+\jp{(C) $3/2$}{Garis singgung mendatar terjadi saat $y'=0$. Turunannya $y'=x^2-3x+2=(x-1)(x-2)$, sehingga titiknya pada $x=1$ dan $x=2$. Ordinatnya $y(1)=\tfrac{1}{3}-\tfrac{3}{2}+2=\tfrac{5}{6}$ dan $y(2)=\tfrac{8}{3}-6+4=\tfrac{2}{3}$. Jumlahnya $\tfrac{5}{6}+\tfrac{2}{3}=\tfrac{3}{2}$.}
+\pemisah
+
+\nomor{5}\soal Lingkaran berpusat di $(a,b)$ dengan $a,b>3$ menyinggung garis $3x+4y=12$. Jika lingkaran berjari-jari 12, maka $3a+4b$ adalah \ldots
+\begin{pil}\item 24 \item 36 \item 48 \item 60 \item 72\end{pil}
+\jp{(E) 72}{Jarak pusat $(a,b)$ ke garis $3x+4y-12=0$ sama dengan jari-jari. Jadi $\dfrac{|3a+4b-12|}{\sqrt{3^2+4^2}}=12$. Karena $a,b>3$, maka $3a+4b-12>0$. Jadi $\dfrac{3a+4b-12}{5}=12$, sehingga $3a+4b=72$.}
+\pemisah
+
+\nomor{6}\soal Jika $\int_5^9 f(x)\,dx=16$, maka $\int_4^6 f(2x-3)\,dx$ adalah \ldots
+\begin{pil}\item $-16$ \item $-8$ \item 8 \item 16 \item 20\end{pil}
+\jp{(C) 8}{Gunakan substitusi $u=2x-3$, sehingga $du=2\,dx$ atau $dx=\tfrac{1}{2}du$. Saat $x=4$, $u=5$; saat $x=6$, $u=9$. Maka $\int_4^6 f(2x-3)\,dx=\tfrac{1}{2}\int_5^9 f(u)\,du=\tfrac{1}{2}(16)=8$.}
+\pemisah
+
+\nomor{7}\soal Diketahui $AB$ adalah diameter lingkaran dengan $A=(10,17)$ dan $B=(-2,1)$. Radius lingkaran adalah \ldots
+\begin{pil}\item 20 \item 15 \item 10 \item 8 \item 4\end{pil}
+\jp{(C) 10}{Panjang diameter $AB$ adalah $\sqrt{(10-(-2))^2+(17-1)^2}=\sqrt{12^2+16^2}=20$. Jari-jari lingkaran adalah setengah diameter, yaitu 10.}
+\pemisah
+
+\nomor{8}\soal Jika $f(x)=\log_3 x$, maka $f(2x)+f\left(\dfrac{2}{x}\right)$ adalah \ldots
+\begin{pil}\item $f\left(\tfrac{2x+4}{x}\right)$ \item $f(x^2)$ \item $f(2)+f(x^2)$ \item $f(4)$ \item $f(4)+f(x^2)$\end{pil}
+\jp{(D) $f(4)$}{Gunakan sifat logaritma $\log a+\log b=\log(ab)$. Maka $f(2x)+f(2/x)=\log_3(2x)+\log_3(2/x)=\log_3 4=f(4)$.}
+\pemisah
+
+\nomor{9}\soal Data $D$ terdiri atas lima bilangan bulat positif. Jika tiga bilangan dari data tersebut adalah 4, 5, dan 8, maka rata-rata dari semua median data $D$ yang mungkin adalah \ldots
+\begin{pil}\item 5 \item $5\tfrac{1}{2}$ \item 6 \item $6\tfrac{1}{2}$ \item 7\end{pil}
+\jp{(C) 6}{Dua bilangan lain dapat membuat median yang mungkin bernilai 4, 5, 6, 7, atau 8. Misalnya median 4 jika dua bilangan tambahan tidak melebihi 4; median 8 jika dua bilangan tambahan tidak kurang dari 8; dan nilai 5, 6, 7 dapat dibuat dengan pilihan bilangan tambahan yang sesuai. Rata-rata semua nilai median yang mungkin adalah $\dfrac{4+5+6+7+8}{5}=6$.}
+\pemisah
+
+\nomor{10}\soal Bukan daerah asal fungsi $f(x)=\sqrt{|3x-7|-8}$ adalah \ldots
+\begin{pil}\item $\{x:-\tfrac{1}{3}<x<5\}$ \item $\{x:x\leq-\tfrac{1}{3}\text{ atau }x\geq5\}$ \item $\{x:-\tfrac{1}{3}\leq x\leq5\}$ \item $\{x:x<-\tfrac{1}{3}\text{ atau }x>5\}$ \item $\{x:x\geq0\}$\end{pil}
+\jp{Catatan: daerah asalnya adalah (B).}{Agar fungsi akar terdefinisi, radikannya harus tidak negatif: $|3x-7|-8\geq0$, atau $|3x-7|\geq8$. Maka $3x-7\leq-8$ atau $3x-7\geq8$, sehingga $x\leq-\tfrac{1}{3}$ atau $x\geq5$. Jadi daerah asal fungsi adalah pilihan (B). Karena soal memakai kata `bukan daerah asal', secara literal lebih dari satu pilihan bukan daerah asal; kemungkinan maksud soal adalah menanyakan daerah asal.}
+\pemisah
+
+\end{document}

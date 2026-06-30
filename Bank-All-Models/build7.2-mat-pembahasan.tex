@@ -1,0 +1,526 @@
+% ============================================================
+%  PEMBAHASAN  --  MATEMATIKA  --  SM ITS -- Paket 7.2
+%  45 Soal (Set Latihan 3 + Set Latihan 2)
+% ============================================================
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.5cm,top=2.8cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{icomma}
+\usepackage{array}
+\usepackage{tikz}
+
+\definecolor{mapelcolor}{RGB}{20,110,60}
+\definecolor{mapelbg}{RGB}{228,246,234}
+\definecolor{pembcolor}{RGB}{100,50,130}
+\definecolor{pembbg}{RGB}{245,238,252}
+\definecolor{gold}{RGB}{210,160,30}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small SM ITS -- Paket 7.2 -- Pembahasan}
+\rhead{\small Matematika}
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newtcolorbox{soal}[1]{
+  breakable,
+  colback=mapelbg, colframe=mapelcolor,
+  coltitle=white, colbacktitle=mapelcolor,
+  fonttitle=\bfseries\sffamily,
+  title=Nomor #1,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+\newtcolorbox{pembox}{
+  breakable,
+  colback=pembbg, colframe=pembcolor,
+  coltitle=white, colbacktitle=pembcolor,
+  fonttitle=\bfseries\sffamily,
+  title=Pembahasan,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+\newtcolorbox{catatan}{
+  breakable,
+  colback=gold!15, colframe=gold!80!black,
+  coltitle=white, colbacktitle=gold!80!black,
+  fonttitle=\bfseries\sffamily,
+  title=Catatan,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+\newcommand{\jawaban}[1]{\textbf{Jawaban:}\enspace\colorbox{gold!30}{\textbf{#1}}}
+\newcommand{\konsep}[1]{\textit{Konsep: #1.}}
+\newenvironment{pil}{%
+  \begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}}
+\linespread{1.05}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+  {\LARGE\bfseries PEMBAHASAN MATEMATIKA}\\[0.4em]
+  {\large SM ITS -- Paket 7.2}
+\end{center}
+
+\vspace{0.4cm}\noindent\textbf{Kunci Jawaban}
+
+\vspace{0.3em}{\small
+\begin{tabular}{@{}*{10}{c@{\hspace{1.1em}}}@{}}
+\textbf{1}(c)&\textbf{2}(c)&\textbf{3}(b)&\textbf{4}(a)&\textbf{5}(c)&
+\textbf{6}(e)&\textbf{7}(b)&\textbf{8}(d)&\textbf{9}(e)&\textbf{10}(e)\\
+\end{tabular}
+
+\vspace{0.2em}
+\begin{tabular}{@{}*{10}{c@{\hspace{1.1em}}}@{}}
+\textbf{11}(e)&\textbf{12}(c)&\textbf{13}(b)&\textbf{14}(d)&\textbf{15}(c)&
+\textbf{16}(c)&\textbf{17}(d)&\textbf{18}(c)&\textbf{19}(a)&\textbf{20}(e)\\
+\end{tabular}
+
+\vspace{0.2em}
+\begin{tabular}{@{}*{10}{c@{\hspace{1.1em}}}@{}}
+\textbf{21}(d)&\textbf{22}(d)&\textbf{23}(d)&\textbf{24}(d)&\textbf{25}(e)&
+\textbf{26}(b)&\textbf{27}(c)&\textbf{28}(b)&\textbf{29}(e)&\textbf{30}(d)\\
+\end{tabular}
+
+\vspace{0.2em}
+\begin{tabular}{@{}*{10}{c@{\hspace{1.1em}}}@{}}
+\textbf{31}(c)&\textbf{32}(d)&\textbf{33}(c)&\textbf{34}(b)&\textbf{35}(a)&
+\textbf{36}(a)&\textbf{37}(a)&\textbf{38}(d)&\textbf{39}(d)&\textbf{40}(d)\\
+\end{tabular}
+
+\vspace{0.2em}
+\begin{tabular}{@{}*{5}{c@{\hspace{1.1em}}}@{}}
+\textbf{41}(a)&\textbf{42}(a)&\textbf{43}(a)&\textbf{44}(b)&\textbf{45}(b)\\
+\end{tabular}
+}
+
+\clearpage
+
+% ===================================================================
+%  BAGIAN A: SET LATIHAN 3  (Q1--25)
+% ===================================================================
+{\noindent\large\bfseries Bagian A \textendash\ Set Latihan 3\par}\smallskip\hrule\medskip
+
+\begin{soal}{1 -- Integral Fungsi Kasus}
+$\int_{-1}^1 f(x)\,dx$ untuk fungsi kasus.
+\end{soal}
+\begin{pembox}
+$\int_{-1}^0(x+1)\,dx+\int_0^1\cos\pi x\,dx$.
+Bagian 1: $\left[\frac{x^2}{2}+x\right]_{-1}^0=0-(\frac12-1)=\frac12$.
+Bagian 2: $\left[\frac{\sin\pi x}{\pi}\right]_0^1=0$.
+Total $=\frac12$.
+\jawaban{(c) $\dfrac12$}
+\end{pembox}
+
+\begin{soal}{2 -- Turunan Trigonometri}
+$f(x)=x\sin(2x^2)$. Nilai $f'\!\left(\sqrt{\pi/12}\right)$.
+\end{soal}
+\begin{pembox}
+Aturan hasil kali dan rantai: $f'(x)=\sin(2x^2)+x\cdot\cos(2x^2)\cdot4x=\sin(2x^2)+4x^2\cos(2x^2)$.
+
+Untuk $x=\sqrt{\pi/12}$: $x^2=\pi/12$, $2x^2=\pi/6$.
+$f'=\sin\frac\pi6+4\cdot\frac\pi{12}\cos\frac\pi6=\frac12+\frac\pi3\cdot\frac{\sqrt3}{2}=\frac12+\frac{\sqrt3\pi}{6}=\dfrac{3+\sqrt3\pi}{6}$.
+\jawaban{(c) $\dfrac{3+\sqrt3\pi}{6}$}
+\end{pembox}
+
+\begin{soal}{3 -- Kontinuitas}
+$f$ kontinu di $x=0$; cari $k$.
+\end{soal}
+\begin{pembox}
+Dari kiri: $f(0)=1+k$. Dari kanan: $\lim_{x\to0^+}\frac{3\sin2x}{x}=3\cdot2=6$.
+$1+k=6\Rightarrow k=5$.
+\jawaban{(b) $5$}
+\end{pembox}
+
+\begin{soal}{4 -- Bentuk Akar}
+$\sqrt{x/3}+\sqrt{x/27}+\sqrt{x/243}=\frac{156}{54}$.
+\end{soal}
+\begin{pembox}
+Faktorkan $\sqrt x$: $\sqrt x\cdot\frac{1+\frac13+\frac19}{\sqrt3}=\frac{156}{54}$.
+
+Isi kurung $=\frac{13}{9}$; $\frac{13}{9\sqrt3}\sqrt x=\frac{26}{9}$. $\sqrt x=2\sqrt3\Rightarrow x=12$.
+\jawaban{(a) $12$}
+\end{pembox}
+
+\begin{soal}{5 -- Logaritma}
+$\log_x81=8$, $\log_3x=y$. Nilai $xy$.
+\end{soal}
+\begin{pembox}
+$x^8=81=3^4\Rightarrow x=3^{1/2}$. $y=\log_3(3^{1/2})=\frac12$. $xy=\sqrt3\cdot\frac12=\frac{\sqrt3}{2}$.
+\jawaban{(c) $\dfrac{\sqrt3}{2}$}
+\end{pembox}
+
+\begin{soal}{6 -- Garis Singgung}
+$y=x^4-x^3-2x^2+5x+1$ di $(1,4)$. Nilai $a+b$.
+\end{soal}
+\begin{pembox}
+$y'=4x^3-3x^2-4x+5$; $y'(1)=4-3-4+5=2$, sehingga $a=2$.
+$b=4-2(1)=2$. $a+b=4$.
+\jawaban{(e) $4$}
+\end{pembox}
+
+\begin{soal}{7 -- Vektor dan Sudut}
+$|\vec a+\vec u|^2=27$, $|\vec a|=5$, $|\vec u|=1$.
+\end{soal}
+\begin{pembox}
+$|\vec a+\vec u|^2=25+1+2\vec a\cdot\vec u=27\Rightarrow\vec a\cdot\vec u=\frac12$.
+$\cos\theta=\frac{1/2}{5}=\frac{1}{10}$; $\tan\theta=\sqrt{1-\frac{1}{100}}\big/\frac{1}{10}=\sqrt{99}$.
+\jawaban{(b) $\sqrt{99}$}
+\end{pembox}
+
+\begin{soal}{8 -- Lingkaran Dalam Persegi}
+$P(-5,0)$, $Q(1,0)$, sisi $PQ=6$, lingkaran di tengah persegi.
+\end{soal}
+\begin{pembox}
+Pusat lingkaran: tengah persegi $=\left(\frac{-5+1}{2},\frac{0+6}{2}\right)=(-2,3)$; $r=3$.
+$(x+2)^2+(y-3)^2=9\Rightarrow x^2+y^2+4x-6y+4=0$.
+\jawaban{(d) $x^2+y^2+4x-6y+4=0$}
+\end{pembox}
+
+\begin{soal}{9 -- Statistika}
+13 bilangan, rata-rata 3; dua dikeluarkan, diganti 7; rata-rata baru 4.
+\end{soal}
+\begin{pembox}
+Jumlah semula $=39$. Setelah penggantian: $39-S+7=48\Rightarrow S=-2$.
+Pasangan dengan jumlah $-2$: $-1{,}5$ dan $-0{,}5$.
+\jawaban{(e) $-1{,}5$ dan $-0{,}5$}
+\end{pembox}
+
+\begin{soal}{10 -- Barisan Aritmetika}
+$a_1+a_5+a_{10}+a_{15}+a_{20}+a_{24}=225$. Jumlah $S_{24}$.
+\end{soal}
+\begin{pembox}
+Jumlah $=6a_1+69d=225$. $S_{24}=12(2a_1+23d)=4(6a_1+69d)=4\times225=900$.
+\jawaban{(e) $900$}
+\end{pembox}
+
+\begin{soal}{11 -- Kecepatan Relatif}
+James menyusul Karen setelah $t$ menit.
+\end{soal}
+\begin{pembox}
+$vt=0{,}8v(t+15)\Rightarrow0{,}2t=12\Rightarrow t=60$.
+\jawaban{(e) $60$ menit}
+\end{pembox}
+
+\begin{soal}{12 -- Sistem Tak Punya Solusi}
+Hasil kali nilai $b$.
+\end{soal}
+\begin{pembox}
+$\det\begin{pmatrix}2&5&1\\-4&b&6\\0&-3&-b\end{pmatrix}=-2(b-2)(b+12)=0\Rightarrow b=2$ atau $b=-12$.
+
+Hasil kali $=2\times(-12)=-24$.
+\jawaban{(c) $-24$}
+\end{pembox}
+
+\begin{soal}{13 -- Vektor Tegak Lurus}
+$|\vec a+\vec b|=|\vec a|$. Pernyataan yang benar.
+\end{soal}
+\begin{pembox}
+Kuadratkan: $|\vec a|^2+2\vec a\cdot\vec b+|\vec b|^2=|\vec a|^2\Rightarrow2\vec a\cdot\vec b+\vec b\cdot\vec b=0$.
+$(2\vec a+\vec b)\cdot\vec b=2\vec a\cdot\vec b+\vec b\cdot\vec b=0\Rightarrow2\vec a+\vec b\perp\vec b$.
+\jawaban{(b) $2\vec a+\vec b$ dan $\vec b$ saling tegak lurus}
+\end{pembox}
+
+\begin{soal}{14 -- Komposisi Fungsi}
+$f(0)+g(0)$.
+\end{soal}
+\begin{pembox}
+$f(t)=3at^2+b$; $f(\sqrt3)=9a+b=38$. $g(t)=\frac{b}{5}t^2+a$; $g(5\sqrt2)=10b+a=24$.
+Dari sistem: $a=4$, $b=2$. $f(0)=b=2$, $g(0)=a=4$. $f(0)+g(0)=6$.
+\jawaban{(d) $6$}
+\end{pembox}
+
+\begin{soal}{15 -- Deret Tak Hingga}
+$\sum(2^n+5^n)/10^n$.
+\end{soal}
+\begin{pembox}
+$\sum(\frac12)^n+\sum(\frac15)^n=\frac{1/2}{1-1/2}+\frac{1/5}{1-1/5}=1+\frac14=\frac54$.
+\jawaban{(c) $\dfrac54$}
+\end{pembox}
+
+\begin{soal}{16 -- Peluang}
+Anto di tim berisi 3 dari 6; peluang Mika bersama Anto.
+\end{soal}
+\begin{pembox}
+Tim Anto butuh 2 dari 5 orang lain; peluang Mika terpilih $=\frac25=40\%$.
+\jawaban{(c) $40\%$}
+\end{pembox}
+
+\begin{soal}{17 -- Invers Komposisi}
+$(f\circ g^{-1})^{-1}(-2)$.
+\end{soal}
+\begin{pembox}
+$f(t)=\frac{3t-1}{2}\Rightarrow f^{-1}(u)=\frac{2u+1}{3}$. $g^{-1}(y)=\frac{5y+66}{4}\Rightarrow g(z)=\frac{4z-66}{5}$.
+
+$(f\circ g^{-1})^{-1}=g\circ f^{-1}$. $f^{-1}(-2)=\frac{-3}{3}=-1$. $g(-1)=\frac{-4-66}{5}=-14$.
+\jawaban{(d) $-14$}
+\end{pembox}
+
+\begin{soal}{18 -- Suku Banyak}
+$2x^3-px^2+4x+q$ habis dibagi $2x^2+x-1$. Jumlah akar.
+\end{soal}
+\begin{pembox}
+$(2x-1)(x+1)$ $\Rightarrow$ $x=\frac12$ dan $x=-1$ adalah akar.
+$P(\frac12)=0$: $q=\frac p4-\frac94$. $P(-1)=0$: $q=p+6$. Selesaikan: $p=-11$.
+Jumlah 3 akar $=\frac{p}{2}=-\frac{11}{2}$.
+\jawaban{(c) $-\dfrac{11}{2}$}
+\end{pembox}
+
+\begin{soal}{19 -- Aturan Rantai}
+$g(x)=[f(2x+1)+2]^2$. Nilai $g'(0)$.
+\end{soal}
+\begin{pembox}
+$g'(x)=4[f(2x+1)+2]f'(2x+1)$.
+$g'(0)=4[f(1)+2]f'(1)=4[-1+2](1)=4$.
+\jawaban{(a) $4$}
+\end{pembox}
+
+\begin{soal}{20 -- Determinan}
+$|2B|$.
+\end{soal}
+\begin{pembox}
+$B=A\begin{pmatrix}3&0\\-1&4\end{pmatrix}$; $|B|=|A|\cdot12=60$. $|2B|=4|B|=240$.
+\jawaban{(e) $240$}
+\end{pembox}
+
+\begin{soal}{21 -- Integral Definit}
+$\int_{-2}^0(f(x)+2)\,dx$.
+\end{soal}
+\begin{pembox}
+$\int_{-2}^0f=-p$. $\int_{-2}^0(f+2)=-p+4=4-p$.
+\jawaban{(d) $4-p$}
+\end{pembox}
+
+\begin{soal}{22 -- Trigonometri}
+$\sin\theta-\cos\theta=\frac13$. Nilai $\frac{\sin\theta}{\cos\theta}+\frac{\cos\theta}{\sin\theta}$.
+\end{soal}
+\begin{pembox}
+Kuadratkan: $1-2\sin\theta\cos\theta=\frac19\Rightarrow\sin\theta\cos\theta=\frac49$.
+$\frac{\sin^2\theta+\cos^2\theta}{\sin\theta\cos\theta}=\frac{1}{4/9}=\frac94$.
+\jawaban{(d) $\dfrac94$}
+\end{pembox}
+
+\begin{soal}{23 -- Persamaan Kuadrat Baru}
+Akar baru $x_1+1$ dan $x_2+1$ dari $2x^2-x-5=0$.
+\end{soal}
+\begin{pembox}
+$x_1+x_2=\frac12$, $x_1x_2=-\frac52$. Akar baru: jumlah $=\frac52$, kali $=-\frac52+\frac12+1=-1$.
+Persamaan: $2t^2-5t-2=0$.
+\jawaban{(d) $2x^2-5x-2=0$}
+\end{pembox}
+
+\begin{soal}{24 -- Pertidaksamaan Nilai Mutlak}
+$|{(x+3)}/{(x-4)}|<2$.
+\end{soal}
+\begin{pembox}
+Kuadratkan: $(x+3)^2<4(x-4)^2\Rightarrow3x^2-38x+55>0\Rightarrow(3x-5)(x-11)>0$.
+Solusi: $x<\frac53$ atau $x>11$.
+\jawaban{(d) $x<\dfrac53$ atau $x>11$}
+\end{pembox}
+
+\begin{soal}{25 -- Pertidaksamaan}
+$x^2<x$ dan $xy>y$. Yang selalu benar.
+\end{soal}
+\begin{pembox}
+$x^2<x\Rightarrow0<x<1$. $xy>y\Rightarrow y(x-1)>0$; karena $x-1<0$, maka $y<0$.
+
+Dengan $0<x<1$ dan $y<0$: $3x>0$ dan $-5y>0$, sehingga $3x-5y>0$ selalu.
+\begin{catatan}
+Opsi (e) pada naskah sumber tertulis $3x-5y<0$. Tanda yang benar adalah $>0$.
+\end{catatan}
+\jawaban{(e) $3x-5y>0$}
+\end{pembox}
+
+% ===================================================================
+%  BAGIAN B: SET LATIHAN 2  (Q26--45)
+% ===================================================================
+\medskip{\noindent\large\bfseries Bagian B \textendash\ Set Latihan 2\par}\smallskip\hrule\medskip
+
+\begin{soal}{26 -- Bentuk Akar}
+$\dfrac{\sqrt{10}-\sqrt5}{\sqrt{10}+\sqrt5}=a+b\sqrt2$.
+\end{soal}
+\begin{pembox}
+Rasionalkan: $\frac{(\sqrt{10}-\sqrt5)^2}{5}=\frac{15-10\sqrt2}{5}=3-2\sqrt2$.
+$a=3$, $b=-2$. $a+b=1$.
+\jawaban{(b) $1$}
+\end{pembox}
+
+\begin{soal}{27 -- Komposisi Fungsi Terbalik}
+$f(x)=\sqrt{x+1}$; $(f\circ g)(x)=2\sqrt{x-1}$. Cari $g(x)$.
+\end{soal}
+\begin{pembox}
+$\sqrt{g(x)+1}=2\sqrt{x-1}$. Kuadratkan: $g(x)+1=4(x-1)\Rightarrow g(x)=4x-5$.
+\jawaban{(c) $4x-5$}
+\end{pembox}
+
+\begin{soal}{28 -- Determinan Matriks}
+$AX=B+A^T$. Nilai $\det(X)$.
+\end{soal}
+\begin{pembox}
+$\det(X)=\frac{\det(B+A^T)}{\det(A)}$. $A^T=\begin{pmatrix}3&0\\2&5\end{pmatrix}$; $B+A^T=\begin{pmatrix}0&-1\\-15&5\end{pmatrix}$.
+$\det(B+A^T)=0-15=-15$. $\det(A)=15$. $\det(X)=-1$.
+\jawaban{(b) $-1$}
+\end{pembox}
+
+\begin{soal}{29 -- Sistem Pertidaksamaan}
+$3-x>4$ dan $\frac12x<5$.
+\end{soal}
+\begin{pembox}
+$3-x>4\Rightarrow x<-1$. $\frac12x<5\Rightarrow x<10$. Irisan: $x<-1$.
+\begin{catatan}
+Pilihan (a)--(d) tidak memuat $x<-1$; opsi (e) merupakan koreksi berdasarkan hasil perhitungan.
+\end{catatan}
+\jawaban{(e) $x<-1$}
+\end{pembox}
+
+\begin{soal}{30 -- Invers Fungsi Logaritma}
+Invers $y=\log_{1/2}x$.
+\end{soal}
+\begin{pembox}
+Invers dari $y=\log_a x$ adalah $y=a^x$. Dengan $a=\frac12$: inversnya $y=\left(\frac12\right)^x$.
+\jawaban{(d) $y=\left(\dfrac12\right)^x$}
+\end{pembox}
+
+\begin{soal}{31 -- Diskriminan dan Optimasi}
+$m,n>0$; nilai terkecil $2m+3n$.
+\end{soal}
+\begin{pembox}
+$D_1\geq0$: $m^2\geq4n^2\Rightarrow m\geq2n$.
+$D_2\geq0$: $16n^2\geq8m\Rightarrow m\leq2n^2$.
+$2n\leq m\leq2n^2\Rightarrow n\geq1$. Ambil $n=1$, $m=2$: $2(2)+3(1)=7$.
+\jawaban{(c) $7$}
+\end{pembox}
+
+\begin{soal}{32 -- Cayley-Hamilton}
+$A^2-xA+yI=O$. Nilai $x+y$.
+\end{soal}
+\begin{pembox}
+$\mathrm{tr}(A)=9$, $\det(A)=14$. Cayley-Hamilton: $x=9$, $y=14$. $x+y=23$.
+\jawaban{(d) $23$}
+\end{pembox}
+
+\begin{soal}{33 -- Logaritma dan Lingkaran}
+$r=\log p^2$, $K=\log q^4$. Nilai $\log_p q$.
+\end{soal}
+\begin{pembox}
+$K=2\pi r\Rightarrow4\log q=2\pi\cdot2\log p\Rightarrow\frac{\log q}{\log p}=\pi\Rightarrow\log_p q=\pi$.
+\jawaban{(c) $\pi$}
+\end{pembox}
+
+\begin{soal}{34 -- Sistem Persamaan}
+$x+y+z=18$, $x^2+y^2+z^2=756$, $x^2=yz$. Nilai $x$.
+\end{soal}
+\begin{pembox}
+$y+z=18-x$. $(y+z)^2=y^2+z^2+2yz=(756-x^2)+2x^2=756+x^2$.
+$(18-x)^2=756+x^2\Rightarrow324-36x=756\Rightarrow x=-12$.
+\jawaban{(b) $-12$}
+\end{pembox}
+
+\begin{soal}{35 -- Parabola dan Garis Singgung}
+Garis singgung $y=x^2$ sejajar dengan $g$ (menghubungkan $(-a,a^2)$ dan $(3a,9a^2)$).
+\end{soal}
+\begin{pembox}
+Kemiringan $g=\frac{9a^2-a^2}{4a}=2a$. Garis singgung $y=x^2$ di $x=a$: $y-a^2=2a(x-a)\Rightarrow y=2ax-a^2$.
+Memotong sumbu-$y$ di $y=-a^2$.
+\jawaban{(a) $-a^2$}
+\end{pembox}
+
+\begin{soal}{36 -- Statistika -- Nilai Terbesar}
+20 bilangan bulat positif berbeda, rata-rata 20. Bilangan terbesar.
+\end{soal}
+\begin{pembox}
+Jumlah $=400$. 19 bilangan terkecil: $1+2+\cdots+19=190$. Terbesar $=400-190=210$.
+\jawaban{(a) $210$}
+\end{pembox}
+
+\begin{soal}{37 -- Optimasi Volume}
+$x^2+4xh=192$; volume $V=x^2h$.
+\end{soal}
+\begin{pembox}
+$h=\frac{192-x^2}{4x}$; $V=48x-\frac{x^3}{4}$. $V'=48-\frac{3x^2}{4}=0\Rightarrow x=8$, $h=4$.
+$V_{\max}=64\times4=256$ cm$^3$.
+\jawaban{(a) $256$ cm$^3$}
+\end{pembox}
+
+\begin{soal}{38 -- Transformasi Geometri}
+Translasi $(4,5)$ ke $(1,3)$; lalu cermin ke $(2,3)$.
+\end{soal}
+\begin{pembox}
+$(x,y)=(1-4,3-5)=(-3,-2)$. Garis cermin = sumbu simetri ruas $(-3,-2)-(2,3)$.
+Titik tengah $(-\frac12,\frac12)$; kemiringan ruas $=1$; kemiringan cermin $=-1$.
+$y-\frac12=-(x+\frac12)\Rightarrow y=-x$.
+\jawaban{(d) $y=-x$}
+\end{pembox}
+
+\begin{soal}{39 -- Barisan Geometri}
+$a+b+c=-14$, $abc=216$, $c<a$. Nilai $c$.
+\end{soal}
+\begin{pembox}
+$b^3=216\Rightarrow b=6$. $a+c=-20$; $ac=36$. Akar $t^2+20t+36=(t+2)(t+18)=0$: $t=-2$ atau $t=-18$.
+Karena $c<a$, $c=-18$.
+\jawaban{(d) $-18$}
+\end{pembox}
+
+\begin{soal}{40 -- Trigonometri}
+$m=\sin^2x\cot^2x+\cos^2x\tan^2x$. Nilai $(2m+3)^2$.
+\end{soal}
+\begin{pembox}
+$\sin^2x\cot^2x=\cos^2x$; $\cos^2x\tan^2x=\sin^2x$. $m=1$. $(2+3)^2=25$.
+\jawaban{(d) $25$}
+\end{pembox}
+
+\begin{soal}{41 -- Persamaan Trigonometri}
+$\cos(x+10°)=\sin(2x-10°)$, $0°\leq x\leq180°$.
+\end{soal}
+\begin{pembox}
+$\sin(2x-10°)=\cos(100°-2x)$. Maka $x+10=100-2x\Rightarrow x=30°$, atau $x+10=-(100-2x)+360°\Rightarrow x=110°$.
+\jawaban{(a) $\{30°,110°\}$}
+\end{pembox}
+
+\begin{soal}{42 -- Persamaan Trigonometri}
+$\sin x-\tan x-2\cos x+2=0$, $0<x<\pi/2$.
+\end{soal}
+\begin{pembox}
+Kalikan $\cos x$: $(\cos x-1)(\sin x-2\cos x)=0$. Pada interval, $\cos x\neq1$; $\sin x=2\cos x\Rightarrow\tan x=2$.
+$\sin x=\frac{2}{\sqrt5}=\frac{2\sqrt5}{5}$.
+\jawaban{(a) $\left\{\dfrac{2\sqrt5}{5}\right\}$}
+\end{pembox}
+
+\begin{soal}{43 -- Logaritma}
+$3\log a-2\log b=4$; $4\log a+3\log b=11$. Nilai $b^2-a$.
+\end{soal}
+\begin{pembox}
+$u=\log a$, $v=\log b$: $3u-2v=4$ dan $4u+3v=11$. Selesaikan: $u=2$, $v=1$.
+$a=100$, $b=10$. $b^2-a=100-100=0$.
+\jawaban{(a) $0$}
+\end{pembox}
+
+\begin{soal}{44 -- Eksponen}
+$\dfrac{2^{1/2}+2^{1/3}}{2^{-1/2}+2^{-1/3}}=4^x$.
+\end{soal}
+\begin{pembox}
+$2^{-1/2}+2^{-1/3}=\frac{a+b}{ab}$ dengan $a=2^{1/2}$, $b=2^{1/3}$.
+Ruas kiri $=ab=2^{1/2+1/3}=2^{5/6}$. $4^x=2^{2x}=2^{5/6}\Rightarrow x=\frac{5}{12}$.
+\jawaban{(b) $\dfrac{5}{12}$}
+\end{pembox}
+
+\begin{soal}{45 -- Suku Banyak -- Sisa}
+$p(1)=2$, $p(-1)=0$; $R_q(x)=2x$. Sisa $p+q$ dibagi $x^2-1$.
+\end{soal}
+\begin{pembox}
+$R_p(x)=ax+b$: $a+b=2$, $-a+b=0\Rightarrow a=1$, $b=1$; $R_p=x+1$.
+Sisa $p+q$: $(x+1)+2x=3x+1$.
+\jawaban{(b) $3x+1$}
+\end{pembox}
+
+\end{document}

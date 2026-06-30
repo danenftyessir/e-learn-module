@@ -1,0 +1,484 @@
+% ============================================================
+%  LEMBAR SOAL  --  MATEMATIKA  --  SM ITS -- Paket 7.2
+%  45 Soal (Set 3 + Set 2)
+% ============================================================
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.5cm,top=2.8cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{icomma}
+\usepackage{array}
+\usepackage{tikz}
+
+\definecolor{mapelcolor}{RGB}{20,110,60}
+\definecolor{mapelbg}{RGB}{228,246,234}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small SM ITS -- Paket 7.2}
+\rhead{\small Matematika}
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newtcolorbox{soal}[1]{
+  breakable,
+  colback=white, colframe=black!70,
+  coltitle=white, colbacktitle=black,
+  fonttitle=\bfseries\sffamily,
+  title=Nomor #1,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+\newenvironment{pil}{%
+  \begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}}
+\newenvironment{pilB}{%
+  \par\smallskip\begin{multicols}{2}
+  \begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}\end{multicols}}
+
+\linespread{1.05}
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+  \fbox{\parbox{0.6\textwidth}{\centering\bfseries\large LEMBAR SOAL}}
+\end{center}
+\vspace{0.5cm}
+\begin{center}{\LARGE\bfseries MATEMATIKA}\end{center}
+\vspace{0.5cm}
+
+\begin{center}
+  \begin{tabular}{@{\hspace{2cm}}ll@{\hspace{0.4cm}:@{\hspace{0.4cm}}}l}
+    Jenjang      & & SMA / Sederajat               \\[0.3em]
+    Hari/Tanggal & & \underline{\hspace{5cm}}      \\[0.3em]
+    Waktu        & & \underline{\hspace{5cm}}      \\[0.3em]
+    Paket Soal   & & 7.2                           \\
+  \end{tabular}
+\end{center}
+
+\vspace{0.5cm}\noindent\rule{\linewidth}{0.6pt}\vspace{0.3cm}
+
+\noindent\textbf{\underline{PETUNJUK UMUM}}
+\begin{enumerate}[leftmargin=*,itemsep=4pt,topsep=4pt]
+  \item Anda \textbf{tidak} diperbolehkan menggunakan sumber-sumber eksternal,
+        termasuk internet, \textit{large language model} seperti ChatGPT, Claude,
+        LLaMA, Gemini, Meta AI, dan sebagainya. Anda sangat dianjurkan untuk
+        mencoba mengerjakan sendiri terlebih dahulu karena evaluasi ini dibuat
+        untuk \textbf{mengukur} tingkat kepahaman; nilai $<70$ mengindikasikan
+        \textbf{tidak lulus}, dan jika sudah melewati \textit{deadline} maka
+        dianggap tidak mengerjakan yang berarti \textbf{tidak lulus}.
+
+  \item Terdapat 2 tahap pengerjaan, yaitu tahap \textbf{Try Out} dan tahap
+        \textbf{Review}. Try Out bersifat \textit{open book}; Anda diperbolehkan
+        membuka buku apapun selama bersifat \textit{offline} dengan rentang waktu
+        2 jam pada tanggal \underline{\hspace{3cm}}. Setelah itu memasuki
+        tahap Review dengan \textit{schedule} rentang tanggal
+        \underline{\hspace{3cm}}--\underline{\hspace{3cm}}, di mana Anda
+        diharapkan mengerjakan ulang dengan disertakan penjelasan/pembelaan
+        mengapa revisi jawaban adalah pilihan tersebut, dan tetap mencantumkan
+        penjelasan pada soal yang walaupun pada penilaian sudah benar.
+
+  \item Anda dianjurkan untuk mencantumkan caranya walaupun tidak termasuk
+        penilaian, mengingat sifatnya adalah sebagai bahan pembelajaran.
+        Mohon bertanggung jawab atas pekerjaan Anda sendiri.
+
+  \item Bacalah setiap soal dengan teliti. Terdapat tiga jenis soal:
+        \begin{enumerate}[label=(\arabic*),leftmargin=2em,topsep=2pt,itemsep=2pt]
+          \item \textbf{Pilihan Ganda Biasa} --- 5 opsi (A--E), pilih
+                1 jawaban paling tepat;
+          \item \textbf{Pilihan Ganda Majemuk Kompleks} --- tabel
+                \textbf{Benar}/\textbf{Salah}, tentukan kebenaran tiap
+                pernyataan secara mandiri; dan
+          \item \textbf{Isian Singkat} --- tulis nilai/ekspresi pada
+                kolom yang tersedia.
+        \end{enumerate}
+
+  \item Soal berjumlah \textbf{45 butir} soal dengan bobot asli per soal adalah
+        $\mathbf{\tfrac{20}{9}}$ untuk mendapatkan nilai sempurna sebesar \textbf{100}.
+
+  \item Silakan bertanya apabila terdapat soal yang ambigu, rancu, atau kurang
+        spesifik selama itu tidak menjurus kepada jawaban soal tersebut.
+
+  \item Isilah detail informasi berikut.\\[0.3em]
+        \textbf{Nama}\hspace{0.45cm}:\enspace\underline{\hspace{8cm}}
+\end{enumerate}
+
+\vspace{0.6cm}
+\noindent\textit{Dengan menandatangani kolom di bawah ini, saya menyatakan telah membaca,
+memahami, dan menyetujui seluruh peraturan yang tercantum di atas.}
+
+\vspace{0.6cm}
+\noindent\fbox{\parbox{5cm}{\vspace{2.2cm}\centering\small Tanda Tangan Peserta\vspace{0.3cm}}}
+
+\clearpage
+
+% ===================================================================
+%  BAGIAN A: SET LATIHAN 3  (Q1--25)
+% ===================================================================
+
+{\noindent\large\bfseries Bagian A \textendash\ Set Latihan 3\par}
+\smallskip\hrule\medskip
+
+\begin{soal}{1 \normalfont\small[Integral Fungsi Kasus]}
+$f(x)=\begin{cases}x+1,&x<0\\\cos\pi x,&x\ge0\end{cases}$.
+Nilai $\displaystyle\int_{-1}^1 f(x)\,dx=\ldots$
+\begin{pilB}
+  \item $\dfrac12+\dfrac1\pi$ \item $\dfrac12-\dfrac1\pi$ \item $\dfrac12$ \item $-\dfrac12$ \item $-1+\pi$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{2 \normalfont\small[Turunan Trigonometri]}
+$f(x)=x\sin(2x^2)$. Nilai $f'\!\left(\sqrt{\dfrac{\pi}{12}}\right)=\ldots$
+\begin{pil}
+  \item $\dfrac{3+\sqrt3\pi}{3}$ \item $\dfrac{3-\sqrt3\pi}{3}$
+  \item $\dfrac{3+\sqrt3\pi}{6}$ \item $\dfrac{3-\sqrt3\pi}{6}$ \item $\dfrac{3-2\sqrt3\pi}{12}$
+\end{pil}
+\end{soal}
+
+\begin{soal}{3 \normalfont\small[Kontinuitas]}
+$f(x)=\begin{cases}3^x+k,&x\le0\\\dfrac{3\sin2x}{x},&x>0\end{cases}$ kontinu di $x=0$. Nilai $k=\ldots$
+\begin{pilB}
+  \item $6$ \item $5$ \item $2$ \item $0$ \item $-1$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{4 \normalfont\small[Bentuk Akar]}
+$\sqrt{\dfrac{x}{3}}+\sqrt{\dfrac{x}{27}}+\sqrt{\dfrac{x}{243}}=\dfrac{156}{54}$. Nilai $x=\ldots$
+\begin{pilB}
+  \item $12$ \item $8$ \item $6$ \item $4$ \item $3$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{5 \normalfont\small[Logaritma]}
+$\log_x81=8$ dan $\log_3x=y$. Nilai $xy=\ldots$
+\begin{pilB}
+  \item $\dfrac12$ \item $\dfrac{\sqrt2}{2}$ \item $\dfrac{\sqrt3}{2}$ \item $\sqrt3$ \item $\sqrt5$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{6 \normalfont\small[Garis Singgung]}
+Garis singgung $y=x^4-x^3-2x^2+5x+1$ di $(1,4)$ adalah $y=ax+b$.
+Nilai $a+b=\ldots$
+\begin{pilB}
+  \item $-4$ \item $-2$ \item $0$ \item $2$ \item $4$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{7 \normalfont\small[Vektor]}
+$\vec a=4\vec i-3\vec j$, $\vec u$ vektor unit, $|\vec a+\vec u|^2=27$.
+Tangen sudut antara $\vec a$ dan $\vec u$ adalah \ldots
+\begin{pilB}
+  \item $10$ \item $\sqrt{99}$ \item $\sqrt{96}$ \item $\sqrt{91}$ \item $\sqrt{84}$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{8 \normalfont\small[Lingkaran]}
+Persegi $PQRS$; $PQ$ pada sumbu-$x$; $P(-5,0)$, $Q(1,0)$. Lingkaran di dalam persegi berdiameter sama dengan sisi: persamaannya \ldots
+\begin{pil}
+  \item $x^2+y^2-4x+6y+4=0$ \item $x^2+y^2-4x+6y+9=0$
+  \item $x^2+y^2+4x-6y+9=0$ \item $x^2+y^2+4x-6y+4=0$
+  \item $x^2+y^2-6x-4y+9=0$
+\end{pil}
+\end{soal}
+
+\begin{soal}{9 \normalfont\small[Statistika]}
+13 bilangan rata-rata 3. Dua bilangan berjumlah $S$ dikeluarkan, diganti 7; rata-rata baru 4.
+Dua bilangan yang dikeluarkan adalah \ldots
+\begin{pil}
+  \item $1{,}5$ dan $-0{,}5$ \item $-1{,}5$ dan $0{,}5$
+  \item $0$ dan $2$ \item $-1$ dan $1$ \item $-1{,}5$ dan $-0{,}5$
+\end{pil}
+\end{soal}
+
+\begin{soal}{10 \normalfont\small[Barisan Aritmetika]}
+$a_1+a_5+a_{10}+a_{15}+a_{20}+a_{24}=225$. Nilai $a_1+a_2+\cdots+a_{24}=\ldots$
+\begin{pilB}
+  \item $909$ \item $790$ \item $990$ \item $750$ \item $900$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{11 \normalfont\small[Kecepatan Relatif]}
+Mobil James berangkat 15 menit setelah mobil Karen. Kelajuan Karen $80\%$ kelajuan James.
+Setelah berapa menit James menyusul Karen? \ldots\ menit
+\begin{pilB}
+  \item $20$ \item $30$ \item $40$ \item $50$ \item $60$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{12 \normalfont\small[Sistem Persamaan Linear 3 Variabel]}
+Nilai-nilai $b$ agar $\begin{cases}2x+5y+z=19\\-4x+by+6z=-42\\-3y-bz=81\end{cases}$ tidak punya solusi; hasil kali nilai $b$ tersebut adalah \ldots
+\begin{pilB}
+  \item $-30$ \item $-48$ \item $-24$ \item $-18$ \item $-12$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{13 \normalfont\small[Vektor]}
+$|\vec a+\vec b|=|\vec a|$. Pernyataan yang benar adalah \ldots
+\begin{pil}
+  \item $2\vec a\cdot\vec b=\vec b\cdot\vec b$
+  \item $2\vec a+\vec b$ dan $\vec b$ saling tegak lurus
+  \item $2\vec a+\vec b$ dan $2\vec b+\vec a$ tidak sejajar
+  \item $\vec a\cdot\vec b-\vec b\cdot\vec b=0$
+  \item $\vec a$ dan $\vec b$ saling tegak lurus
+\end{pil}
+\end{soal}
+
+\begin{soal}{14 \normalfont\small[Komposisi Fungsi]}
+$f(t/\sqrt3)=at^2+b$; $g(t\sqrt5)=bt^2+a$; $f(\sqrt3)=38$; $g(5\sqrt2)=24$.
+Nilai $f(0)+g(0)=\ldots$
+\begin{pilB}
+  \item $-4$ \item $-2$ \item $4$ \item $6$ \item $8$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{15 \normalfont\small[Deret Tak Hingga]}
+$\displaystyle\sum_{n=1}^\infty\left(\dfrac{2^n+5^n}{10^n}\right)=\ldots$
+\begin{pilB}
+  \item $0{,}325$ \item $1$ \item $\dfrac54$ \item $\dfrac{37}{9}$ \item $4$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{16 \normalfont\small[Peluang]}
+6 orang direksi dibagi 2 tim, masing-masing 3 orang. Peluang Anto dan Mika satu tim adalah \ldots
+\begin{pilB}
+  \item $20\%$ \item $30\%$ \item $40\%$ \item $50\%$ \item $60\%$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{17 \normalfont\small[Invers Komposisi]}
+$f(2x+3)=3x+4$ dan $g^{-1}(4x-6)=5x+9$.
+Nilai $(f\circ g^{-1})^{-1}(-2)=\ldots$
+\begin{pilB}
+  \item $-9$ \item $-10$ \item $-12$ \item $-14$ \item $-16$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{18 \normalfont\small[Suku Banyak]}
+$2x^3-px^2+4x+q$ habis dibagi $2x^2+x-1$; jumlah semua akarnya $=\ldots$
+\begin{pil}
+  \item $-\dfrac32$ \item $\dfrac32$ \item $-\dfrac{11}{2}$ \item $\dfrac{11}{2}$ \item $1$
+\end{pil}
+\end{soal}
+
+\begin{soal}{19 \normalfont\small[Aturan Rantai]}
+$f(1)=-1$, $f'(1)=1$; $g(x)=[f(2x+1)+2]^2$. Nilai $g'(0)=\ldots$
+\begin{pilB}
+  \item $4$ \item $-2$ \item $0$ \item $2$ \item $-4$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{20 \normalfont\small[Determinan]}
+$A=\begin{pmatrix}a&b\\c&d\end{pmatrix}$, $|A|=5$; $B=\begin{pmatrix}3a-b&4b\\3c-d&4d\end{pmatrix}$.
+Nilai $|2B|=\ldots$
+\begin{pilB}
+  \item $20$ \item $60$ \item $80$ \item $160$ \item $240$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{21 \normalfont\small[Integral Definit]}
+$\displaystyle\int_{-2}^1f(x)\,dx=0$ dan $\displaystyle\int_0^1f(x)\,dx=p$.
+Nilai $\displaystyle\int_{-2}^0(f(x)+2)\,dx=\ldots$
+\begin{pilB}
+  \item $p-4$ \item $p-2$ \item $0$ \item $4-p$ \item $2-p$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{22 \normalfont\small[Trigonometri]}
+$\sin\theta-\cos\theta=\dfrac13$.
+Nilai $\dfrac{\sin\theta}{\cos\theta}+\dfrac{\cos\theta}{\sin\theta}=\ldots$
+\begin{pilB}
+  \item $\dfrac32$ \item $\dfrac74$ \item $2$ \item $\dfrac94$ \item $3$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{23 \normalfont\small[Persamaan Kuadrat]}
+$x_1,x_2$ akar $2x^2-x-5=0$. Persamaan dengan akar $x_1+1$ dan $x_2+1$ adalah \ldots
+\begin{pil}
+  \item $x^2-5x+2=0$ \item $2x^2+5x+2=0$
+  \item $2x^2-5x+2=0$ \item $2x^2-5x-2=0$ \item $2x^2+5x-22=0$
+\end{pil}
+\end{soal}
+
+\begin{soal}{24 \normalfont\small[Pertidaksamaan Nilai Mutlak]}
+HP dari $\left|\dfrac{x+3}{x-4}\right|<2$ adalah \ldots
+\begin{pil}
+  \item $\{x\mid-\tfrac12<x<\tfrac12\}$ \item $\{x\mid-3<x<1\}$
+  \item $\{x\mid\tfrac53<x<1\}$ \item $\{x\mid x<\tfrac53\text{ atau }x>11\}$
+  \item $\{x\mid x<-3\text{ atau }x>11\}$
+\end{pil}
+\end{soal}
+
+\begin{soal}{25 \normalfont\small[Pertidaksamaan]}
+Diketahui $x^2<x$ dan $xy>y$. Manakah yang selalu benar? \ldots
+\begin{pilB}
+  \item $y-x>0$ \item $2x+y>0$ \item $2xy>0$ \item $x^2y>0$ \item $3x-5y>0$
+\end{pilB}
+\end{soal}
+
+% ===================================================================
+%  BAGIAN B: SET LATIHAN 2  (Q26--45)
+% ===================================================================
+
+\medskip{\noindent\large\bfseries Bagian B \textendash\ Set Latihan 2\par}
+\smallskip\hrule\medskip
+
+\begin{soal}{26 \normalfont\small[Bentuk Akar]}
+$\dfrac{\sqrt{10}-\sqrt5}{\sqrt{10}+\sqrt5}=a+b\sqrt2$ ($a,b$ bulat). Nilai $a+b=\ldots$
+\begin{pilB}
+  \item $0$ \item $1$ \item $2$ \item $3$ \item $5$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{27 \normalfont\small[Komposisi Fungsi]}
+$f(x)=\sqrt{x+1}$ dan $(f\circ g)(x)=2\sqrt{x-1}$. Fungsi $g(x)=\ldots$
+\begin{pilB}
+  \item $2x-1$ \item $2x-3$ \item $4x-5$ \item $4x-3$ \item $5x-4$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{28 \normalfont\small[Matriks]}
+$A=\begin{pmatrix}3&2\\0&5\end{pmatrix}$, $B=\begin{pmatrix}-3&-1\\-17&0\end{pmatrix}$; $AX=B+A^T$.
+Nilai $\det(X)=\ldots$
+\begin{pilB}
+  \item $-5$ \item $-1$ \item $1$ \item $5$ \item $8$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{29 \normalfont\small[Sistem Pertidaksamaan]}
+Himpunan penyelesaian $\begin{cases}3-x>4\\\frac12x<5\end{cases}$ adalah \ldots
+\begin{pilB}
+  \item $x\in(0,2)$ \item $x\in(-2,8)$ \item $x\in(-2,2)$ \item $x\in(-2,10)$ \item $x<-1$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{30 \normalfont\small[Invers Fungsi]}
+Invers dari fungsi yang grafiknya ditampilkan ($y=\log_{1/2}x$) adalah \ldots
+\begin{pilB}
+  \item $y=3^x$ \item $y=(\tfrac13)^x$ \item $y=2^x$ \item $y=(\tfrac12)^x$ \item $y=10^x$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{31 \normalfont\small[Diskriminan dan Optimasi]}
+$m,n>0$; $x^2+2mx+4n^2=0$ dan $x^2+4nx+2m=0$ masing-masing memiliki akar real.
+Nilai terkecil $2m+3n=\ldots$
+\begin{pilB}
+  \item $4$ \item $6$ \item $7$ \item $9$ \item $10$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{32 \normalfont\small[Cayley-Hamilton]}
+$A=\begin{pmatrix}4&3\\2&5\end{pmatrix}$; $A^2-xA+yI=O$. Nilai $x+y=\ldots$
+\begin{pilB}
+  \item $9$ \item $14$ \item $19$ \item $23$ \item $25$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{33 \normalfont\small[Logaritma dan Lingkaran]}
+Lingkaran berjari-jari $\log p^2$ dan keliling $\log q^4$ ($p,q>0$, $p\neq1$). Nilai $\log_p q=\ldots$
+\begin{pilB}
+  \item $\dfrac1\pi$ \item $\dfrac\pi2$ \item $\pi$ \item $2\pi$ \item $3\pi$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{34 \normalfont\small[Sistem Persamaan]}
+$x+y+z=18$, $x^2+y^2+z^2=756$, $x^2=yz$. Nilai $x=\ldots$
+\begin{pilB}
+  \item $-18$ \item $-12$ \item $1$ \item $12$ \item $18$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{35 \normalfont\small[Parabola dan Garis Singgung]}
+Dua titik pada $y=x^2$: $(-a,a^2)$ dan $(3a,9a^2)$. Garis singgung sejajar $g$ (yang menghubungkan kedua titik) memotong sumbu-$y$ di \ldots
+\begin{pilB}
+  \item $-a^2$ \item $a^2$ \item $2a^2$ \item $4a^2$ \item $5a^2$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{36 \normalfont\small[Statistika]}
+20 bilangan bulat positif berbeda dengan rata-rata 20. Bilangan terbesar yang mungkin adalah \ldots
+\begin{pilB}
+  \item $210$ \item $229$ \item $230$ \item $239$ \item $240$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{37 \normalfont\small[Optimasi Kotak]}
+Kotak tanpa tutup beralas persegi; luas alas $+$ semua sisi tegak $=192$ cm$^2$.
+Volume terbesar yang mungkin adalah \ldots
+\begin{pil}
+  \item $256$ cm$^3$ \item $320$ cm$^3$ \item $364$ cm$^3$ \item $381$ cm$^3$ \item $428$ cm$^3$
+\end{pil}
+\end{soal}
+
+\begin{soal}{38 \normalfont\small[Transformasi Geometri]}
+$(x,y)$ ditranslasi $(4,5)$ ke $(1,3)$; lalu $(x,y)$ dicerminkan ke $(2,3)$.
+Persamaan garis cermin adalah \ldots
+\begin{pilB}
+  \item $x=0$ \item $y=0$ \item $y=x$ \item $y=-x$ \item $y=x+3$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{39 \normalfont\small[Barisan Geometri]}
+Tiga bilangan real $a,b,c$ ($c<a$) membentuk barisan geometri; jumlah $-14$, hasil kali $216$.
+Nilai $c=\ldots$
+\begin{pilB}
+  \item $-2$ \item $-6$ \item $-14$ \item $-18$ \item $-20$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{40 \normalfont\small[Trigonometri]}
+$m=\sin^2x\cot^2x+\cos^2x\tan^2x$. Nilai $(2m+3)^2=\ldots$
+\begin{pilB}
+  \item $4$ \item $9$ \item $16$ \item $25$ \item $49$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{41 \normalfont\small[Trigonometri -- Persamaan]}
+Nilai $x$ pada $\cos(x+10°)=\sin(2x-10°)$, $0°\leq x\leq180°$, adalah \ldots
+\begin{pil}
+  \item $\{30°,110°\}$ \item $\{30°,120°\}$
+  \item $\{60°,150°\}$ \item $\{30°,110°,150°\}$ \item $\{60°,120°,150°\}$
+\end{pil}
+\end{soal}
+
+\begin{soal}{42 \normalfont\small[Trigonometri -- Persamaan]}
+Nilai $\sin x$ yang memenuhi $\sin x-\tan x-2\cos x+2=0$ untuk $0<x<\tfrac\pi2$ adalah \ldots
+\begin{pil}
+  \item $\left\{\dfrac{2\sqrt5}{5}\right\}$ \item $0$
+  \item $\left\{0,\dfrac{2\sqrt5}{5}\right\}$ \item $\left\{\dfrac{\sqrt5}{5}\right\}$ \item $\left\{0,\dfrac{\sqrt5}{5}\right\}$
+\end{pil}
+\end{soal}
+
+\begin{soal}{43 \normalfont\small[Logaritma]}
+$\log(a^3)-\log(b^2)=4$ dan $\log(a^4)+\log(b^3)=11$. Nilai $b^2-a=\ldots$
+\begin{pilB}
+  \item $0$ \item $10$ \item $900$ \item $1900$ \item $8000$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{44 \normalfont\small[Eksponen]}
+$\dfrac{2^{1/2}+2^{1/3}}{2^{-1/2}+2^{-1/3}}=4^x$. Nilai $x=\ldots$
+\begin{pilB}
+  \item $\dfrac13$ \item $\dfrac{5}{12}$ \item $\dfrac12$ \item $\dfrac{7}{12}$ \item $\dfrac23$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{45 \normalfont\small[Suku Banyak -- Sisa Pembagian]}
+$p(x)$ bersisa 2 jika dibagi $(x-1)$ dan tak bersisa jika dibagi $(x+1)$.
+$q(x)$ bersisa $2x$ jika dibagi $x^2-1$.
+Sisa $p(x)+q(x)$ dibagi $x^2-1$ adalah \ldots
+\begin{pilB}
+  \item $3x-1$ \item $3x+1$ \item $-3x+2$ \item $-3x-2$ \item $3x+2$
+\end{pilB}
+\end{soal}
+
+\end{document}

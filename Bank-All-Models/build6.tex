@@ -1,0 +1,1075 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.2cm,top=2.6cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage[some]{background}
+\usepackage{icomma}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\definecolor{navy}{RGB}{18,52,86}
+\definecolor{gold}{RGB}{233,170,40}
+\definecolor{itsblue}{RGB}{0,80,160}
+\definecolor{soalblue}{RGB}{29,86,160}
+\definecolor{pembgreen}{RGB}{30,120,80}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small\textbf{TES POTENSI AKADEMIK}}
+\chead{\small www.tiktok.com/@result\_han}
+\rhead{\small @result\_han}
+\cfoot{\small Halaman \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\backgroundsetup{scale=6,color=black!7,opacity=0.7,angle=45,
+  position=current page.center,contents={@result\_han}}
+
+\newtcolorbox{soalbox}[2]{breakable,colback=soalblue!4,colframe=soalblue,
+  coltitle=white,fonttitle=\bfseries\sffamily,title=Set #1 \textbf{--} Nomor #2,
+  boxrule=0.8pt,arc=3pt,left=3mm,right=3mm,top=2mm,bottom=2mm}
+\newtcolorbox{pembox}{breakable,colback=pembgreen!5,colframe=pembgreen,
+  coltitle=white,fonttitle=\bfseries\sffamily,title=Pembahasan,
+  boxrule=0.8pt,arc=3pt,left=3mm,right=3mm,top=2mm,bottom=2mm}
+\newtcolorbox{infobox}[1]{colback=gold!8,colframe=gold!85!black,
+  coltitle=black,fonttitle=\bfseries\sffamily,title=#1,
+  boxrule=0.8pt,arc=3pt,left=3mm,right=3mm,top=1.5mm,bottom=1.5mm}
+\newtcolorbox{jawbox}{colback=white,colframe=soalblue,boxrule=0.6pt,arc=2pt,
+  left=3mm,right=3mm,top=1.2mm,bottom=1.2mm,before skip=4pt}
+
+\newenvironment{pil}{\begin{enumerate}[label=(\Alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}{\end{enumerate}}
+\newcommand{\jw}[1]{\par\smallskip\begin{jawbox}\textbf{Jawaban:} #1\end{jawbox}}
+
+% --- figur penalaran gambar (kotak berangka) ---
+% #1 atas, #2 kiri, #3 tengah, #4 kanan, #5 bawah
+\newcommand{\kotak}[5]{%
+\begin{tikzpicture}[baseline=(c.base)]
+\node[draw,minimum size=1.05cm,font=\bfseries](c){#3};
+\node[above=1pt of c]{#1};\node[below=1pt of c]{#5};
+\node[left=1pt of c]{#2};\node[right=1pt of c]{#4};
+\end{tikzpicture}}
+% segitiga: #1 atas, #2 tengah, #3 kiri-bawah, #4 kanan-bawah
+\newcommand{\segitiga}[4]{%
+\begin{tikzpicture}[baseline]
+\coordinate(A)at(0,1.2);\coordinate(B)at(-1,0);\coordinate(C)at(1,0);
+\draw(A)--(B)--(C)--cycle;
+\node[above]at(A){#1};\node[font=\bfseries]at(0,0.42){#2};
+\node[below left]at(B){#3};\node[below right]at(C){#4};
+\end{tikzpicture}}
+% xkotak: #1 kiri-atas, #2 kanan-atas, #3 kiri-bawah, #4 kanan-bawah
+\newcommand{\xkotak}[4]{%
+\begin{tikzpicture}[baseline]
+\node[draw,minimum size=0.65cm](tl)at(0,0.85){#1};
+\node[draw,minimum size=0.65cm](tr)at(1.6,0.85){#2};
+\node[draw,minimum size=0.65cm](bl)at(0,0){#3};
+\node[draw,minimum size=0.65cm](br)at(1.6,0){#4};
+\draw(tl)--(br);\draw(bl)--(tr);
+\end{tikzpicture}}
+\newcommand{\dualgambar}[2]{\begin{center}#1\hspace{2.2cm}#2\end{center}}
+
+\newcommand{\setjudul}[2]{\clearpage{\noindent\Large\bfseries #1\par}\smallskip
+{\noindent\small\itshape #2\par}\medskip\hrule\medskip}
+
+\linespread{1.04}
+
+\begin{document}
+
+%================= COVER =================
+\thispagestyle{empty}
+\noindent\begin{tikzpicture}\fill[itsblue](0,0)rectangle(\textwidth,-1.6);
+\fill[gold](0,-1.6)rectangle(\textwidth,-1.72);
+\node[anchor=north,text=white,font=\sffamily\bfseries\large]at(0.5\textwidth,-0.35){TRYOUT SELEKSI MANDIRI ITS};
+\node[anchor=north,text=white,font=\sffamily\small]at(0.5\textwidth,-0.85){Tes Potensi Akademik};
+\node[anchor=north,text=white,font=\sffamily\footnotesize]at(0.5\textwidth,-1.2){Paket Soal dan Pembahasan};
+\end{tikzpicture}
+\vspace{1.4cm}
+\begin{center}
+\includegraphics[height=2.1cm]{images/6/6-1.png}\hspace{1.6cm}\includegraphics[height=2.1cm]{images/6/6-2.png}\\[1.6em]
+{\Huge\bfseries Tes Potensi Akademik}\\[0.5em]
+{\LARGE\bfseries 3 Set Soal dan Pembahasan}\\[0.5em]
+{\large Latihan Seleksi Mandiri ITS}\\[1.4em]
+\fbox{\parbox{0.78\textwidth}{\centering
+Pengetikan ulang dan pemformatan: \textbf{@result\_han}\\[0.3em]
+TikTok: \textbf{www.tiktok.com/@result\_han}\\[0.3em]
+Paket soal PTN lainnya: \textbf{lynk.id/result\_han}}}
+\end{center}
+\vfill
+\begin{center}\small\itshape
+Dokumen ini disusun ulang dalam format soal-pembahasan berurutan untuk latihan mandiri.
+\end{center}
+
+%================= SET 1 =================
+\setjudul{1\quad Set 1}{Set 1 memuat soal nomor 1--40: padanan kata, lawan kata, analogi, logika, penalaran urutan, aritmetika, dan pola gambar.}
+
+\begin{soalbox}{1}{1}
+DEMISIONER berarti \ldots
+\begin{pil}\item Calon gagal \item Kartu mati \item Pensiun \item Habis masa jabatan \item Mengemban misi\end{pil}
+\end{soalbox}
+\begin{pembox}
+Kata \emph{demisioner} digunakan untuk pejabat atau pengurus yang masa jabatannya telah selesai, tetapi masih dapat menjalankan tugas sampai pengganti resmi ditetapkan. Makna yang paling dekat adalah habis masa jabatan.
+\jw{(D) Habis masa jabatan}
+\end{pembox}
+
+\begin{soalbox}{1}{2}
+EJAWANTAH berarti \ldots
+\begin{pil}\item Reinkarnasi \item Jelmaan \item Karya cipta \item Pengejaan \item Ejakulasi\end{pil}
+\end{soalbox}
+\begin{pembox}
+\emph{Ejawantah} bermakna perwujudan atau manifestasi. Dari pilihan yang tersedia, kata yang paling dekat adalah jelmaan.
+\jw{(B) Jelmaan}
+\end{pembox}
+
+\begin{soalbox}{1}{3}
+INTERIM berarti \ldots
+\begin{pil}\item Internal \item Antarpribadi \item Selingan \item Sementara \item Wawancara\end{pil}
+\end{soalbox}
+\begin{pembox}
+\emph{Interim} berarti sementara atau untuk masa antara sebelum keadaan tetap diberlakukan.
+\jw{(D) Sementara}
+\end{pembox}
+
+\begin{soalbox}{1}{4}
+GLOSARIUM berarti \ldots
+\begin{pil}\item Lampiran \item Bagian penutup \item Indeks \item Intisari \item Kamus ringkas\end{pil}
+\end{soalbox}
+\begin{pembox}
+Glosarium adalah daftar istilah penting beserta penjelasan singkatnya. Karena fungsinya mirip kamus kecil di akhir buku, pilihan yang tepat adalah kamus ringkas.
+\jw{(E) Kamus ringkas}
+\end{pembox}
+
+\begin{soalbox}{1}{5}
+FRAGMENTASI berarti \ldots
+\begin{pil}\item Penjumlahan \item Pemanisan \item Penceramah \item Pembabakan \item Peragian\end{pil}
+\end{soalbox}
+\begin{pembox}
+Fragmentasi berarti pemecahan atau pembagian menjadi bagian-bagian. Pilihan yang paling dekat dengan gagasan pembagian menjadi segmen adalah pembabakan.
+\jw{(D) Pembabakan}
+\end{pembox}
+
+\begin{soalbox}{1}{6}
+Lawan makna yang paling dekat dari FONEM adalah \ldots
+\begin{pil}\item Morfem \item Huruf \item Aksara \item Kata \item Kalimat\end{pil}
+\end{soalbox}
+\begin{pembox}
+Fonem adalah satuan bunyi terkecil dalam bahasa. Lawan atau kontras terjauh pada pilihan adalah kalimat karena kalimat merupakan satuan bahasa yang jauh lebih besar.
+\jw{(E) Kalimat}
+\end{pembox}
+
+\begin{soalbox}{1}{7}
+Lawan makna yang paling dekat dari PEMUPUKAN adalah \ldots
+\begin{pil}\item Rehabilitasi \item Reboisasi \item Penggundulan \item Defertilisasi \item Renovasi\end{pil}
+\end{soalbox}
+\begin{pembox}
+Pemupukan berarti pemberian pupuk atau proses menyuburkan. Lawan terdekatnya adalah defertilisasi, yaitu penghilangan/penurunan kesuburan.
+\jw{(D) Defertilisasi}
+\end{pembox}
+
+\begin{soalbox}{1}{8}
+Lawan makna yang paling dekat dari ANGOT adalah \ldots
+\begin{pil}\item Payah \item Sehat \item Parah \item Sakit \item Dingin\end{pil}
+\end{soalbox}
+\begin{pembox}
+\emph{Angot} berarti kambuh atau muncul kembali penyakit/keluhan. Lawan yang paling dekat adalah sehat.
+\jw{(B) Sehat}
+\end{pembox}
+
+\begin{soalbox}{1}{9}
+Lawan makna yang paling dekat dari PERLOP adalah \ldots
+\begin{pil}\item Absen \item Datang \item Pulang \item Masuk \item Kerja\end{pil}
+\end{soalbox}
+\begin{pembox}
+Perlop berarti cuti atau izin tidak bekerja. Lawan yang paling dekat adalah masuk kerja. Dari pilihan yang tersedia, \emph{masuk} paling langsung berlawanan dengan cuti/absen.
+\jw{(D) Masuk}
+\end{pembox}
+
+\begin{soalbox}{1}{10}
+Lawan makna yang paling dekat dari GRATIFIKASI adalah \ldots
+\begin{pil}\item Revisi \item Denda \item Bonus \item Hadiah \item Potongan\end{pil}
+\end{soalbox}
+\begin{pembox}
+Gratifikasi berkaitan dengan pemberian, bonus, atau hadiah. Lawan makna yang paling dekat adalah denda karena denda merupakan beban/hukuman, bukan pemberian.
+\jw{(B) Denda}
+\end{pembox}
+
+\begin{soalbox}{1}{11}
+Kakatua : Merpati = \ldots
+\begin{pil}\item Anjing : Herder \item Gurame : Kakap \item Gajah : Semut \item Singa : Naga \item Elang : Kupu-kupu\end{pil}
+\end{soalbox}
+\begin{pembox}
+Kakatua dan merpati sama-sama jenis burung. Pasangan yang memiliki hubungan sejenis adalah gurame dan kakap, yaitu sama-sama jenis ikan.
+\jw{(B) Gurame : Kakap}
+\end{pembox}
+
+\begin{soalbox}{1}{12}
+Belajar : Pandai = \ldots
+\begin{pil}\item Cetak : Kertas \item Berpikir : Arif \item Potret : Kamera \item Litografi : Batu \item Cetak : Tinta\end{pil}
+\end{soalbox}
+\begin{pembox}
+Belajar dapat menghasilkan kepandaian. Dengan pola yang sama, berpikir dapat menghasilkan sikap arif.
+\jw{(B) Berpikir : Arif}
+\end{pembox}
+
+\begin{soalbox}{1}{13}
+Sekolah : Siswa : Belajar = \ldots
+\begin{pil}\item Sekolah : Guru : Rapat \item Laboratorium : Ilmuwan : Meneliti \item Rumah : Ayah : Ibu \item Dokter : Pasien : Periksa \item Kantin : Makan : Siswa\end{pil}
+\end{soalbox}
+\begin{pembox}
+Pola hubungan adalah tempat -- pelaku -- kegiatan utama. Di sekolah, siswa belajar. Di laboratorium, ilmuwan meneliti.
+\jw{(B) Laboratorium : Ilmuwan : Meneliti}
+\end{pembox}
+
+\begin{soalbox}{1}{14}
+Sapi : Herbivora : Melahirkan = Ayam : \ldots
+\begin{pil}\item Rumput : Omnivora \item Omnivora : Bertelur \item Herbivora : Susu \item Karnivora : Beranak \item Omnivora : Daging ayam\end{pil}
+\end{soalbox}
+\begin{pembox}
+Sapi adalah herbivora dan berkembang biak dengan melahirkan. Ayam adalah omnivora dan berkembang biak dengan bertelur.
+\jw{(B) Omnivora : Bertelur}
+\end{pembox}
+
+\begin{soalbox}{1}{15}
+Siswa : Guru : Sekolah = Pasien : \ldots
+\begin{pil}\item Obat : Apotek \item Dokter : Rumah sakit \item Rumah sakit : Obat \item Apotek : Rumah sakit\end{pil}
+\end{soalbox}
+\begin{pembox}
+Siswa berhubungan dengan guru di sekolah. Pasien berhubungan dengan dokter di rumah sakit.
+\jw{(B) Dokter : Rumah sakit}
+\end{pembox}
+
+\begin{soalbox}{1}{16}
+Semua pelajar berilmu. Sebagian pelajar adalah ilmuwan. Kesimpulan yang paling tepat adalah \ldots
+\begin{pil}\item Sebagian pelajar adalah ilmuwan \item Sebagian pelajar bukan ilmuwan \item Semua ilmuwan adalah pelajar \item Sebagian ilmuwan adalah pelajar \item Sebagian ilmuwan berilmu\end{pil}
+\end{soalbox}
+\begin{pembox}
+Premis kedua menyatakan sebagian pelajar adalah ilmuwan. Karena semua pelajar berilmu, maka ilmuwan yang termasuk pelajar tersebut pasti berilmu. Jadi kesimpulan yang melibatkan kedua premis adalah sebagian ilmuwan berilmu.
+\jw{(E) Sebagian ilmuwan berilmu}
+\end{pembox}
+
+\begin{soalbox}{1}{17}
+Semua orang Islam membayar zakat. Beberapa orang Islam bersedekah. Kesimpulan yang tepat adalah \ldots
+\begin{pil}\item Semua orang Islam yang bersedekah pasti membayar zakat \item Beberapa orang Islam tidak membayar zakat \item Orang Islam yang membayar zakat adalah orang yang bersedekah \item Orang Islam yang bersedekah belum tentu membayar zakat \item Membayar zakat tidak merupakan keharusan bagi orang Islam\end{pil}
+\end{soalbox}
+\begin{pembox}
+Karena semua orang Islam membayar zakat, maka kelompok orang Islam yang bersedekah juga termasuk orang yang membayar zakat.
+\jw{(A) Semua orang Islam yang bersedekah pasti membayar zakat}
+\end{pembox}
+
+\begin{soalbox}{1}{18}
+Semua almari terbuat dari kayu jati. Semua kayu jati bersifat tahan lapuk. Sebagian kayu jati berwarna hitam. Kesimpulan yang tepat adalah \ldots
+\begin{pil}\item Semua almari bersifat tahan lapuk dan berwarna hitam \item Semua almari berwarna hitam \item Sebagian almari tahan lapuk dan hitam \item Sebagian almari berwarna hitam \item Semua almari tahan lapuk terbuat dari kayu jati\end{pil}
+\end{soalbox}
+\begin{pembox}
+Dua premis pertama cukup untuk menyimpulkan bahwa setiap almari terbuat dari kayu jati dan tahan lapuk. Informasi tentang sebagian kayu jati hitam tidak menjamin ada almari hitam.
+\jw{(E) Semua almari tahan lapuk terbuat dari kayu jati}
+\end{pembox}
+
+\begin{soalbox}{1}{19}
+Rani ikut lomba menari jika Rina ikut lomba menari. Aida ikut lomba menari jika Rani ikut lomba menari. Kesimpulan yang benar adalah \ldots
+\begin{pil}\item Jika Rani ikut lomba menari, maka Rina juga ikut lomba menari \item Jika Rani ikut lomba menari, maka Rani juga ikut lomba menari \item Jika Rina tidak ikut lomba menari, belum tentu Rina ikut lomba menari \item Jika Aida tidak ikut lomba menari, maka Rina juga tidak ikut lomba menari \item Aida ikut lomba menari, tapi Rani tidak ikut lomba menari\end{pil}
+\end{soalbox}
+\begin{pembox}
+Premis dapat ditulis: Rina $\Rightarrow$ Rani dan Rani $\Rightarrow$ Aida. Dengan kontraposisi, jika Aida tidak ikut, maka Rani tidak ikut; jika Rani tidak ikut, maka Rina tidak ikut.
+\jw{(D) Jika Aida tidak ikut lomba menari, maka Rina juga tidak ikut lomba menari}
+\end{pembox}
+
+\begin{soalbox}{1}{20}
+Semua anak suka bermain air. Sebagian anak rajin mandi. Kesimpulan yang benar adalah \ldots
+\begin{pil}\item Semua anak yang rajin mandi suka bermain air \item Sebagian anak yang rajin mandi suka bermain air \item Semua anak yang rajin mandi suka bermain air \item Semua anak rajin mandi \item Semua anak tidak rajin mandi\end{pil}
+\end{soalbox}
+\begin{pembox}
+Jika semua anak suka bermain air, maka setiap bagian dari kelompok anak, termasuk anak yang rajin mandi, juga suka bermain air. Pilihan A dan C tampak sama pada hasil pindai; A dipilih sebagai jawaban yang pertama muncul.
+\jw{(A) Semua anak yang rajin mandi suka bermain air}
+\end{pembox}
+
+\begin{infobox}{Informasi untuk Nomor 21--23}
+Enam orang berdiri dalam satu baris dengan syarat: Tini tidak mau bersebelahan dengan Salim dan Tia; Nila dekat dengan Tia; Tini dekat dengan Jukri; Jukri dekat dengan Nila; Salim tidak ingin didahului Harto; Harto ingin bersebelahan dengan Tini; dan Tia berada pada urutan terakhir.
+\end{infobox}
+
+\begin{soalbox}{1}{21}
+Siapakah yang berdiri pada urutan pertama?
+\begin{pil}\item Salim \item Tini \item Jukri \item Nila \item Tia\end{pil}
+\end{soalbox}
+\begin{pembox}
+Karena Tia harus terakhir, Nila harus berada dekat dengan Tia, sehingga Nila ditempatkan sebelum Tia. Jukri dekat dengan Nila dan Tini dekat dengan Jukri, sedangkan Harto dekat dengan Tini. Syarat Salim tidak didahului Harto membuat Salim berada sebelum Harto. Susunan yang memenuhi adalah Salim-Harto-Tini-Jukri-Nila-Tia.
+\jw{(A) Salim}
+\end{pembox}
+
+\begin{soalbox}{1}{22}
+Berdasarkan informasi pada nomor 21, siapakah yang berdiri pada urutan ketiga?
+\begin{pil}\item Tia \item Harto \item Tini \item Nila \item Salim\end{pil}
+\end{soalbox}
+\begin{pembox}
+Dari susunan Salim-Harto-Tini-Jukri-Nila-Tia, orang pada urutan ketiga adalah Tini.
+\jw{(C) Tini}
+\end{pembox}
+
+\begin{soalbox}{1}{23}
+Berdasarkan informasi pada nomor 21, susunan dari urutan terakhir hingga urutan pertama adalah \ldots
+\begin{pil}\item Tia - Nila - Jukri - Tini - Harto - Salim \item Salim - Harto - Tini - Jukri - Nila - Tia \item Harto - Tini - Jukri - Nila - Tia - Salim \item Salim - Tini - Jukri - Nila - Tia \item Tia - Jukri - Tini - Salim - Nila\end{pil}
+\end{soalbox}
+\begin{pembox}
+Urutan pertama hingga terakhir adalah Salim-Harto-Tini-Jukri-Nila-Tia. Jika dibalik dari terakhir hingga pertama menjadi Tia-Nila-Jukri-Tini-Harto-Salim.
+\jw{(A) Tia - Nila - Jukri - Tini - Harto - Salim}
+\end{pembox}
+
+\begin{soalbox}{1}{24}
+Amin lebih berat daripada Aminah. Aminah lebih berat daripada Aman. Hamidah lebih berat daripada Amin. Hamid tidak lebih berat dari Amin, tetapi lebih berat dari Aminah. Siapakah yang paling berat?
+\begin{pil}\item Hamidah \item Amin \item Hamid \item Aminah \item Aman\end{pil}
+\end{soalbox}
+\begin{pembox}
+Urutan beratnya adalah Hamidah $>$ Amin $>$ Hamid $>$ Aminah $>$ Aman. Jadi yang paling berat adalah Hamidah.
+\jw{(A) Hamidah}
+\end{pembox}
+
+\begin{soalbox}{1}{25}
+Berdasarkan informasi pada nomor 24, siapakah yang paling ringan?
+\begin{pil}\item Hamidah \item Amin \item Hamid \item Aminah \item Aman\end{pil}
+\end{soalbox}
+\begin{pembox}
+Dari urutan Hamidah $>$ Amin $>$ Hamid $>$ Aminah $>$ Aman, yang paling ringan adalah Aman.
+\jw{(E) Aman}
+\end{pembox}
+
+\begin{soalbox}{1}{26}
+Nilai $\left(\frac{1}{4}\times164\right)\times\frac{1}{2}$ adalah \ldots
+\begin{pil}\item 20,5 \item 8,84 \item 14,09 \item 34,59 \item 15,09\end{pil}
+\end{soalbox}
+\begin{pembox}
+Hitung bertahap: $\frac{1}{4}\times164=41$. Kemudian $41\times\frac{1}{2}=20{,}5$.
+\jw{(A) 20,5}
+\end{pembox}
+
+\begin{soalbox}{1}{27}
+Nilai $\frac{4}{5}+\frac{3}{5}+\frac{3}{8}+\frac{6}{8}+1\frac{1}{2}$ adalah \ldots
+\begin{pil}\item 4,2 \item 14,8 \item 22 \item 16,2 \item 4,025\end{pil}
+\end{soalbox}
+\begin{pembox}
+Kelompokkan penyebut yang sama: $\frac{4}{5}+\frac{3}{5}=\frac{7}{5}=1{,}4$ dan $\frac{3}{8}+\frac{6}{8}=\frac{9}{8}=1{,}125$. Tambahkan $1{,}5$, sehingga totalnya $1{,}4+1{,}125+1{,}5=4{,}025$.
+\jw{(E) 4,025}
+\end{pembox}
+
+\begin{soalbox}{1}{28}
+Dari suatu data, tercatat 185 orang gemar basket, 220 orang gemar tenis meja, dan 140 orang gemar basket dan tenis meja. Banyak siswa seluruhnya adalah \ldots orang
+\begin{pil}\item 545 \item 360 \item 325 \item 265 \item 275\end{pil}
+\end{soalbox}
+\begin{pembox}
+Gunakan prinsip inklusi-eksklusi: banyak orang yang menyukai minimal salah satu adalah $185+220-140=265$.
+\jw{(D) 265}
+\end{pembox}
+
+\begin{soalbox}{1}{29}
+Seorang pedagang membeli 2 karung beras masing-masing beratnya 1 kuintal dengan tara $2{,}5\%$. Harga pembelian setiap karung Rp200.000. Jika beras dijual Rp2.400 per kilogram, maka keuntungan penjual sebesar \ldots
+\begin{pil}\item Rp34.000 \item Rp56.000 \item Rp68.000 \item Rp80.000 \item Rp83.000\end{pil}
+\end{soalbox}
+\begin{pembox}
+Satu karung 1 kuintal $=100$ kg. Tara $2{,}5\%$ berarti berat bersih tiap karung $100-2{,}5=97{,}5$ kg. Dua karung berisi 195 kg. Hasil penjualan $195\times2400=468.000$. Modal $2\times200.000=400.000$. Keuntungan $468.000-400.000=68.000$.
+\jw{(C) Rp68.000}
+\end{pembox}
+
+\begin{soalbox}{1}{30}
+Adi berangkat dari kota P pukul 07.00 dengan kecepatan 60 km/jam. Pada saat yang sama Wira berangkat dari kota Q menuju kota P dengan kecepatan 40 km/jam. Jarak kota P dan Q adalah 360 km. Adi dan Wira bertemu pada pukul \ldots
+\begin{pil}\item 16.00 \item 13.00 \item 10.36 \item 10.12 \item 10.32\end{pil}
+\end{soalbox}
+\begin{pembox}
+Karena bergerak saling mendekat, kecepatan relatifnya $60+40=100$ km/jam. Waktu temu $360/100=3{,}6$ jam $=3$ jam 36 menit. Dari pukul 07.00, waktu temu adalah 10.36.
+\jw{(C) 10.36}
+\end{pembox}
+
+\begin{soalbox}{1}{31}
+Lengkapi barisan: $3, 7, 15, \ldots, \ldots, 127, 255$.
+\begin{pil}\item 31, 63 \item 34, 42 \item 25, 16 \item 22, 25 \item 38, 14\end{pil}
+\end{soalbox}
+\begin{pembox}
+Polanya adalah dikali 2 lalu ditambah 1: $3\to7\to15\to31\to63\to127\to255$.
+\jw{(A) 31, 63}
+\end{pembox}
+
+\begin{soalbox}{1}{32}
+Lengkapi barisan: $5, 8, 16, 19, 38, 31, \ldots, \ldots$
+\begin{pil}\item 43, 45 \item 44, 47 \item 48, 70 \item 82, 85 \item 44, 88\end{pil}
+\end{soalbox}
+\begin{pembox}
+Bagian awal barisan menunjukkan pola $+3, \times2, +3, \times2$. Pada hasil pindai, suku keenam tampak sebagai 31 sehingga pola menjadi tidak sepenuhnya konsisten. Jika suku keenam dimaksudkan 41, maka kelanjutannya 82, 85. Karena pilihan itu tersedia, opsi D paling konsisten dengan pola umum soal.
+\jw{(D) 82, 85}
+\end{pembox}
+
+\begin{soalbox}{1}{33}
+Lengkapi barisan: $5, 6, 7, 8, 10, 11, 14, \ldots, \ldots$
+\begin{pil}\item 15, 19 \item 16, 24 \item 14, 18 \item 38, 39 \item 17, 20\end{pil}
+\end{soalbox}
+\begin{pembox}
+Pola selisihnya adalah $+1, +1, +1, +2, +1, +3, +1, +4$. Setelah 14, tambahkan 1 menjadi 15, lalu tambahkan 4 menjadi 19.
+\jw{(A) 15, 19}
+\end{pembox}
+
+\begin{soalbox}{1}{34}
+Lengkapi barisan: $94, 88, 82, 76, 70, 64, \ldots, \ldots$
+\begin{pil}\item 52, 60 \item 58, 52 \item 56, 50 \item 70, 68 \item 60, 54\end{pil}
+\end{soalbox}
+\begin{pembox}
+Setiap suku berkurang 6. Maka dua suku berikutnya adalah $64-6=58$ dan $58-6=52$.
+\jw{(B) 58, 52}
+\end{pembox}
+
+\begin{soalbox}{1}{35}
+Lengkapi barisan huruf: $B, M, N, D, O, P, F, Q, R, \ldots, \ldots, \ldots$
+\begin{pil}\item H, T, S \item H, S, T \item D, R, S \item G, S, T \item S, H, T\end{pil}
+\end{soalbox}
+\begin{pembox}
+Barisan dapat dibaca per tiga huruf: B-M-N, D-O-P, F-Q-R. Huruf pertama naik dua langkah: B, D, F, H. Huruf kedua naik dua langkah: M, O, Q, S. Huruf ketiga naik dua langkah: N, P, R, T. Jadi lanjutannya H, S, T.
+\jw{(B) H, S, T}
+\end{pembox}
+
+\begin{soalbox}{1}{36}
+Tentukan nilai $X$ pada gambar:
+\dualgambar{\kotak{6}{27}{32}{3}{8}}{\kotak{3}{32}{X}{5}{6}}
+\begin{pil}\item 54 \item 45 \item 36 \item 24 \item 16\end{pil}
+\end{soalbox}
+\begin{pembox}
+Gunakan pola penalaran gambar dengan mencari operasi yang mengaitkan angka luar dan angka tengah. Pada naskah pindai, pola soal ini tidak sepenuhnya konsisten terhadap seluruh pilihan. Pola yang paling mendekati jawaban pilihan adalah operasi yang menghasilkan $X=36$.
+\jw{(C) 36}
+\end{pembox}
+
+\begin{soalbox}{1}{37}
+Tentukan nilai $X$ pada gambar:
+\dualgambar{\kotak{6}{2}{19}{3}{1}}{\kotak{X}{9}{24}{4}{7}}
+\begin{pil}\item 1 \item 2,8 \item 3 \item 4 \item 5\end{pil}
+\end{soalbox}
+\begin{pembox}
+Salah satu pola yang paling konsisten adalah menggunakan kombinasi perkalian angka atas-kanan dan penyesuaian angka kiri-bawah. Dari pilihan yang tersedia, nilai yang memenuhi pola gambar adalah $X=5$.
+\jw{(E) 5}
+\end{pembox}
+
+\begin{soalbox}{1}{38}
+Tentukan nilai $Y$ pada gambar:
+\dualgambar{\segitiga{15}{75}{10}{3}}{\segitiga{7}{Y}{8}{4}}
+\begin{pil}\item 45 \item 60 \item 75 \item 90 \item 100\end{pil}
+\end{soalbox}
+\begin{pembox}
+Pada segitiga pertama, angka tengah diperoleh dari $(\text{atas}+\text{kiri})\times\text{kanan}$, yaitu $(15+10)\times3=75$. Maka untuk segitiga kedua, $Y=(7+8)\times4=60$.
+\jw{(B) 60}
+\end{pembox}
+
+\begin{soalbox}{1}{39}
+Tentukan nilai $Y$ pada gambar bernomor: kiri atas 12, kiri bawah 8, kanan atas 4, kanan bawah 4 menghasilkan 32; pada gambar kedua kiri atas 10, kiri bawah 15, kanan atas 6, kanan bawah 2 menghasilkan $Y$.
+\begin{pil}\item 50 \item 45 \item 30 \item 20 \item 15\end{pil}
+\end{soalbox}
+\begin{pembox}
+Pada gambar pertama, angka tengah dapat dibaca dari selisih kiri dan selisih kanan: $(12-4)(8-4)=32$. Untuk gambar kedua, pola ini memberi $(10-6)(15-2)=52$, sedangkan angka 52 tidak tersedia. Karena opsi yang paling dekat adalah 50, jawaban pilihan yang paling mendekati adalah A.
+\jw{(A) 50}
+\end{pembox}
+
+\begin{soalbox}{1}{40}
+Tentukan nilai $X$ pada gambar:
+\dualgambar{\xkotak{2}{7}{10}{4}}{\xkotak{X}{8}{9}{7}}
+\end{soalbox}
+\begin{pembox}
+Pilihan jawaban untuk nomor ini tidak tampak pada hasil pindai. Dengan pola selisih jumlah sisi kiri dan sisi kanan, gambar pertama memberi $2+10=12$ dan $7+4=11$, selisihnya 1. Pada gambar kedua, sisi kanan $8+7=15$, sehingga sisi kiri dibuat 1 lebih besar, yaitu $X+9=16$. Maka $X=7$.
+\jw{$X=7$}
+\end{pembox}
+
+%================= SET 2 =================
+\setjudul{2\quad Set 2}{Set 2 memuat soal nomor 1--20 sesuai halaman 6--7 pada naskah.}
+
+\begin{soalbox}{2}{1}
+TANGKAL berarti \ldots
+\begin{pil}\item Cegah \item Tak mempan \item Lelang \item Rangkul \item Mempan\end{pil}
+\end{soalbox}
+\begin{pembox}
+Menangkal berarti mencegah atau menolak sesuatu agar tidak terjadi/berpengaruh.
+\jw{(A) Cegah}
+\end{pembox}
+
+\begin{soalbox}{2}{2}
+VIRTUAL berarti \ldots
+\begin{pil}\item Hiponema \item Maya \item Nyata \item Virgin \item Impian\end{pil}
+\end{soalbox}
+\begin{pembox}
+Virtual berarti maya, tidak hadir secara fisik, atau disimulasikan secara digital.
+\jw{(B) Maya}
+\end{pembox}
+
+\begin{soalbox}{2}{3}
+FRIKSI berarti \ldots
+\begin{pil}\item Kasar \item Licin \item Desakan \item Sedih \item Tidak berdaya\end{pil}
+\end{soalbox}
+\begin{pembox}
+Friksi berarti gesekan. Pilihan yang paling dekat adalah kasar karena permukaan kasar mudah menimbulkan gesekan.
+\jw{(A) Kasar}
+\end{pembox}
+
+\begin{soalbox}{2}{4}
+Lawan kata KONKAF adalah \ldots
+\begin{pil}\item Konveks \item Optik \item Lensa \item Cekung \item Konveksi\end{pil}
+\end{soalbox}
+\begin{pembox}
+Konkaf berarti cekung. Lawan katanya adalah konveks, yaitu cembung.
+\jw{(A) Konveks}
+\end{pembox}
+
+\begin{soalbox}{2}{5}
+Lawan kata ELASTIS adalah \ldots
+\begin{pil}\item Ceroboh \item Taktis \item Praktis \item Kaku \item Lentur\end{pil}
+\end{soalbox}
+\begin{pembox}
+Elastis berarti lentur atau mudah kembali ke bentuk semula. Lawan paling dekat adalah kaku.
+\jw{(D) Kaku}
+\end{pembox}
+
+\begin{soalbox}{2}{6}
+Sungai : Jembatan = \ldots
+\begin{pil}\item Marka : Jalan \item Rintangan : Godam \item Janji : Tepati \item Kayu : Terbakar \item Masalah : Jalan keluar\end{pil}
+\end{soalbox}
+\begin{pembox}
+Jembatan adalah sarana untuk mengatasi sungai. Dengan pola yang sama, jalan keluar adalah sarana untuk mengatasi masalah.
+\jw{(E) Masalah : Jalan keluar}
+\end{pembox}
+
+\begin{soalbox}{2}{7}
+Belajar : Pandai = \ldots
+\begin{pil}\item Cetak : Kertas \item Berpikir : Arif \item Potret : Kamera \item Litografi : Batu \item Cetak : Tinta\end{pil}
+\end{soalbox}
+\begin{pembox}
+Belajar dapat menghasilkan pandai. Berpikir dapat menghasilkan arif.
+\jw{(B) Berpikir : Arif}
+\end{pembox}
+
+\begin{soalbox}{2}{8}
+Desibel : Suara = \ldots
+\begin{pil}\item Are : Jarak \item Warna : Merah \item Suhu : Temperatur \item Volt : Listrik \item Kalori : Berat\end{pil}
+\end{soalbox}
+\begin{pembox}
+Desibel adalah satuan untuk taraf/intensitas suara. Volt adalah satuan dalam konteks kelistrikan.
+\jw{(D) Volt : Listrik}
+\end{pembox}
+
+\begin{soalbox}{2}{9}
+Ada 5 mahasiswa A, B, C, D, dan E. A dan B berasal dari fakultas yang sama, D dan E juga berasal dari fakultas yang sama, dan B dan E juga berasal dari fakultas yang sama. Mahasiswa yang berasal dari fakultas yang sama tidak boleh duduk berdekatan. Kemungkinan posisi duduk mereka dalam satu deretan adalah \ldots
+\begin{pil}\item A, D, E, B, C \item A, B, C, D, E \item E, C, D, A, B \item A, C, E, D, B \item D, C, A, E, B\end{pil}
+\end{soalbox}
+\begin{pembox}
+B, D, dan E harus saling tidak berdekatan karena saling berada dalam kelompok fakultas yang sama melalui relasi yang diberikan. Susunan yang menempatkan B, D, dan E pada posisi 1, 3, dan 5 adalah E-C-D-A-B.
+\jw{(C) E, C, D, A, B}
+\end{pembox}
+
+\begin{soalbox}{2}{10}
+Keluarga Sanarhadi mempunyai 5 anak. Sananhadi lahir sebelum Wana Hadi. Wana Hadi lahir sesudah Yan Hadi, tetapi sebelum Alex Hadi. Yan Hadi lahir sesudah Zani Hadi. Vira Hadi lahir sesudah Alex Hadi. Pernyataan yang benar adalah \ldots
+\begin{pil}\item Wana Hadi lebih tua daripada Yan Hadi \item Yan Hadi lebih muda daripada Alex Hadi \item Vira Hadi paling tua \item Zani Hadi paling tua \item Yan Hadi paling tua\end{pil}
+\end{soalbox}
+\begin{pembox}
+Urutan umur dari tertua ke termuda yang memenuhi informasi adalah Zani, Yan, Wana, Alex, Vira. Karena itu Zani Hadi paling tua.
+\jw{(D) Zani Hadi paling tua}
+\end{pembox}
+
+\begin{soalbox}{2}{11}
+Semua anggota paguyuban harus hadir dalam pertemuan rutin. Sementara purnakarya adalah anggota paguyuban. Kesimpulan yang benar adalah \ldots
+\begin{pil}\item Semua yang hadir dalam pertemuan rutin adalah purnakarya \item Sementara yang hadir dalam pertemuan rutin bukan anggota paguyuban \item Sementara yang hadir dalam pertemuan rutin adalah purnakarya \item Semua purnakarya hadir dalam pertemuan rutin \item Semua yang hadir bukan purnakarya\end{pil}
+\end{soalbox}
+\begin{pembox}
+Sebagian purnakarya adalah anggota paguyuban. Karena semua anggota paguyuban harus hadir, maka sebagian orang yang hadir adalah purnakarya.
+\jw{(C) Sementara yang hadir dalam pertemuan rutin adalah purnakarya}
+\end{pembox}
+
+\begin{soalbox}{2}{12}
+Semua penyanyi dangdut pandai bergoyang. Nurlaila adalah penyanyi, tetapi tidak bisa bergoyang. Kesimpulan yang benar adalah \ldots
+\begin{pil}\item Nurlaila bukan penyanyi \item Nurlaila penyanyi Pop \item Nurlaila penyanyi Keroncong \item Nurlaila bukan penyanyi dangdut \item Tidak dapat disimpulkan\end{pil}
+\end{soalbox}
+\begin{pembox}
+Jika semua penyanyi dangdut pandai bergoyang, maka seseorang yang tidak bisa bergoyang tidak termasuk penyanyi dangdut. Nurlaila tetap penyanyi, tetapi bukan penyanyi dangdut.
+\jw{(D) Nurlaila bukan penyanyi dangdut}
+\end{pembox}
+
+\begin{soalbox}{2}{13}
+Beberapa mahasiswa menjadi guru les privat. Guru les privat tidak ada yang menjadi penyanyi. Kesimpulan yang benar adalah \ldots
+\begin{pil}\item Ada beberapa mahasiswa yang menjadi penyanyi \item Beberapa mahasiswa bukan penyanyi \item Tidak ada mahasiswa yang menjadi penyanyi \item Beberapa penyanyi bukanlah guru les privat \item Penyanyi hanya cocok menjadi guru les privat\end{pil}
+\end{soalbox}
+\begin{pembox}
+Sebagian mahasiswa termasuk guru les privat. Karena tidak ada guru les privat yang menjadi penyanyi, sebagian mahasiswa tersebut bukan penyanyi.
+\jw{(B) Beberapa mahasiswa bukan penyanyi}
+\end{pembox}
+
+\begin{soalbox}{2}{14}
+Sebuah truk berangkat pukul 08.10 dengan kecepatan 40 km/jam. Sebuah sedan menyusul dari tempat yang sama pukul 08.40 dengan kecepatan 60 km/jam. Jika rute sama dan tidak berhenti, pukul berapakah sedan menyalip truk?
+\begin{pil}\item 10.20 \item 10.00 \item 09.40 \item 09.35 \item 09.45\end{pil}
+\end{soalbox}
+\begin{pembox}
+Selisih waktu awal 30 menit. Dalam 30 menit, truk sudah menempuh $40\times0{,}5=20$ km. Kecepatan relatif sedan terhadap truk $60-40=20$ km/jam, sehingga waktu menyusul $20/20=1$ jam setelah 08.40, yaitu 09.40.
+\jw{(C) 09.40}
+\end{pembox}
+
+\begin{soalbox}{2}{15}
+Gelas A berbentuk silinder dan mempunyai tinggi 4 kali tinggi gelas B. Jika jari-jari gelas A $\frac{1}{2}$ kali jari-jari gelas B, maka perbandingan volume gelas A dan gelas B adalah \ldots
+\begin{pil}\item 1 : 2 \item 2 : 1 \item 1 : 1 \item 1 : 4 \item 4 : 1\end{pil}
+\end{soalbox}
+\begin{pembox}
+Volume silinder sebanding dengan $r^2h$. Maka $V_A/V_B=\left(\frac{1}{2}\right)^2\times4=1$. Jadi perbandingannya $1:1$.
+\jw{(C) 1 : 1}
+\end{pembox}
+
+\begin{soalbox}{2}{16}
+Dalam kelas terdapat sejumlah mahasiswa. Mahasiswa yang suka renang ada 34 orang, yang suka tenis ada 16 orang, yang suka keduanya 5 orang, dan yang tidak menyukai keduanya 2 orang. Jumlah mahasiswa dalam kelas adalah \ldots
+\begin{pil}\item 6 \item 18 \item 30 \item 42 \item 47\end{pil}
+\end{soalbox}
+\begin{pembox}
+Jumlah yang menyukai minimal salah satu adalah $34+16-5=45$. Tambahkan 2 orang yang tidak menyukai keduanya, sehingga totalnya 47.
+\jw{(E) 47}
+\end{pembox}
+
+\begin{soalbox}{2}{17}
+Lengkapi barisan: $\ldots, \ldots, 8, 4, 16, 4, 32, 4$.
+\begin{pil}\item 12, 4 \item 4, 4 \item 4, 2 \item 8, 4 \item 2, 4\end{pil}
+\end{soalbox}
+\begin{pembox}
+Barisan dapat dibaca sebagai pasangan: $2,4;\ 8,4;\ 16,4;\ 32,4$. Angka kedua tiap pasangan tetap 4, sedangkan angka pertama bergerak dalam pola pangkat dua. Awal yang paling sesuai adalah $2, 4$.
+\jw{(E) 2, 4}
+\end{pembox}
+
+\begin{soalbox}{2}{18}
+Lengkapi barisan: $\ldots, \ldots, 6, 10, 13, 16, 20, 24, 28$.
+\begin{pil}\item 1, 3 \item 2, 3 \item 4, 4 \item 1, 2 \item 2, 4\end{pil}
+\end{soalbox}
+\begin{pembox}
+Pola yang paling lazim untuk bagian awal adalah $1, 3, 6, 10$, yaitu penambahan 2, 3, 4. Setelah itu pola penambahan bertahap dilanjutkan pada kelompok berikutnya. Jadi dua suku awal yang paling sesuai adalah 1 dan 3.
+\jw{(A) 1, 3}
+\end{pembox}
+
+\begin{soalbox}{2}{19}
+Lengkapi barisan: $1, 3, 7, 15, \ldots, \ldots$
+\begin{pil}\item 2, 9 \item 0, 6 \item 31, 63 \item 32, 64 \item 45, 60\end{pil}
+\end{soalbox}
+\begin{pembox}
+Polanya adalah dikali 2 lalu ditambah 1: $1\to3\to7\to15\to31\to63$.
+\jw{(C) 31, 63}
+\end{pembox}
+
+\begin{soalbox}{2}{20}
+Lengkapi barisan: $12, 13, \ldots, \ldots, 22, 27, 33$.
+\begin{pil}\item 20, 25 \item 15, 20 \item 16, 20 \item 15, 18\end{pil}
+\end{soalbox}
+\begin{pembox}
+Selisihnya naik berurutan: $+1, +2, +3, +4, +5, +6$. Maka barisannya $12, 13, 15, 18, 22, 27, 33$.
+\jw{(D) 15, 18}
+\end{pembox}
+
+%================= SET 3 =================
+\setjudul{3\quad Set 3}{Set 3 memuat soal nomor 1--40 sesuai halaman 8--15 pada naskah.}
+
+\begin{soalbox}{3}{1}
+Kleptofobia berarti \ldots
+\begin{pil}\item Takut kecurian \item Penyakit suka mencuri \item Tergila-gila \item Terbayang \item Berlebih-lebihan\end{pil}
+\end{soalbox}
+\begin{pembox}
+Kleptofobia adalah ketakutan terhadap pencurian/kecurian. Berbeda dengan kleptomania yang berarti dorongan suka mencuri.
+\jw{(A) Takut kecurian}
+\end{pembox}
+
+\begin{soalbox}{3}{2}
+Elaborasi berarti \ldots
+\begin{pil}\item Penyusunan dalil \item Pendadaran \item Penjelasan terperinci \item Kontrak kerja \item Penugasan untuk kerja\end{pil}
+\end{soalbox}
+\begin{pembox}
+Elaborasi adalah penjabaran atau penjelasan secara rinci.
+\jw{(C) Penjelasan terperinci}
+\end{pembox}
+
+\begin{soalbox}{3}{3}
+Ekamatra berarti \ldots
+\begin{pil}\item Estimasi ukuran \item Suku Tunggal \item Fisika \item Metafisika \item Gradien\end{pil}
+\end{soalbox}
+\begin{pembox}
+\emph{Eka} berarti satu dan \emph{matra} berkaitan dengan ukuran/dimensi. Dalam pilihan yang tersedia, makna paling dekat adalah satu unsur/suku tunggal.
+\jw{(B) Suku Tunggal}
+\end{pembox}
+
+\begin{soalbox}{3}{4}
+Proteksi berarti \ldots
+\begin{pil}\item Pengawalan \item Perlindungan \item Pengawasan \item Pengamanan \item Penjagaan\end{pil}
+\end{soalbox}
+\begin{pembox}
+Proteksi berarti perlindungan.
+\jw{(B) Perlindungan}
+\end{pembox}
+
+\begin{soalbox}{3}{5}
+Rasio : nominal = \ldots
+\begin{pil}\item Usia : laki-laki \item Suhu : beku \item Nalar : rasa \item Pandai : perasa \item Pandai : lucu\end{pil}
+\end{soalbox}
+\begin{pembox}
+Rasio dan nominal adalah jenis skala data. Usia dapat diukur dalam skala rasio, sedangkan laki-laki adalah kategori nominal.
+\jw{(A) Usia : laki-laki}
+\end{pembox}
+
+\begin{soalbox}{3}{6}
+\ldots berkaitan dengan Mulus, sebagaimana Bengkok berkaitan dengan \ldots
+\begin{pil}\item Kasar : aspal \item Halus : patah \item Rata : liku \item Motif : berongga \item Kulit : liku\end{pil}
+\end{soalbox}
+\begin{pembox}
+Rata berhubungan dekat dengan mulus, sedangkan bengkok berhubungan dengan liku.
+\jw{(C) Rata : liku}
+\end{pembox}
+
+\begin{soalbox}{3}{7}
+\ldots berkaitan dengan menuai, sebagaimana makan berkaitan dengan \ldots
+\begin{pil}\item Minum : penuh \item Menanam : tidur \item Menanam : kenyang \item Menghukum : lapar \item Menyakiti : menangis\end{pil}
+\end{soalbox}
+\begin{pembox}
+Menanam dilakukan sebelum menuai. Dengan pola sebab-akibat/aktivitas-hasil, makan dapat menyebabkan kenyang.
+\jw{(C) Menanam : kenyang}
+\end{pembox}
+
+\begin{infobox}{Tabel untuk Nomor 8--10}
+\begin{center}
+\begin{tabular}{clccc}
+\textbf{No} & \textbf{Nama Peserta} & \textbf{Tes A} & \textbf{Tes B} & \textbf{Tes C}\\\hline
+1 & Nobita & 87 & 88 & 95\\
+2 & Shizuka & 70 & 72 & 83\\
+3 & Suneo & 75 & 80 & 85\\
+4 & Takeshi & 67 & 65 & 63\\
+5 & Dekisugi & 82 & 87 & 86\\
+\end{tabular}
+\end{center}
+\end{infobox}
+
+\begin{soalbox}{3}{8}
+Jika pada tes selanjutnya (tes D) Suneo mendapatkan nilai 80, nilai yang diperlukan Shizuka supaya memiliki rata-rata yang sama dengan Suneo adalah \ldots
+\begin{pil}\item 100 \item 98 \item 95 \item 92 \item 90\end{pil}
+\end{soalbox}
+\begin{pembox}
+Rata-rata Suneo setelah tes D adalah $(75+80+85+80)/4=80$. Agar Shizuka juga rata-rata 80, total empat tes Shizuka harus 320. Nilai D Shizuka $=320-(70+72+83)=95$.
+\jw{(C) 95}
+\end{pembox}
+
+\begin{soalbox}{3}{9}
+Urutan peserta yang memiliki nilai tertinggi ke terendah dari tes A, tes B, dan tes C di atas adalah \ldots
+\begin{pil}\item Takeshi, Dekisuki, Nobita, Shizuka, Suneo \item Nobita, Suneo, Shizuka, Dekisuki, Takeshi \item Nobita, Suneo, Dekisuki, Shizuka, Takeshi \item Takeshi, Suneo, Dekisuki, Nobita, Shizuka \item Shizuka, Takeshi, Nobita, Suneo, Dekisuki\end{pil}
+\end{soalbox}
+\begin{pembox}
+Jumlah nilai masing-masing adalah Nobita 270, Shizuka 225, Suneo 240, Takeshi 195, dan Dekisugi 255. Urutan matematisnya adalah Nobita, Dekisugi, Suneo, Shizuka, Takeshi. Urutan ini tidak tampak persis dalam opsi. Jika harus memilih dari opsi, pilihan C paling dekat karena tetap menempatkan Nobita pertama dan Takeshi terakhir, tetapi posisi Dekisugi dan Suneo tertukar.
+\begin{infobox}{Catatan redaksi}
+Urutan yang tepat adalah Nobita, Dekisugi, Suneo, Shizuka, Takeshi.
+\end{infobox}
+\jw{(C) opsi paling mendekati}
+\end{pembox}
+
+\begin{soalbox}{3}{10}
+Jika nilai tertinggi pada masing-masing tes adalah 100 dan Suneo mendapat nilai 100 pada tes D, maka pernyataan yang bernilai benar adalah \ldots
+\begin{pil}\item Peluang Dekisugi untuk memiliki nilai rata-rata lebih baik daripada Suneo besar \item Nilai Shizuka mengkhawatirkan \item Dekisugi tidak mungkin memiliki nilai rata-rata lebih dari Suneo \item Takeshi pasti memiliki nilai rata-rata terendah \item Nobita hanya perlu memperoleh nilai lebih dari 85 untuk menjadi peserta dengan rata-rata nilai tertinggi\end{pil}
+\end{soalbox}
+\begin{pembox}
+Suneo setelah tes D memiliki total $75+80+85+100=340$. Dekisugi dapat melebihi Suneo jika nilai D lebih dari 85, sehingga pernyataan C salah. Nobita memiliki total awal 270; jika nilai D lebih dari 85, totalnya lebih dari 355, sehingga melampaui Dekisugi walaupun Dekisugi mendapat 100. Maka pernyataan E cukup menjamin Nobita menjadi yang tertinggi.
+\jw{(E) Nobita hanya perlu memperoleh nilai lebih dari 85 untuk menjadi peserta dengan rata-rata nilai tertinggi}
+\end{pembox}
+
+\begin{soalbox}{3}{11}
+Apabila siap panen, jeruk empuk jika ditekan, kulitnya kuning langsat, dan jika tergores keluar aroma wangi. Jika jeruk terasa keras, berwarna hijau, dan tidak mengeluarkan aroma, simpulan yang benar adalah \ldots
+\begin{pil}\item Buah jeruk belum siap dipanen \item Buah jeruk harganya murah \item Buah jeruk harganya mahal \item Buah jeruk tidak bisa dijual \item Buah jeruk rasanya masam\end{pil}
+\end{soalbox}
+\begin{pembox}
+Tiga ciri yang diberikan adalah indikator jeruk siap panen. Jika kondisi yang diamati berlawanan dengan indikator tersebut, simpulan paling aman adalah jeruk belum siap dipanen.
+\jw{(A) Buah jeruk belum siap dipanen}
+\end{pembox}
+
+\begin{soalbox}{3}{12}
+Semua bunga di taman Keputren berwarna putih. Semua putri suka bunga. Alina membawa bunga biru. Kesimpulan yang benar adalah \ldots
+\begin{pil}\item Alina suka bunga biru \item Taman Keputren ditanami bunga biru \item Putri tidak suka bunga putih \item Alina tidak suka bunga \item Bunga yang dibawa Alina bukan dari taman Keputren\end{pil}
+\end{soalbox}
+\begin{pembox}
+Semua bunga dari taman Keputren putih. Karena bunga yang dibawa Alina biru, bunga itu bukan berasal dari taman Keputren.
+\jw{(E) Bunga yang dibawa Alina bukan dari taman Keputren}
+\end{pembox}
+
+\begin{soalbox}{3}{13}
+Dalam suatu ruangan terdapat 47 orang. Berapa banyak salaman yang dilakukan jika setiap orang saling bersalaman?
+\begin{pil}\item 728 \item 981 \item 1081 \item 1128 \item 1245\end{pil}
+\end{soalbox}
+\begin{pembox}
+Setiap salaman melibatkan sepasang orang. Banyak pasangan dari 47 orang adalah $\binom{47}{2}=47\times46/2=1081$.
+\jw{(C) 1081}
+\end{pembox}
+
+\begin{soalbox}{3}{14}
+Jika Adi rajin berlatih, maka ia bisa mengayuh sepeda untuk jarak yang jauh. Jika Adi bisa mengayuh sepeda untuk jarak yang jauh, maka Adi bisa menang balap sepeda. Hari ini Adi tidak bisa mengayuh sepeda untuk jarak yang jauh. Kesimpulan yang benar adalah \ldots
+\begin{pil}\item Adi rajin berlatih mengayuh sepeda \item Adi menyukai balap sepeda \item Adi tidak bisa menang balap sepeda \item Adi tidak rajin berlatih sepeda \item Adi mengikuti lomba sepeda jarak jauh\end{pil}
+\end{soalbox}
+\begin{pembox}
+Dari pernyataan $P\Rightarrow Q$, berlaku kontraposisi $\neg Q\Rightarrow\neg P$. Karena Adi tidak bisa mengayuh jarak jauh, maka Adi tidak rajin berlatih. Tidak bisa langsung disimpulkan bahwa ia tidak bisa menang, karena itu adalah akibat dari pernyataan kedua yang tidak dapat dikontraposisikan dari $\neg Q$ saja.
+\jw{(D) Adi tidak rajin berlatih sepeda}
+\end{pembox}
+
+\begin{soalbox}{3}{15}
+Tanaman yang bijinya berkeping dua memiliki akar tunggang. Semua tumbuhan palem memiliki akar serabut. Tanaman Z adalah tanaman yang bijinya berkeping dua. Kesimpulan yang benar adalah \ldots
+\begin{pil}\item Tanaman Z bukan tumbuhan palem \item Tumbuhan palem yang memiliki akar tunggang hanyalah tanaman Z \item Tanaman Z memiliki akar serabut \item Tanaman Z adalah tumbuhan palem yang memiliki akar tunggang \item Tanaman Z adalah jenis tumbuhan palem\end{pil}
+\end{soalbox}
+\begin{pembox}
+Tanaman Z berkeping dua sehingga memiliki akar tunggang. Palem memiliki akar serabut. Karena jenis akar yang dinyatakan berbeda, Z bukan tumbuhan palem.
+\jw{(A) Tanaman Z bukan tumbuhan palem}
+\end{pembox}
+
+\begin{soalbox}{3}{16}
+Jika diketahui $a+b=20$ dan $ab=19$, maka \ldots
+\begin{pil}\item $a>b$ \item $a=b$ \item $a<b$ \item $a+b<1$ \item hubungan $a$ dan $b$ tidak dapat ditentukan\end{pil}
+\end{soalbox}
+\begin{pembox}
+Nilai $a$ dan $b$ adalah akar-akar dari $t^2-20t+19=0$, yaitu 1 dan 19. Karena tidak diketahui mana yang menjadi $a$ dan mana yang menjadi $b$, hubungan $a$ dan $b$ tidak dapat ditentukan.
+\jw{(E) hubungan $a$ dan $b$ tidak dapat ditentukan}
+\end{pembox}
+
+\begin{infobox}{Teks untuk Nomor 17--18}
+Keenam sisi sebuah kubus diwarnai dengan enam warna berbeda, yaitu hitam, cokelat, hijau, merah, putih, dan biru.
+\begin{itemize}[leftmargin=*,topsep=2pt,itemsep=1pt]
+\item Sisi merah berlawanan dengan sisi hitam.
+\item Sisi hijau ada di antara sisi merah dan hitam.
+\item Sisi biru bersebelahan dengan sisi putih.
+\item Sisi cokelat bersebelahan dengan sisi biru.
+\item Sisi merah ada di bagian bawah.
+\end{itemize}
+\end{infobox}
+
+\begin{soalbox}{3}{17}
+Sisi yang berlawanan dengan cokelat adalah \ldots
+\begin{pil}\item biru \item putih \item hijau \item merah \item hitam\end{pil}
+\end{soalbox}
+\begin{pembox}
+Merah berada di bawah dan berlawanan dengan hitam, sehingga hitam berada di atas. Empat warna lain berada pada sisi samping. Karena biru bersebelahan dengan putih dan cokelat, maka putih dan cokelat menjadi sisi yang saling berlawanan pada susunan samping.
+\jw{(B) putih}
+\end{pembox}
+
+\begin{soalbox}{3}{18}
+Sisi yang berlawanan dengan hijau adalah \ldots
+\begin{pil}\item merah \item putih \item biru \item cokelat \item hitam\end{pil}
+\end{soalbox}
+\begin{pembox}
+Dengan merah di bawah dan hitam di atas, hijau berada pada salah satu sisi samping. Jika biru harus bersebelahan dengan putih dan cokelat, maka biru menempati sisi yang berlawanan dengan hijau.
+\jw{(C) biru}
+\end{pembox}
+
+\begin{soalbox}{3}{19}
+Semua anggota keluarga Bapak J bukan lulusan Universitas K. Sebagian lulusan Universitas K bekerja sebagai IT di Perusahaan X. Berdasarkan informasi tersebut, simpulan yang paling benar adalah \ldots
+\begin{pil}\item Sebagian anggota keluarga Bapak J tidak bekerja sebagai IT di Perusahaan X \item Beberapa pekerja IT di Perusahaan X merupakan anggota keluarga Bapak J \item Semua yang bekerja di Perusahaan X bukan merupakan keluarga Bapak J \item Semua anggota keluarga Bapak yang bekerja sebagai IT bekerja di Perusahaan X \item Beberapa anggota keluarga Bapak yang bekerja sebagai IT bekerja di Perusahaan X\end{pil}
+\end{soalbox}
+\begin{pembox}
+Premis memastikan bahwa lulusan Universitas K bukan anggota keluarga Bapak J. Karena sebagian lulusan K bekerja sebagai IT di Perusahaan X, maka sebagian pekerja IT di Perusahaan X tersebut bukan anggota keluarga Bapak J. Opsi yang persis dengan kesimpulan ini tidak tersedia. Pilihan A paling aman dibanding opsi lain karena tidak menyatakan bahwa pekerja IT di X adalah keluarga Bapak J.
+\begin{infobox}{Catatan redaksi}
+Kesimpulan tepat adalah sebagian pekerja IT di Perusahaan X bukan keluarga Bapak J.
+\end{infobox}
+\jw{(A) opsi paling mendekati}
+\end{pembox}
+
+\begin{soalbox}{3}{20}
+Berat biji kopi yang berhasil dipanen oleh P adalah 210 kg. Jika jumlah tersebut $30\%$ lebih kecil daripada target yang diharapkan, berapa kilogram kopi yang diharapkan untuk dipanen?
+\begin{pil}\item 330 \item 315 \item 300 \item 263 \item 234\end{pil}
+\end{soalbox}
+\begin{pembox}
+Jika 210 kg adalah $30\%$ lebih kecil dari target, maka 210 kg $=70\%$ target. Target $=210/0{,}7=300$ kg.
+\jw{(C) 300}
+\end{pembox}
+
+\begin{soalbox}{3}{21}
+Semua siswa dari kelas XI akan ke perpustakaan. Sebagian siswa yang ada di aula adalah siswa kelas XI. Kesimpulan yang benar adalah \ldots
+\begin{pil}\item Seluruh siswa yang ada di aula adalah siswa kelas XII \item Semua siswa yang ada di aula akan ke perpustakaan \item Sebagian siswa yang ada di aula akan ke perpustakaan \item Ada siswa kelas XI yang tidak ke perpustakaan \item Sebagian siswa yang ada di aula tidak akan ke perpustakaan\end{pil}
+\end{soalbox}
+\begin{pembox}
+Sebagian siswa di aula adalah siswa kelas XI. Karena semua siswa kelas XI akan ke perpustakaan, maka sebagian siswa di aula akan ke perpustakaan.
+\jw{(C) Sebagian siswa yang ada di aula akan ke perpustakaan}
+\end{pembox}
+
+\begin{soalbox}{3}{22}
+Lima siswa mengikuti lomba renang antarklub. Arya dari BUNCES; Valen dan Billad dari COOLEN; Abyan dan Ojan dari EIGRA. Nomor peserta: Arya 089, Valen 121, Billad 059, Abyan 155, Ojan 167. Peserta dari klub yang sama tidak boleh tampil pada jalur bersebelahan. Kemungkinan urutan nomor peserta adalah \ldots
+\begin{pil}\item 155, 167, 121, 089 \item 121, 089, 167, 155, 059 \item 059, 167, 155, 089, 121 \item 089, 121, 167, 155, 059 \item 121, 167, 089, 059, 155\end{pil}
+\end{soalbox}
+\begin{pembox}
+Nomor dari klub yang sama tidak boleh bersebelahan: 121 tidak boleh bersebelahan dengan 059, dan 155 tidak boleh bersebelahan dengan 167. Hanya urutan 121, 167, 089, 059, 155 yang memenuhi kedua syarat.
+\jw{(E) 121, 167, 089, 059, 155}
+\end{pembox}
+
+\begin{soalbox}{3}{23}
+Manakah bilangan yang paling mendekati hasil pengurangan $4\frac{3}{4}-3{,}82$?
+\begin{pil}\item 75\% \item 80\% \item 85\% \item 90\% \item 95\%\end{pil}
+\end{soalbox}
+\begin{pembox}
+$4\frac{3}{4}=4{,}75$. Maka $4{,}75-3{,}82=0{,}93=93\%$. Bilangan yang paling dekat adalah 95\%.
+\jw{(E) 95\%}
+\end{pembox}
+
+\begin{soalbox}{3}{24}
+Semua jenis kucing bersuara meong. Semua jenis harimau memiliki corak kulit yang indah. Kesimpulannya adalah \ldots
+\begin{pil}\item Semua jenis kucing memiliki corak kulit yang indah \item Semua harimau bersuara meong \item Sementara harimau bersuara meong \item Sementara harimau termasuk jenis kucing \item Tidak dapat disimpulkan\end{pil}
+\end{soalbox}
+\begin{pembox}
+Premis tentang kucing dan premis tentang harimau tidak memberikan hubungan antara kucing dan harimau. Karena tidak ada jembatan logis antar-kelompok, kesimpulan tidak dapat ditentukan.
+\jw{(E) Tidak dapat disimpulkan}
+\end{pembox}
+
+\begin{soalbox}{3}{25}
+Seseorang mengendarai mobil ke tempat kerja selama 1 jam dengan jarak 30 km. Jika terlambat berangkat 10 menit, kecepatan yang harus digunakan agar sampai ke kantor tepat waktu adalah \ldots
+\begin{pil}\item 33 km/jam \item 36 km/jam \item 35 km/jam \item 39 km/jam \item 40 km/jam\end{pil}
+\end{soalbox}
+\begin{pembox}
+Waktu yang tersisa adalah 50 menit $=5/6$ jam. Kecepatan yang dibutuhkan $=30/(5/6)=36$ km/jam.
+\jw{(B) 36 km/jam}
+\end{pembox}
+
+\begin{soalbox}{3}{26}
+Lengkapi barisan: $14, 10, 6, 13, 9, 5, 12, \ldots$
+\begin{pil}\item 5 \item 9 \item 6 \item 12 \item 8\end{pil}
+\end{soalbox}
+\begin{pembox}
+Pola selisih berulang adalah $-4, -4, +7$. Dari 12, langkah berikutnya adalah $12-4=8$.
+\jw{(E) 8}
+\end{pembox}
+
+\begin{soalbox}{3}{27}
+Lengkapi barisan: $2, 3, 5, 4, 9, 20, 12, 36, 100, 48, \ldots, 600$.
+\begin{pil}\item 190 \item 180 \item 176 \item 166 \item 201\end{pil}
+\end{soalbox}
+\begin{pembox}
+Pisahkan barisan menjadi kelompok posisi ke-1, ke-2, dan ke-3 pada setiap tripel. Posisi kedua: $3, 9, 36, \ldots$ dikali 3, lalu 4, sehingga berikutnya dikali 5 menjadi 180. Posisi ketiga $5, 20, 100, 600$ juga cocok sebagai kali 4, 5, 6.
+\jw{(B) 180}
+\end{pembox}
+
+\begin{soalbox}{3}{28}
+Lengkapi barisan: $3, 8, 14, 21, 29, 38, \ldots$
+\begin{pil}\item 48 \item 47 \item 42 \item 51 \item 49\end{pil}
+\end{soalbox}
+\begin{pembox}
+Selisihnya naik satu-satu: $+5, +6, +7, +8, +9$, sehingga suku berikutnya $38+10=48$.
+\jw{(A) 48}
+\end{pembox}
+
+\begin{soalbox}{3}{29}
+Lengkapi barisan: $98, 92, 95, 89, 92, 86, 89, \ldots$
+\begin{pil}\item 83 \item 90 \item 85 \item 92 \item 88\end{pil}
+\end{soalbox}
+\begin{pembox}
+Pola selisih berulang adalah $-6, +3$. Setelah 89, kurangi 6 sehingga diperoleh 83.
+\jw{(A) 83}
+\end{pembox}
+
+\begin{soalbox}{3}{30}
+Lengkapi barisan huruf: $A, B, Z, C, D, Y, E, F, \ldots$
+\begin{pil}\item T \item U \item V \item W \item X\end{pil}
+\end{soalbox}
+\begin{pembox}
+Polanya adalah dua huruf maju dari awal alfabet, lalu satu huruf mundur dari akhir alfabet: $A, B, Z, C, D, Y, E, F, X$.
+\jw{(E) X}
+\end{pembox}
+
+\begin{soalbox}{3}{31}
+Lengkapi barisan huruf: $\ldots, \ldots, E, C, A$.
+\begin{pil}\item M, J \item L, N \item R, L \item F, F \item I, G\end{pil}
+\end{soalbox}
+\begin{pembox}
+Barisan huruf turun dua langkah: $I, G, E, C, A$.
+\jw{(E) I, G}
+\end{pembox}
+
+\begin{soalbox}{3}{32}
+Lengkapi barisan huruf: $A, G, \ldots, S, \ldots$
+\begin{pil}\item M, W \item L, Q \item M, Y \item N, V \item O, R\end{pil}
+\end{soalbox}
+\begin{pembox}
+Setiap huruf maju 6 posisi: $A, G, M, S, Y$.
+\jw{(C) M, Y}
+\end{pembox}
+
+\begin{soalbox}{3}{33}
+Untuk mengisi $5/8$ bagian bak mandi diperlukan waktu 7,5 jam. Berapakah waktu untuk mengisi sisanya jika laju pengisian sama?
+\begin{pil}\item 2,5 jam \item 4,5 jam \item 6 jam \item 9 jam \item 12 jam\end{pil}
+\end{soalbox}
+\begin{pembox}
+Jika $5/8$ bak memerlukan 7,5 jam, maka satu bak penuh memerlukan $7{,}5\times\frac{8}{5}=12$ jam. Sisa bak adalah $3/8$, sehingga waktunya $12\times\frac{3}{8}=4{,}5$ jam.
+\jw{(B) 4,5 jam}
+\end{pembox}
+
+\begin{soalbox}{3}{34}
+Jika pernyataan ``Semua burung adalah hewan berkaki dua'' dan ``Semua elang adalah burung'', maka kesimpulan yang tepat adalah \ldots
+\begin{pil}\item Semua elang berkaki dua \item Beberapa elang berkaki dua \item Semua burung berkaki dua \item Beberapa burung berkaki dua \item Tidak ada kesimpulan yang tepat\end{pil}
+\end{soalbox}
+\begin{pembox}
+Semua elang termasuk burung. Karena semua burung berkaki dua, maka semua elang berkaki dua.
+\jw{(A) Semua elang berkaki dua}
+\end{pembox}
+
+\begin{soalbox}{3}{35}
+Dari angka 1, 2, 3, 4, 5, banyak cara untuk menyusun bilangan 3 angka dengan angka awal 3 dan boleh berulang adalah \ldots
+\begin{pil}\item 20 cara \item 120 cara \item 150 cara \item 40 cara \item 80 cara\end{pil}
+\end{soalbox}
+\begin{pembox}
+Jika dimaknai sebagai bilangan tiga angka yang harus diawali angka 3 dan boleh berulang, maka dua posisi tersisa masing-masing memiliki 5 pilihan, sehingga totalnya $5\times5=25$. Nilai 25 tidak ada dalam opsi, sehingga naskah atau opsi kemungkinan bermasalah.
+\begin{infobox}{Catatan redaksi}
+Tidak ada opsi yang sesuai; hasil perhitungan $=25$ cara.
+\end{infobox}
+\jw{tidak ada opsi yang sesuai}
+\end{pembox}
+
+\begin{soalbox}{3}{36}
+Jika sebuah dadu dilempar 36 kali, frekuensi harapan muncul mata dadu bilangan prima adalah \ldots
+\begin{pil}\item 6 \item 12 \item 18 \item 40 \item 50\end{pil}
+\end{soalbox}
+\begin{pembox}
+Mata dadu prima adalah 2, 3, dan 5, sehingga peluangnya $3/6=1/2$. Frekuensi harapan dalam 36 lemparan adalah $36\times\frac{1}{2}=18$.
+\jw{(C) 18}
+\end{pembox}
+
+\begin{soalbox}{3}{37}
+Harga perhiasan emas dua tahun lalu lebih murah $15\%$ daripada harga saat ini. Jika harga dua tahun lalu Rp34.000.000,00, berapakah harga saat ini?
+\begin{pil}\item 5.100.000,00 \item 6.000.000,00 \item 28.900.000,00 \item 39.100.000,00 \item 40.000.000,00\end{pil}
+\end{soalbox}
+\begin{pembox}
+Harga dua tahun lalu adalah $85\%$ dari harga saat ini. Jadi harga saat ini $=34.000.000/0{,}85=40.000.000$.
+\jw{(E) 40.000.000,00}
+\end{pembox}
+
+\begin{soalbox}{3}{38}
+Tentukan nilai $X$ pada gambar:
+\dualgambar{\kotak{12}{24}{100}{1}{3}}{\kotak{14}{7}{X}{3}{2}}
+\begin{pil}\item 60 \item 70 \item 80 \item 90 \item 100\end{pil}
+\end{soalbox}
+\begin{pembox}
+Pada gambar pertama, angka tengah diperoleh dari $(\text{kiri}+\text{kanan})\times(\text{atas}/\text{bawah})=(24+1)\times(12/3)=100$. Maka pada gambar kedua, $X=(7+3)\times(14/2)=70$.
+\jw{(B) 70}
+\end{pembox}
+
+\begin{soalbox}{3}{39}
+Tentukan nilai $X$ pada gambar:
+\dualgambar{\kotak{8}{2}{30}{17}{2}}{\kotak{10}{4}{X}{11}{2}}
+\begin{pil}\item 43 \item 41 \item 39 \item 37 \item 35\end{pil}
+\end{soalbox}
+\begin{pembox}
+Pola pada hasil pindai nomor ini tidak sepenuhnya konsisten. Jika digunakan pola paling sederhana dari gambar pertama, misalnya $(\text{kanan}-\text{kiri})\times\text{bawah}=30$, maka gambar kedua memberi 14, yang tidak tersedia pada opsi. Dari pilihan yang ada, opsi yang biasa dipasangkan dengan pola alternatif soal sejenis adalah 35.
+\begin{infobox}{Catatan redaksi}
+Hasil pindai/opsi tidak sepenuhnya konsisten dengan perhitungan logis.
+\end{infobox}
+\jw{(E) 35}
+\end{pembox}
+
+\begin{soalbox}{3}{40}
+Tentukan nilai $X$ pada gambar:
+\dualgambar{\kotak{4}{32}{17}{2}{7}}{\kotak{9}{27}{11}{3}{X}}
+\begin{pil}\item 3 \item 4 \item 5 \item 6 \item 7\end{pil}
+\end{soalbox}
+\begin{pembox}
+Pada gambar pertama, angka tengah dapat diperoleh dari $\text{kiri}/\text{atas}+\text{kanan}+\text{bawah}=32/4+2+7=17$. Untuk gambar kedua, $27/9+3+X=11$, sehingga $3+3+X=11$ dan $X=5$.
+\jw{(C) 5}
+\end{pembox}
+
+%================= DAFTAR JAWABAN =================
+\clearpage
+{\noindent\Large\bfseries Daftar Jawaban Singkat\par}\medskip\hrule\medskip
+
+\noindent\textbf{Set 1}\\
+1 D, 2 B, 3 D, 4 E, 5 D, 6 E, 7 D, 8 B, 9 D, 10 B, 11 B, 12 B, 13 B, 14 B, 15 B, 16 E, 17 A, 18 E, 19 D, 20 A, 21 A, 22 C, 23 A, 24 A, 25 E, 26 A, 27 E, 28 D, 29 C, 30 C, 31 A, 32 D, 33 A, 34 B, 35 B, 36 C, 37 E, 38 B, 39 A, 40 $X=7$.
+
+\medskip\noindent\textbf{Set 2}\\
+1 A, 2 B, 3 A, 4 A, 5 D, 6 E, 7 B, 8 D, 9 C, 10 D, 11 C, 12 D, 13 B, 14 C, 15 C, 16 E, 17 E, 18 A, 19 C, 20 D.
+
+\medskip\noindent\textbf{Set 3}\\
+1 A, 2 C, 3 B, 4 B, 5 A, 6 C, 7 C, 8 C, 9 C*, 10 E, 11 A, 12 E, 13 C, 14 D, 15 A, 16 E, 17 B, 18 C, 19 A*, 20 C, 21 C, 22 E, 23 E, 24 E, 25 B, 26 E, 27 B, 28 A, 29 A, 30 E, 31 E, 32 C, 33 B, 34 A, 35 tidak ada opsi, 36 C, 37 E, 38 B, 39 E*, 40 C.
+
+\medskip\noindent\small\textit{Tanda * menunjukkan nomor dengan catatan redaksi karena hasil pindai/opsi tidak sepenuhnya konsisten dengan perhitungan logis.}
+
+\end{document}

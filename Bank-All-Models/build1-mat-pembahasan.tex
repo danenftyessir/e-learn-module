@@ -1,0 +1,1053 @@
+% ============================================================
+%  SOAL + PEMBAHASAN  --  MATEMATIKA  --  SSU-ITB 2024
+%  Tipe A (1-20) + Tipe B (21-39) + Soal Baru (40) | Paket 1
+% ============================================================
+
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.5cm,top=2.8cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{icomma}
+\usepackage{array}
+
+% --- Warna Matematika ---
+\definecolor{mapelcolor}{RGB}{20,110,60}
+\definecolor{mapelbg}{RGB}{228,246,234}
+\definecolor{pembcolor}{RGB}{100,50,130}
+\definecolor{pembbg}{RGB}{245,238,252}
+\definecolor{gold}{RGB}{210,160,30}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small SSU-ITB 2024 --- Pembahasan}
+\rhead{\small Paket 1}
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newtcolorbox{soal}[1]{
+  breakable,
+  colback=mapelbg, colframe=mapelcolor,
+  coltitle=white, fonttitle=\bfseries\sffamily,
+  title=Nomor #1,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+\newtcolorbox{pembox}{
+  breakable,
+  colback=pembbg, colframe=pembcolor,
+  coltitle=white, fonttitle=\bfseries\sffamily,
+  title=Pembahasan,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+\newcommand{\jawaban}[1]{%
+  \noindent\colorbox{gold!30}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+    \textbf{Jawaban:} #1}}\par\smallskip}
+
+\newcommand{\konsep}{\noindent\textit{Konsep:}\ \ignorespaces}
+
+\newenvironment{pil}{%
+  \begin{enumerate}[label=(\Alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}}
+\newenvironment{pilB}{%
+  \par\smallskip\begin{multicols}{2}
+  \begin{enumerate}[label=(\Alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}\end{multicols}}
+
+\newcommand{\gambar}[2][0.52\textwidth]{%
+  \begin{center}\includegraphics[width=#1]{#2}\end{center}}
+
+\linespread{1.05}
+
+% ===================================================================
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+  \fbox{\parbox{0.6\textwidth}{\centering\bfseries\large
+    LEMBAR SOAL DAN PEMBAHASAN}}
+\end{center}
+\vspace{0.5cm}
+
+\begin{center}
+  {\LARGE\bfseries MATEMATIKA}
+\end{center}
+\vspace{0.5cm}
+
+\begin{center}
+  \begin{tabular}{@{\hspace{2cm}}ll@{\hspace{0.4cm}:@{\hspace{0.4cm}}}l}
+    Jenjang      & & SMA / Sederajat               \\[0.3em]
+    Hari/Tanggal & & \underline{\hspace{5cm}}      \\[0.3em]
+    Waktu        & & \underline{\hspace{5cm}}      \\[0.3em]
+    Paket Soal   & & 1                             \\
+  \end{tabular}
+\end{center}
+
+\vspace{0.6cm}
+\noindent\rule{\linewidth}{0.6pt}
+\vspace{0.3cm}
+
+\noindent\textbf{\underline{PETUNJUK UMUM}}
+\begin{enumerate}[leftmargin=*,itemsep=4pt,topsep=4pt]
+  \item Anda \textbf{tidak} diperbolehkan menggunakan sumber-sumber eksternal,
+        termasuk internet, \textit{large language model} seperti ChatGPT, Claude,
+        LLaMA, Gemini, Meta AI, dan sebagainya. Anda sangat dianjurkan untuk
+        mencoba mengerjakan sendiri terlebih dahulu karena evaluasi ini dibuat
+        untuk \textbf{mengukur} tingkat kepahaman; nilai $<70$ mengindikasikan
+        \textbf{tidak lulus}, dan jika sudah melewati \textit{deadline} maka
+        dianggap tidak mengerjakan yang berarti \textbf{tidak lulus}.
+
+  \item Dokumen ini merupakan \textbf{lembar soal sekaligus pembahasan}; gunakan
+        pada tahap \textbf{Review}. Di tahap ini Anda diharapkan mengerjakan ulang
+        dengan disertakan penjelasan/pembelaan mengapa revisi jawaban adalah pilihan
+        tersebut, dan tetap mencantumkan penjelasan pada soal yang walaupun pada
+        penilaian sudah benar.
+
+  \item Anda dianjurkan untuk mencantumkan caranya walaupun tidak termasuk
+        penilaian, mengingat sifatnya adalah sebagai bahan pembelajaran.
+        Mohon bertanggung jawab atas pekerjaan Anda sendiri.
+
+  \item Terdapat tiga jenis soal: \textbf{Pilihan Ganda Biasa} (5 opsi, pilih 1);
+        \textbf{Pilihan Ganda Majemuk Kompleks} (tabel \textbf{Benar}/\textbf{Salah},
+        tiap pernyataan dinilai mandiri); dan \textbf{Isian Singkat}
+        (tulis nilai/ekspresi).
+
+  \item Soal berjumlah \textbf{40 butir}: nomor 1--20 dari SSU-ITB~2024 Tipe~A,
+        nomor 21--39 dari Tipe~B, dan nomor 40 adalah soal tambahan.
+
+  \item Isilah detail informasi berikut.\\[0.3em]
+        \textbf{Nama}\hspace{0.45cm};\enspace\underline{\hspace{8cm}}
+\end{enumerate}
+
+\vspace{0.6cm}
+\noindent\textit{Dengan menandatangani kolom di bawah ini, saya menyatakan telah membaca,
+memahami, dan menyetujui seluruh peraturan yang tercantum di atas.}
+
+\vspace{0.6cm}
+\noindent\fbox{\parbox{5cm}{\vspace{2.2cm}\centering\small Tanda Tangan Peserta\vspace{0.3cm}}}
+
+\clearpage
+
+% ===================================================================
+%  TIPE A  (nomor 1--20)
+% ===================================================================
+
+\begin{soal}{1}
+Jika titik $P(a,b)$ berada pada kurva $y=x^3+5x-7$ di kuadran pertama
+sehingga gradien garis singgung kurva tersebut di $P$ adalah 17,
+maka nilai $a+b$ adalah \ldots
+\begin{pilB}
+  \item $9$ \item $11$ \item $13$ \item $15$ \item $17$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(C) $a+b=13$}
+\konsep Gradien garis singgung kurva $y=f(x)$ di titik $P$ adalah $f'(x_P)$.
+
+Turunan kurva: $y'=3x^2+5$. Di $P(a,b)$:
+\[ 3a^2+5=17 \;\Rightarrow\; a^2=4 \;\Rightarrow\; a=2 \text{ (kuadran I, }a>0\text{)}. \]
+Nilai $b$: $b=2^3+5(2)-7=8+10-7=11$. Jadi $a+b=2+11=13$.
+\end{pembox}
+
+\begin{soal}{2}
+Perhatikan gambar berikut.
+\gambar[0.46\textwidth]{images/1/1-17.png}
+\begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=6pt,topsep=4pt]
+  \item Jika $L(a)$ menyatakan luas persegi panjang di atas,
+        maka $L(8)$ adalah \ldots
+  \item Jika $c$ memenuhi $L'(c)=0$, maka nilai $2\sqrt{2}\,c$ adalah \ldots
+  \item Luas persegi panjang maksimum yang mungkin termuat pada
+        daerah setengah lingkaran di atas adalah \ldots
+\end{enumerate}
+\end{soal}
+\begin{pembox}
+\jawaban{(a) $L(8)=96$\quad (b) $2\sqrt{2}\,c=20$\quad (c) $L_{\max}=100$}
+\konsep Setengah lingkaran $x^2+y^2=100$; persegi panjang dengan sudut kanan atas di $(a,\sqrt{100-a^2})$, lebar $2a$, tinggi $\sqrt{100-a^2}$.
+\[ L(a)=2a\sqrt{100-a^2}. \]
+\textbf{(a)} $L(8)=16\sqrt{36}=96$.
+
+\textbf{(b)} $L'(a)=\dfrac{200-4a^2}{\sqrt{100-a^2}}=0\Rightarrow c=5\sqrt{2}$. Maka $2\sqrt{2}\cdot5\sqrt{2}=20$.
+
+\textbf{(c)} $L(5\sqrt{2})=2(5\sqrt{2})(5\sqrt{2})=100$.
+\end{pembox}
+
+\begin{soal}{3}
+Dua bola diambil sekaligus dari suatu kotak yang berisi 5 bola biru
+dan 6 bola kuning. Jika peluang terambil paling banyak 1 bola kuning
+adalah $\dfrac{A}{11\times10}$, maka nilai $A$ adalah \ldots
+\begin{pilB}
+  \item $40$ \item $60$ \item $80$ \item $90$ \item $100$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(C) $A=80$}
+\konsep $P(\text{paling banyak 1 kuning})=P(0\text{ kuning})+P(1\text{ kuning})$.
+\[ P=\frac{\binom{5}{2}+\binom{6}{1}\binom{5}{1}}{\binom{11}{2}}=\frac{10+30}{55}=\frac{8}{11}=\frac{80}{110}=\frac{A}{11\times10}. \]
+Jadi $A=80$.
+\end{pembox}
+
+\begin{soal}{4}
+Diberikan empat pernyataan tentang hiperbola $y^2-x^2=1$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Hiperbola $y^2-x^2=1$ memotong sumbu $y$ di dua titik.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Hiperbola $y^2-x^2=1$ merupakan grafik suatu fungsi.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Hiperbola $y^2-x^2=1$ tidak memotong sumbu $x$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Hiperbola $y^2-x^2=1$ tidak memiliki asimtot miring.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{Benar}\quad(2)~\textbf{Salah}\quad(3)~\textbf{Benar}\quad(4)~\textbf{Salah}}
+\begin{enumerate}[leftmargin=*,topsep=3pt,itemsep=3pt]
+\item \textbf{Benar.} Saat $x=0$: $y^2=1\Rightarrow y=\pm1$. Dua titik potong.
+\item \textbf{Salah.} Untuk setiap $x$, $y=\pm\sqrt{x^2+1}$; tidak memenuhi syarat fungsi.
+\item \textbf{Benar.} Saat $y=0$: $-x^2=1$, tidak ada solusi real.
+\item \textbf{Salah.} Hiperbola ini memiliki asimtot miring $y=x$ dan $y=-x$.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{5}
+Jika $\cos(2x)=-\dfrac{7}{25}$ dengan $0<x<\pi$,
+maka $25\sin(x)$ adalah \ldots
+\begin{pilB}
+  \item $12$ \item $15$ \item $16$ \item $20$ \item $24$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(D) $25\sin x=20$}
+\konsep $\cos 2x=1-2\sin^2 x$.
+\[ 1-2\sin^2 x=-\tfrac{7}{25}\;\Rightarrow\;\sin^2 x=\tfrac{16}{25}\;\Rightarrow\;\sin x=\tfrac{4}{5}\;(0<x<\pi). \]
+Jadi $25\sin x=25\cdot\tfrac{4}{5}=20$.
+\end{pembox}
+
+\begin{soal}{6}
+Diberikan titik $A(1,-3,3)$ dan titik $B(-5,-2,3)$. Jika
+$P(p_1,p_2,p_3)$ adalah suatu titik sehingga
+$\overrightarrow{BP}=-4\overrightarrow{PA}$,
+maka nilai $-3p_2$ adalah \ldots
+\begin{pilB}
+  \item $-15$ \item $-10$ \item $5$ \item $10$ \item $15$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(D) $-3p_2=10$}
+$P-B=-4(A-P)\;\Rightarrow\;3P=4A-B$.
+\[ P=\frac{4(1,-3,3)-(-5,-2,3)}{3}=\frac{(9,-10,9)}{3}=\!\left(3,-\tfrac{10}{3},3\right). \]
+Jadi $-3p_2=-3\!\left(-\tfrac{10}{3}\right)=10$.
+\end{pembox}
+
+\begin{soal}{7}
+Diketahui suku ke-10 dan suku ke-20 suatu barisan aritmetika,
+berturut-turut, adalah 84 dan 174.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Beda $(d)$ barisan tersebut adalah 18.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Suku pertama barisan tersebut adalah 3.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Suku ke-15 barisan tersebut adalah 129.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Jumlah 15 suku pertama $S_{15}=990$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{Salah}\quad(2)~\textbf{Benar}\quad(3)~\textbf{Benar}\quad(4)~\textbf{Benar}}
+$U_{20}-U_{10}=10d=90\Rightarrow d=9$ (bukan 18).
+$a_1=84-9\cdot9=3$.
+$U_{15}=3+14(9)=129$.
+$S_{15}=\tfrac{15}{2}(2\cdot3+14\cdot9)=\tfrac{15}{2}(132)=990$.
+\end{pembox}
+
+\begin{soal}{8}
+Perhatikan fungsi $f(x)=\sqrt{8-|3x-7|}$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~$x=0$ termasuk dalam domain fungsi $f$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~$x=5$ termasuk dalam domain fungsi $f$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~$x=-1$ termasuk dalam domain fungsi $f$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Domain fungsi $f$ adalah $\left[-\tfrac{1}{3},\,5\right]$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{Benar}\quad(2)~\textbf{Benar}\quad(3)~\textbf{Salah}\quad(4)~\textbf{Benar}}
+$|3x-7|\leq8\;\Rightarrow\;-1\leq3x\leq15\;\Rightarrow\;x\in\!\left[-\tfrac{1}{3},5\right]$.
+(1) $0\in[-\tfrac{1}{3},5]$\;\checkmark\quad
+(2) $5\in[-\tfrac{1}{3},5]$\;\checkmark\quad
+(3) $-1<-\tfrac{1}{3}$, di luar domain.\quad
+(4) Benar.
+\end{pembox}
+
+\begin{soal}{9}
+Diberikan $f(x)={}^{13}\!\log(x)$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~$f(5x)+f\!\left(\dfrac{5}{x}\right)={}^{13}\!\log 25$.
+  & $\bigcirc$ & $\bigcirc$\\[6pt]
+(2)~$f(5x)+f\!\left(\dfrac{5}{x}\right)=2\cdot{}^{13}\!\log 5$.
+  & $\bigcirc$ & $\bigcirc$\\[6pt]
+(3)~$f(5x)+f\!\left(\dfrac{5}{x}\right)={}^{13}\!\log 10$.
+  & $\bigcirc$ & $\bigcirc$\\[6pt]
+(4)~$f(169)=2$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{Benar}\quad(2)~\textbf{Benar}\quad(3)~\textbf{Salah}\quad(4)~\textbf{Benar}}
+$f(5x)+f\!\left(\tfrac{5}{x}\right)=\log_{13}(5x)+\log_{13}\!\left(\tfrac{5}{x}\right)=\log_{13}25=2\log_{13}5$.
+Bukan $\log_{13}10$. Dan $f(169)=\log_{13}(13^2)=2$. \checkmark
+\end{pembox}
+
+\begin{soal}{10}
+Data 90 dari 100 mahasiswa baru suatu perguruan tinggi disajikan
+pada tabel berikut.
+\begin{center}
+\begin{tabular}{l|ccc}
+\hline
+Jalur   & Kota A & Kota B & Selain A dan B \\
+\hline
+SNMPTN  & 10 & 12 &  8 \\
+UTBK    &  9 &  4 & 17 \\
+Mandiri & 11 & 14 &  5 \\
+\hline
+\end{tabular}
+\end{center}
+Adapun 10 mahasiswa sisanya bukan dari Kota A dan bukan jalur SNMPTN.
+Misalkan $X$ adalah mahasiswa jalur UTBK yang dipilih acak dari 100
+mahasiswa. Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Dari 90 data, jumlah mahasiswa UTBK asal Kota B adalah 4.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Dari 90 data, setiap jalur memiliki tepat 30 mahasiswa.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Peluang $X$ berasal dari Kota B dapat dipastikan $<\tfrac{1}{12}$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Dari 90 data, jumlah dari Kota A sama dengan jumlah dari Kota B.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{Benar}\quad(2)~\textbf{Benar}\quad(3)~\textbf{Salah}\quad(4)~\textbf{Benar}}
+(1) Dari tabel: UTBK Kota B $=4$.\;(2) SNMPTN$=30$, UTBK$=30$, Mandiri$=30$.
+(3) 10 mahasiswa sisa bisa masuk UTBK Kota B, sehingga jumlah total UTBK belum pasti; peluang tidak dapat dipastikan $<\tfrac{1}{12}$.
+(4) Kota A: $10{+}9{+}11=30$; Kota B: $12{+}4{+}14=30$. Sama.
+\end{pembox}
+
+\begin{soal}{11}
+Diketahui suatu parabola grafiknya melalui $(-4,0)$ dan $(4,0)$,
+serta titik maksimumnya terletak pada garis $y=23x+48$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Koefisien $x^2$ pada persamaan parabola bernilai negatif.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Persamaan parabola tersebut adalah $y=-3x^2+48$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Titik puncak parabola berada di $(0,24)$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Parabola memotong sumbu $x$ di $(-4,0)$ dan $(4,0)$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{Benar}\quad(2)~\textbf{Benar}\quad(3)~\textbf{Salah}\quad(4)~\textbf{Benar}}
+Bentuk: $y=k(x^2-16)$. Sumbu simetri $x=0$; titik puncak saat $x=0$ pada garis: $y=48$. Maka $-16k=48\Rightarrow k=-3$. Jadi $y=-3x^2+48$, puncak di $(0,48)$ bukan $(0,24)$.
+\end{pembox}
+
+\begin{soal}{12}
+Tentukan nilai
+\[
+  \lim_{x\to 3}\frac{\sin(21-7x)}{x-3}.
+\]
+\begin{pilB}
+  \item $-21$ \item $-7$ \item $0$ \item $7$ \item $21$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(B) $-7$}
+\konsep $\lim_{u\to 0}\dfrac{\sin u}{u}=1$.
+
+$21-7x=-7(x-3)\to0$ saat $x\to3$. Maka
+\[ \lim_{x\to 3}\frac{\sin(-7(x-3))}{x-3}=\lim\frac{-7(x-3)}{x-3}=-7. \]
+\end{pembox}
+
+\begin{soal}{13}
+Jika
+\[
+  \int_{-7}^{-3}f(x)\,dx=12,
+\]
+maka nilai
+\[
+  \int_{3}^{5}f(3-2x)\,dx
+\]
+adalah \ldots
+\begin{pilB}
+  \item $2$ \item $4$ \item $6$ \item $8$ \item $12$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(C) $6$}
+\konsep Substitusi $u=3-2x$, $du=-2\,dx$.
+
+Batas: $x=3\Rightarrow u=-3$;\; $x=5\Rightarrow u=-7$.
+\[ \int_3^5 f(3-2x)\,dx=\int_{-3}^{-7}f(u)\!\left(-\tfrac{1}{2}\right)du=\tfrac{1}{2}\int_{-7}^{-3}f(u)\,du=\tfrac{1}{2}(12)=6. \]
+\end{pembox}
+
+\begin{soal}{14}
+Perhatikan grafik fungsi $f$ berikut.
+\gambar[0.5\textwidth]{images/1/1-18.png}
+Diketahui $a=6$. Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~$f(6)=36$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~$f'(6)=0$, karena $a=6$ adalah titik maksimum fungsi $f$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~$\displaystyle\lim_{x\to 6}\dfrac{f(x)-6x}{x-6}=f'(6)-6$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~$\displaystyle\lim_{x\to 6}\dfrac{f(x)-6x}{x-6}=6$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{Benar}\quad(2)~\textbf{Benar}\quad(3)~\textbf{Benar}\quad(4)~\textbf{Salah}}
+Dari grafik, puncak di $(a,a^2)=(6,36)$, sehingga $f(6)=36=6\cdot6$. Karena $a=6$ adalah titik maksimum, $f'(6)=0$.
+\[ \lim_{x\to6}\frac{f(x)-6x}{x-6}=\lim_{x\to6}\frac{f(x)-f(6)}{x-6}-\lim_{x\to6}\frac{6x-6a}{x-6}=f'(6)-6=0-6=-6\neq6. \]
+\end{pembox}
+
+\begin{soal}{15}
+Diketahui $x^3-4x^2+9x+a=(x-1)\,g(x)$ dengan $a$ konstanta real.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Nilai $a=-6$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Nilai $g(1)=4$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Polinom $x^3-4x^2+9x-6$ habis dibagi $(x-1)$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Nilai $g(0)=-6$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{Benar}\quad(2)~\textbf{Benar}\quad(3)~\textbf{Benar}\quad(4)~\textbf{Salah}}
+$P(1)=0$: $1-4+9+a=0\Rightarrow a=-6$. $g(1)=P'(1)=3-8+9=4$.
+Bagi $P(x)$ oleh $(x-1)$: $g(x)=x^2-3x+6$, sehingga $g(0)=6$ (bukan $-6$).
+\end{pembox}
+
+\begin{soal}{16}
+Diketahui fungsi $y=6\cos\!\left(\dfrac{\pi t}{3}\right)+9$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Periode fungsi tersebut adalah 6.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Amplitudo fungsi tersebut adalah 9.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Nilai minimum fungsi tersebut adalah 3.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Jika $P$ menyatakan periode dan $A$ nilai minimum, maka $10P+A=63$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{Benar}\quad(2)~\textbf{Salah}\quad(3)~\textbf{Benar}\quad(4)~\textbf{Benar}}
+$\omega=\tfrac{\pi}{3}$. Periode $P=\tfrac{2\pi}{\pi/3}=6$. Amplitudo $=6$ (bukan 9; angka 9 adalah geseran vertikal). Minimum $=6(-1)+9=3$. Maka $10(6)+3=63$.
+\end{pembox}
+
+\begin{soal}{17}
+Jika $f(x)=(a+1)x^3+x^2+12$ dan $f'(1)=32$,
+maka nilai $a$ adalah \ldots
+\begin{pilB}
+  \item $5$ \item $7$ \item $8$ \item $9$ \item $11$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(D) $a=9$}
+$f'(x)=3(a+1)x^2+2x$. Substitusi $x=1$:
+\[ 3(a+1)+2=32\;\Rightarrow\;3a+5=32\;\Rightarrow\;a=9. \]
+\end{pembox}
+
+\begin{soal}{18}
+Diketahui $f(x)=ax^2+b$,\;
+$\displaystyle\int_0^1 f(x)\,dx=6$,\;
+dan $\displaystyle\int_1^2 f(x)\,dx=12$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Nilai $a=3$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Nilai $b=5$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~$f(1)=8$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~$\displaystyle\int_0^2 f(x)\,dx=24$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{Benar}\quad(2)~\textbf{Benar}\quad(3)~\textbf{Benar}\quad(4)~\textbf{Salah}}
+$\int_0^1=\tfrac{a}{3}+b=6$;\; $\int_1^2=\tfrac{7a}{3}+b=12$. Kurangkan: $2a=6\Rightarrow a=3$, $b=5$.
+$f(1)=3+5=8$.\; $\int_0^2=6+12=18\neq24$.
+\end{pembox}
+
+\begin{soal}{19}
+Diberikan transformasi $T$ dengan matriks penyajian $M$ ($2\times2$),
+yaitu $T(X)=MX$ untuk tiap $X=\begin{bmatrix}x\\y\end{bmatrix}$.
+Diketahui
+\[
+  T\!\left(\begin{bmatrix}3\\-2\end{bmatrix}\right)=\begin{bmatrix}1\\1\end{bmatrix}
+  \quad\text{dan}\quad
+  T\!\left(\begin{bmatrix}-1\\1\end{bmatrix}\right)=\begin{bmatrix}4\\2\end{bmatrix}.
+\]
+Jika $T(X)=\begin{bmatrix}9\\5\end{bmatrix}$, tentukan kebenaran
+pernyataan-pernyataan berikut tentang $X$!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Komponen pertama dari $X$ adalah 1.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Komponen kedua dari $X$ adalah 1.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~$X=1\cdot\begin{bmatrix}3\\-2\end{bmatrix}+2\cdot\begin{bmatrix}-1\\1\end{bmatrix}$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Norma vektor $X$ adalah $|X|=\sqrt{2}$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{Benar}\quad(2)~\textbf{Salah}\quad(3)~\textbf{Benar}\quad(4)~\textbf{Salah}}
+\konsep Linearitas: $T(\alpha\mathbf{u}+\beta\mathbf{v})=\alpha T(\mathbf{u})+\beta T(\mathbf{v})$.
+
+Misalkan $X=\alpha\begin{bmatrix}3\\-2\end{bmatrix}+\beta\begin{bmatrix}-1\\1\end{bmatrix}$. Maka $T(X)=\alpha\begin{bmatrix}1\\1\end{bmatrix}+\beta\begin{bmatrix}4\\2\end{bmatrix}=\begin{bmatrix}9\\5\end{bmatrix}$.
+Sistem: $\alpha+4\beta=9$, $\alpha+2\beta=5$ $\Rightarrow$ $\beta=2,\alpha=1$.
+$X=\begin{bmatrix}3\\-2\end{bmatrix}+2\begin{bmatrix}-1\\1\end{bmatrix}=\begin{bmatrix}1\\0\end{bmatrix}$.
+Komponen kedua $=0$ (bukan 1). $|X|=1$ (bukan $\sqrt{2}$).
+\end{pembox}
+
+\begin{soal}{20}
+Diberikan limas persegi $T.ABCD$ seperti pada gambar berikut.
+\gambar[0.52\textwidth]{images/1/1-19.png}
+Diketahui $|AB|=2\sqrt{2}$ dan tinggi limas adalah 4. Titik $P$
+adalah titik tengah $\overline{AT}$ dan titik $Q$ pada $\overline{CT}$
+dengan $|CT|=4|CQ|$. Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Titik $P$ berada tepat di tengah ruas garis $\overline{AT}$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~$|CQ|=\tfrac{1}{4}|CT|$, sehingga $Q$ seperempat perjalanan dari $C$ ke $T$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Garis $\overline{PQ}$ sejajar dengan bidang alas $ABCD$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Tangen sudut antara $\overline{AC}$ dan $\overline{PQ}$ adalah $\tfrac{2}{5}$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{Benar}\quad(2)~\textbf{Benar}\quad(3)~\textbf{Salah}\quad(4)~\textbf{Benar}}
+\konsep Koordinat: $A=(-\sqrt{2},-\sqrt{2},0)$, $C=(\sqrt{2},\sqrt{2},0)$, $T=(0,0,4)$.
+
+$P=\frac{A+T}{2}=\!\left(-\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2},2\right)$;\;
+$Q=C+\frac{1}{4}(T-C)=\!\left(\frac{3\sqrt{2}}{4},\frac{3\sqrt{2}}{4},1\right)$.
+
+$\overrightarrow{PQ}=\!\left(\frac{5\sqrt{2}}{4},\frac{5\sqrt{2}}{4},-1\right)$ --- komponen $z=-1\neq0$, sehingga $PQ$ tidak sejajar bidang alas.
+
+$\tan\theta=\dfrac{|\vec{AC}\times\vec{PQ}|}{|\vec{AC}\cdot\vec{PQ}|}=\dfrac{2}{5}$.
+\end{pembox}
+
+% ===================================================================
+%  TIPE B  (nomor 21--39)
+% ===================================================================
+
+\begin{soal}{21}
+Diberikan garis $y=16-4x$ dan kurva $y=16-x^2$. Titik potong keduanya
+adalah $(0,a)$ dan $(b,c)$, serta $L$ adalah luas daerah tertutup
+yang dibatasi kurva tersebut.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Koordinat $y$ titik potong pertama (di $x=0$) adalah $a=16$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Koordinat $x$ titik potong kedua adalah $b=4$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Nilai $6L=48$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Nilai $a+b=20$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{Benar}\quad(2)~\textbf{Benar}\quad(3)~\textbf{Salah}\quad(4)~\textbf{Benar}}
+$16-4x=16-x^2\Rightarrow x(x-4)=0$. Titik: $(0,16)$ dan $(4,0)$. $a=16,b=4,a+b=20$.
+$L=\int_0^4(4x-x^2)dx=\left[2x^2-\tfrac{x^3}{3}\right]_0^4=32-\tfrac{64}{3}=\tfrac{32}{3}$.
+$6L=64$ (bukan 48).
+\end{pembox}
+
+\begin{soal}{22}
+Diberikan balok $ABCD.EFGH$ dengan $|AB|=3$ dan $|BC|=|AE|=7$.
+\gambar[0.5\textwidth]{images/1/1-20.png}
+Misalkan $P$ adalah titik pada $BC$ dan $Q$ pada $CG$ sehingga
+$|BP|=|GQ|=1$. Kosinus sudut antara garis $\overline{AP}$ dan
+garis $\overline{HQ}$ adalah \ldots
+\end{soal}
+\begin{pembox}
+\jawaban{$\cos\theta=\dfrac{9}{10}$}
+Koordinat: $A=(0,0,0)$, $B=(3,0,0)$, $C=(3,7,0)$, $H=(0,7,7)$, $G=(3,7,7)$.
+$P=(3,1,0)$ ($|BP|=1$), $Q=(3,7,6)$ ($|GQ|=1$).
+$\vec{AP}=(3,1,0)$, $\vec{HQ}=(3,0,-1)$.
+$\cos\theta=\dfrac{9}{\sqrt{10}\cdot\sqrt{10}}=\dfrac{9}{10}$.
+\end{pembox}
+
+\begin{soal}{23}
+Misalkan $s$ adalah simpangan baku dari data terurut enam bilangan:
+$4,\ 6-a,\ 6,\ 8,\ 8+a,\ 10$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Rata-rata data tersebut adalah 7 untuk setiap nilai $a$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Nilai varians $s^2$ merupakan fungsi tidak turun terhadap $a\geq0$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Untuk $a=0$, nilai $s^2<6$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Untuk setiap $a$ yang memenuhi keterurutan data, selalu berlaku $s^2\leq6$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{Benar}\quad(2)~\textbf{Benar}\quad(3)~\textbf{Benar}\quad(4)~\textbf{Salah}}
+$\bar{x}=42/6=7$ (tetap untuk semua $a$). $s^2=\dfrac{\sum(x_i-7)^2}{6}=\dfrac{a^2+2a+11}{3}$.
+$\dfrac{ds^2}{da}=\dfrac{2a+2}{3}>0$ (tidak turun). Untuk $a=0$: $s^2=\tfrac{11}{3}<6$.
+Keterurutan mensyaratkan $0\leq a\leq2$. Saat $a=2$: $s^2=\tfrac{19}{3}>6$. Jadi (4) Salah.
+\end{pembox}
+
+\begin{soal}{24}
+Jika $r_{1,2}=6\pm\sqrt{2}$ adalah akar-akar persamaan kuadrat
+$x^2-Px+Q=0$, maka $P+Q$ adalah \ldots
+\begin{pilB}
+  \item $34$ \item $38$ \item $42$ \item $46$ \item $50$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(D) $P+Q=46$}
+\konsep Vieta: $P=r_1+r_2$, $Q=r_1 r_2$.
+
+$P=(6+\sqrt{2})+(6-\sqrt{2})=12$.\; $Q=(6+\sqrt{2})(6-\sqrt{2})=34$.
+$P+Q=46$.
+\end{pembox}
+
+\begin{soal}{25}
+Jika $y=x^2-16x+61$ dengan $x>8$, maka $x=C+\sqrt{y+D}$ dengan
+$C$ dan $D$ merupakan dua konstanta bilangan real. Nilai $10C+D$
+adalah \ldots
+\begin{pilB}
+  \item $75$ \item $80$ \item $83$ \item $86$ \item $90$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(C) $10C+D=83$}
+$y=(x-8)^2-3\;\Rightarrow\;y+3=(x-8)^2\;\Rightarrow\;x=8+\sqrt{y+3}$ (karena $x>8$).
+$C=8,\;D=3$. $10C+D=83$.
+\end{pembox}
+
+\begin{soal}{26}
+Jika $\cos(2x)=-\dfrac{34}{64}$ dengan $0<x<\pi$,
+maka $64\sin(x)$ adalah \ldots
+\begin{pilB}
+  \item $28$ \item $42$ \item $49$ \item $56$ \item $64$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(D) $64\sin x=56$}
+$1-2\sin^2 x=-\tfrac{17}{32}\;\Rightarrow\;\sin^2 x=\tfrac{49}{64}\;\Rightarrow\;\sin x=\tfrac{7}{8}$.
+$64\sin x=56$.
+\end{pembox}
+
+\begin{soal}{27}
+Diketahui $AB$ adalah diameter suatu lingkaran dengan $A=(10,16)$
+dan $B=(-2,0)$. Tentukan jari-jari lingkaran dan titik pusat
+lingkaran tersebut.
+\end{soal}
+\begin{pembox}
+\jawaban{Jari-jari $r=10$, titik pusat $O=(4,8)$}
+Titik pusat: $O=\left(\tfrac{10+(-2)}{2},\tfrac{16+0}{2}\right)=(4,8)$.
+$|AB|=\sqrt{12^2+16^2}=20$, sehingga $r=10$.
+\end{pembox}
+
+\begin{soal}{28}
+Nilai fungsi $f(x)$, $g(x)$, dan turunannya di $x=0$ dan $x=1$
+diberikan pada tabel berikut.
+\begin{center}
+\begin{tabular}{c|cccc}
+$x$ & $f(x)$ & $g(x)$ & $f'(x)$ & $g'(x)$ \\
+\hline
+$0$ & $2$ & $1$ & $3$ & $\tfrac{2}{3}$ \\
+$1$ & $3$ & $-5$ & $-\tfrac{1}{4}$ & $-1$ \\
+\end{tabular}
+\end{center}
+Misalkan $h(x)=\dfrac{2f(x)}{g(x)+1}$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~$h(0)=2$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Penghitungan $h'(0)$ menggunakan aturan hasil bagi.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~$h'(0)=\dfrac{14}{3}$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~$h'(0)=\dfrac{7}{3}$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{Benar}\quad(2)~\textbf{Benar}\quad(3)~\textbf{Salah}\quad(4)~\textbf{Benar}}
+$h(0)=\tfrac{2\cdot2}{1+1}=2$. Aturan hasil bagi:
+\[ h'(0)=\frac{2(3)(2)-2(2)(\tfrac{2}{3})}{2^2}=\frac{12-\tfrac{8}{3}}{4}=\frac{\tfrac{28}{3}}{4}=\frac{7}{3}. \]
+Jadi $h'(0)=\tfrac{7}{3}$ (bukan $\tfrac{14}{3}$).
+\end{pembox}
+
+\begin{soal}{29}
+Tabel berikut menyajikan nilai fungsi $f$ dan turunannya di
+beberapa titik.
+\begin{center}
+\begin{tabular}{c|cccc}
+$x$ & $0$ & $4$ & $5$ & $23$ \\
+\hline
+$f(x)$ & $23$ & $0$ & $7$ & $0$ \\
+$f'(x)$ & $7$ & $8$ & $3$ & $6$ \\
+\end{tabular}
+\end{center}
+Tentukan nilai
+\[
+  \lim_{x\to 4}\frac{f(5x+3)}{x-4}.
+\]
+\end{soal}
+\begin{pembox}
+\jawaban{$30$}
+\konsep L'Hôpital/definisi turunan: saat $x\to4$, $5x+3\to23$ dan $f(23)=0$.
+
+$f(5x+3)\approx f(23)+f'(23)\cdot(5x+3-23)=6\cdot5(x-4)$.
+\[ \lim_{x\to4}\frac{f(5x+3)}{x-4}=30. \]
+\end{pembox}
+
+\begin{soal}{30}
+Perhatikan limit berikut.
+\[
+  \lim_{x\to 9}\frac{x+5\sqrt{x}-36}{\sqrt{x}-4}
+\]
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Saat $x=9$, penyebut $\sqrt{x}-4=-1\neq0$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Nilai limit dapat dihitung dengan substitusi langsung $x=9$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Nilai limit tersebut adalah $-12$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Nilai limit tersebut adalah $12$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{Benar}\quad(2)~\textbf{Benar}\quad(3)~\textbf{Salah}\quad(4)~\textbf{Benar}}
+Penyebut $\sqrt{9}-4=-1\neq0$, sehingga substitusi langsung berlaku:
+\[ \frac{9+5(3)-36}{3-4}=\frac{9+15-36}{-1}=\frac{-12}{-1}=12. \]
+Nilai limit adalah $+12$, bukan $-12$.
+\end{pembox}
+
+\begin{soal}{31}
+Jika
+\[
+  \int_5^8 f(x)\,dx=3
+  \qquad\text{dan}\qquad
+  \int_8^5 g(x)\,dx=5,
+\]
+maka nilai
+\[
+  \int_5^8\bigl[3f(x)-2g(x)\bigr]\,dx
+\]
+adalah \ldots
+\begin{pilB}
+  \item $1$ \item $9$ \item $12$ \item $19$ \item $24$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(D) $19$}
+Soal: $\int_8^5 g\,dx=5\;\Rightarrow\;\int_5^8 g\,dx=-5$.
+\[ 3(3)-2(-5)=9+10=19. \]
+\end{pembox}
+
+\begin{soal}{32}
+Jika
+\[
+  x^6-5x^3+6x^2+ax+b=(x^2-1)\,g(x),
+\]
+maka $10a+b$ adalah \ldots
+\begin{pilB}
+  \item $35$ \item $39$ \item $43$ \item $47$ \item $51$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(C) $10a+b=43$}
+$x^2-1=(x-1)(x+1)$, sehingga $P(1)=0$ dan $P(-1)=0$.
+$P(1)=1-5+6+a+b=0\Rightarrow a+b=-2$.
+$P(-1)=1+5+6-a+b=0\Rightarrow -a+b=-12$.
+Kurangkan: $2a=10\Rightarrow a=5,\;b=-7$.
+$10(5)+(-7)=43$.
+\end{pembox}
+
+\begin{soal}{33}
+Dari data penerimaan mahasiswa ITB didapatkan informasi berikut.
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=3pt]
+  \item Sebanyak 46\% dari seluruh mahasiswa pernah mengunjungi
+        Kampus Ganesha.
+  \item Sebanyak 31\% dari seluruh mahasiswa pernah mengunjungi
+        Kampus Jatinangor.
+  \item Sebanyak 39\% dari seluruh mahasiswa pernah mengunjungi
+        Kampus Ganesha tetapi belum pernah mengunjungi Kampus
+        Jatinangor.
+\end{enumerate}
+Jika dipilih satu mahasiswa secara acak, peluang mahasiswa tersebut
+\textbf{belum pernah} mengunjungi Kampus Ganesha maupun Kampus
+Jatinangor adalah \ldots
+\end{soal}
+\begin{pembox}
+\jawaban{$30\%$}
+$P(G)=46\%$, $P(J)=31\%$, $P(G\cap J^c)=39\%$.
+$P(G\cap J)=P(G)-P(G\cap J^c)=46\%-39\%=7\%$.
+$P(G\cup J)=46\%+31\%-7\%=70\%$.
+$P(\text{belum keduanya})=1-70\%=30\%$.
+\end{pembox}
+
+\begin{soal}{34}
+Misalkan $x=60\sin t$ dan $y=10\cos t$. Jika $t=\dfrac{3\pi}{4}$,
+maka $(x+y)\sqrt{2}$ adalah \ldots
+\begin{pilB}
+  \item $25$ \item $35$ \item $45$ \item $50$ \item $60$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(D) $50$}
+$\sin\tfrac{3\pi}{4}=\tfrac{\sqrt{2}}{2}$, $\cos\tfrac{3\pi}{4}=-\tfrac{\sqrt{2}}{2}$.
+$x=60\cdot\tfrac{\sqrt{2}}{2}=30\sqrt{2}$;\; $y=10\cdot(-\tfrac{\sqrt{2}}{2})=-5\sqrt{2}$.
+$(x+y)\sqrt{2}=25\sqrt{2}\cdot\sqrt{2}=50$.
+\end{pembox}
+
+\begin{soal}{35}
+Misalkan $P$ adalah bidang yang melalui tiga titik $A(2,8,3)$,
+$B(2,0,0)$, dan $C(0,2,0)$. Titik $X(2,2,w)$ berada pada bidang
+$P$ jika nilai $w$ adalah \ldots
+\end{soal}
+\begin{pembox}
+\jawaban{$w=\dfrac{3}{4}$}
+$\vec{AB}=(0,-8,-3)$, $\vec{AC}=(-2,-6,-3)$. Vektor normal: $\vec{n}=\vec{AB}\times\vec{AC}=(6,6,-16)$.
+Persamaan bidang: $6(x-2)+6(y-0)-16(z-0)=0\;\Rightarrow\;6x+6y-16z=12$.
+Substitusi $X(2,2,w)$: $12+12-16w=12\;\Rightarrow\;16w=12\;\Rightarrow\;w=\tfrac{3}{4}$.
+\end{pembox}
+
+\begin{soal}{36}
+Diketahui vektor-vektor $\vec{a}=(1,x,1)$, $\vec{b}=(y,3,-5)$,
+dan $\vec{c}=(xy,-12,z)$. Jika vektor $\vec{a}$ tegak lurus
+dengan vektor $\vec{b}$ dan vektor $\vec{b}$ sejajar dengan
+vektor $\vec{c}$, maka nilai $y+z$ adalah \ldots
+\end{soal}
+\begin{pembox}
+\jawaban{$y+z=37$ (dengan asumsi $y\neq0$)}
+$\vec{a}\perp\vec{b}$: $y+3x-5=0$.\quad $\vec{b}\parallel\vec{c}$: $\vec{c}=k\vec{b}$.
+Komponen ke-2: $-12=3k\Rightarrow k=-4$.
+Komponen ke-3: $z=(-4)(-5)=20$.
+Komponen ke-1: $xy=-4y\Rightarrow y(x+4)=0$. Karena $y\neq0$: $x=-4$.
+$y=-4(-4)+5-... $ → $y+3(-4)-5=0\Rightarrow y=17$.
+$y+z=17+20=37$.
+\end{pembox}
+
+\begin{soal}{37}
+Jika
+\[
+  \int_0^3 5f(x)\,dx+\int_0^1 8f(x)\,dx=18
+  \qquad\text{dan}\qquad
+  \int_0^3 5f(x)\,dx+\int_1^3 8f(x)\,dx=18,
+\]
+maka tentukan
+\[
+  \int_1^3 f(x)\,dx.
+\]
+\end{soal}
+\begin{pembox}
+\jawaban{$\displaystyle\int_1^3 f(x)\,dx=1$}
+Misalkan $A=\int_0^3 f$, $B=\int_0^1 f$, $C=\int_1^3 f$ ($A=B+C$).
+Sistem: $5A+8B=18$ dan $5A+8C=18\;\Rightarrow\;B=C$.
+$A=2C$. Substitusi: $10C+8C=18\;\Rightarrow\;C=1$.
+\end{pembox}
+
+\begin{soal}{38}
+Jika $x_1$ dan $x_2$ adalah dua solusi persamaan
+\[
+  x^{2\log x-24}=\frac{x^{10}}{10^5},
+\]
+maka $x_1 x_2=10^k$ dengan $k$ adalah \ldots
+\begin{pilB}
+  \item $5$ \item $7$ \item $12$ \item $17$ \item $19$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(D) $k=17$}
+Misalkan $x=10^t$. Maka $x^{2t-24}=x^{10}/10^5$:
+$10^{t(2t-24)}=10^{10t-5}\;\Rightarrow\;2t^2-24t=10t-5\;\Rightarrow\;2t^2-34t+5=0$.
+Vieta: $t_1+t_2=17$. $x_1x_2=10^{t_1+t_2}=10^{17}$. Jadi $k=17$.
+\end{pembox}
+
+\begin{soal}{39}
+Misalkan $S_n$ adalah jumlah parsial $n$ suku pertama suatu deret
+geometri. Jika $S_2=16$ dan $S_4=160$, maka suku ke-2 deret
+tersebut adalah \ldots
+\begin{pilB}
+  \item $4$ \item $8$ \item $12$ \item $16$ \item $24$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(C) Suku ke-2 $=12$ (untuk $r>0$)}
+$S_2=a(1+r)=16$.\; $S_4=a(1+r)(1+r^2)=160$.
+$\tfrac{S_4}{S_2}=1+r^2=10\;\Rightarrow\;r^2=9\;\Rightarrow\;r=3$ (positif).
+$a(4)=16\;\Rightarrow\;a=4$. Suku ke-2 $=ar=12$.
+\end{pembox}
+
+% ===================================================================
+%  SOAL BARU  (nomor 40)
+% ===================================================================
+
+\begin{soal}{40}
+Diketahui fungsi $f(x)=2x^3-3x^2-12x+4$. Nilai maksimum lokal
+dari fungsi tersebut adalah \ldots
+\begin{pilB}
+  \item $-16$ \item $-4$ \item $4$ \item $11$ \item $15$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(D) Nilai maksimum lokal $=11$}
+\konsep Titik kritis: $f'(x)=0$; uji tanda atau $f''$ untuk menentukan jenis.
+
+$f'(x)=6x^2-6x-12=6(x-2)(x+1)$.
+Titik kritis: $x=-1$ dan $x=2$.
+$f''(x)=12x-6$:\; $f''(-1)=-18<0$ (maksimum lokal);\; $f''(2)=18>0$ (minimum lokal).
+$f(-1)=2(-1)-3(1)-12(-1)+4=-2-3+12+4=11$.
+\end{pembox}
+
+\end{document}

@@ -1,0 +1,489 @@
+% ============================================================
+%  LEMBAR SOAL  --  MATEMATIKA  --  SM ITS 2024 + Latihan
+%  Paket 7.1  |  45 Soal
+% ============================================================
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.5cm,top=2.8cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{icomma}
+\usepackage{array}
+\usepackage{tikz}
+
+\definecolor{mapelcolor}{RGB}{20,110,60}
+\definecolor{mapelbg}{RGB}{228,246,234}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small SM ITS -- Paket 7.1}
+\rhead{\small Matematika}
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newtcolorbox{soal}[1]{
+  breakable,
+  colback=white, colframe=black!70,
+  coltitle=white, colbacktitle=black,
+  fonttitle=\bfseries\sffamily,
+  title=Nomor #1,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+\newenvironment{pil}{%
+  \begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}}
+\newenvironment{pilB}{%
+  \par\smallskip\begin{multicols}{2}
+  \begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}\end{multicols}}
+
+\linespread{1.05}
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+  \fbox{\parbox{0.6\textwidth}{\centering\bfseries\large LEMBAR SOAL}}
+\end{center}
+\vspace{0.5cm}
+\begin{center}{\LARGE\bfseries MATEMATIKA}\end{center}
+\vspace{0.5cm}
+
+\begin{center}
+  \begin{tabular}{@{\hspace{2cm}}ll@{\hspace{0.4cm}:@{\hspace{0.4cm}}}l}
+    Jenjang      & & SMA / Sederajat               \\[0.3em]
+    Hari/Tanggal & & \underline{\hspace{5cm}}      \\[0.3em]
+    Waktu        & & \underline{\hspace{5cm}}      \\[0.3em]
+    Paket Soal   & & 7.1                           \\
+  \end{tabular}
+\end{center}
+
+\vspace{0.5cm}\noindent\rule{\linewidth}{0.6pt}\vspace{0.3cm}
+
+\noindent\textbf{\underline{PETUNJUK UMUM}}
+\begin{enumerate}[leftmargin=*,itemsep=4pt,topsep=4pt]
+  \item Anda \textbf{tidak} diperbolehkan menggunakan sumber-sumber eksternal,
+        termasuk internet, \textit{large language model} seperti ChatGPT, Claude,
+        LLaMA, Gemini, Meta AI, dan sebagainya. Anda sangat dianjurkan untuk
+        mencoba mengerjakan sendiri terlebih dahulu karena evaluasi ini dibuat
+        untuk \textbf{mengukur} tingkat kepahaman; nilai $<70$ mengindikasikan
+        \textbf{tidak lulus}, dan jika sudah melewati \textit{deadline} maka
+        dianggap tidak mengerjakan yang berarti \textbf{tidak lulus}.
+
+  \item Terdapat 2 tahap pengerjaan, yaitu tahap \textbf{Try Out} dan tahap
+        \textbf{Review}. Try Out bersifat \textit{open book}; Anda diperbolehkan
+        membuka buku apapun selama bersifat \textit{offline} dengan rentang waktu
+        2 jam pada tanggal \underline{\hspace{3cm}}. Setelah itu memasuki
+        tahap Review dengan \textit{schedule} rentang tanggal
+        \underline{\hspace{3cm}}--\underline{\hspace{3cm}}, di mana Anda
+        diharapkan mengerjakan ulang dengan disertakan penjelasan/pembelaan
+        mengapa revisi jawaban adalah pilihan tersebut, dan tetap mencantumkan
+        penjelasan pada soal yang walaupun pada penilaian sudah benar.
+
+  \item Anda dianjurkan untuk mencantumkan caranya walaupun tidak termasuk
+        penilaian, mengingat sifatnya adalah sebagai bahan pembelajaran.
+        Mohon bertanggung jawab atas pekerjaan Anda sendiri.
+
+  \item Bacalah setiap soal dengan teliti. Terdapat tiga jenis soal:
+        \begin{enumerate}[label=(\arabic*),leftmargin=2em,topsep=2pt,itemsep=2pt]
+          \item \textbf{Pilihan Ganda Biasa} --- 5 opsi (A--E), pilih
+                1 jawaban paling tepat;
+          \item \textbf{Pilihan Ganda Majemuk Kompleks} --- tabel
+                \textbf{Benar}/\textbf{Salah}, tentukan kebenaran tiap
+                pernyataan secara mandiri; dan
+          \item \textbf{Isian Singkat} --- tulis nilai/ekspresi pada
+                kolom yang tersedia.
+        \end{enumerate}
+
+  \item Soal berjumlah \textbf{45 butir} soal dengan bobot asli per soal adalah
+        $\mathbf{\tfrac{20}{9}}$ untuk mendapatkan nilai sempurna sebesar \textbf{100}.
+
+  \item Silakan bertanya apabila terdapat soal yang ambigu, rancu, atau kurang
+        spesifik selama itu tidak menjurus kepada jawaban soal tersebut.
+
+  \item Isilah detail informasi berikut.\\[0.3em]
+        \textbf{Nama}\hspace{0.45cm}:\enspace\underline{\hspace{8cm}}
+\end{enumerate}
+
+\vspace{0.6cm}
+\noindent\textit{Dengan menandatangani kolom di bawah ini, saya menyatakan telah membaca,
+memahami, dan menyetujui seluruh peraturan yang tercantum di atas.}
+
+\vspace{0.6cm}
+\noindent\fbox{\parbox{5cm}{\vspace{2.2cm}\centering\small Tanda Tangan Peserta\vspace{0.3cm}}}
+
+\clearpage
+
+% ===================================================================
+%  BAGIAN A: SOAL ASLI SM ITS 2024  (Q1--22)
+% ===================================================================
+
+{\noindent\large\bfseries Bagian A \textendash\ Rekonstruksi Soal Asli SM ITS 2024\par}
+\smallskip\hrule\medskip
+
+\begin{soal}{1 \normalfont\small[Matriks]}
+Diketahui $\begin{pmatrix}2&1\\1&3\end{pmatrix}\begin{pmatrix}x&2\\1&y\end{pmatrix}=\begin{pmatrix}7&10\\5&20\end{pmatrix}$.
+Nilai $x-y$ adalah \ldots
+\begin{pilB}
+  \item $-4$ \item $-3$ \item $3$ \item $4$ \item $6$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{2 \normalfont\small[Logaritma]}
+Jika $\log_2 3=p$ dan $\log_2 5=q$, maka $\log_6 45=\ldots$
+\begin{pil}
+  \item $\dfrac{2p+q}{1+p}$ \item $\dfrac{p+2q}{1+p}$
+  \item $\dfrac{1+2p}{p+q}$ \item $\dfrac{2+p+q}{1+q}$ \item $\dfrac{p+q}{p+1}$
+\end{pil}
+\end{soal}
+
+\begin{soal}{3 \normalfont\small[Integral Substitusi]}
+Hasil dari $\displaystyle\int\dfrac{6x-4}{\sqrt{3x^2-4x+7}}\,dx$ adalah \ldots
+\begin{pil}
+  \item $2\sqrt{3x^2-4x+7}+C$
+  \item $\sqrt{3x^2-4x+7}+C$
+  \item $\tfrac{1}{2}\sqrt{3x^2-4x+7}+C$
+  \item $\tfrac{2}{3}\sqrt{3x^2-4x+7}+C$
+  \item $3\sqrt{3x^2-4x+7}+C$
+\end{pil}
+\end{soal}
+
+\begin{soal}{4 \normalfont\small[Geometri Ruang]}
+Balok $10\times6\times4$ cm. Semut bergerak dari satu titik sudut ke titik sudut berhadapan melalui permukaan. Jarak terpendek adalah \ldots
+\begin{pilB}
+  \item $4\sqrt{17}$ cm \item $10\sqrt{2}$ cm \item $2\sqrt{58}$ cm \item $8\sqrt{5}$ cm \item $6\sqrt{7}$ cm
+\end{pilB}
+\end{soal}
+
+\begin{soal}{5 \normalfont\small[Turunan Fungsi]}
+$f(x)=ax^2+bx-1$ dan $g(x)=bx^2+ax+2$. Jika $f'(2)=6$ dan $g'(-2)=-7$, maka $3a-2b=\ldots$
+\begin{pilB}
+  \item $-3$ \item $-1$ \item $1$ \item $3$ \item $5$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{6 \normalfont\small[Limit Fungsi]}
+$\displaystyle\lim_{x\to c}(f(x)-g(x))=4$ dan $\displaystyle\lim_{x\to c}f(x)g(x)=5$.
+Nilai $\displaystyle\lim_{x\to c}(f(x)^2+g(x)^2)=\ldots$
+\begin{pilB}
+  \item $16$ \item $21$ \item $26$ \item $36$ \item $30$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{7 \normalfont\small[Vektor]}
+$\vec{a}=(k,2,0)$ dan $\vec{b}=(1,0,0)$; $k>0$; sudut antara $\vec{a}$ dan $\vec{b}$ adalah $60°$.
+Nilai $k=\ldots$
+\begin{pil}
+  \item $\dfrac{\sqrt{3}}{3}$ \item $\dfrac{2\sqrt{3}}{3}$ \item $\sqrt{3}$ \item $2\sqrt{3}$ \item $3\sqrt{3}$
+\end{pil}
+\end{soal}
+
+\begin{soal}{8 \normalfont\small[Pertidaksamaan Linear]}
+Nilai $x$ yang memenuhi $2(3x-1)-5\leq x+8$ adalah \ldots
+\begin{pilB}
+  \item $x\leq3$ \item $x\geq3$ \item $x<-3$ \item $x>-3$ \item $x\leq-3$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{9 \normalfont\small[Komposisi Fungsi]}
+$f(x)=x^2-4x+1$ dan $g(x)=2x-3$. Maka $f(g(x))=\ldots$
+\begin{pil}
+  \item $4x^2-20x+22$ \item $4x^2-12x+10$
+  \item $2x^2-20x+22$ \item $4x^2+20x+22$ \item $4x^2-20x+10$
+\end{pil}
+\end{soal}
+
+\begin{soal}{10 \normalfont\small[Definisi Turunan]}
+$f(x)=3x^3-5x^2+7x-1$. Nilai $\displaystyle\lim_{h\to0}\dfrac{f(x+h)-f(x)}{h}=\ldots$
+\begin{pil}
+  \item $9x^2-10x+7$ \item $3x^2-5x+7$
+  \item $9x^2+10x+7$ \item $x^2-10x+7$ \item $9x^2-10x-7$
+\end{pil}
+\end{soal}
+
+\begin{soal}{11 \normalfont\small[Fungsi Implisit]}
+$f(3x-2)=2x^2+x+5$. Nilai $f(4)=\ldots$
+\begin{pilB}
+  \item $13$ \item $15$ \item $17$ \item $19$ \item $21$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{12 \normalfont\small[Operasi Pecahan]}
+Hitunglah $\dfrac34\div\dfrac98\times\dfrac25=\ldots$
+\begin{pilB}
+  \item $\dfrac{4}{15}$ \item $\dfrac{5}{12}$ \item $\dfrac{2}{15}$ \item $\dfrac{8}{45}$ \item $\dfrac{1}{6}$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{13 \normalfont\small[Limit]}
+Nilai $\displaystyle\lim_{x\to9}\dfrac{x-9}{\sqrt{x}-3}=\ldots$
+\begin{pilB}
+  \item $3$ \item $6$ \item $9$ \item $12$ \item $15$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{14 \normalfont\small[Aljabar Dasar]}
+Hasil pengembangan $(x-4)(x+7)=\ldots$
+\begin{pil}
+  \item $x^2+3x-28$ \item $x^2-3x-28$
+  \item $x^2+11x-28$ \item $x^2-11x+28$ \item $x^2-3x+28$
+\end{pil}
+\end{soal}
+
+\begin{soal}{15 \normalfont\small[Luas Daerah]}
+Luas daerah yang dibatasi $y=x^3$ dan $y=x$ adalah \ldots
+\begin{pilB}
+  \item $\dfrac14$ \item $\dfrac13$ \item $\dfrac12$ \item $1$ \item $\dfrac34$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{16 \normalfont\small[Nilai Mutlak]}
+Himpunan penyelesaian $|2x-3|<5$ adalah \ldots
+\begin{pil}
+  \item $-1<x<4$ \item $x<-1$ atau $x>4$
+  \item $-4<x<1$ \item $x\leq-1$ atau $x\geq4$ \item $-2<x<4$
+\end{pil}
+\end{soal}
+
+\begin{soal}{17 \normalfont\small[Pecahan]}
+Hitunglah $\dfrac12+\dfrac23-\dfrac34+\dfrac16=\ldots$
+\begin{pilB}
+  \item $\dfrac{5}{12}$ \item $\dfrac{7}{12}$ \item $\dfrac34$ \item $\dfrac{11}{12}$ \item $\dfrac{1}{12}$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{18 \normalfont\small[Aritmetika]}
+Tiga per delapan dari $1440$ adalah \ldots
+\begin{pilB}
+  \item $480$ \item $520$ \item $540$ \item $560$ \item $600$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{19 \normalfont\small[Barisan Logaritma]}
+Barisan $\ln3,\;\ln9,\;\ln27,\;\ln81,\;\ldots$ Jumlah delapan suku pertama adalah \ldots
+\begin{pilB}
+  \item $28\ln3$ \item $32\ln3$ \item $36\ln3$ \item $40\ln3$ \item $44\ln3$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{20 \normalfont\small[Deret Aritmetika]}
+Jumlah dua belas bilangan kelipatan 4 pertama adalah \ldots
+\begin{pilB}
+  \item $288$ \item $300$ \item $312$ \item $336$ \item $360$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{21 \normalfont\small[Eksponen]}
+Bentuk sederhana $\dfrac{8x^3y^{-2}z^5}{24x^{-1}y^4z^{-3}}=\ldots$
+\begin{pil}
+  \item $\tfrac13x^4y^{-6}z^8$ \item $\tfrac13x^2y^2z^2$
+  \item $3x^4y^{-6}z^8$ \item $\tfrac13x^{-4}y^6z^{-8}$ \item $3x^{-4}y^6z^{-8}$
+\end{pil}
+\end{soal}
+
+\begin{soal}{22 \normalfont\small[Pecahan Campuran]}
+Hitunglah $\dfrac56\div\dfrac{10}{9}+\dfrac34=\ldots$
+\begin{pilB}
+  \item $\dfrac43$ \item $\dfrac32$ \item $\dfrac53$ \item $\dfrac74$ \item $\dfrac{11}{12}$
+\end{pilB}
+\end{soal}
+
+% ===================================================================
+%  BAGIAN B: SET LATIHAN 1  (Q23--37)
+% ===================================================================
+
+\medskip{\noindent\large\bfseries Bagian B \textendash\ Set Latihan 1\par}
+\smallskip\hrule\medskip
+
+\begin{soal}{23 \normalfont\small[Trigonometri]}
+Diketahui $\tan a=\tfrac12$, $\tan b=\tfrac13$, dan $\tan c=\tfrac15$.
+Nilai $\tan(a+b+c)=\ldots$
+\begin{pilB}
+  \item $\tfrac12$ \item $1$ \item $\tfrac32$ \item $2$ \item $3$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{24 \normalfont\small[Turunan Trigonometri]}
+$y=\cos\!\left(\dfrac3x\right)$. Maka $\dfrac{dy}{dx}=\ldots$
+\begin{pil}
+  \item $\sin\tfrac3x$ \item $-\sin x$
+  \item $\sin3x$ \item $\dfrac{3}{x^2}\sin\dfrac3x$ \item $\sin\dfrac2x$
+\end{pil}
+\end{soal}
+
+\begin{soal}{25 \normalfont\small[Persamaan Kuadrat]}
+$x^2+(m-1)x+9$ mempunyai akar-akar real berbeda. Batasan nilai $m$ adalah \ldots
+\begin{pil}
+  \item $-5<m<7$ \item $m<-5$ atau $m>7$
+  \item $m<-7$ atau $m>5$ \item $-7<m<5$ \item $m>-7$ atau $m<5$
+\end{pil}
+\end{soal}
+
+\begin{soal}{26 \normalfont\small[SPLDV]}
+Toko buku: 2 buku gambar $+$ 8 buku tulis $=$ Rp48.000; 3 gambar $+$ 5 tulis $=$ Rp37.000.
+Harga 1 buku gambar dan 2 buku tulis adalah \ldots
+\begin{pil}
+  \item Rp24.000 \item Rp20.000 \item Rp17.000 \item Rp13.000 \item Rp14.000
+\end{pil}
+\end{soal}
+
+\begin{soal}{27 \normalfont\small[Turunan Fungsi]}
+$f(x)=x^3+3x^2-9x-7$ turun pada interval \ldots
+\begin{pil}
+  \item $1<x<3$ \item $-1<x<3$
+  \item $-3<x<1$ \item $3<x<1$ \item $5<x<3$
+\end{pil}
+\end{soal}
+
+\begin{soal}{28 \normalfont\small[Kombinatorika]}
+Banyak bilangan terdiri dari angka berlainan antara 100 dan 400 dari angka $1,2,3,4,5$ adalah \ldots
+\begin{pilB}
+  \item $36$ \item $48$ \item $52$ \item $60$ \item $68$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{29 \normalfont\small[Lingkaran]}
+Lingkaran berpusat $P(3,-1)$ melalui $(5,2)$. Persamaannya adalah \ldots
+\begin{pil}
+  \item $x^2+y^2+6x-2y-55=0$ \item $x^2+y^2+6x-2y-31=0$
+  \item $x^2+y^2-6x+2y-23=0$ \item $x^2+y^2-6x+2y-3=0$
+  \item $x^2+y^2+6x+2y-13=0$
+\end{pil}
+\end{soal}
+
+\begin{soal}{30 \normalfont\small[Kombinatorika]}
+Banyak cara perjalanan $M\to O\to M$ via $N$ (4 jalur $M\!-\!N$, 5 jalur $N\!-\!O$), tidak boleh melalui jalur yang sama saat pulang, adalah \ldots
+\begin{pilB}
+  \item $180$ \item $240$ \item $260$ \item $160$ \item $120$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{31 \normalfont\small[Titik Berat 3D]}
+$A(1,0,2)$, $B(5,4,10)$, $C(0,-1,6)$. Titik berat segitiga $ABC$ adalah \ldots
+\begin{pil}
+  \item $(2,-1,6)$ \item $(2,1,6)$ \item $(3,-1,6)$ \item $(3,2,6)$ \item $(6,1,3)$
+\end{pil}
+\end{soal}
+
+\begin{soal}{32 \normalfont\small[Trigonometri]}
+$BD=CD$, $AB=p$ satuan, $\angle BDA=x$. Panjang $BC=\ldots$
+\begin{pil}
+  \item $\dfrac{p}{\tan x}$ \item $2p\tan x$ \item $p\tan x$ \item $\dfrac{2p}{\tan x}$ \item $2p\sin x$
+\end{pil}
+\end{soal}
+
+\begin{soal}{33 \normalfont\small[Vektor]}
+$\vec a$ dan $\vec b$ membentuk sudut tumpul $\alpha$ dengan $\sin\alpha=\tfrac{1}{\sqrt7}$; $|\vec a|=\sqrt5$, $|\vec b|=\sqrt7$. Nilai $\vec a\cdot\vec b=\ldots$
+\begin{pilB}
+  \item $30$ \item $\sqrt{30}$ \item $-\sqrt{30}$ \item $-20$ \item $-30$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{34 \normalfont\small[Limit Trigonometri]}
+$\displaystyle\lim_{x\to0}\dfrac{\tan x}{x^2\csc3x}=\ldots$
+\begin{pilB}
+  \item $1$ \item $2$ \item $3$ \item $4$ \item $5$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{35 \normalfont\small[Parabola dan Garis]}
+Parabola $y=x^2$ memotong garis $y=x+2$ di $A$ dan $B$. Panjang $AB=\ldots$
+\begin{pilB}
+  \item $4$ \item $3$ \item $2$ \item $2\sqrt2$ \item $3\sqrt2$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{36 \normalfont\small[Permutasi]}
+${}^6P_3+{}^5P_2+{}^7P_4=\ldots$
+\begin{pilB}
+  \item $900$ \item $980$ \item $600$ \item $680$ \item $390$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{37 \normalfont\small[Deret Geometri Tak Hingga]}
+Deret geometri tak hingga, suku awal $a$ dan rasio $r$; $a+r=6$ dan $S_\infty=5$. Nilai $\dfrac{a}{r}=\ldots$
+\begin{pilB}
+  \item $-20$ \item $25$ \item $\dfrac56$ \item $-\dfrac{1}{25}$ \item $-25$
+\end{pilB}
+\end{soal}
+
+% ===================================================================
+%  BAGIAN C: SOAL TANTANGAN  (Q38--45)
+%  Setiap soal merupakan kolaborasi 3 bab
+% ===================================================================
+
+\medskip{\noindent\large\bfseries Bagian C \textendash\ Soal Tantangan (Kolaborasi 3 Bab)\par}
+\smallskip\hrule\medskip
+
+\begin{soal}{38 \normalfont\small[Turunan $\times$ Integral $\times$ Geometri Analitik]}
+Garis singgung kurva $y=x^3-3x^2+2$ di titik $(2,-2)$ membentuk daerah tertutup dengan kurva.
+Luas daerah tersebut adalah \ldots
+\begin{pilB}
+  \item $\dfrac{9}{4}$ \item $\dfrac{27}{4}$ \item $\dfrac{9}{2}$ \item $\dfrac{27}{2}$ \item $9$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{39 \normalfont\small[Trigonometri $\times$ Persamaan $\times$ Barisan]}
+Semua nilai $x\in[0,\pi]$ yang memenuhi $\cos3x+\sin3x=1$ membentuk suatu himpunan.
+Jumlah semua nilai $x$ tersebut adalah \ldots
+\begin{pilB}
+  \item $\pi$ \item $\dfrac{4\pi}{3}$ \item $\dfrac{3\pi}{2}$ \item $\dfrac{5\pi}{3}$ \item $2\pi$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{40 \normalfont\small[Vektor $\times$ Geometri Analitik $\times$ Sistem Persamaan]}
+Diketahui $A(1,2)$, $B(5,4)$, dan $C(p,q)$ membentuk segitiga siku-siku di $C$
+(yaitu $\vec{CA}\perp\vec{CB}$) dengan luas $\triangle ABC=5$.
+Jumlah semua nilai $p+q$ yang mungkin adalah \ldots
+\begin{pilB}
+  \item $8$ \item $10$ \item $12$ \item $14$ \item $16$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{41 \normalfont\small[Barisan Geometri $\times$ Eksponen $\times$ Logaritma]}
+Tiga bilangan positif membentuk barisan geometri dengan jumlah 7 dan hasil kali 8.
+Jika barisan bersifat menaik, nilai ${}^2\!\log$ dari suku ke-4 adalah \ldots
+\begin{pilB}
+  \item $2$ \item $3$ \item $4$ \item $6$ \item $8$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{42 \normalfont\small[Matriks $\times$ Sistem Persamaan $\times$ Aljabar]}
+Diketahui $A=\begin{pmatrix}a&b\\b&a\end{pmatrix}$ dan $A^2=\begin{pmatrix}13&12\\12&13\end{pmatrix}$
+dengan $a>b$. Nilai $a^2-b^2+ab=\ldots$
+\begin{pilB}
+  \item $7$ \item $9$ \item $11$ \item $13$ \item $15$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{43 \normalfont\small[Eksponen $\times$ Identitas Aljabar $\times$ Persamaan]}
+Jika $4^x+4^{-x}=14$, maka $2^x+2^{-x}=\ldots$
+\begin{pilB}
+  \item $2$ \item $3$ \item $4$ \item $2\sqrt{3}$ \item $2\sqrt{5}$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{44 \normalfont\small[Logaritma $\times$ Sistem Persamaan $\times$ Fungsi]}
+Pasangan $(x,y)$ memenuhi sistem $\begin{cases}\log_2(xy)=5\\\log_2\dfrac{x}{y}=1\end{cases}$ ($x,y>0$).
+Nilai $x+y=\ldots$
+\begin{pilB}
+  \item $8$ \item $10$ \item $12$ \item $14$ \item $16$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{45 \normalfont\small[Limit $\times$ Faktorisasi Polinomial $\times$ Aljabar]}
+Nilai $\displaystyle\lim_{x\to2}\frac{x^4-3x^3+2x^2+x-2}{x^3-4x^2+5x-2}=\ldots$
+\begin{pilB}
+  \item $3$ \item $4$ \item $5$ \item $6$ \item $7$
+\end{pilB}
+\end{soal}
+
+\end{document}

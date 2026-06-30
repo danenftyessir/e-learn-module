@@ -1,0 +1,1191 @@
+% ============================================================
+%  SOAL + PEMBAHASAN  --  MATEMATIKA  --  SSU-ITB 2026
+%  INTEN Set 1--6  (nomor 1--60) | Paket 3
+% ============================================================
+
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.5cm,top=2.8cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{icomma}
+\usepackage{array}
+
+% --- Warna Matematika ---
+\definecolor{mapelcolor}{RGB}{20,110,60}
+\definecolor{mapelbg}{RGB}{228,246,234}
+\definecolor{pembcolor}{RGB}{100,50,130}
+\definecolor{pembbg}{RGB}{245,238,252}
+\definecolor{gold}{RGB}{210,160,30}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small SSU-ITB 2026 --- Pembahasan}
+\rhead{\small Paket 3}
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newtcolorbox{soal}[1]{
+  breakable,
+  colback=mapelbg, colframe=mapelcolor,
+  coltitle=white, fonttitle=\bfseries\sffamily,
+  title=Nomor #1,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+\newtcolorbox{pembox}{
+  breakable,
+  colback=pembbg, colframe=pembcolor,
+  coltitle=white, fonttitle=\bfseries\sffamily,
+  title=Pembahasan,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+\newcommand{\jawaban}[1]{%
+  \noindent\colorbox{gold!30}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+    \textbf{Jawaban:} #1}}\par\smallskip}
+
+\newcommand{\konsep}{\noindent\textit{Konsep:}\ \ignorespaces}
+
+\newenvironment{pil}{%
+  \begin{enumerate}[label=(\Alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}}
+\newenvironment{pilB}{%
+  \par\smallskip\begin{multicols}{2}
+  \begin{enumerate}[label=(\Alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}\end{multicols}}
+
+\newcommand{\gambar}[2][0.52\textwidth]{%
+  \begin{center}\includegraphics[width=#1]{#2}\end{center}}
+
+\linespread{1.05}
+
+% ===================================================================
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+  \fbox{\parbox{0.6\textwidth}{\centering\bfseries\large
+    LEMBAR SOAL DAN PEMBAHASAN}}
+\end{center}
+\vspace{0.5cm}
+
+\begin{center}
+  {\LARGE\bfseries MATEMATIKA}
+\end{center}
+\vspace{0.5cm}
+
+\begin{center}
+  \begin{tabular}{@{\hspace{2cm}}ll@{\hspace{0.4cm}:@{\hspace{0.4cm}}}l}
+    Jenjang      & & SMA / Sederajat               \\[0.3em]
+    Hari/Tanggal & & \underline{\hspace{5cm}}      \\[0.3em]
+    Waktu        & & \underline{\hspace{5cm}}      \\[0.3em]
+    Paket Soal   & & 3                             \\
+  \end{tabular}
+\end{center}
+
+\vspace{0.6cm}
+\noindent\rule{\linewidth}{0.6pt}
+\vspace{0.3cm}
+
+\noindent\textbf{\underline{PETUNJUK UMUM}}
+\begin{enumerate}[leftmargin=*,itemsep=4pt,topsep=4pt]
+  \item Anda \textbf{tidak} diperbolehkan menggunakan sumber-sumber eksternal,
+        termasuk internet, \textit{large language model} seperti ChatGPT, Claude,
+        LLaMA, Gemini, Meta AI, dan sebagainya. Anda sangat dianjurkan untuk
+        mencoba mengerjakan sendiri terlebih dahulu karena evaluasi ini dibuat
+        untuk \textbf{mengukur} tingkat kepahaman; nilai $<70$ mengindikasikan
+        \textbf{tidak lulus}, dan jika sudah melewati \textit{deadline} maka
+        dianggap tidak mengerjakan yang berarti \textbf{tidak lulus}.
+
+  \item Dokumen ini merupakan \textbf{lembar soal sekaligus pembahasan}; gunakan
+        pada tahap \textbf{Review}. Di tahap ini Anda diharapkan mengerjakan ulang
+        dengan disertakan penjelasan/pembelaan mengapa revisi jawaban adalah pilihan
+        tersebut, dan tetap mencantumkan penjelasan pada soal yang walaupun pada
+        penilaian sudah benar.
+
+  \item Anda dianjurkan untuk mencantumkan caranya walaupun tidak termasuk
+        penilaian, mengingat sifatnya adalah sebagai bahan pembelajaran.
+        Mohon bertanggung jawab atas pekerjaan Anda sendiri.
+
+  \item Terdapat tiga jenis soal: \textbf{Pilihan Ganda Biasa} (5 opsi, pilih 1);
+        \textbf{Pilihan Ganda Majemuk Kompleks} (tabel \textbf{Benar}/\textbf{Salah},
+        tiap pernyataan dinilai mandiri); dan \textbf{Isian Singkat}
+        (tulis nilai/ekspresi).
+
+  \item Soal berjumlah \textbf{60 butir}: nomor 1--20 dari Set 1--2 latihan INTEN
+        SSU-ITB 2026, nomor 21--40 dari Set 3--4, dan nomor 41--60 dari Set 5--6.
+
+  \item Isilah detail informasi berikut.\\[0.3em]
+        \textbf{Nama}\hspace{0.45cm};\enspace\underline{\hspace{8cm}}
+\end{enumerate}
+
+\vspace{0.6cm}
+\noindent\textit{Dengan menandatangani kolom di bawah ini, saya menyatakan telah membaca,
+memahami, dan menyetujui seluruh peraturan yang tercantum di atas.}
+
+\vspace{0.6cm}
+\noindent\fbox{\parbox{5cm}{\vspace{2.2cm}\centering\small Tanda Tangan Peserta\vspace{0.3cm}}}
+
+\clearpage
+
+% ===================================================================
+%  SET 1  (nomor 1--10)
+% ===================================================================
+
+\begin{soal}{1}
+Jika $9^{1/6}\cdot x=3$, maka nilai $x$ adalah \ldots
+\begin{pilB}
+  \item $3^{4/6}$ \item $3^{4/36}$ \item $3^{6/2}$ \item $3^{6}$ \item $3^{1/3}$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(A) $x=3^{4/6}$}
+\konsep $(a^m)^n=a^{mn}$ dan $a^m\cdot a^n=a^{m+n}$.
+
+$9^{1/6}=(3^2)^{1/6}=3^{1/3}$. Dari $3^{1/3}\cdot x=3^1$:
+$x=3^{1-1/3}=3^{2/3}=3^{4/6}$.
+\end{pembox}
+
+\begin{soal}{2}
+Jika titik $A(4,15)$ terletak pada grafik fungsi $g(x)=\dfrac{2x+7}{x^2-b}$,
+maka nilai $b$ adalah \ldots
+\begin{pilB}
+  \item $16$ \item $14$ \item $13$ \item $15$ \item $12$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(D) $b=15$}
+$g(4)=15\;\Rightarrow\;15=\dfrac{2(4)+7}{16-b}=\dfrac{15}{16-b}\;\Rightarrow\;16-b=1\;\Rightarrow\;b=15$.
+\end{pembox}
+
+\begin{soal}{3}
+Diketahui $x_0,\ldots,x_{100}$ adalah barisan aritmetika, $x_0=3$, $x_{100}=9$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Beda $= \dfrac{3}{50}$.&$\bigcirc$&$\bigcirc$\\
+(2)~$x_{50}=6$.&$\bigcirc$&$\bigcirc$\\
+(3)~$x_{25}=4{,}5$.&$\bigcirc$&$\bigcirc$\\
+(4)~$x_{75}=8$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{B}\quad(4)~\textbf{S}}
+$d=\dfrac{9-3}{100}=\dfrac{3}{50}$.\quad$x_n=3+n\cdot\dfrac{3}{50}$.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} $d=\tfrac{3}{50}$.
+\item \textbf{Benar.} $x_{50}=3+50\cdot\tfrac{3}{50}=6$ (juga $\tfrac{3+9}{2}=6$).
+\item \textbf{Benar.} $x_{25}=3+\tfrac{3}{2}=4{,}5$.
+\item \textbf{Salah.} $x_{75}=3+\tfrac{9}{2}=7{,}5\neq8$.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{4}
+Diberikan $f(x)=\dfrac{5x^2-9x+3}{(x-1)^6}$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$f'(x)$ terdefinisi untuk semua $x\neq1$.&$\bigcirc$&$\bigcirc$\\
+(2)~$f'(2)=-19$.&$\bigcirc$&$\bigcirc$\\
+(3)~$f'(2)>0$.&$\bigcirc$&$\bigcirc$\\
+(4)~Jika $g(x)=(x-1)^6f(x)$, maka $g(2)=5$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{S}\quad(4)~\textbf{B}}
+$f'(x)=(10x-9)(x-1)^{-6}-6(5x^2-9x+3)(x-1)^{-7}$.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} $f'$ hanya tidak ada saat $x=1$.
+\item \textbf{Benar.} $f'(2)=11(1)-6(5)(1)=11-30=-19$.
+\item \textbf{Salah.} $f'(2)=-19<0$.
+\item \textbf{Benar.} $g(2)=(1)^6\cdot f(2)=20-18+3=5$.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{5}
+Jika $x^3-2x+5$ dibagi oleh $1-x$, maka sisanya adalah \ldots
+\begin{pilB}\item $4$\item $5$\item $6$\item $7$\item $8$\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(A) Sisa $= 4$}
+\konsep Teorema Sisa: sisa pembagian $P(x)$ oleh $x-a$ adalah $P(a)$.
+
+Pembagi $1-x$ berakar $x=1$: $P(1)=1-2+5=4$.
+\end{pembox}
+
+\begin{soal}{6}
+Diketahui $f(x)=x^3+(a-1)x^2-2$. Jika $f(-2)=26$, maka nilai $a$ adalah \ldots
+\begin{pilB}\item $5$\item $10$\item $15$\item $20$\item $25$\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(B) $a=10$}
+$f(-2)=-8+4(a-1)-2=4a-14=26\;\Rightarrow\;4a=40\;\Rightarrow\;a=10$.
+\end{pembox}
+
+\begin{soal}{7}
+Tiga buah dadu enam sisi dilempar bersamaan.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Ruang sampel berjumlah $216$.&$\bigcirc$&$\bigcirc$\\
+(2)~Banyaknya cara agar jumlah ketiga mata dadu $=7$ adalah $15$.&$\bigcirc$&$\bigcirc$\\
+(3)~Peluang jumlah $=7$ adalah $\dfrac{15}{216}$.&$\bigcirc$&$\bigcirc$\\
+(4)~Peluang jumlah $=7$ adalah $\dfrac{1}{12}$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{B}\quad(4)~\textbf{S}}
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} $6^3=216$.
+\item \textbf{Benar.} Enumerasi solusi positif $a+b+c=7$ dengan $1\leq a,b,c\leq6$ menghasilkan 15 cara.
+\item \textbf{Benar.} $P=\tfrac{15}{216}$.
+\item \textbf{Salah.} $\tfrac{1}{12}=\tfrac{18}{216}\neq\tfrac{15}{216}$.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{8}
+Trapesium $ABCD$: $AB=11$, $CD=7$, $BC=5$, luas $=27$.
+Keliling trapesium adalah \ldots
+\gambar[0.38\textwidth]{images/3/3-2.png}
+\begin{pilB}\item $21$\item $24$\item $26$\item $27$\item $30$\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(C) Keliling $= 26$}
+Luas: $\tfrac{1}{2}(11+7)h=9h=27\Rightarrow h=3$.
+Sisi miring $BC=5$ dan tinggi $3$: selisih alas $=\sqrt{25-9}=4$.
+Sisi $AD=h=3$. Keliling $=11+5+7+3=26$.
+\end{pembox}
+
+\begin{soal}{9}
+Persamaan lingkaran $(x+5)^2+(y-3)^2=9$. Titik pusat dan jari-jari adalah \ldots
+\begin{pil}
+  \item Pusat $(5,3)$, $r=9$ \item Pusat $(-5,3)$, $r=3$
+  \item Pusat $(5,3)$, $r=3$ \item Pusat $(5,-3)$, $r=9$
+  \item Pusat $(-5,-3)$, $r=3$
+\end{pil}
+\end{soal}
+\begin{pembox}
+\jawaban{(B) Pusat $(-5,3)$, $r=3$}
+Bentuk baku $(x-h)^2+(y-k)^2=r^2$: pusat $(-5,3)$ dan $r=\sqrt{9}=3$.
+\end{pembox}
+
+\begin{soal}{10}
+$\dfrac{A}{2-\sqrt{5}}+\dfrac{B}{2+\sqrt{5}}=1+2\sqrt{5}$, $A,B\in\mathbb{R}$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$A+B=-\dfrac{1}{2}$.&$\bigcirc$&$\bigcirc$\\
+(2)~$A=-\dfrac{5}{4}$.&$\bigcirc$&$\bigcirc$\\
+(3)~$B=-\dfrac{3}{4}$.&$\bigcirc$&$\bigcirc$\\
+(4)~$A<B$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{S}\quad(4)~\textbf{B}}
+$\tfrac{1}{2-\sqrt5}=-(2+\sqrt5)$, $\tfrac{1}{2+\sqrt5}=\sqrt5-2$.
+Ruas kiri $=(-2A-2B)+(-A+B)\sqrt5$. Samakan dengan $1+2\sqrt5$:
+$-2(A+B)=1$ dan $-A+B=2$. Maka $A+B=-\tfrac12$, $B=A+2$, $A=-\tfrac54$, $B=\tfrac34$.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} $A+B=-\tfrac12$.
+\item \textbf{Benar.} $A=-\tfrac54$.
+\item \textbf{Salah.} $B=\tfrac34\neq-\tfrac34$.
+\item \textbf{Benar.} $-\tfrac54<\tfrac34$.
+\end{enumerate}
+\end{pembox}
+
+% ===================================================================
+%  SET 2  (nomor 11--20)
+% ===================================================================
+
+\begin{soal}{11}
+$\begin{cases}px+qy=8\\ 3x-qy=38\end{cases}$, penyelesaian $(2,4)$. Nilai $p$ adalah \ldots
+\begin{pilB}\item $40$\item $22{,}5$\item $21{,}5$\item $20$\item $8$\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(D) $p=20$}
+Pers.\ 2: $6-4q=38\Rightarrow q=-8$. Pers.\ 1: $2p-32=8\Rightarrow p=20$.
+\end{pembox}
+
+\begin{soal}{12}
+$a=\sqrt7+3$, $b=\sqrt7-3$. Nilai $a^3+b^3$ adalah \ldots
+\begin{pilB}\item $60\sqrt7$\item $62\sqrt7$\item $64\sqrt7$\item $66\sqrt7$\item $68\sqrt7$\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(E) $68\sqrt7$}
+$a+b=2\sqrt7$, $ab=7-9=-2$.
+$a^3+b^3=(a+b)^3-3ab(a+b)=(2\sqrt7)^3-3(-2)(2\sqrt7)=56\sqrt7+12\sqrt7=68\sqrt7$.
+\end{pembox}
+
+\begin{soal}{13}
+Solusi $\dfrac{x^2+x+3}{x^2-x-2}<0$ adalah $a<x<b$. Nilai $b-2a$ adalah \ldots
+\begin{pilB}\item $1$\item $2$\item $3$\item $4$\item $5$\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(D) $b-2a=4$}
+Pembilang $x^2+x+3$ selalu positif ($\Delta<0$). Pecahan negatif $\Leftrightarrow$ penyebut negatif:
+$(x-2)(x+1)<0\Rightarrow-1<x<2$. Jadi $a=-1$, $b=2$, $b-2a=4$.
+\end{pembox}
+
+\begin{soal}{14}
+$A=\begin{pmatrix}a&b&c\\1&-1&1\end{pmatrix}$, $B=\begin{pmatrix}1&2\\1&-1\\0&1\end{pmatrix}$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$AB$ berukuran $2\times2$.&$\bigcirc$&$\bigcirc$\\
+(2)~$\det(AB)=4(a+b)$.&$\bigcirc$&$\bigcirc$\\
+(3)~Jika $\det(AB)=4$, maka $a+b=4$.&$\bigcirc$&$\bigcirc$\\
+(4)~Jika $\det(AB)=4$, maka $a+b=1$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{S}\quad(4)~\textbf{B}}
+Baris ke-2 dari $AB$: $[0,4]$. Baris ke-1: $[a+b,\;2a-b+c]$.
+$AB=\begin{pmatrix}a+b&2a-b+c\\0&4\end{pmatrix}$, $\det(AB)=4(a+b)$.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} $A_{2\times3}\cdot B_{3\times2}=AB_{2\times2}$.
+\item \textbf{Benar.} $\det(AB)=4(a+b)$.
+\item \textbf{Salah.} $4(a+b)=4\Rightarrow a+b=1$, bukan 4.
+\item \textbf{Benar.} $a+b=1$.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{15}
+$ax^2+bx+b=0$ mempunyai dua akar real berbeda untuk $b<0$ atau $b>8$. Nilai $a$ adalah \ldots
+\begin{pilB}\item $1$\item $2$\item $-2$\item $3$\item $-3$\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(B) $a=2$}
+$\Delta=b^2-4ab=b(b-4a)>0$ berlaku untuk $b<0$ atau $b>4a$.
+Dari soal batas atasnya $b>8$, sehingga $4a=8$ dan $a=2$.
+\end{pembox}
+
+\begin{soal}{16}
+$f(x)=3x^2+9x+12$. Jika $\dfrac{f(x+h)-f(x)}{h}=Ax+B+Ch$,
+tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$A=6$.&$\bigcirc$&$\bigcirc$\\
+(2)~$B=3$.&$\bigcirc$&$\bigcirc$\\
+(3)~$C=3$.&$\bigcirc$&$\bigcirc$\\
+(4)~$100A+10B+C=693$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{S}\quad(3)~\textbf{B}\quad(4)~\textbf{B}}
+$f(x+h)-f(x)=6xh+3h^2+9h$. Bagi $h$: $6x+9+3h$. Jadi $A=6$, $B=9$, $C=3$.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} $A=6$.
+\item \textbf{Salah.} $B=9\neq3$.
+\item \textbf{Benar.} $C=3$.
+\item \textbf{Benar.} $600+90+3=693$.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{17}
+$f(x)=\begin{cases}x^2-x+2,&x\geq1\\x+1,&x<1\end{cases}$.
+Nilai $\lim_{x\to1}f(x)$ adalah \ldots
+\begin{pilB}\item $-2$\item $-1$\item Tidak ada\item $1$\item $2$\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(E) $2$}
+Limit kiri: $\lim_{x\to1^-}(x+1)=2$.\quad
+Limit kanan: $\lim_{x\to1^+}(x^2-x+2)=2$.
+Keduanya sama, sehingga limit $=2$.
+\end{pembox}
+
+\begin{soal}{18}
+$f(3)=6$, $f'(3)=4$, $g(3)=10$, $g'(3)=-6$. Nilai $\left(\dfrac{f}{g}\right)'(3)$ adalah \ldots
+\begin{pilB}\item $0{,}76$\item $0{,}82$\item $0{,}91$\item $0{,}95$\item $1$\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(A) $0{,}76$}
+$\left(\dfrac{f}{g}\right)'(3)=\dfrac{f'(3)g(3)-f(3)g'(3)}{[g(3)]^2}=\dfrac{4(10)-6(-6)}{100}=\dfrac{76}{100}=0{,}76$.
+\end{pembox}
+
+\begin{soal}{19}
+$\displaystyle\int_1^9 f(x)\,dx=5$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Substitusi $u=x^2$ mengubah $\int_1^3$ menjadi $\int_1^9$.&$\bigcirc$&$\bigcirc$\\
+(2)~$\displaystyle\int_1^3 8x\,f(x^2)\,dx=4\int_1^9 f(u)\,du$.&$\bigcirc$&$\bigcirc$\\
+(3)~Nilai $\displaystyle\int_1^3 8x\,f(x^2)\,dx=5$.&$\bigcirc$&$\bigcirc$\\
+(4)~Nilai $\displaystyle\int_1^3 8x\,f(x^2)\,dx=20$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{S}\quad(4)~\textbf{B}}
+$u=x^2$, $du=2x\,dx$, $8x\,dx=4\,du$. Batas: $x{=}1\to u{=}1$; $x{=}3\to u{=}9$.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} Batas menjadi $[1,9]$.
+\item \textbf{Benar.} $\displaystyle\int_1^3 8x\,f(x^2)\,dx=4\int_1^9 f(u)\,du$.
+\item \textbf{Salah.} Nilainya $4\cdot5=20$, bukan 5.
+\item \textbf{Benar.} $4\cdot5=20$.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{20}
+Pertidaksamaan $|x-7|\geq3$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Bilangan yang \textbf{tidak} memenuhi $|x-7|\geq3$ memenuhi $|x-7|<3$.&$\bigcirc$&$\bigcirc$\\
+(2)~$|x-7|<3$ setara dengan $4<x<10$.&$\bigcirc$&$\bigcirc$\\
+(3)~Banyak bilangan bulat yang tidak memenuhi adalah $4$.&$\bigcirc$&$\bigcirc$\\
+(4)~Banyak bilangan bulat yang tidak memenuhi adalah $5$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{S}\quad(4)~\textbf{B}}
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} Negasi $\geq3$ adalah $<3$.
+\item \textbf{Benar.} $|x-7|<3\Leftrightarrow4<x<10$.
+\item \textbf{Salah.} Bilangan bulat dalam $(4,10)$: $\{5,6,7,8,9\}$, berjumlah 5.
+\item \textbf{Benar.} Ada 5 bilangan bulat.
+\end{enumerate}
+\end{pembox}
+
+% ===================================================================
+%  SET 3  (nomor 21--30)
+% ===================================================================
+
+\begin{soal}{21}
+Jika $9^m=4$, maka $4\cdot3^{m+1}-27^m$ adalah \ldots
+\begin{pilB}\item $8$\item $12$\item $16$\item $18$\item $24$\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(C) $16$}
+$3^{2m}=4\Rightarrow3^m=2$.\quad$4\cdot3^{m+1}=12\cdot2=24$.\quad$27^m=(3^m)^3=8$.
+$24-8=16$.
+\end{pembox}
+
+\begin{soal}{22}
+$\dfrac{1}{\log_{10}a}+\dfrac{1}{\log_{\sqrt{10}}a}+\dfrac{1}{\log_{\sqrt{\sqrt{10}}}a}+\cdots=200$.
+Nilai $a$ adalah \ldots
+\begin{pilB}
+  \item $\tfrac{1}{100}$\item $\tfrac{1}{10}$\item $\sqrt{10}$
+  \item $10^{1/100}$\item $10^{1/10}$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(D) $10^{1/100}$}
+$\tfrac{1}{\log_b a}=\log_a b$. Basis: $10,10^{1/2},10^{1/4},\ldots$, sehingga
+jumlah $=\log_a 10\!\left(1+\tfrac12+\tfrac14+\cdots\right)=2\log_a 10=200$.
+$\log_a 10=100\Rightarrow a^{100}=10\Rightarrow a=10^{1/100}$.
+\end{pembox}
+
+\begin{soal}{23}
+$\sin x=\dfrac{a-1{,}5}{2-0{,}5a}$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Ruas kanan $=\dfrac{2a-3}{4-a}$.&$\bigcirc$&$\bigcirc$\\
+(2)~Agar ada solusi, $-1\leq\dfrac{2a-3}{4-a}\leq1$.&$\bigcirc$&$\bigcirc$\\
+(3)~Banyak bilangan bulat $a$ yang memenuhi adalah $3$.&$\bigcirc$&$\bigcirc$\\
+(4)~Banyak bilangan bulat $a$ yang memenuhi adalah $4$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{S}\quad(4)~\textbf{B}}
+Untuk $a<4$: $-1\leq\tfrac{2a-3}{4-a}\leq1\Rightarrow-1\leq a\leq\tfrac73$.
+Bilangan bulat: $-1,0,1,2$ --- ada 4.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} $\tfrac{a-1{,}5}{2-0{,}5a}=\tfrac{2a-3}{4-a}$.
+\item \textbf{Benar.} Syarat $\sin x\in[-1,1]$.
+\item \textbf{Salah.} Ada 4 bilangan bulat, bukan 3.
+\item \textbf{Benar.} $\{-1,0,1,2\}$, empat bilangan.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{24}
+$\displaystyle\sum_{k=1}^{100}2k+\sum_{k=1}^{100}(3k+2)$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$\displaystyle\sum_{k=1}^{100}k=4950$.&$\bigcirc$&$\bigcirc$\\
+(2)~$\displaystyle\sum_{k=1}^{100}2k=10100$.&$\bigcirc$&$\bigcirc$\\
+(3)~$\displaystyle\sum_{k=1}^{100}(3k+2)=15350$.&$\bigcirc$&$\bigcirc$\\
+(4)~Total $=25450$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{S}\quad(2)~\textbf{B}\quad(3)~\textbf{B}\quad(4)~\textbf{B}}
+$\sum_{k=1}^{100}k=\tfrac{100\cdot101}{2}=5050$.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Salah.} $\sum k=5050\neq4950$.
+\item \textbf{Benar.} $2\times5050=10100$.
+\item \textbf{Benar.} $3(5050)+2(100)=15150+200=15350$.
+\item \textbf{Benar.} $10100+15350=25450$.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{25}
+$(x+1)(x^2+2x-7)\geq x^2-1$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Dapat difaktorkan menjadi $(x-2)(x+1)(x+3)\geq0$.&$\bigcirc$&$\bigcirc$\\
+(2)~$x=-3$ memenuhi.&$\bigcirc$&$\bigcirc$\\
+(3)~Banyak bilangan bulat negatif yang memenuhi adalah $3$.&$\bigcirc$&$\bigcirc$\\
+(4)~$x=-4$ memenuhi.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{B}\quad(4)~\textbf{S}}
+$(x+1)(x^2+2x-7)-(x^2-1)=x^3+2x^2-5x-6=(x-2)(x+1)(x+3)\geq0$.
+Tanda positif pada $[-3,-1]\cup[2,\infty)$.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} Faktorisasi benar.
+\item \textbf{Benar.} $x=-3\in[-3,-1]$.
+\item \textbf{Benar.} Bilangan bulat negatif: $-3,-2,-1$.
+\item \textbf{Salah.} $(-6)(-3)(-1)=-18<0$.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{26}
+Penjualan 10 hari terakhir: $8,7,8,6,8,8,9,8,10,8$. Rata-rata bulan Juni $=10$.
+Rata-rata 20 hari pertama adalah \ldots
+\begin{pilB}\item $8$\item $9$\item $10$\item $11$\item $13$\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(D) $11$}
+Total 30 hari: $300$. Jumlah 10 hari terakhir: $80$. Jumlah 20 hari pertama: $220$.
+Rata-rata: $220/20=11$.
+\end{pembox}
+
+\begin{soal}{27}
+$x^7-10x^6+24x^5=0$, tiga akar real $r_1<r_2<r_3$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$x^5(x-4)(x-6)=0$.&$\bigcirc$&$\bigcirc$\\
+(2)~Tiga akar berbeda: $0,4,6$.&$\bigcirc$&$\bigcirc$\\
+(3)~$r_1+r_3=6$.&$\bigcirc$&$\bigcirc$\\
+(4)~$r_1\cdot r_3=24$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{B}\quad(4)~\textbf{S}}
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} $x^5(x^2-10x+24)=x^5(x-4)(x-6)$.
+\item \textbf{Benar.} $r_1=0,r_2=4,r_3=6$.
+\item \textbf{Benar.} $0+6=6$.
+\item \textbf{Salah.} $0\times6=0\neq24$.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{28}
+Garis singgung $y=3x^2+C$ di suatu titik adalah $y=24x$. Nilai $C$ adalah \ldots
+\begin{pilB}\item $50$\item $46$\item $47$\item $48$\item $49$\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(D) $C=48$}
+$y'=6x=24\Rightarrow x=4$. Pada garis: $y=96$. Pada kurva: $48+C=96\Rightarrow C=48$.
+\end{pembox}
+
+\begin{soal}{29}
+Transformasi parabola $y=x^2$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$y=(x-h)^2$ adalah pergeseran $y=x^2$ sejauh $h$ ke kanan ($h>0$).&$\bigcirc$&$\bigcirc$\\
+(2)~$y=(x-1)^2$ diperoleh dengan menggeser $y=x^2$ ke kanan 1 satuan.&$\bigcirc$&$\bigcirc$\\
+(3)~$y=(x-1)^2$ diperoleh dengan menggeser $y=x^2$ ke kiri 1 satuan.&$\bigcirc$&$\bigcirc$\\
+(4)~Titik minimum $y=(x-1)^2$ berada di $(1,0)$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{S}\quad(4)~\textbf{B}}
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} Definisi pergeseran horizontal.
+\item \textbf{Benar.} $h=1$, ke kanan 1 satuan.
+\item \textbf{Salah.} Ke kanan, bukan ke kiri.
+\item \textbf{Benar.} Minimum saat $x=1$: $y=0$.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{30}
+Bilangan bulat terdekat dengan $5\sqrt{2}$ adalah \ldots\hfill
+Jawaban:\enspace\underline{\hspace{3cm}}
+\end{soal}
+\begin{pembox}
+\jawaban{$7$}
+$5\sqrt{2}\approx5\times1{,}414=7{,}07$. Bilangan bulat terdekat: $7$.
+\end{pembox}
+
+% ===================================================================
+%  SET 4  (nomor 31--40)
+% ===================================================================
+
+\begin{soal}{31}
+$f(x)=\sqrt{1+x}$. Perhatikan $\displaystyle\lim_{h\to0}\dfrac{f(3+2h^2)-f(3-3h^2)}{h^2}$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$f'(x)=\dfrac{1}{2\sqrt{1+x}}$.&$\bigcirc$&$\bigcirc$\\
+(2)~$f'(3)=\dfrac{1}{4}$.&$\bigcirc$&$\bigcirc$\\
+(3)~Nilai limit adalah $\dfrac{9}{8}$.&$\bigcirc$&$\bigcirc$\\
+(4)~Nilai limit adalah $\dfrac{5}{4}$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{S}\quad(4)~\textbf{B}}
+$f(3+2h^2)-f(3-3h^2)\approx f'(3)\cdot5h^2$.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} Turunan benar.
+\item \textbf{Benar.} $f'(3)=\tfrac{1}{2\sqrt4}=\tfrac14$.
+\item \textbf{Salah.} Limitnya $\tfrac14\times5=\tfrac54\neq\tfrac98$.
+\item \textbf{Benar.} Nilai limit $=\dfrac{5}{4}$.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{32}
+$\cos(3x+15^\circ)=\sin(x+25^\circ)$, $0^\circ<x<90^\circ$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$\sin(x+25^\circ)=\cos(65^\circ-x)$.&$\bigcirc$&$\bigcirc$\\
+(2)~Dari persamaan: $4x=50^\circ$.&$\bigcirc$&$\bigcirc$\\
+(3)~$x=15^\circ$.&$\bigcirc$&$\bigcirc$\\
+(4)~$x=12{,}5^\circ$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{S}\quad(4)~\textbf{B}}
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} $\sin\theta=\cos(90^\circ-\theta)$.
+\item \textbf{Benar.} $3x+15^\circ=65^\circ-x\Rightarrow4x=50^\circ$.
+\item \textbf{Salah.} $x=12{,}5^\circ\neq15^\circ$.
+\item \textbf{Benar.} $x=\tfrac{50^\circ}{4}=12{,}5^\circ$.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{33}
+$f(x)=\sqrt{\dfrac{x^2-5x}{1-x}}$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Diperlukan $\dfrac{x(x-5)}{1-x}\geq0$.&$\bigcirc$&$\bigcirc$\\
+(2)~$1<x\leq5$ adalah bagian daerah asal.&$\bigcirc$&$\bigcirc$\\
+(3)~$0<x<1$ adalah bagian daerah asal.&$\bigcirc$&$\bigcirc$\\
+(4)~Daerah asal: $\{x\mid x\leq0\text{ atau }1<x\leq5\}$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{S}\quad(4)~\textbf{B}}
+Uji tanda $\tfrac{x(x-5)}{1-x}$ pada titik kritis $0,1,5$:
+$x<0$: $\frac{(-)(-)}{(+)}>0$\,$\checkmark$;\; $0<x<1$: $\frac{(+)(-)}{(+)}<0$\,$\times$;\;
+$1<x<5$: $\frac{(+)(-)}{(-)}>0$\,$\checkmark$;\; $x>5$: $\frac{(+)(+)}{(-)}<0$\,$\times$.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} Kondisi tersebut diperlukan.
+\item \textbf{Benar.} $1<x\leq5$ memenuhi.
+\item \textbf{Salah.} $0<x<1$ memberikan nilai negatif.
+\item \textbf{Benar.} Daerah asal: $x\leq0$ atau $1<x\leq5$.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{34}
+$\displaystyle\int_0^1\dfrac{x}{1+x}\,dx=a$.
+Nilai $\displaystyle\int_0^1\dfrac{1}{1+x}\,dx$ adalah \ldots\hfill
+Jawaban:\enspace\underline{\hspace{3cm}}
+\end{soal}
+\begin{pembox}
+\jawaban{$1-a$}
+$\dfrac{x}{1+x}+\dfrac{1}{1+x}=1$, sehingga $a+\displaystyle\int_0^1\dfrac{1}{1+x}\,dx=1$.
+Jawaban: $1-a$.
+\end{pembox}
+
+\begin{soal}{35}
+$f(x)\geq0$ untuk semua $x$, $f(1)=0$, $f(2)=2$. Nilai $f(0)+f(4)$ adalah \ldots\hfill
+Jawaban:\enspace\underline{\hspace{3cm}}
+\end{soal}
+\begin{pembox}
+\jawaban{$20$}
+$f(1)=0$ dan $f\geq0\Rightarrow x=1$ akar kembar: $f(x)=k(x-1)^2$.
+$f(2)=k=2$. Maka $f(0)=2$ dan $f(4)=2\cdot9=18$. Jumlah $=20$.
+\end{pembox}
+
+\begin{soal}{36}
+$A,B$ pada lingkaran $O(0,0)$, $\alpha=\angle AOB$, $A(a,b)$ kuadran I, $B=(25,0)$,
+$\sin\alpha=\tfrac{4}{5}$.
+\begin{enumerate}[label=(\alph*),leftmargin=*,topsep=3pt,itemsep=3pt]
+  \item Nilai $b$.\hfill Jawaban:\enspace\underline{\hspace{3.5cm}}
+  \item Nilai $5\cos\alpha$.\hfill Jawaban:\enspace\underline{\hspace{3.5cm}}
+\end{enumerate}
+\end{soal}
+\begin{pembox}
+\jawaban{(a) $b=20$\quad(b) $5\cos\alpha=3$}
+$r=OB=25$. $A=(25\cos\alpha,25\sin\alpha)$.
+\textbf{(a)} $b=25\sin\alpha=25\cdot\tfrac45=20$.
+\textbf{(b)} $\cos\alpha=\tfrac35$, $5\cos\alpha=3$.
+\end{pembox}
+
+\begin{soal}{37}
+$U_6=\log_8 96$, $U_2=\log_8 6$, $U_{12}-U_4=\log_8(c)$. Nilai $c$ adalah \ldots\hfill
+Jawaban:\enspace\underline{\hspace{3cm}}
+\end{soal}
+\begin{pembox}
+\jawaban{$c=256$}
+$4d=U_6-U_2=\log_8 16$.\quad$d=\tfrac14\log_8 16$.
+$U_{12}-U_4=8d=2\log_8 16=\log_8(16^2)=\log_8 256$.\quad$c=256$.
+\end{pembox}
+
+\begin{soal}{38}
+$f(-x)=f(x)$, $\int_0^5 f=7$, $\int_5^6 f=8$.
+Nilai $\displaystyle\int_{-5}^6 f(x)\,dx$ adalah \ldots\hfill
+Jawaban:\enspace\underline{\hspace{3cm}}
+\end{soal}
+\begin{pembox}
+\jawaban{$22$}
+Fungsi genap: $\int_{-5}^0 f=\int_0^5 f=7$.
+$\int_{-5}^6 f=7+7+8=22$.
+\end{pembox}
+
+\begin{soal}{39}
+$\displaystyle\lim_{x\to0}\dfrac{f(x)}{3x}=5$. Nilai
+$\displaystyle\lim_{x\to0}\!\left[\dfrac{2f(x)}{x^2}-\dfrac{f(x)\cos2x}{x(1+x)}-\dfrac{2f(x)}{x^2(1+x)}\right]$
+adalah \ldots\hfill Jawaban:\enspace\underline{\hspace{2.5cm}}
+\end{soal}
+\begin{pembox}
+\jawaban{$15$}
+$\lim\tfrac{f(x)}{x}=15$. Ekspresi $=\dfrac{f(x)}{x}\cdot\dfrac{2(1+x)-x\cos2x-2}{x(1+x)}
+=\dfrac{f(x)}{x}\cdot\dfrac{2-\cos2x}{1+x}$.
+Limit: $15\cdot\dfrac{2-1}{1}=15$.
+\end{pembox}
+
+\begin{soal}{40}
+$l$: $y=x$; $k$: $y=-\tfrac53x$. $A$ pada $k$, $B$ proyeksi $A$ ke $l$, $|OB|=1$.
+Jarak $AB$ adalah \ldots\hfill Jawaban:\enspace\underline{\hspace{3cm}}
+\end{soal}
+\begin{pembox}
+\jawaban{$4$}
+Vektor satuan pada $l$: $\mathbf{u}=\tfrac{(1,1)}{\sqrt2}$; tegak lurus: $\mathbf{n}=\tfrac{(1,-1)}{\sqrt2}$.
+$B=\mathbf{u}$, $A=B+s\mathbf{n}$.
+Syarat $A$ pada $k$: $\tfrac{1-s}{\sqrt2}=-\tfrac53\cdot\tfrac{1+s}{\sqrt2}\Rightarrow3-3s=-5-5s\Rightarrow s=-4$.
+Jarak $AB=|s|=4$.
+\end{pembox}
+
+% ===================================================================
+%  SET 5  (nomor 41--50)
+% ===================================================================
+
+\begin{soal}{41}
+Truk $A,B$ memuat 4 ton; truk $C,D$ memuat 6 ton. Truk $E$ memuat
+1 ton lebih dari rata-rata kelima truk. Muatan $A+E$ adalah \ldots
+\begin{pilB}\item $8{,}17$\item $9$\item $10$\item $10{,}25$\item $10{,}5$\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(D) $10{,}25$ ton}
+Misalkan muatan $E=e$. Rata-rata $=\dfrac{4+4+6+6+e}{5}=\dfrac{20+e}{5}$.
+$e=\dfrac{20+e}{5}+1\Rightarrow5e=25+e\Rightarrow e=6{,}25$.
+$A+E=4+6{,}25=10{,}25$.
+\end{pembox}
+
+\begin{soal}{42}
+Satu dadu dilempar 3 kali. Peluang mata 6 muncul sedikitnya sekali adalah \ldots
+\begin{pilB}
+  \item $\tfrac{1}{216}$\item $\tfrac{3}{216}$\item $\tfrac{12}{216}$
+  \item $\tfrac{18}{216}$\item $\tfrac{91}{216}$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(E) $\dfrac{91}{216}$}
+Komplemen: $P(\text{tidak muncul 6 sama sekali})=\left(\tfrac56\right)^3=\tfrac{125}{216}$.
+$P(\text{sedikitnya sekali})=1-\tfrac{125}{216}=\tfrac{91}{216}$.
+\end{pembox}
+
+\begin{soal}{43}
+$x^3+3x^2+9x+3$ membagi habis $x^4+4x^3+2ax^2+4bx+c$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Hasil bagi berbentuk $x+k$ untuk suatu $k$.&$\bigcirc$&$\bigcirc$\\
+(2)~Nilai $k=1$.&$\bigcirc$&$\bigcirc$\\
+(3)~Nilai $a=6$.&$\bigcirc$&$\bigcirc$\\
+(4)~Nilai $b=6$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{B}\quad(4)~\textbf{S}}
+Pembagi berderajat 3, yang dibagi berderajat 4, sehingga hasil bagi berderajat 1: $x+k$.
+$(x^3+3x^2+9x+3)(x+k)=x^4+(k+3)x^3+(3k+9)x^2+(9k+3)x+3k$.
+Samakan koefisien:
+$k+3=4\Rightarrow k=1$;\quad$3k+9=2a\Rightarrow a=6$;\quad$9k+3=4b\Rightarrow b=3$.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} Hasil bagi berbentuk $x+k$.
+\item \textbf{Benar.} $k=1$.
+\item \textbf{Benar.} $a=6$.
+\item \textbf{Salah.} $b=3\neq6$.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{44}
+$y=2x^2+1$ dicerminkan terhadap sumbu $x$, digeser kanan 2 satuan $\Rightarrow y=ax^2+bx+c$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Pencerminan terhadap sumbu $x$ menghasilkan $y=-2x^2-1$.&$\bigcirc$&$\bigcirc$\\
+(2)~Pergeseran kanan 2 satuan mengganti $x$ dengan $x-2$.&$\bigcirc$&$\bigcirc$\\
+(3)~Persamaan akhirnya $y=-2x^2+8x-7$.&$\bigcirc$&$\bigcirc$\\
+(4)~Nilai $a+b+c=-3$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{S}\quad(4)~\textbf{B}}
+Cermin $x$-axis: $y=-2x^2-1$. Geser kanan 2: ganti $x\to x-2$:
+$y=-2(x-2)^2-1=-2x^2+8x-8-1=-2x^2+8x-9$.
+Jadi $a=-2$, $b=8$, $c=-9$.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} $y=-2x^2-1$.
+\item \textbf{Benar.} $x\to x-2$.
+\item \textbf{Salah.} Persamaan akhir adalah $-2x^2+8x-9$, bukan $-7$.
+\item \textbf{Benar.} $-2+8-9=-3$.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{45}
+Nilai $\sqrt[3]{9+4\sqrt{5}}+\sqrt[3]{9-4\sqrt{5}}$ adalah \ldots\hfill
+Jawaban:\enspace\underline{\hspace{3cm}}
+\end{soal}
+\begin{pembox}
+\jawaban{$3$}
+Misalkan $s=\sqrt[3]{9+4\sqrt5}+\sqrt[3]{9-4\sqrt5}$.
+Perkalian: $\sqrt[3]{(9+4\sqrt5)(9-4\sqrt5)}=\sqrt[3]{81-80}=1$.
+$s^3=(9+4\sqrt5)+(9-4\sqrt5)+3\cdot1\cdot s=18+3s$.
+$s^3-3s-18=0$; coba $s=3$: $27-9-18=0$ ✓. Jadi $s=3$.
+\end{pembox}
+
+\begin{soal}{46}
+Nilai $\displaystyle\lim_{x\to5}\dfrac{\sin(30-6x)}{x^2-25}$ adalah \ldots
+\begin{pilB}\item $-0{,}2$\item $-0{,}4$\item $-0{,}6$\item $-0{,}8$\item $-1$\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(C) $-0{,}6$}
+Saat $x\to5$: $30-6x\to0$, sehingga $\sin(30-6x)\approx30-6x=-6(x-5)$.
+$x^2-25=(x-5)(x+5)$.
+$\displaystyle\lim_{x\to5}\dfrac{-6(x-5)}{(x-5)(x+5)}=\dfrac{-6}{10}=-0{,}6$.
+\end{pembox}
+
+\begin{soal}{47}
+Parabola melalui $(-4,0)$ dan $(2,0)$, titik minimum pada $y=23x+20$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Sumbu simetri berada di $x=-1$.&$\bigcirc$&$\bigcirc$\\
+(2)~Ordinat titik minimum adalah $-3$.&$\bigcirc$&$\bigcirc$\\
+(3)~Nilai $k=\dfrac{1}{3}$ dalam $y=k(x+4)(x-2)$.&$\bigcirc$&$\bigcirc$\\
+(4)~Persamaan parabolanya $y=\dfrac{1}{3}(x-4)(x+2)$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{B}\quad(4)~\textbf{S}}
+Bentuk: $y=k(x+4)(x-2)$. Sumbu simetri: $x=\tfrac{-4+2}{2}=-1$.
+Pada garis $y=23x+20$ saat $x=-1$: $y=-23+20=-3$ (ordinat minimum).
+Pada parabola saat $x=-1$: $k(3)(-3)=-9k=-3\Rightarrow k=\tfrac13$.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} Sumbu simetri di $x=-1$.
+\item \textbf{Benar.} Ordinat minimum $=-3$.
+\item \textbf{Benar.} $k=\tfrac13$.
+\item \textbf{Salah.} Persamaan yang benar $y=\tfrac13(x+4)(x-2)$, bukan $(x-4)(x+2)$.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{48}
+Rata-rata $5,4,c+11,c-1,5$ adalah $10$. Nilai $c$ adalah \ldots
+\begin{pilB}\item $18$\item $17$\item $16$\item $15$\item $13$\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(E) $c=13$}
+Jumlah $=5\times10=50$. $5+4+(c+11)+(c-1)+5=2c+24=50\Rightarrow c=13$.
+\end{pembox}
+
+\begin{soal}{49}
+Data terurut: $4,\,6-a,\,6,\,8,\,8+a,\,10$ dengan $0\leq a\leq2$,
+$P=s^2$ (varians), $Q=5$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Rata-rata data adalah $7$ untuk semua $a$.&$\bigcirc$&$\bigcirc$\\
+(2)~$s^2=\dfrac{11+2a+a^2}{3}$.&$\bigcirc$&$\bigcirc$\\
+(3)~$P<Q$ untuk semua $0\leq a\leq2$.&$\bigcirc$&$\bigcirc$\\
+(4)~Hubungan $P$ dan $Q$ tidak dapat ditentukan secara pasti.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{S}\quad(4)~\textbf{B}}
+Jumlah data $=42$; rata-rata $=7$ (konstan). Deviasi dari 7: $-3,-(1+a),-1,1,(1+a),3$.
+$s^2=\tfrac{9+(1+a)^2+1+1+(1+a)^2+9}{6}=\tfrac{10+(1+a)^2}{3}=\tfrac{11+2a+a^2}{3}$.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} Rata-rata $=7$ untuk semua $a$.
+\item \textbf{Benar.} $s^2=\tfrac{11+2a+a^2}{3}$.
+\item \textbf{Salah.} Untuk $a=0$: $s^2=\tfrac{11}{3}\approx3{,}67<5$. Untuk $a=2$: $s^2=\tfrac{19}{3}\approx6{,}33>5$.
+\item \textbf{Benar.} Bergantung $a$, hubungan $P$ dan $Q$ tidak pasti.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{50}
+Data $D_0$ terdiri atas tiga bilangan positif dengan median 20.
+Empat bilangan positif $a,b,c,d$ ditambahkan membentuk $D$ berisi 7
+bilangan. Jika $a+b=40$ dan $c+d=40$, tentukan banyaknya
+\textbf{maksimum} bilangan dalam $D$ yang nilainya kurang dari 20.\\[0.4em]
+Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+\begin{pembox}
+\jawaban{$3$}
+Dari $D_0$: median $=20$, sehingga bilangan terkecilnya $\leq20$.
+Paling banyak \textbf{1} anggota $D_0$ yang nilainya $<20$.
+
+Dari $\{a,b\}$ dengan $a+b=40$ (positif): jika $a<20$ maka $b=40-a>20$.
+Paling banyak \textbf{1} dari $\{a,b\}$ yang $<20$. Demikian pula $\{c,d\}$.
+
+Maksimum bilangan dalam $D$ yang $<20$: $1+1+1=\mathbf{3}$.
+
+Karena median 7 bilangan adalah bilangan ke-4 dan paling banyak 3 bilangan $<20$,
+bilangan ke-4 terkecil $\geq20$, sehingga median $D\geq20$.
+\end{pembox}
+
+% ===================================================================
+%  SET 6  (nomor 51--60)
+% ===================================================================
+
+\begin{soal}{51}
+Nilai maksimum $\dfrac{m}{15\sin x-8\cos x+25}=2$. Nilai $m$ adalah \ldots
+\begin{pilB}\item $4$\item $16$\item $36$\item $64$\item $84$\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(B) $m=16$}
+$15\sin x-8\cos x$ memiliki nilai minimum $-\sqrt{15^2+8^2}=-17$.
+Penyebut minimum $=25-17=8$.
+Untuk $m>0$: nilai maksimum pecahan $=\tfrac{m}{8}=2\Rightarrow m=16$.
+\end{pembox}
+
+\begin{soal}{52}
+$f(x^2+3x+1)=\log_2(2x^3-x^2+7)$, $x\geq0$. Nilai $f(5)$ adalah \ldots
+\begin{pilB}\item $1$\item $2$\item $3$\item $4$\item $5$\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(C) $f(5)=3$}
+Cari $x\geq0$ dengan $x^2+3x+1=5$: $x^2+3x-4=0\Rightarrow(x-1)(x+4)=0\Rightarrow x=1$.
+$f(5)=\log_2(2-1+7)=\log_2 8=3$.
+\end{pembox}
+
+\begin{soal}{53}
+$\displaystyle\lim_{x\to\infty}\!\left(\sqrt{4x^2+8x}-\sqrt{x^2+1}-\sqrt{x^2+x}\right)$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Untuk $x\to\infty$: $\sqrt{4x^2+8x}=2x+2+o(1)$.&$\bigcirc$&$\bigcirc$\\
+(2)~Untuk $x\to\infty$: $\sqrt{x^2+x}=x+\tfrac12+o(1)$.&$\bigcirc$&$\bigcirc$\\
+(3)~Nilai limit adalah $2$.&$\bigcirc$&$\bigcirc$\\
+(4)~Nilai limit adalah $\dfrac{3}{2}$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{S}\quad(4)~\textbf{B}}
+Untuk $x\to\infty$: $\sqrt{a^2x^2+bx}\approx ax+\tfrac{b}{2a}$.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} $\sqrt{4x^2+8x}=2\sqrt{x^2+2x}\approx2(x+1)=2x+2$.
+\item \textbf{Benar.} $\sqrt{x^2+x}\approx x+\tfrac12$.
+\item \textbf{Salah.} Limit $=(2x+2)-x-(x+\tfrac12)=\tfrac32\neq2$.
+\item \textbf{Benar.} Nilai limit $=\dfrac{3}{2}$.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{54}
+$y=\tfrac13x^3-\tfrac32x^2+2x$ mempunyai garis singgung mendatar di $P$ dan $Q$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$y'=x^2-3x+2=0$ di $x=1$ dan $x=2$.&$\bigcirc$&$\bigcirc$\\
+(2)~Ordinat di $x=1$ adalah $\tfrac{5}{6}$ dan di $x=2$ adalah $\tfrac{2}{3}$.&$\bigcirc$&$\bigcirc$\\
+(3)~Jumlah ordinat $P$ dan $Q$ adalah $\dfrac{5}{3}$.&$\bigcirc$&$\bigcirc$\\
+(4)~Jumlah ordinat $P$ dan $Q$ adalah $\dfrac{3}{2}$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{S}\quad(4)~\textbf{B}}
+$y'=x^2-3x+2=(x-1)(x-2)=0$ di $x=1,2$.
+$y(1)=\tfrac13-\tfrac32+2=\tfrac{2-9+12}{6}=\tfrac56$.\quad
+$y(2)=\tfrac83-6+4=\tfrac83-2=\tfrac23$.
+Jumlah $=\tfrac56+\tfrac23=\tfrac56+\tfrac46=\tfrac96=\tfrac32$.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} $x=1$ dan $x=2$.
+\item \textbf{Benar.} Ordinat benar.
+\item \textbf{Salah.} Jumlah $=\tfrac32\neq\tfrac53$.
+\item \textbf{Benar.} Jumlah $=\dfrac32$.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{55}
+Lingkaran pusat $(a,b)$, $a,b>3$, menyinggung $3x+4y=12$, jari-jari $12$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Jarak pusat ke garis $=\dfrac{|3a+4b-12|}{5}$.&$\bigcirc$&$\bigcirc$\\
+(2)~Karena $a,b>3$: $3a+4b-12>0$.&$\bigcirc$&$\bigcirc$\\
+(3)~$3a+4b=60$.&$\bigcirc$&$\bigcirc$\\
+(4)~$3a+4b=72$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{S}\quad(4)~\textbf{B}}
+Jarak $=r$: $\dfrac{|3a+4b-12|}{5}=12$. Karena $a,b>3$: $3a+4b>9+12=21>12$, sehingga nilai mutlak positif.
+$3a+4b-12=60\Rightarrow3a+4b=72$.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} Rumus jarak titik ke garis.
+\item \textbf{Benar.} $3a+4b-12>0$.
+\item \textbf{Salah.} $3a+4b=72\neq60$.
+\item \textbf{Benar.} $3a+4b=72$.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{56}
+$\displaystyle\int_5^9 f(x)\,dx=16$. Nilai
+$\displaystyle\int_4^6 f(2x-3)\,dx$ adalah \ldots\hfill
+Jawaban:\enspace\underline{\hspace{3cm}}
+\end{soal}
+\begin{pembox}
+\jawaban{$8$}
+Substitusi $u=2x-3$, $du=2\,dx$, $dx=\tfrac12du$.
+Batas: $x=4\to u=5$; $x=6\to u=9$.
+$\displaystyle\int_4^6 f(2x-3)\,dx=\tfrac12\int_5^9 f(u)\,du=\tfrac12\times16=8$.
+\end{pembox}
+
+\begin{soal}{57}
+$AB$ diameter lingkaran, $A=(10,17)$, $B=(-2,1)$. Jari-jari lingkaran adalah \ldots
+\begin{pilB}\item $20$\item $15$\item $10$\item $8$\item $4$\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(C) $r=10$}
+$|AB|=\sqrt{(10-(-2))^2+(17-1)^2}=\sqrt{144+256}=\sqrt{400}=20$.
+Jari-jari $=|AB|/2=10$.
+\end{pembox}
+
+\begin{soal}{58}
+$f(x)=\log_3 x$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$f(2x)+f\!\left(\dfrac{2}{x}\right)=\log_3\!\left(2x\cdot\dfrac{2}{x}\right)$.&$\bigcirc$&$\bigcirc$\\
+(2)~$\log_3\!\left(2x\cdot\dfrac{2}{x}\right)=\log_3 4=f(4)$.&$\bigcirc$&$\bigcirc$\\
+(3)~$f(2x)+f\!\left(\dfrac{2}{x}\right)=f(x^2)$.&$\bigcirc$&$\bigcirc$\\
+(4)~$f(2x)+f\!\left(\dfrac{2}{x}\right)=f(4)$ (tidak bergantung $x$).&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{S}\quad(4)~\textbf{B}}
+$f(2x)+f\!\left(\tfrac2x\right)=\log_3(2x)+\log_3\!\left(\tfrac2x\right)=\log_3\!\left(2x\cdot\tfrac2x\right)=\log_3 4$.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} Sifat $\log a+\log b=\log(ab)$.
+\item \textbf{Benar.} $\log_3 4=f(4)$.
+\item \textbf{Salah.} $f(x^2)=2\log_3 x$, bergantung pada $x$.
+\item \textbf{Benar.} Hasilnya $f(4)$, konstan.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{59}
+Data $D$: 5 bilangan bulat positif, tiga di antaranya $4,5,8$.
+Rata-rata semua nilai median yang mungkin adalah \ldots
+\begin{pilB}\item $5$\item $5\tfrac12$\item $6$\item $6\tfrac12$\item $7$\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(C) $6$}
+Dua bilangan lain $p\leq q$ (positif). Setelah diurutkan 5 data, median adalah data ke-3.
+Nilai median yang mungkin bergantung pada $p,q$:
+median bisa $4,5,6,7,8$ (dengan memilih $p,q$ yang sesuai).
+Rata-rata semua nilai median $=\dfrac{4+5+6+7+8}{5}=6$.
+\end{pembox}
+
+\begin{soal}{60}
+Tentukan daerah asal fungsi $f(x)=\sqrt{|3x-7|-8}$.\\[0.4em]
+Jawaban:\enspace\underline{\hspace{7cm}}
+\end{soal}
+\begin{pembox}
+\jawaban{$x\leq-\dfrac{1}{3}$ atau $x\geq5$}
+Syarat radikan $\geq0$: $|3x-7|-8\geq0\Rightarrow|3x-7|\geq8$.
+Kasus 1: $3x-7\geq8\Rightarrow x\geq5$.
+Kasus 2: $3x-7\leq-8\Rightarrow3x\leq-1\Rightarrow x\leq-\dfrac{1}{3}$.
+Daerah asal: $\left\{x\;\middle|\;x\leq-\dfrac{1}{3}\text{ atau }x\geq5\right\}$.
+\end{pembox}
+
+\end{document}

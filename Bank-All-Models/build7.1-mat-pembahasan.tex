@@ -1,0 +1,649 @@
+% ============================================================
+%  PEMBAHASAN  --  MATEMATIKA  --  SM ITS -- Paket 7.1
+%  45 Soal (Bagian I + Set 1 + Tantangan)
+% ============================================================
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.5cm,top=2.8cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{icomma}
+\usepackage{array}
+\usepackage{tikz}
+
+\definecolor{mapelcolor}{RGB}{20,110,60}
+\definecolor{mapelbg}{RGB}{228,246,234}
+\definecolor{pembcolor}{RGB}{100,50,130}
+\definecolor{pembbg}{RGB}{245,238,252}
+\definecolor{gold}{RGB}{210,160,30}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small SM ITS -- Paket 7.1 -- Pembahasan}
+\rhead{\small Matematika}
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newtcolorbox{soal}[1]{
+  breakable,
+  colback=mapelbg, colframe=mapelcolor,
+  coltitle=white, colbacktitle=mapelcolor,
+  fonttitle=\bfseries\sffamily,
+  title=Nomor #1,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+\newtcolorbox{pembox}{
+  breakable,
+  colback=pembbg, colframe=pembcolor,
+  coltitle=white, colbacktitle=pembcolor,
+  fonttitle=\bfseries\sffamily,
+  title=Pembahasan,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+\newtcolorbox{catatan}{
+  breakable,
+  colback=gold!15, colframe=gold!80!black,
+  coltitle=white, colbacktitle=gold!80!black,
+  fonttitle=\bfseries\sffamily,
+  title=Catatan,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+\newcommand{\jawaban}[1]{\textbf{Jawaban:}\enspace\colorbox{gold!30}{\textbf{#1}}}
+\newcommand{\konsep}[1]{\textit{Konsep: #1.}}
+\newenvironment{pil}{%
+  \begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}}
+\linespread{1.05}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+  {\LARGE\bfseries PEMBAHASAN MATEMATIKA}\\[0.4em]
+  {\large SM ITS -- Paket 7.1}
+\end{center}
+
+\vspace{0.4cm}\noindent\textbf{Kunci Jawaban}
+
+\vspace{0.3em}{\small
+\begin{tabular}{@{}*{10}{c@{\hspace{1.1em}}}@{}}
+\textbf{1}(b)&\textbf{2}(a)&\textbf{3}(a)&\textbf{4}(b)&\textbf{5}(b)&
+\textbf{6}(c)&\textbf{7}(b)&\textbf{8}(a)&\textbf{9}(a)&\textbf{10}(a)\\
+\end{tabular}
+
+\vspace{0.2em}
+\begin{tabular}{@{}*{10}{c@{\hspace{1.1em}}}@{}}
+\textbf{11}(b)&\textbf{12}(a)&\textbf{13}(b)&\textbf{14}(a)&\textbf{15}(c)&
+\textbf{16}(a)&\textbf{17}(b)&\textbf{18}(c)&\textbf{19}(c)&\textbf{20}(c)\\
+\end{tabular}
+
+\vspace{0.2em}
+\begin{tabular}{@{}*{10}{c@{\hspace{1.1em}}}@{}}
+\textbf{21}(a)&\textbf{22}(b)&\textbf{23}(c)&\textbf{24}(d)&\textbf{25}(b)&
+\textbf{26}(e)&\textbf{27}(c)&\textbf{28}(a)&\textbf{29}(d)&\textbf{30}(b)\\
+\end{tabular}
+
+\vspace{0.2em}
+\begin{tabular}{@{}*{10}{c@{\hspace{1.1em}}}@{}}
+\textbf{31}(b)&\textbf{32}(d)&\textbf{33}(c)&\textbf{34}(c)&\textbf{35}(e)&
+\textbf{36}(b)&\textbf{37}(e)&\textbf{38}(b)&\textbf{39}(d)&\textbf{40}(c)\\
+\end{tabular}
+
+\vspace{0.2em}
+\begin{tabular}{@{}*{5}{c@{\hspace{1.1em}}}@{}}
+\textbf{41}(b)&\textbf{42}(c)&\textbf{43}(c)&\textbf{44}(c)&\textbf{45}(c)\\
+\end{tabular}
+}
+
+\clearpage
+
+% ===================================================================
+%  BAGIAN A: SM ITS 2024
+% ===================================================================
+{\noindent\large\bfseries Bagian A \textendash\ Rekonstruksi SM ITS 2024\par}\smallskip\hrule\medskip
+
+\begin{soal}{1 -- Matriks}
+$\begin{pmatrix}2&1\\1&3\end{pmatrix}\begin{pmatrix}x&2\\1&y\end{pmatrix}=\begin{pmatrix}7&10\\5&20\end{pmatrix}$. Nilai $x-y$.
+\end{soal}
+\begin{pembox}
+Hasil kali: $\begin{pmatrix}2x+1&4+y\\x+3&2+3y\end{pmatrix}=\begin{pmatrix}7&10\\5&20\end{pmatrix}$.
+$2x+1=7\Rightarrow x=3$; $4+y=10\Rightarrow y=6$. $x-y=3-6=-3$.
+\jawaban{(b) $-3$}
+\end{pembox}
+
+\begin{soal}{2 -- Logaritma}
+$\log_2 3=p$, $\log_2 5=q$. Nilai $\log_6 45$.
+\end{soal}
+\begin{pembox}
+$\log_6 45=\dfrac{\log_2 45}{\log_2 6}=\dfrac{\log_2(3^2\cdot5)}{\log_2(2\cdot3)}=\dfrac{2p+q}{1+p}$.
+\jawaban{(a) $\dfrac{2p+q}{1+p}$}
+\end{pembox}
+
+\begin{soal}{3 -- Integral Substitusi}
+$\displaystyle\int\dfrac{6x-4}{\sqrt{3x^2-4x+7}}\,dx$.
+\end{soal}
+\begin{pembox}
+Misalkan $u=3x^2-4x+7$, $du=(6x-4)\,dx$. Integral menjadi $\int u^{-1/2}\,du=2\sqrt{u}+C=2\sqrt{3x^2-4x+7}+C$.
+\jawaban{(a) $2\sqrt{3x^2-4x+7}+C$}
+\end{pembox}
+
+\begin{soal}{4 -- Geometri Ruang}
+Balok $10\times6\times4$ cm; jarak terpendek semut melalui permukaan.
+\end{soal}
+\begin{pembox}
+Buka dua bidang menjadi satu bidang datar (tiga pilihan):
+\[
+\sqrt{(10+6)^2+4^2}=\sqrt{272}=4\sqrt{17},\quad \sqrt{(10+4)^2+6^2}=2\sqrt{58},\quad \sqrt{(6+4)^2+10^2}=10\sqrt{2}.
+\]
+$10\sqrt2\approx14{,}14$ adalah terkecil.
+\jawaban{(b) $10\sqrt{2}$ cm}
+\end{pembox}
+
+\begin{soal}{5 -- Turunan}
+$f'(2)=6$ dan $g'(-2)=-7$. Nilai $3a-2b$.
+\end{soal}
+\begin{pembox}
+$f'(x)=2ax+b\Rightarrow 4a+b=6$; $g'(x)=2bx+a\Rightarrow -4b+a=-7$.
+Dari persamaan pertama $b=6-4a$; substitusi: $a-4(6-4a)=-7\Rightarrow17a=17\Rightarrow a=1$, $b=2$.
+$3a-2b=3-4=-1$.
+\jawaban{(b) $-1$}
+\end{pembox}
+
+\begin{soal}{6 -- Limit}
+$\lim(f-g)=4$, $\lim fg=5$. Nilai $\lim(f^2+g^2)$.
+\end{soal}
+\begin{pembox}
+$f^2+g^2=(f-g)^2+2fg$. $\lim(f^2+g^2)=4^2+2(5)=16+10=26$.
+\jawaban{(c) $26$}
+\end{pembox}
+
+\begin{soal}{7 -- Vektor}
+$\vec a=(k,2,0)$, $\vec b=(1,0,0)$, $k>0$, sudut $60°$. Nilai $k$.
+\end{soal}
+\begin{pembox}
+$\cos60°=\frac{\vec a\cdot\vec b}{|\vec a||\vec b|}=\frac{k}{\sqrt{k^2+4}}=\frac12$. Kuadratkan: $\frac{k^2}{k^2+4}=\frac14\Rightarrow3k^2=4\Rightarrow k=\frac{2}{\sqrt3}=\frac{2\sqrt3}{3}$.
+\jawaban{(b) $\dfrac{2\sqrt{3}}{3}$}
+\end{pembox}
+
+\begin{soal}{8 -- Pertidaksamaan Linear}
+$2(3x-1)-5\leq x+8$.
+\end{soal}
+\begin{pembox}
+$6x-7\leq x+8\Rightarrow5x\leq15\Rightarrow x\leq3$.
+\jawaban{(a) $x\leq3$}
+\end{pembox}
+
+\begin{soal}{9 -- Komposisi Fungsi}
+$f(x)=x^2-4x+1$, $g(x)=2x-3$. Maka $f(g(x))$.
+\end{soal}
+\begin{pembox}
+$f(2x-3)=(2x-3)^2-4(2x-3)+1=4x^2-12x+9-8x+12+1=4x^2-20x+22$.
+\jawaban{(a) $4x^2-20x+22$}
+\end{pembox}
+
+\begin{soal}{10 -- Definisi Turunan}
+$f(x)=3x^3-5x^2+7x-1$. $\displaystyle\lim_{h\to0}\dfrac{f(x+h)-f(x)}{h}$.
+\end{soal}
+\begin{pembox}
+Ini adalah $f'(x)=9x^2-10x+7$.
+\jawaban{(a) $9x^2-10x+7$}
+\end{pembox}
+
+\begin{soal}{11 -- Fungsi Implisit}
+$f(3x-2)=2x^2+x+5$. Nilai $f(4)$.
+\end{soal}
+\begin{pembox}
+$3x-2=4\Rightarrow x=2$. $f(4)=2(4)+2+5=15$.
+\jawaban{(b) $15$}
+\end{pembox}
+
+\begin{soal}{12 -- Pecahan}
+$\dfrac34\div\dfrac98\times\dfrac25$.
+\end{soal}
+\begin{pembox}
+$\frac34\times\frac89=\frac{24}{36}=\frac23$. Lalu $\frac23\times\frac25=\frac{4}{15}$.
+\jawaban{(a) $\dfrac{4}{15}$}
+\end{pembox}
+
+\begin{soal}{13 -- Limit}
+$\displaystyle\lim_{x\to9}\dfrac{x-9}{\sqrt x-3}$.
+\end{soal}
+\begin{pembox}
+Kalikan $(\sqrt x+3)$: $\frac{(x-9)(\sqrt x+3)}{x-9}=\sqrt x+3\xrightarrow{x\to9}3+3=6$.
+\jawaban{(b) $6$}
+\end{pembox}
+
+\begin{soal}{14 -- Aljabar}
+$(x-4)(x+7)$.
+\end{soal}
+\begin{pembox}
+$x^2+7x-4x-28=x^2+3x-28$.
+\jawaban{(a) $x^2+3x-28$}
+\end{pembox}
+
+\begin{soal}{15 -- Luas Daerah}
+Luas antara $y=x^3$ dan $y=x$.
+\end{soal}
+\begin{pembox}
+Titik potong $x=-1,0,1$. Karena simetri: $2\int_0^1(x-x^3)\,dx=2\left[\frac{x^2}{2}-\frac{x^4}{4}\right]_0^1=2\cdot\frac14=\frac12$.
+\jawaban{(c) $\dfrac12$}
+\end{pembox}
+
+\begin{soal}{16 -- Nilai Mutlak}
+$|2x-3|<5$.
+\end{soal}
+\begin{pembox}
+$-5<2x-3<5\Rightarrow-2<2x<8\Rightarrow-1<x<4$.
+\jawaban{(a) $-1<x<4$}
+\end{pembox}
+
+\begin{soal}{17 -- Pecahan}
+$\dfrac12+\dfrac23-\dfrac34+\dfrac16$.
+\end{soal}
+\begin{pembox}
+KPK 12: $\frac{6+8-9+2}{12}=\frac{7}{12}$.
+\jawaban{(b) $\dfrac{7}{12}$}
+\end{pembox}
+
+\begin{soal}{18 -- Aritmetika}
+$\frac38$ dari 1440.
+\end{soal}
+\begin{pembox}
+$\frac38\times1440=3\times180=540$.
+\jawaban{(c) $540$}
+\end{pembox}
+
+\begin{soal}{19 -- Barisan Logaritma}
+$\ln3,\ln9,\ln27,\ldots$; $S_8$.
+\end{soal}
+\begin{pembox}
+$U_n=n\ln3$; $S_8=(1+2+\cdots+8)\ln3=36\ln3$.
+\jawaban{(c) $36\ln3$}
+\end{pembox}
+
+\begin{soal}{20 -- Deret Aritmetika}
+Jumlah 12 bilangan kelipatan 4 pertama.
+\end{soal}
+\begin{pembox}
+$4,8,\ldots,48$; $S_{12}=\frac{12}{2}(4+48)=6\times52=312$.
+\jawaban{(c) $312$}
+\end{pembox}
+
+\begin{soal}{21 -- Eksponen}
+$\dfrac{8x^3y^{-2}z^5}{24x^{-1}y^4z^{-3}}$.
+\end{soal}
+\begin{pembox}
+$\frac{8}{24}=\frac13$; $x^{3-(-1)}=x^4$; $y^{-2-4}=y^{-6}$; $z^{5-(-3)}=z^8$. Hasil: $\frac13x^4y^{-6}z^8$.
+\jawaban{(a) $\dfrac13x^4y^{-6}z^8$}
+\end{pembox}
+
+\begin{soal}{22 -- Pecahan Campuran}
+$\dfrac56\div\dfrac{10}{9}+\dfrac34$.
+\end{soal}
+\begin{pembox}
+$\frac56\times\frac{9}{10}=\frac{45}{60}=\frac34$. Lalu $\frac34+\frac34=\frac{6}{4}=\frac32$.
+\jawaban{(b) $\dfrac32$}
+\end{pembox}
+
+% ===================================================================
+%  BAGIAN B: SET LATIHAN 1
+% ===================================================================
+\medskip{\noindent\large\bfseries Bagian B \textendash\ Set Latihan 1\par}\smallskip\hrule\medskip
+
+\begin{soal}{23 -- Trigonometri}
+$\tan a=\frac12$, $\tan b=\frac13$, $\tan c=\frac15$. Nilai $\tan(a+b+c)$.
+\end{soal}
+\begin{pembox}
+\konsep{Rumus jumlah tangen}
+$\tan(a+b)=\dfrac{\frac12+\frac13}{1-\frac12\cdot\frac13}=\dfrac{5/6}{5/6}=1$. Lalu $\tan(a+b+c)=\dfrac{1+\frac15}{1-1\cdot\frac15}=\dfrac{6/5}{4/5}=\dfrac32$.
+\jawaban{(c) $\dfrac32$}
+\end{pembox}
+
+\begin{soal}{24 -- Turunan Trigonometri}
+$y=\cos(3/x)$. Turunan $dy/dx$.
+\end{soal}
+\begin{pembox}
+$u=3/x$, $u'=-3/x^2$. $\frac{dy}{dx}=-\sin u\cdot u'=\frac{3}{x^2}\sin\frac3x$.
+\jawaban{(d) $\dfrac{3}{x^2}\sin\dfrac3x$}
+\end{pembox}
+
+\begin{soal}{25 -- Persamaan Kuadrat}
+$x^2+(m-1)x+9=0$ memiliki dua akar real berbeda.
+\end{soal}
+\begin{pembox}
+$D>0$: $(m-1)^2-36>0\Rightarrow|m-1|>6\Rightarrow m<-5$ atau $m>7$.
+\jawaban{(b) $m<-5$ atau $m>7$}
+\end{pembox}
+
+\begin{soal}{26 -- SPLDV}
+$2g+8t=48$ dan $3g+5t=37$. Harga $g+2t$.
+\end{soal}
+\begin{pembox}
+Eliminasi: $6g+24t=144$ vs $6g+10t=74\Rightarrow14t=70\Rightarrow t=5$; $3g=37-25=12\Rightarrow g=4$. $g+2t=4+10=14$ (ribu).
+\begin{catatan}
+Nilai Rp14.000 tidak muncul pada opsi (a)--(d) dalam naskah sumber. Opsi (e) menuliskan Rp14.000 sebagai koreksi.
+\end{catatan}
+\jawaban{(e) Rp14.000}
+\end{pembox}
+
+\begin{soal}{27 -- Fungsi Turun}
+$f(x)=x^3+3x^2-9x-7$ turun pada interval...
+\end{soal}
+\begin{pembox}
+$f'(x)=3x^2+6x-9=3(x+3)(x-1)<0$ untuk $-3<x<1$.
+\jawaban{(c) $-3<x<1$}
+\end{pembox}
+
+\begin{soal}{28 -- Kombinatorika}
+Bilangan berlainan antara 100 dan 400 dari $\{1,2,3,4,5\}$.
+\end{soal}
+\begin{pembox}
+Angka ratusan $\in\{1,2,3\}$ (3 pilihan), puluhan 4 pilihan, satuan 3 pilihan: $3\times4\times3=36$.
+\jawaban{(a) $36$}
+\end{pembox}
+
+\begin{soal}{29 -- Lingkaran}
+Pusat $(3,-1)$, melalui $(5,2)$.
+\end{soal}
+\begin{pembox}
+$r^2=(5-3)^2+(2+1)^2=4+9=13$. $(x-3)^2+(y+1)^2=13\Rightarrow x^2+y^2-6x+2y-3=0$.
+\jawaban{(d) $x^2+y^2-6x+2y-3=0$}
+\end{pembox}
+
+\begin{soal}{30 -- Kombinatorika Jalur}
+Berangkat $M\to N\to O$: 4 jalur $MN$, 5 jalur $NO$. Pulang tidak boleh memakai jalur yang sama.
+\end{soal}
+\begin{pembox}
+Berangkat: $4\times5=20$ cara. Pulang: jalur $O\to N$ berbeda (4 sisa), jalur $N\to M$ berbeda (3 sisa). Total $20\times(4\times3)=240$.
+\jawaban{(b) $240$}
+\end{pembox}
+
+\begin{soal}{31 -- Titik Berat}
+$A(1,0,2)$, $B(5,4,10)$, $C(0,-1,6)$.
+\end{soal}
+\begin{pembox}
+$Z=\left(\frac{1+5+0}{3},\frac{0+4-1}{3},\frac{2+10+6}{3}\right)=(2,1,6)$.
+\jawaban{(b) $(2,1,6)$}
+\end{pembox}
+
+\begin{soal}{32 -- Trigonometri}
+$BD=CD$, $AB=p$, $\angle BDA=x$. Panjang $BC$.
+\end{soal}
+\begin{pembox}
+$D$ titik tengah $BC$. Dari $\triangle ABD$ siku-siku: $BD=p/\tan x$. $BC=2BD=2p/\tan x$.
+\jawaban{(d) $\dfrac{2p}{\tan x}$}
+\end{pembox}
+
+\begin{soal}{33 -- Vektor Sudut Tumpul}
+$\sin\alpha=1/\sqrt7$, sudut tumpul, $|\vec a|=\sqrt5$, $|\vec b|=\sqrt7$.
+\end{soal}
+\begin{pembox}
+$\cos\alpha=-\sqrt{1-\tfrac17}=-\sqrt{\tfrac67}$. $\vec a\cdot\vec b=\sqrt5\cdot\sqrt7\cdot(-\sqrt{\tfrac67})=-\sqrt{35\cdot\tfrac67}=-\sqrt{30}$.
+\jawaban{(c) $-\sqrt{30}$}
+\end{pembox}
+
+\begin{soal}{34 -- Limit Trigonometri}
+$\displaystyle\lim_{x\to0}\dfrac{\tan x}{x^2\csc3x}$.
+\end{soal}
+\begin{pembox}
+$=\lim_{x\to0}\frac{\tan x\sin3x}{x^2}=\left(\lim\frac{\tan x}{x}\right)\left(\lim\frac{\sin3x}{x}\right)=1\cdot3=3$.
+\jawaban{(c) $3$}
+\end{pembox}
+
+\begin{soal}{35 -- Parabola dan Garis}
+Parabola $y=x^2$ dan garis $y=x+2$.
+\end{soal}
+\begin{pembox}
+$x^2-x-2=0\Rightarrow(x-2)(x+1)=0$; titik $(2,4)$ dan $(-1,1)$.
+$|AB|=\sqrt{9+9}=3\sqrt2$.
+\jawaban{(e) $3\sqrt2$}
+\end{pembox}
+
+\begin{soal}{36 -- Permutasi}
+${}^6P_3+{}^5P_2+{}^7P_4$.
+\end{soal}
+\begin{pembox}
+$120+20+840=980$.
+\jawaban{(b) $980$}
+\end{pembox}
+
+\begin{soal}{37 -- Deret Geometri}
+$a+r=6$ dan $S_\infty=a/(1-r)=5$. Nilai $a/r$.
+\end{soal}
+\begin{pembox}
+$a=5-5r$; substitusi: $5-5r+r=6\Rightarrow r=-\tfrac14$; $a=\tfrac{25}{4}$. $\frac ar=\frac{25/4}{-1/4}=-25$.
+\jawaban{(e) $-25$}
+\end{pembox}
+
+% ===================================================================
+%  BAGIAN C: SOAL TANTANGAN (Kolaborasi 3 Bab)
+% ===================================================================
+\medskip{\noindent\large\bfseries Bagian C \textendash\ Soal Tantangan (Kolaborasi 3 Bab)\par}
+\smallskip\hrule\medskip
+
+% ------------------------------------------------------------------
+%  Q38: Turunan × Integral × Geometri Analitik
+% ------------------------------------------------------------------
+\begin{soal}{38 -- Turunan $\times$ Integral $\times$ Geometri Analitik}
+Garis singgung $y=x^3-3x^2+2$ di titik $(2,-2)$ membentuk daerah tertutup dengan kurva.
+Luas daerah tersebut adalah \ldots
+\end{soal}
+\begin{pembox}
+\konsep{Garis singgung (turunan), titik potong, integral luas}
+
+\textbf{Langkah 1: Garis singgung di $(2,-2)$.}
+
+$y'=3x^2-6x$; $y'(2)=12-12=0$. Garis singgung: $y=-2$.
+
+\textbf{Langkah 2: Titik potong kurva dengan $y=-2$.}
+
+$x^3-3x^2+2=-2\Rightarrow x^3-3x^2+4=0\Rightarrow(x+1)(x-2)^2=0$.
+
+Akar: $x=-1$ dan $x=2$ (akar ganda $\Rightarrow$ kurva menyinggung, bukan memotong).
+
+\textbf{Langkah 3: Luas daerah tertutup.}
+
+Untuk $-1\leq x\leq2$: $x^3-3x^2+2\geq-2$ (kurva di atas garis singgung).
+\[
+L=\int_{-1}^{2}\bigl[(x^3-3x^2+2)-(-2)\bigr]\,dx
+=\int_{-1}^{2}(x^3-3x^2+4)\,dx
+\]
+\[
+=\Bigl[\tfrac{x^4}{4}-x^3+4x\Bigr]_{-1}^{2}
+=\Bigl(4-8+8\Bigr)-\Bigl(\tfrac{1}{4}+1-4\Bigr)
+=4-\Bigl(-\tfrac{11}{4}\Bigr)=4+\tfrac{11}{4}=\tfrac{27}{4}.
+\]
+\jawaban{(b) $\dfrac{27}{4}$}
+\end{pembox}
+
+% ------------------------------------------------------------------
+%  Q39: Trigonometri × Persamaan × Barisan
+% ------------------------------------------------------------------
+\begin{soal}{39 -- Trigonometri $\times$ Persamaan $\times$ Barisan}
+Semua $x\in[0,\pi]$ yang memenuhi $\cos3x+\sin3x=1$. Jumlah semua nilai $x$ tersebut.
+\end{soal}
+\begin{pembox}
+\konsep{Bentuk $a\cos\theta+b\sin\theta$, persamaan trig, jumlah akar}
+
+Tulis $\cos3x+\sin3x=\sqrt{2}\sin\!\bigl(3x+\tfrac{\pi}{4}\bigr)=1$, sehingga:
+\[
+\sin\!\Bigl(3x+\frac{\pi}{4}\Bigr)=\frac{1}{\sqrt{2}}.
+\]
+
+\textbf{Kasus 1:} $3x+\dfrac{\pi}{4}=\dfrac{\pi}{4}+2k\pi\Rightarrow x=\dfrac{2k\pi}{3}$.
+
+Pada $[0,\pi]$: $k=0\Rightarrow x=0$;\; $k=1\Rightarrow x=\dfrac{2\pi}{3}$;\; $k=2\Rightarrow x=\dfrac{4\pi}{3}>\pi$ (lewat).
+
+\textbf{Kasus 2:} $3x+\dfrac{\pi}{4}=\dfrac{3\pi}{4}+2k\pi\Rightarrow x=\dfrac{\pi}{6}+\dfrac{2k\pi}{3}$.
+
+Pada $[0,\pi]$: $k=0\Rightarrow x=\dfrac{\pi}{6}$;\; $k=1\Rightarrow x=\dfrac{\pi}{6}+\dfrac{2\pi}{3}=\dfrac{5\pi}{6}$;\; $k=2\Rightarrow>\pi$.
+
+Empat solusi: $x=0,\;\dfrac{\pi}{6},\;\dfrac{2\pi}{3},\;\dfrac{5\pi}{6}$.
+
+Jumlah $=0+\dfrac{\pi}{6}+\dfrac{4\pi}{6}+\dfrac{5\pi}{6}=\dfrac{10\pi}{6}=\dfrac{5\pi}{3}$.
+\jawaban{(d) $\dfrac{5\pi}{3}$}
+\end{pembox}
+
+% ------------------------------------------------------------------
+%  Q40: Vektor × Geometri Analitik × Sistem Persamaan
+% ------------------------------------------------------------------
+\begin{soal}{40 -- Vektor $\times$ Geometri Analitik $\times$ Sistem Persamaan}
+$A(1,2)$, $B(5,4)$, $C(p,q)$ siku-siku di $C$ ($\vec{CA}\perp\vec{CB}$) dan luas $\triangle ABC=5$.
+Jumlah semua nilai $p+q$ yang mungkin adalah \ldots
+\end{soal}
+\begin{pembox}
+\konsep{Perkalian titik vektor, luas segitiga dengan determinan, sistem nonlinier}
+
+$\vec{CA}=(1-p,\,2-q)$, $\vec{CB}=(5-p,\,4-q)$.
+
+\textbf{Syarat tegak lurus:}
+\[
+\vec{CA}\cdot\vec{CB}=(1-p)(5-p)+(2-q)(4-q)=p^2+q^2-6p-6q+13=0.\tag{i}
+\]
+
+\textbf{Syarat luas $=5$:}
+\[
+\tfrac{1}{2}|(1-p)(4-q)-(2-q)(5-p)|=5\Rightarrow|-6-2p+4q|=10.
+\]
+
+\textit{Kasus 1:} $-2p+4q=16\Rightarrow p=2q-8$. Substitusi ke (i):
+$(2q-8)^2+q^2-6(2q-8)-6q+13=5q^2-50q+125=0$
+$\Rightarrow(q-5)^2=0\Rightarrow q=5,\;p=2$.\quad $p+q=7$.
+
+\textit{Kasus 2:} $-2p+4q=-4\Rightarrow p=2q+2$. Substitusi ke (i):
+$(2q+2)^2+q^2-6(2q+2)-6q+13=5q^2-10q+5=0$
+$\Rightarrow(q-1)^2=0\Rightarrow q=1,\;p=4$.\quad $p+q=5$.
+
+Jumlah $=(7)+(5)=12$.
+\jawaban{(c) $12$}
+\end{pembox}
+
+% ------------------------------------------------------------------
+%  Q41: Barisan Geometri × Eksponen × Logaritma
+% ------------------------------------------------------------------
+\begin{soal}{41 -- Barisan Geometri $\times$ Eksponen $\times$ Logaritma}
+Tiga bilangan positif membentuk barisan geometri berjumlah 7 dan berhasil kali 8.
+Jika barisan menaik, nilai ${}^2\!\log$ dari suku ke-4 adalah \ldots
+\end{soal}
+\begin{pembox}
+\konsep{Barisan geometri, sifat hasil kali, logaritma}
+
+Misalkan ketiga suku: $a$, $ar$, $ar^2$ ($r>1$, $a>0$).
+
+Hasil kali: $a^3r^3=(ar)^3=8\Rightarrow ar=2$ (suku tengah $= 2$).
+
+Jumlah: $a+2+2r=7\Rightarrow a+2r=5$.
+
+Dari $ar=2$: $a=\dfrac{2}{r}$; substitusi: $\dfrac{2}{r}+2r=5\Rightarrow2r^2-5r+2=0\Rightarrow(2r-1)(r-2)=0$.
+
+Karena $r>1$: $r=2$, $a=1$. Barisan: $1,\;2,\;4$.
+
+Suku ke-4: $ar^3=1\cdot8=8$. Maka ${}^2\!\log 8=3$.
+\jawaban{(b) $3$}
+\end{pembox}
+
+% ------------------------------------------------------------------
+%  Q42: Matriks × Sistem Persamaan × Aljabar
+% ------------------------------------------------------------------
+\begin{soal}{42 -- Matriks $\times$ Sistem Persamaan $\times$ Aljabar}
+$A=\begin{pmatrix}a&b\\b&a\end{pmatrix}$, $A^2=\begin{pmatrix}13&12\\12&13\end{pmatrix}$, $a>b$.
+Nilai $a^2-b^2+ab$.
+\end{soal}
+\begin{pembox}
+\konsep{Perkalian matriks simetris, sistem persamaan kuadrat}
+
+Hitung $A^2$:
+\[
+A^2=\begin{pmatrix}a^2+b^2&2ab\\2ab&a^2+b^2\end{pmatrix}=\begin{pmatrix}13&12\\12&13\end{pmatrix}.
+\]
+
+Sistem: $a^2+b^2=13$ dan $2ab=12\Rightarrow ab=6$.
+
+$(a+b)^2=a^2+2ab+b^2=13+12=25\Rightarrow a+b=5$ (positif karena $a>b>0$).
+
+$(a-b)^2=13-12=1\Rightarrow a-b=1$ (karena $a>b$).
+
+Selesaikan: $a=3$, $b=2$.
+
+$a^2-b^2+ab=(a-b)(a+b)+ab=1\cdot5+6=11$.
+\jawaban{(c) $11$}
+\end{pembox}
+
+% ------------------------------------------------------------------
+%  Q43: Eksponen × Identitas Aljabar × Persamaan
+% ------------------------------------------------------------------
+\begin{soal}{43 -- Eksponen $\times$ Identitas Aljabar $\times$ Persamaan}
+Jika $4^x+4^{-x}=14$, maka $2^x+2^{-x}=\ldots$
+\end{soal}
+\begin{pembox}
+\konsep{Identitas kuadrat, substitusi eksponen}
+
+Misalkan $t=2^x+2^{-x}$ ($t>0$). Maka:
+\[
+t^2=(2^x)^2+2\cdot2^x\cdot2^{-x}+(2^{-x})^2=4^x+2+4^{-x}=14+2=16.
+\]
+$t=4$ (ambil positif).
+\jawaban{(c) $4$}
+\end{pembox}
+
+% ------------------------------------------------------------------
+%  Q44: Logaritma × Sistem Persamaan × Fungsi
+% ------------------------------------------------------------------
+\begin{soal}{44 -- Logaritma $\times$ Sistem Persamaan $\times$ Fungsi}
+Pasangan $(x,y)$ dengan $x,y>0$ memenuhi $\begin{cases}\log_2(xy)=5\\\log_2\dfrac{x}{y}=1\end{cases}$.
+Nilai $x+y$.
+\end{soal}
+\begin{pembox}
+\konsep{Sifat logaritma, sistem persamaan linier-log}
+
+Dari persamaan pertama: $xy=2^5=32$.
+
+Dari persamaan kedua: $\dfrac{x}{y}=2^1=2\Rightarrow x=2y$.
+
+Substitusi: $2y\cdot y=32\Rightarrow y^2=16\Rightarrow y=4$, $x=8$.
+
+$x+y=8+4=12$.
+\jawaban{(c) $12$}
+\end{pembox}
+
+% ------------------------------------------------------------------
+%  Q45: Limit × Faktorisasi Polinomial × Aljabar
+% ------------------------------------------------------------------
+\begin{soal}{45 -- Limit $\times$ Faktorisasi Polinomial $\times$ Aljabar}
+$\displaystyle\lim_{x\to2}\frac{x^4-3x^3+2x^2+x-2}{x^3-4x^2+5x-2}=\ldots$
+\end{soal}
+\begin{pembox}
+\konsep{Limit bentuk $\tfrac{0}{0}$, faktorisasi polinomial, pembagi bersekutu}
+
+Substitusi $x=2$: pembilang $=16-24+8+2-2=0$; penyebut $=8-16+10-2=0$. Bentuk $\tfrac{0}{0}$.
+
+\textbf{Faktorisasi penyebut} $(x^3-4x^2+5x-2)$: coba $x=1$: $1-4+5-2=0$. Jadi $(x-1)$ adalah faktor.
+\[
+x^3-4x^2+5x-2=(x-1)(x^2-3x+2)=(x-1)^2(x-2).
+\]
+
+\textbf{Faktorisasi pembilang} $(x^4-3x^3+2x^2+x-2)$: bagi dengan $(x-2)$ (Horner):
+\[
+x^4-3x^3+2x^2+x-2=(x-2)(x^3-x^2+1).
+\quad\text{(verifikasi: }(x-2)(x^3-x^2+0\cdot x+1)=x^4-3x^3+2x^2+x-2\checkmark\text{)}
+\]
+
+\textbf{Hitung limit:}
+\[
+\lim_{x\to2}\frac{(x-2)(x^3-x^2+1)}{(x-1)^2(x-2)}
+=\lim_{x\to2}\frac{x^3-x^2+1}{(x-1)^2}
+=\frac{8-4+1}{(1)^2}=\frac{5}{1}=5.
+\]
+\jawaban{(c) $5$}
+\end{pembox}
+
+\end{document}

@@ -1,0 +1,1050 @@
+% ============================================================
+%  SOAL MATEMATIKA  --  SSU-ITB 2026
+%  INTEN Set 1--6  (nomor 1--60)
+%  Paket 3  |  PG Biasa 24 (40%) | PG Majemuk 24 (40%) | Isian 12 (20%)
+% ============================================================
+
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.5cm,top=2.8cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{icomma}
+\usepackage{array}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small SSU-ITB 2026}
+\rhead{\small Paket 3}
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newtcolorbox{soal}[1]{
+  breakable,
+  colback=white, colframe=black, colbacktitle=black,
+  coltitle=white, fonttitle=\bfseries\sffamily,
+  title=Nomor #1,
+  boxrule=0.8pt, arc=0pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+\newenvironment{pil}{%
+  \begin{enumerate}[label=(\Alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}}
+\newenvironment{pilB}{%
+  \par\smallskip\begin{multicols}{2}
+  \begin{enumerate}[label=(\Alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}\end{multicols}}
+
+\newcommand{\gambar}[2][0.52\textwidth]{%
+  \begin{center}\includegraphics[width=#1]{#2}\end{center}}
+
+\linespread{1.05}
+
+% ===================================================================
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+  \fbox{\parbox{0.45\textwidth}{\centering\bfseries\large LEMBAR SOAL}}
+\end{center}
+\vspace{0.5cm}
+
+\begin{center}
+  {\LARGE\bfseries MATEMATIKA}
+\end{center}
+\vspace{0.5cm}
+
+\begin{center}
+  \begin{tabular}{@{\hspace{2cm}}ll@{\hspace{0.4cm}:@{\hspace{0.4cm}}}l}
+    Jenjang      & & SMA / Sederajat               \\[0.3em]
+    Hari/Tanggal & & \underline{\hspace{5cm}}      \\[0.3em]
+    Waktu        & & \underline{\hspace{5cm}}      \\[0.3em]
+    Paket Soal   & & 3                             \\
+  \end{tabular}
+\end{center}
+
+\vspace{0.6cm}
+\noindent\rule{\linewidth}{0.6pt}
+\vspace{0.3cm}
+
+\noindent\textbf{\underline{PETUNJUK UMUM}}
+\begin{enumerate}[leftmargin=*,itemsep=4pt,topsep=4pt]
+  \item Anda \textbf{tidak} diperbolehkan menggunakan sumber-sumber eksternal,
+        termasuk internet, \textit{large language model} seperti ChatGPT, Claude,
+        LLaMA, Gemini, Meta AI, dan sebagainya. Anda sangat dianjurkan untuk
+        mencoba mengerjakan sendiri terlebih dahulu karena evaluasi ini dibuat
+        untuk \textbf{mengukur} tingkat kepahaman; nilai $<70$ mengindikasikan
+        \textbf{tidak lulus}, dan jika sudah melewati \textit{deadline} maka
+        dianggap tidak mengerjakan yang berarti \textbf{tidak lulus}.
+
+  \item Terdapat 2 tahap pengerjaan, yaitu tahap \textbf{Try Out} dan tahap
+        \textbf{Review}. Try Out bersifat \textit{open book}; Anda diperbolehkan
+        membuka buku apapun selama bersifat \textit{offline} dengan rentang waktu
+        2 jam pada tanggal \underline{\hspace{3cm}}. Setelah itu memasuki
+        tahap Review dengan \textit{schedule} rentang tanggal
+        \underline{\hspace{3cm}}--\underline{\hspace{3cm}}, di mana Anda
+        diharapkan mengerjakan ulang dengan disertakan penjelasan/pembelaan
+        mengapa revisi jawaban adalah pilihan tersebut, dan tetap mencantumkan
+        penjelasan pada soal yang walaupun pada penilaian sudah benar.
+
+  \item Anda dianjurkan untuk mencantumkan caranya walaupun tidak termasuk
+        penilaian, mengingat sifatnya adalah sebagai bahan pembelajaran.
+        Mohon bertanggung jawab atas pekerjaan Anda sendiri.
+
+  \item Bacalah setiap soal dengan teliti. Terdapat tiga jenis soal:
+        \begin{enumerate}[label=(\arabic*),leftmargin=2em,topsep=2pt,itemsep=2pt]
+          \item \textbf{Pilihan Ganda Biasa} --- 5 opsi (A--E), pilih
+                1 jawaban paling tepat;
+          \item \textbf{Pilihan Ganda Majemuk Kompleks} --- tabel
+                \textbf{Benar}/\textbf{Salah}, tentukan kebenaran tiap
+                pernyataan secara mandiri; dan
+          \item \textbf{Isian Singkat} --- tulis nilai/ekspresi pada
+                kolom yang tersedia.
+        \end{enumerate}
+
+  \item Soal berjumlah \textbf{60 butir} soal dengan bobot asli per soal adalah
+        $\mathbf{\tfrac{5}{3}}$ untuk mendapatkan nilai sempurna sebesar \textbf{100}.
+
+  \item Silakan bertanya apabila terdapat soal yang ambigu, rancu, atau kurang
+        spesifik selama itu tidak menjurus kepada jawaban soal tersebut.
+
+  \item Isilah detail informasi berikut.\\[0.3em]
+        \textbf{Nama}\hspace{0.45cm};\enspace\underline{\hspace{8cm}}
+\end{enumerate}
+
+\vspace{0.6cm}
+\noindent\textit{Dengan menandatangani kolom di bawah ini, saya menyatakan telah membaca,
+memahami, dan menyetujui seluruh peraturan yang tercantum di atas.}
+
+\vspace{0.6cm}
+\noindent\fbox{\parbox{5cm}{\vspace{2.2cm}\centering\small Tanda Tangan Peserta\vspace{0.3cm}}}
+
+\clearpage
+
+% ===================================================================
+%  SET 1  (nomor 1--10)
+% ===================================================================
+
+%---------- 1: PG Biasa ----------
+\begin{soal}{1}
+Jika $9^{1/6}\cdot x=3$, maka nilai $x$ adalah \ldots
+\begin{pilB}
+  \item $3^{4/6}$ \item $3^{4/36}$ \item $3^{6/2}$ \item $3^{6}$ \item $3^{1/3}$
+\end{pilB}
+\end{soal}
+
+%---------- 2: PG Biasa ----------
+\begin{soal}{2}
+Jika titik $A(4,15)$ terletak pada grafik fungsi $g(x)=\dfrac{2x+7}{x^2-b}$,
+maka nilai $b$ adalah \ldots
+\begin{pilB}
+  \item $16$ \item $14$ \item $13$ \item $15$ \item $12$
+\end{pilB}
+\end{soal}
+
+%---------- 3: PG Majemuk Kompleks ----------
+\begin{soal}{3}
+Diketahui $x_0,x_1,x_2,\ldots,x_{100}$ adalah barisan aritmetika dengan
+$x_0=3$ dan $x_{100}=9$. Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Beda barisan aritmetika tersebut adalah $\dfrac{3}{50}$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Nilai $x_{50} = 6$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Nilai $x_{25} = 4{,}5$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Nilai $x_{75} = 8$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 4: PG Majemuk Kompleks ----------
+\begin{soal}{4}
+Diberikan fungsi $f(x)=\dfrac{5x^2-9x+3}{(x-1)^6}$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~$f'(x)$ terdefinisi untuk semua $x\neq1$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~$f'(2) = -19$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~$f'(2) > 0$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Jika $g(x)=(x-1)^6 f(x)$, maka $g(2)=5$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 5: PG Biasa ----------
+\begin{soal}{5}
+Jika $x^3-2x+5$ dibagi oleh $1-x$, maka sisanya adalah \ldots
+\begin{pilB}
+  \item $4$ \item $5$ \item $6$ \item $7$ \item $8$
+\end{pilB}
+\end{soal}
+
+%---------- 6: PG Biasa ----------
+\begin{soal}{6}
+Diketahui $f(x)=x^3+(a-1)x^2-2$. Jika $f(-2)=26$, maka nilai $a$ adalah \ldots
+\begin{pilB}
+  \item $5$ \item $10$ \item $15$ \item $20$ \item $25$
+\end{pilB}
+\end{soal}
+
+%---------- 7: PG Majemuk Kompleks ----------
+\begin{soal}{7}
+Tiga buah dadu enam sisi dilempar bersamaan.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Ruang sampel pelemparan tiga dadu berjumlah $216$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Banyaknya cara agar jumlah tiga mata dadu bernilai $7$ adalah $15$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Peluang jumlah mata dadu ketiga bernilai $7$ adalah $\dfrac{15}{216}$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Peluang jumlah mata dadu ketiga bernilai $7$ adalah $\dfrac{1}{12}$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 8: PG Biasa ----------
+\begin{soal}{8}
+Diberikan trapesium $ABCD$ seperti pada gambar. Jika panjang $AB=11$,
+$CD=7$, $BC=5$, dan luas trapesium adalah 27, maka keliling trapesium
+adalah \ldots
+\gambar[0.38\textwidth]{images/3/3-2.png}
+\begin{pilB}
+  \item $21$ \item $24$ \item $26$ \item $27$ \item $30$
+\end{pilB}
+\end{soal}
+
+%---------- 9: PG Biasa ----------
+\begin{soal}{9}
+Diberikan persamaan lingkaran $(x+5)^2+(y-3)^2=9$. Titik pusat dan
+jari-jari lingkaran tersebut adalah \ldots
+\begin{pil}
+  \item Titik pusat $(5,3)$ dan jari-jari $9$
+  \item Titik pusat $(-5,3)$ dan jari-jari $3$
+  \item Titik pusat $(5,3)$ dan jari-jari $3$
+  \item Titik pusat $(5,-3)$ dan jari-jari $9$
+  \item Titik pusat $(-5,-3)$ dan jari-jari $3$
+\end{pil}
+\end{soal}
+
+%---------- 10: PG Majemuk Kompleks ----------
+\begin{soal}{10}
+Misalkan $\dfrac{A}{2-\sqrt{5}}+\dfrac{B}{2+\sqrt{5}}=1+2\sqrt{5}$
+dengan $A$ dan $B$ bilangan real.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~$A + B = -\dfrac{1}{2}$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~$A = -\dfrac{5}{4}$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~$B = -\dfrac{3}{4}$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~$A < B$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+% ===================================================================
+%  SET 2  (nomor 11--20)
+% ===================================================================
+
+%---------- 11: PG Biasa ----------
+\begin{soal}{11}
+Jika sistem persamaan $\begin{cases}px+qy=8\\ 3x-qy=38\end{cases}$
+memiliki penyelesaian $(x,y)=(2,4)$, maka nilai $p$ adalah \ldots
+\begin{pilB}
+  \item $40$ \item $22{,}5$ \item $21{,}5$ \item $20$ \item $8$
+\end{pilB}
+\end{soal}
+
+%---------- 12: PG Biasa ----------
+\begin{soal}{12}
+Jika $a=\sqrt{7}+3$ dan $b=\sqrt{7}-3$, maka $a^3+b^3$ adalah \ldots
+\begin{pilB}
+  \item $60\sqrt{7}$ \item $62\sqrt{7}$ \item $64\sqrt{7}$
+  \item $66\sqrt{7}$ \item $68\sqrt{7}$
+\end{pilB}
+\end{soal}
+
+%---------- 13: PG Biasa ----------
+\begin{soal}{13}
+Jika $a<x<b$ adalah solusi dari $\dfrac{x^2+x+3}{x^2-x-2}<0$,
+maka nilai $b-2a$ adalah \ldots
+\begin{pilB}
+  \item $1$ \item $2$ \item $3$ \item $4$ \item $5$
+\end{pilB}
+\end{soal}
+
+%---------- 14: PG Majemuk Kompleks ----------
+\begin{soal}{14}
+Diberikan $A=\begin{pmatrix} a & b & c\\ 1 & -1 & 1\end{pmatrix}$
+dan $B=\begin{pmatrix} 1 & 2\\ 1 & -1\\ 0 & 1\end{pmatrix}$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Matriks $AB$ berukuran $2\times2$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~$\det(AB) = 4(a+b)$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Jika $\det(AB)=4$, maka $a+b=4$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Jika $\det(AB)=4$, maka $a+b=1$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 15: PG Biasa ----------
+\begin{soal}{15}
+Agar persamaan kuadrat $ax^2+bx+b=0$ mempunyai dua akar real berbeda
+untuk $b<0$ atau $b>8$, maka nilai $a$ adalah \ldots
+\begin{pilB}
+  \item $1$ \item $2$ \item $-2$ \item $3$ \item $-3$
+\end{pilB}
+\end{soal}
+
+%---------- 16: PG Majemuk Kompleks ----------
+\begin{soal}{16}
+Diketahui $f(x)=3x^2+9x+12$. Jika
+$\dfrac{f(x+h)-f(x)}{h}=Ax+B+Ch$,
+tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~$A = 6$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~$B = 3$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~$C = 3$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~$100A+10B+C = 693$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 17: PG Biasa ----------
+\begin{soal}{17}
+Misalkan $f(x)=\begin{cases}x^2-x+2, & x\geq1\\ x+1, & x<1\end{cases}$.
+Maka nilai $\lim_{x\to1}f(x)$ adalah \ldots
+\begin{pilB}
+  \item $-2$ \item $-1$ \item Tidak ada \item $1$ \item $2$
+\end{pilB}
+\end{soal}
+
+%---------- 18: PG Biasa ----------
+\begin{soal}{18}
+Jika $f(3)=6$, $f'(3)=4$, $g(3)=10$, dan $g'(3)=-6$, maka
+$\left(\dfrac{f}{g}\right)'(3)$ adalah \ldots
+\begin{pilB}
+  \item $0{,}76$ \item $0{,}82$ \item $0{,}91$ \item $0{,}95$ \item $1$
+\end{pilB}
+\end{soal}
+
+%---------- 19: PG Majemuk Kompleks ----------
+\begin{soal}{19}
+Diketahui $\displaystyle\int_1^9 f(x)\,dx=5$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Substitusi $u=x^2$ mengubah batas integral $\displaystyle\int_1^3$
+    menjadi $\displaystyle\int_1^9$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~$\displaystyle\int_1^3 8x\,f(x^2)\,dx = 4\int_1^9 f(u)\,du$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Nilai $\displaystyle\int_1^3 8x\,f(x^2)\,dx = 5$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Nilai $\displaystyle\int_1^3 8x\,f(x^2)\,dx = 20$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 20: PG Majemuk Kompleks ----------
+\begin{soal}{20}
+Perhatikan pertidaksamaan $|x-7|\geq3$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Bilangan bulat yang \textbf{tidak} memenuhi $|x-7|\geq3$
+    adalah bilangan bulat yang memenuhi $|x-7|<3$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Kondisi $|x-7|<3$ setara dengan $4<x<10$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Banyaknya bilangan bulat yang tidak memenuhi pertidaksamaan tersebut
+    adalah $4$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Banyaknya bilangan bulat yang tidak memenuhi pertidaksamaan tersebut
+    adalah $5$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+% ===================================================================
+%  SET 3  (nomor 21--30)
+% ===================================================================
+
+%---------- 21: PG Biasa ----------
+\begin{soal}{21}
+Jika $9^m=4$, maka $4\cdot3^{m+1}-27^m$ adalah \ldots
+\begin{pilB}
+  \item $8$ \item $12$ \item $16$ \item $18$ \item $24$
+\end{pilB}
+\end{soal}
+
+%---------- 22: PG Biasa ----------
+\begin{soal}{22}
+Nilai $a$ yang memenuhi
+$\dfrac{1}{\log_{10}a}+\dfrac{1}{\log_{\sqrt{10}}a}+\dfrac{1}{\log_{\sqrt{\sqrt{10}}}a}+\cdots=200$
+adalah \ldots
+\begin{pilB}
+  \item $\dfrac{1}{100}$ \item $\dfrac{1}{10}$ \item $\sqrt{10}$
+  \item $10^{1/100}$ \item $10^{1/10}$
+\end{pilB}
+\end{soal}
+
+%---------- 23: PG Majemuk Kompleks ----------
+\begin{soal}{23}
+Diberikan persamaan $\sin x=\dfrac{a-1{,}5}{2-0{,}5a}$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Ruas kanan dapat ditulis sebagai $\dfrac{2a-3}{4-a}$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Agar persamaan mempunyai solusi, diperlukan
+    $-1\leq\dfrac{2a-3}{4-a}\leq1$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Banyaknya bilangan bulat $a$ sehingga persamaan mempunyai
+    penyelesaian adalah $3$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Banyaknya bilangan bulat $a$ sehingga persamaan mempunyai
+    penyelesaian adalah $4$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 24: PG Majemuk Kompleks ----------
+\begin{soal}{24}
+Perhatikan $\displaystyle\sum_{k=1}^{100}2k+\sum_{k=1}^{100}(3k+2)$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~$\displaystyle\sum_{k=1}^{100} k = 4950$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~$\displaystyle\sum_{k=1}^{100} 2k = 10100$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~$\displaystyle\sum_{k=1}^{100} (3k+2) = 15350$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Total nilai $\displaystyle\sum_{k=1}^{100}2k+\sum_{k=1}^{100}(3k+2) = 25450$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 25: PG Majemuk Kompleks ----------
+\begin{soal}{25}
+Perhatikan pertidaksamaan $(x+1)(x^2+2x-7)\geq x^2-1$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Pertidaksamaan dapat difaktorkan menjadi $(x-2)(x+1)(x+3)\geq0$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~$x=-3$ memenuhi pertidaksamaan.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Banyaknya bilangan bulat negatif yang memenuhi adalah $3$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~$x=-4$ memenuhi pertidaksamaan.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 26: PG Biasa ----------
+\begin{soal}{26}
+Hasil penjualan buku selama 10 hari terakhir bulan Juni adalah
+$8,7,8,6,8,8,9,8,10,8$. Jika rata-rata penjualan pada bulan Juni
+adalah 10, maka rata-rata penjualan pada 20 hari pertama adalah \ldots
+\begin{pilB}
+  \item $8$ \item $9$ \item $10$ \item $11$ \item $13$
+\end{pilB}
+\end{soal}
+
+%---------- 27: PG Majemuk Kompleks ----------
+\begin{soal}{27}
+Diketahui $x^7-10x^6+24x^5=0$ memiliki tiga akar real berbeda
+$r_1<r_2<r_3$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Persamaan dapat difaktorkan menjadi $x^5(x-4)(x-6)=0$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Terdapat tiga akar real berbeda, yaitu $0,4,6$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~$r_1+r_3 = 6$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~$r_1\cdot r_3 = 24$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 28: PG Biasa ----------
+\begin{soal}{28}
+Jika persamaan garis singgung kurva $y=3x^2+C$ di suatu titik
+adalah $y=24x$, maka nilai $C$ adalah \ldots
+\begin{pilB}
+  \item $50$ \item $46$ \item $47$ \item $48$ \item $49$
+\end{pilB}
+\end{soal}
+
+%---------- 29: PG Majemuk Kompleks ----------
+\begin{soal}{29}
+Perhatikan transformasi parabola $y=x^2$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Transformasi $y=(x-h)^2$ merupakan pergeseran grafik $y=x^2$
+    sejauh $h$ satuan ke kanan (untuk $h>0$).
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Parabola $y=(x-1)^2$ diperoleh dengan menggeser $y=x^2$
+    ke kanan 1 satuan.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Parabola $y=(x-1)^2$ diperoleh dengan menggeser $y=x^2$
+    ke kiri 1 satuan.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Titik minimum parabola $y=(x-1)^2$ berada di $(1,0)$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 30: Isian ----------
+\begin{soal}{30}
+Bilangan bulat yang nilainya paling dekat dengan $5\sqrt{2}$ adalah \ldots\\[0.4em]
+Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+% ===================================================================
+%  SET 4  (nomor 31--40)
+% ===================================================================
+
+%---------- 31: PG Majemuk Kompleks ----------
+\begin{soal}{31}
+Diketahui $f(x)=\sqrt{1+x}$. Perhatikan
+$\displaystyle\lim_{h\to0}\dfrac{f(3+2h^2)-f(3-3h^2)}{h^2}$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~$f'(x) = \dfrac{1}{2\sqrt{1+x}}$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~$f'(3) = \dfrac{1}{4}$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Nilai limit tersebut adalah $\dfrac{9}{8}$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Nilai limit tersebut adalah $\dfrac{5}{4}$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 32: PG Majemuk Kompleks ----------
+\begin{soal}{32}
+Perhatikan persamaan $\cos(3x+15^\circ)=\sin(x+25^\circ)$
+untuk $0^\circ<x<90^\circ$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~$\sin(x+25^\circ) = \cos(65^\circ-x)$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Dari persamaan tersebut diperoleh $4x = 50^\circ$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Nilai $x = 15^\circ$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Nilai $x = 12{,}5^\circ$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 33: PG Majemuk Kompleks ----------
+\begin{soal}{33}
+Perhatikan fungsi $f(x)=\sqrt{\dfrac{x^2-5x}{1-x}}$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Agar $f(x)$ terdefinisi, diperlukan $\dfrac{x(x-5)}{1-x}\geq0$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Interval $1<x\leq5$ merupakan bagian daerah asal $f$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Interval $0<x<1$ merupakan bagian daerah asal $f$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Daerah asal $f$ adalah $\{x\mid x\leq0\text{ atau }1<x\leq5\}$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 34: Isian ----------
+\begin{soal}{34}
+Jika $\displaystyle\int_0^1\dfrac{x}{1+x}\,dx=a$, maka
+$\displaystyle\int_0^1\dfrac{1}{1+x}\,dx$ adalah \ldots\\[0.4em]
+Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+%---------- 35: Isian ----------
+\begin{soal}{35}
+Jika fungsi kuadrat $f(x)$ memenuhi $f(x)\geq0$ untuk semua real $x$,
+$f(1)=0$, dan $f(2)=2$, maka nilai $f(0)+f(4)$ adalah \ldots\\[0.4em]
+Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+%---------- 36: Isian ----------
+\begin{soal}{36}
+Misalkan $A$ dan $B$ berada pada lingkaran berpusat $O(0,0)$.
+Diketahui $\alpha=\angle AOB$, $A(a,b)$ di kuadran~I, $B=(25,0)$,
+dan $\sin\alpha=\dfrac{4}{5}$.
+\begin{enumerate}[label=(\alph*),leftmargin=*,topsep=3pt,itemsep=4pt]
+  \item Tentukan nilai $b$.\hfill Jawaban:\enspace\underline{\hspace{3.5cm}}
+  \item Tentukan nilai $5\cos\alpha$.\hfill Jawaban:\enspace\underline{\hspace{3.5cm}}
+\end{enumerate}
+\end{soal}
+
+%---------- 37: Isian ----------
+\begin{soal}{37}
+Diketahui suku barisan aritmetika $U_6=\log_8 96$ dan $U_2=\log_8 6$.
+Jika $U_{12}-U_4=\log_8(c)$, maka nilai $c$ adalah \ldots\\[0.4em]
+Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+%---------- 38: Isian ----------
+\begin{soal}{38}
+Misalkan fungsi $f$ memenuhi $f(-x)=f(x)$. Jika $\int_0^5 f(x)\,dx=7$
+dan $\int_5^6 f(x)\,dx=8$, maka $\displaystyle\int_{-5}^6 f(x)\,dx$
+adalah \ldots\\[0.4em]
+Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+%---------- 39: Isian ----------
+\begin{soal}{39}
+Jika $\displaystyle\lim_{x\to0}\dfrac{f(x)}{3x}=5$, maka nilai
+\[
+  \lim_{x\to0}\left[\frac{2f(x)}{x^2}-\frac{f(x)\cos2x}{x(1+x)}-\frac{2f(x)}{x^2(1+x)}\right]
+\]
+adalah \ldots\hfill Jawaban:\enspace\underline{\hspace{3cm}}
+\end{soal}
+
+%---------- 40: Isian ----------
+\begin{soal}{40}
+Misalkan $l$ adalah garis $y=x$ dan $k$ adalah garis $y=-\tfrac{5}{3}x$.
+Titik $A$ berada pada garis $k$ dan $B$ adalah proyeksi titik $A$ pada
+garis $l$. Jika jarak dari titik asal $O$ ke $B$ adalah $1$, maka
+jarak $A$ ke $B$ adalah \ldots\hfill Jawaban:\enspace\underline{\hspace{3cm}}
+\end{soal}
+
+% ===================================================================
+%  SET 5  (nomor 41--50)
+% ===================================================================
+
+%---------- 41: PG Biasa ----------
+\begin{soal}{41}
+Truk $A$ dan $B$ masing-masing memuat 4 ton. Truk $C$ dan $D$
+masing-masing memuat 6 ton. Jika truk $E$ memuat 1 ton lebih dari
+rata-rata muatan kelima truk, maka muatan truk $A$ ditambah muatan
+truk $E$ adalah \ldots
+\begin{pilB}
+  \item $8{,}17$ \item $9$ \item $10$ \item $10{,}25$ \item $10{,}5$
+\end{pilB}
+\end{soal}
+
+%---------- 42: PG Biasa ----------
+\begin{soal}{42}
+Satu dadu dilempar 3 kali. Peluang mata dadu 6 muncul sedikitnya
+sekali adalah \ldots
+\begin{pilB}
+  \item $\dfrac{1}{216}$ \item $\dfrac{3}{216}$ \item $\dfrac{12}{216}$
+  \item $\dfrac{18}{216}$ \item $\dfrac{91}{216}$
+\end{pilB}
+\end{soal}
+
+%---------- 43: PG Majemuk Kompleks ----------
+\begin{soal}{43}
+Suku banyak $x^3+3x^2+9x+3$ membagi habis $x^4+4x^3+2ax^2+4bx+c$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Hasil bagi pembagian tersebut berbentuk $x+k$ untuk suatu $k$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Nilai $k=1$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Nilai $a=6$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Nilai $b=6$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 44: PG Majemuk Kompleks ----------
+\begin{soal}{44}
+Parabola $y=2x^2+1$ dicerminkan terhadap sumbu $x$, kemudian digeser
+ke kanan sejauh 2 satuan, menghasilkan $y=ax^2+bx+c$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Pencerminan terhadap sumbu $x$ mengubah $y=2x^2+1$ menjadi
+    $y=-2x^2-1$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Pergeseran ke kanan 2 satuan mengganti $x$ dengan $x-2$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Persamaan akhirnya adalah $y=-2x^2+8x-7$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Nilai $a+b+c = -3$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 45: Isian ----------
+\begin{soal}{45}
+Nilai dari $\sqrt[3]{9+4\sqrt{5}}+\sqrt[3]{9-4\sqrt{5}}$ adalah \ldots\\[0.4em]
+Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+%---------- 46: PG Biasa ----------
+\begin{soal}{46}
+Nilai $\displaystyle\lim_{x\to5}\dfrac{\sin(30-6x)}{x^2-25}$ adalah \ldots
+\begin{pilB}
+  \item $-0{,}2$ \item $-0{,}4$ \item $-0{,}6$ \item $-0{,}8$ \item $-1$
+\end{pilB}
+\end{soal}
+
+%---------- 47: PG Majemuk Kompleks ----------
+\begin{soal}{47}
+Persamaan parabola melalui titik $(-4,0)$ dan $(2,0)$, serta titik
+minimumnya terletak pada garis $y=23x+20$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Sumbu simetri parabola tersebut berada di $x=-1$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Ordinat titik minimum parabola tersebut adalah $-3$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Nilai $k=\dfrac{1}{3}$ dalam bentuk $y=k(x+4)(x-2)$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Persamaan parabolanya adalah $y=\dfrac{1}{3}(x-4)(x+2)$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 48: PG Biasa ----------
+\begin{soal}{48}
+Jika rata-rata lima bilangan $5,4,c+11,c-1$, dan $5$ adalah $10$,
+maka $c$ adalah \ldots
+\begin{pilB}
+  \item $18$ \item $17$ \item $16$ \item $15$ \item $13$
+\end{pilB}
+\end{soal}
+
+%---------- 49: PG Majemuk Kompleks ----------
+\begin{soal}{49}
+Diketahui enam bilangan terurut $4,\,6-a,\,6,\,8,\,8+a,\,10$ dengan
+$0\leq a\leq2$. Misalkan $P=s^2$ (varians populasi) dan $Q=5$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Rata-rata data tersebut adalah $7$ untuk semua $a$ yang
+    diperbolehkan.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~$s^2 = \dfrac{11+2a+a^2}{3}$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~$P < Q$ untuk semua $0\leq a\leq2$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Hubungan antara $P$ dan $Q$ tidak dapat ditentukan secara pasti.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 50: Isian ----------
+\begin{soal}{50}
+Suatu data awal $D_0$ terdiri atas tiga bilangan positif dengan median
+20. Empat bilangan positif $a,b,c,d$ ditambahkan sehingga terbentuk
+data $D$ berisi 7 bilangan. Jika $a+b=40$ dan $c+d=40$, tentukan
+banyaknya \textbf{maksimum} bilangan dalam $D$ yang nilainya kurang
+dari 20.\\[0.4em]
+Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+% ===================================================================
+%  SET 6  (nomor 51--60)
+% ===================================================================
+
+%---------- 51: PG Biasa ----------
+\begin{soal}{51}
+Jika nilai maksimum dari $\dfrac{m}{15\sin x-8\cos x+25}$ adalah $2$,
+maka nilai $m$ adalah \ldots
+\begin{pilB}
+  \item $4$ \item $16$ \item $36$ \item $64$ \item $84$
+\end{pilB}
+\end{soal}
+
+%---------- 52: PG Biasa ----------
+\begin{soal}{52}
+Jika $f(x^2+3x+1)=\log_2(2x^3-x^2+7)$ dan $x\geq0$, maka $f(5)$
+adalah \ldots
+\begin{pilB}
+  \item $1$ \item $2$ \item $3$ \item $4$ \item $5$
+\end{pilB}
+\end{soal}
+
+%---------- 53: PG Majemuk Kompleks ----------
+\begin{soal}{53}
+Perhatikan $\displaystyle\lim_{x\to\infty}
+\!\left(\sqrt{4x^2+8x}-\sqrt{x^2+1}-\sqrt{x^2+x}\right)$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Untuk $x\to\infty$, berlaku $\sqrt{4x^2+8x}=2x+2+o(1)$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Untuk $x\to\infty$, berlaku $\sqrt{x^2+x}=x+\tfrac{1}{2}+o(1)$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Nilai limit tersebut adalah $2$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Nilai limit tersebut adalah $\dfrac{3}{2}$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 54: PG Majemuk Kompleks ----------
+\begin{soal}{54}
+Grafik $y=\tfrac{1}{3}x^3-\tfrac{3}{2}x^2+2x$ mempunyai garis singgung
+mendatar di titik $P$ dan $Q$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Garis singgung mendatar terjadi saat $y'=x^2-3x+2=0$,
+    yaitu di $x=1$ dan $x=2$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Ordinat di $x=1$ adalah $\dfrac{5}{6}$ dan di $x=2$ adalah
+    $\dfrac{2}{3}$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Jumlah ordinat titik $P$ dan $Q$ adalah $\dfrac{5}{3}$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Jumlah ordinat titik $P$ dan $Q$ adalah $\dfrac{3}{2}$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 55: PG Majemuk Kompleks ----------
+\begin{soal}{55}
+Lingkaran berpusat $(a,b)$ dengan $a,b>3$ menyinggung garis
+$3x+4y=12$ dan berjari-jari $12$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Jarak dari pusat $(a,b)$ ke garis $3x+4y-12=0$ sama dengan
+    $\dfrac{|3a+4b-12|}{5}$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Karena $a,b>3$, nilai $3a+4b-12$ adalah positif.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Nilai $3a+4b = 60$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Nilai $3a+4b = 72$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 56: Isian ----------
+\begin{soal}{56}
+Jika $\displaystyle\int_5^9 f(x)\,dx=16$, maka
+$\displaystyle\int_4^6 f(2x-3)\,dx$ adalah \ldots\\[0.4em]
+Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+%---------- 57: PG Biasa ----------
+\begin{soal}{57}
+Diketahui $AB$ adalah diameter lingkaran dengan $A=(10,17)$ dan
+$B=(-2,1)$. Jari-jari lingkaran tersebut adalah \ldots
+\begin{pilB}
+  \item $20$ \item $15$ \item $10$ \item $8$ \item $4$
+\end{pilB}
+\end{soal}
+
+%---------- 58: PG Majemuk Kompleks ----------
+\begin{soal}{58}
+Diketahui $f(x)=\log_3 x$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~$f(2x)+f\!\left(\dfrac{2}{x}\right)=\log_3\!\left(2x\cdot\dfrac{2}{x}\right)$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~$\log_3\!\left(2x\cdot\dfrac{2}{x}\right)=\log_3 4=f(4)$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~$f(2x)+f\!\left(\dfrac{2}{x}\right)=f(x^2)$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~$f(2x)+f\!\left(\dfrac{2}{x}\right)=f(4)$ (tidak bergantung pada $x$).
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+%---------- 59: PG Biasa ----------
+\begin{soal}{59}
+Data $D$ terdiri atas lima bilangan bulat positif. Jika tiga bilangan
+dari data tersebut adalah $4,5,8$, maka rata-rata dari semua nilai
+median data $D$ yang mungkin adalah \ldots
+\begin{pilB}
+  \item $5$ \item $5\tfrac{1}{2}$ \item $6$ \item $6\tfrac{1}{2}$ \item $7$
+\end{pilB}
+\end{soal}
+
+%---------- 60: Isian ----------
+\begin{soal}{60}
+Tentukan daerah asal fungsi $f(x)=\sqrt{|3x-7|-8}$.\\[0.4em]
+Jawaban:\enspace\underline{\hspace{7cm}}
+\end{soal}
+
+\end{document}

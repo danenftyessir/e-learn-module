@@ -1,0 +1,775 @@
+% ============================================================
+%  SOAL + PEMBAHASAN  --  FISIKA  --  SSU-ITB 2026
+%  SM-SSU ITB 2025  (nomor 1--30) | Paket 4
+% ============================================================
+
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.5cm,top=2.8cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{icomma}
+\usepackage{array}
+
+% --- Warna Fisika ---
+\definecolor{mapelcolor}{RGB}{20,70,150}
+\definecolor{mapelbg}{RGB}{230,238,255}
+\definecolor{pembcolor}{RGB}{100,50,130}
+\definecolor{pembbg}{RGB}{245,238,252}
+\definecolor{gold}{RGB}{210,160,30}
+\definecolor{catatan}{RGB}{180,120,0}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small SSU-ITB 2026 --- Pembahasan}
+\rhead{\small Paket 4}
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newtcolorbox{soal}[1]{
+  breakable,
+  colback=mapelbg, colframe=mapelcolor,
+  coltitle=white, fonttitle=\bfseries\sffamily,
+  title=Nomor #1,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+\newtcolorbox{pembox}{
+  breakable,
+  colback=pembbg, colframe=pembcolor,
+  coltitle=white, fonttitle=\bfseries\sffamily,
+  title=Pembahasan,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+\newtcolorbox{catatbox}{
+  breakable,
+  colback=gold!10, colframe=catatan,
+  coltitle=black, fonttitle=\bfseries\sffamily,
+  title=Catatan,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=1.5mm, bottom=1.5mm}
+
+\newcommand{\jawaban}[1]{%
+  \noindent\colorbox{gold!30}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+    \textbf{Jawaban:} #1}}\par\smallskip}
+
+\newcommand{\konsep}{\noindent\textit{Konsep:}\ \ignorespaces}
+
+\newenvironment{pil}{%
+  \begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}}
+\newenvironment{pilB}{%
+  \par\smallskip\begin{multicols}{2}
+  \begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}\end{multicols}}
+
+\newcommand{\gambar}[2][0.52\textwidth]{%
+  \begin{center}\includegraphics[width=#1]{#2}\end{center}}
+
+\linespread{1.05}
+
+% ===================================================================
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+  \fbox{\parbox{0.6\textwidth}{\centering\bfseries\large
+    LEMBAR SOAL DAN PEMBAHASAN}}
+\end{center}
+\vspace{0.5cm}
+
+\begin{center}
+  {\LARGE\bfseries FISIKA}
+\end{center}
+\vspace{0.5cm}
+
+\begin{center}
+  \begin{tabular}{@{\hspace{2cm}}ll@{\hspace{0.4cm}:@{\hspace{0.4cm}}}l}
+    Jenjang      & & SMA / Sederajat               \\[0.3em]
+    Hari/Tanggal & & \underline{\hspace{5cm}}      \\[0.3em]
+    Waktu        & & \underline{\hspace{5cm}}      \\[0.3em]
+    Paket Soal   & & 4                             \\
+  \end{tabular}
+\end{center}
+
+\vspace{0.6cm}
+\noindent\rule{\linewidth}{0.6pt}
+\vspace{0.3cm}
+
+\noindent\textbf{\underline{PETUNJUK UMUM}}
+\begin{enumerate}[leftmargin=*,itemsep=4pt,topsep=4pt]
+  \item Anda \textbf{tidak} diperbolehkan menggunakan sumber-sumber eksternal,
+        termasuk internet, \textit{large language model} seperti ChatGPT, Claude,
+        LLaMA, Gemini, Meta AI, dan sebagainya. Anda sangat dianjurkan untuk
+        mencoba mengerjakan sendiri terlebih dahulu karena evaluasi ini dibuat
+        untuk \textbf{mengukur} tingkat kepahaman; nilai $<70$ mengindikasikan
+        \textbf{tidak lulus}, dan jika sudah melewati \textit{deadline} maka
+        dianggap tidak mengerjakan yang berarti \textbf{tidak lulus}.
+
+  \item Dokumen ini merupakan \textbf{lembar soal sekaligus pembahasan}; gunakan
+        pada tahap \textbf{Review}. Di tahap ini Anda diharapkan mengerjakan ulang
+        dengan disertakan penjelasan/pembelaan mengapa revisi jawaban adalah pilihan
+        tersebut, dan tetap mencantumkan penjelasan pada soal yang walaupun pada
+        penilaian sudah benar.
+
+  \item Anda dianjurkan untuk mencantumkan caranya walaupun tidak termasuk
+        penilaian, mengingat sifatnya adalah sebagai bahan pembelajaran.
+        Mohon bertanggung jawab atas pekerjaan Anda sendiri.
+
+  \item Terdapat tiga jenis soal: \textbf{Pilihan Ganda Biasa} (5 opsi, pilih 1);
+        \textbf{Pilihan Ganda Majemuk Kompleks} (tabel \textbf{Benar}/\textbf{Salah},
+        tiap pernyataan dinilai mandiri); dan \textbf{Isian Singkat}
+        (tulis nilai/ekspresi).
+
+  \item Soal berjumlah \textbf{30 butir}: nomor 1--30 dari latihan SM-SSU
+        ITB 2025.
+
+  \item Isilah detail informasi berikut.\\[0.3em]
+        \textbf{Nama}\hspace{0.45cm}:\enspace\underline{\hspace{8cm}}
+\end{enumerate}
+
+\vspace{0.6cm}
+\noindent\textit{Dengan menandatangani kolom di bawah ini, saya menyatakan telah membaca,
+memahami, dan menyetujui seluruh peraturan yang tercantum di atas.}
+
+\vspace{0.6cm}
+\noindent\fbox{\parbox{5cm}{\vspace{2.2cm}\centering\small Tanda Tangan Peserta\vspace{0.3cm}}}
+
+\clearpage
+
+% ===================================================================
+%  NOMOR 1--10
+% ===================================================================
+
+\begin{soal}{1}
+\gambar[0.32\textwidth]{images/4/4-n1.png}
+Sebuah roda silinder pejal berporos di $O$. Gaya $F_1$ dan $F_2$ bekerja
+selama 20 s. Setelah $F_2$ dihilangkan, roda berhenti 20 s kemudian.
+Perbandingan $F_2/F_1$ adalah \ldots
+\begin{pilB}
+  \item $3:2$ \item $2:1$ \item $1:3$ \item $2:3$ \item $1:2$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(b) $F_2/F_1 = 2:1$}
+\konsep Torsi tangensial $\tau=FR$; percepatan sudut $\alpha=\tau_{\text{net}}/I$.
+
+Selama 20 s pertama, $F_2$ dan $F_1$ berlawanan arah torsi:
+$\alpha_1=\dfrac{(F_2-F_1)R}{I}$; kecepatan sudut akhir
+$\omega=\alpha_1\times20=\dfrac{(F_2-F_1)R}{I}\cdot20$.
+
+Setelah $F_2$ hilang, hanya $F_1$ yang melambatkan:
+$\alpha_2=\dfrac{F_1 R}{I}$.
+Roda berhenti setelah 20 s, sehingga $\omega=\alpha_2\times20$:
+\[
+  \frac{(F_2-F_1)R}{I}\cdot20=\frac{F_1 R}{I}\cdot20
+  \;\Rightarrow\; F_2-F_1=F_1
+  \;\Rightarrow\; F_2=2F_1.
+\]
+\end{pembox}
+
+\begin{soal}{2}
+Pegas digantung vertikal; beban $M$ gram bertambah panjang $\Delta l$.
+Frekuensi pegas = 11× frekuensi bandul panjang $L$ dan massa $0{,}5M$.
+Tentukan kebenaran setiap pernyataan!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$f_s=\dfrac{1}{2\pi}\sqrt{\dfrac{g}{\Delta l}}$ (massa tidak berpengaruh).&$\bigcirc$&$\bigcirc$\\
+(2)~$f_b=\dfrac{1}{2\pi}\sqrt{\dfrac{g}{L}}$ tidak bergantung massa.&$\bigcirc$&$\bigcirc$\\
+(3)~Dari $f_s=11f_b$: $L=11\,\Delta l$.&$\bigcirc$&$\bigcirc$\\
+(4)~Jika $\Delta l=1{,}9$ cm, maka $L=229{,}9$ cm.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{S}\quad(4)~\textbf{B}}
+Untuk pegas vertikal: $k\Delta l=Mg\Rightarrow k/M=g/\Delta l$, sehingga
+$f_s=\dfrac{1}{2\pi}\sqrt{k/M}=\dfrac{1}{2\pi}\sqrt{g/\Delta l}$
+(tidak bergantung massa beban).
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} Formula $f_s$ benar.
+\item \textbf{Benar.} Frekuensi bandul hanya bergantung $L$ dan $g$.
+\item \textbf{Salah.} $f_s=11f_b\Rightarrow\sqrt{\tfrac{g}{\Delta l}}=11\sqrt{\tfrac{g}{L}}\Rightarrow L=121\,\Delta l$, \emph{bukan} $11\,\Delta l$.
+\item \textbf{Benar.} $L=121\times1{,}9=229{,}9$ cm.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{3}
+Gelombang sinusoidal ke arah negatif $x$: amplitudo 10 cm, $\lambda=314$ cm,
+$f=2$ Hz, $y(x{=}10\text{ cm},t{=}0)=0$. Persamaannya \ldots
+\begin{pil}
+  \item $y=0{,}1\sin(2x-4\pi t-0{,}2)$
+  \item $y=0{,}1\sin(2x+4\pi t)$
+  \item $y=0{,}1\sin(2x+4\pi t-0{,}2)$
+  \item $y=0{,}1\sin(2x+4\pi t+0{,}2)$
+  \item $y=0{,}1\sin(2x-4\pi t)$
+\end{pil}
+\end{soal}
+\begin{pembox}
+\jawaban{(c) $y=0{,}1\sin(2x+4\pi t-0{,}2)$}
+Gelombang ke $-x$: $y=A\sin(kx+\omega t+\phi)$.
+$k=\dfrac{2\pi}{\lambda}=\dfrac{2\pi}{3{,}14}\approx2$ rad/m;\quad
+$\omega=2\pi f=4\pi$ rad/s.
+
+Syarat $y(0{,}1,0)=0$: $\sin(2\times0{,}1+\phi)=\sin(0{,}2+\phi)=0$,
+sehingga $\phi=-0{,}2$.
+\end{pembox}
+
+\begin{soal}{4}
+\gambar[0.3\textwidth]{images/4/4-2.png}
+Balok $A$ (massa $M$, ketinggian $H$) menumbuk benda $B$ (massa $m$, diam)
+di titik terendah, menempel. Ketinggian maksimum setelah tumbukan \ldots $H$.
+\begin{pilB}
+  \item $\!\left(\dfrac{M+m}{m}\right)^{\!2}$
+  \item $\!\left(\dfrac{M}{M+m}\right)^{\!2}$
+  \item $\!\left(\dfrac{m}{M+m}\right)^{\!2}$
+  \item $\!\left(\dfrac{M}{M+m}\right)$
+  \item $\!\left(\dfrac{M+m}{M}\right)^{\!2}$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(b) $\left(\dfrac{M}{M+m}\right)^{\!2}\!H$}
+Sebelum tumbukan: $MgH=\tfrac12Mv^2\Rightarrow v=\sqrt{2gH}$.
+
+Tumbukan menempel (momentum kekal):
+$Mv=(M+m)v'\Rightarrow v'=\dfrac{M}{M+m}v$.
+
+Setelah tumbukan: $h=\dfrac{v'^2}{2g}=\left(\dfrac{M}{M+m}\right)^2\cdot\dfrac{v^2}{2g}=\left(\dfrac{M}{M+m}\right)^2 H$.
+\end{pembox}
+
+\begin{soal}{5}
+Apa pengaruh angin terhadap efek Doppler pada suara di udara?
+\begin{pil}
+  \item Efek Doppler terjadi selama ada angin meskipun sumber dan pengamat diam.
+  \item Angin dapat mengubah besar efek Doppler, tetapi tidak dapat menyebabkannya.
+  \item Angin dapat menyebabkan efek Doppler seperti sumber yang bergerak.
+  \item Angin tidak memengaruhi efek Doppler sama sekali.
+  \item Efek Doppler hanya terjadi jika angin bertiup ke arah pengamat.
+\end{pil}
+\end{soal}
+\begin{pembox}
+\jawaban{(b)}
+Efek Doppler terjadi karena gerak relatif sumber/pengamat terhadap medium (udara).
+Angin seragam yang menggerakkan seluruh medium tidak menciptakan gerak relatif
+antara sumber dan medium, sehingga angin \emph{saja} tidak menimbulkan efek Doppler.
+Namun jika sudah ada efek Doppler (sumber/pengamat bergerak), angin mengubah
+kecepatan relatif terhadap medium sehingga besar efek Doppler berubah.
+\end{pembox}
+
+\begin{soal}{6}
+Balok di bidang kasar ditarik gaya $F$ arah $0^\circ<\alpha<80^\circ$
+terhadap perpindahan sehingga bergerak. Tentukan kebenaran setiap pernyataan!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Kerja oleh gaya gesek pada balok bertanda positif.&$\bigcirc$&$\bigcirc$\\
+(2)~Peningkatan energi kinetik balok sebanding dengan perpindahan.&$\bigcirc$&$\bigcirc$\\
+(3)~Jika $\alpha$ berubah, hanya kerja dari $F$ yang terpengaruh.&$\bigcirc$&$\bigcirc$\\
+(4)~Kerja gaya gravitasi dan gaya normal masing-masing bernilai nol.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{S}\quad(2)~\textbf{B}\quad(3)~\textbf{S}\quad(4)~\textbf{B}}
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Salah.} Gaya gesek berlawanan perpindahan; kerjanya \emph{negatif}.
+\item \textbf{Benar.} Teorema usaha-energi: $\Delta K=W_{\text{net}}=F_{\text{net}}\cdot s$ (konstan untuk gaya konstan).
+\item \textbf{Salah.} Saat $\alpha$ berubah, komponen vertikal $F$ berubah, mengubah gaya normal dan gaya gesek.
+\item \textbf{Benar.} Perpindahan horizontal; gravitasi dan normal tegak lurus perpindahan, kerjanya nol.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{7}
+Gelombang berdiri ujung terikat: $y=0{,}2\sin(5\pi x)\cos(2\pi t)$
+($x,y$ dalam cm; $t$ dalam s). Tentukan kebenaran setiap pernyataan!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Periode gelombang adalah 1 sekon.&$\bigcirc$&$\bigcirc$\\
+(2)~Amplitudo gelombang bernilai konstan, yaitu 0{,}2 cm.&$\bigcirc$&$\bigcirc$\\
+(3)~Pada jarak 0{,}4 cm dari ujung terikat terbentuk simpul.&$\bigcirc$&$\bigcirc$\\
+(4)~Cepat rambat gelombang adalah 0{,}4 m/s.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{S}\quad(3)~\textbf{B}\quad(4)~\textbf{S}}
+$k=5\pi$ rad/cm, $\omega=2\pi$ rad/s.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} $T=2\pi/\omega=1$ s.
+\item \textbf{Salah.} Amplitudo lokal $=0{,}2|\sin(5\pi x)|$, bergantung posisi (bukan konstan).
+\item \textbf{Benar.} Simpul saat $\sin(5\pi x)=0\Rightarrow x=n/5$ cm. Untuk $x=0{,}4$ cm: $n=2$ ✓.
+\item \textbf{Salah.} $\lambda=2\pi/(5\pi)=0{,}4$ cm; $v=f\lambda=1\times0{,}4$ cm/s $=0{,}004$ m/s, bukan 0{,}4 m/s.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{8}
+\gambar[0.42\textwidth]{images/4/4-n8.png}
+Balok $A$ (100 N) di atas balok $B$ (500 N), $A$ diikat tali. Koefisien gesek
+$A$--$B$: statik 0{,}2, kinetik 0{,}1; $B$--lantai: statik 0{,}6, kinetik 0{,}5.
+Gaya $F$ minimum untuk menggeser $B$ adalah \ldots\ N.
+\begin{pilB}
+  \item $380$ \item $400$ \item $420$ \item $440$ \item $460$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(a) 380 N}
+Karena $A$ terikat dinding, saat $B$ bergerak gesek $A$--$B$ berarah ke kiri.
+Normal lantai $=100+500=600$ N; gesek statik lantai maks: $0{,}6\times600=360$ N.
+Gesek statik maks $A$--$B$: $0{,}2\times100=20$ N (berarah menahan $B$).
+$F_{\min}=360+20=380$ N.
+\end{pembox}
+
+\begin{soal}{9}
+\gambar[0.4\textwidth]{images/4/4-n9.png}
+Dua vektor $A$ dan $B$ (20 N) di bidang $xy$ seperti gambar. Komponen
+resultan pada sumbu $x$ nol. Besar vektor $A$ adalah \ldots\ N.
+\begin{pilB}
+  \item $6$ \item $8$ \item $10$ \item $12$ \item $14$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(c) 10 N}
+\konsep $R_x=0\Rightarrow A_x+B_x=0$.
+
+Dari gambar, vektor $A$ horizontal (ke kiri, $A_x=-A$) dan vektor $B$ (20 N)
+membentuk sudut $60^\circ$ terhadap sumbu $x$ (ke kanan-atas, $B_x=20\cos60^\circ=10$ N).
+Syarat $R_x=0$: $-A+10=0\Rightarrow A=10$ N.
+\begin{catatbox}
+Nilai sudut diambil dari gambar. Tanpa gambar, besar $A$ tidak dapat ditentukan.
+\end{catatbox}
+\end{pembox}
+
+\begin{soal}{10}
+$x(t)=6t^2-4t+2$ (m, s). Tentukan kebenaran setiap pernyataan!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$v(t)=12t+4$ m/s.&$\bigcirc$&$\bigcirc$\\
+(2)~Percepatan $a=12$ m/s$^2$ (konstan).&$\bigcirc$&$\bigcirc$\\
+(3)~Kecepatan pada $t=3$ s: $v(3)=32$ m/s.&$\bigcirc$&$\bigcirc$\\
+(4)~Kecepatan awal $v(0)=-4$ m/s.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{S}\quad(2)~\textbf{B}\quad(3)~\textbf{B}\quad(4)~\textbf{B}}
+$v(t)=\dfrac{dx}{dt}=12t-4$ m/s;\quad$a=12$ m/s$^2$.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Salah.} $v(t)=12t-4$, bukan $12t+4$.
+\item \textbf{Benar.} $a=dv/dt=12$ m/s$^2$ (konstan).
+\item \textbf{Benar.} $v(3)=36-4=32$ m/s.
+\item \textbf{Benar.} $v(0)=0-4=-4$ m/s.
+\end{enumerate}
+\end{pembox}
+
+% ===================================================================
+%  NOMOR 11--20
+% ===================================================================
+
+\begin{soal}{11}
+Partikel $Z$: energi total 17{,}0 GeV, massa diam $8{,}0$ GeV/$c^2$.
+Energi kinetiknya \ldots\ GeV.
+\begin{pilB}
+  \item $17{,}0$ \item $25{,}0$ \item $136{,}0$ \item $8{,}0$ \item $9{,}0$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(e) 9,0 GeV}
+\konsep $E=E_0+K\Rightarrow K=E-E_0$.
+
+$K=17{,}0-8{,}0=9{,}0$ GeV.
+\end{pembox}
+
+\begin{soal}{12}
+Dua bola identik dilempar horizontal ke dinding licin dengan kelajuan sama.
+$P$ memantul balik sama kelajuan; $Q$ berhenti. $I_P/I_Q$ dan $F_P/F_Q$ = \ldots
+\begin{pil}
+  \item $I_P/I_Q=1$ dan $F_P/F_Q=1$
+  \item $I_P/I_Q=1$ dan $F_P/F_Q=2$
+  \item $I_P/I_Q=2$ dan $F_P/F_Q=1$
+  \item $I_P/I_Q=2$ dan $F_P/F_Q=2$
+  \item $I_P/I_Q=2$ dan $F_P/F_Q=\Delta t_Q/\Delta t_P$
+\end{pil}
+\end{soal}
+\begin{pembox}
+\jawaban{Tidak ada opsi yang sepenuhnya sesuai; $I_P/I_Q=2$ dan $F_P/F_Q=2\Delta t_Q/\Delta t_P$}
+$I=|\Delta p|$. Bola $P$: $I_P=|-mv-mv|=2mv$. Bola $Q$: $I_Q=mv$.
+$I_P/I_Q=2$. Gaya rata-rata $F=I/\Delta t$:
+$\dfrac{F_P}{F_Q}=\dfrac{2mv/\Delta t_P}{mv/\Delta t_Q}=2\dfrac{\Delta t_Q}{\Delta t_P}$.
+\begin{catatbox}
+Opsi (e) memuat $I_P/I_Q=2$ (benar) tetapi $F_P/F_Q=\Delta t_Q/\Delta t_P$ (kurang faktor 2). Tidak ada opsi yang tepat.
+\end{catatbox}
+\end{pembox}
+
+\begin{soal}{13}
+\gambar[0.26\textwidth]{images/4/4-3.png}
+Bola karet (0{,}20 kg) dijatuhkan dari 1{,}8 m di atas pegas. Gaya maks aman
+36 N; $g=10$ m/s$^2$. Konstanta pegas minimum agar aman \ldots\ N/m.
+\begin{pilB}
+  \item $80$ \item $120$ \item $160$ \item $200$ \item $240$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(c) 160 N/m}
+Kompresi maks $x$; bola turun $h+x$: $mg(h+x)=\tfrac12kx^2$.
+Gaya maks $F=kx=36$ N $\Rightarrow x=36/k$.
+Substitusi: $mg\!\left(h+\dfrac{36}{k}\right)=\dfrac{1}{2}k\!\left(\dfrac{36}{k}\right)^2=\dfrac{36^2}{2k}$.
+
+Kalikan $k$: $mghk+36mg=\dfrac{36^2}{2}=648$.
+\[
+  k=\frac{648-36mg}{mgh}=\frac{648-36(2)}{2(1{,}8)}=\frac{648-72}{3{,}6}=\frac{576}{3{,}6}=160\text{ N/m}.
+\]
+\end{pembox}
+
+\begin{soal}{14}
+\gambar[0.32\textwidth]{images/4/4-4.png}
+$P$ (0{,}30 kg, ketinggian 20 cm) menumbuk $Q$ (0{,}20 kg, diam) dan menempel.
+Tentukan kebenaran setiap pernyataan!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Kecepatan $P$ di titik terendah: $v=\sqrt{2gH}=2$ m/s.&$\bigcirc$&$\bigcirc$\\
+(2)~Setelah menempel: $v'=\dfrac{m_P}{m_P+m_Q}v=0{,}6v=1{,}2$ m/s.&$\bigcirc$&$\bigcirc$\\
+(3)~Tinggi maksimum setelah tumbukan: $h'=0{,}6H=12$ cm.&$\bigcirc$&$\bigcirc$\\
+(4)~Tinggi maksimum setelah tumbukan: $h'=0{,}36H=7{,}2$ cm.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{S}\quad(4)~\textbf{B}}
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} $v=\sqrt{2\times10\times0{,}20}=2$ m/s.
+\item \textbf{Benar.} $v'=\tfrac{0{,}30}{0{,}50}\times2=1{,}2$ m/s.
+\item \textbf{Salah.} $h'=\dfrac{v'^2}{2g}=\dfrac{(1{,}2)^2}{20}=0{,}072$ m $=7{,}2$ cm.
+      Pernyataan (3) keliru: $h'=(v'/v)\cdot H$ tidak benar; seharusnya $(v'/v)^2\cdot H$.
+\item \textbf{Benar.} $h'=0{,}36\times20=7{,}2$ cm.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{15}
+Planet $X$: jari-jari $1{,}5R_B$, massa jenis $2\rho_B$. Berat benda di Bumi $W$.
+Berat benda di planet $X$ \ldots
+\begin{pilB}
+  \item $\tfrac{2}{3}W$ \item $W$ \item $\tfrac{3}{2}W$ \item $2W$ \item $3W$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(e) $3W$}
+$g=\dfrac{GM}{R^2}$, $M=\rho\cdot\tfrac43\pi R^3$, sehingga $g\propto\rho R$.
+$\dfrac{g_X}{g_B}=\dfrac{\rho_X R_X}{\rho_B R_B}=2\times1{,}5=3$.
+Jadi $W_X=3W$.
+\begin{catatbox}
+Opsi (e) $3W$ merupakan pilihan yang diupdate; soal asli SM-SSU 2025 tidak memuat $3W$.
+\end{catatbox}
+\end{pembox}
+
+\begin{soal}{16}
+\gambar[0.5\textwidth]{images/4/4-5.png}
+Batang homogen panjang 4 m berat 100 N ditumpu di kedua ujungnya. Anak
+300 N berdiri 1 m dari kiri; beban 200 N digantung 0{,}5 m dari kanan.
+Gaya tumpu ujung kanan adalah \ldots\ N.
+
+\vspace{0.4em}\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+\begin{pembox}
+\jawaban{$R_B = 300$ N}
+Momen terhadap ujung kiri ($A$); $R_A$ tidak masuk:
+\[
+  R_B\times4=300\times1+100\times2+200\times3{,}5=300+200+700=1200.
+\]
+$R_B=300$ N.
+\end{pembox}
+
+\begin{soal}{17}
+\gambar[0.42\textwidth]{images/4/4-6.png}
+Dua pegas identik $k$ tersusun seri; ditarik 20 cm; usaha 4 J.
+Tentukan kebenaran setiap pernyataan!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$k_{\text{eq}}=\dfrac{k}{2}$ untuk dua pegas seri identik.&$\bigcirc$&$\bigcirc$\\
+(2)~Dari data: $W=4$ J, $x=0{,}20$ m, diperoleh $k=200$ N/m.&$\bigcirc$&$\bigcirc$\\
+(3)~Nilai $k$ setiap pegas adalah 400 N/m.&$\bigcirc$&$\bigcirc$\\
+(4)~Jika disusun paralel, $k_{\text{eq}}=2k=800$ N/m.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{S}\quad(3)~\textbf{B}\quad(4)~\textbf{B}}
+$k_{\text{eq}}=k/2$.
+$W=\tfrac12 k_{\text{eq}}x^2=\tfrac12\cdot\tfrac{k}{2}\cdot(0{,}20)^2=0{,}01k=4\Rightarrow k=400$ N/m.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} $k_{\text{eq}}=k/2$.
+\item \textbf{Salah.} Perhitungan yang benar: $0{,}01k=4\Rightarrow k=400$ N/m, bukan 200 N/m.
+\item \textbf{Benar.} $k=400$ N/m.
+\item \textbf{Benar.} Paralel: $k_{\text{eq}}=k+k=800$ N/m.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{18}
+\gambar[0.42\textwidth]{images/4/4-n18.png}
+Grafik $F$-$t$ segitiga: puncak 160 N, lama 0{,}010 s. Bola (0{,}05 kg)
+bergerak mendekati dinding 12 m/s, berbalik arah. Kelajuan sesudah \ldots\ m/s.
+
+\vspace{0.4em}\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+\begin{pembox}
+\jawaban{$4$ m/s}
+Impuls $I=\tfrac12\times0{,}010\times160=0{,}8$ N\,s.
+$\dfrac{I}{m}=\dfrac{0{,}8}{0{,}05}=16$ m/s (perubahan kecepatan).
+Ambil arah menuju dinding positif; impuls dinding berlawanan:
+$v_f=12-16=-4$ m/s. Kelajuan $=4$ m/s.
+\end{pembox}
+
+\begin{soal}{19}
+$U=\tfrac12kx^2$; saat $x=10$ cm, $U=0{,}80$ J. Massa 0{,}50 kg berosilasi.
+Tentukan kebenaran setiap pernyataan!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$k=\dfrac{2U}{x^2}=160$ N/m.&$\bigcirc$&$\bigcirc$\\
+(2)~Periode: $T=2\pi\sqrt{m/k}$.&$\bigcirc$&$\bigcirc$\\
+(3)~Dengan $m=0{,}50$ kg, $k=160$ N/m: $T\approx0{,}50$ s.&$\bigcirc$&$\bigcirc$\\
+(4)~Dengan $m=0{,}50$ kg, $k=160$ N/m: $T\approx0{,}35$ s.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{S}\quad(4)~\textbf{B}}
+$k=\dfrac{2(0{,}80)}{(0{,}10)^2}=160$ N/m.
+$T=2\pi\sqrt{\dfrac{0{,}50}{160}}=2\pi\times0{,}05590\approx0{,}351$ s.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} $k=160$ N/m.
+\item \textbf{Benar.} Formula periode benar.
+\item \textbf{Salah.} $T\approx0{,}35$ s, bukan 0{,}50 s.
+\item \textbf{Benar.} $T\approx0{,}35$ s.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{20}
+$y_1=4\sin(10t)$ cm, $y_2=3\cos(10t)$ cm. Tentukan kebenaran setiap pernyataan!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Amplitudo resultan $y_1+y_2$ adalah $4+3=7$ cm.&$\bigcirc$&$\bigcirc$\\
+(2)~$y_2=3\sin(10t+90^\circ)$; beda fase $y_1$ dan $y_2$ adalah $90^\circ$.&$\bigcirc$&$\bigcirc$\\
+(3)~Amplitudo resultan $R=\sqrt{4^2+3^2}=5$ cm.&$\bigcirc$&$\bigcirc$\\
+(4)~Kedua getaran berfrekuensi sudut 10 rad/s.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{S}\quad(2)~\textbf{B}\quad(3)~\textbf{B}\quad(4)~\textbf{B}}
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Salah.} Amplitudo tidak bisa langsung dijumlahkan bila berbeda fase; $R=\sqrt{A_1^2+A_2^2}=5$ cm.
+\item \textbf{Benar.} $\cos\theta=\sin(\theta+90^\circ)$, beda fase $90^\circ$.
+\item \textbf{Benar.} $R=5$ cm.
+\item \textbf{Benar.} Keduanya $\omega=10$ rad/s.
+\end{enumerate}
+\end{pembox}
+
+% ===================================================================
+%  NOMOR 21--30
+% ===================================================================
+
+\begin{soal}{21}
+\gambar[0.4\textwidth]{images/4/4-7.png}
+GHS: amplitudo 6 cm, $f=0{,}5$ Hz. Pada $t=0$ partikel di titik setimbang
+bergerak ke kiri. Posisi pada $t=0{,}5$ s adalah $x=\ldots$ cm.
+\begin{pilB}
+  \item $-6$ \item $-3$ \item $0$ \item $3$ \item $6$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(a) $x=-6$ cm}
+$T=1/f=2$ s; $t=0{,}5$ s $=T/4$.
+
+Pada $t=0$: $x=0$, bergerak ke kiri. Setelah $T/4$, partikel mencapai
+simpangan maksimum ke arah geraknya, yaitu $x=-A=-6$ cm.
+\end{pembox}
+
+\begin{soal}{22}
+Pipa organa terbuka $L=85$ cm, $v_s=340$ m/s. Frekuensi nada atas kedua \ldots\ Hz.
+
+\vspace{0.4em}\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+\begin{pembox}
+\jawaban{$600$ Hz}
+Pipa terbuka: $f_n=n\dfrac{v}{2L}$. Frekuensi dasar ($n=1$):
+$f_1=\dfrac{340}{2\times0{,}85}=200$ Hz.
+Nada atas kedua adalah harmonik ketiga ($n=3$):
+$f_3=3\times200=600$ Hz.
+\end{pembox}
+
+\begin{soal}{23}
+$y=0{,}04\sin(\pi x-20\pi t)$ (m, s). Massa tali 0{,}80 g; panjang 2{,}0 m.
+Tegangan tali \ldots\ N.
+
+\vspace{0.4em}\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+\begin{pembox}
+\jawaban{$0{,}16$ N}
+$k=\pi$ rad/m, $\omega=20\pi$ rad/s.
+$v=\omega/k=20$ m/s.
+$\mu=m/L=0{,}80\times10^{-3}/2{,}0=4{,}0\times10^{-4}$ kg/m.
+$T=\mu v^2=4{,}0\times10^{-4}\times400=0{,}16$ N.
+\end{pembox}
+
+\begin{soal}{24}
+Gelombang transversal ke kiri: $A=5$ cm, $\lambda=2$ m, $f=4$ Hz.
+Pada $x=0$, $t=0$: $y=0$, medium bergerak ke atas.
+Tentukan kebenaran setiap pernyataan!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$k=\pi$ rad/m dan $\omega=8\pi$ rad/s.&$\bigcirc$&$\bigcirc$\\
+(2)~Gelombang ke kiri: tanda positif pada $\omega t$.&$\bigcirc$&$\bigcirc$\\
+(3)~Pada $x=0$, $t=0$: $y=0{,}05\sin(0)=0$ sesuai syarat.&$\bigcirc$&$\bigcirc$\\
+(4)~Pada $x=0$, $t=0$, medium bergerak ke bawah.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{B}\quad(4)~\textbf{S}}
+Persamaan: $y=0{,}05\sin(\pi x+8\pi t)$.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} $k=2\pi/2=\pi$; $\omega=2\pi(4)=8\pi$.
+\item \textbf{Benar.} Gelombang ke $-x$: $(kx+\omega t)$.
+\item \textbf{Benar.} $\sin(0)=0$ ✓.
+\item \textbf{Salah.} $\dfrac{\partial y}{\partial t}\big|_{(0,0)}=0{,}05\times8\pi\times\cos(0)>0$ (ke \emph{atas}).
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{25}
+$y=10\sin(4\pi x)\cos(50\pi t)$ ($x$ dalam m, $y$ dalam cm).
+Jarak antara dua simpul berurutan \ldots\ m.
+
+\vspace{0.4em}\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+\begin{pembox}
+\jawaban{$0{,}25$ m}
+Simpul saat $\sin(4\pi x)=0\Rightarrow4\pi x=n\pi\Rightarrow x=n/4$ m.
+Dua simpul berurutan ($n$ dan $n+1$): $\Delta x=1/4=0{,}25$ m.
+\end{pembox}
+
+\begin{soal}{26}
+\gambar[0.5\textwidth]{images/4/4-8.png}
+Jarak puncak 1 ke puncak 3 adalah 1{,}2 m; 8 gelombang dalam 4 s.
+Tentukan kebenaran setiap pernyataan!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Jarak puncak 1 ke puncak 3 = $2\lambda$.&$\bigcirc$&$\bigcirc$\\
+(2)~$2\lambda=1{,}2$ m $\Rightarrow\lambda=0{,}6$ m.&$\bigcirc$&$\bigcirc$\\
+(3)~8 gelombang dalam 4 s: $f=2$ Hz.&$\bigcirc$&$\bigcirc$\\
+(4)~$v=f\lambda=2\times0{,}6=0{,}6$ m/s.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{B}\quad(4)~\textbf{S}}
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} Puncak ke-1 ke puncak ke-3 melewati 2 periode ruang.
+\item \textbf{Benar.} $\lambda=0{,}6$ m.
+\item \textbf{Benar.} $f=8/4=2$ Hz.
+\item \textbf{Salah.} $v=2\times0{,}6=1{,}2$ m/s, bukan 0{,}6 m/s.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{27}
+$y_1=3\cos(kx-\omega t)$, $y_2=3\cos(kx+\omega t)$.
+Tentukan kebenaran setiap pernyataan!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Resultan merupakan gelombang stasioner.&$\bigcirc$&$\bigcirc$\\
+(2)~Amplitudo maksimum resultan adalah 6.&$\bigcirc$&$\bigcirc$\\
+(3)~Simpul saat $kx=\dfrac{(2n+1)\pi}{2}$, $n\in\mathbb{Z}$.&$\bigcirc$&$\bigcirc$\\
+(4)~Kedua gelombang memiliki frekuensi yang sama.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{B}\quad(3)~\textbf{B}\quad(4)~\textbf{B}}
+$y_1+y_2=2\cdot3\cos(kx)\cos(\omega t)=6\cos(kx)\cos(\omega t)$ (gelombang stasioner).
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} Bentuk $f(x)\cdot g(t)$ adalah gelombang stasioner.
+\item \textbf{Benar.} Amplitudo maks $=6$ (saat $|\cos(kx)|=1$).
+\item \textbf{Benar.} Simpul saat $\cos(kx)=0\Rightarrow kx=(2n+1)\pi/2$.
+\item \textbf{Benar.} $\omega$ sama $\Rightarrow f$ sama.
+\end{enumerate}
+\end{pembox}
+
+\begin{soal}{28}
+$y_1=4\cos(kx-\omega t)$, $y_2=6\cos(kx+\omega t)$.
+Amplitudo maks dan min resultan berturut-turut \ldots
+\begin{pilB}
+  \item $2$ dan $10$ \item $4$ dan $6$ \item $6$ dan $4$
+  \item $10$ dan $2$ \item $12$ dan $0$
+\end{pilB}
+\end{soal}
+\begin{pembox}
+\jawaban{(d) 10 dan 2}
+Dua gelombang sama frekuensi berlawanan arah; amplitudo resultan bervariasi terhadap posisi.
+$A_{\max}=A_1+A_2=4+6=10$;\quad$A_{\min}=|A_2-A_1|=|6-4|=2$.
+\end{pembox}
+
+\begin{soal}{29}
+Jendela 0{,}40 m$^2$, bunyi 80 dB ($I_0=10^{-12}$ W/m$^2$).
+Daya akustik masuk $=4\times\ldots$ W.
+
+\vspace{0.4em}\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+\begin{pembox}
+\jawaban{$10^{-5}$}
+$80=10\log(I/10^{-12})\Rightarrow I=10^{-4}$ W/m$^2$.
+$P=IA=10^{-4}\times0{,}40=4{,}0\times10^{-5}$ W $=4\times10^{-5}$ W.
+Bagian yang kosong: $10^{-5}$.
+\end{pembox}
+
+\begin{soal}{30}
+Speaker titik, daya tetap. Taraf intensitas di jarak 2 m: 70 dB.
+Tentukan kebenaran setiap pernyataan!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Untuk sumber titik: $I\propto1/r^2$.&$\bigcirc$&$\bigcirc$\\
+(2)~Jarak bertambah 10$\times$: intensitas berkurang 10$\times$ ($\Delta\beta=-10$ dB).&$\bigcirc$&$\bigcirc$\\
+(3)~$\Delta\beta=10\log(1/100)=-20$ dB.&$\bigcirc$&$\bigcirc$\\
+(4)~Taraf intensitas pada jarak 20 m: $\beta_2=50$ dB.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+\begin{pembox}
+\jawaban{(1)~\textbf{B}\quad(2)~\textbf{S}\quad(3)~\textbf{B}\quad(4)~\textbf{B}}
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=2pt]
+\item \textbf{Benar.} Sumber titik: $I\propto1/r^2$.
+\item \textbf{Salah.} Jarak naik 10$\times\Rightarrow I$ turun $100\times$ (bukan 10$\times$), sehingga $\Delta\beta=-20$ dB.
+\item \textbf{Benar.} $\Delta\beta=10\log(1/100)=-20$ dB.
+\item \textbf{Benar.} $\beta_2=70-20=50$ dB.
+\end{enumerate}
+\end{pembox}
+
+\end{document}

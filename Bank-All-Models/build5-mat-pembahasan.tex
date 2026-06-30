@@ -1,0 +1,973 @@
+% ============================================================
+%  LEMBAR PEMBAHASAN  --  MATEMATIKA  --  SSU-ITB 2026  |  Paket 5
+%  Sumber: SM-SSU ITB 2025 (50 soal)
+% ============================================================
+
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.5cm,top=2.8cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{icomma}
+\usepackage{array}
+
+\definecolor{mapelcolor}{RGB}{20,110,60}
+\definecolor{mapelbg}{RGB}{228,246,234}
+\definecolor{pembcolor}{RGB}{100,50,130}
+\definecolor{pembbg}{RGB}{245,238,252}
+\definecolor{gold}{RGB}{210,160,30}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small SSU-ITB 2026 -- Pembahasan}
+\rhead{\small Paket 5 Matematika}
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newtcolorbox{soal}[1]{
+  breakable,
+  colback=mapelbg, colframe=mapelcolor,
+  coltitle=white, colbacktitle=mapelcolor,
+  fonttitle=\bfseries\sffamily,
+  title=Nomor #1,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+\newtcolorbox{pembox}{
+  breakable,
+  colback=pembbg, colframe=pembcolor,
+  coltitle=white, colbacktitle=pembcolor,
+  fonttitle=\bfseries\sffamily,
+  title=Pembahasan,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+\newtcolorbox{catatan}{
+  breakable,
+  colback=gold!15, colframe=gold!80!black,
+  coltitle=white, colbacktitle=gold!80!black,
+  fonttitle=\bfseries\sffamily,
+  title=Catatan,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+\newcommand{\jawaban}[1]{\textbf{Jawaban:}\enspace\colorbox{gold!30}{\textbf{#1}}}
+\newcommand{\konsep}[1]{\textit{Konsep: #1.}}
+
+\newenvironment{pil}{%
+  \begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}}
+
+\newcommand{\gambar}[2][0.45\textwidth]{%
+  \begin{center}\includegraphics[width=#1]{#2}\end{center}}
+
+\linespread{1.05}
+
+% ===================================================================
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+  {\LARGE\bfseries PEMBAHASAN MATEMATIKA}\\[0.4em]
+  {\large SSU-ITB 2026 -- Paket 5}
+\end{center}
+
+\vspace{0.4cm}
+\noindent\textbf{Kunci Jawaban}
+
+\vspace{0.4em}
+{\small
+\begin{tabular}{@{}*{10}{c@{\hspace{1.2em}}}@{}}
+\textbf{1}(e)&\textbf{2}B,B,B,B&\textbf{3}468&\textbf{4}12&\textbf{5}(a)&
+\textbf{6}(a)&\textbf{7}(a)&\textbf{8}36&\textbf{9}17&\textbf{10}(a)\\
+\end{tabular}
+
+\vspace{0.2em}
+\begin{tabular}{@{}*{10}{c@{\hspace{1.2em}}}@{}}
+\textbf{11}(c)&\textbf{12}B,B,S,B&\textbf{13}8&\textbf{14}(e)&\textbf{15}5450&
+\textbf{16}(c)&\textbf{17}S,B,B,B&\textbf{18}(b)&\textbf{19}(b)&\textbf{20}(e)\\
+\end{tabular}
+
+\vspace{0.2em}
+\begin{tabular}{@{}*{10}{c@{\hspace{1.2em}}}@{}}
+\textbf{21}(e)&\textbf{22}28&\textbf{23}(e)&\textbf{24}B,S,B,B&\textbf{25}6&
+\textbf{26}20&\textbf{27}(a)&\textbf{28}(c)&\textbf{29}(a)&\textbf{30}5\\
+\end{tabular}
+
+\vspace{0.2em}
+\begin{tabular}{@{}*{10}{c@{\hspace{1.2em}}}@{}}
+\textbf{31}B,B,S,B&\textbf{32}B,B,B,S&\textbf{33}S,B,B,B&\textbf{34}B,S,B,B&\textbf{35}B,B,B,S&
+\textbf{36}B,B,S,B&\textbf{37}B,S,B,B&\textbf{38}(b)&\textbf{39}B,B,B,S&\textbf{40}S,B,B,B\\
+\end{tabular}
+
+\vspace{0.2em}
+\begin{tabular}{@{}*{10}{c@{\hspace{1.2em}}}@{}}
+\textbf{41}(b)&\textbf{42}B,B,B,S&\textbf{43}(c)&\textbf{44}B,S,B,B&\textbf{45}B,S,B,B&
+\textbf{46}B,B,B,B&\textbf{47}B,B,B,S&\textbf{48}S,B,B,B&\textbf{49}B,B,B,S&\textbf{50}(c)\\
+\end{tabular}
+}
+
+\clearpage
+
+% ===================================================================
+%  PEMBAHASAN 1--10
+% ===================================================================
+
+\begin{soal}{1 \normalfont\small[PG Biasa]}
+Manakah pernyataan tentang bilangan real $a$ yang \textbf{selalu} benar?
+\begin{pil}
+  \item Jika $a\geq0$: $\dfrac{a}{a+1}>\dfrac{a+1}{a+2}$.
+  \item Jika $a<0$ dan $a\neq-1$: $\dfrac{1}{a+1}<\dfrac{1}{a}$.
+  \item Jika $a<0$: $2+a<1-a$.
+  \item Jika $a>0$: $a>1-a$.
+  \item Jika $a>0$: $-\dfrac{1}{a}<-\dfrac{1}{a+1}$.
+\end{pil}
+\end{soal}
+\begin{pembox}
+\konsep{Pertidaksamaan bilangan real}
+
+Periksa setiap opsi:
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+\item[(a)] $a=0$: $\tfrac{0}{1}=0$ vs $\tfrac{1}{2}=0.5$. $0>0.5$ \textbf{salah}.
+\item[(b)] $a=-2$: $\tfrac{1}{-1}=-1$ vs $\tfrac{1}{-2}=-0.5$. $-1<-0.5$ \textbf{benar}. Tapi $a=-0.5$: $\tfrac{1}{0.5}=2$ vs $\tfrac{1}{-0.5}=-2$. $2<-2$ \textbf{salah}.
+\item[(c)] $a<0$: $2+a<1-a\Leftrightarrow 2a<-1\Leftrightarrow a<-\tfrac12$. Tidak berlaku untuk semua $a<0$ (misal $a=-0.1$).
+\item[(d)] $a>0$: $a>1-a\Leftrightarrow 2a>1\Leftrightarrow a>\tfrac12$. Tidak berlaku untuk $a=0.3$.
+\item[(e)] $a>0$: karena $0<a<a+1$, maka $\tfrac{1}{a}>\tfrac{1}{a+1}>0$, sehingga $-\tfrac{1}{a}<-\tfrac{1}{a+1}$. \textbf{Selalu benar.}
+\end{itemize}
+
+\jawaban{(e)}
+\end{pembox}
+
+\begin{soal}{2 \normalfont\small[PG Majemuk Kompleks]}
+Domain $f(x)=\dfrac{1}{\sqrt{2x^2-5x-3}}$, kebenaran pernyataan (1)--(4).
+\end{soal}
+\begin{pembox}
+\konsep{Domain fungsi pecahan berurat}
+
+(1) \textbf{Benar}: syarat $f$ terdefinisi: $2x^2-5x-3>0$ (denominasi ≠ 0 dan dalam akar positif).
+
+(2) \textbf{Benar}: $2x^2-5x-3=(2x+1)(x-3)>0\Rightarrow x<-\tfrac12$ atau $x>3$.
+
+(3) \textbf{Benar}: $x=4>3$, cek: $(2\cdot4+1)(4-3)=9\cdot1=9>0$. ✓
+
+(4) \textbf{Benar}: $x=5>3$, cek: $(11)(2)=22>0$. ✓
+
+\jawaban{B, B, B, B}
+\end{pembox}
+
+\begin{soal}{3 \normalfont\small[Isian Singkat]}
+Peluang makan $=\tfrac{2}{5}$, buku $=\tfrac{3}{7}$, mainan $=\tfrac{7}{8}$ (saling bebas).
+Peluang membeli buku atau mainan tetapi tidak makan $=\tfrac{P}{840}$.
+\end{soal}
+\begin{pembox}
+\konsep{Peluang kejadian independen}
+
+\[
+P(\text{buku}\cup\text{mainan}) = \frac{3}{7}+\frac{7}{8}-\frac{3}{7}\cdot\frac{7}{8}
+= \frac{3}{7}+\frac{7}{8}-\frac{3}{8}
+= \frac{3}{7}+\frac{4}{8}
+= \frac{3}{7}+\frac{1}{2}
+= \frac{6}{14}+\frac{7}{14}=\frac{13}{14}.
+\]
+\[
+P(\text{buku atau mainan, tidak makan})
+= \frac{13}{14}\times\left(1-\frac{2}{5}\right)
+= \frac{13}{14}\times\frac{3}{5}
+= \frac{39}{70}
+= \frac{39\times12}{840}
+= \frac{468}{840}.
+\]
+
+\jawaban{$P=468$}
+\end{pembox}
+
+\begin{soal}{4 \normalfont\small[Isian Singkat]}
+Kurva $y=(x+3)^2$ dan garis $y=px+9$ berpotongan di $(-3,0)$ dan $(r,s)$. Nilai $p+r+s$.
+\end{soal}
+\begin{pembox}
+\konsep{Titik potong kurva dan garis}
+
+Masukkan $(-3,0)$: $0=-3p+9\Rightarrow p=3$.
+
+Substitusi $y=3x+9$ ke $y=(x+3)^2$:
+\[
+(x+3)^2=3x+9\Rightarrow x^2+6x+9=3x+9\Rightarrow x^2+3x=0\Rightarrow x(x+3)=0.
+\]
+$x=0$ atau $x=-3$. Titik lain: $x=0\Rightarrow y=9$, jadi $(r,s)=(0,9)$.
+\[
+p+r+s=3+0+9=12.
+\]
+
+\jawaban{$p+r+s=12$}
+\end{pembox}
+
+\begin{soal}{5 \normalfont\small[PG Biasa]}
+\gambar[0.24\textwidth]{images/5/5-2.png}
+Kerucut tegak tinggi $\sqrt{77}$ cm dan diameter 4 cm. Panjang garis pelukis $s$.
+\end{soal}
+\begin{pembox}
+\konsep{Pythagoras pada kerucut}
+
+Jari-jari $r=2$ cm, tinggi $h=\sqrt{77}$ cm.
+\[
+s = \sqrt{r^2+h^2} = \sqrt{4+77} = \sqrt{81} = 9\text{ cm}.
+\]
+
+\jawaban{(a) 9}
+\end{pembox}
+
+\begin{soal}{6 \normalfont\small[PG Biasa]}
+$y=\dfrac{3x+7}{x+9}$, maka $x=\ldots$
+\end{soal}
+\begin{pembox}
+\konsep{Invers fungsi rasional}
+
+\[
+y(x+9)=3x+7\Rightarrow xy+9y=3x+7\Rightarrow xy-3x=7-9y\Rightarrow x(y-3)=7-9y\Rightarrow x=\frac{7-9y}{y-3}.
+\]
+
+\jawaban{(a) $\dfrac{7-9y}{y-3}$}
+\end{pembox}
+
+\begin{soal}{7 \normalfont\small[PG Biasa]}
+Sistem yang mempunyai solusi $(x,y)=(2,3)$.
+\end{soal}
+\begin{pembox}
+Substitusi $(2,3)$ ke opsi (a): $2(2)+3=7$ ✓ dan $2-2(3)=-4$ ✓.
+
+\jawaban{(a) $2x+y=7;\; x-2y=-4$}
+\end{pembox}
+
+\begin{soal}{8 \normalfont\small[Isian Singkat]}
+$f(x)=a^{x+b}$; $f(1)=3$, $f(3)=18$. Nilai $a^4$.
+\end{soal}
+\begin{pembox}
+$a^{1+b}=3$ dan $a^{3+b}=18$. Bagi:
+\[
+a^{(3+b)-(1+b)}=\frac{18}{3}=6\Rightarrow a^2=6\Rightarrow a^4=36.
+\]
+
+\jawaban{$a^4=36$}
+\end{pembox}
+
+\begin{soal}{9 \normalfont\small[Isian Singkat]}
+Garis bergradien $\dfrac{1}{5}$ melalui $P(7,3)$ dan $Q(k,5)$. Nilai $k$.
+\end{soal}
+\begin{pembox}
+\[
+\frac{5-3}{k-7}=\frac{1}{5}\Rightarrow \frac{2}{k-7}=\frac{1}{5}\Rightarrow k-7=10\Rightarrow k=17.
+\]
+
+\jawaban{$k=17$}
+\end{pembox}
+
+\begin{soal}{10 \normalfont\small[PG Biasa]}
+\gambar[0.4\textwidth]{images/5/5-4.png}
+$AB=13$, $CD=5$, $EF=10$; ketiganya sejajar. Nilai $AE:ED$.
+\end{soal}
+\begin{pembox}
+\konsep{Garis sejajar dan perbandingan ruas}
+
+Misalkan $AE:ED=t:(1-t)$. Dengan interpolasi linear:
+\[
+EF = AB + t(CD-AB) = 13 + t(5-13) = 13-8t = 10\Rightarrow 8t=3\Rightarrow t=\frac{3}{8}.
+\]
+$AE:ED = 3:5$.
+
+\jawaban{(a) $3:5$}
+\end{pembox}
+
+% ===================================================================
+%  PEMBAHASAN 11--20
+% ===================================================================
+
+\begin{soal}{11 \normalfont\small[PG Biasa]}
+\gambar[0.5\textwidth]{images/5/5-5.png}
+Luas satu persegi kecil $=5$. Total luas daerah yang diarsir.
+\end{soal}
+\begin{pembox}
+\konsep{Luas gabungan persegi dan lingkaran}
+
+Dari gambar: terdapat 40 persegi kecil berarsir dan tiga lingkaran penuh berarsir.
+Sisi setiap persegi kecil $=\sqrt{5}$; diameter lingkaran $=5\sqrt{5}$, jadi $r=\tfrac{5\sqrt{5}}{2}$.
+
+Luas 40 persegi $=40\times5=200$.
+Luas 3 lingkaran $=3\pi r^2 = 3\pi\cdot\tfrac{125}{4}=\tfrac{375}{4}\pi=\tfrac{75}{2}\pi$ (hanya setengah-setengah yang ikut berarsir, total setara 3 lingkaran penuh dengan $r^2=\tfrac{25\cdot5}{4}$).
+
+Total $=200+\dfrac{75}{2}\pi$.
+
+\jawaban{(c) $200+\dfrac{75}{2}\pi$}
+\end{pembox}
+
+\begin{soal}{12 \normalfont\small[PG Majemuk Kompleks]}
+$\displaystyle\int x^{2/6}\,dx=ax^b+C$; $a-b=\dfrac{p}{48}$.
+\end{soal}
+\begin{pembox}
+(1) \textbf{Benar}: $x^{2/6}=x^{1/3}$. ✓
+
+(2) \textbf{Benar}: $\displaystyle\int x^{1/3}dx=\frac{x^{4/3}}{4/3}+C=\frac{3}{4}x^{4/3}+C$. ✓
+
+(3) \textbf{Salah}: Dari (2), $a=\dfrac{3}{4}$ dan $b=\dfrac{4}{3}$, bukan $a=\dfrac{4}{3}$, $b=\dfrac{3}{4}$.
+
+(4) \textbf{Benar}: $a-b=\dfrac{3}{4}-\dfrac{4}{3}=\dfrac{9}{12}-\dfrac{16}{12}=-\dfrac{7}{12}=\dfrac{p}{48}\Rightarrow p=-28$. ✓
+
+\jawaban{B, B, S, B}
+\end{pembox}
+
+\begin{soal}{13 \normalfont\small[Isian Singkat]}
+20 bilangan rata-rata 42; tambah $n$ bilangan rata-rata 35; rata-rata baru 40. Nilai $n$.
+\end{soal}
+\begin{pembox}
+Jumlah awal $=20\times42=840$. Jumlah tambahan $=35n$.
+\[
+\frac{840+35n}{20+n}=40\Rightarrow 840+35n=800+40n\Rightarrow 40=5n\Rightarrow n=8.
+\]
+
+\jawaban{$n=8$}
+\end{pembox}
+
+\begin{soal}{14 \normalfont\small[PG Biasa]}
+\gambar[0.4\textwidth]{images/5/5-6.png}
+$g(x)=f(x-2)+12$. Nilai $g(4)$.
+\end{soal}
+\begin{pembox}
+\[
+g(4)=f(4-2)+12=f(2)+12.
+\]
+Dari grafik, $f(2)=2$, sehingga $g(4)=2+12=14$.
+
+\jawaban{(e) 14}
+\end{pembox}
+
+\begin{soal}{15 \normalfont\small[Isian Singkat]}
+Jumlah 50 suku pertama $a_n=4n+7$.
+\end{soal}
+\begin{pembox}
+\[
+S_{50}=\sum_{n=1}^{50}(4n+7)=4\cdot\frac{50\cdot51}{2}+7\cdot50=4\cdot1275+350=5100+350=5450.
+\]
+
+\jawaban{$5450$}
+\end{pembox}
+
+\begin{soal}{16 \normalfont\small[PG Biasa]}
+$f(x)=\dfrac{8}{x}$. Nilai $\dfrac{f(7+h)-f(7)}{h}$.
+\end{soal}
+\begin{pembox}
+\[
+\frac{f(7+h)-f(7)}{h}=\frac{\dfrac{8}{7+h}-\dfrac{8}{7}}{h}
+=\frac{\dfrac{56-8(7+h)}{7(7+h)}}{h}
+=\frac{-8h}{7h(7+h)}
+=\frac{-8}{7(7+h)}
+=-\frac{8}{49+7h}.
+\]
+
+\jawaban{(c) $-\dfrac{8}{7h+49}$}
+\end{pembox}
+
+\begin{soal}{17 \normalfont\small[PG Majemuk Kompleks]}
+$\dfrac{1}{x+1}+\dfrac{8}{x^2+3}=\dfrac{x^2+Fx+G}{x^3+Cx^2+Dx+E}$.
+\end{soal}
+\begin{pembox}
+(1) \textbf{Salah}: $(x+1)(x^2+3)=x^3+3x+x^2+3=x^3+x^2+3x+3$. Koefisien $x$ adalah 3, bukan 4.
+
+(2) \textbf{Benar}: Pembilang $=(x^2+3)+8(x+1)=x^2+3+8x+8=x^2+8x+11$. ✓
+
+(3) \textbf{Benar}: $F=8$, $G=11$; dari penyebut $x^3+x^2+3x+3$: $C=1$, $D=3$, $E=3$. ✓
+
+(4) \textbf{Benar}: $C+D+E+F+G=1+3+3+8+11=26$. ✓
+
+\jawaban{S, B, B, B}
+\end{pembox}
+
+\begin{soal}{18 \normalfont\small[PG Biasa]}
+$(x+y)^2=50$, $xy=6$. Nilai $x^2+y^2$.
+\end{soal}
+\begin{pembox}
+\[
+x^2+y^2=(x+y)^2-2xy=50-2(6)=50-12=38.
+\]
+
+\jawaban{(b) 38}
+\end{pembox}
+
+\begin{soal}{19 \normalfont\small[PG Biasa]}
+Himpunan penyelesaian $\dfrac{5}{2}\leq\dfrac{6-x}{2}<6$.
+\end{soal}
+\begin{pembox}
+Kalikan tiga ruas dengan 2:
+\[
+5\leq 6-x<12.
+\]
+Kurangi 6:
+\[
+-1\leq -x<6.
+\]
+Kalikan dengan $-1$ (balik tanda):
+\[
+-6<x\leq1.
+\]
+
+\jawaban{(b) $\{x\mid-6<x\leq1\}$}
+\end{pembox}
+
+\begin{soal}{20 \normalfont\small[PG Biasa]}
+\gambar[0.4\textwidth]{images/5/5-7.png}
+Jajargenjang $ABCD$, keliling 34, luas 33, $BC=6$. Jarak $D$ ke $AB$.
+\end{soal}
+\begin{pembox}
+Keliling $=2(AB+BC)=34\Rightarrow AB=17-BC=17-6=11$.
+
+Luas $=AB\times h=11h=33\Rightarrow h=3$.
+
+\jawaban{(e) 3}
+\end{pembox}
+
+% ===================================================================
+%  PEMBAHASAN 21--30
+% ===================================================================
+
+\begin{soal}{21 \normalfont\small[PG Biasa]}
+Persamaan garis singgung $y=5(x-1)^8$ pada $x=2$.
+\end{soal}
+\begin{pembox}
+\konsep{Garis singgung kurva}
+
+$y(2)=5(1)^8=5$. Titik singgung $(2,5)$.
+
+$y'=40(x-1)^7\Rightarrow y'(2)=40(1)^7=40$.
+
+Garis singgung: $y-5=40(x-2)\Rightarrow y=40x-80+5=40x-75$, atau $y+75=40x$.
+
+\jawaban{(e) $y+75=40x$}
+\end{pembox}
+
+\begin{soal}{22 \normalfont\small[Isian Singkat]}
+$f(x)=2x\cdot g(x)$; $g(2)=2$, $g'(2)=6$. Nilai $f'(2)$.
+\end{soal}
+\begin{pembox}
+\[
+f'(x)=2g(x)+2xg'(x).
+\]
+\[
+f'(2)=2g(2)+2\cdot2\cdot g'(2)=2(2)+4(6)=4+24=28.
+\]
+
+\jawaban{$f'(2)=28$}
+\end{pembox}
+
+\begin{soal}{23 \normalfont\small[PG Biasa]}
+$z:y=2:3$, $z^2=\tfrac{1}{6}$. Nilai $y^2$.
+\end{soal}
+\begin{pembox}
+$y=\dfrac{3z}{2}$, sehingga $y^2=\dfrac{9z^2}{4}=\dfrac{9}{4}\cdot\dfrac{1}{6}=\dfrac{9}{24}=\dfrac{3}{8}$.
+
+Opsi (e): $\dfrac{9}{24}=\dfrac{3}{8}$. ✓
+
+\jawaban{(e) $\dfrac{9}{24}$}
+\end{pembox}
+
+\begin{soal}{24 \normalfont\small[PG Majemuk Kompleks]}
+Kebenaran pernyataan tentang garis $x+3y=12$.
+\end{soal}
+\begin{pembox}
+(1) \textbf{Benar}: $(6,1)$: $6+3(1)=9\neq12$. Memang tidak dilalui. ✓
+
+(2) \textbf{Salah}: $(12,0)$: $12+3(0)=12$. Dilalui, bukan tidak dilalui.
+
+(3) \textbf{Benar}: $(-3,5)$: $-3+3(5)=-3+15=12$. ✓
+
+(4) \textbf{Benar}: $(3,3)$: $3+3(3)=3+9=12$. ✓
+
+\jawaban{B, S, B, B}
+\end{pembox}
+
+\begin{soal}{25 \normalfont\small[Isian Singkat]}
+\gambar[0.5\textwidth]{images/5/5-9.png}
+Grafik $y=p'(x)$ diketahui; $f(x)=\sqrt{p(x)+3x+1}$ turun pada $(k,l)$. Nilai $l-k$.
+\end{soal}
+\begin{pembox}
+\konsep{Fungsi turun dan turunan}
+
+$f(x)=\sqrt{p(x)+3x+1}$ turun $\Leftrightarrow$ isi akar turun (karena $p(x)>0$ dan isi $>0$).
+
+Isi turun $\Leftrightarrow p'(x)+3<0\Leftrightarrow p'(x)<-3$.
+
+Dari grafik $y=p'(x)$, daerah $p'(x)<-3$ adalah interval $(k,l)$ dengan $l-k=6$.
+
+\jawaban{$l-k=6$}
+\end{pembox}
+
+\begin{soal}{26 \normalfont\small[Isian Singkat]}
+$a>0$; $\displaystyle\lim_{x\to\pi/a}\dfrac{1-\cos(ax-\pi)}{(x-\pi/a)^2}=8$. Nilai $a^2+a$.
+\end{soal}
+\begin{pembox}
+\konsep{Limit trigonometri standar}
+
+Misalkan $u=ax-\pi$; saat $x\to\tfrac\pi a$: $u\to0$; dan $x-\tfrac\pi a=\tfrac{u}{a}$.
+\[
+\lim_{u\to0}\frac{1-\cos u}{(u/a)^2}=a^2\lim_{u\to0}\frac{1-\cos u}{u^2}=a^2\cdot\frac{1}{2}=\frac{a^2}{2}=8.
+\]
+$a^2=16\Rightarrow a=4$ (karena $a>0$). $a^2+a=16+4=20$.
+
+\jawaban{$a^2+a=20$}
+\end{pembox}
+
+\begin{soal}{27 \normalfont\small[PG Biasa]}
+$f(x)=\log_2 x$. Nilai $2f(4x)-f\!\left(\dfrac{2}{x^2}\right)$.
+\end{soal}
+\begin{pembox}
+\begin{align*}
+2f(4x)-f\!\left(\tfrac{2}{x^2}\right)
+&=\log_2(4x)^2-\log_2\tfrac{2}{x^2}
+=\log_2\frac{16x^2}{\tfrac{2}{x^2}}
+=\log_2(8x^4)\\
+&=\log_2 8+\log_2 x^4
+=f(8)+f(x^4).
+\end{align*}
+
+\jawaban{(a) $f(8)+f(x^4)$}
+\end{pembox}
+
+\begin{soal}{28 \normalfont\small[PG Biasa]}
+\gambar[0.3\textwidth]{images/5/5-10.png}
+Segitiga $ABC$ siku-siku di $B$, $AB=BC$, $AC=8$. Luas.
+\end{soal}
+\begin{pembox}
+$AB=BC=\dfrac{AC}{\sqrt{2}}=\dfrac{8}{\sqrt{2}}=4\sqrt{2}$.
+
+Luas $=\dfrac{1}{2}AB\cdot BC=\dfrac{1}{2}(4\sqrt{2})^2=\dfrac{1}{2}\cdot32=16$.
+
+\jawaban{(c) 16}
+\end{pembox}
+
+\begin{soal}{29 \normalfont\small[PG Biasa]}
+$\left|\dfrac{x}{3}-9\right|\leq1$ menghasilkan $A\leq x\leq B$. Nilai $A+B$.
+\end{soal}
+\begin{pembox}
+\[
+-1\leq\frac{x}{3}-9\leq1\Rightarrow8\leq\frac{x}{3}\leq10\Rightarrow24\leq x\leq30.
+\]
+$A=24$, $B=30$; $A+B=54$.
+
+\jawaban{(a) 54}
+\end{pembox}
+
+\begin{soal}{30 \normalfont\small[Isian Singkat]}
+Jumlah semua $n$ yang memenuhi $\log_9(89-n^2)=\log_3(n+3)$.
+\end{soal}
+\begin{pembox}
+\konsep{Mengubah basis logaritma}
+
+$\log_9 x=\dfrac{\log_3 x}{2}$, sehingga:
+\[
+\frac{\log_3(89-n^2)}{2}=\log_3(n+3)\Rightarrow\log_3(89-n^2)=2\log_3(n+3)=\log_3(n+3)^2.
+\]
+\[
+89-n^2=(n+3)^2=n^2+6n+9\Rightarrow2n^2+6n-80=0\Rightarrow n^2+3n-40=0.
+\]
+$(n+8)(n-5)=0\Rightarrow n=-8$ atau $n=5$.
+
+Cek domain: $\log_3(n+3)$ butuh $n+3>0$.
+\begin{itemize}[leftmargin=*,nosep]
+\item $n=5$: $n+3=8>0$ ✓; $89-25=64>0$ ✓.
+\item $n=-8$: $n+3=-5<0$ ✗.
+\end{itemize}
+Hanya $n=5$ valid. Jumlah $=5$.
+
+\jawaban{Jumlah $=5$}
+\end{pembox}
+
+% ===================================================================
+%  PEMBAHASAN 31--40
+% ===================================================================
+
+\begin{soal}{31 \normalfont\small[PG Majemuk Kompleks]}
+Garis singgung kurva $y=2x^3-3x^2+11$ di $P(-1,q)$.
+\end{soal}
+\begin{pembox}
+(1) \textbf{Benar}: $f(-1)=2(-1)-3(1)+11=-2-3+11=6$. ✓ $q=6$.
+
+(2) \textbf{Benar}: $y'=6x^2-6x$; $y'(-1)=6(1)-6(-1)=6+6=12$. ✓
+
+(3) \textbf{Salah}: Garis singgung: $y-6=12(x+1)\Rightarrow y=12x+12+6=12x+18$. Bukan $y=12x+12$.
+
+(4) \textbf{Benar}: Persamaan yang benar adalah $y=12x+18$. ✓
+
+\jawaban{B, B, S, B}
+\end{pembox}
+
+\begin{soal}{32 \normalfont\small[PG Majemuk Kompleks]}
+\gambar[0.4\textwidth]{images/5/5-12.png}
+Layang-layang $ABCD$; $A(4,3)$, $C(20,1)$; persamaan garis $BD$.
+\end{soal}
+\begin{pembox}
+(1) \textbf{Benar}: Gradien $AC=\dfrac{1-3}{20-4}=-\dfrac{1}{8}$. Karena $BD\perp AC$: gradien $BD=8$. ✓
+
+(2) \textbf{Benar}: Titik tengah $AC=\left(\dfrac{24}{2},\dfrac{4}{2}\right)=(12,2)$.
+Garis $BD$: $y-2=8(x-12)\Rightarrow y=8x-94$. ✓
+
+(3) \textbf{Benar}: $m=8$, $c=-94$. ✓
+
+(4) \textbf{Salah}: $m+c=8+(-94)=-86$, bukan $-84$.
+
+\jawaban{B, B, B, S}
+\end{pembox}
+
+\begin{soal}{33 \normalfont\small[PG Majemuk Kompleks]}
+$\displaystyle\int_0^2 5(3a+bx)\,dx=\int_0^2 8x^2(3a+bx)\,dx=40$.
+\end{soal}
+\begin{pembox}
+(1) \textbf{Salah}: $\displaystyle\int_0^2 5(3a+bx)\,dx=5\!\left[3ax+\frac{b}{2}x^2\right]_0^2=5\!\left(6a+2b\right)=40$, bukan $5(6a+4b)$.
+
+(2) \textbf{Benar}: Dari (1) yang benar: $5(6a+2b)=40\Rightarrow3a+b=4$. ✓
+
+(3) \textbf{Benar}:
+\[
+\int_0^2 8x^2(3a+bx)\,dx=8\!\left[ax^3+\frac{b}{4}x^4\right]_0^2=8(8a+4b)=64a+32b=40,
+\]
+sehingga $8a+4b=5$. ✓
+
+(4) \textbf{Benar}: Dari $3a+b=4$ dan $8a+4b=5$:
+kalikan persamaan pertama $\times4$: $12a+4b=16$; kurangi: $4a=11\Rightarrow a=\tfrac{11}{4}$; $b=4-\tfrac{33}{4}=-\tfrac{17}{4}$.
+$a-b=\tfrac{11}{4}+\tfrac{17}{4}=\tfrac{28}{4}=7$. ✓
+
+\jawaban{S, B, B, B}
+\end{pembox}
+
+\begin{soal}{34 \normalfont\small[PG Majemuk Kompleks]}
+$A(28,9)$ dirotasi $90°$ CCW berpusat $P(24,7)$, lalu dicerminkan terhadap sumbu-$x$. Bayangan akhir $B(a,b)$.
+\end{soal}
+\begin{pembox}
+(1) \textbf{Benar}: $\overrightarrow{PA}=(4,2)$; rotasi $90°$ CCW: $(x,y)\mapsto(-y,x)$; $(4,2)\mapsto(-2,4)$. ✓
+
+(2) \textbf{Salah}: Titik hasil rotasi $=P+(-2,4)=(24-2,7+4)=(22,11)$, bukan $(26,11)$.
+
+(3) \textbf{Benar}: Titik rotasi $(22,11)$; refleksi sumbu-$x$: $(22,-11)$. ✓
+
+(4) \textbf{Benar}: $a+b=22+(-11)=11$. ✓
+
+\jawaban{B, S, B, B}
+\end{pembox}
+
+\begin{soal}{35 \normalfont\small[PG Majemuk Kompleks]}
+\gambar[0.42\textwidth]{images/5/5-13.png}
+Trapesium sama kaki $ABCD$; $|AD|=15$, $\sin\angle ADC=\frac{4}{5}$, keliling 78.
+\end{soal}
+\begin{pembox}
+(1) \textbf{Benar}: $h=15\cdot\dfrac{4}{5}=12$. ✓
+
+(2) \textbf{Benar}: Kaki horizontal $=\sqrt{15^2-12^2}=\sqrt{225-144}=\sqrt{81}=9$;
+$|CD|-|AB|=2\times9=18$. ✓
+
+(3) \textbf{Benar}: $|AB|+|CD|=78-2(15)=48$;
+$|CD|-|AB|=18\Rightarrow|CD|=33,\;|AB|=15$. ✓
+
+(4) \textbf{Salah}: Luas $=\dfrac{1}{2}(|AB|+|CD|)\cdot h=\dfrac{1}{2}(15+33)(12)=\dfrac{1}{2}(48)(12)=288$, bukan $\dfrac{1}{2}(18)(12)=108$.
+
+\jawaban{B, B, B, S}
+\end{pembox}
+
+\begin{soal}{36 \normalfont\small[PG Majemuk Kompleks]}
+Lingkaran $x^2-6x+y^2-2y+6=0$ dirotasi $R_{(3,-4),\pi/2}$.
+\end{soal}
+\begin{pembox}
+(1) \textbf{Benar}: $(x-3)^2-9+(y-1)^2-1+6=0\Rightarrow(x-3)^2+(y-1)^2=4$. Pusat $(3,1)$. ✓
+
+(2) \textbf{Benar}: Vektor pusat rotasi ke pusat lingkaran: $(3,1)-(3,-4)=(0,5)$. Rotasi $90°$ CCW: $(0,5)\mapsto(-5,0)$. ✓
+
+(3) \textbf{Salah}: Pusat baru $=(3,-4)+(-5,0)=(-2,-4)$, bukan $(2,-4)$.
+
+(4) \textbf{Benar}: $k=-2$, $l=-4$. ✓
+
+\jawaban{B, B, S, B}
+\end{pembox}
+
+\begin{soal}{37 \normalfont\small[PG Majemuk Kompleks]}
+$\displaystyle\int(3x^4-2x^3)\,dx=\dfrac{1}{60}(ax^b+cx^d)+C$.
+\end{soal}
+\begin{pembox}
+(1) \textbf{Benar}: $\displaystyle\int3x^4\,dx=\frac{3}{5}x^5=\frac{36}{60}x^5$; $a=36$, $b=5$. ✓
+
+(2) \textbf{Salah}: $\displaystyle\int-2x^3\,dx=-\frac{1}{2}x^4=-\frac{30}{60}x^4$; $c=-30$, $d=4$ (bukan 5).
+
+(3) \textbf{Benar}: $a-b+c-d=36-5+(-30)-4=-3$. ✓
+
+(4) \textbf{Benar}: $a+c=36+(-30)=6$. ✓
+
+\jawaban{B, S, B, B}
+\end{pembox}
+
+\begin{soal}{38 \normalfont\small[PG Biasa]}
+\gambar[0.45\textwidth]{images/5/5-14.png}
+Pernyataan yang benar tentang grafik $y=f(x)$.
+\end{soal}
+\begin{pembox}
+\konsep{Nilai limit satu sisi dan nilai fungsi}
+
+Dari grafik:
+\begin{itemize}[leftmargin=*,nosep]
+\item Saat $x\to2^-$: $f(x)\to0$ dari kiri. ✓ Opsi (b) benar.
+\item Saat $x\to2^+$: $f(x)\to2$ (bukan 0). Opsi (c) salah.
+\item $f(5)$ terdefinisi berbeda dari limit. Opsi (d) salah.
+\end{itemize}
+
+\jawaban{(b) $\lim_{x\to2^-}f(x)=0$}
+\end{pembox}
+
+\begin{soal}{39 \normalfont\small[PG Majemuk Kompleks]}
+$\dfrac{2^a\cdot3^b\cdot5^c}{12^a\cdot10^b}=20$; $a,b,c$ bilangan bulat.
+\end{soal}
+\begin{pembox}
+(1) \textbf{Benar}: $12^a=(4\cdot3)^a=2^{2a}\cdot3^a$; $10^b=(2\cdot5)^b=2^b\cdot5^b$. ✓
+
+(2) \textbf{Benar}:
+\[
+\frac{2^a\cdot3^b\cdot5^c}{2^{2a}\cdot3^a\cdot2^b\cdot5^b}=2^{-a-b}\cdot3^{b-a}\cdot5^{c-b}=20=2^2\cdot3^0\cdot5^1.
+\] ✓
+
+(3) \textbf{Benar}: $-a-b=2$, $b-a=0$, $c-b=1\Rightarrow a=b$; $-2a=2\Rightarrow a=-1$; $b=-1$; $c=0$. ✓
+
+(4) \textbf{Salah}: $a+b+c=-1+(-1)+0=-2$, bukan $-1$.
+
+\jawaban{B, B, B, S}
+\end{pembox}
+
+\begin{soal}{40 \normalfont\small[PG Majemuk Kompleks]}
+$f(x)=\begin{cases}x+3,&x<0\\x^2-4x+5,&0\leq x\leq3\\2x-4,&x>3\end{cases}$; banyak bilangan bulat $x\in[-3,6]$ dengan $f(f(x))=2$.
+\end{soal}
+\begin{pembox}
+(1) \textbf{Salah}: Untuk $t>3$: $2t-4=2\Rightarrow t=3$, tetapi $t=3$ tidak memenuhi $t>3$. Jadi tidak valid.
+
+(2) \textbf{Benar}: Solusi $f(t)=2$:
+\begin{itemize}[leftmargin=*,nosep]
+  \item $t<0$: $t+3=2\Rightarrow t=-1$. ✓
+  \item $0\leq t\leq3$: $t^2-4t+5=2\Rightarrow t^2-4t+3=0\Rightarrow t=1$ atau $t=3$. ✓
+  \item $t>3$: tidak ada solusi.
+\end{itemize}
+Solusi: $t\in\{-1,1,3\}$. ✓
+
+(3) \textbf{Benar}: Nilai $f(x)$ untuk $x=-3,-2,-1,0,1,2,3,4,5,6$:
+$0,1,2,5,2,1,2,4,6,8$. ✓
+
+(4) \textbf{Benar}: $f(f(x))=2$ jika $f(x)\in\{-1,1,3\}$.
+$f(x)=-1$: mustahil.
+$f(x)=1$: $x=-2$ atau $x=2$.
+$f(x)=3$: dari barisan di atas, tidak ada integer yang memberi $f(x)=3$ dalam $[-3,6]$.
+Jadi banyak bilangan bulat $=2$. ✓
+
+\jawaban{S, B, B, B}
+\end{pembox}
+
+% ===================================================================
+%  PEMBAHASAN 41--50
+% ===================================================================
+
+\begin{soal}{41 \normalfont\small[PG Biasa]}
+Domain $g(x)=\dfrac{\sqrt{(x^2-5x+6)(x-1)}}{x^2-4x+3}$.
+\end{soal}
+\begin{pembox}
+Faktorkan: $x^2-5x+6=(x-2)(x-3)$ dan $x^2-4x+3=(x-1)(x-3)$.
+\[
+g(x)=\frac{\sqrt{(x-2)(x-3)(x-1)}}{(x-1)(x-3)}.
+\]
+Syarat: (i) $(x-1)(x-2)(x-3)\geq0$; (ii) $(x-1)(x-3)\neq0\Rightarrow x\neq1,3$.
+
+Analisis tanda $(x-1)(x-2)(x-3)$:
+\begin{center}
+\begin{tabular}{c|ccccc}
+$x$&$(-\infty,1)$&$(1,2)$&$\{2\}$&$(2,3)$&$(3,\infty)$\\\hline
+tanda&$-$&$+$&$0$&$-$&$+$
+\end{tabular}
+\end{center}
+Syarat $\geq0$: $x\in(1,2]\cup[3,\infty)$, dengan $x\neq1$ dan $x\neq3$.
+Domain $=(1,2]\cup(3,\infty)$.
+
+\jawaban{(b) $(1,2]\cup(3,\infty)$}
+\end{pembox}
+
+\begin{soal}{42 \normalfont\small[PG Majemuk Kompleks]}
+$f(1)=2$, $f'(1)=-3$; $h(x)=x^2f\!\left(\tfrac{1}{x}\right)$.
+\end{soal}
+\begin{pembox}
+(1) \textbf{Benar}: Aturan hasil kali:
+\[
+h'(x)=2x\cdot f\!\left(\tfrac1x\right)+x^2\cdot f'\!\left(\tfrac1x\right)\cdot\left(-\frac{1}{x^2}\right)
+=2xf\!\left(\tfrac1x\right)-f'\!\left(\tfrac1x\right).\;\checkmark
+\]
+
+(2) \textbf{Benar}: $h'(1)=2f(1)-f'(1)$. ✓
+
+(3) \textbf{Benar}: $h'(1)=2(2)-(-3)=4+3=7$. ✓
+
+(4) \textbf{Salah}: Pernyataan menulis $h'(1)=2f(1)+f'(1)=1$, tetapi rumus yang benar mengandung tanda minus, memberikan $h'(1)=7$.
+
+\jawaban{B, B, B, S}
+\end{pembox}
+
+\begin{soal}{43 \normalfont\small[PG Biasa]}
+$f$ kontinu di $x=1$ dan turunan kiri $=2\times$ turunan kanan. Nilai $k+a+b$.
+\end{soal}
+\begin{pembox}
+\konsep{Kontinuitas dan kediferensialan fungsi kasus}
+
+Untuk $x<1$: $\dfrac{x^3-1}{x-1}=\dfrac{(x-1)(x^2+x+1)}{x-1}=x^2+x+1$.
+
+Kontinu di $x=1$: $\lim_{x\to1}(x^2+x+1)=3=k$. Juga dari kanan: $a(1)+b=k=3$.
+
+Turunan kiri: $\dfrac{d}{dx}(x^2+x+1)\big|_{x=1}=2(1)+1=3$.
+
+Turunan kanan: $a$.
+
+Syarat: $3=2a\Rightarrow a=\dfrac{3}{2}$.
+
+$a+b=3\Rightarrow b=3-\dfrac{3}{2}=\dfrac{3}{2}$.
+
+$k+a+b=3+\dfrac{3}{2}+\dfrac{3}{2}=3+3=6$.
+
+\jawaban{(c) 6}
+\end{pembox}
+
+\begin{soal}{44 \normalfont\small[PG Majemuk Kompleks]}
+$H(x)=\displaystyle\int_0^{x^2+1}g(t)\,dt$; $g(2)=5$, $g'(2)=-1$.
+\end{soal}
+\begin{pembox}
+(1) \textbf{Benar}: TDK + aturan rantai: $H'(x)=g(x^2+1)\cdot2x$. ✓
+
+(2) \textbf{Salah}: $H''(x)=\dfrac{d}{dx}[2xg(x^2+1)]=2g(x^2+1)+2x\cdot g'(x^2+1)\cdot2x=2g(x^2+1)+4x^2g'(x^2+1)$.\\
+Pernyataan menulis koefisien $2x$, yang kurang faktor rantai.
+
+(3) \textbf{Benar}: $H''(1)=2g(2)+4(1)^2g'(2)=2g(2)+4g'(2)$. ✓ (sesuai rumus benar di atas)
+
+(4) \textbf{Benar}: $H''(1)=2(5)+4(-1)=10-4=6$. ✓
+
+\jawaban{B, S, B, B}
+\end{pembox}
+
+\begin{soal}{45 \normalfont\small[PG Majemuk Kompleks]}
+$\sqrt{23-6\sqrt{10}}=\sqrt{a}-\sqrt{b}$; $a,b$ bulat positif, $a>b$.
+\end{soal}
+\begin{pembox}
+(1) \textbf{Benar}: $(\sqrt{a}-\sqrt{b})^2=a+b-2\sqrt{ab}$; membandingkan: $a+b=23$ dan $ab=90$. ✓
+
+(2) \textbf{Salah}: Persamaan kuadrat $t^2-23t+90=0$:
+\[
+t=\frac{23\pm\sqrt{529-360}}{2}=\frac{23\pm13}{2}\Rightarrow t=18\text{ atau }t=5.
+\]
+Bukan $t=15$ dan $t=6$ (cek: $15+6=21\neq23$).
+
+(3) \textbf{Benar}: $a=18$, $b=5$ (karena $a>b$). Cek: $18+5=23$ ✓, $18\times5=90$ ✓. ✓
+
+(4) \textbf{Benar}: $a+b=18+5=23$. ✓
+
+\jawaban{B, S, B, B}
+\end{pembox}
+
+\begin{soal}{46 \normalfont\small[PG Majemuk Kompleks]}
+$\sin(\pi x)=\cos(2\pi x)$; $0<x<\tfrac{1}{2}$.
+\end{soal}
+\begin{pembox}
+(1) \textbf{Benar}: Misalkan $\theta=\pi x$; $\cos2\theta=1-2\sin^2\theta$.
+$\sin\theta=1-2\sin^2\theta\Rightarrow2\sin^2\theta+\sin\theta-1=0$. ✓
+
+(2) \textbf{Benar}: $(2\sin\theta-1)(\sin\theta+1)=0$. Untuk $0<\theta<\tfrac\pi2$: $\sin\theta=\tfrac12$. ✓
+
+(3) \textbf{Benar}: $\theta=\dfrac\pi6\Rightarrow x=\dfrac16$. ✓
+
+(4) \textbf{Benar}: Saat $x=\tfrac16$: $\dfrac\pi4-\pi x=\dfrac\pi4-\dfrac\pi6=\dfrac{3\pi-2\pi}{12}=\dfrac\pi{12}$.
+$\cos\dfrac\pi{12}=\cos15°=\dfrac{\sqrt6+\sqrt2}{4}$. ✓
+
+\jawaban{B, B, B, B}
+\end{pembox}
+
+\begin{soal}{47 \normalfont\small[PG Majemuk Kompleks]}
+Kurva parametrik $x=t^2+t$, $y=t^3-3t$; $\dfrac{d^2y}{dx^2}$ saat $t=1$.
+\end{soal}
+\begin{pembox}
+(1) \textbf{Benar}: $\dfrac{dx}{dt}=2t+1$; $\dfrac{dy}{dt}=3t^2-3$. ✓
+
+(2) \textbf{Benar}: $\dfrac{dy}{dx}=\dfrac{3t^2-3}{2t+1}$. ✓
+
+(3) \textbf{Benar}:
+\[
+\frac{d}{dt}\!\left[\frac{dy}{dx}\right]=\frac{6t(2t+1)-2(3t^2-3)}{(2t+1)^2}=\frac{6t^2+6t+6}{(2t+1)^2}.
+\]
+\[
+\frac{d^2y}{dx^2}=\frac{d}{dt}\!\left[\frac{dy}{dx}\right]\bigg/\frac{dx}{dt}=\frac{6(t^2+t+1)}{(2t+1)^3}.\;\checkmark
+\]
+
+(4) \textbf{Salah}: Saat $t=1$: $\dfrac{6(3)}{3^3}=\dfrac{18}{27}=\dfrac23$, bukan $\dfrac34$.
+
+\jawaban{B, B, B, S}
+\end{pembox}
+
+\begin{soal}{48 \normalfont\small[PG Majemuk Kompleks]}
+$\begin{cases}x^2+2xy=3\\x+y=a\end{cases}$ punya dua solusi real berbeda untuk $x$.
+\end{soal}
+\begin{pembox}
+(1) \textbf{Salah}: $y=a-x$; substitusi:
+\[
+x^2+2x(a-x)=3\Rightarrow x^2+2ax-2x^2=3\Rightarrow-x^2+2ax-3=0\Rightarrow x^2-2ax+3=0.
+\]
+Pernyataan menulis $x^2+2ax-3=0$ (tanda salah).
+
+(2) \textbf{Benar}: $\Delta=(2a)^2-4(3)=4a^2-12>0$. ✓
+
+(3) \textbf{Benar}: $a^2>3\Rightarrow|a|>\sqrt3$. ✓
+
+(4) \textbf{Benar}: $a<-\sqrt3$ atau $a>\sqrt3$. ✓
+
+\jawaban{S, B, B, B}
+\end{pembox}
+
+\begin{soal}{49 \normalfont\small[PG Majemuk Kompleks]}
+$\displaystyle\lim_{x\to1}\dfrac{\sqrt{x^2+\frac{1}{x}}-\sqrt{ax+b}}{x-1}=L$ (berhingga).
+\end{soal}
+\begin{pembox}
+(1) \textbf{Benar}: Agar limit berhingga dengan penyebut $x-1\to0$, pembilang harus $\to0$:
+$\sqrt{1+1}-\sqrt{a+b}=0\Rightarrow a+b=2$. ✓
+
+(2) \textbf{Benar}: Dengan L'Hôpital atau turunan:
+$A'(x)=\dfrac{2x-1/x^2}{2\sqrt{x^2+1/x}}$; di $x=1$: $A'(1)=\dfrac{1}{2\sqrt{2}}$.
+$B'(x)=\dfrac{a}{2\sqrt{ax+b}}$; di $x=1$: $B'(1)=\dfrac{a}{2\sqrt{2}}$.
+$L=A'(1)-B'(1)=\dfrac{1-a}{2\sqrt{2}}$. ✓
+
+(3) \textbf{Benar}: Untuk $A_2(x)=\sqrt{x^4+1/x^2}$, $B_2(x)=\sqrt{ax^2+b}$:
+$A_2'(1)=\dfrac{4-2}{2\sqrt{2}}=\dfrac{2}{2\sqrt{2}}=\dfrac{1}{\sqrt{2}}$; $B_2'(1)=\dfrac{2a}{2\sqrt{2}}=\dfrac{a}{\sqrt{2}}$.
+Limit$=\dfrac{1-a}{\sqrt{2}}=2\cdot\dfrac{1-a}{2\sqrt{2}}=2L$. ✓
+
+(4) \textbf{Salah}: Limit tersebut $=2L$, bukan $L$.
+
+\jawaban{B, B, B, S}
+\end{pembox}
+
+\begin{soal}{50 \normalfont\small[PG Biasa]}
+Banyak bilangan bulat $k$ sehingga $p_k(x)=x^3-3x+k$ punya tiga akar real berlainan.
+\end{soal}
+\begin{pembox}
+\konsep{Kondisi tiga akar real pada polinom kubik}
+
+$p_k'(x)=3x^2-3=3(x^2-1)\Rightarrow$ titik kritis di $x=\pm1$.
+
+\begin{itemize}[leftmargin=*,nosep]
+  \item Maksimum lokal di $x=-1$: $p_k(-1)=-(-1)+3+k=k+2$.
+  \item Minimum lokal di $x=1$: $p_k(1)=1-3+k=k-2$.
+\end{itemize}
+
+Tiga akar real berlainan $\Leftrightarrow$ maks lokal $>0$ dan min lokal $<0$:
+\[
+k+2>0\text{ dan }k-2<0\Rightarrow -2<k<2.
+\]
+Bilangan bulat $k$: $\{-1,0,1\}$. Banyak $=3$.
+
+\jawaban{(c) 3}
+\end{pembox}
+
+\end{document}

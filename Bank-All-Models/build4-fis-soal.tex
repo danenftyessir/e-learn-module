@@ -1,0 +1,519 @@
+% ============================================================
+%  LEMBAR SOAL  --  FISIKA  --  SSU-ITB 2026  |  Paket 4
+%  Sumber: SM-SSU ITB 2025 (30 soal)
+% ============================================================
+
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.5cm,top=2.8cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{icomma}
+\usepackage{array}
+
+\definecolor{mapelcolor}{RGB}{20,70,150}
+\definecolor{mapelbg}{RGB}{230,238,255}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small SSU-ITB 2026}
+\rhead{\small Paket 4}
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newtcolorbox{soal}[1]{
+  breakable,
+  colback=white, colframe=black!70,
+  coltitle=white, colbacktitle=black,
+  fonttitle=\bfseries\sffamily,
+  title=Nomor #1,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+\newenvironment{pil}{%
+  \begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}}
+\newenvironment{pilB}{%
+  \par\smallskip\begin{multicols}{2}
+  \begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}\end{multicols}}
+
+\newcommand{\gambar}[2][0.52\textwidth]{%
+  \begin{center}\includegraphics[width=#1]{#2}\end{center}}
+
+\linespread{1.05}
+
+% ===================================================================
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+  \fbox{\parbox{0.6\textwidth}{\centering\bfseries\large
+    LEMBAR SOAL}}
+\end{center}
+\vspace{0.5cm}
+
+\begin{center}
+  {\LARGE\bfseries FISIKA}
+\end{center}
+\vspace{0.5cm}
+
+\begin{center}
+  \begin{tabular}{@{\hspace{2cm}}ll@{\hspace{0.4cm}:@{\hspace{0.4cm}}}l}
+    Jenjang      & & SMA / Sederajat               \\[0.3em]
+    Hari/Tanggal & & \underline{\hspace{5cm}}      \\[0.3em]
+    Waktu        & & \underline{\hspace{5cm}}      \\[0.3em]
+    Paket Soal   & & 4                             \\
+  \end{tabular}
+\end{center}
+
+\vspace{0.6cm}
+\noindent\rule{\linewidth}{0.6pt}
+\vspace{0.3cm}
+
+\noindent\textbf{\underline{PETUNJUK UMUM}}
+\begin{enumerate}[leftmargin=*,itemsep=4pt,topsep=4pt]
+  \item Anda \textbf{tidak} diperbolehkan menggunakan sumber-sumber eksternal,
+        termasuk internet, \textit{large language model} seperti ChatGPT, Claude,
+        LLaMA, Gemini, Meta AI, dan sebagainya. Anda sangat dianjurkan untuk
+        mencoba mengerjakan sendiri terlebih dahulu karena evaluasi ini dibuat
+        untuk \textbf{mengukur} tingkat kepahaman; nilai $<70$ mengindikasikan
+        \textbf{tidak lulus}, dan jika sudah melewati \textit{deadline} maka
+        dianggap tidak mengerjakan yang berarti \textbf{tidak lulus}.
+
+  \item Terdapat 2 tahap pengerjaan, yaitu tahap \textbf{Try Out} dan tahap
+        \textbf{Review}. Try Out bersifat \textit{open book}; Anda diperbolehkan
+        membuka buku apapun selama bersifat \textit{offline} dengan rentang waktu
+        2 jam pada tanggal \underline{\hspace{3cm}}. Setelah itu memasuki
+        tahap Review dengan \textit{schedule} rentang tanggal
+        \underline{\hspace{3cm}}--\underline{\hspace{3cm}}, di mana Anda
+        diharapkan mengerjakan ulang dengan disertakan penjelasan/pembelaan
+        mengapa revisi jawaban adalah pilihan tersebut, dan tetap mencantumkan
+        penjelasan pada soal yang walaupun pada penilaian sudah benar.
+
+  \item Anda dianjurkan untuk mencantumkan caranya walaupun tidak termasuk
+        penilaian, mengingat sifatnya adalah sebagai bahan pembelajaran.
+        Mohon bertanggung jawab atas pekerjaan Anda sendiri.
+
+  \item Bacalah setiap soal dengan teliti. Soal berbentuk
+        \textbf{Pilihan Ganda Biasa} --- 5 opsi (A--E), pilih 1 jawaban
+        paling tepat.
+
+  \item Soal berjumlah \textbf{30 butir} soal dengan bobot asli per soal adalah
+        $\mathbf{\tfrac{10}{3}}$ untuk mendapatkan nilai sempurna sebesar \textbf{100}.
+        Gunakan $g=10$ m/s$^2$ bila tidak disebutkan lain.
+
+  \item Silakan bertanya apabila terdapat soal yang ambigu, rancu, atau kurang
+        spesifik selama itu tidak menjurus kepada jawaban soal tersebut.
+
+  \item Isilah detail informasi berikut.\\[0.3em]
+        \textbf{Nama}\hspace{0.45cm}:\enspace\underline{\hspace{8cm}}
+\end{enumerate}
+
+\vspace{0.6cm}
+\noindent\textit{Dengan menandatangani kolom di bawah ini, saya menyatakan telah membaca,
+memahami, dan menyetujui seluruh peraturan yang tercantum di atas.}
+
+\vspace{0.6cm}
+\noindent\fbox{\parbox{5cm}{\vspace{2.2cm}\centering\small Tanda Tangan Peserta\vspace{0.3cm}}}
+
+\clearpage
+
+% ===================================================================
+%  SOAL 1--10
+% ===================================================================
+
+\begin{soal}{1 \normalfont\small[PG Biasa]}
+\gambar[0.32\textwidth]{images/4/4-n1.png}
+Sebuah roda berbentuk silinder pejal memiliki poros di titik $O$. Dua buah
+gaya $F_1$ dan $F_2$ bekerja pada roda dan menyebabkan roda berotasi terhadap
+porosnya selama 20 detik. Jika setelah itu gaya $F_2$ dihilangkan dan roda
+berhenti berotasi setelah 20 detik kemudian, perbandingan $F_2/F_1$ adalah \ldots
+\begin{pilB}
+  \item $3:2$ \item $2:1$ \item $1:3$ \item $2:3$ \item $1:2$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{2 \normalfont\small[PG Majemuk Kompleks]}
+Sebuah pegas digantung vertikal dengan beban $M$ gram bertambah panjang
+$\Delta l$ hingga setimbang. Pegas kemudian berosilasi. Frekuensi osilasi pegas
+adalah 11 kali frekuensi bandul bermassa $0{,}5M$ gram panjang tali $L$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Frekuensi pegas $f_s = \dfrac{1}{2\pi}\sqrt{\dfrac{g}{\Delta l}}$ (massa tidak berpengaruh).&$\bigcirc$&$\bigcirc$\\
+(2)~Frekuensi bandul $f_b = \dfrac{1}{2\pi}\sqrt{\dfrac{g}{L}}$ tidak bergantung massa beban.&$\bigcirc$&$\bigcirc$\\
+(3)~Dari syarat $f_s = 11f_b$, diperoleh $L = 11\,\Delta l$.&$\bigcirc$&$\bigcirc$\\
+(4)~Jika $\Delta l = 1{,}9$ cm, maka $L = 229{,}9$ cm.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{3 \normalfont\small[PG Biasa]}
+Persamaan gelombang sinusoidal yang merambat ke arah negatif $x$ dengan
+amplitudo $10$ cm, panjang gelombang $314$ cm, frekuensi $2$ Hz, dan
+$y(x{=}10\text{ cm},\,t{=}0)=0$ adalah \ldots
+\begin{pil}
+  \item $y=0{,}1\sin(2x-4\pi t-0{,}2)$
+  \item $y=0{,}1\sin(2x+4\pi t)$
+  \item $y=0{,}1\sin(2x+4\pi t-0{,}2)$
+  \item $y=0{,}1\sin(2x+4\pi t+0{,}2)$
+  \item $y=0{,}1\sin(2x-4\pi t)$
+\end{pil}
+\end{soal}
+
+\begin{soal}{4 \normalfont\small[PG Biasa]}
+\gambar[0.3\textwidth]{images/4/4-2.png}
+Balok $A$ bermassa $M$ digantung tali panjang $L$, disimpangkan hingga
+ketinggian $H$ lalu dilepas. Di titik terendah, $A$ menumbuk benda $B$
+bermassa $m$ yang diam di permukaan licin dan keduanya menempel. Ketinggian
+maksimum sistem setelah tumbukan adalah \ldots $H$.
+\begin{pilB}
+  \item $\left(\dfrac{M+m}{m}\right)^{\!2}$
+  \item $\left(\dfrac{M}{M+m}\right)^{\!2}$
+  \item $\left(\dfrac{m}{M+m}\right)^{\!2}$
+  \item $\left(\dfrac{M}{M+m}\right)$
+  \item $\left(\dfrac{M+m}{M}\right)^{\!2}$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{5 \normalfont\small[PG Biasa]}
+Apa pengaruh angin terhadap efek Doppler pada suara yang merambat di udara?
+\begin{pil}
+  \item Efek Doppler terjadi selama ada angin meskipun sumber dan pengamat diam.
+  \item Angin dapat mengubah besar efek Doppler, tetapi tidak dapat menyebabkannya.
+  \item Angin dapat menyebabkan efek Doppler, seperti halnya sumber yang bergerak.
+  \item Angin tidak memengaruhi efek Doppler sama sekali.
+  \item Efek Doppler hanya terjadi jika angin bertiup ke arah pengamat.
+\end{pil}
+\end{soal}
+
+\begin{soal}{6 \normalfont\small[PG Majemuk Kompleks]}
+Sebuah balok berada di bidang datar kasar. Balok ditarik dengan gaya arah
+$0^\circ<\alpha<80^\circ$ terhadap perpindahan sehingga bergerak.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Kerja oleh gaya gesek pada balok bertanda positif.&$\bigcirc$&$\bigcirc$\\
+(2)~Peningkatan energi kinetik balok sebanding dengan perpindahan.&$\bigcirc$&$\bigcirc$\\
+(3)~Jika $\alpha$ berubah, hanya kerja dari gaya tarik $F$ yang terpengaruh.&$\bigcirc$&$\bigcirc$\\
+(4)~Kerja gaya gravitasi dan gaya normal masing-masing bernilai nol.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{7 \normalfont\small[PG Majemuk Kompleks]}
+Gelombang berdiri dengan ujung terikat:
+$y=0{,}2\sin(5\pi x)\cos(2\pi t)$, $x$ dan $y$ dalam cm, $t$ dalam sekon.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Periode gelombang adalah 1 sekon.&$\bigcirc$&$\bigcirc$\\
+(2)~Amplitudo gelombang bernilai konstan, yaitu 0{,}2 cm.&$\bigcirc$&$\bigcirc$\\
+(3)~Pada jarak 0{,}4 cm dari ujung terikat terbentuk simpul.&$\bigcirc$&$\bigcirc$\\
+(4)~Cepat rambat gelombang adalah 0{,}4 m/s.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{8 \normalfont\small[PG Biasa]}
+\gambar[0.42\textwidth]{images/4/4-n8.png}
+Balok $A$ berat 100 N berada di atas balok $B$ dan diikat tali mendatar.
+Balok $B$ berat 500 N. Koefisien gesek statik dan kinetik antara $A$--$B$:
+0{,}2 dan 0{,}1; antara $B$--lantai: 0{,}6 dan 0{,}5. Gaya mendatar $F$
+minimum untuk menggeser balok $B$ adalah \ldots\ N.
+\begin{pilB}
+  \item $380$ \item $400$ \item $420$ \item $440$ \item $460$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{9 \normalfont\small[PG Biasa]}
+\gambar[0.4\textwidth]{images/4/4-n9.png}
+Dua buah vektor $A$ dan $B$ terletak pada bidang $xy$ seperti pada gambar.
+Jika komponen resultan kedua vektor pada sumbu $x$ sama dengan nol,
+besar vektor $A$ adalah \ldots\ N.
+\begin{pilB}
+  \item $6$ \item $8$ \item $10$ \item $12$ \item $14$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{10 \normalfont\small[PG Majemuk Kompleks]}
+Posisi suatu partikel: $x(t)=6t^2-4t+2$ (m, s).
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Kecepatan partikel $v(t)=12t+4$ m/s.&$\bigcirc$&$\bigcirc$\\
+(2)~Percepatan partikel $a=12$ m/s$^2$ (konstan).&$\bigcirc$&$\bigcirc$\\
+(3)~Kecepatan pada $t=3$ s adalah $v(3)=32$ m/s.&$\bigcirc$&$\bigcirc$\\
+(4)~Kecepatan awal $v(0)=-4$ m/s.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+% ===================================================================
+%  SOAL 11--20
+% ===================================================================
+
+\begin{soal}{11 \normalfont\small[PG Biasa]}
+Partikel $Z$ memiliki energi total 17{,}0 GeV dan massa diam
+$8{,}0$ GeV/$c^2$. Energi kinetiknya adalah \ldots\ GeV.
+\begin{pilB}
+  \item $17{,}0$ \item $25{,}0$ \item $136{,}0$ \item $8{,}0$ \item $9{,}0$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{12 \normalfont\small[PG Biasa]}
+Dua bola identik dilempar horizontal ke dinding vertikal licin dengan kelajuan
+sama. Bola $P$ memantul dengan kelajuan sama; bola $Q$ berhenti. Perbandingan
+impuls $I_P/I_Q$ dan perbandingan gaya rata-rata $F_P/F_Q$ adalah \ldots
+\begin{pil}
+  \item $I_P/I_Q=1$ dan $F_P/F_Q=1$
+  \item $I_P/I_Q=1$ dan $F_P/F_Q=2$
+  \item $I_P/I_Q=2$ dan $F_P/F_Q=1$
+  \item $I_P/I_Q=2$ dan $F_P/F_Q=2$
+  \item $I_P/I_Q=2$ dan $F_P/F_Q=\Delta t_Q/\Delta t_P$
+\end{pil}
+\end{soal}
+
+\begin{soal}{13 \normalfont\small[PG Biasa]}
+\gambar[0.26\textwidth]{images/4/4-3.png}
+Bola karet massa 0{,}20 kg dijatuhkan dari ketinggian 1{,}8 m di atas pegas
+vertikal. Saat kompresi maksimum, gaya pegas terbesar yang aman adalah 36 N.
+Abaikan hambatan udara, $g=10$ m/s$^2$. Konstanta pegas minimum agar syarat
+terpenuhi adalah \ldots\ N/m.
+\begin{pilB}
+  \item $80$ \item $120$ \item $160$ \item $200$ \item $240$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{14 \normalfont\small[PG Majemuk Kompleks]}
+\gambar[0.32\textwidth]{images/4/4-4.png}
+Bola $P$ massa 0{,}30 kg diangkat hingga ketinggian 20 cm, dilepas, lalu
+menumbuk bola $Q$ massa 0{,}20 kg yang diam di titik terendah; keduanya
+menempel. Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Kecepatan $P$ di titik terendah sebelum tumbukan: $v=2$ m/s.&$\bigcirc$&$\bigcirc$\\
+(2)~Setelah tumbukan menempel, $v'=0{,}6v=1{,}2$ m/s.&$\bigcirc$&$\bigcirc$\\
+(3)~Tinggi maksimum setelah tumbukan: $h'=0{,}6H=12$ cm.&$\bigcirc$&$\bigcirc$\\
+(4)~Tinggi maksimum setelah tumbukan: $h'=0{,}36H=7{,}2$ cm.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{15 \normalfont\small[PG Biasa]}
+Suatu planet $X$ memiliki jari-jari 1{,}5 kali jari-jari Bumi dan massa jenis
+rata-rata 2 kali massa jenis Bumi. Jika berat suatu benda di Bumi adalah $W$,
+berat benda tersebut di planet $X$ adalah \ldots
+\begin{pilB}
+  \item $\tfrac{2}{3}W$ \item $W$ \item $\tfrac{3}{2}W$ \item $2W$ \item $3W$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{16 \normalfont\small[Isian Singkat]}
+\gambar[0.5\textwidth]{images/4/4-5.png}
+Batang homogen panjang 4 m berat 100 N ditumpu di kedua ujungnya.
+Anak berat 300 N berdiri 1 m dari ujung kiri; beban 200 N digantung
+0{,}5 m dari ujung kanan. Besar gaya tumpu pada ujung kanan adalah \ldots\ N.
+
+\vspace{0.4em}
+\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+\begin{soal}{17 \normalfont\small[PG Majemuk Kompleks]}
+\gambar[0.42\textwidth]{images/4/4-6.png}
+Dua pegas identik masing-masing berkonstanta $k$ disusun seri. Saat ditarik
+20 cm dari setimbang, usaha yang diperlukan 4 J.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Konstanta ekivalen dua pegas seri identik: $k_{\text{eq}}=\dfrac{k}{2}$.&$\bigcirc$&$\bigcirc$\\
+(2)~Dari data $W=4$ J dan $x=0{,}20$ m, diperoleh $k=200$ N/m.&$\bigcirc$&$\bigcirc$\\
+(3)~Nilai $k$ untuk setiap pegas adalah 400 N/m.&$\bigcirc$&$\bigcirc$\\
+(4)~Jika disusun paralel, konstanta ekivalen kedua pegas adalah 800 N/m.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{18 \normalfont\small[Isian Singkat]}
+\gambar[0.42\textwidth]{images/4/4-n18.png}
+Gaya interaksi selama tumbukan membentuk grafik segitiga $F$-$t$ dengan
+puncak 160 N dan lama tumbukan 0{,}010 s. Bola massa 0{,}05 kg bergerak
+mendekati dinding dengan kelajuan 12 m/s, lalu berbalik arah. Besar kelajuan
+sesudah tumbukan adalah \ldots\ m/s.
+
+\vspace{0.4em}
+\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+\begin{soal}{19 \normalfont\small[PG Majemuk Kompleks]}
+Energi potensial pegas $U=\tfrac{1}{2}kx^2$. Pada simpangan $x=10$ cm,
+$U=0{,}80$ J. Benda massa 0{,}50 kg berosilasi pada pegas itu.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Dari data: $k=\dfrac{2U}{x^2}=160$ N/m.&$\bigcirc$&$\bigcirc$\\
+(2)~Periode osilasi massa-pegas: $T=2\pi\sqrt{\dfrac{m}{k}}$.&$\bigcirc$&$\bigcirc$\\
+(3)~Dengan $m=0{,}50$ kg dan $k=160$ N/m, periode $T\approx0{,}50$ s.&$\bigcirc$&$\bigcirc$\\
+(4)~Dengan $m=0{,}50$ kg dan $k=160$ N/m, periode $T\approx0{,}35$ s.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{20 \normalfont\small[PG Majemuk Kompleks]}
+Dua getaran harmonik segaris: $y_1=4\sin(10t)$ cm dan $y_2=3\cos(10t)$ cm.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Amplitudo resultan kedua getaran adalah $4+3=7$ cm.&$\bigcirc$&$\bigcirc$\\
+(2)~$y_2=3\cos(10t)=3\sin(10t+90^\circ)$; beda fase $y_1$ dan $y_2$ adalah $90^\circ$.&$\bigcirc$&$\bigcirc$\\
+(3)~Amplitudo resultan $R=\sqrt{4^2+3^2}=5$ cm.&$\bigcirc$&$\bigcirc$\\
+(4)~Kedua getaran memiliki frekuensi sudut yang sama, yaitu 10 rad/s.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+% ===================================================================
+%  SOAL 21--30
+% ===================================================================
+
+\begin{soal}{21 \normalfont\small[PG Biasa]}
+\gambar[0.4\textwidth]{images/4/4-7.png}
+Partikel melakukan GHS amplitudo 6 cm, frekuensi 0{,}5 Hz. Pada $t=0$
+partikel di titik setimbang bergerak ke kiri. Posisi partikel 0{,}5 s
+kemudian adalah $x=\ldots$ cm.
+\begin{pilB}
+  \item $-6$ \item $-3$ \item $0$ \item $3$ \item $6$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{22 \normalfont\small[Isian Singkat]}
+Pipa organa terbuka panjang 85 cm. Cepat rambat bunyi di udara 340 m/s.
+Frekuensi nada atas kedua yang dapat dihasilkan pipa tersebut adalah \ldots\ Hz.
+
+\vspace{0.4em}
+\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+\begin{soal}{23 \normalfont\small[Isian Singkat]}
+Gelombang pada tali: $y=0{,}04\sin(\pi x-20\pi t)$ ($x$, $y$ dalam m; $t$
+dalam s). Massa tali 0{,}80 g, panjang 2{,}0 m. Tegangan tali adalah \ldots\ N.
+
+\vspace{0.4em}
+\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+\begin{soal}{24 \normalfont\small[PG Majemuk Kompleks]}
+Gelombang transversal merambat ke kiri: amplitudo 5 cm, panjang gelombang
+2 m, frekuensi 4 Hz. Pada $x=0$ dan $t=0$: simpangan nol, medium bergerak
+ke atas. Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$k=\pi$ rad/m dan $\omega=8\pi$ rad/s.&$\bigcirc$&$\bigcirc$\\
+(2)~Gelombang ke kiri: tanda positif pada $\omega t$ dalam argumen sinus.&$\bigcirc$&$\bigcirc$\\
+(3)~Pada $x=0$, $t=0$: simpangan $y=0{,}05\sin(0)=0$ sesuai syarat.&$\bigcirc$&$\bigcirc$\\
+(4)~Pada $x=0$, $t=0$, medium bergerak ke bawah (kecepatan partikel negatif).&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{25 \normalfont\small[Isian Singkat]}
+Gelombang stasioner pada tali: $y=10\sin(4\pi x)\cos(50\pi t)$,
+$x$ dalam m, $y$ dalam cm. Jarak antara dua simpul yang berurutan
+adalah \ldots\ m.
+
+\vspace{0.4em}
+\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+\begin{soal}{26 \normalfont\small[PG Majemuk Kompleks]}
+\gambar[0.5\textwidth]{images/4/4-8.png}
+Dalam foto sesaat gelombang pada tali, jarak puncak pertama ke puncak ketiga
+adalah 1{,}2 m. Dalam 4 s, sumber menghasilkan 8 gelombang penuh.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Jarak puncak pertama ke puncak ketiga mencakup dua panjang gelombang.&$\bigcirc$&$\bigcirc$\\
+(2)~Dari data: $2\lambda=1{,}2$ m, sehingga $\lambda=0{,}6$ m.&$\bigcirc$&$\bigcirc$\\
+(3)~8 gelombang dalam 4 s memberikan frekuensi $f=2$ Hz.&$\bigcirc$&$\bigcirc$\\
+(4)~Cepat rambat gelombang $v=f\lambda=2\times0{,}6=0{,}6$ m/s.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{27 \normalfont\small[PG Majemuk Kompleks]}
+$y_1=3\cos(kx-\omega t)$ dan $y_2=3\cos(kx+\omega t)$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Resultan $y_1+y_2$ merupakan gelombang stasioner.&$\bigcirc$&$\bigcirc$\\
+(2)~Amplitudo maksimum resultan adalah 6.&$\bigcirc$&$\bigcirc$\\
+(3)~Simpul terjadi saat $kx=\dfrac{(2n+1)\pi}{2}$, $n\in\mathbb{Z}$.&$\bigcirc$&$\bigcirc$\\
+(4)~Kedua gelombang memiliki frekuensi yang sama.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{28 \normalfont\small[PG Biasa]}
+Dua gelombang frekuensi dan panjang gelombang sama merambat berlawanan arah:
+$y_1=4\cos(kx-\omega t)$ dan $y_2=6\cos(kx+\omega t)$. Amplitudo maksimum
+dan amplitudo minimum resultan berturut-turut adalah \ldots
+\begin{pilB}
+  \item $2$ dan $10$ \item $4$ dan $6$ \item $6$ dan $4$
+  \item $10$ dan $2$ \item $12$ dan $0$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{29 \normalfont\small[Isian Singkat]}
+Jendela terbuka luas 0{,}40 m$^2$ dilewati bunyi taraf intensitas 80 dB.
+($I_0=10^{-12}$ W/m$^2$.) Daya akustik yang masuk adalah $4\times\ldots$ W.
+
+\vspace{0.4em}
+\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+\begin{soal}{30 \normalfont\small[PG Majemuk Kompleks]}
+Speaker titik memancarkan daya tetap ke segala arah. Taraf intensitas pada
+jarak 2 m adalah 70 dB. Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Untuk sumber titik, $I\propto\dfrac{1}{r^2}$.&$\bigcirc$&$\bigcirc$\\
+(2)~Saat jarak bertambah 10 kali, intensitas berkurang 10 kali ($\Delta\beta=-10$ dB).&$\bigcirc$&$\bigcirc$\\
+(3)~Perubahan taraf: $\Delta\beta=10\log(1/100)=-20$ dB.&$\bigcirc$&$\bigcirc$\\
+(4)~Taraf intensitas pada jarak 20 m: $\beta_2=50$ dB.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\end{document}

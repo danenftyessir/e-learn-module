@@ -1,0 +1,714 @@
+% ============================================================
+%  LEMBAR SOAL  --  MATEMATIKA  --  SSU-ITB 2026  |  Paket 5
+%  Sumber: SM-SSU ITB 2025 (50 soal)
+% ============================================================
+
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.5cm,top=2.8cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{icomma}
+\usepackage{array}
+
+\definecolor{mapelcolor}{RGB}{20,110,60}
+\definecolor{mapelbg}{RGB}{228,246,234}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small SSU-ITB 2026}
+\rhead{\small Paket 5}
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newtcolorbox{soal}[1]{
+  breakable,
+  colback=white, colframe=black!70,
+  coltitle=white, colbacktitle=black,
+  fonttitle=\bfseries\sffamily,
+  title=Nomor #1,
+  boxrule=0.8pt, arc=3pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+\newenvironment{pil}{%
+  \begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}}
+\newenvironment{pilB}{%
+  \par\smallskip\begin{multicols}{2}
+  \begin{enumerate}[label=(\alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}\end{multicols}}
+
+\newcommand{\gambar}[2][0.45\textwidth]{%
+  \begin{center}\includegraphics[width=#1]{#2}\end{center}}
+
+\linespread{1.05}
+
+% ===================================================================
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+  \fbox{\parbox{0.6\textwidth}{\centering\bfseries\large LEMBAR SOAL}}
+\end{center}
+\vspace{0.5cm}
+\begin{center}{\LARGE\bfseries MATEMATIKA}\end{center}
+\vspace{0.5cm}
+
+\begin{center}
+  \begin{tabular}{@{\hspace{2cm}}ll@{\hspace{0.4cm}:@{\hspace{0.4cm}}}l}
+    Jenjang      & & SMA / Sederajat               \\[0.3em]
+    Hari/Tanggal & & \underline{\hspace{5cm}}      \\[0.3em]
+    Waktu        & & \underline{\hspace{5cm}}      \\[0.3em]
+    Paket Soal   & & 5                             \\
+  \end{tabular}
+\end{center}
+
+\vspace{0.6cm}\noindent\rule{\linewidth}{0.6pt}\vspace{0.3cm}
+
+\noindent\textbf{\underline{PETUNJUK UMUM}}
+\begin{enumerate}[leftmargin=*,itemsep=4pt,topsep=4pt]
+  \item Anda \textbf{tidak} diperbolehkan menggunakan sumber-sumber eksternal,
+        termasuk internet, \textit{large language model} seperti ChatGPT, Claude,
+        LLaMA, Gemini, Meta AI, dan sebagainya. Anda sangat dianjurkan untuk
+        mencoba mengerjakan sendiri terlebih dahulu karena evaluasi ini dibuat
+        untuk \textbf{mengukur} tingkat kepahaman; nilai $<70$ mengindikasikan
+        \textbf{tidak lulus}, dan jika sudah melewati \textit{deadline} maka
+        dianggap tidak mengerjakan yang berarti \textbf{tidak lulus}.
+
+  \item Terdapat 2 tahap pengerjaan, yaitu tahap \textbf{Try Out} dan tahap
+        \textbf{Review}. Try Out bersifat \textit{open book}; Anda diperbolehkan
+        membuka buku apapun selama bersifat \textit{offline} dengan rentang waktu
+        2 jam pada tanggal \underline{\hspace{3cm}}. Setelah itu memasuki
+        tahap Review dengan \textit{schedule} rentang tanggal
+        \underline{\hspace{3cm}}--\underline{\hspace{3cm}}, di mana Anda
+        diharapkan mengerjakan ulang dengan disertakan penjelasan/pembelaan
+        mengapa revisi jawaban adalah pilihan tersebut, dan tetap mencantumkan
+        penjelasan pada soal yang walaupun pada penilaian sudah benar.
+
+  \item Anda dianjurkan untuk mencantumkan caranya walaupun tidak termasuk
+        penilaian, mengingat sifatnya adalah sebagai bahan pembelajaran.
+        Mohon bertanggung jawab atas pekerjaan Anda sendiri.
+
+  \item Bacalah setiap soal dengan teliti. Terdapat tiga jenis soal:
+        \begin{enumerate}[label=(\arabic*),leftmargin=2em,topsep=2pt,itemsep=2pt]
+          \item \textbf{Pilihan Ganda Biasa} --- 5 opsi (A--E), pilih
+                1 jawaban paling tepat;
+          \item \textbf{Pilihan Ganda Majemuk Kompleks} --- tabel
+                \textbf{Benar}/\textbf{Salah}, tentukan kebenaran tiap
+                pernyataan secara mandiri; dan
+          \item \textbf{Isian Singkat} --- tulis nilai/ekspresi pada
+                kolom yang tersedia.
+        \end{enumerate}
+
+  \item Soal berjumlah \textbf{50 butir} soal dengan bobot asli per soal adalah
+        \textbf{2} untuk mendapatkan nilai sempurna sebesar \textbf{100}.
+
+  \item Silakan bertanya apabila terdapat soal yang ambigu, rancu, atau kurang
+        spesifik selama itu tidak menjurus kepada jawaban soal tersebut.
+
+  \item Isilah detail informasi berikut.\\[0.3em]
+        \textbf{Nama}\hspace{0.45cm}:\enspace\underline{\hspace{8cm}}
+\end{enumerate}
+
+\vspace{0.6cm}
+\noindent\textit{Dengan menandatangani kolom di bawah ini, saya menyatakan telah membaca,
+memahami, dan menyetujui seluruh peraturan yang tercantum di atas.}
+
+\vspace{0.6cm}
+\noindent\fbox{\parbox{5cm}{\vspace{2.2cm}\centering\small Tanda Tangan Peserta\vspace{0.3cm}}}
+
+\clearpage
+
+% ===================================================================
+%  SOAL 1--10
+% ===================================================================
+
+\begin{soal}{1 \normalfont\small[PG Biasa]}
+Diketahui $a$ adalah bilangan real. Manakah pernyataan yang \textbf{selalu} benar?
+\begin{pil}
+  \item Jika $a\geq0$: $\dfrac{a}{a+1}>\dfrac{a+1}{a+2}$.
+  \item Jika $a<0$ dan $a\neq-1$: $\dfrac{1}{a+1}<\dfrac{1}{a}$.
+  \item Jika $a<0$: $2+a<1-a$.
+  \item Jika $a>0$: $a>1-a$.
+  \item Jika $a>0$: $-\dfrac{1}{a}<-\dfrac{1}{a+1}$.
+\end{pil}
+\end{soal}
+
+\begin{soal}{2 \normalfont\small[PG Majemuk Kompleks]}
+Diberikan $f(x)=\dfrac{1}{\sqrt{2x^2-5x-3}}$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Syarat terdefinisi: $2x^2-5x-3>0$.&$\bigcirc$&$\bigcirc$\\
+(2)~Faktorkan: $2x^2-5x-3=(2x+1)(x-3)>0$, terpenuhi untuk $x<-\tfrac12$ atau $x>3$.&$\bigcirc$&$\bigcirc$\\
+(3)~$x=4$ memenuhi syarat terdefinisi.&$\bigcirc$&$\bigcirc$\\
+(4)~$x=5$ memenuhi syarat terdefinisi.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{3 \normalfont\small[Isian Singkat]}
+Di suatu pusat perbelanjaan, peluang seseorang makan, membeli buku, dan
+membeli mainan masing-masing $\frac{2}{5}$, $\frac{3}{7}$, $\frac{7}{8}$
+(saling bebas). Peluang membeli buku atau mainan tetapi tidak makan
+adalah $\dfrac{P}{840}$. Nilai $P=\ldots$
+
+\vspace{0.4em}\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+\begin{soal}{4 \normalfont\small[Isian Singkat]}
+Titik-titik potong kurva $y=(x+3)^2$ dengan garis $y=px+9$ adalah
+$(-3,0)$ dan $(r,s)$. Nilai $p+r+s=\ldots$
+
+\vspace{0.4em}\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+\begin{soal}{5 \normalfont\small[PG Biasa]}
+\gambar[0.24\textwidth]{images/5/5-2.png}
+Kerucut tegak memiliki tinggi $\sqrt{77}$ cm dan diameter 4 cm.
+Panjang garis pelukis $s$ adalah \ldots\ cm.
+\begin{pilB}
+  \item $9$ \item $11$ \item $13$ \item $8$ \item $10$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{6 \normalfont\small[PG Biasa]}
+Jika $y=\dfrac{3x+7}{x+9}$, maka $x=\ldots$
+\begin{pil}
+  \item $\dfrac{7-9y}{y-3}$ \item $\dfrac{7+9y}{y+3}$
+  \item $\dfrac{y+3}{9+7y}$ \item $\dfrac{y+3}{9-7y}$
+  \item $\dfrac{9-7y}{y-3}$
+\end{pil}
+\end{soal}
+
+\begin{soal}{7 \normalfont\small[PG Biasa]}
+Sistem persamaan yang mempunyai solusi $(x,y)=(2,3)$ adalah \ldots
+\begin{pil}
+  \item $2x+y=7$;\enspace$x-2y=-4$
+  \item $2x+y=6$;\enspace$x-2y=-4$
+  \item $2x+y=-4$;\enspace$x-2y=7$
+  \item $2x+y=6$;\enspace$x-2y=-3$
+  \item $2x+y=7$;\enspace$x-2y=-3$
+\end{pil}
+\end{soal}
+
+\begin{soal}{8 \normalfont\small[Isian Singkat]}
+Misalkan $f(x)=a^{x+b}$ untuk konstanta $a$ dan $b$. Jika $f(1)=3$ dan
+$f(3)=18$, nilai $a^4=\ldots$
+
+\vspace{0.4em}\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+\begin{soal}{9 \normalfont\small[Isian Singkat]}
+Garis $l$ bergradien $\dfrac{1}{5}$ dan melalui $P(7,3)$ dan $Q(k,5)$.
+Nilai $k=\ldots$
+
+\vspace{0.4em}\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+\begin{soal}{10 \normalfont\small[PG Biasa]}
+\gambar[0.4\textwidth]{images/5/5-4.png}
+$AB=13$, $CD=5$, $EF=10$; ketiganya sejajar. Nilai $AE:ED=\ldots$
+\begin{pilB}
+  \item $3:5$ \item $13:10$ \item $8:5$ \item $13:5$ \item $10:5$
+\end{pilB}
+\end{soal}
+
+% ===================================================================
+%  SOAL 11--20
+% ===================================================================
+
+\begin{soal}{11 \normalfont\small[PG Biasa]}
+\gambar[0.5\textwidth]{images/5/5-5.png}
+Luas satu persegi kecil adalah 5. Total luas daerah yang diarsir adalah \ldots
+\begin{pil}
+  \item $200+\dfrac{125}{4}\pi$
+  \item $20+\dfrac{15}{2}\pi$
+  \item $200+\dfrac{75}{2}\pi$
+  \item $40+\dfrac{25}{4}\pi$
+  \item $40+\dfrac{15}{2}\pi$
+\end{pil}
+\end{soal}
+
+\begin{soal}{12 \normalfont\small[PG Majemuk Kompleks]}
+Diketahui $\displaystyle\int x^{2/6}\,dx=ax^b+C$ dan $a-b=\dfrac{p}{48}$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$x^{2/6}=x^{1/3}$.&$\bigcirc$&$\bigcirc$\\
+(2)~$\displaystyle\int x^{1/3}\,dx=\dfrac{3}{4}x^{4/3}+C$.&$\bigcirc$&$\bigcirc$\\
+(3)~Dari $ax^b+C$: $a=\dfrac{4}{3}$ dan $b=\dfrac{3}{4}$.&$\bigcirc$&$\bigcirc$\\
+(4)~Nilai $p=-28$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{13 \normalfont\small[Isian Singkat]}
+Data berisi 20 bilangan dengan rata-rata 42. Jika $n$ bilangan dengan
+rata-rata 35 ditambahkan, rata-rata data baru menjadi 40. Nilai $n=\ldots$
+
+\vspace{0.4em}\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+\begin{soal}{14 \normalfont\small[PG Biasa]}
+\gambar[0.4\textwidth]{images/5/5-6.png}
+Diberikan grafik $y=f(x)$ seperti gambar. Jika $g(x)=f(x-2)+12$,
+maka $g(4)=\ldots$
+\begin{pilB}
+  \item $15$ \item $12$ \item $16$ \item $13$ \item $14$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{15 \normalfont\small[Isian Singkat]}
+Jumlah 50 suku pertama barisan $a_n=4n+7$, $n=1,2,3,\ldots$ adalah \ldots
+
+\vspace{0.4em}\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+\begin{soal}{16 \normalfont\small[PG Biasa]}
+Jika $f(x)=\dfrac{8}{x}$, maka $\dfrac{f(7+h)-f(7)}{h}=\ldots$
+\begin{pilB}
+  \item $\dfrac{8}{7h-49}$ \item $\dfrac{8}{7h+49}$
+  \item $-\dfrac{8}{7h+49}$ \item $\dfrac{8}{-7h+49}$
+  \item $\dfrac{8}{7h+7}$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{17 \normalfont\small[PG Majemuk Kompleks]}
+$\dfrac{1}{x+1}+\dfrac{8}{x^2+3}=\dfrac{x^2+Fx+G}{x^3+Cx^2+Dx+E}$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Penyebut persekutuan $(x+1)(x^2+3)=x^3+x^2+4x+3$.&$\bigcirc$&$\bigcirc$\\
+(2)~Pembilang gabungan: $x^2+3+8(x+1)=x^2+8x+11$.&$\bigcirc$&$\bigcirc$\\
+(3)~$F=8$, $G=11$, $C=1$, $D=3$, $E=3$.&$\bigcirc$&$\bigcirc$\\
+(4)~$C+D+E+F+G=26$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{18 \normalfont\small[PG Biasa]}
+Jika $(x+y)^2=50$ dan $xy=6$, maka $x^2+y^2=\ldots$
+\begin{pilB}
+  \item $62$ \item $38$ \item $50$ \item $44$ \item $56$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{19 \normalfont\small[PG Biasa]}
+Himpunan penyelesaian $\dfrac{5}{2}\leq\dfrac{6-x}{2}<6$ adalah \ldots
+\begin{pil}
+  \item $\{x\mid-1<x\leq6\}$
+  \item $\{x\mid-6<x\leq1\}$
+  \item $\{x\mid-1\leq x<6\}$
+  \item $\{x\mid-6\leq x<1\}$
+  \item $\{x\mid1\leq x<6\}$
+\end{pil}
+\end{soal}
+
+\begin{soal}{20 \normalfont\small[PG Biasa]}
+\gambar[0.4\textwidth]{images/5/5-7.png}
+Jajargenjang $ABCD$, keliling 34, luas 33, $BC=6$.
+Jarak titik $D$ ke garis $AB$ adalah \ldots
+\begin{pilB}
+  \item $11$ \item $12$ \item $6$ \item $9$ \item $3$
+\end{pilB}
+\end{soal}
+
+% ===================================================================
+%  SOAL 21--30
+% ===================================================================
+
+\begin{soal}{21 \normalfont\small[PG Biasa]}
+Persamaan garis singgung $y=5(x-1)^8$ pada $x=2$ adalah \ldots
+\begin{pil}
+  \item $y+80=40x$
+  \item $y+80=5x$
+  \item Tidak ada yang benar
+  \item $y+75=5x$
+  \item $y+75=40x$
+\end{pil}
+\end{soal}
+
+\begin{soal}{22 \normalfont\small[Isian Singkat]}
+Misalkan $f(x)=2x\cdot g(x)$. Jika $g(2)=2$ dan $g'(2)=6$, maka $f'(2)=\ldots$
+
+\vspace{0.4em}\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+\begin{soal}{23 \normalfont\small[PG Biasa]}
+Jika $z:y=2:3$ dan $z^2=\dfrac{1}{6}$, maka $y^2=\ldots$
+\begin{pilB}
+  \item $\dfrac{3}{12}$ \item $\dfrac{2}{18}$ \item $\dfrac{1}{6}$
+  \item $\dfrac{4}{54}$ \item $\dfrac{9}{24}$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{24 \normalfont\small[PG Majemuk Kompleks]}
+Tentukan kebenaran setiap pernyataan tentang garis $x+3y=12$!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$(6,1)$ tidak dilalui garis $x+3y=12$ karena $6+3(1)=9\neq12$.&$\bigcirc$&$\bigcirc$\\
+(2)~$(12,0)$ tidak dilalui garis $x+3y=12$.&$\bigcirc$&$\bigcirc$\\
+(3)~$(-3,5)$ dilalui garis karena $-3+3(5)=12$.&$\bigcirc$&$\bigcirc$\\
+(4)~$(3,3)$ dilalui garis karena $3+3(3)=12$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{25 \normalfont\small[Isian Singkat]}
+\gambar[0.5\textwidth]{images/5/5-9.png}
+$p(x)$ bernilai positif; grafik $y=p'(x)$ seperti gambar. Interval terbesar
+agar $f(x)=\sqrt{p(x)+3x+1}$ turun adalah $(k,l)$. Nilai $l-k=\ldots$
+
+\vspace{0.4em}\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+\begin{soal}{26 \normalfont\small[Isian Singkat]}
+Jika $a>0$ dan $\displaystyle\lim_{x\to\pi/a}\dfrac{1-\cos(ax-\pi)}{\left(x-\frac{\pi}{a}\right)^2}=8$,
+maka $a^2+a=\ldots$
+
+\vspace{0.4em}\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+\begin{soal}{27 \normalfont\small[PG Biasa]}
+Diketahui $f(x)=\log_2 x$ untuk $x>0$. Nilai $2f(4x)-f\!\left(\dfrac{2}{x^2}\right)=\ldots$
+\begin{pilB}
+  \item $f(8)+f(x^4)$
+  \item $f(8)-f(x^4)$
+  \item $2f(2)+f(x^4)$
+  \item $f(4)\times f(x^2)$
+  \item $f(2)+f(x^3)$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{28 \normalfont\small[PG Biasa]}
+\gambar[0.3\textwidth]{images/5/5-10.png}
+Segitiga $ABC$ siku-siku di $B$, $AB=BC$, $AC=8$. Luas segitiga $ABC$ adalah \ldots
+\begin{pilB}
+  \item $18$ \item $22$ \item $16$ \item $20$ \item $32$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{29 \normalfont\small[PG Biasa]}
+$\left|\dfrac{x}{3}-9\right|\leq1$ menghasilkan $A\leq x\leq B$. Nilai $A+B=\ldots$
+\begin{pilB}
+  \item $54$ \item $30$ \item $-18$ \item $0$ \item $78$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{30 \normalfont\small[Isian Singkat]}
+Jumlah semua nilai $n$ yang memenuhi $\log_9(89-n^2)=\log_3(n+3)$ adalah \ldots
+
+\vspace{0.4em}\noindent Jawaban:\enspace\underline{\hspace{4cm}}
+\end{soal}
+
+% ===================================================================
+%  SOAL 31--40
+% ===================================================================
+
+\begin{soal}{31 \normalfont\small[PG Majemuk Kompleks]}
+Kurva $y=2x^3-3x^2+11$; tentukan garis singgung di $P(-1,q)$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$q = f(-1) = 2(-1)^3-3(-1)^2+11 = 6$.&$\bigcirc$&$\bigcirc$\\
+(2)~Gradien garis singgung $m = y'(-1) = 6(1)+6 = 12$.&$\bigcirc$&$\bigcirc$\\
+(3)~Persamaan garis singgung di $(-1,6)$ adalah $y=12x+12$.&$\bigcirc$&$\bigcirc$\\
+(4)~Persamaan garis singgung yang benar adalah $y=12x+18$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{32 \normalfont\small[PG Majemuk Kompleks]}
+\gambar[0.4\textwidth]{images/5/5-12.png}
+Layang-layang $ABCD$; $A(4,3)$, $C(20,1)$; diagonal $BD$ sumbu simetri.
+Persamaan garis $BD$: $y=mx+c$. Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Gradien $AC = \dfrac{1-3}{20-4} = -\dfrac{1}{8}$; gradien $BD = 8$.&$\bigcirc$&$\bigcirc$\\
+(2)~Titik tengah $AC = (12,2)$; garis $BD$: $y-2=8(x-12)$, yaitu $y=8x-94$.&$\bigcirc$&$\bigcirc$\\
+(3)~Dari $y=8x-94$: $m=8$ dan $c=-94$.&$\bigcirc$&$\bigcirc$\\
+(4)~$m+c = 8+(-94) = -84$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{33 \normalfont\small[PG Majemuk Kompleks]}
+$\displaystyle\int_0^2 5(3a+bx)\,dx=\int_0^2 8x^2(3a+bx)\,dx=40$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Dari integral pertama: $5\!\left[3ax+bx^2\right]_0^2 = 5(6a+4b)=40$, sehingga $3a+2b=4$.&$\bigcirc$&$\bigcirc$\\
+(2)~Integral pertama yang benar: $5(6a+2b)=40$, sehingga $3a+b=4$.&$\bigcirc$&$\bigcirc$\\
+(3)~Dari integral kedua: $64a+32b=40$, sehingga $8a+4b=5$.&$\bigcirc$&$\bigcirc$\\
+(4)~Dari sistem persamaan diperoleh $a-b=7$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{34 \normalfont\small[PG Majemuk Kompleks]}
+$P(24,7)$; $A(28,9)$ dirotasi $90^\circ$ berlawanan jarum jam berpusat di $P$,
+lalu dicerminkan terhadap sumbu-$x$. Bayangan akhir $B(a,b)$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$\overrightarrow{PA}=(4,2)$; setelah rotasi 90° CCW: $(4,2)\mapsto(-2,4)$.&$\bigcirc$&$\bigcirc$\\
+(2)~Titik hasil rotasi: $P+(-2,4)=(26,11)$.&$\bigcirc$&$\bigcirc$\\
+(3)~Titik hasil rotasi adalah $(22,11)$; refleksi sumbu-$x$ menghasilkan $(22,-11)$.&$\bigcirc$&$\bigcirc$\\
+(4)~$a+b=22+(-11)=11$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{35 \normalfont\small[PG Majemuk Kompleks]}
+\gambar[0.42\textwidth]{images/5/5-13.png}
+Trapesium sama kaki $ABCD$, $AB\parallel CD$, $|AB|<|CD|$, $|AD|=15$,
+$\sin\angle ADC=\frac{4}{5}$, keliling $K=78$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Tinggi $h=|AD|\sin\angle ADC=15\cdot\dfrac{4}{5}=12$.&$\bigcirc$&$\bigcirc$\\
+(2)~Komponen horizontal kaki $=\sqrt{15^2-12^2}=9$; $|CD|-|AB|=18$.&$\bigcirc$&$\bigcirc$\\
+(3)~$|AB|+|CD|=K-2|AD|=48$; dari $|CD|-|AB|=18$: $|CD|=33$, $|AB|=15$.&$\bigcirc$&$\bigcirc$\\
+(4)~Luas trapesium $=\tfrac{1}{2}(|CD|-|AB|)\cdot h=\tfrac{1}{2}(18)(12)=108$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{36 \normalfont\small[PG Majemuk Kompleks]}
+Lingkaran $C$: $x^2-6x+y^2-2y+6=0$. Rotasi $R_{(3,-4),\,\pi/2}(C)$
+menghasilkan lingkaran berpusat $(k,l)$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Pusat lingkaran $C$ setelah dilengkapi kuadrat: $(3,1)$.&$\bigcirc$&$\bigcirc$\\
+(2)~Vektor dari pusat rotasi $(3,-4)$ ke $(3,1)$ adalah $(0,5)$; setelah rotasi CCW $\tfrac\pi2$: $(0,5)\mapsto(-5,0)$.&$\bigcirc$&$\bigcirc$\\
+(3)~Pusat baru: $(3,-4)+(-5,0)=(2,-4)$, sehingga $k=2$ dan $l=-4$.&$\bigcirc$&$\bigcirc$\\
+(4)~Pusat baru yang benar: $k=-2$ dan $l=-4$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{37 \normalfont\small[PG Majemuk Kompleks]}
+$\displaystyle\int(3x^4-2x^3)\,dx=\dfrac{1}{60}(ax^b+cx^d)+C$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$\displaystyle\int 3x^4\,dx=\dfrac{3}{5}x^5=\dfrac{36}{60}x^5$, sehingga $a=36$ dan $b=5$.&$\bigcirc$&$\bigcirc$\\
+(2)~$\displaystyle\int -2x^3\,dx=-\dfrac{1}{2}x^4=-\dfrac{30}{60}x^4$, sehingga $c=-30$ dan $d=5$.&$\bigcirc$&$\bigcirc$\\
+(3)~Nilai $a-b+c-d=36-5+(-30)-4=-3$.&$\bigcirc$&$\bigcirc$\\
+(4)~Nilai $a+c=36+(-30)=6$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{38 \normalfont\small[PG Biasa]}
+\gambar[0.45\textwidth]{images/5/5-14.png}
+Pernyataan yang benar tentang grafik $y=f(x)$ di atas adalah \ldots
+\begin{pil}
+  \item $\lim_{x\to-2}f(x)=2$
+  \item $\lim_{x\to2^-}f(x)=0$
+  \item $\lim_{x\to2^+}f(x)=0$
+  \item $f(5)=2$
+  \item $\lim_{x\to5}f(x)=3$
+\end{pil}
+\end{soal}
+
+\begin{soal}{39 \normalfont\small[PG Majemuk Kompleks]}
+$a$, $b$, $c$ bilangan bulat dengan $\dfrac{2^a\cdot3^b\cdot5^c}{12^a\cdot10^b}=20$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$12^a=2^{2a}3^a$ dan $10^b=2^b5^b$.&$\bigcirc$&$\bigcirc$\\
+(2)~Ruas kiri $=2^{-a-b}\cdot3^{b-a}\cdot5^{c-b}=20=2^2\cdot5^1$.&$\bigcirc$&$\bigcirc$\\
+(3)~Sistem persamaan: $-a-b=2$, $b-a=0$, $c-b=1$; sehingga $a=-1$, $b=-1$, $c=0$.&$\bigcirc$&$\bigcirc$\\
+(4)~$a+b+c=-1+(-1)+0=-1$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{40 \normalfont\small[PG Majemuk Kompleks]}
+$f(x)=\begin{cases}x+3, & x<0\\ x^2-4x+5, & 0\leq x\leq3\\ 2x-4, & x>3\end{cases}$\\[0.5em]
+Banyak bilangan bulat $x$ dengan $-3\leq x\leq6$ yang memenuhi $f(f(x))=2$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Untuk $t>3$: $2t-4=2\Rightarrow t=3$ valid sebagai solusi $f(t)=2$.&$\bigcirc$&$\bigcirc$\\
+(2)~Solusi $f(t)=2$ yang valid: $t=-1$, $t=1$, dan $t=3$.&$\bigcirc$&$\bigcirc$\\
+(3)~Nilai $f(x)$ untuk $x=-3,-2,-1,\ldots,6$: $0,1,2,5,2,1,2,4,6,8$.&$\bigcirc$&$\bigcirc$\\
+(4)~Banyak bilangan bulat yang memenuhi $f(f(x))=2$ adalah 2.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+% ===================================================================
+%  SOAL 41--50
+% ===================================================================
+
+\begin{soal}{41 \normalfont\small[PG Biasa]}
+Domain fungsi $g(x)=\dfrac{\sqrt{(x^2-5x+6)(x-1)}}{x^2-4x+3}$ adalah \ldots
+\begin{pil}
+  \item $(-\infty,1)\cup[2,3)$
+  \item $(1,2]\cup(3,\infty)$
+  \item $[1,2]\cup[3,\infty)$
+  \item $(1,3)\cup\{2\}$
+  \item $(1,\infty)\cup\{3\}$
+\end{pil}
+\end{soal}
+
+\begin{soal}{42 \normalfont\small[PG Majemuk Kompleks]}
+$f(1)=2$, $f'(1)=-3$; $h(x)=x^2f\!\left(\dfrac{1}{x}\right)$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$h'(x)=2xf\!\left(\tfrac1x\right)-f'\!\left(\tfrac1x\right)$ (aturan hasil kali dan rantai).&$\bigcirc$&$\bigcirc$\\
+(2)~$h'(1)=2f(1)-f'(1)$.&$\bigcirc$&$\bigcirc$\\
+(3)~$h'(1)=2(2)-(-3)=7$.&$\bigcirc$&$\bigcirc$\\
+(4)~Nilai $h'(1)=2f(1)+f'(1)=2(2)+(-3)=1$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{43 \normalfont\small[PG Biasa]}
+$f(x)=\begin{cases}\dfrac{x^3-1}{x-1}, & x<1\\ k, & x=1\\ ax+b, & x>1\end{cases}$\\[0.5em]
+$f$ kontinu di $x=1$ dan turunan kiri di $x=1$ sama dengan dua kali turunan
+kanan. Nilai $k+a+b=\ldots$
+\begin{pilB}
+  \item $4$ \item $5$ \item $6$ \item $7$ \item $8$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{44 \normalfont\small[PG Majemuk Kompleks]}
+$H(x)=\displaystyle\int_0^{x^2+1}g(t)\,dt$; $g(2)=5$; $g'(2)=-1$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$H'(x)=g(x^2+1)\cdot2x$ (Teorema Dasar Kalkulus + aturan rantai).&$\bigcirc$&$\bigcirc$\\
+(2)~$H''(x)=2g(x^2+1)+2x\cdot g'(x^2+1)$.&$\bigcirc$&$\bigcirc$\\
+(3)~$H''(1)=2g(2)+4g'(2)$.&$\bigcirc$&$\bigcirc$\\
+(4)~$H''(1)=2(5)+4(-1)=6$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{45 \normalfont\small[PG Majemuk Kompleks]}
+$\sqrt{23-6\sqrt{10}}=\sqrt{a}-\sqrt{b}$; $a,b$ bulat positif; $a>b$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$(\sqrt{a}-\sqrt{b})^2=a+b-2\sqrt{ab}$; membandingkan: $a+b=23$ dan $ab=90$.&$\bigcirc$&$\bigcirc$\\
+(2)~Akar $t^2-23t+90=0$ adalah $t=15$ dan $t=6$, sehingga $a=15$, $b=6$.&$\bigcirc$&$\bigcirc$\\
+(3)~Akar yang benar: $t=18$ dan $t=5$, sehingga $a=18$ dan $b=5$.&$\bigcirc$&$\bigcirc$\\
+(4)~Nilai $a+b=23$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{46 \normalfont\small[PG Majemuk Kompleks]}
+$\sin(\pi x)=\cos(2\pi x)$; $0<x<\dfrac{1}{2}$. Tentukan kebenaran
+setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Misalkan $\theta=\pi x$; persamaan menjadi $2\sin^2\theta+\sin\theta-1=0$.&$\bigcirc$&$\bigcirc$\\
+(2)~$(2\sin\theta-1)(\sin\theta+1)=0$; untuk $0<\theta<\tfrac\pi2$: $\sin\theta=\tfrac12$.&$\bigcirc$&$\bigcirc$\\
+(3)~$\theta=\dfrac{\pi}{6}$, sehingga $x=\dfrac{1}{6}$.&$\bigcirc$&$\bigcirc$\\
+(4)~$\cos\!\left(\dfrac{\pi}{4}-\pi x\right)=\cos\dfrac{\pi}{12}=\dfrac{\sqrt{6}+\sqrt{2}}{4}$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{47 \normalfont\small[PG Majemuk Kompleks]}
+Kurva parametrik $x=t^2+t$, $y=t^3-3t$. Tentukan kebenaran pernyataan
+tentang $\dfrac{d^2y}{dx^2}$ saat $t=1$ berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~$\dfrac{dx}{dt}=2t+1$ dan $\dfrac{dy}{dt}=3t^2-3$.&$\bigcirc$&$\bigcirc$\\
+(2)~$\dfrac{dy}{dx}=\dfrac{3t^2-3}{2t+1}$.&$\bigcirc$&$\bigcirc$\\
+(3)~$\dfrac{d^2y}{dx^2}=\dfrac{6(t^2+t+1)}{(2t+1)^3}$.&$\bigcirc$&$\bigcirc$\\
+(4)~Nilai $\dfrac{d^2y}{dx^2}$ saat $t=1$ adalah $\dfrac{3}{4}$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{48 \normalfont\small[PG Majemuk Kompleks]}
+Sistem $\begin{cases}x^2+2xy=3\\ x+y=a\end{cases}$ punya dua solusi real berbeda untuk $x$.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Substitusi $y=a-x$ menghasilkan $x^2+2ax-3=0$.&$\bigcirc$&$\bigcirc$\\
+(2)~Agar dua solusi real berbeda: $\Delta=4a^2-12>0$.&$\bigcirc$&$\bigcirc$\\
+(3)~$a^2>3$, yaitu $|a|>\sqrt{3}$.&$\bigcirc$&$\bigcirc$\\
+(4)~Himpunan nilai $a$: $a<-\sqrt{3}$ atau $a>\sqrt{3}$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{49 \normalfont\small[PG Majemuk Kompleks]}
+$\displaystyle\lim_{x\to1}\dfrac{\sqrt{x^2+\frac{1}{x}}-\sqrt{ax+b}}{x-1}=L$ (berhingga).
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline\textbf{Pernyataan}&\textbf{Benar}&\textbf{Salah}\\\hline
+(1)~Agar limit berhingga: pembilang $\to0$ saat $x\to1$, sehingga $a+b=2$.&$\bigcirc$&$\bigcirc$\\
+(2)~$L=A'(1)-B'(1)$ dengan $A(x)=\sqrt{x^2+\frac1x}$, $B(x)=\sqrt{ax+b}$; hasilnya $L=\dfrac{1-a}{2\sqrt2}$.&$\bigcirc$&$\bigcirc$\\
+(3)~Nilai $\displaystyle\lim_{x\to1}\dfrac{\sqrt{x^4+\frac{1}{x^2}}-\sqrt{ax^2+b}}{x-1}=2L$.&$\bigcirc$&$\bigcirc$\\
+(4)~Nilai $\displaystyle\lim_{x\to1}\dfrac{\sqrt{x^4+\frac{1}{x^2}}-\sqrt{ax^2+b}}{x-1}=L$.&$\bigcirc$&$\bigcirc$\\\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{50 \normalfont\small[PG Biasa]}
+Banyak bilangan bulat $k$ sehingga $p_k(x)=x^3-3x+k$ mempunyai tiga akar
+real berlainan adalah \ldots
+\begin{pilB}
+  \item $1$ \item $2$ \item $3$ \item $4$ \item $5$
+\end{pilB}
+\end{soal}
+
+\end{document}

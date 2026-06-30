@@ -1,0 +1,840 @@
+% ============================================================
+%  LEMBAR SOAL  --  FISIKA  --  SSU-ITB 2024  --  Paket 1
+%  Tipe A (1-20) + Tipe B (21-39) + Soal Baru (40)
+%  Komposisi: 40% PG Biasa | 40% PG Majemuk | 20% Isian
+% ============================================================
+
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.5cm,top=2.8cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{icomma}
+\usepackage{array}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small SSU-ITB 2024 --- Fisika}
+\rhead{\small Paket 1}
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newtcolorbox{soal}[1]{
+  breakable,
+  colback=white, colframe=black, colbacktitle=black,
+  coltitle=white, fonttitle=\bfseries\sffamily,
+  title=Nomor #1,
+  boxrule=0.8pt, arc=0pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+\newenvironment{pil}{%
+  \begin{enumerate}[label=(\Alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}}
+\newenvironment{pilB}{%
+  \par\smallskip\begin{multicols}{2}
+  \begin{enumerate}[label=(\Alph*),leftmargin=*,itemsep=1pt,topsep=3pt]}%
+  {\end{enumerate}\end{multicols}}
+
+\newcommand{\gambar}[2][0.52\textwidth]{%
+  \begin{center}\includegraphics[width=#1]{#2}\end{center}}
+
+\linespread{1.05}
+
+% ===================================================================
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+  \fbox{\parbox{0.6\textwidth}{\centering\bfseries\large LEMBAR SOAL}}
+\end{center}
+\vspace{0.5cm}
+
+\begin{center}
+  {\LARGE\bfseries FISIKA}
+\end{center}
+\vspace{0.5cm}
+
+\begin{center}
+  \begin{tabular}{@{\hspace{2cm}}ll@{\hspace{0.4cm}:@{\hspace{0.4cm}}}l}
+    Jenjang      & & SMA / Sederajat               \\[0.3em]
+    Hari/Tanggal & & \underline{\hspace{5cm}}      \\[0.3em]
+    Waktu        & & \underline{\hspace{5cm}}      \\[0.3em]
+    Paket Soal   & & 1                             \\
+  \end{tabular}
+\end{center}
+
+\vspace{0.6cm}
+\noindent\rule{\linewidth}{0.6pt}
+\vspace{0.3cm}
+
+\noindent\textbf{\underline{PETUNJUK UMUM}}
+\begin{enumerate}[leftmargin=*,itemsep=4pt,topsep=4pt]
+  \item Anda \textbf{tidak} diperbolehkan menggunakan sumber-sumber eksternal,
+        termasuk internet, \textit{large language model} seperti ChatGPT, Claude,
+        LLaMA, Gemini, Meta AI, dan sebagainya. Anda sangat dianjurkan untuk
+        mencoba mengerjakan sendiri terlebih dahulu karena evaluasi ini dibuat
+        untuk \textbf{mengukur} tingkat kepahaman; nilai $<70$ mengindikasikan
+        \textbf{tidak lulus}, dan jika sudah melewati \textit{deadline} maka
+        dianggap tidak mengerjakan yang berarti \textbf{tidak lulus}.
+
+  \item Terdapat 2 tahap pengerjaan, yaitu tahap \textbf{Try Out} dan tahap
+        \textbf{Review}. Try Out bersifat \textit{open book}; Anda diperbolehkan
+        membuka buku apapun selama bersifat \textit{offline} dengan rentang waktu
+        2 jam pada tanggal \underline{\hspace{3cm}}. Setelah itu memasuki
+        tahap Review dengan \textit{schedule} rentang tanggal
+        \underline{\hspace{3cm}}--\underline{\hspace{3cm}}, di mana Anda
+        diharapkan mengerjakan ulang dengan disertakan penjelasan/pembelaan
+        mengapa revisi jawaban adalah pilihan tersebut, dan tetap mencantumkan
+        penjelasan pada soal yang walaupun pada penilaian sudah benar.
+
+  \item Anda dianjurkan untuk mencantumkan caranya walaupun tidak termasuk
+        penilaian, mengingat sifatnya adalah sebagai bahan pembelajaran.
+        Mohon bertanggung jawab atas pekerjaan Anda sendiri.
+
+  \item Bacalah setiap soal dengan teliti. Terdapat tiga jenis soal:
+        \begin{enumerate}[label=(\arabic*),leftmargin=2em,topsep=2pt,itemsep=2pt]
+          \item \textbf{Pilihan Ganda Biasa} --- 5 opsi (A--E), pilih
+                1 jawaban paling tepat;
+          \item \textbf{Pilihan Ganda Majemuk Kompleks} --- tabel
+                \textbf{Benar}/\textbf{Salah}, tentukan kebenaran tiap
+                pernyataan secara mandiri; dan
+          \item \textbf{Isian Singkat} --- tulis nilai/ekspresi pada
+                kolom yang tersedia.
+        \end{enumerate}
+
+  \item Soal berjumlah \textbf{40 butir} soal dengan bobot asli per soal adalah
+        \textbf{2{,}5} untuk mendapatkan nilai sempurna sebesar \textbf{100}.
+        Gunakan $g=10$ m/s$^2$ bila tidak disebutkan lain.
+
+  \item Silakan bertanya apabila terdapat soal yang ambigu, rancu, atau
+        kurang spesifik selama itu tidak menjurus kepada jawaban soal
+        tersebut.
+
+  \item Isilah detail informasi berikut.\\[0.3em]
+        \textbf{Nama}\hspace{0.45cm};\enspace\underline{\hspace{8cm}}
+\end{enumerate}
+
+\vspace{0.6cm}
+\noindent\textit{Dengan menandatangani kolom di bawah ini, saya menyatakan telah membaca,
+memahami, dan menyetujui seluruh peraturan yang tercantum di atas.}
+
+\vspace{0.6cm}
+\noindent\fbox{\parbox{5cm}{\vspace{2.2cm}\centering\small Tanda Tangan Peserta\vspace{0.3cm}}}
+
+\clearpage
+
+% ===================================================================
+%  TIPE A  (nomor 1--20)
+% ===================================================================
+
+\begin{soal}{1}  % PG Majemuk
+Sebuah partikel bergerak sepanjang sumbu $x$. Pada $t=0$, partikel
+mulai bergerak ke arah sumbu $x$ positif. Grafik kecepatan terhadap
+waktu partikel tersebut ditunjukkan berikut.
+\gambar[0.62\textwidth]{images/1/1-1.png}
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Pada selang waktu 20--60\,s, jarak tempuh partikel sama dengan nol.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Pada selang waktu 20--60\,s, percepatan partikel tetap (konstan).
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Pada selang waktu 40--60\,s, partikel bergerak diperlambat.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Kelajuan partikel pada selang 10--20\,s sama dengan kelajuannya
+    pada selang 60--70\,s.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{2}  % PG Biasa
+Sebuah partikel bermassa 500 gram mula-mula bergerak dengan kelajuan
+2,8 m/s. Partikel tersebut kemudian ditarik oleh gaya konstan $F$
+sehingga dipercepat 2 m/s$^2$ selama 8 detik. Besar usaha yang
+dilakukan oleh gaya $F$ selama dipercepat adalah \ldots\ J.
+\begin{pilB}
+  \item $72$ \item $76{,}8$ \item $80$ \item $86{,}4$ \item $96$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{3}  % PG Biasa
+Sebuah bola dilepaskan dari atas gedung dan pada saat yang bersamaan
+sebuah batu dilemparkan secara horizontal dari ketinggian yang sama.
+Jika gesekan udara diabaikan, pernyataan yang paling benar adalah \ldots
+\begin{pil}
+  \item Bola mencapai tanah lebih dahulu karena tidak memiliki
+        kecepatan horizontal.
+  \item Batu mencapai tanah lebih dahulu karena memiliki tambahan
+        kecepatan horizontal.
+  \item Keduanya mencapai tanah pada saat yang sama.
+  \item Laju akhir bola dan batu sesaat sebelum menyentuh tanah
+        adalah sama.
+  \item Trajektori (lintasan) bola dan batu adalah identik.
+\end{pil}
+\end{soal}
+
+\begin{soal}{4}  % PG Majemuk
+Pada sebuah eksperimen diperoleh data berupa jari-jari lintasan dan
+percepatan sentripetal dari sebuah partikel yang bergerak melingkar
+beraturan.
+\begin{center}
+\begin{tabular}{ccc}
+\hline
+No & Jari-jari (m) & $a_s$ (m/s$^2$)\\
+\hline
+1 & 0,2 & 45 \\
+2 & 0,4 & 22,5 \\
+3 & 0,6 & 15 \\
+4 & 0,8 & 11,25 \\
+5 & 1   & 9 \\
+\hline
+\end{tabular}
+\end{center}
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Hubungan $v^2 = a_s \cdot r$ berlaku pada setiap baris data
+    dalam tabel.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Kelajuan linear partikel pada eksperimen tersebut adalah 3 m/s.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Percepatan sentripetal berbanding lurus dengan jari-jari lintasan
+    saat kelajuan partikel konstan.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Kelajuan sudut $\omega$ partikel sama pada setiap baris data.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{5}  % PG Biasa
+Sebuah benda bergerak melingkar beraturan. Pernyataan yang benar
+mengenai percepatan benda adalah \ldots
+\begin{pil}
+  \item Percepatannya nol karena kelajuannya tetap.
+  \item Percepatan selalu searah dengan kecepatan benda.
+  \item Percepatan selalu menuju pusat lingkaran, besarnya tetap,
+        tetapi arahnya berubah.
+  \item Percepatan selalu menuju pusat lingkaran dan besarnya berubah.
+  \item Percepatan menjauh dari pusat lingkaran dengan besar tetap.
+\end{pil}
+\end{soal}
+
+\begin{soal}{6}  % PG Biasa
+Dua buah balok bermassa $m_1=2$ kg dan $m_2=3$ kg terikat pada tali
+yang melalui sebuah katrol. Massa katrol, massa tali, dan gesekan
+katrol diabaikan. Balok $m_1$ berada di atas meja horizontal kasar
+dengan $\mu_s=0{,}5$ dan $\mu_k=0{,}4$.
+\gambar[0.42\textwidth]{images/1/1-2.png}
+Besar gaya tegangan tali adalah \ldots\ N.
+\begin{pilB}
+  \item $8{,}0$ \item $12{,}4$ \item $14{,}0$ \item $16{,}8$ \item $22{,}4$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{7}  % PG Majemuk
+Sebuah balok bermassa 2,5 kg meluncur turun sejauh 1 meter dari
+puncak bidang miring dengan sudut kemiringan $\alpha$
+$\left(\tan\alpha=\tfrac{3}{4}\right)$ terhadap horizontal.
+Koefisien gesek statis dan kinetis masing-masing 0,5 dan 0,2.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Komponen gaya gravitasi sepanjang bidang miring adalah
+    $mg\sin\alpha=15$ N.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Gaya gesek kinetik pada bidang miring adalah $f_k=4$ N.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Usaha yang dilakukan gaya gesek bernilai positif.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Usaha gaya nonkonservatif selama perpindahan 1 m adalah $-4$ J.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{8}  % PG Biasa
+Seorang anak laki-laki dengan berat 50 kg berdiri di dalam lift.
+\gambar[0.32\textwidth]{images/1/1-3.png}
+Perhatikan pernyataan-pernyataan tentang gaya yang bekerja pada kaki
+anak tersebut:
+\begin{enumerate}[label=\alph*.,leftmargin=*,itemsep=3pt,topsep=3pt]
+  \item Jika lift diam, gaya pada kaki anak sama dengan beratnya.
+  \item Jika lift dipercepat ke atas, gaya pada kaki anak lebih besar
+        dari beratnya dan arah gayanya ke atas.
+  \item Jika lift bergerak ke atas dengan kecepatan tetap, gaya pada
+        kaki anak lebih kecil dari beratnya dan arahnya ke atas.
+  \item Jika lift dipercepat ke bawah, gaya pada kaki anak lebih kecil
+        dari beratnya dan arahnya ke bawah.
+\end{enumerate}
+Pernyataan yang benar adalah \ldots
+\begin{pil}
+  \item a, b, dan c
+  \item a, b, c, dan d
+  \item a saja
+  \item a dan b
+  \item Tidak ada pernyataan yang benar
+\end{pil}
+\end{soal}
+
+\begin{soal}{9}  % PG Majemuk
+Dua buah partikel identik A dan B masing-masing sedang bergerak
+melingkar. Nilai percepatan sentripetal terhadap jari-jari lintasan
+dari kedua partikel ditunjukkan pada grafik berikut.
+\gambar[0.42\textwidth]{images/1/1-4.png}
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Kemiringan garis A pada grafik $a_s$ vs $r$ menyatakan
+    $\omega_A^2=1$ (rad/s)$^2$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Kemiringan garis B pada grafik $a_s$ vs $r$ menyatakan
+    $\omega_B^2=2$ (rad/s)$^2$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Kedua partikel memiliki kelajuan sudut yang sama,
+    $\omega_A=\omega_B=1$ rad/s.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Selisih kelajuan sudut kedua partikel adalah $(\sqrt{2}-1)$ rad/s.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{10}  % Isian
+Sebuah balok yang diam bermassa 4,7 kg ditarik oleh gaya horizontal
+konstan $F=10$ N di atas permukaan horizontal kasar dengan
+$\mu_s=0{,}6$ dan $\mu_k=0{,}4$.
+\gambar[0.5\textwidth]{images/1/1-5.png}
+Percepatan balok tersebut adalah \ldots\ m/s$^2$.
+\end{soal}
+
+\begin{soal}{11}  % PG Majemuk
+Perhatikan pernyataan-pernyataan berikut tentang momentum dan gerak
+pusat massa.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Momentum sistem bisa kekal meskipun energi mekanik sistem
+    tidak kekal.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Syarat kekekalan momentum sistem adalah resultan gaya luar
+    pada sistem bernilai nol.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Kecepatan pusat massa sistem berubah hanya ketika ada resultan
+    gaya luar yang bekerja.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Momentum total sistem selalu kekal dalam segala proses.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{12}  % PG Majemuk
+Dua bola identik A dan B dilepaskan dari atap gedung. Bola A
+dilepaskan 1 detik sebelum bola B. Hambatan udara diabaikan dan
+$g=10$ m/s$^2$.
+Tentukan kebenaran setiap pernyataan berikut (ditinjau saat bola B
+baru saja dilepaskan)!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Kecepatan bola A saat B dilepaskan adalah 10 m/s ke bawah.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Bola A sudah berada 5 m di bawah titik awal saat B dilepaskan.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Setelah B dilepaskan, kecepatan relatif bola A terhadap bola B
+    berkurang seiring waktu.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Setelah B dilepaskan, jarak vertikal antara kedua bola selalu
+    tetap 5 m.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{13}  % PG Majemuk
+Sebuah balok bermassa 2,5 kg meluncur dari puncak bidang miring
+$\left(\tan\alpha=\tfrac{3}{4}\right)$ dengan laju awal 1 m/s.
+Koefisien gesek statis dan kinetis masing-masing 0,50 dan 0,20.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Percepatan balok sepanjang bidang miring adalah $4{,}4$ m/s$^2$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Kecepatan awal balok di puncak bidang miring adalah 1 m/s.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Setelah meluncur sejauh 1 m, kelajuan balok adalah 4,8 m/s.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Nilai $v^2$ setelah meluncur sejauh 1 m adalah 9,8 m$^2$/s$^2$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{14}  % PG Biasa
+Dua buah balok dengan massa masing-masing $m=7{,}6$ kg dan $M=2$ kg
+dihubungkan oleh tali yang melalui sebuah katrol. Koefisien gesek
+statis antara dua permukaan balok adalah $\mu_s=1{,}1$, sedangkan
+lantai licin.
+\gambar[0.5\textwidth]{images/1/1-6.png}
+Besar gaya horizontal maksimum $F$ sehingga sistem masih dalam
+kesetimbangan adalah \ldots\ N.
+\begin{pilB}
+  \item $83{,}6$ \item $120{,}0$ \item $136{,}0$ \item $167{,}2$ \item $200{,}0$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{15}  % PG Biasa
+Dadang melakukan perjalanan dari kota A ke kota B dengan kecepatan
+rata-rata 58 km/jam, kemudian kembali dari kota B ke kota A dengan
+kecepatan rata-rata 75 km/jam. Laju rata-rata seluruh perjalanan
+Dadang adalah \ldots\ km/jam.
+\begin{pilB}
+  \item $63{,}5$ \item $65{,}0$ \item $65{,}4$ \item $66{,}5$ \item $67{,}5$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{16}  % PG Majemuk
+Grafik di bawah menyatakan simpangan gelombang berjalan pada $t=0$
+yang merambat ke kanan. Frekuensi gelombang adalah 5 Hz.
+\gambar[0.55\textwidth]{images/1/1-7.png}
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Amplitudo gelombang tersebut adalah 2 m.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Panjang gelombang $\lambda = 2$ m.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Bilangan gelombang $k = 2\pi$ rad/m.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Persamaan simpangan gelombang adalah
+    $y=2\cos(\pi x - 10\pi t)$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{17}  % Isian
+Gelombang bunyi dengan frekuensi 200 Hz dimasukkan ke bagian atas
+tabung vertikal berisi air. Gelombang berdiri dihasilkan pada dua
+ketinggian air berturut-turut 30 cm dan 90 cm. Laju gelombang bunyi
+pada kolom udara di tabung tersebut adalah \ldots\ m/s.
+\end{soal}
+
+\begin{soal}{18}  % PG Majemuk
+Sebuah gelombang berjalan merambat sepanjang tali dengan persamaan
+simpangan
+\[
+  y(x,t) = (2\,\text{m})\sin\!\left(2\pi x - 3\pi t - \frac{\pi}{3}\right)
+\]
+dengan $t$ dalam sekon dan $x$ dalam meter.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Gelombang merambat ke arah sumbu $+x$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Amplitudo gelombang adalah 2 m.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Frekuensi sudut gelombang adalah $\omega = 2\pi$ rad/s.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Laju rambat gelombang adalah 1,5 m/s.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{19}  % Isian
+Persamaan simpangan sebuah gelombang berjalan transversal pada tali
+adalah
+\[
+  y(x,t) = 0{,}28\sin\!\left(\frac{\pi x}{5} + 8\pi t\right)
+\]
+dengan $t$ dalam sekon dan $x$ dalam meter. Laju transversal tali di
+posisi $x=1{,}5$ m saat $t=0{,}5$ s adalah \ldots\ m/s.
+\end{soal}
+
+\begin{soal}{20}  % PG Biasa  [SOAL BARU: Doppler mendekati dinding]
+Sebuah sumber bunyi dengan frekuensi 500 Hz bergerak mendekati
+pengamat yang diam dengan kecepatan 20 m/s. Cepat rambat bunyi di
+udara adalah 340 m/s. Frekuensi bunyi yang terdeteksi oleh pengamat
+adalah \ldots\ Hz.
+\begin{pilB}
+  \item $468{,}75$ \item $500{,}00$ \item $512{,}50$ \item $531{,}25$ \item $562{,}50$
+\end{pilB}
+\end{soal}
+
+% ===================================================================
+%  TIPE B  (nomor 21--40)
+% ===================================================================
+
+\begin{soal}{21}  % PG Biasa
+Seorang pelempar akan melemparkan sebuah bola dengan laju 30 m/s
+dan sudut elevasi $\alpha$ $\left(\tan\alpha=\tfrac{3}{4}\right)$.
+Seorang penangkap berada pada jarak 60 m dari pelempar. Agar
+penangkap dapat menangkap bola, dia harus berlari dengan laju
+minimum sebesar \ldots\ m/s.
+\begin{pilB}
+  \item $5{,}50$ \item $6{,}00$ \item $6{,}50$ \item $7{,}33$ \item $8{,}00$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{22}  % PG Biasa
+Dua buah balok A ($m_A=2{,}7$ kg) dan B ($m_B=5{,}9$ kg) terhubung
+oleh tali. Balok A terhubung pada pasak melalui tali sepanjang 8,2 m;
+balok B terhubung pada balok A melalui tali 5,1 m. Sistem bergerak
+melingkar pada meja licin dengan $\omega=15$ rad/s.
+\gambar[0.5\textwidth]{images/1/1-8.png}
+Perbandingan $T_a / T_b$ adalah \ldots
+\begin{pilB}
+  \item $1{,}00$ \item $1{,}20$ \item $1{,}28$ \item $1{,}50$ \item $1{,}75$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{23}  % PG Biasa
+Sebuah partikel bermassa 4 gram bertumbukan dengan partikel lain
+bermassa 2 gram yang diam. Keduanya menempel setelah tumbukan.
+Perbandingan energi yang hilang terhadap energi kinetik awal adalah
+\ldots
+\begin{pilB}
+  \item $\dfrac{1}{6}$ \item $\dfrac{1}{4}$ \item $\dfrac{1}{3}$
+  \item $\dfrac{1}{2}$ \item $\dfrac{2}{3}$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{24}  % PG Majemuk
+Pada $t=0$ sebuah partikel diam di $x=0$ m. Partikel bergerak dengan
+percepatan seperti pada grafik berikut.
+\gambar[0.55\textwidth]{images/1/1-9.png}
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Pada selang waktu 0--5\,s, partikel bergerak ke arah sumbu
+    $x$ positif.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Pada $t=5$ s dan $t=10$ s, partikel memiliki kecepatan yang sama.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Pada selang waktu 5--10\,s, partikel diam (tidak bergerak).
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Pada $t=12$ s, partikel berada di posisi sumbu $x$ negatif.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{25}  % Isian
+Sebuah partikel bergerak dari pusat koordinat ke arah sumbu $x$
+positif dengan kecepatan 4 m/s selama 50 sekon, kemudian 5 m/s
+selama 20 sekon berikutnya, lalu berbalik arah dengan kecepatan
+3 m/s selama 30 sekon. Besar kecepatan rata-rata partikel dalam
+100 sekon tersebut adalah \ldots\ m/s.
+\end{soal}
+
+\begin{soal}{26}  % PG Biasa
+Balok bermassa 5 kg ditekan pada dinding dengan gaya horizontal
+$F$. Koefisien gesek antara balok dan dinding adalah 0,3.
+\gambar[0.5\textwidth]{images/1/1-10.png}
+Gaya minimum yang diperlukan agar balok tidak jatuh adalah \ldots\ N.
+\begin{pilB}
+  \item $100{,}0$ \item $125{,}0$ \item $133{,}3$ \item $166{,}7$ \item $200{,}0$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{27}  % PG Majemuk
+Suatu bola dijatuhkan secara tegak lurus dari ketinggian 50 m dan
+kemudian memantul sehingga ketinggiannya menjadi $\tfrac{1}{2}$
+ketinggian sebelumnya.
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Lintasan total sebelum pantulan pertama adalah 50 m.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Panjang lintasan total tepat setelah pantulan ke-4 adalah
+    137,5 m.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Panjang lintasan total tepat setelah pantulan ke-3 sudah
+    melebihi 137 m.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Lintasan pertama kali melebihi 137 m tepat setelah
+    pantulan ke-4.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{28}  % PG Majemuk
+Sebuah balok kecil bermassa 102 gram dilepaskan dari titik A.
+Balok bergerak melewati lintasan lengkung AB berbentuk seperempat
+lingkaran jari-jari $R$, kemudian bergerak di lintasan datar BC
+dengan $\mu_k=0{,}45$ dan tepat berhenti di C.
+\gambar[0.55\textwidth]{images/1/1-11.png}
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Energi potensial yang hilang pada lintasan AB adalah $mgR$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Kerja yang dilakukan gaya gesek pada BC adalah $-\mu_k mg\cdot BC$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Perbandingan $R/BC = \mu_s = 0{,}5$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Perbandingan $R/BC = \mu_k = 0{,}45$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{29}  % PG Biasa
+Pada $t=0$ s, ambulans bergerak dengan kecepatan konstan menuju
+suatu perempatan yang berjarak 1 km di depannya sambil membunyikan
+sirine 1000 Hz. Tepat saat 1 menit, frekuensi sirine yang
+dideteksi oleh sensor di perempatan adalah \ldots\ Hz
+(cepat rambat bunyi 340 m/s).
+\begin{pilB}
+  \item $951{,}5$ \item $1000{,}0$ \item $1025{,}0$ \item $1051{,}5$ \item $1100{,}0$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{30}  % PG Majemuk
+Sebuah balok massa $m_1$ meluncur di meja licin, terhubung oleh
+tali tak bermassa melalui katrol tak bermassa ke bola massa $m_2$
+yang tergantung.
+\gambar[0.5\textwidth]{images/1/1-12.png}
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Percepatan sistem adalah $a = \dfrac{m_2 g}{m_1 + m_2}$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Besar gaya tegangan tali sama di kedua sisi katrol
+    (karena tali tak bermassa).
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Gaya tegangan tali adalah $T = m_2 g$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Gaya tegangan tali adalah $T = \dfrac{m_1 m_2 g}{m_1 + m_2}$.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{31}  % PG Biasa
+Sebuah pesawat pengebom terbang horizontal dengan laju konstan
+$v_p=60$ m/s pada ketinggian $h=128$ m. Tepat di atas titik O,
+sebuah bom dilepaskan dan mengenai truk yang bergerak dengan
+kecepatan konstan. Saat bom dilepaskan, truk berada pada jarak
+$x_0=100$ m dari O. Jika tinggi truk adalah 3 m, laju truk
+adalah \ldots\ m/s.
+\gambar[0.55\textwidth]{images/1/1-13.png}
+\begin{pilB}
+  \item $20$ \item $25$ \item $32$ \item $40$ \item $48$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{32}  % PG Biasa
+Sebuah balok bermassa $m=2$ kg diberi gaya konstan $F=50$ N dengan
+arah membentuk sudut $\theta$ ke bawah terhadap horizontal
+$\left(\tan\theta=\tfrac{3}{4}\right)$. Koefisien gesek statis
+dan kinetis masing-masing 0,4 dan 0,3.
+\gambar[0.55\textwidth]{images/1/1-14.png}
+Besar percepatan balok adalah \ldots\ m/s$^2$.
+\begin{pilB}
+  \item $8{,}0$ \item $10{,}0$ \item $11{,}0$ \item $12{,}5$ \item $15{,}0$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{33}  % Isian
+Mobil pemadam kebakaran bergerak menuju perempatan jalan dengan
+kelajuan 72 km/jam sambil menyalakan sirine. Sensor di perempatan
+mendeteksi perubahan frekuensi sirine tepat sebelum dan setelah
+mobil melewatinya sebesar 87 Hz. Cepat rambat bunyi di udara
+340 m/s. Frekuensi sirine mobil pemadam tersebut adalah \ldots\ Hz.
+\end{soal}
+
+\begin{soal}{34}  % Isian
+Sebuah benda bermassa 6 kg memiliki energi kinetik sebesar 200 J
+sesaat sebelum menumbuk tanah. Benda tersebut dijatuhkan dari
+ketinggian \ldots\ m. (Hambatan udara diabaikan.)
+\end{soal}
+
+\begin{soal}{35}  % PG Majemuk
+Perhatikan sistem pada gambar. Massa benda A adalah 10 kg dan
+massa benda B adalah 5 kg. Benda A ditarik ke atas sehingga
+sistem bergerak ke atas dengan percepatan konstan 2 m/s$^2$.
+\gambar[0.32\textwidth]{images/1/1-15.png}
+Tentukan kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Massa total sistem A dan B adalah 15 kg.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Persamaan gerak sistem: $T_1 - Mg = Ma$, dengan $M=15$ kg.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Besar tegangan tali $T_1 = 150$ N.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Besar tegangan tali $T_1 = 180$ N.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{36}  % PG Majemuk
+Sebuah gelombang transversal memiliki persamaan simpangan
+\[
+  y(t,x) = (0{,}23\,\text{m})\sin\!\left(\frac{\pi x}{5} - 8\pi t\right)
+\]
+dengan $t$ dalam sekon dan $x$ dalam meter. Tentukan kebenaran
+setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Gelombang merambat ke arah sumbu $+x$.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Amplitudo kecepatan transversal tali adalah
+    $A\omega = 0{,}23(8\pi) \approx 5{,}78$ m/s.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Besar laju transversal di $x=1{,}5$ m, $t=0{,}5$ s lebih besar
+    dari 4 m/s.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Besar laju transversal di $x=1{,}5$ m, $t=0{,}5$ s adalah
+    $|0{,}23(8\pi)\cos(0{,}3\pi)|\approx 3{,}40$ m/s.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{37}  % PG Majemuk
+Gelombang stasioner pada seutas tali dinyatakan oleh persamaan
+\[
+  y = 5\cos\!\left(\frac{\pi x}{3}\right)\sin(40\pi t)
+\]
+di mana $x$ dan $y$ dalam cm dan $t$ dalam detik. Tentukan
+kebenaran setiap pernyataan berikut!
+
+\par\smallskip
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}p{0.76\linewidth}cc@{}}
+\hline
+\textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\
+\hline
+(1)~Gelombang stasioner di atas terbentuk dari superposisi dua
+    gelombang berjalan berlawanan arah.
+  & $\bigcirc$ & $\bigcirc$\\
+(2)~Faktor spasial gelombang stasioner ini adalah $\cos(\pi x/3)$.
+  & $\bigcirc$ & $\bigcirc$\\
+(3)~Jarak antara dua simpul berturut-turut adalah $\lambda/4$.
+  & $\bigcirc$ & $\bigcirc$\\
+(4)~Jarak antara dua simpul berturut-turut pada gelombang
+    stasioner ini adalah 3 cm.
+  & $\bigcirc$ & $\bigcirc$\\
+\hline
+\end{tabular}}
+\end{soal}
+
+\begin{soal}{38}  % Isian
+Grafik di bawah menyatakan simpangan gelombang berjalan pada $t=0$
+yang merambat ke kanan. Jika frekuensi gelombang adalah 5 Hz,
+tuliskan persamaan simpangan gelombang tersebut!
+\gambar[0.55\textwidth]{images/1/1-16.png}
+$y(x,t) = $ \underline{\hspace{6cm}}\ (satuan SI)
+\end{soal}
+
+\begin{soal}{39}  % PG Biasa
+Sebuah senar gitar nilon panjang 90 cm dijepit kedua ujungnya
+sehingga menghasilkan gelombang berdiri dengan total 4 buah simpul.
+Laju rambat gelombang transversal pada senar adalah 132 m/s.
+Frekuensi dari gelombang berjalan penyusun gelombang berdiri
+tersebut adalah \ldots\ Hz.
+\begin{pilB}
+  \item $110$ \item $165$ \item $220$ \item $330$ \item $440$
+\end{pilB}
+\end{soal}
+
+\begin{soal}{40}  % Isian  [SOAL BARU: energi pegas]
+Sebuah pegas dengan konstanta pegas $k=200$ N/m dimampatkan sejauh
+$x=0{,}3$ m dari posisi setimbang kemudian dilepaskan untuk mendorong
+sebuah bola bermassa $m=2$ kg di atas permukaan horizontal licin.
+Tentukan kelajuan bola saat pegas kembali ke posisi setimbang
+dalam satuan m/s.
+
+\vspace{0.3cm}
+$v = $ \underline{\hspace{4cm}}\ m/s
+\end{soal}
+
+\end{document}
