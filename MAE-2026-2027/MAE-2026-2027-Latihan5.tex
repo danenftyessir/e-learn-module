@@ -1,0 +1,1323 @@
+% ============================================================
+%  PEMBAHASAN SUPER DETAIL — LATIHAN SOAL & STUDI KASUS
+%  BAB 5: SISTEM PERSAMAAN DAN PERTIDAKSAMAAN LINEAR
+%  Catatan: Soal Akhir Bab TIDAK dibahas di sini (sesuai permintaan).
+% ============================================================
+\input{MAE-2026-2027-Latihan-preamble}
+\renewcommand{\babjudul}{Pembahasan Latihan — Bab 5}
+
+\begin{document}
+\setcounter{chapter}{5}
+\buathalamanjudul{Sistem Persamaan dan Pertidaksamaan Linear}{5}
+
+% ============================================================
+\chapter*{Pembahasan Bab 5: Sistem Persamaan dan Pertidaksamaan Linear}
+\addcontentsline{toc}{chapter}{Pembahasan Bab 5: Sistem Linear}
+\markboth{PEMBAHASAN BAB 5}{}
+% ============================================================
+
+\begin{tips}
+\textbf{Cara membaca buku ini.} Tiap soal: \textbf{(1)} soal ditulis ulang,
+\textbf{(2)} konsep kunci, \textbf{(3)} langkah demi langkah, \textbf{(4)}
+jebakan, \textbf{(5)} variasi. \emph{Aturan emas Bab 5:} untuk sistem, tujuan
+selalu ``menghilangkan satu variabel'' agar masalah mengecil; untuk
+pertidaksamaan, tujuannya ``menemukan daerah'', lalu ``memilih titik pojok
+terbaik''. \emph{Catatan:} tidak semua sistem berjawaban bilangan bulat ---
+pecahan pun jawaban yang sah.
+\end{tips}
+
+% ============================================================
+\section*{Studi Kasus: Menentukan Harga di Kantin}
+\addcontentsline{toc}{section}{Studi Kasus: Harga di Kantin}
+% ============================================================
+
+\begin{studikasus}{Menentukan Harga di Kantin}
+Tiga teman jajan (harga dalam ribuan): Andi $2$ nasi $+1$ ayam $+1$ es $=32$;
+Budi $1$ nasi $+2$ ayam $+1$ es $=34$; Cici $1$ nasi $+1$ ayam $+2$ es $=30$.
+\textbf{Pertanyaan.} (a) Bisakah harga ditemukan dari satu baris saja?
+(b) Tuliskan secara matematis. (c) Strategi menghilangkan satu variabel?
+\end{studikasus}
+
+\subsection*{Jawaban lengkap studi kasus}
+
+\textbf{(a) Mengapa perlu ketiga baris?} Satu persamaan dengan tiga hal tak
+diketahui ($x,y,z$) punya tak hingga kemungkinan --- tak bisa memaksa satu harga.
+Untuk ``mengunci'' tiga nilai, kita butuh \emph{tiga} informasi bebas.
+
+\textbf{(b) Model matematis (SPLTV).} Misalkan $x=$ harga nasi, $y=$ ayam,
+$z=$ es (ribuan):
+\[
+\begin{cases}
+2x+y+z=32\\
+x+2y+z=34\\
+x+y+2z=30
+\end{cases}
+\]
+
+\textbf{(c) Strategi: jumlahkan lalu kurangi.}
+\langkah{1} Jumlahkan ketiga persamaan. Perhatikan tiap variabel muncul
+$2+1+1=4$ kali:
+\[
+4x+4y+4z=96 \Rightarrow x+y+z=24.
+\]
+\langkah{2} Kurangkan ``jumlah'' $x+y+z=24$ dari tiap persamaan asli untuk
+mengisolasi satu variabel:
+\[
+(2x+y+z)-(x+y+z)=x=32-24=8,
+\]
+\[
+(x+2y+z)-(x+y+z)=y=34-24=10,\quad
+(x+y+2z)-(x+y+z)=z=30-24=6.
+\]
+\jadi nasi Rp$8.000$, ayam Rp$10.000$, es Rp$6.000$.
+
+\begin{tips}
+Trik ``jumlahkan semua lalu kurangi'' bekerja mulus di sini karena koefisiennya
+\emph{simetris} (pola $2,1,1$). Untuk sistem umum, pakai eliminasi biasa.
+\end{tips}
+
+% ############################################################
+\section*{Subbab 5.1 — Sistem Persamaan Linear Tiga Variabel (SPLTV)}
+\addcontentsline{toc}{section}{Subbab 5.1 — SPLTV}
+% ############################################################
+
+\begin{ingat}{Strategi eliminasi bertingkat}
+\textbf{Tujuan:} turunkan 3 variabel $\to$ 2 variabel $\to$ 1 variabel.
+\textbf{Langkah:} (1) pilih satu variabel untuk dilenyapkan; (2) pasangkan
+persamaan berdua-dua untuk melenyapkannya, hasilnya \emph{dua} persamaan dua
+variabel; (3) selesaikan sistem $2\times2$ itu; (4) substitusi balik.
+\end{ingat}
+
+% ---------------- SOAL 5.1.1 ----------------
+\soalno{5.1.1}{SPLTV eliminasi}
+\begin{soalbox}{}
+Selesaikan $\begin{cases} 2x+y-z=3\\ x-y+z=2\\ x+y+z=6\end{cases}$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Beri nama (1),(2),(3). Lenyapkan $z$ dulu.
+(2)$+$(3): $(x+x)+(-y+y)+(z+z)=2+6\Rightarrow 2x+2z=8\Rightarrow x+z=4$. \dots(A)
+\langkah{2} Lenyapkan $y$ dari (3)$-$(2): $(x-x)+(y+y)+(z-z)=6-2\Rightarrow
+2y=4\Rightarrow y=2$.
+\langkah{3} Sisipkan $y=2$ ke (1): $2x+2-z=3\Rightarrow 2x-z=1$. \dots(B)
+\langkah{4} Selesaikan (A) $x+z=4$ dan (B) $2x-z=1$. Jumlahkan: $3x=5\Rightarrow
+x=\frac53$. Maka $z=4-\frac53=\frac73$.
+\jadi $(x,y,z)=\left(\dfrac53,\ 2,\ \dfrac73\right)$.
+\emph{(Cek pada (1): $2\cdot\frac53+2-\frac73=\frac{10}{3}-\frac73+2=1+2=3$
+\checkmark.)}
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menolak jawaban pecahan.} SPLTV \emph{tidak wajib} berjawaban
+  bulat. Selama lolos pengecekan, pecahan itu benar.
+  \item \textbf{Salah tanda saat mengurangi persamaan.} Rapikan: kurangi
+  \emph{seluruh} ruas, suku per suku.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Ganti satu konstanta agar jawaban bulat; atau minta hanya nilai $x+y+z$
+(jumlahkan langsung tanpa mencari tiap variabel).
+\end{variasi}
+
+% ---------------- SOAL 5.1.2 ----------------
+\soalno{5.1.2}{SPLTV simetris (jumlahkan)}
+\begin{soalbox}{}
+Selesaikan $\begin{cases} x+y=5\\ y+z=7\\ x+z=6\end{cases}$.
+\end{soalbox}
+
+\begin{ingat}{Pola ``berpasangan'' $\Rightarrow$ jumlahkan semua}
+Kalau tiap persamaan hanya memuat \emph{dua} variabel dan polanya simetris,
+jumlahkan semuanya: tiap variabel muncul dua kali, memberi $2(x+y+z)$.
+\end{ingat}
+
+\jawab
+\langkah{1} Jumlahkan ketiganya: $2(x+y+z)=5+7+6=18\Rightarrow x+y+z=9$.
+\langkah{2} Kurangi tiap persamaan dari total:
+\[
+z=9-(x+y)=9-5=4,\quad x=9-(y+z)=9-7=2,\quad y=9-(x+z)=9-6=3.
+\]
+\jadi $(x,y,z)=(2,3,4)$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa membagi 2} setelah menjumlah ($2(x+y+z)=18$, bukan
+  $x+y+z=18$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Versi lebih besar (4 variabel berpasangan) memakai ide serupa; atau minta hanya
+$x+y+z$.
+\end{variasi}
+
+% ---------------- SOAL 5.1.3 ----------------
+\soalno{5.1.3}{memodelkan tiga bilangan}
+\begin{soalbox}{}
+Tiga bilangan berjumlah $30$; yang terbesar $2$ kali terkecil; selisih terbesar
+dan tengah adalah $4$. Tentukan ketiganya.
+\end{soalbox}
+
+\jawab
+\langkah{1} Misalkan terkecil $s$, tengah $m$, terbesar $L$. Terjemahkan:
+\[
+s+m+L=30,\qquad L=2s,\qquad L-m=4.
+\]
+\langkah{2} Dari $L=2s$ dan $L-m=4$: $m=L-4=2s-4$.
+\langkah{3} Substitusi ke jumlah: $s+(2s-4)+2s=30\Rightarrow 5s-4=30\Rightarrow
+5s=34\Rightarrow s=6{,}8$.
+\langkah{4} Maka $m=2(6{,}8)-4=9{,}6$ dan $L=2(6{,}8)=13{,}6$.
+\jadi ketiga bilangan itu $6{,}8;\ 9{,}6;\ 13{,}6$.
+\emph{(Cek: jumlah $=30$; $13{,}6=2\cdot6{,}8$; $13{,}6-9{,}6=4$ \checkmark.)}
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menerjemahkan ``2 kali'' terbalik} ($s=2L$). Terbesar $=2\times$
+  terkecil berarti $L=2s$.
+  \item \textbf{Memaksa bilangan bulat.} Konteks ``bilangan'' di sini boleh
+  desimal.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Ganti ``selisih $=4$'' agar bulat; atau tambah syarat ketiganya membentuk
+barisan aritmetika (kaitan Bab 2).
+\end{variasi}
+
+% ---------------- SOAL 5.1.4 ----------------
+\soalno{5.1.4}{SPLTV eliminasi campuran}
+\begin{soalbox}{}
+Selesaikan $\begin{cases} x+2y+z=8\\ 2x-y+z=3\\ x+y-z=0\end{cases}$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Beri nama (1),(2),(3). Lenyapkan $z$ lewat (2)$+$(3):
+$(2x+x)+(-y+y)+(z-z)=3+0\Rightarrow 3x=3\Rightarrow x=1$.
+\langkah{2} Lenyapkan $z$ lagi lewat (1)$+$(3): $(x+x)+(2y+y)+(z-z)=8+0\Rightarrow
+2x+3y=8$. Masukkan $x=1$: $2+3y=8\Rightarrow y=2$.
+\langkah{3} Substitusi ke (3): $1+2-z=0\Rightarrow z=3$.
+\jadi $(x,y,z)=(1,2,3)$.
+\emph{(Cek (1): $1+4+3=8$ \checkmark.)}
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mengeliminasi variabel berbeda tiap pasangan.} Untuk mendapat
+  dua persamaan 2-variabel, lenyapkan variabel yang \emph{sama} pada kedua
+  pasangan (di sini $z$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Selesaikan dengan substitusi murni (dari (3): $z=x+y$, masukkan ke (1),(2)).
+\end{variasi}
+
+% ---------------- SOAL 5.1.5 ----------------
+\soalno{5.1.5}{banyak solusi (berimpit)}
+\begin{soalbox}{}
+Tentukan apakah $\begin{cases} x-y=1\\ 2x-2y=2\end{cases}$ punya satu, tak
+hingga, atau tanpa solusi.
+\end{soalbox}
+
+\begin{ingat}{Membaca banyaknya solusi}
+Bandingkan kedua persamaan: kalau satu adalah \emph{kelipatan} persis yang lain
+$\Rightarrow$ \textbf{berimpit} (tak hingga solusi). Kalau ruas kiri kelipatan
+tapi ruas kanan tidak $\Rightarrow$ \textbf{sejajar} (tanpa solusi). Selain itu
+$\Rightarrow$ satu solusi.
+\end{ingat}
+
+\jawab
+\langkah{1} Amati: persamaan kedua $2x-2y=2$ adalah persis $2\times$ persamaan
+pertama $x-y=1$.
+\langkah{2} Karena keduanya persamaan garis yang \emph{sama} (berimpit), setiap
+titik pada garis $x-y=1$ memenuhi keduanya.
+\jadi sistem punya \textbf{tak hingga} penyelesaian (semua $(x,y)$ dengan
+$x-y=1$).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menganggap selalu ada satu jawaban} lalu bingung karena
+  variabel ``habis''. Variabel yang lenyap total ($0=0$) menandakan tak hingga
+  solusi.
+  \item Bandingkan: $2x-2y=5$ (ruas kanan beda) akan memberi $0=3$
+  (mustahil) $\Rightarrow$ \emph{tanpa} solusi.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Ubah $2x-2y=3$ (sejajar, tanpa solusi) atau $2x-y=2$ (satu solusi). Latih
+membedakan ketiga kasus.
+\end{variasi}
+
+% ---------------- SOAL 5.1.6 ----------------
+\soalno{5.1.6}{SPLDV harga barang}
+\begin{soalbox}{}
+Harga $2$ buku $+1$ pena $=$ Rp$17$rb; $1$ buku $+3$ pena $=$ Rp$16$rb.
+Tentukan harga satuan.
+\end{soalbox}
+
+\jawab
+\langkah{1} Misalkan $b=$ harga buku, $p=$ harga pena (ribuan):
+\[
+2b+p=17,\qquad b+3p=16.
+\]
+\langkah{2} Substitusi: dari persamaan pertama $p=17-2b$. Masukkan ke kedua:
+\[
+b+3(17-2b)=16\Rightarrow b+51-6b=16\Rightarrow -5b=-35\Rightarrow b=7.
+\]
+\langkah{3} $p=17-2(7)=3$.
+\jadi harga buku Rp$7.000$, pena Rp$3.000$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah menuliskan variabel} (tertukar buku/pena). Definisikan
+  variabel dengan jelas di awal.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Metode eliminasi: kalikan persamaan pertama $3$, kurangi yang kedua untuk
+melenyapkan $p$. Jawaban sama.
+\end{variasi}
+
+% ---------------- SOAL 5.1.7 ----------------
+\soalno{5.1.7}{SPLTV jawaban pecahan}
+\begin{soalbox}{}
+Selesaikan $\begin{cases} x+y+z=9\\ 2x-y+z=6\\ x+2y-z=3\end{cases}$.
+\end{soalbox}
+
+\jawab
+\langkah{1} (1)$-$(2): $(x-2x)+(y+y)+(z-z)=9-6\Rightarrow -x+2y=3$. \dots(A)
+\langkah{2} (1)$+$(3): $(x+x)+(y+2y)+(z-z)=9+3\Rightarrow 2x+3y=12$. \dots(B)
+\langkah{3} Dari (A): $x=2y-3$. Substitusi ke (B): $2(2y-3)+3y=12\Rightarrow
+7y-6=12\Rightarrow y=\frac{18}{7}$.
+\langkah{4} $x=2\cdot\frac{18}{7}-3=\frac{36-21}{7}=\frac{15}{7}$; lalu
+$z=9-x-y=9-\frac{15}{7}-\frac{18}{7}=9-\frac{33}{7}=\frac{30}{7}$.
+\jadi $(x,y,z)=\left(\dfrac{15}{7},\ \dfrac{18}{7},\ \dfrac{30}{7}\right)$.
+\emph{(Cek (2): $2\cdot\frac{15}{7}-\frac{18}{7}+\frac{30}{7}
+=\frac{30-18+30}{7}=\frac{42}{7}=6$ \checkmark.)}
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Panik melihat pecahan.} Tetap lanjutkan; verifikasi dengan
+  substitusi memberi rasa aman.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Selesaikan lewat penjumlahan seluruh persamaan untuk mencari kombinasi tertentu,
+atau dengan matriks (SNBT/olimpiade).
+\end{variasi}
+
+% ---------------- SOAL 5.1.8 ----------------
+\soalno{5.1.8}{memodelkan sudut segitiga}
+\begin{soalbox}{}
+Jumlah tiga sudut segitiga $180^\circ$; sudut $A$ dua kali $B$; $C$ lebih besar
+$20^\circ$ dari $A$. Tentukan ketiga sudut.
+\end{soalbox}
+
+\jawab
+\langkah{1} Terjemahkan: $A+B+C=180$; $A=2B$; $C=A+20$.
+\langkah{2} Nyatakan semua dalam $B$: $A=2B$, $C=2B+20$.
+\langkah{3} Substitusi ke jumlah:
+\[
+2B+B+(2B+20)=180\Rightarrow 5B+20=180\Rightarrow 5B=160\Rightarrow B=32^\circ.
+\]
+\langkah{4} $A=64^\circ$, $C=84^\circ$.
+\jadi $A=64^\circ,\ B=32^\circ,\ C=84^\circ$ (jumlah $=180^\circ$ \checkmark).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menerjemahkan ``$C$ lebih besar $20^\circ$ dari $A$'' sebagai
+  $C=20-A$.} Yang benar $C=A+20$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Sudut-sudut sebanding $2:3:5$ (bagi $180^\circ$ menurut perbandingan), atau
+konteks sudut sepihak/berpelurus.
+\end{variasi}
+
+% ---------------- SOAL 5.1.9 ----------------
+\soalno{5.1.9}{SPLDV eliminasi}
+\begin{soalbox}{}
+Selesaikan $\begin{cases} 3x+2y=12\\ x-y=1\end{cases}$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Dari persamaan kedua: $x=y+1$.
+\langkah{2} Substitusi ke pertama: $3(y+1)+2y=12\Rightarrow 5y+3=12\Rightarrow
+5y=9\Rightarrow y=\frac95$.
+\langkah{3} $x=\frac95+1=\frac{14}{5}$.
+\jadi $\left(x,y\right)=\left(\dfrac{14}{5},\ \dfrac95\right)=(2{,}8;\ 1{,}8)$.
+\emph{(Cek: $3(2{,}8)+2(1{,}8)=8{,}4+3{,}6=12$ \checkmark.)}
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Substitusi setengah jalan.} Setelah $x=y+1$, ganti $x$ di
+  \emph{seluruh} persamaan pertama, bukan sebagian.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Metode eliminasi: kalikan persamaan kedua dengan $2$, jumlahkan agar $y$ lenyap.
+\end{variasi}
+
+% ---------------- SOAL 5.1.10 ----------------
+\soalno{5.1.10}{model pecahan}
+\begin{soalbox}{}
+Sebuah pecahan: pembilang $+$ penyebut $=11$; bila pembilang ditambah $3$
+nilainya menjadi $1$. Tentukan pecahan itu.
+\end{soalbox}
+
+\jawab
+\langkah{1} Misalkan pembilang $p$, penyebut $q$. Terjemahkan:
+$p+q=11$; dan $\dfrac{p+3}{q}=1\Rightarrow p+3=q$.
+\langkah{2} Substitusi $q=p+3$ ke $p+q=11$: $p+(p+3)=11\Rightarrow 2p=8
+\Rightarrow p=4$; maka $q=7$.
+\jadi pecahannya $\dfrac{4}{7}$.
+\emph{(Cek: $4+7=11$; $\frac{4+3}{7}=1$ \checkmark.)}
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{``Nilainya menjadi 1''} berarti pembilang baru $=$ penyebut,
+  jadi $p+3=q$ (bukan $p+3=1$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+``Bila penyebut dikurangi 2 nilainya $\frac12$'', atau pecahan yang berubah
+menjadi $\frac23$ --- semua diterjemahkan ke persamaan.
+\end{variasi}
+
+% ############################################################
+\section*{Subbab 5.2 — Sistem Pertidaksamaan Linear Dua Variabel (SPtLDV)}
+\addcontentsline{toc}{section}{Subbab 5.2 — SPtLDV}
+% ############################################################
+
+\begin{ingat}{Menggambar daerah penyelesaian}
+(1) Gambar garis batasnya (jadikan tanda ``$=$''). (2) \textbf{Uji satu titik}
+(biasanya $(0,0)$): jika memenuhi, arsir sisi yang memuatnya; jika tidak, sisi
+seberang. (3) Daerah penyelesaian sistem = \emph{irisan} semua daerah. Kendala
+$x\ge0,y\ge0$ mengurung ke kuadran I.
+\end{ingat}
+
+% ---------------- SOAL 5.2.1 ----------------
+\soalno{5.2.1}{menggambar daerah}
+\begin{soalbox}{}
+Gambarkan daerah penyelesaian dari $x+2y\le8$, $x\ge0$, $y\ge0$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Garis batas $x+2y=8$ memotong sumbu di $(8,0)$ (saat $y=0$) dan
+$(0,4)$ (saat $x=0$).
+\langkah{2} Uji $(0,0)$: $0+0=0\le8$ \emph{benar} $\Rightarrow$ daerah memuat
+titik asal (di bawah garis).
+\langkah{3} Gabung dengan $x\ge0,y\ge0$ (kuadran I). Hasilnya \emph{segitiga}
+bertitik sudut $(0,0),(8,0),(0,4)$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.55]
+\fill[hijaumuda](0,0)--(8,0)--(0,4)--cycle;
+\draw[->](-0.5,0)--(9.5,0) node[right]{$x$};
+\draw[->](0,-0.5)--(0,5.5) node[above]{$y$};
+\draw[very thick,hijau](8,0)--(0,4) node[above right]{$x+2y=8$};
+\node at (2,1) {\small DP};
+\fill (8,0) circle(3pt) node[below]{$(8,0)$};
+\fill (0,4) circle(3pt) node[left]{$(0,4)$};
+\end{tikzpicture}
+\end{center}
+\jadi daerahnya segitiga $(0,0),(8,0),(0,4)$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah titik potong sumbu.} Untuk $x+2y=8$, titik sumbu-$y$
+  adalah $(0,4)$ (bagi $8$ dengan koefisien $2$), bukan $(0,8)$.
+  \item \textbf{Lupa uji titik} sehingga mengarsir sisi yang salah.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Tanda ``$\ge$'' membalik daerah (menjauhi asal); garis tegak/mendatar
+($x\le3$, $y\ge1$).
+\end{variasi}
+
+% ---------------- SOAL 5.2.2 ----------------
+\soalno{5.2.2}{uji titik}
+\begin{soalbox}{}
+Tentukan apakah $(1,1)$ memenuhi $2x+3y\le6$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Substitusi $x=1,y=1$ ke ruas kiri: $2(1)+3(1)=5$.
+\langkah{2} Bandingkan: $5\le6$ \emph{benar}.
+\jadi \textbf{ya}, $(1,1)$ memenuhi (terletak di daerah penyelesaian).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah baca tanda.} Kalau tanda ``$\ge$'', maka $5\ge6$
+  \emph{salah} --- jawaban berbeda. Selalu perhatikan arah tanda.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Uji titik pada beberapa pertidaksamaan sekaligus: titik ada di daerah hanya bila
+memenuhi \emph{semua}.
+\end{variasi}
+
+% ---------------- SOAL 5.2.3 ----------------
+\soalno{5.2.3}{daerah antara dua garis}
+\begin{soalbox}{}
+Gambarkan $y\ge x$ dan $y\le4$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $y\ge x$: daerah \emph{di atas} garis $y=x$ (uji $(0,1)$: $1\ge0$
+benar).
+\langkah{2} $y\le4$: daerah \emph{di bawah} garis mendatar $y=4$.
+\langkah{3} Irisannya: pita di atas garis $y=x$ tetapi tidak melebihi $y=4$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.55]
+\fill[hijaumuda](-2,-2)--(4,4)--(-2,4)--cycle;
+\draw[->](-3,0)--(5,0) node[right]{$x$};
+\draw[->](0,-3)--(0,5.5) node[above]{$y$};
+\draw[very thick,biru](-2.5,-2.5)--(4.5,4.5) node[right]{$y=x$};
+\draw[very thick,oranye](-3,4)--(5,4) node[above right]{$y=4$};
+\node at (-0.6,2.6){\small DP};
+\end{tikzpicture}
+\end{center}
+\jadi daerahnya adalah wilayah di atas $y=x$ dan di bawah/pada $y=4$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menukar atas/bawah garis $y=x$.} $y\ge x$ = titik dengan $y$
+  lebih besar = \emph{di atas} garis.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Tambah $x\ge0$ untuk membatasi; atau ganti $y\le x$ (daerah di bawah).
+\end{variasi}
+
+% ---------------- SOAL 5.2.4 ----------------
+\soalno{5.2.4}{menyusun sistem dari daerah}
+\begin{soalbox}{}
+Tuliskan sistem pertidaksamaan untuk daerah segitiga bertitik $(0,0),(3,0),(0,2)$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Dua sisi segitiga terletak di sumbu: $x\ge0$ dan $y\ge0$.
+\langkah{2} Sisi miring melalui $(3,0)$ dan $(0,2)$. Persamaannya (bentuk
+intersep) $\dfrac x3+\dfrac y2=1$, atau dikali $6$: $2x+3y=6$.
+\langkah{3} Segitiga berada di sisi yang memuat $(0,0)$: uji $2(0)+3(0)=0\le6$
+benar, jadi $2x+3y\le6$.
+\jadi sistemnya: $\boxed{x\ge0,\ y\ge0,\ 2x+3y\le6}$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah menyusun garis sisi miring.} Gunakan bentuk intersep
+  $\frac{x}{a}+\frac{y}{b}=1$ dengan $a,b$ perpotongan sumbu.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Segitiga dengan salah satu titik bukan di sumbu (butuh dua garis miring); atau
+daerah segi empat (empat pertidaksamaan).
+\end{variasi}
+
+% ---------------- SOAL 5.2.5 ----------------
+\soalno{5.2.5}{maksimum fungsi objektif}
+\begin{soalbox}{}
+Maksimumkan $f=x+y$ pada $x+2y\le6$, $2x+y\le6$, $x,y\ge0$.
+\end{soalbox}
+
+\begin{ingat}{Teorema titik pojok}
+Nilai maksimum/minimum fungsi linear $f=ax+by$ pada daerah tertutup selalu di
+salah satu \emph{titik pojok}. Jadi: cari semua titik pojok, hitung $f$ di
+masing-masing, pilih yang terbesar/terkecil.
+\end{ingat}
+
+\jawab
+\langkah{1} Titik pojok: $(0,0)$; $(3,0)$ (dari $2x+y=6$ saat $y=0$); $(0,3)$
+(dari $x+2y=6$ saat $x=0$); dan perpotongan $x+2y=6$ dengan $2x+y=6$.
+\langkah{2} Perpotongan: kurangkan $(x+2y)-(2x+y)=0\Rightarrow -x+y=0\Rightarrow
+x=y$. Lalu $3x=6\Rightarrow x=y=2$, titik $(2,2)$.
+\langkah{3} Hitung $f=x+y$ di tiap pojok:
+\[
+f(0,0)=0,\quad f(3,0)=3,\quad f(0,3)=3,\quad f(2,2)=4.
+\]
+\jadi maksimum $f=4$ di titik $(2,2)$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa titik pojok perpotongan dua kendala miring.} Sering titik
+  optimum justru di sana, bukan di sumbu.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Ganti fungsi objektif ($f=3x+y$) menggeser letak optimum; tambah kendala.
+\end{variasi}
+
+% ---------------- SOAL 5.2.6 ----------------
+\soalno{5.2.6}{minimum pada daerah tak terbatas}
+\begin{soalbox}{}
+Minimumkan $f=2x+3y$ pada $x+y\ge4$, $x,y\ge0$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Daerah ($x+y\ge4$ di kuadran I) \emph{tak terbatas} ke atas, tetapi
+untuk \emph{minimum} kita hanya perlu titik pojok terbawah.
+\langkah{2} Titik pojok pada garis $x+y=4$: $(4,0)$ dan $(0,4)$.
+\langkah{3} Hitung: $f(4,0)=2(4)+3(0)=8$; $f(0,4)=2(0)+3(4)=12$.
+\jadi minimum $f=8$ di titik $(4,0)$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mencari maksimum di daerah tak terbatas.} Untuk arah ``$\ge$''
+  yang membuka ke atas, \emph{maksimum tidak ada}; minimum tetap di titik pojok.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Fungsi $f=3x+2y$ memindah minimum ke $(0,4)$? Cek: $f(4,0)=12$, $f(0,4)=8$
+$\Rightarrow$ minimum di $(0,4)$. Arah objektif menentukan pojok.
+\end{variasi}
+
+% ---------------- SOAL 5.2.7 ----------------
+\soalno{5.2.7}{daerah segi empat}
+\begin{soalbox}{}
+Gambarkan daerah $x+y\le5$, $x\le3$, $y\ge0$, $x\ge0$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Batas: garis $x+y=5$ (di bawahnya), garis tegak $x=3$ (di kirinya),
+sumbu-sumbu ($x,y\ge0$).
+\langkah{2} Cari titik pojok: $(0,0)$; $(3,0)$; perpotongan $x=3$ dengan
+$x+y=5$ yaitu $(3,2)$; dan $(0,5)$.
+\jadi daerahnya segi empat bertitik $(0,0),(3,0),(3,2),(0,5)$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.55]
+\fill[hijaumuda](0,0)--(3,0)--(3,2)--(0,5)--cycle;
+\draw[->](-0.5,0)--(6,0) node[right]{$x$};
+\draw[->](0,-0.5)--(0,6.5) node[above]{$y$};
+\draw[very thick,hijau](5,0)--(0,5);
+\draw[very thick,oranye](3,-0.3)--(3,3) node[above]{$x=3$};
+\node at (1.2,1.4){\small DP};
+\fill (3,2) circle(3pt) node[right]{$(3,2)$};
+\fill (0,5) circle(3pt) node[left]{$(0,5)$};
+\end{tikzpicture}
+\end{center}
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa memotong dengan $x=3$}, sehingga menganggap segitiga
+  $(0,0),(5,0),(0,5)$. Garis tegak ``memotong'' pojok kanan.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Tambah $y\le4$ untuk memotong pojok atas; daerah jadi segi lima.
+\end{variasi}
+
+% ---------------- SOAL 5.2.8 ----------------
+\soalno{5.2.8}{memodelkan kendala}
+\begin{soalbox}{}
+Sebuah pabrik membuat $2$ produk. Tuliskan kendala jika bahan A tersedia
+maksimum $10$ unit dan bahan B maksimum $8$ unit.
+\end{soalbox}
+
+\jawab
+\langkah{1} Misalkan $x=$ banyak produk 1, $y=$ banyak produk 2. Keduanya tak
+mungkin negatif: $x\ge0,\ y\ge0$.
+\langkah{2} Nyatakan pemakaian bahan. Misalkan tiap produk 1 memakai $a_1$ unit A
+dan $b_1$ unit B; produk 2 memakai $a_2$ unit A dan $b_2$ unit B. Maka:
+\[
+a_1x+a_2y\le10\ (\text{bahan A}),\qquad b_1x+b_2y\le8\ (\text{bahan B}).
+\]
+\jadi model umum: $x\ge0,\ y\ge0,\ a_1x+a_2y\le10,\ b_1x+b_2y\le8$.
+(Angka $a_i,b_i$ diisi sesuai data pemakaian per produk.)
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa $x\ge0,y\ge0$.} Jumlah produk tak boleh negatif --- kendala
+  ini wajib pada model nyata.
+  \item \textbf{Memakai ``$=$'' bukan ``$\le$''.} ``Maksimum'' berarti boleh
+  kurang, jadi $\le$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Jika ada batas \emph{minimum} permintaan ($x\ge2$), tambahkan sebagai kendala
+``$\ge$''.
+\end{variasi}
+
+% ---------------- SOAL 5.2.9 ----------------
+\soalno{5.2.9}{cek titik dalam daerah}
+\begin{soalbox}{}
+Apakah titik $(2,2)$ ada dalam daerah $x+y\le3$?
+\end{soalbox}
+
+\jawab
+\langkah{1} Substitusi: $2+2=4$.
+\langkah{2} Bandingkan: $4\le3$ \emph{salah}.
+\jadi \textbf{tidak}, $(2,2)$ berada di \emph{luar} daerah.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menebak dari gambar kasar.} Substitusi angka lebih pasti daripada
+  menerka posisi.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$(1,1)$ ($=2\le3$ benar, di dalam); titik tepat di garis $(1,2)$ ($=3$, di
+\emph{batas} --- termasuk karena tanda ``$\le$'').
+\end{variasi}
+
+% ---------------- SOAL 5.2.10 ----------------
+\soalno{5.2.10}{menentukan titik pojok}
+\begin{soalbox}{}
+Tentukan titik pojok dari $x+y\le4$, $x\ge1$, $y\ge0$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Batas: $x+y=4$, garis tegak $x=1$, sumbu $y=0$.
+\langkah{2} Cari perpotongan pasangan garis:
+\begin{itemize}[leftmargin=*,topsep=1pt]
+  \item $x=1$ \& $y=0$ $\Rightarrow (1,0)$;
+  \item $x+y=4$ \& $y=0$ $\Rightarrow (4,0)$;
+  \item $x+y=4$ \& $x=1$ $\Rightarrow (1,3)$.
+\end{itemize}
+\jadi titik pojoknya $(1,0),\ (4,0),\ (1,3)$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Memasukkan $(0,0)$.} Kendala $x\ge1$ menyingkirkan titik asal;
+  pojok kiri-bawah bergeser ke $(1,0)$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Tambah $y\le2$: pojok $(1,3)$ terpotong menjadi dua pojok baru.
+\end{variasi}
+
+% ############################################################
+\section*{Subbab 5.3 — Fungsi, Persamaan, dan Pertidaksamaan Linear (Pengayaan)}
+\addcontentsline{toc}{section}{Subbab 5.3 — Fungsi \& Garis Linear}
+% ############################################################
+
+\begin{ingat}{Garis lurus $y=mx+c$}
+$m=\dfrac{\Delta y}{\Delta x}$ (gradien: ``naik dibagi geser''); $c$ = nilai saat
+$x=0$. Sejajar $\iff m_1=m_2$; tegak lurus $\iff m_1 m_2=-1$. Pertidaksamaan
+satu variabel: kali/bagi bilangan \emph{negatif} $\Rightarrow$ balik tanda.
+\end{ingat}
+
+% ---------------- SOAL 5.3.1 ----------------
+\soalno{5.3.1}{gradien dari dua titik}
+\begin{soalbox}{}
+Tentukan gradien garis melalui $(2,3)$ dan $(6,11)$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $m=\dfrac{y_2-y_1}{x_2-x_1}=\dfrac{11-3}{6-2}=\dfrac{8}{4}=2$.
+\jadi gradiennya $2$ (tiap $x$ naik $1$, $y$ naik $2$).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Membalik $\Delta x$ dan $\Delta y$.} Gradien = perubahan
+  \emph{$y$} dibagi perubahan \emph{$x$}, bukan sebaliknya.
+  \item \textbf{Urutan titik tidak konsisten.} Pastikan $y_2,x_2$ dari titik yang
+  sama.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Gradien negatif (garis turun); gradien $0$ (mendatar); dua titik dengan $x$ sama
+(garis tegak, gradien tak terdefinisi).
+\end{variasi}
+
+% ---------------- SOAL 5.3.2 ----------------
+\soalno{5.3.2}{persamaan garis titik-gradien}
+\begin{soalbox}{}
+Susun persamaan garis bergradien $-2$ melalui $(1,4)$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Bentuk titik-gradien: $y-y_1=m(x-x_1)$ dengan $m=-2$, $(x_1,y_1)=(1,4)$:
+\[
+y-4=-2(x-1).
+\]
+\langkah{2} Rapikan: $y-4=-2x+2\Rightarrow y=-2x+6$.
+\jadi $y=-2x+6$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah distribusi tanda.} $-2(x-1)=-2x+2$ (bukan $-2x-2$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Diberi dua titik (cari $m$ dulu); atau garis melalui titik dengan syarat
+sejajar/tegak lurus garis lain.
+\end{variasi}
+
+% ---------------- SOAL 5.3.3 ----------------
+\soalno{5.3.3}{garis melalui titik asal}
+\begin{soalbox}{}
+Tentukan persamaan garis melalui $(0,0)$ dan $(3,6)$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Gradien: $m=\dfrac{6-0}{3-0}=2$.
+\langkah{2} Karena melalui $(0,0)$, intersep $c=0$: $y=2x$.
+\jadi $y=2x$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menambah konstanta.} Garis lewat titik asal $\Rightarrow c=0$;
+  tak ada ``$+c$''.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Garis lewat asal dengan gradien pecahan; atau garis $y=kx$ yang melalui titik
+tertentu (cari $k$).
+\end{variasi}
+
+% ---------------- SOAL 5.3.4 ----------------
+\soalno{5.3.4}{uji sejajar}
+\begin{soalbox}{}
+Apakah $y=3x+1$ dan $y=3x-4$ sejajar? Jelaskan.
+\end{soalbox}
+
+\jawab
+\langkah{1} Bandingkan gradien: keduanya $m=3$ (sama), tetapi intersep berbeda
+($1$ vs $-4$).
+\jadi \textbf{ya, sejajar} --- gradien sama membuat kemiringannya identik,
+sedangkan intersep berbeda memastikan keduanya \emph{tidak berimpit} (tak pernah
+berpotongan).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menganggap sama = berimpit.} Sejajar butuh gradien sama
+  \emph{dan} intersep berbeda; kalau intersep juga sama, keduanya garis yang
+  sama.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$y=3x+1$ dan $6x-2y=-2$ (sederhanakan: $y=3x+1$, ternyata \emph{berimpit}).
+\end{variasi}
+
+% ---------------- SOAL 5.3.5 ----------------
+\soalno{5.3.5}{gradien tegak lurus}
+\begin{soalbox}{}
+Tentukan gradien garis yang tegak lurus $y=\tfrac14 x+2$.
+\end{soalbox}
+
+\begin{ingat}{Syarat tegak lurus}
+$m_1\cdot m_2=-1$, jadi $m_2=-\dfrac{1}{m_1}$ (kebalikan negatif). Bandingkan uji
+tegak lurus vektor $\vec a\cdot\vec b=0$ di Bab 3.
+\end{ingat}
+
+\jawab
+\langkah{1} Gradien acuan $m_1=\dfrac14$.
+\langkah{2} $m_2=-\dfrac{1}{m_1}=-\dfrac{1}{1/4}=-4$.
+\jadi gradien tegak lurusnya $-4$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Hanya membalik tanda} ($-\frac14$) atau hanya membalik pecahan
+  ($4$). Harus \emph{keduanya}: kebalikan \textbf{dan} negatif.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Tegak lurus terhadap $y=-2x+5$ $\Rightarrow m_2=\frac12$; garis mendatar tegak
+lurus garis tegak.
+\end{variasi}
+
+% ---------------- SOAL 5.3.6 ----------------
+\soalno{5.3.6}{domain \& range terbatas}
+\begin{soalbox}{}
+Tentukan domain dan range $f(x)=2x-1$ untuk $-1\le x\le3$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Domain langsung dari batas: $\{x\mid -1\le x\le3\}$.
+\langkah{2} Karena fungsi \emph{naik} ($m=2>0$), nilai terkecil di $x=-1$ dan
+terbesar di $x=3$:
+\[
+f(-1)=2(-1)-1=-3,\qquad f(3)=2(3)-1=5.
+\]
+\jadi domain $[-1,3]$, range $[-3,5]$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menukar ujung range} kalau fungsi \emph{turun} ($m<0$): nilai
+  terbesar justru di $x$ terkecil. Cek tanda $m$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$f(x)=-3x+2$ pada $[0,4]$ (turun, range terbalik). Domain kontekstual (jumlah
+barang bilangan cacah).
+\end{variasi}
+
+% ---------------- SOAL 5.3.7 ----------------
+\soalno{5.3.7}{persamaan linear satu variabel}
+\begin{soalbox}{}
+Selesaikan $4x-7=2x+5$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Kumpulkan variabel di kiri, konstanta di kanan:
+$4x-2x=5+7\Rightarrow 2x=12$.
+\langkah{2} $x=6$.
+\jadi $x=6$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah tanda saat memindah ruas.} Suku yang pindah ruas berganti
+  tanda.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Persamaan dengan pecahan (kali penyebut dulu); atau yang berujung $0=5$ (tanpa
+solusi) / $0=0$ (semua $x$).
+\end{variasi}
+
+% ---------------- SOAL 5.3.8 ----------------
+\soalno{5.3.8}{pertidaksamaan (balik tanda)}
+\begin{soalbox}{}
+Selesaikan pertidaksamaan $-2x+1>7$.
+\end{soalbox}
+
+\begin{ingat}{Bagi/kali negatif membalik tanda}
+Aturan wajib: mengali atau membagi kedua ruas pertidaksamaan dengan bilangan
+\emph{negatif} membalik arah tanda ($>$ menjadi $<$, dan sebaliknya).
+\end{ingat}
+
+\jawab
+\langkah{1} Kurangi $1$: $-2x>6$.
+\langkah{2} Bagi $-2$ (\textbf{balik tanda!}): $x<-3$.
+\jadi HP $=\{x\mid x<-3\}$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa membalik tanda} sehingga menulis $x>-3$. Ini kesalahan
+  nomor satu di pertidaksamaan.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$3-5x\le18$; pertidaksamaan ganda $-1<2x+1\le5$ (kerjakan tiap ruas).
+\end{variasi}
+
+% ---------------- SOAL 5.3.9 ----------------
+\soalno{5.3.9}{membaca makna $m$ dan $c$}
+\begin{soalbox}{}
+Tarif parkir $y=2000+1000t$ ($t$ jam). Berapa biaya $3$ jam, dan apa makna
+$2000$?
+\end{soalbox}
+
+\jawab
+\langkah{1} Substitusi $t=3$: $y=2000+1000(3)=5000$.
+\langkah{2} Tafsir konstanta: $2000$ adalah nilai saat $t=0$, yakni \emph{tarif
+awal/masuk} (biaya tetap yang sudah dikenakan meski belum ada jam berjalan);
+$1000$ = tarif per jam (gradien).
+\jadi biaya $3$ jam $=$ Rp$5.000$; $2000$ = tarif dasar parkir.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mengira $2000$ = tarif per jam.} Yang per jam adalah gradien
+  $1000$; $2000$ adalah biaya tetap awal ($t=0$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Tarif taksi $y=7000+4000x$; tagihan listrik dengan abonemen + pemakaian.
+\end{variasi}
+
+% ---------------- SOAL 5.3.10 ----------------
+\soalno{5.3.10}{model linear terbalik}
+\begin{soalbox}{}
+Sebuah ojek online menetapkan $y=8000+2500x$. Tentukan jarak $x$ agar ongkos
+tepat Rp$23.000$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Set $y=23000$: $8000+2500x=23000$.
+\langkah{2} $2500x=15000\Rightarrow x=6$.
+\jadi jaraknya $6$ km.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa mengurangi tarif dasar $8000$ dulu.} Bagi $2500$ hanya
+  setelah menyisakan bagian yang bergantung jarak.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Diberi ongkos, cari jarak maksimum dengan anggaran tertentu (pertidaksamaan
+$8000+2500x\le \text{anggaran}$).
+\end{variasi}
+
+% ############################################################
+\section*{Subbab 5.4 — Program Linear Lanjutan (Pengayaan)}
+\addcontentsline{toc}{section}{Subbab 5.4 — Program Linear Lanjutan}
+% ############################################################
+
+\begin{ingat}{Langkah baku program linear}
+(1) Terjemahkan ke variabel, fungsi objektif $f=ax+by$, dan kendala. (2) Gambar
+daerah feasible, tentukan \emph{semua} titik pojok. (3) Hitung $f$ di tiap pojok.
+(4) Pilih terbesar (maks) / terkecil (min). \textbf{Optimum selalu di titik
+pojok}, tak pernah di dalam daerah.
+\end{ingat}
+
+% ---------------- SOAL 5.4.1 ----------------
+\soalno{5.4.1}{titik pojok segitiga}
+\begin{soalbox}{}
+Tentukan titik-titik pojok daerah $x+y\le6$, $x\ge0$, $y\ge0$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Batas: $x+y=6$ dan kedua sumbu.
+\langkah{2} Perpotongan: $(0,0)$; $x+y=6$ dengan sumbu-$x$ $\Rightarrow(6,0)$;
+dengan sumbu-$y$ $\Rightarrow(0,6)$.
+\jadi titik pojoknya $(0,0),\ (6,0),\ (0,6)$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah titik potong sumbu} bila koefisien bukan 1 (mis.\
+  $2x+y=6\Rightarrow(3,0),(0,6)$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Tambah kendala membuat pojok bertambah; daerah tak terbatas (arah ``$\ge$'').
+\end{variasi}
+
+% ---------------- SOAL 5.4.2 ----------------
+\soalno{5.4.2}{maksimum sederhana}
+\begin{soalbox}{}
+Maksimumkan $f=3x+2y$ pada $x+y\le5$, $x,y\ge0$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Titik pojok: $(0,0),(5,0),(0,5)$.
+\langkah{2} Hitung $f$: $f(0,0)=0$; $f(5,0)=15$; $f(0,5)=10$.
+\jadi maksimum $f=15$ di $(5,0)$.
+
+\begin{tips}
+Karena koefisien $x$ ($3$) lebih besar dari koefisien $y$ ($2$), masuk akal
+optimum condong ke arah memperbanyak $x$ --- yakni pojok $(5,0)$.
+\end{tips}
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mengambil titik yang ``terjauh''} secara visual tanpa menghitung
+  $f$. Selalu evaluasi $f$ di semua pojok.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$f=2x+3y$ pada daerah sama memindah optimum ke $(0,5)$.
+\end{variasi}
+
+% ---------------- SOAL 5.4.3 ----------------
+\soalno{5.4.3}{minimum dengan batas $x\le5$}
+\begin{soalbox}{}
+Minimumkan $f=x+2y$ pada $x+y\ge4$, $x\le5$, $x,y\ge0$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Titik pojok relevan pada garis $x+y=4$ dan batas: $(4,0)$; $(0,4)$;
+$(5,0)$ (di garis $x=5$, $y=0$, memenuhi $x+y=5\ge4$).
+\langkah{2} Hitung $f$: $f(4,0)=4$; $f(0,4)=8$; $f(5,0)=5$.
+\jadi minimum $f=4$ di $(4,0)$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Memeriksa titik tak feasible.} Pastikan tiap kandidat pojok
+  memenuhi \emph{semua} kendala sebelum menghitung $f$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Tambah kendala atas ($y\le3$) mengubah pojok; ubah objektif ke maksimum (tak ada,
+karena daerah membuka ke atas).
+\end{variasi}
+
+% ---------------- SOAL 5.4.4 ----------------
+\soalno{5.4.4}{perpotongan dua garis}
+\begin{soalbox}{}
+Tentukan perpotongan garis $x+y=8$ dan $2x+y=12$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Eliminasi $y$: kurangkan $(2x+y)-(x+y)=12-8\Rightarrow x=4$.
+\langkah{2} Substitusi ke $x+y=8$: $4+y=8\Rightarrow y=4$.
+\jadi titik potongnya $(4,4)$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah tanda saat mengurangkan.} $(2x+y)-(x+y)=x$; kurangi
+  seluruh ruas.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Perpotongan garis yang butuh perkalian dulu (koefisien tak sama), atau tiga garis
+melalui satu titik.
+\end{variasi}
+
+% ---------------- SOAL 5.4.5 ----------------
+\soalno{5.4.5}{maksimum dengan pojok perpotongan}
+\begin{soalbox}{}
+Maksimumkan $f=5x+4y$ pada $x+2y\le10$, $3x+y\le15$, $x,y\ge0$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Titik pojok: $(0,0)$; $(5,0)$ (dari $3x+y=15$ saat $y=0$); $(0,5)$
+(dari $x+2y=10$ saat $x=0$); dan perpotongan dua garis miring.
+\langkah{2} Perpotongan $x+2y=10$ dan $3x+y=15$: dari kedua, $y=15-3x$; sub:
+$x+2(15-3x)=10\Rightarrow x+30-6x=10\Rightarrow -5x=-20\Rightarrow x=4$, lalu
+$y=15-12=3$. Titik $(4,3)$.
+\langkah{3} Hitung $f=5x+4y$:
+\[
+f(0,0)=0,\ f(5,0)=25,\ f(0,5)=20,\ f(4,3)=20+12=32.
+\]
+\jadi maksimum $f=32$ di titik $(4,3)$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Melewatkan pojok perpotongan $(4,3)$.} Justru sering di sanalah
+  optimum. Selalu cari titik potong dua kendala miring.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Ganti objektif; tambah kendala ketiga sehingga pojok bertambah.
+\end{variasi}
+
+% ---------------- SOAL 5.4.6 ----------------
+\soalno{5.4.6}{daerah feasible \& pojok}
+\begin{soalbox}{}
+Gambarkan daerah feasible $2x+y\le8$, $x+3y\le9$, $x,y\ge0$ dan sebutkan titik
+pojoknya.
+\end{soalbox}
+
+\jawab
+\langkah{1} Titik potong sumbu: $2x+y=8\Rightarrow(4,0),(0,8)$;
+$x+3y=9\Rightarrow(9,0),(0,3)$.
+\langkah{2} Perpotongan dua garis: $y=8-2x$; sub ke $x+3(8-2x)=9\Rightarrow
+x+24-6x=9\Rightarrow -5x=-15\Rightarrow x=3$, $y=2$. Titik $(3,2)$.
+\langkah{3} Pilih pojok yang \emph{feasible} (memenuhi kedua kendala): $(0,0)$;
+$(4,0)$; $(3,2)$; $(0,3)$. (Titik $(0,8)$ dan $(9,0)$ melanggar kendala lain.)
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\fill[hijaumuda](0,0)--(4,0)--(3,2)--(0,3)--cycle;
+\draw[->](-0.5,0)--(9.5,0) node[right]{$x$};
+\draw[->](0,-0.5)--(0,8.8) node[above]{$y$};
+\draw[very thick,hijau](4,0)--(0,8);
+\draw[very thick,oranye](9,0)--(0,3);
+\node at (1.4,1){\small DP};
+\fill (3,2) circle(3pt) node[above right]{$(3,2)$};
+\end{tikzpicture}
+\end{center}
+\jadi titik pojoknya $(0,0),(4,0),(3,2),(0,3)$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Memasukkan titik potong sumbu yang tak feasible} ($(0,8)$
+  melanggar $x+3y\le9$). Uji tiap kandidat.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Tambahkan fungsi objektif dan cari optimum di pojok-pojok ini.
+\end{variasi}
+
+% ---------------- SOAL 5.4.7 ----------------
+\soalno{5.4.7}{model \& maksimasi laba penjahit}
+\begin{soalbox}{}
+Seorang penjahit membuat baju ($x$) dan celana ($y$); baju butuh $2$ m kain,
+celana $3$ m, tersedia $24$ m. Laba baju Rp$40$rb, celana Rp$50$rb, dan maksimal
+$10$ baju. Modelkan dan maksimalkan laba.
+\end{soalbox}
+
+\jawab
+\langkah{1} Kendala: $2x+3y\le24$ (kain), $x\le10$ (batas baju), $x,y\ge0$.
+Objektif (ribuan): $f=40x+50y$.
+\langkah{2} Titik pojok daerah:
+\begin{itemize}[leftmargin=*,topsep=1pt]
+  \item $(0,0)$;\quad $(10,0)$ ($x=10,y=0$; $2\cdot10=20\le24$ \checkmark);
+  \item $(10,\tfrac43)$ (dari $x=10$ dan $2x+3y=24\Rightarrow 3y=4$);
+  \item $(0,8)$ (dari $x=0$, $3y=24$).
+\end{itemize}
+\langkah{3} Hitung $f=40x+50y$:
+\[
+f(0,0)=0,\ f(10,0)=400,\ f(0,8)=400,\ f\!\left(10,\tfrac43\right)=400+\tfrac{200}{3}\approx466{,}7.
+\]
+\jadi laba maksimum $\approx$ Rp$466.667$ di $(10,\tfrac43)$. Karena celana harus
+bulat, dalam praktik ambil $x=10,\ y=1$ (laba Rp$450$rb) sebagai solusi bilangan
+bulat terdekat yang feasible.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa kendala $x\le10$.} Tanpa itu, pojok berpindah dan jawaban
+  berubah. Baca semua batasan.
+  \item \textbf{Menganggap solusi LP selalu bulat.} Optimum matematis bisa
+  pecahan; keputusan produksi lalu dibulatkan.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Tambah kendala jam kerja; ubah laba per unit sehingga optimum berpindah pojok.
+\end{variasi}
+
+% ---------------- SOAL 5.4.8 ----------------
+\soalno{5.4.8}{mengapa optimum di pojok}
+\begin{soalbox}{}
+Mengapa optimum fungsi linear tidak mungkin berada di bagian dalam daerah
+feasible? Jelaskan singkat.
+\end{soalbox}
+
+\jawab
+\langkah{1} Perhatikan ``garis selidik'' $ax+by=k$: himpunan titik dengan nilai
+objektif sama. Mengubah $k$ menggeser garis ini \emph{sejajar}.
+\langkah{2} Dari titik mana pun di \emph{dalam} daerah, kita masih bisa bergerak
+searah yang memperbesar (atau memperkecil) $f$ tanpa keluar daerah --- jadi titik
+dalam \emph{tidak pernah} ekstrem.
+\langkah{3} Gerakan itu baru berhenti saat garis selidik menyentuh daerah
+terakhir kali, yaitu tepat di sebuah \emph{titik pojok} (atau sepanjang sisi).
+\jadi optimum selalu tercapai di titik pojok (teorema titik pojok).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mengira ada ``puncak'' di tengah.} Fungsi linear tak punya bukit
+  atau lembah di interior --- ia datar-miring, jadi ekstrem hanya di tepi.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Kasus objektif \emph{sejajar} salah satu sisi $\Rightarrow$ optimum di seluruh
+sisi (tak tunggal), tetapi tetap mencakup titik pojok.
+\end{variasi}
+
+% ---------------- SOAL 5.4.9 ----------------
+\soalno{5.4.9}{maks \& min pada segitiga}
+\begin{soalbox}{}
+Pada $f=2x+3y$ di daerah segitiga $(0,0),(4,0),(0,3)$, tentukan maksimum dan
+minimumnya.
+\end{soalbox}
+
+\jawab
+\langkah{1} Evaluasi $f$ di ketiga pojok:
+\[
+f(0,0)=0,\quad f(4,0)=8,\quad f(0,3)=9.
+\]
+\langkah{2} Bandingkan.
+\jadi \textbf{maksimum} $f=9$ di $(0,3)$; \textbf{minimum} $f=0$ di $(0,0)$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Melupakan bahwa min \& maks keduanya di pojok.} Cukup bandingkan
+  nilai di semua pojok; yang terbesar maks, terkecil min.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Objektif $f=x-y$ bisa memberi min negatif; daerah dengan pojok perpotongan.
+\end{variasi}
+
+% ---------------- SOAL 5.4.10 ----------------
+\soalno{5.4.10}{model minimasi biaya pupuk}
+\begin{soalbox}{}
+Suatu kebun butuh pupuk minimal $12$ kg N dan $8$ kg P. Pupuk A (per karung)
+memberi $2$ N, $1$ P seharga Rp$50$rb; pupuk B memberi $1$ N, $2$ P seharga
+Rp$40$rb. Minimalkan biaya (rumuskan kendala dan objektifnya, lalu selesaikan).
+\end{soalbox}
+
+\jawab
+\langkah{1} Misalkan $x=$ karung A, $y=$ karung B. Kendala nutrisi (minimal
+$\Rightarrow$ ``$\ge$''):
+\[
+2x+y\ge12\ (\text{N}),\qquad x+2y\ge8\ (\text{P}),\qquad x,y\ge0.
+\]
+Objektif (minimasi, ribuan): $f=50x+40y$.
+\langkah{2} Titik pojok feasible: $(0,12)$ (dari $2x+y=12$, $x=0$); $(8,0)$
+(dari $x+2y=8$, $y=0$)? cek N: $2\cdot8=16\ge12$ \checkmark; dan perpotongan
+$2x+y=12$ dengan $x+2y=8$.
+\langkah{3} Perpotongan: dari $y=12-2x$; sub $x+2(12-2x)=8\Rightarrow
+x+24-4x=8\Rightarrow -3x=-16\Rightarrow x=\tfrac{16}{3}$, $y=12-\tfrac{32}{3}
+=\tfrac{4}{3}$.
+\langkah{4} Hitung $f$:
+\[
+f(0,12)=480,\quad f(8,0)=400,\quad f\!\left(\tfrac{16}{3},\tfrac43\right)
+=50\cdot\tfrac{16}{3}+40\cdot\tfrac43=\tfrac{800+160}{3}=\tfrac{960}{3}=320.
+\]
+\jadi biaya minimum Rp$320.000$ di $\left(\tfrac{16}{3},\tfrac43\right)$
+(sekitar $5{,}3$ karung A dan $1{,}3$ karung B; dibulatkan sesuai kebijakan
+pembelian).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Memakai ``$\le$'' untuk kebutuhan minimal.} ``Minimal $12$ kg''
+  berarti $\ge12$, bukan $\le$.
+  \item \textbf{Berhenti di titik sumbu.} Sering minimum ada di titik potong dua
+  kendala, bukan di sumbu.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Tambah nutrisi ketiga (K) sebagai kendala; ubah harga sehingga optimum berpindah.
+\end{variasi}
+
+% ============================================================
+\section*{Jawaban Studi Kasus Pengayaan (Program Linear)}
+\addcontentsline{toc}{section}{Jawaban Studi Kasus Pengayaan}
+
+\begin{studikasus}{Pabrik Mebel}
+Meja ($x$): $4$ jam tukang, $2$ kg kayu; kursi ($y$): $2$ jam, $3$ kg. Tersedia
+$40$ jam dan $42$ kg kayu. Laba meja Rp$80$rb, kursi Rp$60$rb.
+\end{studikasus}
+\textbf{Jawaban.} Kendala $2x+y\le20$ (dari $4x+2y\le40$), $2x+3y\le42$,
+$x,y\ge0$. Objektif $f=80x+60y$ (ribuan). Pojok: $(0,0),(10,0),(0,14)$, dan
+perpotongan $2x+y=20$ \& $2x+3y=42$ $\Rightarrow$ kurangkan: $2y=22\Rightarrow
+y=11$, $x=4{,}5$. Uji: $f(10,0)=800$, $f(0,14)=840$, $f(4{,}5;11)=360+660=1020$.
+\jadi laba maksimum \textbf{Rp$1.020.000$} di $(4{,}5;\ 11)$ (dibulatkan sesuai
+kebijakan produksi).
+
+\begin{studikasus}{Pengiriman Barang}
+Truk kecil ($x$): $2$ ton, Rp$300$rb/rit; truk besar ($y$): $5$ ton,
+Rp$600$rb/rit. Kirim minimal $30$ ton; total rit maksimal $10$. Minimumkan ongkos.
+\end{studikasus}
+\textbf{Jawaban.} Kendala $2x+5y\ge30$, $x+y\le10$, $x,y\ge0$. Objektif
+$f=300x+600y$ (ribuan). Pojok feasible meliputi $(0,6)$ (dari $5y=30$),
+$(0,10)$, dan perpotongan $2x+5y=30$ \& $x+y=10$ $\Rightarrow x=\tfrac{20}{3},
+y=\tfrac{10}{3}$. Uji: $f(0,6)=3600$; $f(0,10)=6000$;
+$f(\tfrac{20}{3},\tfrac{10}{3})=2000+2000=4000$.
+\jadi ongkos minimum \textbf{Rp$3.600.000$} di $(0,6)$ --- gunakan $6$ truk besar.
+
+% ============================================================
+\begin{tips}
+\textbf{Ringkasan strategi Bab 5.}
+\begin{enumerate}[leftmargin=*,topsep=2pt]
+  \item \emph{SPLTV:} eliminasi bertingkat ($3\to2\to1$ variabel); jawaban boleh
+  pecahan; selalu verifikasi dengan substitusi.
+  \item \emph{Banyak solusi:} berpotongan (tunggal), berimpit (tak hingga),
+  sejajar (nihil).
+  \item \emph{SPtLDV:} gambar garis, \textbf{uji titik} untuk arah arsiran,
+  ambil irisan. Jangan lupa $x,y\ge0$ pada konteks nyata.
+  \item \emph{Program linear:} optimum di \textbf{titik pojok}. Cari semua pojok
+  (termasuk perpotongan kendala miring), hitung $f$, pilih terbaik.
+\end{enumerate}
+\end{tips}
+
+\end{document}

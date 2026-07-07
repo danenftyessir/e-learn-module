@@ -1,0 +1,987 @@
+% ============================================================
+%  PEMBAHASAN SUPER DETAIL — LATIHAN SOAL & STUDI KASUS
+%  BAB 3: VEKTOR
+%  Catatan: Soal Akhir Bab TIDAK dibahas di sini (sesuai permintaan).
+% ============================================================
+\input{MAE-2026-2027-Latihan-preamble}
+\renewcommand{\babjudul}{Pembahasan Latihan — Bab 3}
+
+\begin{document}
+\setcounter{chapter}{3}
+\buathalamanjudul{Vektor}{3}
+
+% ============================================================
+\chapter*{Pembahasan Bab 3: Vektor}
+\addcontentsline{toc}{chapter}{Pembahasan Bab 3: Vektor}
+\markboth{PEMBAHASAN BAB 3}{}
+% ============================================================
+
+\begin{tips}
+\textbf{Cara membaca buku ini.} Tiap soal: \textbf{(1)} soal ditulis ulang,
+\textbf{(2)} konsep kunci, \textbf{(3)} langkah demi langkah, \textbf{(4)}
+jebakan, \textbf{(5)} variasi. \emph{Aturan emas Bab 3:} gambar dulu vektornya
+di kepala (atau di kertas) --- vektor selalu punya \emph{besar} DAN \emph{arah}.
+\end{tips}
+
+% ============================================================
+\section*{Studi Kasus: Navigasi Drone Pengantar Barang}
+\addcontentsline{toc}{section}{Studi Kasus: Navigasi Drone}
+% ============================================================
+
+\begin{studikasus}{Navigasi Drone Pengantar Barang}
+Sebuah drone berangkat dari gudang $O(0,0)$, terbang ke pelanggan $A(6,0)$ km
+(timur), lalu ke pelanggan kedua $B(6,4)$ km (utara). Angin memberi ``dorongan''
+tetap $\vec w=(1,1)$ km pada setiap segmen.
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+  \draw[->,gray] (-0.5,0)--(8,0) node[right]{$x$};
+  \draw[->,gray] (0,-0.5)--(0,5.5) node[above]{$y$};
+  \draw[->,very thick,biru] (0,0)--(6,0) node[midway,below]{$\vec{OA}$};
+  \draw[->,very thick,hijau] (6,0)--(6,4) node[midway,right]{$\vec{AB}$};
+  \draw[->,very thick,oranye,dashed] (0,0)--(6,4) node[midway,above left]{$\vec{OB}$};
+  \fill (0,0) circle (2pt) node[below left]{$O$};
+  \fill (6,0) circle (2pt) node[below right]{$A$};
+  \fill (6,4) circle (2pt) node[above right]{$B$};
+\end{tikzpicture}
+\end{center}
+\textbf{Pertanyaan.} (a) Hubungan $\vec{OA}+\vec{AB}$ dengan $\vec{OB}$?
+(b) Jarak langsung gudang ke $B$? (c) Bagaimana memodelkan pengaruh angin?
+\end{studikasus}
+
+\subsection*{Jawaban lengkap studi kasus}
+
+\begin{ingat}{Penjumlahan vektor = ujung-ke-pangkal}
+Menyambung perjalanan $O\to A\to B$ setara satu lompatan langsung $O\to B$.
+Secara aljabar, komponen dijumlah masing-masing: $(x_1,y_1)+(x_2,y_2)=(x_1+x_2,
+y_1+y_2)$.
+\end{ingat}
+
+\textbf{(a) Hubungan penjumlahan.}
+$\vec{OA}=(6,0)$ dan $\vec{AB}=(0,4)$. Maka
+\[
+\vec{OA}+\vec{AB}=(6+0,\ 0+4)=(6,4)=\vec{OB}.
+\]
+Jadi \textbf{$\vec{OA}+\vec{AB}=\vec{OB}$} --- inilah aturan segitiga: berjalan
+lewat $A$ berakhir di titik yang sama dengan lompat langsung ke $B$.
+
+\textbf{(b) Jarak langsung $O$ ke $B$.} Jarak = panjang vektor $\vec{OB}$:
+\[
+|\vec{OB}|=\sqrt{6^2+4^2}=\sqrt{36+16}=\sqrt{52}=2\sqrt{13}\approx7{,}2\ \text{km}.
+\]
+(Perhatikan: jarak tempuh sebenarnya $6+4=10$ km, tetapi jarak \emph{lurus} hanya
+$7{,}2$ km --- Pythagoras tersembunyi di sini.)
+
+\textbf{(c) Memodelkan angin.} Angin menambahkan vektor tetap $\vec w=(1,1)$ pada
+tiap perpindahan. Posisi akhir sesungguhnya menjadi
+\[
+\vec{OB}_{\text{nyata}}=\vec{OA}+\vec w+\vec{AB}+\vec w=(6,4)+2(1,1)=(8,6).
+\]
+Artinya drone perlu \emph{mengoreksi arah} (mengurangi $\vec w$ tiap segmen) agar
+tetap sampai di $B(6,4)$. Inilah alasan perahu/drone yang mengarah lurus bisa
+melenceng: ada vektor lain yang ikut menjumlah.
+
+% ############################################################
+\section*{Subbab 3.1 — Konsep Dasar dan Operasi Vektor}
+\addcontentsline{toc}{section}{Subbab 3.1 — Konsep Dasar \& Operasi}
+% ############################################################
+
+\begin{ingat}{Rumus dasar vektor di $\mathbb{R}^2$}
+Untuk $\vec a=(a_1,a_2)$, $\vec b=(b_1,b_2)$, skalar $k$:
+\[
+\vec a\pm\vec b=(a_1\pm b_1,\ a_2\pm b_2),\quad k\vec a=(ka_1,ka_2),
+\]
+\[
+|\vec a|=\sqrt{a_1^2+a_2^2},\quad \hat a=\frac{\vec a}{|\vec a|},\quad
+\vec a\cdot\vec b=a_1b_1+a_2b_2=|\vec a||\vec b|\cos\theta.
+\]
+\textbf{Panjang} = Pythagoras (komponen tegak lurus). \textbf{Vektor satuan} =
+arah tanpa panjang. \textbf{Dot product} = ukuran ``kesearahan''.
+\end{ingat}
+
+% ---------------- SOAL 3.1.1 ----------------
+\soalno{3.1.1}{operasi dasar \& panjang}
+\begin{soalbox}{}
+Diketahui $\vec a=(2,-1)$ dan $\vec b=(-3,4)$. Tentukan $2\vec a-\vec b$ dan
+$|\vec a|$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Hitung $2\vec a$ (kalikan tiap komponen dengan $2$):
+$2\vec a=(4,-2)$.
+\langkah{2} Kurangkan $\vec b$ komponen demi komponen:
+\[
+2\vec a-\vec b=(4-(-3),\ -2-4)=(7,-6).
+\]
+\langkah{3} Panjang $\vec a$: $|\vec a|=\sqrt{2^2+(-1)^2}=\sqrt{4+1}=\sqrt5$.
+\jadi $2\vec a-\vec b=(7,-6)$ dan $|\vec a|=\sqrt5$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah tanda saat mengurangi negatif.} $4-(-3)=7$, bukan $1$.
+  \item \textbf{Mengkuadratkan lalu lupa akar}, atau menulis $|\vec a|=2+(-1)=1$.
+  Panjang selalu $\sqrt{\text{jumlah kuadrat}}$, tak pernah negatif.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$3\vec a+2\vec b$, atau $|\vec a-\vec b|$ (hitung selisih dulu, baru panjang).
+Bisa juga tiga vektor: $\vec a-\vec b+\vec c$.
+\end{variasi}
+
+% ---------------- SOAL 3.1.2 ----------------
+\soalno{3.1.2}{dot product = 0 (tegak lurus)}
+\begin{soalbox}{}
+Tentukan hasil kali titik $\vec a\cdot\vec b$ jika $\vec a=(5,0)$ dan
+$\vec b=(0,5)$. Apa artinya?
+\end{soalbox}
+
+\jawab
+\langkah{1} $\vec a\cdot\vec b=a_1b_1+a_2b_2=5\cdot0+0\cdot5=0$.
+\langkah{2} Tafsirkan: dot product $=0$ berarti $\cos\theta=0$, yakni
+$\theta=90^\circ$.
+\jadi $\vec a\cdot\vec b=0$; artinya kedua vektor \textbf{saling tegak lurus}
+($\vec a$ ke timur, $\vec b$ ke utara).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mengira hasil $0$ berarti ada vektor nol.} Bukan --- keduanya
+  panjang $5$, hanya arahnya tegak lurus.
+  \item \textbf{Menjumlah, bukan mengali silang.} Dot product = jumlah
+  \emph{hasil kali} komponen sejenis ($x{\cdot}x + y{\cdot}y$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Uji tegak lurus untuk vektor lain, mis.\ $(3,4)$ dan $(4,-3)$
+($=0$). Uji tegak lurus adalah alat utama Bab 3.
+\end{variasi}
+
+% ---------------- SOAL 3.1.3 ----------------
+\soalno{3.1.3}{vektor satuan}
+\begin{soalbox}{}
+Tentukan vektor satuan searah $\vec u=(6,8)$.
+\end{soalbox}
+
+\begin{ingat}{Vektor satuan}
+$\hat u=\dfrac{\vec u}{|\vec u|}$: bagi tiap komponen dengan panjangnya.
+Hasilnya berpanjang $1$ dengan arah sama. Berguna untuk ``menyimpan arah''.
+\end{ingat}
+
+\jawab
+\langkah{1} Panjang: $|\vec u|=\sqrt{6^2+8^2}=\sqrt{36+64}=\sqrt{100}=10$.
+\langkah{2} Bagi tiap komponen: $\hat u=\dfrac{1}{10}(6,8)=(0{,}6,\ 0{,}8)$.
+\langkah{3} \textbf{Cek}: $\sqrt{0{,}6^2+0{,}8^2}=\sqrt{0{,}36+0{,}64}=\sqrt1=1$
+\checkmark.
+\jadi $\hat u=(0{,}6,\ 0{,}8)$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Membagi dengan komponen, bukan panjang.} Bagi dengan
+  $|\vec u|=10$, bukan dengan $6$ atau $8$.
+  \item \textbf{Lupa mengecek panjang $=1$}, langkah verifikasi murah dan ampuh.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Cari vektor berpanjang $5$ searah $\vec u$: kalikan $\hat u$ dengan $5\Rightarrow
+(3,4)$. Atau vektor satuan yang \emph{berlawanan} arah: $-\hat u$.
+\end{variasi}
+
+% ---------------- SOAL 3.1.4 ----------------
+\soalno{3.1.4}{mencari komponen agar tegak lurus}
+\begin{soalbox}{}
+Tentukan $k$ agar $\vec a=(2,k)$ tegak lurus $\vec b=(3,-6)$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Syarat tegak lurus: $\vec a\cdot\vec b=0$.
+\langkah{2} Hitung dot product dan samakan nol:
+\[
+\vec a\cdot\vec b=2\cdot3+k\cdot(-6)=6-6k=0.
+\]
+\langkah{3} Selesaikan: $6=6k\Rightarrow k=1$.
+\jadi $k=1$ (maka $\vec a=(2,1)$).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Memakai syarat sejajar} (rasio komponen sama) padahal diminta
+  tegak lurus (dot product nol). Dua syarat yang berlawanan!
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+``Tentukan $k$ agar $\vec a\parallel\vec b$'' $\Rightarrow$ pakai rasio
+$\frac{2}{3}=\frac{k}{-6}\Rightarrow k=-4$. Bandingkan kedua syarat.
+\end{variasi}
+
+% ---------------- SOAL 3.1.5 ----------------
+\soalno{3.1.5}{sudut antar vektor}
+\begin{soalbox}{}
+Hitung sudut antara $\vec p=(1,0)$ dan $\vec q=(1,1)$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Dot product: $\vec p\cdot\vec q=1\cdot1+0\cdot1=1$.
+\langkah{2} Panjang: $|\vec p|=1$, $|\vec q|=\sqrt{1^2+1^2}=\sqrt2$.
+\langkah{3} $\cos\theta=\dfrac{\vec p\cdot\vec q}{|\vec p||\vec q|}
+=\dfrac{1}{1\cdot\sqrt2}=\dfrac{1}{\sqrt2}$.
+\langkah{4} $\theta=\arccos\dfrac{1}{\sqrt2}=45^\circ$.
+\jadi sudutnya $45^\circ$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa membagi panjang.} $\cos\theta$ butuh \emph{dibagi}
+  $|\vec p||\vec q|$, bukan hanya dot product.
+  \item \textbf{Salah kenal nilai istimewa.} $\cos\theta=\frac{1}{\sqrt2}
+  \Rightarrow45^\circ$ (bukan $30^\circ$ atau $60^\circ$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$(1,\sqrt3)$ dan $(1,0)$ memberi $60^\circ$; $(1,1)$ dan $(-1,1)$ memberi
+$90^\circ$. Hafalkan segitiga nilai istimewa (nyambung ke Bab 4).
+\end{variasi}
+
+% ---------------- SOAL 3.1.6 ----------------
+\soalno{3.1.6}{panjang vektor resultan}
+\begin{soalbox}{}
+Diketahui $\vec a=(1,2)$ dan $\vec b=(3,-1)$. Hitung $|\vec a+\vec b|$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Jumlahkan dulu: $\vec a+\vec b=(1+3,\ 2+(-1))=(4,1)$.
+\langkah{2} Baru hitung panjangnya: $|\vec a+\vec b|=\sqrt{4^2+1^2}=\sqrt{17}$.
+\jadi $|\vec a+\vec b|=\sqrt{17}$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{$|\vec a+\vec b|=|\vec a|+|\vec b|$?} \emph{Salah!}
+  $|\vec a|=\sqrt5\approx2{,}24$, $|\vec b|=\sqrt{10}\approx3{,}16$; jumlahnya
+  $\approx5{,}4$, padahal $\sqrt{17}\approx4{,}12$. Panjang jumlah $\ne$ jumlah
+  panjang (kecuali searah). \emph{Jumlahkan vektornya dulu, baru ukur.}
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$|\vec a-\vec b|=\sqrt{(1-3)^2+(2+1)^2}=\sqrt{13}$; atau buktikan
+ketaksamaan segitiga $|\vec a+\vec b|\le|\vec a|+|\vec b|$.
+\end{variasi}
+
+% ---------------- SOAL 3.1.7 ----------------
+\soalno{3.1.7}{vektor dari dua titik}
+\begin{soalbox}{}
+Tentukan vektor $\vec{AB}$ jika $A(2,3)$ dan $B(5,-1)$.
+\end{soalbox}
+
+\begin{ingat}{``Ujung dikurangi pangkal''}
+$\vec{AB}=\vec b-\vec a=(x_B-x_A,\ y_B-y_A)$. Arahnya dari $A$ (pangkal) menuju
+$B$ (ujung). Jangan terbalik.
+\end{ingat}
+
+\jawab
+\langkah{1} Kurangkan koordinat ujung $B$ dengan pangkal $A$:
+\[
+\vec{AB}=(5-2,\ -1-3)=(3,-4).
+\]
+\jadi $\vec{AB}=(3,-4)$ (panjangnya $\sqrt{9+16}=5$).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Terbalik ($A-B$).} $\vec{BA}=-\vec{AB}=(-3,4)$ menunjuk arah
+  sebaliknya. Perhatikan huruf: $\vec{AB}$ = dari $A$ ke $B$.
+  \item \textbf{Salah tanda pada $-1-3=-4$} (bukan $2$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Cari titik $B$ jika $A$ dan $\vec{AB}$ diketahui: $B=A+\vec{AB}$. Atau tunjukkan
+$\vec{AB}=-\vec{BA}$.
+\end{variasi}
+
+% ---------------- SOAL 3.1.8 ----------------
+\soalno{3.1.8}{dot product lewat sudut}
+\begin{soalbox}{}
+Jika $|\vec a|=5$, $|\vec b|=3$, dan sudut antaranya $60^\circ$, hitung
+$\vec a\cdot\vec b$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Gunakan bentuk geometri $\vec a\cdot\vec b=|\vec a||\vec b|\cos\theta$.
+\langkah{2} Masukkan nilai, dengan $\cos60^\circ=\tfrac12$:
+\[
+\vec a\cdot\vec b=5\cdot3\cdot\tfrac12=\tfrac{15}{2}=7{,}5.
+\]
+\jadi $\vec a\cdot\vec b=7{,}5$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah nilai $\cos60^\circ$.} $\cos60^\circ=\frac12$ (jangan
+  tertukar dengan $\cos30^\circ=\frac{\sqrt3}{2}$).
+  \item \textbf{Memakai $\sin$.} Dot product pakai $\cos$; yang pakai $\sin$
+  adalah luas/cross product.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Balik: diberi $\vec a\cdot\vec b$ dan panjang, cari sudut. Atau sudut $90^\circ$
+(hasil $0$), $0^\circ$ (hasil $|\vec a||\vec b|$ maksimum).
+\end{variasi}
+
+% ---------------- SOAL 3.1.9 ----------------
+\soalno{3.1.9}{jarak dua titik}
+\begin{soalbox}{}
+Titik $P(1,1)$ dan $Q(4,5)$. Tentukan jarak $PQ$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Jarak $PQ=|\vec{PQ}|$. Cari $\vec{PQ}=(4-1,\ 5-1)=(3,4)$.
+\langkah{2} Panjang: $|\vec{PQ}|=\sqrt{3^2+4^2}=\sqrt{25}=5$.
+\jadi $PQ=5$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Rumus jarak = Pythagoras.} $\sqrt{(x_Q-x_P)^2+(y_Q-y_P)^2}$;
+  selisihnya dikuadratkan (tanda tak berpengaruh).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Jarak titik ke titik asal $O$; atau jarak di $\mathbb R^3$ dengan tiga komponen
+$\sqrt{\Delta x^2+\Delta y^2+\Delta z^2}$.
+\end{variasi}
+
+% ---------------- SOAL 3.1.10 ----------------
+\soalno{3.1.10}{proyeksi skalar sederhana}
+\begin{soalbox}{}
+Tentukan proyeksi skalar $\vec a=(4,3)$ pada $\vec b=(1,0)$.
+\end{soalbox}
+
+\begin{ingat}{Proyeksi skalar}
+Proyeksi skalar $\vec a$ pada $\vec b$ adalah ``panjang bayangan'' $\vec a$ di
+sepanjang arah $\vec b$:
+\[
+a_\parallel=\frac{\vec a\cdot\vec b}{|\vec b|}.
+\]
+\end{ingat}
+
+\jawab
+\langkah{1} $\vec a\cdot\vec b=4\cdot1+3\cdot0=4$.
+\langkah{2} $|\vec b|=\sqrt{1^2+0^2}=1$.
+\langkah{3} $a_\parallel=\dfrac{4}{1}=4$.
+\jadi proyeksi skalarnya $4$ (yakni komponen-$x$ dari $\vec a$, karena $\vec b$
+searah sumbu $x$).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Membagi $|\vec b|^2$ untuk proyeksi \emph{skalar}.} Proyeksi
+  skalar bagi $|\vec b|$; proyeksi \emph{vektor} bagi $|\vec b|^2$ lalu kali
+  $\vec b$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Proyeksi pada $\vec b=(0,1)$ memberi komponen-$y$; proyeksi pada $\vec b=(1,1)$
+(arah miring) butuh $|\vec b|=\sqrt2$.
+\end{variasi}
+
+% ############################################################
+\section*{Subbab 3.2 — Hasil Kali Titik dan Sudut}
+\addcontentsline{toc}{section}{Subbab 3.2 — Hasil Kali Titik \& Sudut}
+% ############################################################
+
+\begin{ingat}{Empat fakta dot product}
+$\vec a\cdot\vec b=\vec b\cdot\vec a$;\quad $\vec a\cdot\vec a=|\vec a|^2$;\quad
+$\vec a\perp\vec b\iff\vec a\cdot\vec b=0$;\quad
+$\cos\theta=\dfrac{\vec a\cdot\vec b}{|\vec a||\vec b|}$.
+Tanda dot product: $+$ (lancip/searah), $0$ (tegak lurus), $-$ (tumpul/berlawanan).
+\end{ingat}
+
+% ---------------- SOAL 3.2.1 ----------------
+\soalno{3.2.1}{menghitung dot product}
+\begin{soalbox}{}
+Hitung $\vec a\cdot\vec b$ untuk $\vec a=(2,3)$ dan $\vec b=(4,-1)$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Kalikan komponen sejenis lalu jumlahkan:
+\[
+\vec a\cdot\vec b=2\cdot4+3\cdot(-1)=8-3=5.
+\]
+\jadi $\vec a\cdot\vec b=5$ (positif $\Rightarrow$ sudutnya lancip).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Hasil dot product itu \emph{skalar} (angka), bukan vektor.}
+  Jangan menulis $(8,-3)$.
+  \item \textbf{Salah tanda} $3\cdot(-1)=-3$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Dot product negatif (sudut tumpul), mis.\ $(2,3)\cdot(-4,1)=-5$; atau nol
+(tegak lurus).
+\end{variasi}
+
+% ---------------- SOAL 3.2.2 ----------------
+\soalno{3.2.2}{sudut istimewa}
+\begin{soalbox}{}
+Tentukan sudut antara $\vec a=(1,\sqrt3)$ dan $\vec b=(1,0)$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $\vec a\cdot\vec b=1\cdot1+\sqrt3\cdot0=1$.
+\langkah{2} $|\vec a|=\sqrt{1+3}=2$, $|\vec b|=1$.
+\langkah{3} $\cos\theta=\dfrac{1}{2\cdot1}=\dfrac12\Rightarrow\theta=60^\circ$.
+\jadi sudutnya $60^\circ$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa $(\sqrt3)^2=3$} saat menghitung panjang.
+  \item \textbf{$\cos^{-1}\tfrac12=30^\circ$?} Bukan; $\cos60^\circ=\frac12$.
+  ($\cos30^\circ=\frac{\sqrt3}{2}$.)
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$(\sqrt3,1)$ dan $(1,0)$ memberi $30^\circ$; $(-1,\sqrt3)$ dan $(1,0)$ memberi
+$120^\circ$ (dot product negatif).
+\end{variasi}
+
+% ---------------- SOAL 3.2.3 ----------------
+\soalno{3.2.3}{membuktikan tegak lurus}
+\begin{soalbox}{}
+Buktikan $\vec a=(2,4)$ dan $\vec b=(6,-3)$ saling tegak lurus.
+\end{soalbox}
+
+\jawab
+\langkah{1} Uji dengan dot product:
+\[
+\vec a\cdot\vec b=2\cdot6+4\cdot(-3)=12-12=0.
+\]
+\langkah{2} Karena $\vec a\cdot\vec b=0$ (dan keduanya bukan vektor nol), maka
+$\theta=90^\circ$.
+\jadi $\vec a\perp\vec b$ (terbukti).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Membuktikan lewat gambar saja.} Bukti kuat = tunjukkan dot
+  product $=0$, bukan sekadar ``kelihatan tegak lurus''.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Trik menghasilkan vektor tegak lurus $(a_1,a_2)$: tukar dan balik satu tanda
+$\Rightarrow(a_2,-a_1)$ atau $(-a_2,a_1)$.
+\end{variasi}
+
+% ---------------- SOAL 3.2.4 ----------------
+\soalno{3.2.4}{mencari cos sudut}
+\begin{soalbox}{}
+Diketahui $\vec a\cdot\vec b=10$, $|\vec a|=5$, $|\vec b|=4$. Tentukan
+$\cos\theta$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Langsung pakai $\cos\theta=\dfrac{\vec a\cdot\vec b}{|\vec a||\vec b|}
+=\dfrac{10}{5\cdot4}=\dfrac{10}{20}=\dfrac12$.
+\jadi $\cos\theta=\dfrac12$ (berarti $\theta=60^\circ$).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa mengalikan kedua panjang} di penyebut ($5\cdot4=20$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Jika $\cos\theta$ keluar $>1$ atau $<-1$, pasti ada salah hitung --- nilai
+$\cos$ selalu di $[-1,1]$. Pemeriksaan cepat.
+\end{variasi}
+
+% ---------------- SOAL 3.2.5 ----------------
+\soalno{3.2.5}{komponen agar sudut $90^\circ$}
+\begin{soalbox}{}
+Cari $x$ agar sudut antara $(x,1)$ dan $(2,3)$ adalah $90^\circ$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Sudut $90^\circ\Rightarrow$ dot product $=0$:
+\[
+(x,1)\cdot(2,3)=2x+3=0.
+\]
+\langkah{2} Selesaikan: $2x=-3\Rightarrow x=-\dfrac32$.
+\jadi $x=-\dfrac32$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menerjemahkan $90^\circ$ jadi $\cos\theta=1$.}
+  $\cos90^\circ=0$, jadi dot product $=0$. ($\cos\theta=1$ untuk $0^\circ$.)
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+``Agar sudutnya $0^\circ$ (sejajar)'' $\Rightarrow$ rasio komponen sama
+$\frac x2=\frac13\Rightarrow x=\frac23$.
+\end{variasi}
+
+% ---------------- SOAL 3.2.6 ----------------
+\soalno{3.2.6}{panjang dari $\vec a\cdot\vec a$}
+\begin{soalbox}{}
+Hitung $|\vec a|$ jika $\vec a\cdot\vec a=49$.
+\end{soalbox}
+
+\begin{ingat}{$\vec a\cdot\vec a=|\vec a|^2$}
+Mengalikan vektor dengan dirinya sendiri menghasilkan kuadrat panjangnya (sebab
+sudutnya $0^\circ$, $\cos0=1$). Jadi $|\vec a|=\sqrt{\vec a\cdot\vec a}$.
+\end{ingat}
+
+\jawab
+\langkah{1} $|\vec a|^2=\vec a\cdot\vec a=49$.
+\langkah{2} $|\vec a|=\sqrt{49}=7$ (ambil akar positif; panjang tak negatif).
+\jadi $|\vec a|=7$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menjawab $\pm7$.} Panjang selalu $\ge0$, jadi $7$ saja.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Diperluas: $|\vec a+\vec b|^2=|\vec a|^2+2\vec a\cdot\vec b+|\vec b|^2$
+(``pemangkatan'' vektor, berguna di soal HOTS).
+\end{variasi}
+
+% ---------------- SOAL 3.2.7 ----------------
+\soalno{3.2.7}{proyeksi vektor}
+\begin{soalbox}{}
+Tentukan proyeksi vektor $\vec a=(3,4)$ pada $\vec b=(0,1)$.
+\end{soalbox}
+
+\begin{ingat}{Proyeksi vektor}
+$\vec a_\parallel=\left(\dfrac{\vec a\cdot\vec b}{|\vec b|^2}\right)\vec b$. Ini
+``bayangan'' $\vec a$ yang jatuh pada garis arah $\vec b$ --- hasilnya sebuah
+\emph{vektor}, bukan angka.
+\end{ingat}
+
+\jawab
+\langkah{1} $\vec a\cdot\vec b=3\cdot0+4\cdot1=4$; $|\vec b|^2=0^2+1^2=1$.
+\langkah{2} $\vec a_\parallel=\dfrac{4}{1}(0,1)=(0,4)$.
+\jadi proyeksi vektornya $(0,4)$ (yakni komponen tegak $\vec a$, karena $\vec b$
+searah sumbu $y$).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menjawab skalar $4$} padahal diminta proyeksi \emph{vektor}
+  $(0,4)$.
+  \item \textbf{Membagi $|\vec b|$ bukan $|\vec b|^2$} pada proyeksi vektor.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Proyeksi pada arah miring $(1,1)$: $\vec a_\parallel=\frac{7}{2}(1,1)$. Bandingkan
+proyeksi skalar (angka) vs vektor.
+\end{variasi}
+
+% ---------------- SOAL 3.2.8 ----------------
+\soalno{3.2.8}{sudut dari tiga titik}
+\begin{soalbox}{}
+Tiga titik $A(0,0)$, $B(2,0)$, $C(2,2)$: hitung sudut $\angle BAC$.
+\end{soalbox}
+
+\begin{ingat}{Sudut di titik $A$}
+Sudut $\angle BAC$ adalah sudut antara dua vektor yang \emph{berpangkal di $A$}:
+$\vec{AB}$ dan $\vec{AC}$. Bentuk vektornya dulu, baru pakai rumus $\cos\theta$.
+\end{ingat}
+
+\jawab
+\langkah{1} $\vec{AB}=B-A=(2,0)$; $\vec{AC}=C-A=(2,2)$.
+\langkah{2} $\vec{AB}\cdot\vec{AC}=2\cdot2+0\cdot2=4$; $|\vec{AB}|=2$,
+$|\vec{AC}|=\sqrt{8}=2\sqrt2$.
+\langkah{3} $\cos\theta=\dfrac{4}{2\cdot2\sqrt2}=\dfrac{4}{4\sqrt2}
+=\dfrac{1}{\sqrt2}\Rightarrow\theta=45^\circ$.
+\jadi $\angle BAC=45^\circ$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Memakai vektor yang salah pangkal.} Sudut \emph{di $A$} butuh
+  $\vec{AB}$ dan $\vec{AC}$, bukan $\vec{BA}$ dan $\vec{BC}$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Hitung ketiga sudut dan cek jumlah $=180^\circ$; atau buktikan segitiga
+siku-siku/sama kaki lewat vektor.
+\end{variasi}
+
+% ---------------- SOAL 3.2.9 ----------------
+\soalno{3.2.9}{uji kesejajaran}
+\begin{soalbox}{}
+Apakah $(1,2)$ dan $(2,4)$ sejajar? Jelaskan lewat dot product dan rasio
+komponen.
+\end{soalbox}
+
+\jawab
+\textbf{Cara rasio komponen.} $\dfrac{2}{1}=\dfrac{4}{2}=2$ --- rasio kedua
+komponen sama, jadi $(2,4)=2(1,2)$: satu adalah kelipatan skalar yang lain.
+\textbf{Sejajar.}
+
+\textbf{Lewat sudut (dot product).} $\vec a\cdot\vec b=1\cdot2+2\cdot4=10$;
+$|\vec a|=\sqrt5$, $|\vec b|=\sqrt{20}=2\sqrt5$. Maka
+$\cos\theta=\dfrac{10}{\sqrt5\cdot2\sqrt5}=\dfrac{10}{10}=1\Rightarrow\theta=0^\circ$
+(searah).
+\jadi kedua vektor \textbf{sejajar} (bahkan searah).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mengira dot product $=0$ berarti sejajar.} Sebaliknya! Dot
+  product $0$ = tegak lurus. Sejajar $\Rightarrow\cos\theta=\pm1$.
+  \item \textbf{Rasio komponen} adalah uji sejajar tercepat: $\frac{a_1}{b_1}
+  =\frac{a_2}{b_2}$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$(1,2)$ dan $(-2,-4)$ sejajar tapi \emph{berlawanan} ($\cos\theta=-1$,
+$\theta=180^\circ$). Uji rasio memberi kelipatan negatif.
+\end{variasi}
+
+% ---------------- SOAL 3.2.10 ----------------
+\soalno{3.2.10}{usaha sebagai dot product}
+\begin{soalbox}{}
+Gaya $\vec F=(6,8)$ N memindahkan benda sejauh $\vec s=(3,0)$ m. Hitung usaha
+$W=\vec F\cdot\vec s$.
+\end{soalbox}
+
+\begin{ingat}{Usaha = dot product}
+$W=\vec F\cdot\vec s$: hanya komponen gaya yang \emph{searah perpindahan} yang
+melakukan usaha. Komponen tegak lurus perpindahan tidak berkontribusi.
+\end{ingat}
+
+\jawab
+\langkah{1} $W=\vec F\cdot\vec s=6\cdot3+8\cdot0=18+0=18$.
+\langkah{2} Satuan: N$\cdot$m $=$ joule.
+\jadi usaha $W=18$ joule. (Komponen gaya vertikal $8$ N tidak melakukan usaha
+karena benda hanya bergerak mendatar.)
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mengalikan besar gaya dengan besar jarak} ($|\vec F||\vec s|
+  =10\cdot3=30$) tanpa memperhitungkan arah. Itu benar hanya jika gaya
+  \emph{searah} perpindahan.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\vec F=(8,6)$, $\vec s=(4,3)$ (searah!) $\Rightarrow W=50$ J $=|\vec F||\vec s|$.
+Atau gaya membentuk sudut: $W=|\vec F||\vec s|\cos\theta$.
+\end{variasi}
+
+% ############################################################
+\section*{Subbab 3.3 — Vektor Lanjutan (Posisi, Proyeksi, Garis)}
+\addcontentsline{toc}{section}{Subbab 3.3 — Vektor Lanjutan}
+% ############################################################
+
+\begin{ingat}{Alat-alat lanjutan}
+\textbf{Titik tengah:} $\vec m=\frac12(\vec a+\vec b)$.\quad
+\textbf{Pembagi rasio $m:n$:} $\dfrac{n\vec a+m\vec b}{m+n}$.\quad
+\textbf{Titik berat segitiga:} rata-rata tiga posisi.\quad
+\textbf{Garis vektor:} $\vec r=\vec a+t\,\vec u$ ($\vec u$ arah).
+\end{ingat}
+
+% ---------------- SOAL 3.3.1 ----------------
+\soalno{3.3.1}{titik tengah}
+\begin{soalbox}{}
+Diketahui $A(3,-1)$ dan $B(7,5)$. Tentukan vektor posisi titik tengah $AB$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Titik tengah = rata-rata posisi:
+$\vec m=\frac12(\vec a+\vec b)$.
+\langkah{2} $\vec a+\vec b=(3+7,\ -1+5)=(10,4)$; setengahnya $(5,2)$.
+\jadi titik tengahnya $M(5,2)$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mengurangi, bukan merata-rata.} Titik tengah = \emph{jumlah}
+  dibagi 2, bukan selisih.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Cari $B$ jika $M$ dan $A$ diketahui: $\vec b=2\vec m-\vec a$. Atau titik tengah
+di $\mathbb R^3$.
+\end{variasi}
+
+% ---------------- SOAL 3.3.2 ----------------
+\soalno{3.3.2}{pembagian ruas dengan rasio}
+\begin{soalbox}{}
+Titik $P$ membagi $AB$ dengan rasio $2:1$ (dari $A$), $A(0,0)$, $B(6,9)$.
+Tentukan posisi $P$.
+\end{soalbox}
+
+\begin{ingat}{Rumus pembagi ruas}
+Jika $P$ membagi $AB$ dengan $AP:PB=m:n$, maka
+$\vec p=\dfrac{n\vec a+m\vec b}{m+n}$. \textbf{Perhatikan:} bobot $m$ (dekat $B$)
+menempel pada $\vec b$, dan $n$ pada $\vec a$ --- ``silang''.
+\end{ingat}
+
+\jawab
+\langkah{1} $m:n=2:1$, jadi $\vec p=\dfrac{1\cdot\vec a+2\cdot\vec b}{2+1}
+=\dfrac{\vec a+2\vec b}{3}$.
+\langkah{2} $\vec a+2\vec b=(0,0)+2(6,9)=(12,18)$; bagi $3$: $(4,6)$.
+\jadi $P(4,6)$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah pasang bobot.} Rasio $2:1$ dari $A$ berarti $P$ lebih dekat
+  ke $B$; bobot besar ($2$) di $\vec b$. Uji akal: $(4,6)$ memang lebih dekat ke
+  $B(6,9)$ daripada $A(0,0)$ \checkmark.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Rasio $1:2$ (lebih dekat $A$) memberi $(2,3)$; pembagian luar (rasio negatif)
+untuk titik di perpanjangan garis.
+\end{variasi}
+
+% ---------------- SOAL 3.3.3 ----------------
+\soalno{3.3.3}{proyeksi skalar}
+\begin{soalbox}{}
+Tentukan proyeksi skalar $\vec a=(3,4)$ pada $\vec b=(1,0)$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $a_\parallel=\dfrac{\vec a\cdot\vec b}{|\vec b|}$.
+\langkah{2} $\vec a\cdot\vec b=3\cdot1+4\cdot0=3$; $|\vec b|=1$.
+\langkah{3} $a_\parallel=\dfrac31=3$.
+\jadi proyeksi skalarnya $3$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Tertukar dengan proyeksi vektor.} Skalar = angka ($3$); vektor
+  $=(3,0)$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Proyeksi skalar bisa \emph{negatif} bila sudut tumpul (bayangan mengarah
+berlawanan), mis.\ $\vec a=(-3,4)$ pada $(1,0)$ memberi $-3$.
+\end{variasi}
+
+% ---------------- SOAL 3.3.4 ----------------
+\soalno{3.3.4}{proyeksi vektor arah miring}
+\begin{soalbox}{}
+Tentukan proyeksi vektor $\vec a=(2,6)$ pada $\vec b=(1,1)$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $\vec a\cdot\vec b=2\cdot1+6\cdot1=8$; $|\vec b|^2=1^2+1^2=2$.
+\langkah{2} $\vec a_\parallel=\dfrac{8}{2}(1,1)=4(1,1)=(4,4)$.
+\jadi proyeksi vektornya $(4,4)$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa mengkuadratkan $|\vec b|$.} Rumus proyeksi vektor pakai
+  $|\vec b|^2$ di penyebut ($=2$, bukan $\sqrt2$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Cari komponen \emph{tegak lurus} (sisa): $\vec a_\perp=\vec a-\vec a_\parallel
+=(2,6)-(4,4)=(-2,2)$; cek $\vec a_\perp\cdot\vec b=0$ \checkmark.
+\end{variasi}
+
+% ---------------- SOAL 3.3.5 ----------------
+\soalno{3.3.5}{persamaan garis vektor}
+\begin{soalbox}{}
+Susun persamaan vektor garis melalui $(2,1)$ dengan arah $\vec u=(1,3)$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Bentuk baku: $\vec r=\vec a+t\vec u$ dengan $\vec a=(2,1)$,
+$\vec u=(1,3)$.
+\[
+\vec r=(2,1)+t(1,3),\qquad t\in\mathbb R.
+\]
+\langkah{2} Bentuk parametrik: $x=2+t,\ y=1+3t$.
+\jadi $\vec r=(2,1)+t(1,3)$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menukar titik dan arah.} $\vec a$ = titik yang dilalui;
+  $\vec u$ = arah (boleh dikali skalar apa pun, tetap garis yang sama).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Melalui dua titik: cari arah $\vec u=\vec{AB}$ dulu. Di $\mathbb R^3$ bentuk ini
+tetap berlaku (tak ada $y=mx+c$ di ruang).
+\end{variasi}
+
+% ---------------- SOAL 3.3.6 ----------------
+\soalno{3.3.6}{dari vektor ke $y=mx+c$}
+\begin{soalbox}{}
+Ubah $\vec r=(0,1)+t(2,2)$ menjadi bentuk $y=mx+c$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Tulis parametrik: $x=0+2t=2t$; $y=1+2t$.
+\langkah{2} Eliminasi $t$: dari $x=2t\Rightarrow t=\dfrac{x}{2}$.
+\langkah{3} Substitusi ke $y$: $y=1+2\cdot\dfrac{x}{2}=1+x$.
+\jadi $y=x+1$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa mengeliminasi $t$.} Bentuk $y=mx+c$ tidak boleh memuat $t$.
+  \item \textbf{Salah gradien.} Gradien $=\dfrac{u_y}{u_x}=\dfrac22=1$ (rasio
+  komponen arah).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Arah $(1,3)$ memberi gradien $3$; arah vertikal $(0,1)$ memberi garis $x=$
+konstan (tak bisa ditulis $y=mx+c$).
+\end{variasi}
+
+% ---------------- SOAL 3.3.7 ----------------
+\soalno{3.3.7}{usaha (gaya searah perpindahan)}
+\begin{soalbox}{}
+Gaya $\vec F=(8,6)$ N memindahkan benda sejauh $\vec s=(4,3)$ m searah. Hitung
+usaha $W=\vec F\cdot\vec s$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $W=\vec F\cdot\vec s=8\cdot4+6\cdot3=32+18=50$.
+\jadi $W=50$ joule.
+\langkah{2} \textbf{Catatan:} di sini $\vec F=2\vec s$ (searah sempurna), maka
+$W=|\vec F||\vec s|=10\cdot5=50$ juga cocok --- karena $\cos0^\circ=1$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menganggap selalu $W=|\vec F||\vec s|$.} Itu hanya bila searah.
+  Umumnya pakai dot product komponen.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Gaya tegak lurus perpindahan $\Rightarrow W=0$ (mis.\ gaya berat saat benda
+bergerak mendatar).
+\end{variasi}
+
+% ---------------- SOAL 3.3.8 ----------------
+\soalno{3.3.8}{titik berat segitiga}
+\begin{soalbox}{}
+Tentukan vektor posisi titik berat segitiga $A(0,0)$, $B(6,0)$, $C(0,6)$
+(rata-rata ketiga posisi).
+\end{soalbox}
+
+\begin{ingat}{Titik berat (centroid)}
+$\vec g=\dfrac{\vec a+\vec b+\vec c}{3}$: rata-rata sederhana ketiga titik sudut.
+\end{ingat}
+
+\jawab
+\langkah{1} Jumlahkan posisi: $\vec a+\vec b+\vec c=(0+6+0,\ 0+0+6)=(6,6)$.
+\langkah{2} Bagi $3$: $\vec g=\left(\dfrac63,\dfrac63\right)=(2,2)$.
+\jadi titik beratnya $G(2,2)$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Membagi $2$ bukan $3$.} Titik berat segitiga = rata-rata
+  \emph{tiga} titik, jadi dibagi $3$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Titik berat membagi garis berat (median) dengan rasio $2:1$ dari titik sudut ---
+konsisten dengan rumus pembagi ruas.
+\end{variasi}
+
+% ---------------- SOAL 3.3.9 ----------------
+\soalno{3.3.9}{cek titik pada garis}
+\begin{soalbox}{}
+Apakah titik $(7,11)$ terletak pada garis $\vec r=(1,2)+t(3,4)$? Periksa.
+\end{soalbox}
+
+\jawab
+\langkah{1} Titik ada di garis jika ada \emph{satu} nilai $t$ yang memenuhi
+\emph{kedua} persamaan $x$ dan $y$.
+\langkah{2} Dari $x$: $7=1+3t\Rightarrow 3t=6\Rightarrow t=2$.
+\langkah{3} Cek dengan $y$: $y=2+4t=2+4(2)=10$. Tetapi titiknya $y=11\neq10$.
+\jadi \textbf{tidak}, titik $(7,11)$ \emph{tidak} pada garis (nilai $t$ dari $x$
+dan $y$ berbeda).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Hanya mengecek satu koordinat.} Harus \emph{konsisten} di $x$
+  \emph{dan} $y$ dengan $t$ yang sama.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Titik $(7,10)$ \emph{ada} di garis ($t=2$). Atau cari $t$ agar titik potong garis
+dengan sumbu $x$ ($y=0$).
+\end{variasi}
+
+% ---------------- SOAL 3.3.10 ----------------
+\soalno{3.3.10}{kecepatan resultan (gerak relatif)}
+\begin{soalbox}{}
+Perahu berkecepatan $(0,5)$ m/s menyeberang sungai berarus $(2,0)$ m/s. Tentukan
+vektor kecepatan resultan dan besarnya.
+\end{soalbox}
+
+\begin{ingat}{Gerak relatif = penjumlahan vektor}
+Kecepatan perahu terhadap tanah $=$ kecepatan perahu terhadap air $+$ kecepatan
+arus. Inilah jawaban pemantik ``mengapa perahu tiba di hilir''.
+\end{ingat}
+
+\jawab
+\langkah{1} Jumlahkan kedua kecepatan:
+$\vec v=(0,5)+(2,0)=(2,5)$ m/s.
+\langkah{2} Besar (laju): $|\vec v|=\sqrt{2^2+5^2}=\sqrt{4+25}=\sqrt{29}
+\approx5{,}39$ m/s.
+\jadi kecepatan resultan $(2,5)$ m/s, besarnya $\sqrt{29}\approx5{,}39$ m/s
+(perahu bergerak serong: maju ke seberang sekaligus terbawa arus).
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7,>=Stealth]
+\draw[->,gray](-0.5,0)--(3,0) node[right]{$x$ (hilir)};
+\draw[->,gray](0,-0.5)--(0,5.5) node[above]{$y$ (seberang)};
+\draw[->,very thick,hijau](0,0)--(0,5) node[midway,left]{perahu $(0,5)$};
+\draw[->,very thick,biru](0,5)--(2,5) node[midway,above]{arus $(2,0)$};
+\draw[->,very thick,oranye](0,0)--(2,5) node[midway,right]{resultan $(2,5)$};
+\fill (0,0) circle (2pt);
+\end{tikzpicture}\\
+{\small Perahu mengarah lurus ke seberang, tetapi arus menggesernya ke hilir ---
+lintasan sesungguhnya adalah resultan (garis oranye).}
+\end{center}
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menjumlahkan laju saja} ($5+2=7$). Kecepatan berarah; jumlahkan
+  sebagai vektor lalu ukur ($\sqrt{29}\approx5{,}39$, bukan $7$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+``Ke arah mana perahu harus mengarah agar sampai tepat di seberang?''
+$\Rightarrow$ komponen $x$ perahu harus membatalkan arus (butuh sudut koreksi).
+Pesawat dengan angin samping serupa.
+\end{variasi}
+
+% ============================================================
+\begin{tips}
+\textbf{Ringkasan strategi Bab 3.}
+\begin{enumerate}[leftmargin=*,topsep=2pt]
+  \item \emph{Operasi} dilakukan \textbf{komponen demi komponen}; $k\vec a$
+  memanjang/memendek/membalik.
+  \item \emph{Panjang} $=\sqrt{a_1^2+a_2^2}$ (Pythagoras). \emph{Vektor dari
+  dua titik} = ujung $-$ pangkal.
+  \item \emph{Dot product} $=a_1b_1+a_2b_2=|\vec a||\vec b|\cos\theta$: $+$
+  lancip, $0$ tegak lurus, $-$ tumpul. Uji tegak lurus paling sering dipakai.
+  \item \emph{Proyeksi skalar} bagi $|\vec b|$; \emph{proyeksi vektor} bagi
+  $|\vec b|^2$ lalu kali $\vec b$. \emph{Garis vektor} $\vec r=\vec a+t\vec u$.
+  \item \emph{Fisika:} gaya, kecepatan, perpindahan = vektor; usaha = dot
+  product; gerak relatif = penjumlahan vektor.
+\end{enumerate}
+\end{tips}
+
+\end{document}

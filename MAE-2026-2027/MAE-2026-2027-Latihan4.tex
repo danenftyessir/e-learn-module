@@ -1,0 +1,983 @@
+% ============================================================
+%  PEMBAHASAN SUPER DETAIL — LATIHAN SOAL & STUDI KASUS
+%  BAB 4: TRIGONOMETRI DASAR
+%  Catatan: Soal Akhir Bab TIDAK dibahas di sini (sesuai permintaan).
+% ============================================================
+\input{MAE-2026-2027-Latihan-preamble}
+\renewcommand{\babjudul}{Pembahasan Latihan — Bab 4}
+
+\begin{document}
+\setcounter{chapter}{4}
+\buathalamanjudul{Trigonometri Dasar}{4}
+
+% ============================================================
+\chapter*{Pembahasan Bab 4: Trigonometri Dasar}
+\addcontentsline{toc}{chapter}{Pembahasan Bab 4: Trigonometri Dasar}
+\markboth{PEMBAHASAN BAB 4}{}
+% ============================================================
+
+\begin{tips}
+\textbf{Cara membaca buku ini.} Tiap soal: \textbf{(1)} soal ditulis ulang,
+\textbf{(2)} konsep kunci, \textbf{(3)} langkah demi langkah, \textbf{(4)}
+jebakan, \textbf{(5)} variasi. \emph{Aturan emas Bab 4:} gambar segitiganya,
+tandai sudut acuan lebih dulu, baru tentukan mana ``depan/samping/miring''.
+\end{tips}
+
+% ============================================================
+\section*{Studi Kasus: Mengukur Tinggi Menara}
+\addcontentsline{toc}{section}{Studi Kasus: Mengukur Tinggi Menara}
+% ============================================================
+
+\begin{studikasus}{Mengukur Tinggi Menara}
+Seorang siswa berdiri $50$ m dari kaki menara. Dengan klinometer ia mengukur
+sudut elevasi puncak menara $40^\circ$. Tinggi matanya $1{,}5$ m.
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+  \coordinate (A) at (0,0); \coordinate (B) at (5,0); \coordinate (C) at (5,4);
+  \draw[very thick,biru] (A)--(B)--(C)--cycle;
+  \draw (4.7,0) rectangle (5,0.3);
+  \pic[draw,angle radius=0.9cm,"$40^\circ$"] {angle=B--A--C} ;
+  \node[below] at (2.5,0) {50 m};
+  \node[right] at (5,2) {tinggi $=?$};
+  \fill (0,0) circle (2pt) node[left]{mata};
+\end{tikzpicture}
+\end{center}
+\textbf{Pertanyaan.} (a) Besaran apa yang diketahui dan apa yang dicari?
+(b) Perbandingan trigonometri mana yang menghubungkan keduanya?
+(c) Bagaimana menambahkan tinggi mata? ($\tan40^\circ\approx0{,}839$)
+\end{studikasus}
+
+\subsection*{Jawaban lengkap studi kasus}
+
+\begin{ingat}{Memilih sin/cos/tan}
+Pilih perbandingan dari \emph{sisi yang diketahui} dan \emph{sisi yang dicari}
+relatif terhadap sudut: depan/miring $\to\sin$; samping/miring $\to\cos$;
+depan/samping $\to\tan$.
+\end{ingat}
+
+\textbf{(a) Yang diketahui vs dicari.} Diketahui jarak mendatar ke menara $=50$ m
+(ini sisi \emph{samping} sudut $40^\circ$). Dicari tinggi menara di atas mata
+(ini sisi \emph{depan} sudut). Sisi miring tidak terlibat.
+
+\textbf{(b) Perbandingan yang tepat.} Karena melibatkan \emph{depan} dan
+\emph{samping}, gunakan $\tan$:
+\[
+\tan40^\circ=\frac{\text{depan}}{\text{samping}}=\frac{h}{50}
+\;\Rightarrow\; h=50\tan40^\circ\approx50(0{,}839)=41{,}95\ \text{m}.
+\]
+
+\textbf{(c) Menambahkan tinggi mata.} Nilai $h=41{,}95$ m dihitung dari
+\emph{ketinggian mata}, bukan dari tanah. Maka tinggi menara sebenarnya:
+\[
+41{,}95 + 1{,}5 \approx \textbf{43{,}5 m}.
+\]
+Inilah kekuatan trigonometri: mengubah sebuah \emph{sudut} menjadi jarak yang
+tak terjangkau tanpa memanjat.
+
+% ############################################################
+\section*{Subbab 4.1 — Perbandingan Trigonometri}
+\addcontentsline{toc}{section}{Subbab 4.1 — Perbandingan Trigonometri}
+% ############################################################
+
+\begin{ingat}{SOH-CAH-TOA \& sudut istimewa}
+\[
+\sin\alpha=\frac{\text{de}}{\text{mi}},\quad
+\cos\alpha=\frac{\text{sa}}{\text{mi}},\quad
+\tan\alpha=\frac{\text{de}}{\text{sa}}.
+\]
+\[
+\begin{array}{c|ccccc}
+\alpha & 0^\circ & 30^\circ & 45^\circ & 60^\circ & 90^\circ\\\hline
+\sin & 0 & \frac12 & \frac{\sqrt2}{2} & \frac{\sqrt3}{2} & 1\\[3pt]
+\cos & 1 & \frac{\sqrt3}{2} & \frac{\sqrt2}{2} & \frac12 & 0\\[3pt]
+\tan & 0 & \frac{\sqrt3}{3} & 1 & \sqrt3 & -\\
+\end{array}
+\]
+Identitas pokok: $\sin^2\alpha+\cos^2\alpha=1$.
+\end{ingat}
+
+% ---------------- SOAL 4.1.1 ----------------
+\soalno{4.1.1}{tiga rasio dari dua sisi}
+\begin{soalbox}{}
+Diketahui sisi depan $=6$ dan sisi samping $=8$. Tentukan $\sin\alpha$,
+$\cos\alpha$, dan $\tan\alpha$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Cari sisi miring dengan Pythagoras:
+$\text{mi}=\sqrt{6^2+8^2}=\sqrt{36+64}=\sqrt{100}=10$.
+\langkah{2} Terapkan definisi:
+\[
+\sin\alpha=\frac{6}{10}=\frac35,\quad
+\cos\alpha=\frac{8}{10}=\frac45,\quad
+\tan\alpha=\frac{6}{8}=\frac34.
+\]
+\jadi $\sin\alpha=\frac35,\ \cos\alpha=\frac45,\ \tan\alpha=\frac34$
+(segitiga $3$-$4$-$5$ yang terkenal).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa mencari miring dulu.} $\sin$ dan $\cos$ butuh sisi miring
+  ($=10$), bukan langsung memakai $6$ dan $8$ sebagai penyebut.
+  \item \textbf{Tertukar $\sin$ dan $\cos$.} $\sin$ pakai sisi \emph{depan};
+  $\cos$ pakai sisi \emph{samping}.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Diberi depan \& miring (cari samping dulu), atau segitiga $5$-$12$-$13$. Cek
+selalu $\sin^2+\cos^2=1$: $\frac{9}{25}+\frac{16}{25}=1$ \checkmark.
+\end{variasi}
+
+% ---------------- SOAL 4.1.2 ----------------
+\soalno{4.1.2}{tangga bersandar (sisi depan)}
+\begin{soalbox}{}
+Sebuah tangga bersandar membentuk sudut $60^\circ$ dengan tanah. Jika panjang
+tangga $4$ m, berapa tinggi dinding yang dicapai?
+\end{soalbox}
+
+\jawab
+\langkah{1} Identifikasi: panjang tangga = sisi \emph{miring} ($4$ m); tinggi
+dinding = sisi \emph{depan} sudut $60^\circ$.
+\langkah{2} Depan \& miring $\Rightarrow$ gunakan $\sin$:
+\[
+\sin60^\circ=\frac{\text{tinggi}}{4}\Rightarrow \text{tinggi}=4\sin60^\circ
+=4\cdot\frac{\sqrt3}{2}=2\sqrt3\approx3{,}46\ \text{m}.
+\]
+\jadi tinggi dinding $=2\sqrt3\approx3{,}46$ m.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Memakai $\cos$.} $\cos60^\circ$ memberi jarak \emph{kaki tangga
+  ke dinding} (sisi samping), bukan tinggi. Baca yang ditanya.
+  \item \textbf{$\sin60^\circ=\frac12$?} Bukan; $\sin60^\circ=\frac{\sqrt3}{2}$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Ditanya jarak kaki tangga ke dinding $\Rightarrow \cos60^\circ\cdot4=2$ m.
+Sudut lain ($30^\circ$, $45^\circ$) mengubah nilai tapi metode sama.
+\end{variasi}
+
+% ---------------- SOAL 4.1.3 ----------------
+\soalno{4.1.3}{penjumlahan nilai istimewa}
+\begin{soalbox}{}
+Hitung $\sin45^\circ+\cos45^\circ$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $\sin45^\circ=\dfrac{\sqrt2}{2}$ dan $\cos45^\circ=\dfrac{\sqrt2}{2}$
+(pada segitiga siku-siku sama kaki keduanya sama).
+\langkah{2} Jumlahkan: $\dfrac{\sqrt2}{2}+\dfrac{\sqrt2}{2}=\dfrac{2\sqrt2}{2}
+=\sqrt2$.
+\jadi $\sin45^\circ+\cos45^\circ=\sqrt2\approx1{,}41$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mengira hasilnya $1$.} $\sin45+\cos45\neq\sin^2+\cos^2$.
+  Jumlah nilainya $\sqrt2$, bukan $1$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\sin30^\circ+\cos60^\circ=1$; $\sin60^\circ-\cos30^\circ=0$ (keduanya
+$\frac{\sqrt3}{2}$).
+\end{variasi}
+
+% ---------------- SOAL 4.1.4 ----------------
+\soalno{4.1.4}{identitas Pythagoras}
+\begin{soalbox}{}
+Jika $\cos\alpha=\tfrac{12}{13}$ ($\alpha$ lancip), tentukan $\sin\alpha$.
+\end{soalbox}
+
+\begin{ingat}{Identitas $\sin^2+\cos^2=1$}
+Ini Pythagoras yang menyamar. Jika satu rasio diketahui, yang lain dapat dicari
+tanpa mengetahui sudutnya. Untuk $\alpha$ lancip (kuadran I), semua rasio positif.
+\end{ingat}
+
+\jawab
+\langkah{1} Dari $\sin^2\alpha=1-\cos^2\alpha$:
+\[
+\sin^2\alpha=1-\left(\frac{12}{13}\right)^2=1-\frac{144}{169}=\frac{25}{169}.
+\]
+\langkah{2} Akarkan (ambil positif karena lancip):
+$\sin\alpha=\dfrac{5}{13}$.
+\jadi $\sin\alpha=\dfrac{5}{13}$ (segitiga $5$-$12$-$13$).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa mengkuadratkan.} $\sin\alpha\neq1-\frac{12}{13}$. Yang
+  dikurangi adalah \emph{kuadratnya}.
+  \item \textbf{Salah tanda di kuadran lain.} Kalau $\alpha$ tumpul (kuadran II),
+  $\sin$ tetap $+$ tapi cek konteks. Di sini lancip $\Rightarrow +$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Diberi $\sin$ cari $\cos$; atau diberi $\tan$ cari $\sin,\cos$ (bentuk segitiga
+dari $\tan=\frac{\text{de}}{\text{sa}}$).
+\end{variasi}
+
+% ---------------- SOAL 4.1.5 ----------------
+\soalno{4.1.5}{hasil kali tan istimewa}
+\begin{soalbox}{}
+Tentukan nilai $\tan60^\circ\cdot\tan30^\circ$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $\tan60^\circ=\sqrt3$ dan $\tan30^\circ=\dfrac{1}{\sqrt3}$
+$\left(=\dfrac{\sqrt3}{3}\right)$.
+\langkah{2} Kalikan: $\sqrt3\cdot\dfrac{1}{\sqrt3}=1$.
+\jadi $\tan60^\circ\cdot\tan30^\circ=1$.
+
+\begin{tips}
+Ini bukan kebetulan: $30^\circ$ dan $60^\circ$ saling berpenyiku
+($30+60=90$), dan $\tan\alpha\cdot\tan(90^\circ-\alpha)=1$ selalu, sebab
+$\tan(90^\circ-\alpha)=\cot\alpha=\frac{1}{\tan\alpha}$.
+\end{tips}
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{$\tan30^\circ=\sqrt3$?} Terbalik. $\tan30^\circ=\frac{1}{\sqrt3}$,
+  $\tan60^\circ=\sqrt3$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\sin\alpha\cdot\csc\alpha=1$; $\tan45^\circ\cdot\tan45^\circ=1$;
+$\tan20^\circ\cdot\tan70^\circ=1$.
+\end{variasi}
+
+% ---------------- SOAL 4.1.6 ----------------
+\soalno{4.1.6}{layang-layang (sisi depan)}
+\begin{soalbox}{}
+Sebuah layang-layang terbang dengan benang $100$ m membentuk sudut $30^\circ$
+terhadap tanah. Berapa tingginya?
+\end{soalbox}
+
+\jawab
+\langkah{1} Benang = sisi miring ($100$ m); tinggi = sisi depan sudut $30^\circ$.
+\langkah{2} $\sin30^\circ=\dfrac{\text{tinggi}}{100}\Rightarrow
+\text{tinggi}=100\sin30^\circ=100\cdot\tfrac12=50$ m.
+\jadi tinggi layang-layang $=50$ m.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menganggap benang lurus vertikal.} Benang miring; tinggi hanya
+  komponen vertikalnya ($\sin$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Ditanya jarak mendatar layang-layang $\Rightarrow \cos30^\circ\cdot100
+=50\sqrt3$ m.
+\end{variasi}
+
+% ---------------- SOAL 4.1.7 ----------------
+\soalno{4.1.7}{membuktikan $\tan=\sin/\cos$}
+\begin{soalbox}{}
+Buktikan $\dfrac{\sin\alpha}{\cos\alpha}=\tan\alpha$ dari definisi.
+\end{soalbox}
+
+\jawab
+\langkah{1} Tulis $\sin$ dan $\cos$ dengan definisi rasio:
+\[
+\frac{\sin\alpha}{\cos\alpha}=\frac{\ \text{de}/\text{mi}\ }{\ \text{sa}/\text{mi}\ }.
+\]
+\langkah{2} Bagi pecahan = kali kebalikan; ``mi'' saling coret:
+\[
+=\frac{\text{de}}{\text{mi}}\cdot\frac{\text{mi}}{\text{sa}}
+=\frac{\text{de}}{\text{sa}}=\tan\alpha.
+\]
+\jadi terbukti $\dfrac{\sin\alpha}{\cos\alpha}=\tan\alpha$. $\blacksquare$
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Membuktikan dengan satu contoh angka.} Bukti sejati memakai
+  definisi umum, bukan sekadar mengecek $\alpha=30^\circ$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Buktikan $\cot\alpha=\frac{\cos\alpha}{\sin\alpha}$; atau
+$\sec\alpha=\frac{1}{\cos\alpha}$.
+\end{variasi}
+
+% ---------------- SOAL 4.1.8 ----------------
+\soalno{4.1.8}{identitas pokok bernilai 1}
+\begin{soalbox}{}
+Hitung $\sin^2 30^\circ+\cos^2 30^\circ$.
+\end{soalbox}
+
+\jawab
+\textbf{Cara cepat (identitas).} $\sin^2\alpha+\cos^2\alpha=1$ untuk sudut
+\emph{apa pun}, jadi langsung $=1$.
+
+\textbf{Cara panjang (bukti).}
+$\left(\tfrac12\right)^2+\left(\tfrac{\sqrt3}{2}\right)^2
+=\tfrac14+\tfrac34=1$. \checkmark
+\jadi hasilnya $1$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{$\sin^2\alpha$ ditulis $\sin\alpha^2$.} $\sin^2\alpha=(\sin\alpha)^2$,
+  bukan $\sin(\alpha^2)$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Berlaku untuk sudut mana pun: $\sin^2 17^\circ+\cos^2 17^\circ=1$. Digunakan
+untuk menyederhanakan ekspresi rumit (lihat Soal 4.2.9).
+\end{variasi}
+
+% ---------------- SOAL 4.1.9 ----------------
+\soalno{4.1.9}{bayangan \& tinggi (tan)}
+\begin{soalbox}{}
+Sudut elevasi matahari $60^\circ$, panjang bayangan sebuah tiang $3$ m. Berapa
+tinggi tiang?
+\end{soalbox}
+
+\jawab
+\langkah{1} Bayangan = sisi samping (mendatar); tinggi tiang = sisi depan sudut
+$60^\circ$. Depan \& samping $\Rightarrow\tan$.
+\langkah{2} $\tan60^\circ=\dfrac{\text{tinggi}}{3}\Rightarrow
+\text{tinggi}=3\tan60^\circ=3\sqrt3\approx5{,}20$ m.
+\jadi tinggi tiang $=3\sqrt3\approx5{,}20$ m.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Membalik: $\text{tinggi}=3/\tan60^\circ$.} Karena tinggi adalah
+  ``depan'' dan bayangan ``samping'', tinggi $=$ samping $\times\tan$, jadi
+  \emph{dikali}, bukan dibagi.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Sudut elevasi kecil $\Rightarrow$ bayangan panjang. ``Berapa panjang bayangan
+jika tinggi tiang $6$ m dan elevasi $30^\circ$?''
+\end{variasi}
+
+% ---------------- SOAL 4.1.10 ----------------
+\soalno{4.1.10}{dari nilai tan ke sudut}
+\begin{soalbox}{}
+Jika $\tan\alpha=1$, tentukan $\alpha$ (lancip) dan $\sin\alpha$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $\tan\alpha=1$ berarti sisi depan $=$ samping (segitiga siku-siku
+sama kaki). Sudut lancip yang memenuhinya $\alpha=45^\circ$.
+\langkah{2} $\sin45^\circ=\dfrac{\sqrt2}{2}$.
+\jadi $\alpha=45^\circ$ dan $\sin\alpha=\dfrac{\sqrt2}{2}$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa batasan ``lancip''.} $\tan\alpha=1$ juga di $225^\circ$;
+  batasan lancip menyisakan $45^\circ$ saja.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\tan\alpha=\sqrt3\Rightarrow\alpha=60^\circ$; $\tan\alpha=\frac{1}{\sqrt3}
+\Rightarrow\alpha=30^\circ$.
+\end{variasi}
+
+% ############################################################
+\section*{Subbab 4.2 — Sudut di Berbagai Kuadran dan Identitas}
+\addcontentsline{toc}{section}{Subbab 4.2 — Kuadran \& Identitas}
+% ############################################################
+
+\begin{ingat}{ASTC \& sudut acuan}
+Di kuadran I \textbf{A}ll positif; II hanya \textbf{S}in; III hanya \textbf{T}an;
+IV hanya \textbf{C}os. Nilai mutlaknya diambil dari \emph{sudut acuan} (jarak ke
+sumbu $x$ terdekat), lalu tanda ditentukan ASTC. Sudut berelasi:
+\[
+\sin(90^\circ-\alpha)=\cos\alpha,\quad 1+\tan^2\alpha=\sec^2\alpha.
+\]
+\end{ingat}
+
+% ---------------- SOAL 4.2.1 ----------------
+\soalno{4.2.1}{nilai di kuadran II}
+\begin{soalbox}{}
+Tentukan $\sin120^\circ$, $\cos120^\circ$, dan $\tan120^\circ$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Tentukan kuadran: $120^\circ$ di kuadran II ($90^\circ$--$180^\circ$).
+Di sini hanya \textbf{Sin} positif.
+\langkah{2} Sudut acuan: $180^\circ-120^\circ=60^\circ$.
+\langkah{3} Ambil nilai $60^\circ$ lalu beri tanda ASTC:
+\[
+\sin120^\circ=+\sin60^\circ=\frac{\sqrt3}{2},\quad
+\cos120^\circ=-\cos60^\circ=-\frac12,\quad
+\tan120^\circ=-\tan60^\circ=-\sqrt3.
+\]
+\jadi $\sin120^\circ=\frac{\sqrt3}{2},\ \cos120^\circ=-\frac12,\ \tan120^\circ=-\sqrt3$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Sudut acuan salah.} Di kuadran II acuan $=180^\circ-\alpha$
+  (bukan $\alpha-90^\circ$).
+  \item \textbf{Lupa tanda.} $\cos$ dan $\tan$ negatif di kuadran II.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\sin210^\circ$ (KIII, acuan $30^\circ$, sin$-$); $\cos330^\circ$ (KIV, acuan
+$30^\circ$, cos$+$).
+\end{variasi}
+
+% ---------------- SOAL 4.2.2 ----------------
+\soalno{4.2.2}{nilai di sumbu}
+\begin{soalbox}{}
+Hitung $\cos180^\circ+\sin90^\circ$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Nilai di sumbu (lingkaran satuan): $\cos180^\circ=-1$ (titik
+$(-1,0)$); $\sin90^\circ=1$ (titik $(0,1)$).
+\langkah{2} Jumlahkan: $-1+1=0$.
+\jadi $\cos180^\circ+\sin90^\circ=0$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{$\cos180^\circ=1$?} Bukan; titik di $180^\circ$ adalah $(-1,0)$,
+  jadi $\cos=-1$. Bayangkan lingkaran satuan.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\sin180^\circ=0$, $\cos90^\circ=0$, $\sin270^\circ=-1$. Hafalkan lewat
+koordinat lingkaran satuan, bukan hafalan buta.
+\end{variasi}
+
+% ---------------- SOAL 4.2.3 ----------------
+\soalno{4.2.3}{identitas dengan tanda kuadran}
+\begin{soalbox}{}
+Jika $\sin\alpha=\tfrac45$ dan $\alpha$ di kuadran II, tentukan $\cos\alpha$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $\cos^2\alpha=1-\sin^2\alpha=1-\frac{16}{25}=\frac{9}{25}$, jadi
+$\cos\alpha=\pm\frac35$.
+\langkah{2} \textbf{Pilih tanda dari kuadran.} Di kuadran II, $\cos$
+\emph{negatif}. Maka $\cos\alpha=-\frac35$.
+\jadi $\cos\alpha=-\dfrac35$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mengambil $+\frac35$ otomatis.} Identitas memberi $\pm$; kuadran
+  yang menentukan tanda. Ini kesalahan paling sering.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\cos\alpha$ diberi, $\alpha$ di KIII $\Rightarrow\sin$ negatif. Selalu tanya:
+di kuadran ini, tanda fungsinya apa?
+\end{variasi}
+
+% ---------------- SOAL 4.2.4 ----------------
+\soalno{4.2.4}{sudut berelasi + kebalikan}
+\begin{soalbox}{}
+Sederhanakan $\sin(90^\circ-\alpha)\cdot\sec\alpha$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $\sin(90^\circ-\alpha)=\cos\alpha$ (sudut berpenyiku).
+\langkah{2} $\sec\alpha=\dfrac{1}{\cos\alpha}$.
+\langkah{3} Kalikan: $\cos\alpha\cdot\dfrac{1}{\cos\alpha}=1$.
+\jadi hasilnya $1$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{$\sin(90^\circ-\alpha)=\sin90^\circ-\sin\alpha$?} Salah! Fungsi
+  trigonometri tidak menembus tanda kurang. Yang benar $=\cos\alpha$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\cos(90^\circ-\alpha)\csc\alpha=1$; $\tan(90^\circ-\alpha)=\cot\alpha$.
+\end{variasi}
+
+% ---------------- SOAL 4.2.5 ----------------
+\soalno{4.2.5}{menurunkan identitas}
+\begin{soalbox}{}
+Buktikan $1+\tan^2\alpha=\sec^2\alpha$ dari identitas pokok.
+\end{soalbox}
+
+\jawab
+\langkah{1} Mulai dari identitas pokok $\sin^2\alpha+\cos^2\alpha=1$.
+\langkah{2} Bagi \emph{seluruhnya} dengan $\cos^2\alpha$:
+\[
+\frac{\sin^2\alpha}{\cos^2\alpha}+\frac{\cos^2\alpha}{\cos^2\alpha}
+=\frac{1}{\cos^2\alpha}.
+\]
+\langkah{3} Kenali tiap suku: $\frac{\sin^2}{\cos^2}=\tan^2\alpha$;
+$\frac{\cos^2}{\cos^2}=1$; $\frac{1}{\cos^2}=\sec^2\alpha$. Maka:
+\[
+\tan^2\alpha+1=\sec^2\alpha. \quad\blacksquare
+\]
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Membagi sebagian saja.} Semua tiga suku harus dibagi
+  $\cos^2\alpha$, termasuk ruas kanan.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Bagi dengan $\sin^2\alpha$ untuk memperoleh $1+\cot^2\alpha=\csc^2\alpha$.
+\end{variasi}
+
+% ---------------- SOAL 4.2.6 ----------------
+\soalno{4.2.6}{nilai di kuadran III}
+\begin{soalbox}{}
+Tentukan $\tan225^\circ$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $225^\circ$ di kuadran III ($180^\circ$--$270^\circ$); di sini
+\textbf{Tan} positif.
+\langkah{2} Sudut acuan: $225^\circ-180^\circ=45^\circ$.
+\langkah{3} $\tan225^\circ=+\tan45^\circ=1$.
+\jadi $\tan225^\circ=1$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Memberi tanda negatif.} $\tan$ justru \emph{positif} di kuadran
+  III (sin dan cos sama-sama negatif, bagi keduanya jadi positif).
+  \item \textbf{Sudut acuan di KIII} $=\alpha-180^\circ$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\sin225^\circ=-\frac{\sqrt2}{2}$, $\cos225^\circ=-\frac{\sqrt2}{2}$;
+cek $\tan=\frac{\sin}{\cos}=1$ \checkmark.
+\end{variasi}
+
+% ---------------- SOAL 4.2.7 ----------------
+\soalno{4.2.7}{jumlah kuadrat sin}
+\begin{soalbox}{}
+Hitung $\sin^2 60^\circ+\sin^2 30^\circ$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $\sin60^\circ=\frac{\sqrt3}{2}\Rightarrow\sin^2 60^\circ=\frac34$;
+$\sin30^\circ=\frac12\Rightarrow\sin^2 30^\circ=\frac14$.
+\langkah{2} Jumlahkan: $\frac34+\frac14=1$.
+\jadi hasilnya $1$.
+
+\begin{tips}
+Bukan kebetulan: karena $\sin30^\circ=\cos60^\circ$, penjumlahan ini setara
+$\sin^2 60^\circ+\cos^2 60^\circ=1$ (identitas pokok).
+\end{tips}
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Tertukar dengan $\sin(60+30)$.} Ini jumlah \emph{kuadrat nilai},
+  bukan sinus dari jumlah sudut.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\cos^2 45^\circ+\sin^2 45^\circ=1$; $\sin^2 60^\circ-\cos^2 60^\circ
+=\frac34-\frac14=\frac12$ (ini $\cos2\cdot? $ ... pengayaan).
+\end{variasi}
+
+% ---------------- SOAL 4.2.8 ----------------
+\soalno{4.2.8}{menentukan kuadran}
+\begin{soalbox}{}
+Tentukan kuadran $\alpha$ jika $\sin\alpha>0$ dan $\cos\alpha<0$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $\sin\alpha>0$: kuadran I atau II (sin positif di atas sumbu $x$).
+\langkah{2} $\cos\alpha<0$: kuadran II atau III (cos negatif di kiri sumbu $y$).
+\langkah{3} Irisan kedua syarat: kuadran \textbf{II}.
+\jadi $\alpha$ di kuadran II.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menebak tanpa mengiris.} Gabungkan \emph{kedua} syarat; hanya
+  satu kuadran memenuhi keduanya.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\sin<0$ \& $\tan>0\Rightarrow$ KIII; $\cos>0$ \& $\tan<0\Rightarrow$ KIV.
+\end{variasi}
+
+% ---------------- SOAL 4.2.9 ----------------
+\soalno{4.2.9}{menyederhanakan lewat identitas}
+\begin{soalbox}{}
+Sederhanakan $\dfrac{1-\cos^2\alpha}{\sin\alpha}$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Kenali $1-\cos^2\alpha=\sin^2\alpha$ (dari identitas pokok, disusun
+ulang).
+\langkah{2} Substitusi:
+\[
+\frac{1-\cos^2\alpha}{\sin\alpha}=\frac{\sin^2\alpha}{\sin\alpha}=\sin\alpha.
+\]
+\jadi hasilnya $\sin\alpha$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mencoba mencoret $\cos^2$ dengan $\sin$.} Tidak bisa langsung;
+  ubah dulu pembilang jadi $\sin^2\alpha$ memakai identitas.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\frac{1-\sin^2\alpha}{\cos\alpha}=\cos\alpha$;
+$\frac{\sin^2\alpha}{1-\cos\alpha}=1+\cos\alpha$ (pakai selisih kuadrat).
+\end{variasi}
+
+% ---------------- SOAL 4.2.10 ----------------
+\soalno{4.2.10}{nilai di kuadran IV}
+\begin{soalbox}{}
+Hitung $\cos300^\circ$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $300^\circ$ di kuadran IV ($270^\circ$--$360^\circ$); di sini
+\textbf{Cos} positif.
+\langkah{2} Sudut acuan: $360^\circ-300^\circ=60^\circ$.
+\langkah{3} $\cos300^\circ=+\cos60^\circ=\dfrac12$.
+\jadi $\cos300^\circ=\dfrac12$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Acuan di KIV} $=360^\circ-\alpha$. Jangan pakai $\alpha-270^\circ$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\sin300^\circ=-\frac{\sqrt3}{2}$ (sin$-$ di KIV); $\tan300^\circ=-\sqrt3$.
+\end{variasi}
+
+% ############################################################
+\section*{Subbab 4.3 — Trigonometri Lanjutan Dasar (Pengayaan)}
+\addcontentsline{toc}{section}{Subbab 4.3 — Trigonometri Lanjutan (Pengayaan)}
+% ############################################################
+
+\begin{ingat}{Rumus majemuk, rangkap, setengah, persamaan}
+\[
+\sin(A\pm B)=\sin A\cos B\pm\cos A\sin B,\quad
+\cos(A\pm B)=\cos A\cos B\mp\sin A\sin B,
+\]
+\[
+\tan(A\pm B)=\frac{\tan A\pm\tan B}{1\mp\tan A\tan B},\quad
+\sin2A=2\sin A\cos A,\quad \cos2A=1-2\sin^2 A.
+\]
+Persamaan: $\sin x=\sin\alpha\Rightarrow x=\alpha$ atau $180^\circ-\alpha$;\quad
+$\cos x=\cos\alpha\Rightarrow x=\alpha$ atau $360^\circ-\alpha$;\quad
+$\tan x=\tan\alpha\Rightarrow x=\alpha$ atau $\alpha+180^\circ$.
+\end{ingat}
+
+% ---------------- SOAL 4.3.1 ----------------
+\soalno{4.3.1}{cos sudut campuran}
+\begin{soalbox}{}
+Hitung $\cos75^\circ$ dengan rumus jumlah sudut.
+\end{soalbox}
+
+\jawab
+\langkah{1} Pecah $75^\circ=45^\circ+30^\circ$.
+\langkah{2} $\cos(A+B)=\cos A\cos B-\sin A\sin B$ (perhatikan tanda
+\emph{berlawanan} pada cos):
+\[
+\cos75^\circ=\cos45^\circ\cos30^\circ-\sin45^\circ\sin30^\circ
+=\frac{\sqrt2}{2}\cdot\frac{\sqrt3}{2}-\frac{\sqrt2}{2}\cdot\frac12.
+\]
+\langkah{3} $=\dfrac{\sqrt6}{4}-\dfrac{\sqrt2}{4}=\dfrac{\sqrt6-\sqrt2}{4}$.
+\jadi $\cos75^\circ=\dfrac{\sqrt6-\sqrt2}{4}\approx0{,}259$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Tanda pada cos.} Rumus $\cos(A+B)$ memakai tanda \emph{minus}
+  di tengah (kebalikan dari sin). Ini sering keliru.
+  \item \textbf{$\cos75^\circ=\cos45^\circ+\cos30^\circ$?} Fungsi trig tak
+  menembus penjumlahan sudut.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\cos15^\circ=\cos(45^\circ-30^\circ)=\frac{\sqrt6+\sqrt2}{4}$ (tanda plus
+untuk selisih pada cos).
+\end{variasi}
+
+% ---------------- SOAL 4.3.2 ----------------
+\soalno{4.3.2}{tan sudut campuran}
+\begin{soalbox}{}
+Hitung $\tan75^\circ$ dengan rumus jumlah sudut.
+\end{soalbox}
+
+\jawab
+\langkah{1} $75^\circ=45^\circ+30^\circ$; $\tan45^\circ=1$,
+$\tan30^\circ=\frac{1}{\sqrt3}$.
+\langkah{2} $\tan(A+B)=\dfrac{\tan A+\tan B}{1-\tan A\tan B}$:
+\[
+\tan75^\circ=\frac{1+\frac{1}{\sqrt3}}{1-1\cdot\frac{1}{\sqrt3}}
+=\frac{\sqrt3+1}{\sqrt3-1}\quad(\text{kali }\sqrt3\ \text{atas-bawah}).
+\]
+\langkah{3} Rasionalkan (kali $\sqrt3+1$):
+\[
+=\frac{(\sqrt3+1)^2}{(\sqrt3-1)(\sqrt3+1)}=\frac{3+2\sqrt3+1}{3-1}
+=\frac{4+2\sqrt3}{2}=2+\sqrt3.
+\]
+\jadi $\tan75^\circ=2+\sqrt3\approx3{,}73$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa merasionalkan.} Bentuk $\frac{\sqrt3+1}{\sqrt3-1}$ belum
+  ``rapi''; kalikan sekawan.
+  \item \textbf{Tanda penyebut.} Untuk $\tan(A+B)$ penyebutnya $1-\tan A\tan B$
+  (minus).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\tan15^\circ=\tan(45^\circ-30^\circ)=2-\sqrt3$. Cek: $\tan75^\circ\cdot
+\tan15^\circ=(2+\sqrt3)(2-\sqrt3)=1$ (berpenyiku!).
+\end{variasi}
+
+% ---------------- SOAL 4.3.3 ----------------
+\soalno{4.3.3}{sudut rangkap dari cos}
+\begin{soalbox}{}
+Diketahui $\cos A=\tfrac{12}{13}$ ($A$ lancip). Tentukan $\sin2A$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Cari $\sin A$: dari segitiga $5$-$12$-$13$, $\sin A=\frac{5}{13}$
+(positif, lancip).
+\langkah{2} $\sin2A=2\sin A\cos A=2\cdot\dfrac{5}{13}\cdot\dfrac{12}{13}
+=\dfrac{120}{169}$.
+\jadi $\sin2A=\dfrac{120}{169}$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{$\sin2A=2\sin A$?} Salah; ada faktor $\cos A$ juga:
+  $\sin2A=2\sin A\cos A$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\cos2A=2\cos^2 A-1=2\cdot\frac{144}{169}-1=\frac{119}{169}$; cek
+$\sin^2 2A+\cos^2 2A=1$.
+\end{variasi}
+
+% ---------------- SOAL 4.3.4 ----------------
+\soalno{4.3.4}{menurunkan sudut rangkap}
+\begin{soalbox}{}
+Buktikan $\sin2A=2\sin A\cos A$ dari rumus jumlah sudut.
+\end{soalbox}
+
+\jawab
+\langkah{1} Tulis $2A=A+A$ dan pakai $\sin(A+B)=\sin A\cos B+\cos A\sin B$
+dengan $B=A$:
+\[
+\sin(A+A)=\sin A\cos A+\cos A\sin A.
+\]
+\langkah{2} Kedua suku sama, jumlahkan: $=2\sin A\cos A$.
+\jadi $\sin2A=2\sin A\cos A$. $\blacksquare$
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menganggap ini definisi.} Ia \emph{diturunkan} dari rumus jumlah,
+  bukan aturan terpisah --- memahami asalnya membuatnya tak perlu dihafal.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Turunkan $\cos2A=\cos^2 A-\sin^2 A$ dari $\cos(A+A)$; lalu ubah ke
+$1-2\sin^2 A$ memakai identitas pokok.
+\end{variasi}
+
+% ---------------- SOAL 4.3.5 ----------------
+\soalno{4.3.5}{sin sudut setengah}
+\begin{soalbox}{}
+Hitung $\sin22{,}5^\circ$ dengan rumus sudut setengah.
+\end{soalbox}
+
+\jawab
+\langkah{1} $22{,}5^\circ=\tfrac12(45^\circ)$, dan berada di kuadran I (positif).
+\langkah{2} Rumus: $\sin\dfrac{\alpha}{2}=\sqrt{\dfrac{1-\cos\alpha}{2}}$ dengan
+$\alpha=45^\circ$, $\cos45^\circ=\frac{\sqrt2}{2}$:
+\[
+\sin22{,}5^\circ=\sqrt{\frac{1-\frac{\sqrt2}{2}}{2}}
+=\sqrt{\frac{2-\sqrt2}{4}}=\frac{1}{2}\sqrt{2-\sqrt2}.
+\]
+\jadi $\sin22{,}5^\circ=\dfrac12\sqrt{2-\sqrt2}\approx0{,}383$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah tanda $\pm$.} Pilih $+$ karena $22{,}5^\circ$ di kuadran I.
+  \item \textbf{Menyederhanakan pecahan bertingkat.} $\frac{1-\frac{\sqrt2}{2}}{2}
+  =\frac{2-\sqrt2}{4}$ (kali $\frac22$ dulu di pembilang).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\cos22{,}5^\circ=\frac12\sqrt{2+\sqrt2}$ (tanda $+$ di dalam akar). Cek
+$\sin^2+\cos^2=1$.
+\end{variasi}
+
+% ---------------- SOAL 4.3.6 ----------------
+\soalno{4.3.6}{mengenali sudut rangkap terbalik}
+\begin{soalbox}{}
+Sederhanakan $2\sin15^\circ\cos15^\circ$ menjadi nilai tunggal.
+\end{soalbox}
+
+\jawab
+\langkah{1} Kenali pola $2\sin A\cos A=\sin2A$ dengan $A=15^\circ$:
+\[
+2\sin15^\circ\cos15^\circ=\sin(2\cdot15^\circ)=\sin30^\circ.
+\]
+\langkah{2} $\sin30^\circ=\dfrac12$.
+\jadi $2\sin15^\circ\cos15^\circ=\dfrac12$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menghitung $\sin15^\circ$ dan $\cos15^\circ$ terpisah} lalu
+  mengalikan --- boros dan rawan. Mengenali pola sudut rangkap jauh lebih cepat.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\cos^2 A-\sin^2 A=\cos2A$; $1-2\sin^2 A=\cos2A$. Latih ``membaca mundur'' rumus
+rangkap.
+\end{variasi}
+
+% ---------------- SOAL 4.3.7 ----------------
+\soalno{4.3.7}{persamaan cos}
+\begin{soalbox}{}
+Selesaikan $\cos x=\dfrac{\sqrt3}{2}$ untuk $0^\circ\le x<360^\circ$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Sudut acuan: $\cos\alpha=\frac{\sqrt3}{2}\Rightarrow\alpha=30^\circ$.
+\langkah{2} $\cos$ positif di kuadran I dan IV. Solusi:
+\[
+x=30^\circ \quad\text{atau}\quad x=360^\circ-30^\circ=330^\circ.
+\]
+\jadi $x\in\{30^\circ,\ 330^\circ\}$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Hanya menulis $30^\circ$.} Dalam satu putaran, $\cos$ punya dua
+  solusi (pasangan $\alpha$ dan $360^\circ-\alpha$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\cos x=-\frac12$ (KII \& KIII: $120^\circ,240^\circ$); $\cos x=0$
+($90^\circ,270^\circ$).
+\end{variasi}
+
+% ---------------- SOAL 4.3.8 ----------------
+\soalno{4.3.8}{persamaan tan}
+\begin{soalbox}{}
+Selesaikan $\tan x=1$ untuk $0^\circ\le x<360^\circ$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Sudut acuan: $\tan\alpha=1\Rightarrow\alpha=45^\circ$.
+\langkah{2} $\tan$ berulang tiap $180^\circ$, jadi:
+\[
+x=45^\circ \quad\text{atau}\quad x=45^\circ+180^\circ=225^\circ.
+\]
+\jadi $x\in\{45^\circ,\ 225^\circ\}$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Memakai $180^\circ-\alpha$ seperti sin.} Untuk $\tan$, solusi
+  kedua adalah $\alpha+180^\circ$ (periode $180^\circ$, bukan $360^\circ$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\tan x=\sqrt3$ ($60^\circ,240^\circ$); $\tan x=-1$ ($135^\circ,315^\circ$).
+\end{variasi}
+
+% ---------------- SOAL 4.3.9 ----------------
+\soalno{4.3.9}{persamaan sin linear}
+\begin{soalbox}{}
+Selesaikan $2\sin x-1=0$ untuk $0^\circ\le x<360^\circ$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Isolasi: $2\sin x=1\Rightarrow\sin x=\dfrac12$.
+\langkah{2} Sudut acuan $\alpha=30^\circ$; $\sin$ positif di KI \& KII:
+\[
+x=30^\circ \quad\text{atau}\quad x=180^\circ-30^\circ=150^\circ.
+\]
+\jadi $x\in\{30^\circ,\ 150^\circ\}$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa mengisolasi $\sin x$ dulu.} Selesaikan aljabarnya
+  ($\sin x=\frac12$) sebelum mencari sudut.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$2\cos x+\sqrt3=0\Rightarrow\cos x=-\frac{\sqrt3}{2}$; $\sqrt2\sin x=1$.
+\end{variasi}
+
+% ---------------- SOAL 4.3.10 ----------------
+\soalno{4.3.10}{persamaan dengan sudut rangkap}
+\begin{soalbox}{}
+Selesaikan $\sin2x=\cos x$ untuk $0^\circ\le x<360^\circ$.
+(Petunjuk: $\sin2x=2\sin x\cos x$.)
+\end{soalbox}
+
+\begin{ingat}{Jangan membagi dengan yang mungkin nol}
+Godaan besar: membagi kedua ruas dengan $\cos x$. \emph{Jangan!} Itu membuang
+solusi $\cos x=0$. Pindahkan semua ke satu ruas lalu \emph{faktorkan}.
+\end{ingat}
+
+\jawab
+\langkah{1} Ganti $\sin2x=2\sin x\cos x$:
+\[
+2\sin x\cos x=\cos x.
+\]
+\langkah{2} Pindah ke satu ruas dan faktorkan (jangan dibagi!):
+\[
+2\sin x\cos x-\cos x=0 \Rightarrow \cos x\,(2\sin x-1)=0.
+\]
+\langkah{3} Dua kemungkinan:
+\begin{itemize}[leftmargin=*,topsep=1pt]
+  \item $\cos x=0 \Rightarrow x=90^\circ$ atau $270^\circ$;
+  \item $2\sin x-1=0 \Rightarrow \sin x=\tfrac12 \Rightarrow x=30^\circ$ atau
+  $150^\circ$.
+\end{itemize}
+\jadi $x\in\{30^\circ,\ 90^\circ,\ 150^\circ,\ 270^\circ\}$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Membagi $\cos x$} sehingga solusi $90^\circ$ dan $270^\circ$
+  hilang. Ini kesalahan HOTS paling umum --- \emph{faktorkan}, jangan bagi.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\cos2x=\sin x$ (pakai $\cos2x=1-2\sin^2 x$, jadi kuadrat dalam $\sin x$);
+$\sin2x=\sin x$.
+\end{variasi}
+
+% ============================================================
+\begin{tips}
+\textbf{Ringkasan strategi Bab 4.}
+\begin{enumerate}[leftmargin=*,topsep=2pt]
+  \item \emph{Pilih rasio} dari sisi diketahui \& dicari (SOH-CAH-TOA). Selalu
+  gambar dan tandai sudut acuan.
+  \item \emph{Sudut istimewa} berasal dari segitiga $45$-$45$-$90$ dan
+  $30$-$60$-$90$ --- pahami, jangan hafal buta.
+  \item \emph{Kuadran:} nilai mutlak dari sudut acuan, tanda dari ASTC.
+  Identitas $\pm$ selalu dipilih tandanya lewat kuadran.
+  \item \emph{Persamaan:} sin \& cos punya 2 solusi per putaran, tan berperiode
+  $180^\circ$. \textbf{Faktorkan, jangan membagi} dengan fungsi yang bisa nol.
+\end{enumerate}
+\end{tips}
+
+\end{document}

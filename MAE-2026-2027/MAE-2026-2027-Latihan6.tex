@@ -1,0 +1,648 @@
+% ============================================================
+%  PEMBAHASAN SUPER DETAIL — LATIHAN SOAL & STUDI KASUS
+%  BAB 6: FUNGSI KUADRAT
+%  Catatan: Soal Akhir Bab TIDAK dibahas di sini (sesuai permintaan).
+% ============================================================
+\input{MAE-2026-2027-Latihan-preamble}
+\renewcommand{\babjudul}{Pembahasan Latihan — Bab 6}
+
+\begin{document}
+\setcounter{chapter}{6}
+\buathalamanjudul{Fungsi Kuadrat}{6}
+
+% ============================================================
+\chapter*{Pembahasan Bab 6: Fungsi Kuadrat}
+\addcontentsline{toc}{chapter}{Pembahasan Bab 6: Fungsi Kuadrat}
+\markboth{PEMBAHASAN BAB 6}{}
+% ============================================================
+
+\begin{tips}
+\textbf{Cara membaca buku ini.} Tiap soal: \textbf{(1)} soal ditulis ulang,
+\textbf{(2)} konsep kunci, \textbf{(3)} langkah demi langkah, \textbf{(4)}
+jebakan, \textbf{(5)} variasi. \emph{Aturan emas Bab 6:} sebisa mungkin
+\textbf{gambar parabolanya} (arah buka, puncak, titik potong) --- banyak jebakan
+tanda lenyap begitu kamu melihat grafiknya.
+\end{tips}
+
+% ============================================================
+\section*{Studi Kasus: Air Mancur dan Lintasan Proyektil}
+\addcontentsline{toc}{section}{Studi Kasus: Air Mancur}
+% ============================================================
+
+\begin{studikasus}{Air Mancur dan Lintasan Proyektil}
+Ketinggian air (m) terhadap jarak mendatar $x$ (m):
+\begin{center}
+\begin{tabular}{c|ccccc}
+\toprule
+$x$ (m) & 0 & 1 & 2 & 3 & 4 \\ \midrule
+tinggi (m) & 0 & 3 & 4 & 3 & 0 \\ \bottomrule
+\end{tabular}
+\end{center}
+\textbf{Pertanyaan.} (a) Di mana titik tertinggi? (b) Apakah data simetris?
+Terhadap garis apa? (c) Dapatkah kamu menebak rumus tingginya?
+\end{studikasus}
+
+\subsection*{Jawaban lengkap studi kasus}
+
+\begin{ingat}{Ciri parabola pada data}
+Data yang ``naik lalu turun secara simetris'' adalah tanda fungsi kuadrat. Titik
+tertinggi/terendah = \emph{puncak}; garis vertikal yang melewati puncak =
+\emph{sumbu simetri}.
+\end{ingat}
+
+\textbf{(a) Titik tertinggi.} Nilai terbesar pada tabel adalah $4$ m, tercapai
+saat $x=2$. Jadi \textbf{puncak $(2,4)$}.
+
+\textbf{(b) Kesimetrian.} Ya. Perhatikan pasangan yang berjarak sama dari $x=2$:
+$x=1$ dan $x=3$ sama-sama $3$; $x=0$ dan $x=4$ sama-sama $0$. Datanya simetris
+terhadap garis \textbf{$x=2$} (sumbu simetri, melewati puncak).
+
+\textbf{(c) Menebak rumus.} Gunakan \emph{bentuk puncak} $f(x)=a(x-2)^2+4$
+(karena puncak $(2,4)$). Cari $a$ dengan titik lain, mis.\ $(0,0)$:
+\[
+0=a(0-2)^2+4=4a+4 \Rightarrow a=-1.
+\]
+Maka $f(x)=-(x-2)^2+4=-x^2+4x$. \emph{Cek} $(1,3)$: $-1+4=3$ \checkmark; $(3,3)$:
+$-9+12=3$ \checkmark.
+\jadi rumus tinggi air mancur $f(x)=-x^2+4x$, puncak $(2,4)$, simetris terhadap
+$x=2$.
+
+% ############################################################
+\section*{Subbab 6.1 — Bentuk, Grafik, dan Karakteristik}
+\addcontentsline{toc}{section}{Subbab 6.1 — Bentuk \& Grafik}
+% ############################################################
+
+\begin{ingat}{Empat fakta parabola $f(x)=ax^2+bx+c$}
+\begin{itemize}[leftmargin=*,topsep=1pt]
+  \item $a>0$ buka \emph{atas} (punya minimum); $a<0$ buka \emph{bawah} (punya
+  maksimum).
+  \item Sumbu simetri: $x=-\dfrac{b}{2a}$ (tanda \emph{minus}!).
+  \item Puncak: $\left(-\dfrac{b}{2a},\ -\dfrac{D}{4a}\right)$, $D=b^2-4ac$.
+  \item Potong sumbu-$y$: $(0,c)$; potong sumbu-$x$: akar $ax^2+bx+c=0$.
+  \item Diskriminan: $D>0$ dua akar, $D=0$ satu (kembar), $D<0$ tak ada akar real.
+\end{itemize}
+\end{ingat}
+
+% ---------------- SOAL 6.1.1 ----------------
+\soalno{6.1.1}{jenis akar via diskriminan}
+\begin{soalbox}{}
+Tentukan jenis akar dari $2x^2+3x+5=0$ tanpa menghitung akarnya.
+\end{soalbox}
+
+\jawab
+\langkah{1} Kenali $a=2,\ b=3,\ c=5$.
+\langkah{2} Hitung diskriminan: $D=b^2-4ac=3^2-4(2)(5)=9-40=-31$.
+\langkah{3} Karena $D<0$, tak ada akar real.
+\jadi persamaan ini \textbf{tidak punya akar real} (grafiknya tidak memotong
+sumbu-$x$).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah tanda $4ac$.} $4\cdot2\cdot5=40$, dan $D=9-40$, bukan
+  $9+40$.
+  \item \textbf{Mengira $D<0$ berarti ``tak ada penyelesaian apa pun''.} Grafik
+  tetap ada; hanya saja tak menyentuh sumbu-$x$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Menentukan nilai $c$ atau $m$ agar $D>0$/$D=0$/$D<0$ (soal ``syarat akar'').
+\end{variasi}
+
+% ---------------- SOAL 6.1.2 ----------------
+\soalno{6.1.2}{titik puncak}
+\begin{soalbox}{}
+Tentukan titik puncak $f(x)=x^2-6x+5$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $a=1,\ b=-6,\ c=5$. Absis puncak (sumbu simetri):
+$x=-\dfrac{b}{2a}=-\dfrac{-6}{2}=3$.
+\langkah{2} Ordinat puncak: substitusi $x=3$:
+$f(3)=3^2-6(3)+5=9-18+5=-4$.
+\jadi titik puncak $(3,-4)$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah tanda $-\frac{b}{2a}$.} $b=-6$, jadi $-\frac{-6}{2}=+3$
+  (bukan $-3$).
+  \item \textbf{Menghitung ordinat pakai $-\frac{D}{4a}$ tapi salah $D$.}
+  Substitusi langsung ke $f(x)$ lebih aman.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Ubah ke bentuk puncak dengan melengkapkan kuadrat:
+$f=(x-3)^2-4$, membaca puncak langsung.
+\end{variasi}
+
+% ---------------- SOAL 6.1.3 ----------------
+\soalno{6.1.3}{akar dengan pemfaktoran}
+\begin{soalbox}{}
+Tentukan akar $x^2-5x+6=0$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Cari dua bilangan yang \emph{dikali} $=6$ (yakni $c$) dan
+\emph{dijumlah} $=-5$ (yakni $b$): keduanya $-2$ dan $-3$.
+\langkah{2} Faktorkan: $(x-2)(x-3)=0$.
+\langkah{3} Akar: $x=2$ atau $x=3$.
+\jadi $x=2$ atau $x=3$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah tanda faktor.} $(x-2)(x-3)$ memberi $+6$ dan $-5$; jangan
+  $(x+2)(x+3)$ (itu $+6$ dan $+5$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Jika tak bisa difaktorkan rapi, pakai rumus $abc$; hubungkan dengan Vieta
+($x_1+x_2=5,\ x_1x_2=6$).
+\end{variasi}
+
+% ---------------- SOAL 6.1.4 ----------------
+\soalno{6.1.4}{menggambar parabola buka bawah}
+\begin{soalbox}{}
+Gambarkan grafik $f(x)=-x^2+2x+3$ lengkap dengan titik puncak.
+\end{soalbox}
+
+\jawab
+\langkah{1} $a=-1<0\Rightarrow$ buka ke \emph{bawah} (punya maksimum).
+\langkah{2} Puncak: $x=-\dfrac{b}{2a}=-\dfrac{2}{2(-1)}=1$; $f(1)=-1+2+3=4$.
+Puncak $(1,4)$.
+\langkah{3} Titik potong sumbu-$x$: $-x^2+2x+3=0\Rightarrow x^2-2x-3=0\Rightarrow
+(x-3)(x+1)=0\Rightarrow x=3,\ -1$.
+\langkah{4} Titik potong sumbu-$y$: $(0,3)$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle,width=8.5cm,height=5.5cm,xlabel=$x$,ylabel=$y$,
+  xmin=-2.5,xmax=4.5,ymin=-1.5,ymax=5,samples=60]
+\addplot[very thick,biru,domain=-1.6:3.6]{-x^2+2*x+3};
+\addplot[only marks,mark=*,oranye] coordinates {(1,4)};
+\node[oranye,font=\scriptsize,above] at (axis cs:1,4){puncak $(1,4)$};
+\addplot[only marks,mark=*,hijau] coordinates {(3,0)(-1,0)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\jadi parabola buka bawah, puncak $(1,4)$, memotong sumbu-$x$ di $-1$ dan $3$,
+sumbu-$y$ di $3$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menggambar buka atas.} $a=-1<0$ harus buka ke \emph{bawah}.
+  \item \textbf{Lupa mengalikan $-1$} saat menyelesaikan $-x^2+2x+3=0$; balik jadi
+  $x^2-2x-3=0$ agar mudah difaktorkan.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$f(x)=x^2-2x-3$ (buka atas, puncak $(1,-4)$) --- pencerminan.
+\end{variasi}
+
+% ---------------- SOAL 6.1.5 ----------------
+\soalno{6.1.5}{sumbu simetri}
+\begin{soalbox}{}
+Tentukan sumbu simetri $f(x)=2x^2-8x+1$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $a=2,\ b=-8$. Sumbu simetri $x=-\dfrac{b}{2a}=-\dfrac{-8}{2\cdot2}
+=\dfrac{8}{4}=2$.
+\jadi sumbu simetri $x=2$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa $2a$ di penyebut} ($=4$, bukan $2$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Cari nilai minimum (substitusi $x=2$): $f(2)=8-16+1=-7$.
+\end{variasi}
+
+% ---------------- SOAL 6.1.6 ----------------
+\soalno{6.1.6}{syarat akar kembar}
+\begin{soalbox}{}
+Tentukan nilai $c$ agar $x^2+4x+c=0$ punya akar kembar.
+\end{soalbox}
+
+\begin{ingat}{Akar kembar $\iff D=0$}
+Satu akar (kembar) terjadi tepat saat diskriminan nol. Gunakan $D=b^2-4ac=0$
+sebagai persamaan untuk mencari parameter.
+\end{ingat}
+
+\jawab
+\langkah{1} $a=1,\ b=4$. Syarat kembar: $D=b^2-4ac=0$.
+\langkah{2} $16-4(1)c=0\Rightarrow 16=4c\Rightarrow c=4$.
+\jadi $c=4$ (persamaannya $x^2+4x+4=(x+2)^2=0$, akar kembar $x=-2$).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Memakai $D>0$.} Akar \emph{kembar} butuh $D=0$ (bukan $>0$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Cari $m$ pada $x^2-mx+9=0$ (Soal 6.2.8); atau syarat \emph{dua akar berbeda}
+($D>0$).
+\end{variasi}
+
+% ---------------- SOAL 6.1.7 ----------------
+\soalno{6.1.7}{menyusun fungsi dari akar}
+\begin{soalbox}{}
+Sebuah fungsi kuadrat memotong sumbu-$x$ di $2$ dan $5$. Tulis salah satu
+bentuknya.
+\end{soalbox}
+
+\begin{ingat}{Bentuk akar (faktor)}
+Jika akarnya $p$ dan $q$, maka $f(x)=a(x-p)(x-q)$ untuk sembarang $a\neq0$.
+Karena $a$ bebas, ada tak hingga fungsi --- ``salah satu'' cukup ambil $a=1$.
+\end{ingat}
+
+\jawab
+\langkah{1} Akar $2$ dan $5$ $\Rightarrow$ faktor $(x-2)$ dan $(x-5)$.
+\langkah{2} Ambil $a=1$: $f(x)=(x-2)(x-5)=x^2-7x+10$.
+\jadi salah satu bentuknya $f(x)=x^2-7x+10$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah tanda faktor.} Akar $2$ berasal dari $(x-2)$, bukan
+  $(x+2)$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Jika diberi titik tambahan (mis.\ melalui $(0,20)$), nilai $a$ terkunci; atau
+puncak diketahui $\Rightarrow$ pakai bentuk puncak.
+\end{variasi}
+
+% ---------------- SOAL 6.1.8 ----------------
+\soalno{6.1.8}{nilai minimum}
+\begin{soalbox}{}
+Tentukan nilai minimum $f(x)=x^2+2x+5$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $a=1>0\Rightarrow$ punya minimum di puncak. Absis:
+$x=-\dfrac{2}{2}=-1$.
+\langkah{2} Nilai minimum $=f(-1)=(-1)^2+2(-1)+5=1-2+5=4$.
+\jadi nilai minimum $=4$ (tercapai di $x=-1$).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mengira $c=5$ adalah minimum.} $c$ hanya nilai di $x=0$, bukan
+  puncak. Minimum di $x=-1$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Melengkapkan kuadrat: $f=(x+1)^2+4$, membaca minimum $4$ langsung.
+\end{variasi}
+
+% ---------------- SOAL 6.1.9 ----------------
+\soalno{6.1.9}{titik potong sumbu-y}
+\begin{soalbox}{}
+Tentukan titik potong sumbu-$y$ dari $f(x)=3x^2-x+2$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Sumbu-$y$ berarti $x=0$. Substitusi: $f(0)=3(0)-0+2=2$.
+\jadi titik potong sumbu-$y$ adalah $(0,2)$ (yaitu $c$).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menukar sumbu.} Potong sumbu-$y$: set $x=0$. Potong sumbu-$x$:
+  set $y=0$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Titik potong sumbu-$x$ (butuh menyelesaikan $3x^2-x+2=0$; cek $D=1-24<0$ $\Rightarrow$
+tidak memotong sumbu-$x$).
+\end{variasi}
+
+% ---------------- SOAL 6.1.10 ----------------
+\soalno{6.1.10}{waktu tinggi maksimum (proyektil)}
+\begin{soalbox}{}
+Sebuah batu dilempar, tingginya $h(t)=20t-5t^2$. Kapan mencapai tinggi
+maksimum?
+\end{soalbox}
+
+\jawab
+\langkah{1} Tulis dalam bentuk baku: $h(t)=-5t^2+20t$, jadi $a=-5,\ b=20$.
+Karena $a<0$, ada maksimum.
+\langkah{2} Waktu puncak: $t=-\dfrac{b}{2a}=-\dfrac{20}{2(-5)}=\dfrac{20}{10}=2$.
+\jadi tinggi maksimum dicapai pada $t=2$ detik. (Tinggi maksnya
+$h(2)=40-20=20$ m.)
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah menyusun $a,b$.} Susun $-5t^2+20t$ (koefisien $t^2$ adalah
+  $-5$).
+  \item \textbf{Mengira ``kapan menyentuh tanah'' = puncak.} Menyentuh tanah saat
+  $h=0$ ($t=0$ atau $t=4$); puncak di tengahnya, $t=2$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Menanyakan tinggi maksimum (substitusi $t=2$), atau kapan menyentuh tanah
+($h=0$), atau berapa lama di atas $15$ m (pertidaksamaan).
+\end{variasi}
+
+% ############################################################
+\section*{Subbab 6.2 — Persamaan, Pertidaksamaan, dan Penerapan}
+\addcontentsline{toc}{section}{Subbab 6.2 — Persamaan \& Pertidaksamaan}
+% ############################################################
+
+\begin{ingat}{Rumus $abc$, Vieta, dan pertidaksamaan}
+Akar: $x_{1,2}=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$. Vieta:
+$x_1+x_2=-\dfrac ba$, $x_1x_2=\dfrac ca$. \\
+Pertidaksamaan kuadrat: cari akar, gambar parabola, lalu baca daerahnya --- untuk
+$a>0$, nilai \emph{positif} di \emph{luar} akar, \emph{negatif} di \emph{antara}
+akar.
+\end{ingat}
+
+% ---------------- SOAL 6.2.1 ----------------
+\soalno{6.2.1}{rumus abc}
+\begin{soalbox}{}
+Selesaikan $x^2-7x+10=0$ dengan rumus $abc$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $a=1,\ b=-7,\ c=10$. $D=(-7)^2-4(1)(10)=49-40=9$.
+\langkah{2} $x=\dfrac{-b\pm\sqrt D}{2a}=\dfrac{7\pm\sqrt9}{2}=\dfrac{7\pm3}{2}$.
+\langkah{3} $x=\dfrac{10}{2}=5$ atau $x=\dfrac{4}{2}=2$.
+\jadi $x=5$ atau $x=2$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah tanda $-b$.} $b=-7$, jadi $-b=+7$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Bandingkan dengan pemfaktoran $(x-2)(x-5)$; rumus $abc$ berlaku untuk yang sulit
+difaktorkan.
+\end{variasi}
+
+% ---------------- SOAL 6.2.2 ----------------
+\soalno{6.2.2}{Vieta dasar}
+\begin{soalbox}{}
+Jika $x_1,x_2$ akar $x^2-3x+1=0$, hitung $x_1+x_2$ dan $x_1x_2$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $a=1,\ b=-3,\ c=1$.
+\langkah{2} Jumlah akar: $x_1+x_2=-\dfrac ba=-\dfrac{-3}{1}=3$.
+\langkah{3} Hasil kali: $x_1x_2=\dfrac ca=\dfrac11=1$.
+\jadi $x_1+x_2=3$ dan $x_1x_2=1$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa tanda minus pada jumlah.} $x_1+x_2=-\frac ba$; di sini
+  $-(-3)=3$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Lanjutkan menghitung $x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2=9-2=7$ (kombinasi simetris).
+\end{variasi}
+
+% ---------------- SOAL 6.2.3 ----------------
+\soalno{6.2.3}{ekspresi simetris akar}
+\begin{soalbox}{}
+Hitung $\dfrac{1}{x_1}+\dfrac{1}{x_2}$ untuk $2x^2-5x+3=0$.
+\end{soalbox}
+
+\begin{ingat}{Ubah ke jumlah \& hasil kali}
+$\dfrac{1}{x_1}+\dfrac{1}{x_2}=\dfrac{x_1+x_2}{x_1x_2}$. Ekspresi simetris apa pun
+bisa ditulis lewat $x_1+x_2$ dan $x_1x_2$ (Vieta), tanpa mencari akar.
+\end{ingat}
+
+\jawab
+\langkah{1} Vieta: $x_1+x_2=-\dfrac{-5}{2}=\dfrac52$; $x_1x_2=\dfrac32$.
+\langkah{2} $\dfrac{1}{x_1}+\dfrac{1}{x_2}=\dfrac{x_1+x_2}{x_1x_2}
+=\dfrac{5/2}{3/2}=\dfrac53$.
+\jadi $\dfrac{1}{x_1}+\dfrac{1}{x_2}=\dfrac53$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menjumlahkan kebalikan secara terpisah} setelah mencari akar ---
+  boros. Vieta jauh lebih cepat.
+  \item \textbf{Lupa $a=2$} sehingga $x_1+x_2=5$ (salah); bagi dengan $a$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$x_1^2+x_2^2$, $\frac{x_1}{x_2}+\frac{x_2}{x_1}$, $(x_1-x_2)^2=(x_1+x_2)^2-4x_1x_2$.
+\end{variasi}
+
+% ---------------- SOAL 6.2.4 ----------------
+\soalno{6.2.4}{pertidaksamaan (di antara akar)}
+\begin{soalbox}{}
+Tentukan HP dari $x^2-4\le0$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Akar $x^2-4=0\Rightarrow(x-2)(x+2)=0\Rightarrow x=\pm2$.
+\langkah{2} $a=1>0$ (buka atas), nilai $\le0$ (di bawah/pada sumbu) berada
+\emph{di antara} akar.
+\jadi HP $=\{x\mid -2\le x\le2\}$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+\draw[->](-3.5,0)--(3.5,0) node[right]{$x$};
+\foreach \x in {-2,2}{\fill (\x,0) circle(2.5pt);}
+\draw[very thick,merah](-2,0)--(2,0);
+\node[below] at (-2,-0.15){$-2$};\node[below] at (2,-0.15){$2$};
+\node[merah,above] at (0,0.1){HP: $-2\le x\le2$};
+\end{tikzpicture}
+\end{center}
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menulis $x\le2$ saja.} $x^2\le4$ berarti $|x|\le2$, jadi
+  \emph{dua sisi}: $-2\le x\le2$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$x^2-4\ge0$ membalik jawaban jadi $x\le-2$ atau $x\ge2$ (di luar akar).
+\end{variasi}
+
+% ---------------- SOAL 6.2.5 ----------------
+\soalno{6.2.5}{pertidaksamaan (di luar akar)}
+\begin{soalbox}{}
+Tentukan HP dari $x^2+x-12\ge0$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Akar: $x^2+x-12=0\Rightarrow(x+4)(x-3)=0\Rightarrow x=-4,\ 3$.
+\langkah{2} $a=1>0$ (buka atas), nilai $\ge0$ berada \emph{di luar} akar
+(termasuk titik akarnya).
+\jadi HP $=\{x\mid x\le-4\ \text{atau}\ x\ge3\}$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menggabung jadi satu pertidaksamaan} ($-4\le x\le3$) --- itu
+  untuk ``$\le0$''. Untuk ``$\ge0$'' daerahnya \emph{terpisah}.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Bentuk dengan $a<0$ (mis.\ $-x^2+x+12\ge0$) membalik logika ``luar/dalam''.
+\end{variasi}
+
+% ---------------- SOAL 6.2.6 ----------------
+\soalno{6.2.6}{menyusun PK dari akar}
+\begin{soalbox}{}
+Susun persamaan kuadrat berakar $2$ dan $-5$.
+\end{soalbox}
+
+\begin{ingat}{PK dari jumlah \& hasil kali}
+PK dapat ditulis $x^2-(x_1+x_2)x+(x_1x_2)=0$.
+\end{ingat}
+
+\jawab
+\langkah{1} Jumlah akar: $2+(-5)=-3$. Hasil kali: $2\cdot(-5)=-10$.
+\langkah{2} Susun: $x^2-(-3)x+(-10)=0\Rightarrow x^2+3x-10=0$.
+\jadi $x^2+3x-10=0$ (cek: $(x-2)(x+5)=x^2+3x-10$ \checkmark).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah tanda koefisien $x$.} Rumus memakai $-(x_1+x_2)$; di sini
+  $-(-3)=+3$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Akar irasional/pecahan; atau PK yang akarnya $2\times$ akar PK lain (transformasi
+akar).
+\end{variasi}
+
+% ---------------- SOAL 6.2.7 ----------------
+\soalno{6.2.7}{satu akar diketahui}
+\begin{soalbox}{}
+Jika satu akar $x^2+px+12=0$ adalah $3$, tentukan $p$ dan akar lainnya.
+\end{soalbox}
+
+\jawab
+\textbf{Cara A (substitusi).} Karena $3$ akar, ia memenuhi persamaan:
+$3^2+p(3)+12=0\Rightarrow 9+3p+12=0\Rightarrow 3p=-21\Rightarrow p=-7$.
+
+\textbf{Akar lain (Vieta).} Hasil kali akar $=\dfrac{c}{a}=12$. Jika satu akar
+$3$: $3\cdot x_2=12\Rightarrow x_2=4$.
+\jadi $p=-7$ dan akar lainnya $4$. (Cek jumlah: $3+4=7=-p$ \checkmark.)
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mencari akar lain lewat rumus $abc$} padahal Vieta ($x_1x_2=c$)
+  jauh lebih cepat.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Diberi hasil/jumlah akar tertentu untuk menentukan parameter; akar berkebalikan.
+\end{variasi}
+
+% ---------------- SOAL 6.2.8 ----------------
+\soalno{6.2.8}{akar kembar cari parameter}
+\begin{soalbox}{}
+Tentukan $m$ agar $x^2-mx+9=0$ berakar kembar.
+\end{soalbox}
+
+\jawab
+\langkah{1} Syarat kembar: $D=0$. Di sini $a=1,\ b=-m,\ c=9$:
+\[
+D=(-m)^2-4(1)(9)=m^2-36=0.
+\]
+\langkah{2} $m^2=36\Rightarrow m=\pm6$.
+\jadi $m=6$ atau $m=-6$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Hanya menulis $m=6$.} $m^2=36$ punya \emph{dua} solusi
+  ($\pm6$).
+  \item \textbf{$(-m)^2=-m^2$?} Salah; $(-m)^2=m^2$ (kuadrat selalu positif).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Syarat $D>0$ (dua akar berbeda) memberi $m<-6$ atau $m>6$; $D<0$ memberi
+$-6<m<6$.
+\end{variasi}
+
+% ---------------- SOAL 6.2.9 ----------------
+\soalno{6.2.9}{pertidaksamaan buka bawah}
+\begin{soalbox}{}
+Selesaikan $-x^2+3x>0$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Kalikan $-1$ (\textbf{balik tanda}): $x^2-3x<0$.
+\langkah{2} Faktorkan: $x(x-3)<0\Rightarrow$ akar $0$ dan $3$.
+\langkah{3} $a=1>0$, nilai $<0$ berada \emph{di antara} akar.
+\jadi HP $=\{x\mid 0<x<3\}$.
+
+\begin{tips}
+Alternatif tanpa membalik: $-x^2+3x=x(3-x)>0$. Hasil kali positif bila kedua
+faktor sepertanda: $0<x<3$. Sama hasilnya.
+\end{tips}
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa membalik tanda} saat mengalikan $-1$. $>$ berubah jadi $<$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$-x^2+3x\le0$ (di luar akar: $x\le0$ atau $x\ge3$).
+\end{variasi}
+
+% ---------------- SOAL 6.2.10 ----------------
+\soalno{6.2.10}{akar berbanding (Vieta HOTS)}
+\begin{soalbox}{}
+Akar $x^2-6x+k=0$ berbanding $1:2$. Tentukan $k$.
+\end{soalbox}
+
+\begin{ingat}{Misalkan akar sesuai perbandingan}
+Kalau akar berbanding $1:2$, tulis akarnya $t$ dan $2t$. Lalu pakai Vieta:
+jumlah $=-\frac ba$, hasil kali $=\frac ca$.
+\end{ingat}
+
+\jawab
+\langkah{1} Misalkan akarnya $t$ dan $2t$.
+\langkah{2} Jumlah akar $=-\dfrac{-6}{1}=6$: $t+2t=3t=6\Rightarrow t=2$.
+\langkah{3} Maka akarnya $2$ dan $4$. Hasil kali $=k$: $k=2\cdot4=8$.
+\jadi $k=8$. (Cek: $x^2-6x+8=(x-2)(x-4)$, akar $2:4=1:2$ \checkmark.)
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menganggap akarnya $1$ dan $2$.} Perbandingan $1:2$ berarti
+  $t:2t$, bukan nilai persisnya $1$ dan $2$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Akar berbanding $2:3$, atau berselisih tertentu ($x_2-x_1=4$), atau satu akar
+$k\times$ akar lain.
+\end{variasi}
+
+% ============================================================
+\begin{tips}
+\textbf{Ringkasan strategi Bab 6.}
+\begin{enumerate}[leftmargin=*,topsep=2pt]
+  \item \emph{Grafik dulu:} tanda $a$ (arah buka), sumbu simetri
+  $x=-\frac{b}{2a}$, puncak, titik potong. Gambar mengungkap banyak jawaban.
+  \item \emph{Diskriminan} $D=b^2-4ac$ menentukan banyak akar; $D=0$ untuk akar
+  kembar (dipakai mencari parameter).
+  \item \emph{Vieta} ($x_1+x_2=-\frac ba,\ x_1x_2=\frac ca$) menyelesaikan
+  ekspresi simetris tanpa mencari akar.
+  \item \emph{Pertidaksamaan:} cari akar, lihat arah buka --- $a>0$: positif di
+  luar akar, negatif di antara. \textbf{Balik tanda} bila mengali negatif.
+\end{enumerate}
+\end{tips}
+
+\end{document}

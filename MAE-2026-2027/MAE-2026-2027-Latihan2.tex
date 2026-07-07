@@ -1,0 +1,1146 @@
+% ============================================================
+%  PEMBAHASAN SUPER DETAIL — LATIHAN SOAL & STUDI KASUS
+%  BAB 2: BARISAN DAN DERET
+%  Catatan: Soal Akhir Bab TIDAK dibahas di sini (sesuai permintaan).
+% ============================================================
+\input{MAE-2026-2027-Latihan-preamble}
+\renewcommand{\babjudul}{Pembahasan Latihan — Bab 2}
+
+\begin{document}
+\setcounter{chapter}{2}
+\buathalamanjudul{Barisan dan Deret}{2}
+
+% ============================================================
+\chapter*{Pembahasan Bab 2: Barisan dan Deret}
+\addcontentsline{toc}{chapter}{Pembahasan Bab 2: Barisan dan Deret}
+\markboth{PEMBAHASAN BAB 2}{}
+% ============================================================
+
+\begin{tips}
+\textbf{Cara membaca buku ini.} Setiap soal dibahas dengan pola tetap:
+\textbf{(1) soal ditulis ulang}, \textbf{(2) konsep kunci}, \textbf{(3)
+penyelesaian langkah demi langkah}, \textbf{(4) jebakan} yang sering bikin salah,
+dan \textbf{(5) variasi} bentuk soal. \emph{Aturan emas Bab 2:} selalu cek
+rumusmu dengan memasukkan $n=1$ --- harus menghasilkan suku pertama.
+\end{tips}
+
+% ============================================================
+\section*{Studi Kasus: Tantangan Menabung Aisya vs Bima}
+\addcontentsline{toc}{section}{Studi Kasus: Menabung Aisya vs Bima}
+% ============================================================
+
+\begin{studikasus}{Tantangan Menabung dan Bunga Cicilan}
+Dua sahabat, Aisya dan Bima, menabung dengan cara berbeda selama 12 bulan.
+\begin{center}
+\begin{tabular}{c|c|c}
+\toprule
+Bulan & Aisya (tambah Rp50rb) & Bima (kali $1{,}2$) \\
+\midrule
+1 & 100.000 & 100.000 \\
+2 & 150.000 & 120.000 \\
+3 & 200.000 & 144.000 \\
+4 & 250.000 & 172.800 \\
+$\vdots$ & $\vdots$ & $\vdots$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\textbf{Pertanyaan.} (a) Pola mana yang ``selisihnya tetap'' dan mana yang
+``rasionya tetap''? (b) Kapan tabungan Bima menyusul Aisya? (c) Bila berlangsung
+bertahun-tahun, pola mana yang akhirnya jauh lebih besar?
+\end{studikasus}
+
+\subsection*{Jawaban lengkap studi kasus}
+
+\begin{ingat}{Dua jenis pola}
+\textbf{Aritmetika:} tiap suku \emph{ditambah} bilangan tetap (beda $b$).
+\textbf{Geometri:} tiap suku \emph{dikali} bilangan tetap (rasio $r$).
+Ujilah: hitung \emph{selisih} berurutan --- kalau tetap, aritmetika. Hitung
+\emph{hasil bagi} berurutan --- kalau tetap, geometri.
+\end{ingat}
+
+\textbf{(a) Mengenali pola.}
+Aisya: $150{-}100=50$, $200{-}150=50$, \dots\ selisih tetap $50$ ribu
+$\Rightarrow$ \textbf{aritmetika}, $a=100,\ b=50$ (ribu).
+Bima: $\frac{120}{100}=1{,}2$, $\frac{144}{120}=1{,}2$, \dots\ rasio tetap
+$\Rightarrow$ \textbf{geometri}, $a=100,\ r=1{,}2$.
+Rumusnya:
+\[
+A_n = 100 + (n-1)\,50 \ \text{(ribu)}, \qquad B_n = 100\times 1{,}2^{\,n-1}\ \text{(ribu)}.
+\]
+
+\textbf{(b) Kapan Bima menyusul Aisya?} Kita bandingkan tabel lebih jauh (dalam
+ribuan rupiah):
+\begin{center}\small
+\begin{tabular}{c|ccccccccccc}
+\toprule
+Bulan $n$ & 1 & 3 & 5 & 7 & 9 & 10 & 11 & 12 \\
+\midrule
+Aisya $A_n$ & 100 & 200 & 300 & 400 & 500 & 550 & 600 & 650 \\
+Bima $B_n$ & 100 & 144 & 207 & 299 & 430 & 516 & 619 & 743 \\
+\bottomrule
+\end{tabular}
+\end{center}
+Pada bulan ke-10 Bima ($516$) masih di bawah Aisya ($550$); pada bulan ke-11
+Bima ($619$) sudah melewati Aisya ($600$).
+\jadi Bima menyusul Aisya pada \textbf{bulan ke-11}.
+
+\textbf{(c) Jangka panjang.} Pertumbuhan geometri (perkalian berulang $=$
+eksponen, lihat Bab 1) selalu \emph{akhirnya} mengalahkan pertumbuhan aritmetika
+(penambahan tetap), berapa pun beda aritmetikanya. Maka dalam jangka panjang
+\textbf{pola Bima (geometri) jauh lebih besar}.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=11cm,height=5.5cm,xlabel=bulan $n$,ylabel=tabungan (ribu),
+  xmin=1,xmax=14,ymin=0,ymax=1000,legend pos=north west,legend style={font=\small},
+  axis lines=left]
+\addplot[very thick,biru,mark=*,mark size=1pt,domain=1:14,samples=14]{100+(x-1)*50};
+\addlegendentry{Aisya (aritmetika)}
+\addplot[very thick,oranye,mark=square*,mark size=1pt,domain=1:14,samples=14]{100*1.2^(x-1)};
+\addlegendentry{Bima (geometri)}
+\end{axis}
+\end{tikzpicture}\\
+{\small Garis lurus (Aisya) vs kurva melengkung ke atas (Bima). Titik potong
+$\approx$ bulan ke-11; setelahnya Bima melesat meninggalkan Aisya.}
+\end{center}
+
+% ############################################################
+\section*{Subbab 2.1 — Barisan dan Deret Aritmetika}
+\addcontentsline{toc}{section}{Subbab 2.1 — Barisan \& Deret Aritmetika}
+% ############################################################
+
+\begin{ingat}{Rumus wajib aritmetika}
+Dengan $a=U_1$ (suku pertama) dan $b$ (beda):
+\[
+U_n = a + (n-1)b, \qquad
+S_n = \frac n2\big(2a+(n-1)b\big) = \frac n2\,(a+U_n).
+\]
+\textbf{Mengapa $(n-1)$?} Dari suku ke-1 ke suku ke-$n$, kita menambah $b$
+sebanyak $(n-1)$ kali --- bukan $n$ kali. Cek: $n=1\Rightarrow U_1=a$. \checkmark
+\end{ingat}
+
+% ---------------- SOAL 2.1.1 ----------------
+\soalno{2.1.1}{suku ke-$n$ aritmetika}
+\begin{soalbox}{}
+Tentukan suku ke-15 dari barisan $5, 9, 13, \dots$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Identifikasi $a$ dan $b$. Suku pertama $a=5$; beda $b=9-5=4$
+(cek: $13-9=4$ \checkmark).
+\langkah{2} Pakai $U_n=a+(n-1)b$ dengan $n=15$:
+\[
+U_{15} = 5 + (15-1)\cdot 4 = 5 + 14\cdot 4 = 5 + 56 = 61.
+\]
+\jadi $U_{15}=61$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Memakai $n$, bukan $n-1$.} Menulis $5+15\cdot4=65$. Salah ---
+  penambahan hanya $14$ kali. Selalu ingat $(n-1)$.
+  \item \textbf{Salah tentukan beda} kalau barisan turun. Untuk $20,17,14,\dots$
+  beda $b=-3$ (negatif).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+``Suku ke-15 dari $50,47,44,\dots$'' (beda negatif), atau dibalik: ``suku ke
+berapa yang bernilai $61$?'' $\Rightarrow$ selesaikan $5+(n-1)4=61$.
+\end{variasi}
+
+% ---------------- SOAL 2.1.2 ----------------
+\soalno{2.1.2}{mencari $a$ dan $b$ dari dua suku}
+\begin{soalbox}{}
+Diketahui $U_3=11$ dan $U_7=27$. Tentukan $a$ dan $b$.
+\end{soalbox}
+
+\begin{ingat}{Selisih dua suku menyingkirkan $a$}
+$U_p - U_q = (p-q)\,b$. Selisih dua suku hanya bergantung pada beda dan jarak
+indeksnya --- $a$ hilang. Ini cara tercepat menemukan $b$.
+\end{ingat}
+
+\jawab
+\langkah{1} Kurangkan kedua suku untuk mendapat $b$:
+\[
+U_7 - U_3 = (7-3)b \Rightarrow 27-11 = 4b \Rightarrow 16 = 4b \Rightarrow b=4.
+\]
+\langkah{2} Masukkan $b$ ke salah satu suku, mis.\ $U_3=a+2b=11$:
+\[
+a + 2(4) = 11 \Rightarrow a = 11-8 = 3.
+\]
+\jadi $a=3$ dan $b=4$ (barisannya $3,7,11,15,\dots$).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah jarak indeks} ($U_7-U_3=7b$?). Jaraknya $7-3=4$, jadi $4b$.
+  \item \textbf{Salah pakai indeks di $U_3=a+3b$.} Rumusnya $a+(n-1)b$, jadi
+  $U_3=a+2b$ (bukan $a+3b$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Diberi $U_4=14,\ U_9=29$ lalu diminta rumus $U_n$; atau diberi $U_2$ dan $S_5$
+(campur suku dan jumlah) --- susun dua persamaan.
+\end{variasi}
+
+% ---------------- SOAL 2.1.3 ----------------
+\soalno{2.1.3}{jumlah deret aritmetika}
+\begin{soalbox}{}
+Hitung $S_{30}$ dari $2+5+8+\cdots$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $a=2,\ b=3,\ n=30$.
+\langkah{2} Pakai $S_n=\frac n2\big(2a+(n-1)b\big)$:
+\[
+S_{30}=\frac{30}{2}\big(2\cdot2+(30-1)\cdot3\big)=15\,(4+87)=15\cdot91=1365.
+\]
+\jadi $S_{30}=1365$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa $2a$.} Menulis $\frac n2(a+(n-1)b)$. Rumus yang benar
+  memakai $2a$, atau bentuk $\frac n2(a+U_n)$ (hitung $U_n$ dulu).
+  \item \textbf{Salah $n-1$ lagi} di dalam kurung.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+``Hitung $2+5+8+\cdots+92$'' (batas nilai, bukan banyak suku) --- cari dulu $n$
+dari $U_n=92$, baru jumlahkan.
+\end{variasi}
+
+% ---------------- SOAL 2.1.4 ----------------
+\soalno{2.1.4}{jumlah kelipatan tertentu}
+\begin{soalbox}{}
+Tentukan jumlah semua bilangan asli kelipatan $3$ antara $1$ dan $100$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Bilangannya: $3,6,9,\dots,99$. Ini aritmetika $a=3,\ b=3$, suku
+terakhir $U_n=99$.
+\langkah{2} Cari banyak suku $n$ dari $U_n=99$:
+\[
+3+(n-1)3=99 \Rightarrow (n-1)3=96 \Rightarrow n-1=32 \Rightarrow n=33.
+\]
+(Cara cepat: $99\div3=33$.)
+\langkah{3} Jumlahkan dengan $S_n=\frac n2(a+U_n)$:
+\[
+S_{33}=\frac{33}{2}(3+99)=\frac{33}{2}\cdot102=33\cdot51=1683.
+\]
+\jadi jumlahnya $1683$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah suku terakhir.} ``Antara 1 dan 100'' $\Rightarrow$ kelipatan
+  3 terbesar $<100$ adalah $99$ (bukan $102$).
+  \item \textbf{Lupa mencari $n$ dulu.} Rumus jumlah butuh banyak suku; jangan
+  pakai $100$ sebagai $n$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+``Jumlah kelipatan $5$ antara $1$--$200$'', atau ``jumlah bilangan yang habis
+dibagi $3$ \emph{atau} $5$'' (butuh prinsip inklusi--eksklusi, lihat Bab 8).
+\end{variasi}
+
+% ---------------- SOAL 2.1.5 ----------------
+\soalno{2.1.5}{mencari indeks dari nilai suku}
+\begin{soalbox}{}
+Suku ke berapa dari $7,11,15,\dots$ yang bernilai $107$?
+\end{soalbox}
+
+\jawab
+\langkah{1} $a=7,\ b=4$. Susun persamaan $U_n=107$:
+\[
+7+(n-1)4=107.
+\]
+\langkah{2} Selesaikan untuk $n$:
+\[
+(n-1)4=100 \Rightarrow n-1=25 \Rightarrow n=26.
+\]
+\jadi suku ke-26.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa $+1$ di akhir.} Setelah $n-1=25$, jangan berhenti; $n=26$.
+  \item \textbf{Jawaban $n$ bukan bilangan bulat} $\Rightarrow$ berarti nilai itu
+  \emph{tidak ada} di barisan. Selalu periksa.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+``Apakah $100$ termasuk barisan $7,11,15,\dots$?'' $\Rightarrow$ selesaikan; kalau
+$n$ pecahan, jawabannya tidak.
+\end{variasi}
+
+% ---------------- SOAL 2.1.6 ----------------
+\soalno{2.1.6}{menyisipkan bilangan (interpolasi)}
+\begin{soalbox}{}
+Sisipkan $3$ bilangan antara $2$ dan $18$ agar terbentuk barisan aritmetika;
+tuliskan barisannya.
+\end{soalbox}
+
+\begin{ingat}{Rumus beda baru setelah penyisipan}
+Menyisipkan $k$ bilangan di antara dua ujung mengubah beda menjadi
+\[
+b' = \frac{\text{selisih ujung}}{k+1}.
+\]
+Sebab, jika mula-mula ada $2$ ujung, setelah disisipi $k$ bilangan terdapat
+$k+2$ suku, sehingga ada $k+1$ ``loncatan'' beda.
+\end{ingat}
+
+\jawab
+\langkah{1} Ujung: $2$ dan $18$; disisipi $k=3$ bilangan $\Rightarrow$ total
+$k+2=5$ suku, banyak loncatan $=k+1=4$.
+\langkah{2} Beda baru: $b'=\dfrac{18-2}{4}=\dfrac{16}{4}=4$.
+\langkah{3} Bangun barisannya mulai dari $2$, tambah $4$:
+\[
+2,\ 6,\ 10,\ 14,\ 18.
+\]
+\jadi barisannya $2,6,10,14,18$ (yang disisipkan: $6,10,14$).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Membagi dengan $k$, bukan $k+1$.} Loncatan beda selalu satu lebih
+  banyak daripada bilangan yang disisipkan.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+``Sisipkan $5$ bilangan antara $4$ dan $40$'' ($b'=6$); atau versi geometri:
+``sisipkan $2$ bilangan antara $2$ dan $54$ agar geometri'' $\Rightarrow
+r'=\sqrt[k+1]{\text{rasio ujung}}=\sqrt[3]{27}=3$.
+\end{variasi}
+
+% ---------------- SOAL 2.1.7 ----------------
+\soalno{2.1.7}{aplikasi: kursi gedung}
+\begin{soalbox}{}
+Sebuah gedung punya kursi: baris depan $20$, tiap baris di belakangnya bertambah
+$4$. Berapa total kursi pada $10$ baris?
+\end{soalbox}
+
+\jawab
+\langkah{1} Model: banyak kursi per baris membentuk aritmetika $a=20,\ b=4$.
+Total $10$ baris = jumlah $10$ suku pertama $=S_{10}$.
+\langkah{2} $S_{10}=\frac{10}{2}\big(2\cdot20+(10-1)\cdot4\big)=5(40+36)=5\cdot76=380$.
+\jadi total $380$ kursi.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menghitung hanya baris terakhir} ($U_{10}=56$) padahal yang
+  ditanya \emph{total} semua baris $\Rightarrow$ pakai $S_{10}$.
+  \item \textbf{Salah baca ``bertambah 4''} sebagai rasio (geometri). Ini
+  penambahan tetap $\Rightarrow$ aritmetika.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Tumpukan batu bata/kaleng berbentuk piramida, jumlah gaji naik tetap tiap tahun,
+jumlah anak tangga --- semua model aritmetika.
+\end{variasi}
+
+% ---------------- SOAL 2.1.8 ----------------
+\soalno{2.1.8}{mencari $U_n$ dari $S_n$}
+\begin{soalbox}{}
+Jika $S_n = 2n^2 + 3n$, tentukan rumus $U_n$.
+\end{soalbox}
+
+\begin{ingat}{Hubungan $U_n$ dan $S_n$}
+Suku ke-$n$ adalah selisih dua jumlah beruntun:
+\[
+U_n = S_n - S_{n-1}\quad (n\ge2), \qquad U_1 = S_1.
+\]
+Alasan: $S_n$ memuat semua suku hingga ke-$n$; kurangi $S_{n-1}$ (semua hingga
+ke-$(n-1)$), yang tersisa hanya suku ke-$n$.
+\end{ingat}
+
+\jawab
+\langkah{1} Hitung $S_{n-1}$ dengan mengganti $n\to n-1$:
+\[
+S_{n-1}=2(n-1)^2+3(n-1)=2(n^2-2n+1)+3n-3=2n^2-4n+2+3n-3=2n^2-n-1.
+\]
+\langkah{2} Kurangkan:
+\[
+U_n=S_n-S_{n-1}=(2n^2+3n)-(2n^2-n-1)=4n+1.
+\]
+\langkah{3} \textbf{Cek} $n=1$: rumus memberi $U_1=5$; sedangkan $S_1=2+3=5$.
+Cocok \checkmark (jadi $U_n=4n+1$ berlaku untuk semua $n$).
+\jadi $U_n=4n+1$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah kuadratkan $(n-1)^2$} $=n^2-2n+1$ (bukan $n^2-1$). Ini
+  sumber kesalahan terbesar.
+  \item \textbf{Lupa cek $U_1$.} Kadang $U_1$ dari $S_1$ berbeda dari rumus umum
+  (kalau $S_n$ punya konstanta); wajib diperiksa.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$S_n=n^2$ (menghasilkan bilangan ganjil $U_n=2n-1$), atau $S_n=3^n-1$
+(barisannya \emph{geometri} --- $U_n=S_n-S_{n-1}=2\cdot3^{n-1}$).
+\end{variasi}
+
+% ---------------- SOAL 2.1.9 ----------------
+\soalno{2.1.9}{mencari banyak suku dari jumlah}
+\begin{soalbox}{}
+Tentukan banyak suku jika $a=3$, $b=5$, dan $S_n=255$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Tulis $S_n$ dan samakan dengan $255$:
+\[
+\frac n2\big(2\cdot3+(n-1)5\big)=255 \Rightarrow \frac n2(6+5n-5)=255 \Rightarrow \frac n2(5n+1)=255.
+\]
+\langkah{2} Kalikan $2$: $n(5n+1)=510 \Rightarrow 5n^2+n-510=0$.
+\langkah{3} Rumus kuadrat: diskriminan $=1+4\cdot5\cdot510=1+10200=10201=101^2$.
+\[
+n=\frac{-1\pm101}{10}\Rightarrow n=\frac{100}{10}=10 \ \text{atau}\ n=\frac{-102}{10}\ (\text{ditolak, negatif}).
+\]
+\jadi banyak suku $n=10$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menerima $n$ negatif atau pecahan.} Banyak suku harus bilangan
+  asli; buang solusi tak valid.
+  \item \textbf{Salah ekspansi} $(n-1)5=5n-5$ (bukan $5n-1$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Bisa jadi diskriminan bukan kuadrat sempurna $\Rightarrow$ soal keliru atau harus
+pakai rumus abc penuh. Latih bentuk yang menghasilkan dua $n$ positif.
+\end{variasi}
+
+% ---------------- SOAL 2.1.10 ----------------
+\soalno{2.1.10}{tiga bilangan aritmetika (trik simetri)}
+\begin{soalbox}{}
+Tiga bilangan aritmetika berjumlah $21$ dan hasil kalinya $231$. Tentukan ketiga
+bilangan itu.
+\end{soalbox}
+
+\begin{ingat}{Misalkan simetris di sekitar suku tengah}
+Untuk \emph{tiga} bilangan aritmetika, misalkan $(x-b),\ x,\ (x+b)$. Keuntungan:
+jumlah ketiganya $=3x$ (beda $b$ langsung hilang), sehingga suku tengah cepat
+ketemu.
+\end{ingat}
+
+\jawab
+\langkah{1} Misalkan bilangannya $(x-b),\ x,\ (x+b)$.
+\langkah{2} Jumlah: $(x-b)+x+(x+b)=3x=21 \Rightarrow x=7$ (suku tengah).
+\langkah{3} Hasil kali: $(x-b)\,x\,(x+b)=x(x^2-b^2)=231$. Masukkan $x=7$:
+\[
+7(49-b^2)=231 \Rightarrow 49-b^2=33 \Rightarrow b^2=16 \Rightarrow b=4.
+\]
+\langkah{4} Bilangannya: $7-4,\ 7,\ 7+4 = 3,\ 7,\ 11$.
+\jadi ketiga bilangan itu $3,\ 7,\ 11$ (boleh terbalik $11,7,3$).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Memisalkan $a,\ a+b,\ a+2b$.} Boleh, tapi jauh lebih rumit
+  (muncul kuadrat bersilang). Misalan simetris jauh lebih rapi.
+  \item \textbf{Lupa $b$ boleh negatif} $\Rightarrow$ dua urutan (naik/turun),
+  tetapi himpunan bilangannya sama.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Analog untuk \emph{geometri}: misalkan $\frac ar,\ a,\ ar$ (lihat Soal 2.2.9).
+Untuk \emph{empat} bilangan aritmetika: $(x-3d),(x-d),(x+d),(x+3d)$ dengan beda
+$2d$.
+\end{variasi}
+
+% ############################################################
+\section*{Subbab 2.2 — Barisan dan Deret Geometri}
+\addcontentsline{toc}{section}{Subbab 2.2 — Barisan \& Deret Geometri}
+% ############################################################
+
+\begin{ingat}{Rumus wajib geometri}
+Dengan $a=U_1$ dan rasio $r$:
+\[
+U_n=a\,r^{\,n-1}, \quad S_n=\frac{a(r^n-1)}{r-1}\ (r\neq1), \quad
+S_\infty=\frac{a}{1-r}\ \text{hanya jika}\ |r|<1.
+\]
+\textbf{Mengapa $S_\infty$ hanya untuk $|r|<1$?} Karena hanya saat itu
+$r^n\to0$, sehingga jumlah menuju nilai berhingga. Jika $|r|\ge1$ suku tak
+menyusut, jumlah membesar tanpa batas.
+\end{ingat}
+
+% ---------------- SOAL 2.2.1 ----------------
+\soalno{2.2.1}{suku ke-$n$ geometri}
+\begin{soalbox}{}
+Tentukan suku ke-6 dari $3, 6, 12, \dots$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $a=3$; rasio $r=\frac{6}{3}=2$ (cek: $\frac{12}{6}=2$ \checkmark).
+\langkah{2} $U_n=a\,r^{n-1}$ dengan $n=6$:
+\[
+U_6=3\cdot2^{6-1}=3\cdot2^5=3\cdot32=96.
+\]
+\jadi $U_6=96$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Pangkat $n$, bukan $n-1$.} $3\cdot2^6=192$ salah. Uji $n=1$:
+  harus $U_1=3=3\cdot2^0$ \checkmark.
+  \item \textbf{Menentukan rasio dengan mengurangi} ($6-3=3$). Rasio dari
+  \emph{membagi}, bukan mengurangi.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Rasio pecahan: $U_6$ dari $80,40,20,\dots$ ($r=\frac12$); rasio negatif:
+$2,-6,18,\dots$ ($r=-3$, tanda suku berganti-ganti).
+\end{variasi}
+
+% ---------------- SOAL 2.2.2 ----------------
+\soalno{2.2.2}{jumlah $n$ suku geometri}
+\begin{soalbox}{}
+Hitung jumlah $10$ suku pertama dari $2+6+18+\cdots$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $a=2,\ r=3,\ n=10$.
+\langkah{2} Karena $r>1$, pakai $S_n=\dfrac{a(r^n-1)}{r-1}$:
+\[
+S_{10}=\frac{2(3^{10}-1)}{3-1}=\frac{2(59049-1)}{2}=59048.
+\]
+(Ingat $3^{10}=59049$.)
+\jadi $S_{10}=59048$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah $r^n$.} Hitung $3^{10}$ hati-hati ($3^5=243$, lalu
+  $243^2=59049$).
+  \item \textbf{Memakai rumus aritmetika.} Ini geometri --- jangan pakai
+  $\frac n2(\cdots)$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$r<1$: gunakan bentuk $S_n=\frac{a(1-r^n)}{1-r}$ agar penyebut positif.
+Contoh $8+4+2+\cdots$ (10 suku).
+\end{variasi}
+
+% ---------------- SOAL 2.2.3 ----------------
+\soalno{2.2.3}{deret geometri tak hingga}
+\begin{soalbox}{}
+Tentukan $S_\infty$ dari $9+3+1+\cdots$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $a=9$; rasio $r=\frac{3}{9}=\frac13$ (cek $\frac19$? $1/3=\frac13$
+\checkmark). Karena $|r|=\frac13<1$, $S_\infty$ \emph{ada}.
+\langkah{2} $S_\infty=\dfrac{a}{1-r}=\dfrac{9}{1-\frac13}=\dfrac{9}{\frac23}
+=9\cdot\dfrac32=\dfrac{27}{2}=13{,}5$.
+\jadi $S_\infty=\dfrac{27}{2}=13{,}5$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Membagi salah} $\frac{9}{2/3}$ --- ingat bagi pecahan = kali
+  kebalikannya.
+  \item \textbf{Memakai $S_\infty$ padahal $|r|\ge1$}, mis.\ pada $2+4+8+\cdots$
+  ($r=2$) yang \emph{tidak} punya jumlah tak hingga.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$r$ negatif: $8-4+2-\cdots$ ($r=-\frac12$, tetap konvergen karena
+$|r|<1$); atau soal balik: ``$S_\infty=12$ dan $a=6$, tentukan $r$.''
+\end{variasi}
+
+% ---------------- SOAL 2.2.4 ----------------
+\soalno{2.2.4}{suku geometri dengan rasio pecahan}
+\begin{soalbox}{}
+Rasio sebuah barisan geometri $\tfrac13$, suku pertama $27$. Tentukan $U_5$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $a=27,\ r=\frac13,\ n=5$.
+\langkah{2} $U_5=a\,r^{4}=27\cdot\left(\tfrac13\right)^4=27\cdot\dfrac{1}{81}
+=\dfrac{27}{81}=\dfrac13$.
+\jadi $U_5=\dfrac13$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Pangkat $5$ bukan $4$.} $U_5$ memakai $r^{5-1}=r^4$.
+  \item \textbf{Lupa memangkatkan penyebut} $\left(\frac13\right)^4=\frac{1}{81}$
+  (bukan $\frac13$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+``Suku ke berapa yang bernilai $\frac{1}{243}$?'' $\Rightarrow$
+$27\cdot(\frac13)^{n-1}=\frac{1}{243}$, samakan basis $3$ (nyambung ke Bab 1).
+\end{variasi}
+
+% ---------------- SOAL 2.2.5 ----------------
+\soalno{2.2.5}{mencari $a$ dan $r$ dari dua suku}
+\begin{soalbox}{}
+Diketahui $U_2=6$ dan $U_5=48$. Tentukan $a$ dan $r$.
+\end{soalbox}
+
+\begin{ingat}{Bagi dua suku untuk mendapat $r$}
+$\dfrac{U_p}{U_q}=r^{\,p-q}$. Membagi dua suku membuat $a$ hilang, menyisakan
+pangkat $r$ --- kebalikan dari trik ``kurangkan'' pada aritmetika.
+\end{ingat}
+
+\jawab
+\langkah{1} Bagikan: $\dfrac{U_5}{U_2}=r^{5-2}=r^3=\dfrac{48}{6}=8$.
+\langkah{2} $r^3=8 \Rightarrow r=2$.
+\langkah{3} Dari $U_2=a\,r=6$: $a\cdot2=6 \Rightarrow a=3$.
+\jadi $a=3,\ r=2$ (barisan $3,6,12,24,48,\dots$).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Jarak pangkat salah} ($r^5/r^2$: pangkatnya $5-2=3$).
+  \item \textbf{$U_2=a$?} Tidak --- $U_2=a\,r^1=ar$. Suku pertama baru $U_1=a$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Jika $r^3=-8\Rightarrow r=-2$ (rasio negatif diperbolehkan). Atau $r^2=9$
+memberi $r=\pm3$ (dua kemungkinan!).
+\end{variasi}
+
+% ---------------- SOAL 2.2.6 ----------------
+\soalno{2.2.6}{desimal berulang jadi pecahan}
+\begin{soalbox}{}
+Ubah desimal berulang $0{,}3333\ldots$ menjadi pecahan memakai deret tak hingga.
+\end{soalbox}
+
+\begin{ingat}{Desimal berulang = deret geometri}
+$0{,}3333\ldots = \frac{3}{10}+\frac{3}{100}+\frac{3}{1000}+\cdots$ adalah deret
+geometri dengan $a=\frac{3}{10}$ dan $r=\frac{1}{10}$ (tiap suku $\frac{1}{10}$
+kali sebelumnya). Karena $|r|<1$, jumlahnya berhingga.
+\end{ingat}
+
+\jawab
+\langkah{1} Tulis sebagai deret: $a=\frac{3}{10},\ r=\frac{1}{10}$.
+\langkah{2} $S_\infty=\dfrac{a}{1-r}=\dfrac{\frac{3}{10}}{1-\frac{1}{10}}
+=\dfrac{\frac{3}{10}}{\frac{9}{10}}=\dfrac{3}{9}=\dfrac13$.
+\jadi $0{,}3333\ldots=\dfrac13$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah tentukan $a$ dan $r$.} $a$ adalah suku \emph{pertama}
+  $\frac{3}{10}$, bukan $3$.
+  \item \textbf{Pola dua digit.} $0{,}272727\ldots$ punya $a=\frac{27}{100},\
+  r=\frac{1}{100}$ $\Rightarrow \frac{27}{99}=\frac{3}{11}$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$0{,}999\ldots$ ($a=\frac{9}{10},r=\frac{1}{10}\Rightarrow=1$, hasil yang
+mengejutkan!); $0{,}1666\ldots$ (campur: $\frac16$).
+\end{variasi}
+
+% ---------------- SOAL 2.2.7 ----------------
+\soalno{2.2.7}{bunga majemuk (kaitan Bab 9)}
+\begin{soalbox}{}
+Modal Rp$2.000.000$ dibungakan majemuk $5\%$ per tahun. Berapa saldo setelah $4$
+tahun?
+\end{soalbox}
+
+\begin{ingat}{Bunga majemuk = geometri}
+Saldo tiap tahun dikali faktor $(1+i)$. Naik $5\%\Rightarrow$ faktor $1{,}05$.
+Saldo setelah $t$ tahun: $M_0\,(1+i)^t$.
+\end{ingat}
+
+\jawab
+\langkah{1} $M_0=2.000.000,\ i=5\%=0{,}05,\ t=4$.
+\langkah{2} Saldo $=2.000.000\times1{,}05^{4}$.
+\langkah{3} Hitung $1{,}05^4$: $1{,}05^2=1{,}1025$; kuadratkan lagi
+$1{,}1025^2=1{,}21550625$.
+\langkah{4} Saldo $=2.000.000\times1{,}21550625=2.431.012{,}5$.
+\jadi saldo $\approx$ \textbf{Rp$2.431.013$}.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Bunga tunggal vs majemuk.} Bunga tunggal (linear):
+  $2.000.000(1+0{,}05\cdot4)=2.400.000$ --- \emph{lebih kecil}. Majemuk memakai
+  pangkat, bukan perkalian datar. (Detail di Bab 9.)
+  \item \textbf{Pangkat $t$ vs $t+1$.} ``Setelah 4 tahun'' $=$ pangkat $4$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Dibungakan per \emph{bulan} $\Rightarrow$ bagi bunga per 12, pangkat jadi
+$12t$. Atau ditanya waktu: ``kapan jadi 2 kali lipat?'' $\Rightarrow$ butuh
+logaritma (Bab 1).
+\end{variasi}
+
+% ---------------- SOAL 2.2.8 ----------------
+\soalno{2.2.8}{lintasan bola memantul (deret naik + turun)}
+\begin{soalbox}{}
+Bola jatuh dari $10$ m, tiap pantulan $0{,}6$ kali tinggi sebelumnya. Berapa
+total lintasan hingga berhenti?
+\end{soalbox}
+
+\begin{ingat}{Pisahkan lintasan turun dan naik}
+Setelah jatuh pertama, bola \emph{naik} lalu \emph{turun} pada setiap pantulan.
+Total $=$ (deret turun) $+$ (deret naik). Deret naik $=$ deret turun dikurangi
+jatuhan pertama (karena tidak ada ``naik'' sebelum jatuh pertama).
+\end{ingat}
+
+\jawab
+\langkah{1} \textbf{Deret turun:} $10 + 6 + 3{,}6 + \cdots$, geometri $a=10,\
+r=0{,}6$. Jumlah:
+\[
+S_{\text{turun}}=\frac{10}{1-0{,}6}=\frac{10}{0{,}4}=25.
+\]
+\langkah{2} \textbf{Deret naik:} sama seperti turun tetapi tanpa jatuhan pertama
+($10$ m). Jadi $S_{\text{naik}}=25-10=15$.
+\langkah{3} Total lintasan $=25+15=40$ m.
+\jadi total lintasan $=40$ m.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+\draw[->] (0,0)--(9,0);
+\draw[->] (0,0)--(0,4.6) node[above]{tinggi (m)};
+\node[font=\scriptsize] at (-0.3,4.2){10};\node[font=\scriptsize] at (-0.25,2.5){6};
+\draw[biru,thick]
+ (0,4.2) .. controls (0.9,0) .. (1.8,2.5)
+ .. controls (2.5,0) .. (3.2,1.5)
+ .. controls (3.8,0) .. (4.4,0.9)
+ .. controls (4.9,0) .. (5.4,0.54);
+\node[oranye,font=\scriptsize] at (1.0,2.0){turun};
+\node[hijau,font=\scriptsize] at (2.6,1.7){naik};
+\end{tikzpicture}\\
+{\small Tiap pantulan menyumbang satu ``naik'' dan satu ``turun'' yang makin
+pendek. Turun $\to25$, naik $\to15$, total $40$ m.}
+\end{center}
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Hanya menghitung deret turun} ($=25$) dan lupa deret naik.
+  \item \textbf{Menghitung naik $=25$ juga} (lupa mengurangi jatuhan pertama $10$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Jatuh dari $8$ m, $r=\frac34$ (jawab $56$ m); atau ditanya ``jarak pada
+pantulan ke-3 saja'', bukan total.
+\end{variasi}
+
+% ---------------- SOAL 2.2.9 ----------------
+\soalno{2.2.9}{tiga bilangan geometri (trik simetri)}
+\begin{soalbox}{}
+Tiga bilangan geometri berjumlah $21$ dan hasil kalinya $216$. Tentukan ketiganya.
+\end{soalbox}
+
+\begin{ingat}{Misalkan $\frac ar,\ a,\ ar$}
+Untuk \emph{tiga} bilangan geometri, misalkan $\frac ar,\ a,\ ar$. Keuntungannya:
+hasil kali $=\frac ar\cdot a\cdot ar = a^3$ (rasio hilang), jadi suku tengah $a$
+langsung ketemu dari akar pangkat tiga.
+\end{ingat}
+
+\jawab
+\langkah{1} Misalkan bilangannya $\dfrac ar,\ a,\ ar$.
+\langkah{2} Hasil kali: $a^3=216 \Rightarrow a=6$ (suku tengah).
+\langkah{3} Jumlah: $\dfrac6r+6+6r=21 \Rightarrow \dfrac6r+6r=15$. Kalikan $r$:
+\[
+6+6r^2=15r \Rightarrow 6r^2-15r+6=0 \Rightarrow 2r^2-5r+2=0 \Rightarrow (2r-1)(r-2)=0.
+\]
+Maka $r=2$ atau $r=\frac12$ (keduanya memberi himpunan bilangan sama).
+\langkah{4} Untuk $r=2$: $\frac62,\ 6,\ 6\cdot2 = 3,\ 6,\ 12$.
+\jadi ketiga bilangan itu $3,\ 6,\ 12$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Memisalkan $a,ar,ar^2$.} Hasil kalinya $a^3r^3$ --- jauh lebih
+  ribet. Misalan simetris menyederhanakan drastis.
+  \item \textbf{Menganggap $r=2$ dan $r=\frac12$ jawaban berbeda.} Keduanya
+  menghasilkan $\{3,6,12\}$ (hanya urutannya terbalik).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Bandingkan dengan Soal 2.1.10 (versi aritmetika). Bentuk lain: ``tiga bilangan
+geometri, suku tengah $6$, jumlah $21$'' langsung ke langkah 3.
+\end{variasi}
+
+% ---------------- SOAL 2.2.10 ----------------
+\soalno{2.2.10}{sigma geometri tak hingga}
+\begin{soalbox}{}
+Hitung jumlah tak hingga $\displaystyle\sum_{n\ge1}\left(\tfrac25\right)^{n}$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Tulis beberapa suku: $n=1\Rightarrow\frac25$; $n=2\Rightarrow\frac{4}{25}$;
+\dots\ Ini geometri dengan suku pertama $a=\frac25$ dan rasio $r=\frac25$
+(karena tiap naik $n$, dikali $\frac25$ lagi).
+\langkah{2} $|r|=\frac25<1$, maka:
+\[
+S_\infty=\frac{a}{1-r}=\frac{\frac25}{1-\frac25}=\frac{\frac25}{\frac35}=\frac23.
+\]
+\jadi jumlahnya $\dfrac23$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mulai dari $n=0$.} Kalau batasnya $n\ge0$, suku pertama jadi
+  $\left(\frac25\right)^0=1$, sehingga $a=1$ dan jumlahnya $\frac{1}{1-2/5}
+  =\frac53$. \emph{Perhatikan batas bawah!}
+  \item \textbf{Menyamakan $a$ dengan $r$ secara asal.} Di sini kebetulan sama
+  ($\frac25$) karena mulai dari pangkat $1$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\sum_{n\ge1}\frac{1}{2^n}=1$; $\sum_{n\ge0}\left(\frac13\right)^n=\frac32$.
+Selalu periksa batas bawah untuk menentukan suku pertama.
+\end{variasi}
+
+% ############################################################
+\section*{Subbab 2.3 — Notasi Sigma}
+\addcontentsline{toc}{section}{Subbab 2.3 — Notasi Sigma}
+% ############################################################
+
+\begin{ingat}{Arti dan sifat sigma}
+$\displaystyle\sum_{i=m}^{n}a_i=a_m+a_{m+1}+\cdots+a_n$. Sifat penting:
+\[
+\sum_{i=1}^{n}c=nc,\quad \sum c\,a_i=c\sum a_i,\quad \sum(a_i\pm b_i)=\sum a_i\pm\sum b_i.
+\]
+Rumus baku wajib hafal:
+\[
+\sum_{i=1}^{n}i=\frac{n(n+1)}{2},\quad
+\sum_{i=1}^{n}i^2=\frac{n(n+1)(2n+1)}{6},\quad
+\sum_{i=1}^{n}i^3=\left(\frac{n(n+1)}{2}\right)^2.
+\]
+\textbf{Awas:} $\sum a_ib_i\neq(\sum a_i)(\sum b_i)$.
+\end{ingat}
+
+% ---------------- SOAL 2.3.1 ----------------
+\soalno{2.3.1}{menguraikan sigma}
+\begin{soalbox}{}
+Uraikan dan hitung $\displaystyle\sum_{k=1}^{5}(3k-1)$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Substitusi $k=1,2,3,4,5$ ke suku umum $3k-1$:
+\[
+(3\cdot1{-}1)+(3\cdot2{-}1)+(3\cdot3{-}1)+(3\cdot4{-}1)+(3\cdot5{-}1)
+=2+5+8+11+14.
+\]
+\langkah{2} Jumlahkan: $2+5+8+11+14=40$.
+\jadi hasilnya $40$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mulai dari $k=0$.} Batas bawah $k=1$; jangan menambah suku
+  $k=0$.
+  \item \textbf{Salah hitung banyak suku} ($5$ suku, dari $1$ sampai $5$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Pakai sifat sigma: $\sum_{k=1}^{5}(3k-1)=3\cdot\frac{5\cdot6}{2}-5=45-5=40$
+(hasil sama, tanpa menulis semua suku).
+\end{variasi}
+
+% ---------------- SOAL 2.3.2 ----------------
+\soalno{2.3.2}{menyusun sigma dari deret}
+\begin{soalbox}{}
+Nyatakan $4+7+10+\cdots+31$ dalam notasi sigma.
+\end{soalbox}
+
+\jawab
+\langkah{1} Kenali pola: aritmetika $a=4,\ b=3$. Suku umum
+$U_k=4+(k-1)3=3k+1$.
+\langkah{2} Cari batas atas: $3k+1=31 \Rightarrow k=10$.
+\langkah{3} Tulis dalam sigma:
+\[
+\sum_{k=1}^{10}(3k+1).
+\]
+\jadi $4+7+\cdots+31=\displaystyle\sum_{k=1}^{10}(3k+1)$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Suku umum keliru.} Uji $k=1$: $3(1)+1=4$ \checkmark. Kalau tak
+  cocok, rumusmu salah.
+  \item \textbf{Batas atas salah.} Wajib cek $k$ menghasilkan suku terakhir $31$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Bentuk sigma tidak tunggal: $\sum_{k=0}^{9}(3k+4)$ juga benar (geser indeks).
+Untuk barisan geometri, suku umumnya $ar^{k-1}$.
+\end{variasi}
+
+% ---------------- SOAL 2.3.3 ----------------
+\soalno{2.3.3}{sigma linear \& sigma konstanta}
+\begin{soalbox}{}
+Hitung $\displaystyle\sum_{i=1}^{50} i$ dan $\displaystyle\sum_{i=1}^{50}5$.
+\end{soalbox}
+
+\jawab
+\textbf{(a)} $\displaystyle\sum_{i=1}^{50}i=\frac{50\cdot51}{2}=1275$
+(rumus jumlah bilangan asli).
+
+\textbf{(b)} $\displaystyle\sum_{i=1}^{50}5=50\times5=250$ (konstanta $5$
+dijumlah $50$ kali, sifat $\sum c=nc$).
+\jadi $1275$ dan $250$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{$\sum_{i=1}^{50}5=5$?} Salah --- angka $5$ ditulis $50$ kali,
+  bukan sekali. Hasilnya $250$.
+  \item \textbf{Salah $n$.} Indeks $1$ sampai $50$ berarti $n=50$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\sum_{i=3}^{50}i$ (mulai dari 3) $=\sum_{i=1}^{50}i-(1+2)=1275-3=1272$.
+Perhatikan batas bawah yang bukan $1$.
+\end{variasi}
+
+% ---------------- SOAL 2.3.4 ----------------
+\soalno{2.3.4}{sigma kuadrat}
+\begin{soalbox}{}
+Hitung $\displaystyle\sum_{k=1}^{8}k^2$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Pakai rumus $\sum_{k=1}^{n}k^2=\dfrac{n(n+1)(2n+1)}{6}$ dengan $n=8$:
+\[
+\sum_{k=1}^{8}k^2=\frac{8\cdot9\cdot17}{6}.
+\]
+\langkah{2} Hitung: $8\cdot9=72$; $72\cdot17=1224$; $1224\div6=204$.
+\jadi $\displaystyle\sum_{k=1}^{8}k^2=204$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mengira $\sum k^2=(\sum k)^2$.} Salah! $(\sum_{1}^{8}k)^2=36^2=1296
+  \neq204$. Yang benar itu untuk pangkat \emph{tiga}, bukan dua.
+  \item \textbf{Salah faktor $2n+1$} $=2\cdot8+1=17$ (bukan $16$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\sum_{k=1}^{10}k^2=385$; atau $\sum_{k=5}^{10}k^2=\sum_1^{10}-\sum_1^{4}
+=385-30=355$ (selisih dua sigma).
+\end{variasi}
+
+% ---------------- SOAL 2.3.5 ----------------
+\soalno{2.3.5}{sigma kubik vs kuadrat jumlah}
+\begin{soalbox}{}
+Hitung $\displaystyle\sum_{k=1}^{4}k^3$ dan bandingkan dengan
+$\left(\sum_{k=1}^{4}k\right)^2$.
+\end{soalbox}
+
+\begin{ingat}{Fakta indah}
+$\displaystyle\sum_{k=1}^{n}k^3=\left(\sum_{k=1}^{n}k\right)^2$: jumlah pangkat
+tiga sama dengan \emph{kuadrat} dari jumlah biasa.
+\end{ingat}
+
+\jawab
+\langkah{1} $\sum_{k=1}^{4}k^3=1+8+27+64=100$.
+\langkah{2} $\sum_{k=1}^{4}k=1+2+3+4=10$, sehingga $(10)^2=100$.
+\jadi keduanya sama, $=100$ --- memperagakan rumus
+$\sum k^3=\left(\frac{n(n+1)}{2}\right)^2=\left(\frac{4\cdot5}{2}\right)^2=100$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menganggap ini berlaku untuk $k^2$ juga.} Tidak;
+  $\sum k^2\neq(\sum k)^2$. Fakta ini \emph{khusus} pangkat tiga.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Buktikan untuk $n=5$: $\sum k^3=225=15^2=(\sum k)^2$. Atau soal terbalik:
+``$(\sum_1^n k)^2=225$, tentukan $n$.''
+\end{variasi}
+
+% ---------------- SOAL 2.3.6 ----------------
+\soalno{2.3.6}{sigma barisan geometri}
+\begin{soalbox}{}
+Tentukan $\displaystyle\sum_{i=1}^{6}3\cdot2^{\,i-1}$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Ini deret geometri dengan suku umum $a\,r^{i-1}$: $a=3,\ r=2,\ n=6$.
+\langkah{2} $S_n=\dfrac{a(r^n-1)}{r-1}=\dfrac{3(2^6-1)}{2-1}=3(64-1)=3\cdot63=189$.
+\jadi $\displaystyle\sum_{i=1}^{6}3\cdot2^{i-1}=189$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Pangkat $2^i$ bukan $2^{i-1}$.} Uraikan suku pertama ($i=1$):
+  $3\cdot2^0=3$ \checkmark. Kalau kamu pakai $2^i$, suku pertama jadi $6$ ---
+  salah.
+  \item \textbf{Memakai rumus baku $\sum k$/$\sum k^2$} yang tak berlaku untuk
+  bentuk eksponen.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\sum_{i=1}^{8}2^i=510$ (perhatikan bentuk $2^i$, bukan $2^{i-1}$); atau rasio
+pecahan $\sum_{i=1}^{n}(\frac12)^{i}$.
+\end{variasi}
+
+% ---------------- SOAL 2.3.7 ----------------
+\soalno{2.3.7}{jumlah bilangan ganjil}
+\begin{soalbox}{}
+Sederhanakan $\displaystyle\sum_{i=1}^{n}(2i-1)$ menjadi bentuk tertutup (jumlah
+$n$ bilangan ganjil pertama).
+\end{soalbox}
+
+\jawab
+\langkah{1} Pisahkan dengan sifat linear:
+\[
+\sum_{i=1}^{n}(2i-1)=2\sum_{i=1}^{n}i-\sum_{i=1}^{n}1.
+\]
+\langkah{2} Masukkan rumus baku: $2\cdot\dfrac{n(n+1)}{2}-n=n(n+1)-n=n^2+n-n=n^2$.
+\jadi $\displaystyle\sum_{i=1}^{n}(2i-1)=n^2$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.42]
+\foreach \k in {1,...,4}{
+  \pgfmathtruncatemacro{\kk}{\k-1}
+  \foreach \x in {0,...,\kk}{ \fill[biru!30,draw=biru] (\x,\k-1) rectangle (\x+1,\k);}
+  \foreach \y in {0,...,\kk}{ \fill[oranye!40,draw=oranye] (\k-1,\y) rectangle (\k,\y+1);}
+}
+\node[font=\scriptsize] at (2,-0.8){$1+3+5+7=4^2=16$};
+\end{tikzpicture}\\
+{\small Tiap bilangan ganjil membentuk ``huruf L'' yang melengkapi persegi.
+Menumpuk $n$ huruf L menghasilkan persegi $n\times n$ --- itulah kenapa jumlahnya
+$n^2$.}
+\end{center}
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa $\sum_{i=1}^{n}1=n$} (bukan $1$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Jumlah $n$ bilangan genap pertama $\sum(2i)=n(n+1)$; atau jumlah ganjil dari
+suku ke-$m$ hingga ke-$n$.
+\end{variasi}
+
+% ---------------- SOAL 2.3.8 ----------------
+\soalno{2.3.8}{memecah suku umum ke rumus baku}
+\begin{soalbox}{}
+Hitung $\displaystyle\sum_{i=1}^{n} i(i-1)$ dalam $n$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Jabarkan suku umum: $i(i-1)=i^2-i$.
+\langkah{2} Pisahkan menjadi dua sigma baku:
+\[
+\sum_{i=1}^{n}(i^2-i)=\sum_{i=1}^{n}i^2-\sum_{i=1}^{n}i
+=\frac{n(n+1)(2n+1)}{6}-\frac{n(n+1)}{2}.
+\]
+\langkah{3} Faktorkan $\frac{n(n+1)}{6}$:
+\[
+=\frac{n(n+1)}{6}\big[(2n+1)-3\big]=\frac{n(n+1)(2n-2)}{6}=\frac{n(n+1)(n-1)}{3}.
+\]
+\jadi $\displaystyle\sum_{i=1}^{n}i(i-1)=\dfrac{n(n-1)(n+1)}{3}=\dfrac{n^3-n}{3}$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menganggap $\sum i(i-1)=(\sum i)(\sum(i-1))$.} Sigma \emph{tidak}
+  memecah perkalian antar-faktor. Jabarkan dulu jadi $i^2-i$.
+  \item \textbf{Salah menyamakan penyebut} saat mengurangkan pecahan.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\sum i(i+1)=\frac{n(n+1)(n+2)}{3}$; $\sum(2i-1)^2$ (jabarkan jadi
+$4i^2-4i+1$).
+\end{variasi}
+
+% ---------------- SOAL 2.3.9 ----------------
+\soalno{2.3.9}{deret teleskopik (verifikasi)}
+\begin{soalbox}{}
+Tunjukkan $\displaystyle\sum_{k=1}^{n}\frac{1}{k(k+1)}=\frac{n}{n+1}$ untuk $n=3$
+dengan menjumlah langsung.
+\end{soalbox}
+
+\begin{ingat}{Teleskop lewat pecahan parsial}
+$\dfrac{1}{k(k+1)}=\dfrac1k-\dfrac{1}{k+1}$. Saat dijumlah, ekor satu suku
+membatalkan kepala suku berikutnya, sehingga hampir semua saling coret.
+\end{ingat}
+
+\jawab
+\langkah{1} Substitusi $k=1,2,3$:
+\[
+\frac{1}{1\cdot2}+\frac{1}{2\cdot3}+\frac{1}{3\cdot4}=\frac12+\frac16+\frac{1}{12}.
+\]
+\langkah{2} Samakan penyebut $12$: $\frac{6}{12}+\frac{2}{12}+\frac{1}{12}
+=\frac{9}{12}=\frac34$.
+\langkah{3} Bandingkan rumus: $\frac{n}{n+1}=\frac{3}{4}$. \checkmark
+\jadi terbukti untuk $n=3$: keduanya $=\frac34$.
+
+\begin{tips}
+\textbf{Cara teleskop (untuk sembarang $n$).}
+$\sum_{k=1}^{n}\left(\frac1k-\frac1{k+1}\right)
+=\left(1-\frac12\right)+\left(\frac12-\frac13\right)+\cdots+\left(\frac1n-\frac1{n+1}\right)
+=1-\frac1{n+1}=\frac{n}{n+1}$.
+\end{tips}
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah samakan penyebut.} Cek: $\frac12=\frac{6}{12}$, bukan
+  $\frac{2}{12}$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$\sum\frac{1}{k(k+2)}$ (parsial $\frac12(\frac1k-\frac1{k+2})$);
+$\sum\frac{1}{(2k-1)(2k+1)}$.
+\end{variasi}
+
+% ---------------- SOAL 2.3.10 ----------------
+\soalno{2.3.10}{pergeseran indeks}
+\begin{soalbox}{}
+Tuliskan kembali $\displaystyle\sum_{i=2}^{n}a_i$ sebagai sigma berbatas bawah
+$1$ memakai pergeseran indeks.
+\end{soalbox}
+
+\begin{ingat}{Pergeseran indeks}
+Mengubah nama indeks tidak mengubah nilai jumlah, asalkan batas dan suku diubah
+seiring. Kalau kita geser $j=i-1$, maka $i=j+1$; batas $i=2\to j=1$ dan $i=n\to
+j=n-1$.
+\end{ingat}
+
+\jawab
+\langkah{1} Misalkan $j=i-1$, sehingga $i=j+1$.
+\langkah{2} Ubah batas: $i=2\Rightarrow j=1$; $i=n\Rightarrow j=n-1$.
+\langkah{3} Ganti suku $a_i=a_{j+1}$:
+\[
+\sum_{i=2}^{n}a_i=\sum_{j=1}^{n-1}a_{j+1}.
+\]
+\jadi $\displaystyle\sum_{i=2}^{n}a_i=\sum_{j=1}^{n-1}a_{j+1}$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menggeser batas tapi lupa mengubah suku.} Kedua bagian (batas
+  \emph{dan} indeks di dalam suku) harus digeser bersama.
+  \item \textbf{Salah arah geser.} Kalau $j=i+1$, maka $a_i=a_{j-1}$ dan batasnya
+  naik. Pilih yang membuat batas bawah $=1$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Geser $\sum_{i=1}^{n}a_i=\sum_{j=0}^{n-1}a_{j+1}$; berguna saat menyamakan dua
+sigma sebelum menjumlahkannya.
+\end{variasi}
+
+% ============================================================
+\begin{tips}
+\textbf{Ringkasan strategi Bab 2.}
+\begin{enumerate}[leftmargin=*,topsep=2pt]
+  \item \emph{Kenali pola dulu:} selisih tetap $\to$ aritmetika; rasio tetap
+  $\to$ geometri. Uji rumus dengan $n=1$.
+  \item \emph{Aritmetika:} kurangkan dua suku untuk cari $b$. \emph{Geometri:}
+  bagikan dua suku untuk cari $r$.
+  \item \emph{Deret tak hingga} hanya ada bila $|r|<1$. \emph{Tiga bilangan}
+  $\to$ pakai misalan simetris ($x{-}b,x,x{+}b$ atau $\frac ar,a,ar$).
+  \item \emph{Sigma:} operator linear; pecah ke rumus baku $\sum i,\sum i^2,\sum
+  i^3$. Teleskop untuk pecahan; ingat $\sum c=nc$.
+\end{enumerate}
+\end{tips}
+
+\end{document}

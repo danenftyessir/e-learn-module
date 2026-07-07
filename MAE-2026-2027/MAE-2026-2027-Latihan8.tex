@@ -1,0 +1,943 @@
+% ============================================================
+%  PEMBAHASAN SUPER DETAIL — LATIHAN SOAL & STUDI KASUS
+%  BAB 8: PELUANG
+%  Catatan: Soal Akhir Bab TIDAK dibahas di sini (sesuai permintaan).
+% ============================================================
+\input{MAE-2026-2027-Latihan-preamble}
+\renewcommand{\babjudul}{Pembahasan Latihan — Bab 8}
+
+\begin{document}
+\setcounter{chapter}{8}
+\buathalamanjudul{Peluang}{8}
+
+% ============================================================
+\chapter*{Pembahasan Bab 8: Peluang}
+\addcontentsline{toc}{chapter}{Pembahasan Bab 8: Peluang}
+\markboth{PEMBAHASAN BAB 8}{}
+% ============================================================
+
+\begin{tips}
+\textbf{Cara membaca buku ini.} Tiap soal: \textbf{(1)} soal ditulis ulang,
+\textbf{(2)} konsep kunci, \textbf{(3)} langkah demi langkah, \textbf{(4)}
+jebakan, \textbf{(5)} variasi. \emph{Aturan emas Bab 8:} selalu tuliskan
+\textbf{ruang sampel} (atau hitung $n(S)$) lebih dulu, dan tanya ``apakah urutan
+penting?'' serta ``apakah dengan/tanpa pengembalian?''.
+\end{tips}
+
+% ============================================================
+\section*{Studi Kasus: Prediksi Cuaca dan Peluang Hujan}
+\addcontentsline{toc}{section}{Studi Kasus: Peluang Hujan}
+% ============================================================
+
+\begin{studikasus}{Prediksi Cuaca dan Peluang Hujan}
+Selama $100$ hari berkondisi ``berawan tebal'', hujan terjadi pada $70$ hari.
+\textbf{Pertanyaan.} (a) Bagaimana menaksir ``peluang hujan'' dari data ini?
+(b) Apakah peluang ini pasti benar untuk besok? (c) Apa bedanya dengan peluang
+dadu yang bisa dihitung tanpa percobaan?
+\end{studikasus}
+
+\subsection*{Jawaban lengkap studi kasus}
+
+\begin{ingat}{Peluang empiris vs teoretis}
+\textbf{Empiris} (frekuensi relatif) $=\dfrac{\text{banyak kejadian}}{\text{banyak
+percobaan}}$ --- diukur dari data. \textbf{Teoretis} $=\dfrac{n(A)}{n(S)}$ ---
+dihitung dari asumsi hasil ``sama mungkin'', tanpa percobaan.
+\end{ingat}
+
+\textbf{(a) Menaksir peluang hujan.} Gunakan frekuensi relatif:
+\[
+P(\text{hujan})\approx\frac{70}{100}=0{,}7=70\%.
+\]
+
+\textbf{(b) Apakah pasti untuk besok?} \textbf{Tidak.} Ini \emph{taksiran}
+berdasarkan pola masa lalu, bukan jaminan. ``$70\%$'' berarti: dari banyak hari
+berkondisi serupa, sekitar $70\%$ berujung hujan --- besok tetap tak pasti.
+
+\textbf{(c) Beda dengan dadu.} Peluang dadu bersifat \emph{teoretis}: kita tahu
+$P(\text{mata }3)=\frac16$ tanpa melempar, karena keenam sisi sama mungkin.
+Peluang cuaca bersifat \emph{empiris}: tak ada rumus ``sisi sama mungkin'',
+sehingga harus \emph{diamati} dari data.
+\jadi $P(\text{hujan})\approx0{,}7$ (empiris), tak pasti untuk satu hari, dan
+berbeda asal-usulnya dari peluang dadu (teoretis).
+
+\begin{tips}
+\textbf{Hukum bilangan besar:} makin banyak percobaan, peluang empiris makin
+mendekati teoretis. Inilah alasan kasino dan asuransi untung dalam jangka panjang
+meski tiap kejadian tampak acak.
+\end{tips}
+
+% ############################################################
+\section*{Subbab 8.1 — Konsep Dasar Peluang}
+\addcontentsline{toc}{section}{Subbab 8.1 — Konsep Dasar}
+% ############################################################
+
+\begin{ingat}{Rumus \& aturan dasar}
+$P(A)=\dfrac{n(A)}{n(S)}$, $0\le P(A)\le1$. Komplemen: $P(A^c)=1-P(A)$.
+Saling lepas: $P(A\cup B)=P(A)+P(B)$. Tidak saling lepas:
+$P(A\cup B)=P(A)+P(B)-P(A\cap B)$. Saling bebas: $P(A\cap B)=P(A)P(B)$.
+\end{ingat}
+
+% ---------------- SOAL 8.1.1 ----------------
+\soalno{8.1.1}{ruang sampel dua koin}
+\begin{soalbox}{}
+Dua koin dilempar bersamaan. Tentukan peluang muncul tepat satu Angka.
+\end{soalbox}
+
+\jawab
+\langkah{1} Tuliskan ruang sampel: $S=\{AA,\ AG,\ GA,\ GG\}$, jadi $n(S)=4$.
+\langkah{2} Kejadian ``tepat satu Angka'': $\{AG,\ GA\}$, jadi $n(A)=2$.
+\langkah{3} $P=\dfrac{n(A)}{n(S)}=\dfrac{2}{4}=\dfrac12$.
+\jadi peluangnya $\dfrac12$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menganggap $AG$ dan $GA$ sama.} Koin pertama-A koin kedua-G
+  \emph{berbeda} dari sebaliknya; keduanya dihitung. Kalau digabung, penyebutnya
+  salah.
+  \item \textbf{``Tepat satu'' vs ``minimal satu''.} Tepat satu = $2$ kasus;
+  minimal satu Angka = $3$ kasus ($AA,AG,GA$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Tepat dua Angka ($\frac14$); minimal satu Angka ($\frac34$, atau lewat komplemen
+$1-P(GG)$).
+\end{variasi}
+
+% ---------------- SOAL 8.1.2 ----------------
+\soalno{8.1.2}{peluang \& komplemen}
+\begin{soalbox}{}
+Dalam kotak ada $5$ bola merah dan $3$ bola putih. Satu bola diambil. Tentukan
+peluang terambil merah dan peluang \emph{bukan} merah.
+\end{soalbox}
+
+\jawab
+\langkah{1} Total bola $n(S)=5+3=8$.
+\langkah{2} $P(\text{merah})=\dfrac{5}{8}$.
+\langkah{3} Komplemen: $P(\text{bukan merah})=1-\dfrac58=\dfrac38$ (yaitu peluang
+putih).
+\jadi $P(\text{merah})=\dfrac58$, $P(\text{bukan merah})=\dfrac38$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa menjumlah total} ($8$, bukan $5$).
+  \item \textbf{$P(\text{bukan merah})=\frac15$?} Gunakan komplemen $1-P$, bukan
+  membalik pecahan.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Tambah warna ketiga; ambil dua bola (kombinasi, lihat Subbab 8.2).
+\end{variasi}
+
+% ---------------- SOAL 8.1.3 ----------------
+\soalno{8.1.3}{dadu, kejadian sederhana}
+\begin{soalbox}{}
+Sebuah dadu dilempar. Berapa peluang muncul mata $>4$?
+\end{soalbox}
+
+\jawab
+\langkah{1} $S=\{1,2,3,4,5,6\}$, $n(S)=6$.
+\langkah{2} Mata $>4$: $\{5,6\}$, $n(A)=2$.
+\langkah{3} $P=\dfrac{2}{6}=\dfrac13$.
+\jadi peluangnya $\dfrac13$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Memasukkan $4$.} ``$>4$'' \emph{tidak} termasuk $4$; kalau
+  ``$\ge4$'' baru $\{4,5,6\}$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Mata $\le2$, mata ganjil, mata prima ($\{2,3,5\}$).
+\end{variasi}
+
+% ---------------- SOAL 8.1.4 ----------------
+\soalno{8.1.4}{peluang kelipatan}
+\begin{soalbox}{}
+Dari kartu bernomor $1$--$20$ diambil satu. Berapa peluang terambil kelipatan
+$5$?
+\end{soalbox}
+
+\jawab
+\langkah{1} $n(S)=20$.
+\langkah{2} Kelipatan $5$: $\{5,10,15,20\}$, $n(A)=4$.
+\langkah{3} $P=\dfrac{4}{20}=\dfrac15$.
+\jadi peluangnya $\dfrac15$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Melewatkan $20$.} Kelipatan $5$ hingga $20$ ada $4$
+  ($20\div5=4$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Kelipatan $3$; kelipatan $2$ \emph{atau} $3$ (aturan gabungan, Soal 8.1 lanjut).
+\end{variasi}
+
+% ---------------- SOAL 8.1.5 ----------------
+\soalno{8.1.5}{komplemen langsung}
+\begin{soalbox}{}
+Peluang hujan $0{,}3$. Berapa peluang tidak hujan?
+\end{soalbox}
+
+\jawab
+\langkah{1} Komplemen: $P(\text{tidak hujan})=1-P(\text{hujan})=1-0{,}3=0{,}7$.
+\jadi $0{,}7$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Total peluang harus $1$.} $P(\text{hujan})+P(\text{tidak})=1$;
+  jangan sampai jumlahnya bukan $1$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Tiga kemungkinan (hujan/mendung/cerah) yang jumlahnya $1$; komplemen ``minimal
+satu''.
+\end{variasi}
+
+% ---------------- SOAL 8.1.6 ----------------
+\soalno{8.1.6}{dua dadu, jumlah tertentu}
+\begin{soalbox}{}
+Dua dadu dilempar. Berapa peluang jumlah mata $=7$?
+\end{soalbox}
+
+\begin{ingat}{Ruang sampel dua dadu}
+Dua dadu menghasilkan $6\times6=36$ pasangan berurutan (aturan perkalian).
+Daftarkan pasangan yang memenuhi syarat.
+\end{ingat}
+
+\jawab
+\langkah{1} $n(S)=6\times6=36$.
+\langkah{2} Jumlah $=7$: $(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)$ --- ada $6$
+pasangan.
+\langkah{3} $P=\dfrac{6}{36}=\dfrac16$.
+\jadi peluangnya $\dfrac16$ (jumlah $7$ adalah yang \emph{paling mungkin} pada
+dua dadu).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menghitung $(3,4)$ dan $(4,3)$ sebagai satu.} Dua dadu berbeda
+  $\Rightarrow$ pasangan berurutan, keduanya dihitung.
+  \item \textbf{$n(S)=11$} (menghitung jumlah $2$--$12$). Ruang sampel adalah
+  $36$ \emph{pasangan}, bukan $11$ nilai jumlah.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Jumlah $=8$ ($5$ pasangan), jumlah $\ge10$, selisih mata $=1$.
+\end{variasi}
+
+% ---------------- SOAL 8.1.7 ----------------
+\soalno{8.1.7}{peluang huruf}
+\begin{soalbox}{}
+Sebuah huruf dipilih acak dari ``MATEMATIKA''. Berapa peluang huruf ``A''?
+\end{soalbox}
+
+\jawab
+\langkah{1} Hitung total huruf: M-A-T-E-M-A-T-I-K-A $=10$ huruf, jadi $n(S)=10$.
+\langkah{2} Hitung huruf ``A'': muncul pada posisi ke-2, ke-6, dan ke-10 $=3$
+kali.
+\langkah{3} $P(\text{A})=\dfrac{3}{10}$.
+\jadi peluangnya $\dfrac{3}{10}$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menghitung huruf \emph{berbeda} saja} (M,A,T,E,I,K $=6$).
+  Penyebut adalah total \emph{semua} huruf ($10$), termasuk yang berulang.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Peluang huruf ``M'' ($\frac{2}{10}$), huruf vokal, huruf ``Z'' ($0$).
+\end{variasi}
+
+% ---------------- SOAL 8.1.8 ----------------
+\soalno{8.1.8}{kejadian saling lepas}
+\begin{soalbox}{}
+Kejadian $A$ dan $B$ saling lepas, $P(A)=0{,}4$, $P(B)=0{,}3$. Hitung
+$P(A\cup B)$.
+\end{soalbox}
+
+\begin{ingat}{Saling lepas = tak beririsan}
+Jika $A$ dan $B$ tak bisa terjadi bersamaan ($A\cap B=\varnothing$), maka
+$P(A\cap B)=0$, sehingga $P(A\cup B)=P(A)+P(B)$ (tanpa pengurangan).
+\end{ingat}
+
+\jawab
+\langkah{1} Karena saling lepas, $P(A\cap B)=0$.
+\langkah{2} $P(A\cup B)=P(A)+P(B)=0{,}4+0{,}3=0{,}7$.
+\jadi $P(A\cup B)=0{,}7$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mengurangi $P(A\cap B)$ padahal $0$.} Untuk saling lepas tak ada
+  irisan. Tetapi jika \emph{tidak} saling lepas, wajib kurangi $P(A\cap B)$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Jika tidak saling lepas ($P(A\cap B)=0{,}1$), maka $P(A\cup B)=0{,}6$. Bandingkan.
+\end{variasi}
+
+% ---------------- SOAL 8.1.9 ----------------
+\soalno{8.1.9}{dua koin, keduanya sama}
+\begin{soalbox}{}
+Dua koin dilempar: berapa peluang keduanya sama (AA atau GG)?
+\end{soalbox}
+
+\jawab
+\langkah{1} $S=\{AA,AG,GA,GG\}$, $n(S)=4$.
+\langkah{2} ``Keduanya sama'': $\{AA,GG\}$, $n(A)=2$.
+\langkah{3} $P=\dfrac{2}{4}=\dfrac12$.
+\jadi peluangnya $\dfrac12$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menganggap ``keduanya sama'' hanya $AA$.} Termasuk juga $GG$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+``Keduanya berbeda'' = komplemen = $\frac12$; tiga koin ``ketiganya sama''
+($\frac{2}{8}=\frac14$).
+\end{variasi}
+
+% ---------------- SOAL 8.1.10 ----------------
+\soalno{8.1.10}{peluang bilangan prima}
+\begin{soalbox}{}
+Dari bilangan $1$--$10$, berapa peluang terambil bilangan prima?
+\end{soalbox}
+
+\jawab
+\langkah{1} $n(S)=10$.
+\langkah{2} Bilangan prima $1$--$10$: $\{2,3,5,7\}$ ($n=4$). Ingat: $1$
+\emph{bukan} prima.
+\langkah{3} $P=\dfrac{4}{10}=\dfrac25$.
+\jadi peluangnya $\dfrac25$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menghitung $1$ sebagai prima.} Prima harus punya \emph{tepat
+  dua} faktor; $1$ hanya punya satu, jadi bukan prima.
+  \item \textbf{Lupa $2$ (prima genap satu-satunya).}
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Bilangan komposit; prima antara $1$--$20$.
+\end{variasi}
+
+% ############################################################
+\section*{Subbab 8.2 — Pencacahan dan Peluang Kejadian Majemuk}
+\addcontentsline{toc}{section}{Subbab 8.2 — Pencacahan}
+% ############################################################
+
+\begin{ingat}{Perkalian, permutasi, kombinasi}
+\textbf{Aturan perkalian:} tahap-tahap dikalikan. \textbf{Permutasi} (urutan
+\emph{penting}): $P(n,r)=\dfrac{n!}{(n-r)!}$. \textbf{Kombinasi} (urutan
+\emph{tak penting}): $C(n,r)=\dfrac{n!}{r!(n-r)!}$. Pertanyaan kunci:
+\emph{apakah urutan penting?}
+\end{ingat}
+
+% ---------------- SOAL 8.2.1 ----------------
+\soalno{8.2.1}{bilangan digit berbeda (permutasi)}
+\begin{soalbox}{}
+Berapa banyak bilangan $3$ digit berbeda yang dapat dibentuk dari angka
+$1,2,3,4$?
+\end{soalbox}
+
+\jawab
+\langkah{1} Urutan penting (angka $123\neq321$) dan tanpa pengulangan
+$\Rightarrow$ permutasi $P(4,3)$.
+\langkah{2} $P(4,3)=\dfrac{4!}{(4-3)!}=\dfrac{4!}{1!}=4\cdot3\cdot2=24$.
+\jadi ada $24$ bilangan.
+(\emph{Cara ``kotak'':} $\underline{4}\times\underline{3}\times\underline{2}=24$
+--- digit pertama $4$ pilihan, sisanya berkurang.)
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Memakai kombinasi.} Bilangan \emph{berurut}, jadi permutasi
+  ($123$ dan $321$ berbeda).
+  \item \textbf{Membolehkan pengulangan.} ``Digit berbeda'' berarti tanpa
+  pengulangan; kalau boleh berulang jawabannya $4^3=64$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Boleh berulang ($4^3=64$); dari $0$--$9$ dengan digit pertama tak boleh $0$.
+\end{variasi}
+
+% ---------------- SOAL 8.2.2 ----------------
+\soalno{8.2.2}{menghitung C dan P}
+\begin{soalbox}{}
+Hitung $C(6,2)$ dan $P(6,2)$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $C(6,2)=\dfrac{6!}{2!\,4!}=\dfrac{6\cdot5}{2\cdot1}=15$.
+\langkah{2} $P(6,2)=\dfrac{6!}{4!}=6\cdot5=30$.
+\jadi $C(6,2)=15$ dan $P(6,2)=30$.
+
+\begin{tips}
+Hubungan: $P(n,r)=C(n,r)\cdot r!$. Di sini $30=15\cdot2!$ --- permutasi $=$
+kombinasi dikali banyak urutan tiap pilihan.
+\end{tips}
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa $r!$ pada kombinasi.} $C$ membagi tambahan $r!$ untuk
+  ``membuang'' urutan.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$C(6,4)=C(6,2)=15$ (sifat simetri $C(n,r)=C(n,n-r)$).
+\end{variasi}
+
+% ---------------- SOAL 8.2.3 ----------------
+\soalno{8.2.3}{ketua \& wakil (permutasi)}
+\begin{soalbox}{}
+Dari $8$ orang dipilih ketua dan wakil. Berapa cara?
+\end{soalbox}
+
+\jawab
+\langkah{1} Jabatan berbeda $\Rightarrow$ urutan penting $\Rightarrow$ permutasi.
+\langkah{2} $P(8,2)=8\cdot7=56$ (ketua $8$ pilihan, wakil $7$ sisa).
+\jadi ada $56$ cara.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Memakai kombinasi ($C(8,2)=28$).} Ketua-A wakil-B berbeda dari
+  ketua-B wakil-A, jadi urutan \emph{penting}.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Memilih ``$2$ anggota komite'' (tanpa jabatan) $\Rightarrow$ kombinasi $C(8,2)=28$.
+Bandingkan.
+\end{variasi}
+
+% ---------------- SOAL 8.2.4 ----------------
+\soalno{8.2.4}{permutasi dengan huruf berulang}
+\begin{soalbox}{}
+Berapa cara menyusun huruf ``BUKU''?
+\end{soalbox}
+
+\begin{ingat}{Permutasi dengan unsur sama}
+Jika ada huruf yang \emph{berulang}, bagi dengan faktorial banyak
+pengulangannya: $\dfrac{n!}{n_1!\,n_2!\cdots}$. Ini menghapus susunan yang
+kelihatan sama.
+\end{ingat}
+
+\jawab
+\langkah{1} ``BUKU'' punya $4$ huruf, dengan ``U'' berulang $2$ kali.
+\langkah{2} Banyak susunan $=\dfrac{4!}{2!}=\dfrac{24}{2}=12$.
+\jadi ada $12$ susunan.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menghitung $4!=24$.} Karena dua ``U'' identik, susunan yang
+  tampak sama tak boleh dihitung dua kali $\Rightarrow$ bagi $2!$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+``MATEMATIKA'' (banyak huruf berulang): $\frac{10!}{3!\,2!\,2!}$ (A$\times3$,
+M$\times2$, T$\times2$).
+\end{variasi}
+
+% ---------------- SOAL 8.2.5 ----------------
+\soalno{8.2.5}{peluang via kombinasi}
+\begin{soalbox}{}
+Dari $5$ bola merah dan $4$ bola biru diambil $3$ sekaligus. Berapa peluang
+ketiganya biru?
+\end{soalbox}
+
+\jawab
+\langkah{1} ``Sekaligus'' $\Rightarrow$ urutan tak penting $\Rightarrow$
+kombinasi. Total cara: $n(S)=C(9,3)=\dfrac{9\cdot8\cdot7}{3\cdot2\cdot1}=84$.
+\langkah{2} Ketiganya biru (dari $4$ biru): $n(A)=C(4,3)=4$.
+\langkah{3} $P=\dfrac{4}{84}=\dfrac{1}{21}$.
+\jadi peluangnya $\dfrac{1}{21}$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Memakai permutasi} untuk ``diambil sekaligus''. Tak ada urutan;
+  gunakan kombinasi di pembilang \emph{dan} penyebut.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Peluang $2$ merah $1$ biru: $\dfrac{C(5,2)C(4,1)}{C(9,3)}=\dfrac{10\cdot4}{84}
+=\dfrac{40}{84}$.
+\end{variasi}
+
+% ---------------- SOAL 8.2.6 ----------------
+\soalno{8.2.6}{aturan perkalian (PIN)}
+\begin{soalbox}{}
+Sebuah PIN $4$ digit (boleh berulang). Berapa banyak kemungkinan?
+\end{soalbox}
+
+\jawab
+\langkah{1} Tiap digit punya $10$ pilihan ($0$--$9$), dan boleh berulang.
+\langkah{2} Aturan perkalian: $10\times10\times10\times10=10^4=10000$.
+\jadi ada $10.000$ kemungkinan.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Memakai permutasi $P(10,4)$.} Itu untuk digit \emph{berbeda}.
+  Karena boleh berulang, pakai $10^4$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Digit berbeda ($P(10,4)=5040$); PIN yang harus diawali angka tak-nol.
+\end{variasi}
+
+% ---------------- SOAL 8.2.7 ----------------
+\soalno{8.2.7}{diagonal segi banyak}
+\begin{soalbox}{}
+Berapa banyak diagonal segi lima?
+\end{soalbox}
+
+\begin{ingat}{Diagonal = ruas antar titik sudut, dikurangi sisi}
+Banyak ruas antar $n$ titik $=C(n,2)$; kurangi $n$ sisi. Rumus:
+$\dfrac{n(n-3)}{2}$.
+\end{ingat}
+
+\jawab
+\langkah{1} $n=5$. Total ruas penghubung titik sudut $=C(5,2)=10$.
+\langkah{2} Kurangi $5$ sisi: $10-5=5$. (Atau langsung $\dfrac{5(5-3)}{2}
+=\dfrac{10}{2}=5$.)
+\jadi segi lima punya $5$ diagonal.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa mengurangi sisi.} $C(5,2)=10$ mencakup sisi \emph{dan}
+  diagonal; sisi bukan diagonal.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Segi enam: $\frac{6\cdot3}{2}=9$ diagonal; segi delapan: $20$.
+\end{variasi}
+
+% ---------------- SOAL 8.2.8 ----------------
+\soalno{8.2.8}{kombinasi memilih}
+\begin{soalbox}{}
+Dari $10$ soal dipilih $6$. Berapa cara?
+\end{soalbox}
+
+\jawab
+\langkah{1} Memilih tanpa urutan $\Rightarrow$ kombinasi $C(10,6)$.
+\langkah{2} Gunakan simetri $C(10,6)=C(10,4)$ agar lebih mudah:
+\[
+C(10,4)=\frac{10\cdot9\cdot8\cdot7}{4\cdot3\cdot2\cdot1}=\frac{5040}{24}=210.
+\]
+\jadi ada $210$ cara.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Memakai permutasi.} Memilih soal tak mementingkan urutan
+  pengerjaan $\Rightarrow$ kombinasi.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+``Pilih $6$ dari $10$ dengan $2$ soal wajib'' $\Rightarrow C(8,4)$ (sisanya dari
+$8$).
+\end{variasi}
+
+% ---------------- SOAL 8.2.9 ----------------
+\soalno{8.2.9}{dua dadu, angka kembar}
+\begin{soalbox}{}
+Dua dadu dilempar. Berapa peluang muncul angka kembar (dua mata sama)?
+\end{soalbox}
+
+\jawab
+\langkah{1} $n(S)=36$.
+\langkah{2} Angka kembar: $(1,1),(2,2),(3,3),(4,4),(5,5),(6,6)$ --- ada $6$.
+\langkah{3} $P=\dfrac{6}{36}=\dfrac16$.
+\jadi peluangnya $\dfrac16$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menghitung $(2,2)$ dua kali.} Kembar hanya satu pasangan per
+  nilai; ada $6$ total.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Peluang \emph{tidak} kembar ($\frac{30}{36}=\frac56$); kembar genap.
+\end{variasi}
+
+% ---------------- SOAL 8.2.10 ----------------
+\soalno{8.2.10}{tiga koin, tepat dua Gambar}
+\begin{soalbox}{}
+Tiga koin dilempar. Berapa peluang muncul tepat dua Gambar?
+\end{soalbox}
+
+\jawab
+\langkah{1} $n(S)=2^3=8$.
+\langkah{2} ``Tepat $2$ Gambar dari $3$'': pilih posisi $2$ Gambar $=C(3,2)=3$
+(yaitu $GGA,GAG,AGG$).
+\langkah{3} $P=\dfrac{3}{8}$.
+\jadi peluangnya $\dfrac38$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{``Tepat dua'' vs ``minimal dua''.} Tepat $2$ = $3$ kasus;
+  minimal $2$ = $3+1$ ($GGG$) $=4$ kasus.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Tepat satu Gambar ($\frac38$); tiga Gambar ($\frac18$); pola binomial $C(3,k)/8$.
+\end{variasi}
+
+% ############################################################
+\section*{Subbab 8.3 — Peluang Lanjutan (Bersyarat, Independen, Bayes)}
+\addcontentsline{toc}{section}{Subbab 8.3 — Peluang Lanjutan}
+% ############################################################
+
+\begin{ingat}{Bersyarat, independen, Bayes}
+\textbf{Bersyarat:} $P(A\mid B)=\dfrac{P(A\cap B)}{P(B)}$ (ruang sampel
+menyempit ke $B$). \textbf{Independen:} $P(A\cap B)=P(A)P(B)$. \textbf{Bayes:}
+$P(A\mid B)=\dfrac{P(B\mid A)P(A)}{P(B)}$, dengan
+$P(B)=P(B\mid A)P(A)+P(B\mid A^c)P(A^c)$.
+\end{ingat}
+
+% ---------------- SOAL 8.3.1 ----------------
+\soalno{8.3.1}{peluang bersyarat langsung}
+\begin{soalbox}{}
+Diketahui $P(A\cap B)=0{,}2$ dan $P(B)=0{,}5$. Tentukan $P(A\mid B)$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $P(A\mid B)=\dfrac{P(A\cap B)}{P(B)}=\dfrac{0{,}2}{0{,}5}=0{,}4$.
+\jadi $P(A\mid B)=0{,}4$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Membagi terbalik} ($\frac{P(B)}{P(A\cap B)}$). Syarat ($B$)
+  berada di \emph{penyebut}.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Diberi $P(A\mid B)$ dan $P(B)$, cari $P(A\cap B)=P(A\mid B)P(B)$.
+\end{variasi}
+
+% ---------------- SOAL 8.3.2 ----------------
+\soalno{8.3.2}{bersyarat dari data}
+\begin{soalbox}{}
+Dari $50$ orang: $30$ berkacamata, $20$ pria, $12$ pria berkacamata. Jika
+terpilih seorang pria, berapa peluang ia berkacamata?
+\end{soalbox}
+
+\begin{ingat}{Ruang sampel menyempit}
+``Diketahui pria'' berarti kita hanya melihat $20$ pria. Peluang dihitung
+terhadap $20$ itu, bukan $50$.
+\end{ingat}
+
+\jawab
+\langkah{1} Syaratnya ``pria'' $\Rightarrow$ ruang sampel menyempit ke $20$ pria.
+\langkah{2} Di antaranya, $12$ berkacamata.
+\langkah{3} $P(\text{kacamata}\mid\text{pria})=\dfrac{12}{20}=0{,}6$.
+\jadi peluangnya $0{,}6$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Membagi $50$.} Setelah tahu ``pria'', penyebutnya $20$ (jumlah
+  pria), bukan $50$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$P(\text{pria}\mid\text{kacamata})=\frac{12}{30}=0{,}4$ (arah terbalik ---
+perhatikan syaratnya).
+\end{variasi}
+
+% ---------------- SOAL 8.3.3 ----------------
+\soalno{8.3.3}{bersyarat pada dua dadu}
+\begin{soalbox}{}
+Dua dadu dilempar. Jika diketahui jumlahnya genap, berapa peluang jumlahnya $8$?
+\end{soalbox}
+
+\jawab
+\langkah{1} Syarat ``jumlah genap'' menyempitkan ruang sampel. Jumlah genap:
+$2,4,6,8,10,12$. Banyak pasangan: $1+3+5+5+3+1=18$.
+\langkah{2} Jumlah $=8$: $(2,6),(3,5),(4,4),(5,3),(6,2)$ --- ada $5$.
+\langkah{3} $P(\text{jumlah }8\mid\text{genap})=\dfrac{5}{18}$.
+\jadi peluangnya $\dfrac{5}{18}$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Membagi $36$.} Karena disyaratkan genap, penyebut adalah $18$
+  (pasangan berjumlah genap), bukan $36$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+``Jika jumlah $>7$, peluang jumlah $10$?''; ``jika dadu pertama $3$, peluang
+jumlah $7$?''.
+\end{variasi}
+
+% ---------------- SOAL 8.3.4 ----------------
+\soalno{8.3.4}{menilai independensi}
+\begin{soalbox}{}
+Apakah ``hujan hari ini'' dan ``lulus ujian'' independen? Jelaskan.
+\end{soalbox}
+
+\jawab
+\langkah{1} Dua kejadian independen jika terjadinya satu \emph{tidak mengubah}
+peluang yang lain.
+\langkah{2} Cuaca hujan tidak memengaruhi hasil ujian (tak ada kaitan sebab
+akibat yang wajar).
+\jadi \textbf{ya, independen} --- $P(\text{lulus}\mid\text{hujan})=P(\text{lulus})$.
+\emph{(Catatan: jika hujan membuat siswa terlambat/terganggu, keterkaitan bisa
+muncul; independensi selalu bergantung konteks.)}
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mengira ``kejadian berbeda topik'' pasti independen.} Independensi
+  adalah soal peluang, bukan sekadar ``tak berhubungan tema''. Uji dengan
+  $P(A\mid B)=P(A)$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Contoh \emph{dependen}: ``mendung'' dan ``hujan'' (mendung menaikkan peluang
+hujan).
+\end{variasi}
+
+% ---------------- SOAL 8.3.5 ----------------
+\soalno{8.3.5}{dependen (tanpa pengembalian)}
+\begin{soalbox}{}
+Dari $4$ merah, $3$ biru diambil $2$ tanpa pengembalian. Berapa peluang keduanya
+biru?
+\end{soalbox}
+
+\jawab
+\textbf{Cara bertahap (dependen).}
+\langkah{1} Biru pertama: $\dfrac{3}{7}$.
+\langkah{2} Setelah satu biru diambil, tersisa $2$ biru dari $6$ bola:
+$\dfrac{2}{6}$.
+\langkah{3} $P(BB)=\dfrac{3}{7}\cdot\dfrac{2}{6}=\dfrac{6}{42}=\dfrac17$.
+
+\textbf{Cara kombinasi.} $\dfrac{C(3,2)}{C(7,2)}=\dfrac{3}{21}=\dfrac17$.
+\jadi peluangnya $\dfrac17$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Memakai $\frac37\cdot\frac37$.} Itu untuk \emph{dengan}
+  pengembalian. Tanpa pengembalian, tahap kedua berubah menjadi $\frac26$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Keduanya merah ($\frac47\cdot\frac36=\frac27$); satu merah satu biru.
+\end{variasi}
+
+% ---------------- SOAL 8.3.6 ----------------
+\soalno{8.3.6}{independen (dengan pengembalian)}
+\begin{soalbox}{}
+Sama seperti Soal 8.3.5 tetapi \emph{dengan} pengembalian. Bandingkan hasilnya.
+\end{soalbox}
+
+\jawab
+\langkah{1} Karena dikembalikan, komposisi bola tak berubah: tiap tahap
+$P(\text{biru})=\dfrac37$.
+\langkah{2} $P(BB)=\dfrac37\cdot\dfrac37=\dfrac{9}{49}$.
+\langkah{3} Bandingkan: tanpa pengembalian $\dfrac17=\dfrac{7}{49}$; dengan
+pengembalian $\dfrac{9}{49}$.
+\jadi $\dfrac{9}{49}$, sedikit \emph{lebih besar} daripada tanpa pengembalian.
+(Masuk akal: dengan pengembalian, biru selalu punya peluang penuh $\frac37$ di
+tahap kedua.)
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menyamakan kedua kasus.} Pengembalian membuat kejadian
+  \emph{independen}; tanpa pengembalian membuatnya \emph{dependen}.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Tiga kali dengan pengembalian ($(\frac37)^3$); bandingkan ketiga skenario.
+\end{variasi}
+
+% ---------------- SOAL 8.3.7 ----------------
+\soalno{8.3.7}{membuktikan independensi}
+\begin{soalbox}{}
+Sebuah koin dilempar dua kali. Buktikan kedua lemparan independen dengan
+menghitung $P(\text{AA})$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Peluang tiap lemparan Angka: $P(A)=\dfrac12$.
+\langkah{2} Jika independen, seharusnya $P(AA)=P(A)\cdot P(A)=\dfrac12\cdot
+\dfrac12=\dfrac14$.
+\langkah{3} Cek dari ruang sampel: $S=\{AA,AG,GA,GG\}$, $P(AA)=\dfrac14$.
+\langkah{4} Karena $P(AA)=P(A)P(A)$, kedua lemparan \textbf{independen}.
+\jadi terbukti independen (koin ``tak punya ingatan'').
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Gambler's fallacy.} Setelah beberapa Angka, peluang Angka
+  berikutnya tetap $\frac12$ --- lemparan tak saling memengaruhi.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Buktikan $P(AG)=P(A)P(G)=\frac14$; tiga lemparan independen.
+\end{variasi}
+
+% ---------------- SOAL 8.3.8 ----------------
+\soalno{8.3.8}{diagram pohon koin}
+\begin{soalbox}{}
+Gambarkan diagram pohon pelemparan koin $2$ kali dan tuliskan peluang tiap
+lintasan.
+\end{soalbox}
+
+\jawab
+Tiap cabang berpeluang $\frac12$; peluang lintasan = hasil kali cabang.
+
+\begin{center}
+\begin{tikzpicture}[
+  node/.style={circle,draw=biru,fill=birumuda,font=\small\bfseries,inner sep=2pt,minimum size=7mm},
+  panah/.style={-Stealth,black!55,thick}]
+\node[draw=hijau,fill=hijaumuda,rounded corners,inner sep=4pt] (R) at (0,0) {Mulai};
+\node[node] (A) at (3,1.4) {A};
+\node[node] (G) at (3,-1.4) {G};
+\draw[panah](R)--(A) node[midway,above,font=\scriptsize]{$\tfrac12$};
+\draw[panah](R)--(G) node[midway,below,font=\scriptsize]{$\tfrac12$};
+\node[node] (AA) at (6,2.3) {A};
+\node[node] (AG) at (6,0.6) {G};
+\node[node] (GA) at (6,-0.6) {A};
+\node[node] (GG) at (6,-2.3) {G};
+\draw[panah](A)--(AA) node[midway,above,font=\scriptsize]{$\tfrac12$};
+\draw[panah](A)--(AG) node[midway,below,font=\scriptsize]{$\tfrac12$};
+\draw[panah](G)--(GA) node[midway,above,font=\scriptsize]{$\tfrac12$};
+\draw[panah](G)--(GG) node[midway,below,font=\scriptsize]{$\tfrac12$};
+\node[anchor=west,font=\small] at (6.6,2.3){$AA:\tfrac12\cdot\tfrac12=\tfrac14$};
+\node[anchor=west,font=\small] at (6.6,0.6){$AG:\tfrac14$};
+\node[anchor=west,font=\small] at (6.6,-0.6){$GA:\tfrac14$};
+\node[anchor=west,font=\small] at (6.6,-2.3){$GG:\tfrac14$};
+\end{tikzpicture}
+\end{center}
+\jadi keempat lintasan ($AA,AG,GA,GG$) masing-masing berpeluang $\dfrac14$, dan
+jumlahnya $1$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menjumlahkan cabang, bukan mengalikan.} Peluang \emph{sepanjang
+  satu lintasan} dikalikan; penjumlahan hanya untuk menggabungkan lintasan
+  berbeda.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Pohon pengambilan bola tanpa pengembalian (cabang berubah tiap tahap); tiga
+lemparan (delapan lintasan).
+\end{variasi}
+
+% ---------------- SOAL 8.3.9 ----------------
+\soalno{8.3.9}{Teorema Bayes}
+\begin{soalbox}{}
+Sebuah pabrik: mesin A ($60\%$ produk, cacat $2\%$) dan mesin B ($40\%$, cacat
+$5\%$). Sebuah produk cacat; berapa peluang ia dari mesin B?
+\end{soalbox}
+
+\begin{ingat}{Bayes = membalik arah}
+Kita tahu $P(\text{cacat}\mid B)$; ingin $P(B\mid\text{cacat})$. Hitung dulu
+peluang total cacat, lalu bandingkan sumbangan B terhadap total itu.
+\end{ingat}
+
+\jawab
+\langkah{1} Data: $P(A)=0{,}6,\ P(B)=0{,}4$; $P(\text{cacat}\mid A)=0{,}02$,
+$P(\text{cacat}\mid B)=0{,}05$.
+\langkah{2} Peluang total cacat:
+\[
+P(\text{cacat})=0{,}02(0{,}6)+0{,}05(0{,}4)=0{,}012+0{,}020=0{,}032.
+\]
+\langkah{3} Bayes:
+\[
+P(B\mid\text{cacat})=\frac{P(\text{cacat}\mid B)P(B)}{P(\text{cacat})}
+=\frac{0{,}020}{0{,}032}=0{,}625.
+\]
+\jadi peluangnya $0{,}625=62{,}5\%$. (Walau B hanya $40\%$ produksi, ia
+menyumbang $62{,}5\%$ produk cacat karena tingkat cacatnya lebih tinggi.)
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menjawab $0{,}05$ (tingkat cacat B).} Itu $P(\text{cacat}\mid B)$,
+  bukan $P(B\mid\text{cacat})$. Bayes membalik arahnya.
+  \item \textbf{Lupa peluang total.} Penyebut adalah $P(\text{cacat})$ gabungan
+  dari A \emph{dan} B.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$P(A\mid\text{cacat})=\frac{0{,}012}{0{,}032}=0{,}375$ (jumlahnya $1$ dengan
+B); uji medis (contoh di modul).
+\end{variasi}
+
+% ---------------- SOAL 8.3.10 ----------------
+\soalno{8.3.10}{base rate \& positif palsu}
+\begin{soalbox}{}
+Tes narkoba akurat $98\%$, hanya $0{,}5\%$ populasi memakai. Tanpa hitung penuh,
+jelaskan mengapa hasil positif belum tentu berarti pemakai.
+\end{soalbox}
+
+\begin{ingat}{Masalah base rate}
+Ketika kejadian sangat \emph{langka}, positif palsu dari kelompok besar
+(non-pemakai) bisa mengalahkan positif benar dari kelompok kecil (pemakai) ---
+walau tesnya akurat.
+\end{ingat}
+
+\jawab
+\langkah{1} Bayangkan $10.000$ orang. Pemakai: $0{,}5\%\times10000=50$ orang;
+non-pemakai: $9.950$ orang.
+\langkah{2} Positif \emph{benar} (dari $50$ pemakai, akurat $98\%$):
+$\approx49$ orang.
+\langkah{3} Positif \emph{palsu} (dari $9.950$ non-pemakai, keliru $2\%$):
+$\approx199$ orang.
+\langkah{4} Dari total $\approx248$ hasil positif, hanya $\approx49$ yang benar
+pemakai --- sekitar $20\%$ saja.
+\jadi karena \emph{base rate} pemakai sangat kecil, mayoritas hasil positif
+justru \textbf{positif palsu}. Hasil positif harus dikonfirmasi tes lanjutan.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mengira ``akurat $98\%$'' berarti $98\%$ positif itu pemakai.}
+  Akurasi tes berbeda dari peluang pemakai-jika-positif; base rate langka
+  mengubah semuanya (Teorema Bayes).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Uji penyakit langka (contoh Bayes di modul); saringan spam. Semua adalah
+masalah base rate.
+\end{variasi}
+
+% ============================================================
+\begin{tips}
+\textbf{Ringkasan strategi Bab 8.}
+\begin{enumerate}[leftmargin=*,topsep=2pt]
+  \item \emph{Tulis ruang sampel} / hitung $n(S)$ dulu. Peluang klasik
+  $=\frac{n(A)}{n(S)}$; empiris = frekuensi relatif.
+  \item \emph{Komplemen} ($1-P$) ampuh untuk ``minimal''. \emph{Gabungan}
+  kurangi $P(A\cap B)$ bila tak saling lepas.
+  \item \emph{Pencacahan:} tanya ``urutan penting?'' (permutasi vs kombinasi)
+  dan ``boleh berulang?''.
+  \item \emph{Lanjutan:} bersyarat menyempitkan ruang sampel; dengan/tanpa
+  pengembalian $\to$ independen/dependen; Bayes membalik arah dan mewaspadai
+  base rate. \textbf{Hindari gambler's fallacy.}
+\end{enumerate}
+\end{tips}
+
+\end{document}

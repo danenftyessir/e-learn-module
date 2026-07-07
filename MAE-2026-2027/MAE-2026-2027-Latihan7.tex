@@ -1,0 +1,673 @@
+% ============================================================
+%  PEMBAHASAN SUPER DETAIL — LATIHAN SOAL & STUDI KASUS
+%  BAB 7: STATISTIKA
+%  Catatan: Soal Akhir Bab TIDAK dibahas di sini (sesuai permintaan).
+% ============================================================
+\input{MAE-2026-2027-Latihan-preamble}
+\renewcommand{\babjudul}{Pembahasan Latihan — Bab 7}
+
+\begin{document}
+\setcounter{chapter}{7}
+\buathalamanjudul{Statistika}{7}
+
+% ============================================================
+\chapter*{Pembahasan Bab 7: Statistika}
+\addcontentsline{toc}{chapter}{Pembahasan Bab 7: Statistika}
+\markboth{PEMBAHASAN BAB 7}{}
+% ============================================================
+
+\begin{tips}
+\textbf{Cara membaca buku ini.} Tiap soal: \textbf{(1)} soal ditulis ulang,
+\textbf{(2)} konsep kunci, \textbf{(3)} langkah demi langkah, \textbf{(4)}
+jebakan, \textbf{(5)} variasi. \emph{Aturan emas Bab 7:} \textbf{urutkan data
+lebih dulu} sebelum mencari median/kuartil, dan selalu tanya ``apakah rata-rata
+saja cukup, atau perlu ukuran sebaran?''.
+
+\smallskip
+\textbf{Catatan metode kuartil.} Buku ini memakai \emph{rumus letak}
+$\text{letak }Q_i=\dfrac{i(n+1)}{4}$ (dan analog untuk desil/persentil). Jika
+letaknya pecahan, lakukan \emph{interpolasi} antara dua datum terdekat.
+\end{tips}
+
+% ============================================================
+\section*{Studi Kasus: Menganalisis Kebiasaan Belajar Siswa}
+\addcontentsline{toc}{section}{Studi Kasus: Kebiasaan Belajar}
+% ============================================================
+
+\begin{studikasus}{Menganalisis Kebiasaan Belajar Siswa}
+Lama belajar (jam/hari) dua kelompok:
+\begin{center}
+\begin{tabular}{l|l}
+\toprule
+Kelompok & Data (jam) \\ \midrule
+A & $2,2,3,3,3,3,4,4$ \\
+B & $0,1,2,3,3,4,5,6$ \\ \bottomrule
+\end{tabular}
+\end{center}
+\textbf{Pertanyaan.} (a) Hitung rata-rata tiap kelompok --- apakah sama?
+(b) Kelompok mana yang ``lebih konsisten''? (c) Ukuran apa yang menangkap
+``kekonsistenan'' itu?
+\end{studikasus}
+
+\subsection*{Jawaban lengkap studi kasus}
+
+\begin{ingat}{Mean vs sebaran}
+\emph{Mean} $\bar x=\frac{\sum x_i}{n}$ hanya menyatakan ``pusat''. Dua data
+bisa berpusat sama tapi \emph{beda sebaran}. Ukuran sebaran (jangkauan,
+simpangan baku) menangkap ``kekonsistenan''.
+\end{ingat}
+
+\textbf{(a) Rata-rata.}
+\[
+\bar x_A=\frac{2+2+3+3+3+3+4+4}{8}=\frac{24}{8}=3,\qquad
+\bar x_B=\frac{0+1+2+3+3+4+5+6}{8}=\frac{24}{8}=3.
+\]
+Keduanya \textbf{sama}, yaitu $3$ jam/hari.
+
+\textbf{(b) Yang lebih konsisten.} Kelompok \textbf{A} --- nilainya berkerumun
+rapat di sekitar $3$, sedangkan B menyebar dari $0$ sampai $6$.
+
+\textbf{(c) Ukuran yang menangkap.} \emph{Simpangan baku} (atau jangkauan).
+Hitung untuk masing-masing ($\bar x=3$):
+\[
+s_A=\sqrt{\frac{1+1+0+0+0+0+1+1}{8}}=\sqrt{\frac{4}{8}}=\sqrt{0{,}5}\approx0{,}71,
+\]
+\[
+s_B=\sqrt{\frac{9+4+1+0+0+1+4+9}{8}}=\sqrt{\frac{28}{8}}=\sqrt{3{,}5}\approx1{,}87.
+\]
+\jadi meski rata-rata sama, $s_A<s_B$ membuktikan A \textbf{lebih konsisten}
+secara kuantitatif. Rata-rata saja tak cukup --- itulah pesan besar bab ini.
+
+% ############################################################
+\section*{Subbab 7.1 — Ukuran Pemusatan dan Penyebaran}
+\addcontentsline{toc}{section}{Subbab 7.1 — Pemusatan \& Penyebaran}
+% ############################################################
+
+\begin{ingat}{Rumus inti}
+\[
+\bar x=\frac{\sum x_i}{n},\qquad \bar x_{\text{kel}}=\frac{\sum f_ix_i}{\sum f_i},
+\qquad s=\sqrt{\frac{\sum(x_i-\bar x)^2}{n}}.
+\]
+Median = nilai tengah data \emph{terurut}; modus = yang paling sering.
+Jangkauan $=x_{\max}-x_{\min}$; JAK $=Q_3-Q_1$. Letak $Q_i=\frac{i(n+1)}{4}$.
+\end{ingat}
+
+% ---------------- SOAL 7.1.1 ----------------
+\soalno{7.1.1}{kuartil (rumus letak)}
+\begin{soalbox}{}
+Tentukan $Q_1$, $Q_2$, $Q_3$ dari data $3,5,5,7,8,9,11,12$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Data sudah terurut, $n=8$. Gunakan letak $Q_i=\dfrac{i(n+1)}{4}
+=\dfrac{i\cdot9}{4}$.
+\langkah{2} $Q_1$: letak $\dfrac{9}{4}=2{,}25$ $\Rightarrow$ antara datum ke-2
+($5$) dan ke-3 ($5$): $Q_1=5+0{,}25(5-5)=5$.
+\langkah{3} $Q_2$: letak $\dfrac{18}{4}=4{,}5$ $\Rightarrow$ antara datum ke-4
+($7$) dan ke-5 ($8$): $Q_2=7+0{,}5(8-7)=7{,}5$.
+\langkah{4} $Q_3$: letak $\dfrac{27}{4}=6{,}75$ $\Rightarrow$ antara datum ke-6
+($9$) dan ke-7 ($11$): $Q_3=9+0{,}75(11-9)=9+1{,}5=10{,}5$.
+\jadi $Q_1=5,\ Q_2=7{,}5,\ Q_3=10{,}5$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa mengurutkan.} Untuk data acak, urutkan dulu; di sini sudah
+  terurut.
+  \item \textbf{Salah interpolasi.} ``Letak $6{,}75$'' berarti $75\%$ jarak dari
+  datum ke-6 menuju ke-7.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Metode ``median dari separuh'' (membelah data) bisa memberi hasil sedikit
+berbeda; ikuti metode yang diminta soal. Data ganjil ($n$ ganjil) membuat
+median tepat di satu datum.
+\end{variasi}
+
+% ---------------- SOAL 7.1.2 ----------------
+\soalno{7.1.2}{simpangan baku}
+\begin{soalbox}{}
+Hitung simpangan baku dari data $2,4,4,6,9$.
+\end{soalbox}
+
+\begin{ingat}{Langkah simpangan baku}
+(1) Hitung mean. (2) Kurangi mean dari tiap data, kuadratkan. (3) Jumlahkan,
+bagi $n$ (variansi). (4) Akarkan.
+\end{ingat}
+
+\jawab
+\langkah{1} Mean: $\bar x=\dfrac{2+4+4+6+9}{5}=\dfrac{25}{5}=5$.
+\langkah{2} Selisih dan kuadratnya:
+\[
+(2-5)^2=9,\ (4-5)^2=1,\ (4-5)^2=1,\ (6-5)^2=1,\ (9-5)^2=16.
+\]
+\langkah{3} Jumlah $=9+1+1+1+16=28$; variansi $=\dfrac{28}{5}=5{,}6$.
+\langkah{4} $s=\sqrt{5{,}6}\approx2{,}37$.
+\jadi $s\approx2{,}37$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Lupa mengkuadratkan} atau lupa mengakarkan di akhir.
+  \item \textbf{Membagi $n-1$ vs $n$.} Untuk data \emph{populasi} bagi $n$; untuk
+  \emph{sampel} bagi $n-1$. Ikuti konteks (buku ini memakai $n$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Hitung ragam/variansi saja (tanpa akar); atau bandingkan $s$ dua kelompok
+(seperti studi kasus).
+\end{variasi}
+
+% ---------------- SOAL 7.1.3 ----------------
+\soalno{7.1.3}{mean, median, modus}
+\begin{soalbox}{}
+Tentukan mean, median, dan modus dari $5,7,7,8,10$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Mean: $\dfrac{5+7+7+8+10}{5}=\dfrac{37}{5}=7{,}4$.
+\langkah{2} Median: data terurut $n=5$, nilai tengah = datum ke-3 = $7$.
+\langkah{3} Modus: nilai paling sering = $7$ (muncul dua kali).
+\jadi mean $=7{,}4$, median $=7$, modus $=7$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Median = rata-rata?} Bukan. Median = nilai \emph{posisi tengah}
+  data terurut, bukan hasil bagi.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Data tanpa modus (semua beda) atau bimodal (dua modus); data $n$ genap (median
+rata-rata dua tengah).
+\end{variasi}
+
+% ---------------- SOAL 7.1.4 ----------------
+\soalno{7.1.4}{jangkauan \& JAK}
+\begin{soalbox}{}
+Hitung jangkauan dan jangkauan antarkuartil (JAK) data $3,5,5,7,8,9,11,12$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Jangkauan $=x_{\max}-x_{\min}=12-3=9$.
+\langkah{2} JAK $=Q_3-Q_1$. Dari Soal 7.1.1: $Q_1=5$, $Q_3=10{,}5$.
+\langkah{3} JAK $=10{,}5-5=5{,}5$.
+\jadi jangkauan $=9$; JAK $=5{,}5$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menukar jangkauan dan JAK.} Jangkauan pakai nilai ekstrem; JAK
+  pakai kuartil (mengukur $50\%$ data tengah, tahan pencilan).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Bandingkan jangkauan (peka pencilan) dengan JAK (tahan pencilan) pada data yang
+memuat outlier.
+\end{variasi}
+
+% ---------------- SOAL 7.1.5 ----------------
+\soalno{7.1.5}{mean data berkelompok}
+\begin{soalbox}{}
+Tentukan mean data berkelompok: nilai $5,6,7,8$ dengan frekuensi $2,4,3,1$.
+\end{soalbox}
+
+\begin{ingat}{Mean berbobot frekuensi}
+$\bar x=\dfrac{\sum f_i x_i}{\sum f_i}$: tiap nilai ``diberi bobot'' sesuai
+seberapa sering muncul.
+\end{ingat}
+
+\jawab
+\langkah{1} Hitung $\sum f_i x_i$:
+\[
+5(2)+6(4)+7(3)+8(1)=10+24+21+8=63.
+\]
+\langkah{2} $\sum f_i=2+4+3+1=10$.
+\langkah{3} $\bar x=\dfrac{63}{10}=6{,}3$.
+\jadi mean $=6{,}3$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Membagi banyak nilai (4), bukan total frekuensi (10).} Penyebut
+  adalah $\sum f_i$, yaitu banyak \emph{datum}, bukan banyak \emph{nilai berbeda}.
+  \item \textbf{Lupa mengalikan nilai dengan frekuensinya.}
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Data berkelompok dengan interval kelas (gunakan titik tengah kelas sebagai
+$x_i$); mean gabungan dua kelompok.
+\end{variasi}
+
+% ---------------- SOAL 7.1.6 ----------------
+\soalno{7.1.6}{mean \& median sederhana}
+\begin{soalbox}{}
+Data $10,12,12,15,20$. Hitung mean dan median.
+\end{soalbox}
+
+\jawab
+\langkah{1} Mean: $\dfrac{10+12+12+15+20}{5}=\dfrac{69}{5}=13{,}8$.
+\langkah{2} Median: $n=5$ (ganjil), nilai tengah = datum ke-3 = $12$.
+\jadi mean $=13{,}8$; median $=12$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mengira median = rata-rata nilai terkecil dan terbesar.}
+  Median = nilai \emph{posisi} tengah.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Tambahkan pencilan (mis.\ ganti $20\to200$): mean melonjak, median tetap $12$
+--- peragaan ketahanan median.
+\end{variasi}
+
+% ---------------- SOAL 7.1.7 ----------------
+\soalno{7.1.7}{mean dan penghapusan datum}
+\begin{soalbox}{}
+Jika rata-rata $5$ bilangan $=8$ dan setelah satu bilangan dibuang rata-rata $4$
+sisanya menjadi $7{,}5$, tentukan bilangan yang dibuang.
+\end{soalbox}
+
+\begin{ingat}{Mean $\to$ jumlah}
+Kunci: ubah rata-rata menjadi \emph{jumlah} ($\text{jumlah}=\bar x\times n$).
+Bilangan yang dibuang = selisih dua jumlah.
+\end{ingat}
+
+\jawab
+\langkah{1} Jumlah $5$ bilangan $=8\times5=40$.
+\langkah{2} Jumlah $4$ bilangan sisa $=7{,}5\times4=30$.
+\langkah{3} Bilangan yang dibuang $=40-30=10$.
+\jadi bilangan yang dibuang $=10$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mengurangi rata-rata} ($8-7{,}5=0{,}5$). Rata-rata tak bisa
+  dikurangi langsung; ubah ke jumlah dulu.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Menambah datum baru yang mengubah rata-rata; mencari nilai agar rata-rata
+mencapai target tertentu.
+\end{variasi}
+
+% ---------------- SOAL 7.1.8 ----------------
+\soalno{7.1.8}{modus}
+\begin{soalbox}{}
+Tentukan modus dari $3,3,4,5,5,5,6$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Hitung kemunculan: $3$ (2$\times$), $4$ (1$\times$), $5$ (3$\times$),
+$6$ (1$\times$).
+\langkah{2} Yang terbanyak: $5$.
+\jadi modus $=5$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menganggap modus = nilai tengah.} Modus = nilai yang \emph{paling
+  sering}, bukan yang di tengah.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Data bimodal (dua nilai sama-sama terbanyak); data tanpa modus.
+\end{variasi}
+
+% ---------------- SOAL 7.1.9 ----------------
+\soalno{7.1.9}{median data ganjil}
+\begin{soalbox}{}
+Hitung $Q_2$ dari $1,3,3,6,7,8,9$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $Q_2=$ median. Data terurut, $n=7$. Letak $Q_2=\dfrac{2(7+1)}{4}
+=\dfrac{16}{4}=4$ $\Rightarrow$ datum ke-4.
+\langkah{2} Datum ke-4 $=6$.
+\jadi $Q_2=6$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mengambil datum ke-$\frac n2$.} Untuk $n$ ganjil, posisi tengah
+  adalah $\frac{n+1}{2}=4$ (datum ke-4), bukan ke-3,5.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$n$ genap $\Rightarrow$ median rata-rata dua datum tengah.
+\end{variasi}
+
+% ---------------- SOAL 7.1.10 ----------------
+\soalno{7.1.10}{data simetris}
+\begin{soalbox}{}
+Sebuah data simetris: apa hubungan mean, median, dan modusnya?
+\end{soalbox}
+
+\jawab
+\langkah{1} Pada distribusi \emph{simetris} (dan unimodal), pusatnya berimpit.
+\jadi \textbf{mean $=$ median $=$ modus}. (Sebaliknya, jika ketiganya berbeda,
+data \emph{miring/skewed}: pada miring kanan mean $>$ median $>$ modus.)
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[axis lines=middle,width=8cm,height=4cm,xtick=\empty,ytick=\empty,
+  xlabel=$x$,ymin=0,ymax=1.1,domain=-3:3,samples=60,clip=false]
+\addplot[very thick,biru]{exp(-x^2/1.2)};
+\draw[dashed,merah,thick] (axis cs:0,0)--(axis cs:0,1);
+\node[merah,font=\scriptsize,above] at (axis cs:0,1){mean=median=modus};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mengira selalu sama untuk data apa pun.} Kesamaan ini khusus
+  distribusi \emph{simetris}; data miring memisahkan ketiganya.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Tentukan arah kemiringan dari posisi relatif mean vs median; sketsa kurva miring.
+\end{variasi}
+
+% ############################################################
+\section*{Subbab 7.2 — Statistika Lanjutan (Letak, Box Plot, Outlier, Z-score)}
+\addcontentsline{toc}{section}{Subbab 7.2 — Statistika Lanjutan}
+% ############################################################
+
+\begin{ingat}{Ukuran letak, outlier, z-score}
+Letak $Q_i=\frac{i(n+1)}{4}$, $D_i=\frac{i(n+1)}{10}$, $P_i=\frac{i(n+1)}{100}$
+(interpolasi bila pecahan). Hubungan: $Q_2=D_5=P_{50}=$ median; $Q_1=P_{25}$,
+$Q_3=P_{75}$.\\
+\textbf{Outlier:} di luar pagar $Q_1-1{,}5\,\text{JAK}$ atau $Q_3+1{,}5\,
+\text{JAK}$.\quad \textbf{Z-score:} $z=\dfrac{x-\bar x}{s}$.
+\end{ingat}
+
+% ---------------- SOAL 7.2.1 ----------------
+\soalno{7.2.1}{kuartil data ganjil}
+\begin{soalbox}{}
+Tentukan $Q_1,Q_2,Q_3$ dari $2,4,5,7,8,10,12$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Terurut, $n=7$, $n+1=8$. Letak $Q_i=\dfrac{i\cdot8}{4}=2i$.
+\langkah{2} $Q_1$: letak $2$ $\Rightarrow$ datum ke-2 $=4$.
+\langkah{3} $Q_2$: letak $4$ $\Rightarrow$ datum ke-4 $=7$.
+\langkah{4} $Q_3$: letak $6$ $\Rightarrow$ datum ke-6 $=10$.
+\jadi $Q_1=4,\ Q_2=7,\ Q_3=10$ (semua tepat di datum karena $n+1=8$ habis dibagi
+$4$).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah hitung letak.} $\frac{i(n+1)}{4}$ memakai $n+1=8$, bukan
+  $n=7$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$n$ yang membuat letak pecahan (perlu interpolasi), seperti Soal 7.1.1.
+\end{variasi}
+
+% ---------------- SOAL 7.2.2 ----------------
+\soalno{7.2.2}{JAK / IQR}
+\begin{soalbox}{}
+Hitung JAK (IQR) data $2,4,5,7,8,10,12$.
+\end{soalbox}
+
+\jawab
+\langkah{1} Dari Soal 7.2.1: $Q_1=4$, $Q_3=10$.
+\langkah{2} JAK $=Q_3-Q_1=10-4=6$.
+\jadi JAK $=6$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Memakai min--maks.} JAK khusus $Q_3-Q_1$ (bukan jangkauan
+  $x_{\max}-x_{\min}=10$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+JAK sebagai dasar deteksi outlier (Soal 7.2.6) dan lebar kotak box plot.
+\end{variasi}
+
+% ---------------- SOAL 7.2.3 ----------------
+\soalno{7.2.3}{desil (interpolasi)}
+\begin{soalbox}{}
+Tentukan $D_4$ dari $1,3,4,6,7,9,10,12,14,15$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $n=10$, $n+1=11$. Letak $D_4=\dfrac{4(n+1)}{10}=\dfrac{4\cdot11}{10}
+=4{,}4$.
+\langkah{2} Letak $4{,}4$ $\Rightarrow$ antara datum ke-4 ($6$) dan ke-5 ($7$),
+sejauh $0{,}4$ dari datum ke-4:
+\[
+D_4=6+0{,}4(7-6)=6+0{,}4=6{,}4.
+\]
+\jadi $D_4=6{,}4$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Membulatkan letak ke datum ke-4 saja} ($=6$) tanpa interpolasi.
+  Bagian pecahan ($0{,}4$) penting.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$D_5$ (= median); persentil (Soal 7.2.4). Semua memakai kerangka letak yang sama.
+\end{variasi}
+
+% ---------------- SOAL 7.2.4 ----------------
+\soalno{7.2.4}{persentil (interpolasi)}
+\begin{soalbox}{}
+Tentukan $P_{25}$ dari data $5,8,10,12,15,18,20,24$.
+\end{soalbox}
+
+\jawab
+\langkah{1} $n=8$, $n+1=9$. Letak $P_{25}=\dfrac{25(n+1)}{100}=\dfrac{25\cdot9}{100}
+=2{,}25$.
+\langkah{2} Antara datum ke-2 ($8$) dan ke-3 ($10$), sejauh $0{,}25$:
+\[
+P_{25}=8+0{,}25(10-8)=8+0{,}5=8{,}5.
+\]
+\jadi $P_{25}=8{,}5$ (yang juga sama dengan $Q_1$, karena $P_{25}=Q_1$).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menghitung $25\%$ dari nilai}, bukan letak. $P_{25}$ menunjuk
+  \emph{posisi}, lalu ambil nilainya lewat interpolasi.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+$P_{50}$ (median), $P_{75}$ ($=Q_3$); persentil dari nilai ujian sekelas.
+\end{variasi}
+
+% ---------------- SOAL 7.2.5 ----------------
+\soalno{7.2.5}{lima serangkai}
+\begin{soalbox}{}
+Sebutkan lima serangkai dari $3,6,7,9,12,15,20$.
+\end{soalbox}
+
+\begin{ingat}{Lima serangkai}
+Min, $Q_1$, $Q_2$ (median), $Q_3$, Maks --- ringkasan yang mendasari box plot.
+\end{ingat}
+
+\jawab
+\langkah{1} $n=7$, $n+1=8$, letak $Q_i=2i$.
+\langkah{2} Min $=3$; $Q_1=$ datum ke-2 $=6$; $Q_2=$ datum ke-4 $=9$;
+$Q_3=$ datum ke-6 $=15$; Maks $=20$.
+\jadi lima serangkainya: $(3,\ 6,\ 9,\ 15,\ 20)$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Melupakan min/maks.} Lima serangkai mencakup \emph{dua} nilai
+  ekstrem, bukan hanya kuartil.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Gunakan lima serangkai untuk menggambar box plot (Soal 7.2.10).
+\end{variasi}
+
+% ---------------- SOAL 7.2.6 ----------------
+\soalno{7.2.6}{deteksi outlier (aturan pagar)}
+\begin{soalbox}{}
+Data $10,11,12,13,40$ dengan $Q_1=11$, $Q_3=13$. Apakah $40$ pencilan?
+\end{soalbox}
+
+\jawab
+\langkah{1} JAK $=Q_3-Q_1=13-11=2$.
+\langkah{2} Pagar atas $=Q_3+1{,}5\cdot\text{JAK}=13+1{,}5(2)=13+3=16$.
+\langkah{3} Bandingkan: $40>16$.
+\jadi \textbf{ya}, $40$ adalah pencilan (di luar pagar atas).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menebak dari ``kelihatan besar''.} Gunakan aturan pagar objektif
+  ($1{,}5\times$ JAK), bukan perasaan.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Cek pagar bawah $Q_1-1{,}5\,\text{JAK}=11-3=8$; nilai $<8$ juga pencilan.
+\end{variasi}
+
+% ---------------- SOAL 7.2.7 ----------------
+\soalno{7.2.7}{z-score}
+\begin{soalbox}{}
+Hitung $z$-score nilai $90$ jika $\bar x=75$ dan $s=10$.
+\end{soalbox}
+
+\begin{ingat}{Z-score = jarak dalam satuan simpangan baku}
+$z=\dfrac{x-\bar x}{s}$: ``berapa simpangan baku'' nilai dari rata-rata.
+$z>0$ di atas rata-rata; $z<0$ di bawah.
+\end{ingat}
+
+\jawab
+\langkah{1} $z=\dfrac{x-\bar x}{s}=\dfrac{90-75}{10}=\dfrac{15}{10}=1{,}5$.
+\jadi $z=1{,}5$ (nilai $90$ berada $1{,}5$ simpangan baku \emph{di atas}
+rata-rata).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Membagi $\bar x$ bukan $s$.} Penyebutnya simpangan baku $s$.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Membandingkan dua mapel berskala beda lewat z-score; nilai dengan $z$ negatif.
+\end{variasi}
+
+% ---------------- SOAL 7.2.8 ----------------
+\soalno{7.2.8}{z-score terbalik (cari nilai asli)}
+\begin{soalbox}{}
+Nilai $z=-1{,}5$ pada data $\bar x=60$, $s=8$. Tentukan nilai aslinya.
+\end{soalbox}
+
+\jawab
+\langkah{1} Balik rumus: dari $z=\dfrac{x-\bar x}{s}$ diperoleh
+$x=\bar x+z\cdot s$.
+\langkah{2} $x=60+(-1{,}5)(8)=60-12=48$.
+\jadi nilai aslinya $48$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Salah tanda.} $z$ negatif $\Rightarrow$ nilai \emph{di bawah}
+  rata-rata ($48<60$).
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Diberi $z$ positif; atau mencari $s$/$\bar x$ dari $z$ dan $x$ yang diketahui.
+\end{variasi}
+
+% ---------------- SOAL 7.2.9 ----------------
+\soalno{7.2.9}{makna persentil}
+\begin{soalbox}{}
+Seseorang berada di persentil ke-$90$ tinggi badan. Jelaskan maknanya.
+\end{soalbox}
+
+\jawab
+\langkah{1} Persentil ke-$90$ ($P_{90}$) berarti posisi yang $90\%$ data berada
+\emph{di bawahnya}.
+\jadi orang itu \textbf{lebih tinggi daripada sekitar $90\%$ orang} dalam
+kelompoknya; hanya sekitar $10\%$ yang lebih tinggi. (Ini ukuran \emph{posisi
+relatif}, bukan nilai tinggi mutlak.)
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Mengira ``$90\%$ dari tinggi maksimum''.} Persentil mengukur
+  peringkat/posisi, bukan persentase nilai.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Persentil pertumbuhan anak (grafik KMS); persentil skor ujian nasional.
+\end{variasi}
+
+% ---------------- SOAL 7.2.10 ----------------
+\soalno{7.2.10}{menggambar box plot}
+\begin{soalbox}{}
+Gambarkan sketsa box plot untuk data $2,3,5,5,6,8,9,14$ (tentukan dulu lima
+serangkainya).
+\end{soalbox}
+
+\jawab
+\langkah{1} Terurut, $n=8$, $n+1=9$, letak $Q_i=\dfrac{9i}{4}$.
+\langkah{2} $Q_1$: letak $2{,}25$ $\Rightarrow$ antara datum ke-2 ($3$) dan
+ke-3 ($5$): $Q_1=3+0{,}25(2)=3{,}5$.
+$Q_2$: letak $4{,}5$ $\Rightarrow$ antara datum ke-4 ($5$) dan ke-5 ($6$):
+$Q_2=5{,}5$.
+$Q_3$: letak $6{,}75$ $\Rightarrow$ antara datum ke-6 ($8$) dan ke-7 ($9$):
+$Q_3=8+0{,}75(1)=8{,}75$.
+\langkah{3} Min $=2$, Maks $=14$. Lima serangkai: $(2;\ 3{,}5;\ 5{,}5;\ 8{,}75;\
+14)$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+  \draw[->](0,0)--(15.5,0) node[right]{nilai};
+  \foreach \x in {0,2,...,14}{\draw (\x,-0.08)--(\x,0.08) node[below,font=\tiny]{\x};}
+  \draw[very thick,biru] (3.5,0.5) rectangle (8.75,1.5);
+  \draw[very thick,biru] (5.5,0.5)--(5.5,1.5);
+  \draw[very thick,biru] (2,1)--(3.5,1);
+  \draw[very thick,biru] (8.75,1)--(14,1);
+  \node[above,font=\scriptsize] at (2,1){min $2$};
+  \node[above,font=\scriptsize] at (3.5,1.55){$Q_1{=}3{,}5$};
+  \node[above,font=\scriptsize] at (5.5,1.55){$Q_2{=}5{,}5$};
+  \node[above,font=\scriptsize] at (8.75,1.55){$Q_3{=}8{,}75$};
+  \node[above,font=\scriptsize] at (14,1){maks $14$};
+\end{tikzpicture}
+\end{center}
+\jadi box plot memiliki kotak dari $3{,}5$ ke $8{,}75$ (median $5{,}5$), dengan
+kumis menjangkau $2$ dan $14$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item \textbf{Menggambar kotak dari min ke maks.} Kotak hanya $Q_1$--$Q_3$
+  ($50\%$ data tengah); ekstrem digambar sebagai kumis.
+\end{itemize}
+\end{jebakan}
+
+\begin{variasi}
+Data dengan pencilan (titik terpisah di luar kumis); membandingkan dua box plot
+berdampingan.
+\end{variasi}
+
+% ============================================================
+\begin{tips}
+\textbf{Ringkasan strategi Bab 7.}
+\begin{enumerate}[leftmargin=*,topsep=2pt]
+  \item \emph{Urutkan dulu} sebelum median/kuartil. Kuartil/desil/persentil pakai
+  \textbf{rumus letak} $\frac{i(n+1)}{k}$ + interpolasi.
+  \item \emph{Mean} peka pencilan; \emph{median} tahan pencilan. Pilih sesuai
+  konteks (gaji direktur $\to$ median).
+  \item \emph{Sebaran:} jangkauan (peka), JAK $=Q_3-Q_1$ (tahan), simpangan baku
+  (kuadratkan selisih agar tak saling menghapus, lalu akarkan).
+  \item \emph{Outlier} lewat pagar $1{,}5\times$JAK; \emph{z-score} untuk
+  membandingkan skala berbeda; \emph{box plot} merangkum lima serangkai.
+\end{enumerate}
+\end{tips}
+
+\end{document}
