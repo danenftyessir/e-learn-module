@@ -1,0 +1,607 @@
+% ============================================================
+%  KUIS 1 — MATEMATIKA (MAE)  T.P. 2026/2027
+%  Tema: "Kevin Da Nendra dan Through Pass Penentu Kemenangan"
+%  Bentuk: Nomor 1-5 Pilihan Ganda Kompleks (Benar/Salah)
+%          Nomor 6-10 Uraian bercabang (a, b, c, ...)
+%  Topik terintegrasi: logaritma/eksponen, trigonometri, vektor,
+%          barisan & deret, fungsi kuadrat, SPL, statistika, peluang.
+%  Kompilasi: pdfLaTeX (gambar berada di folder yang sama)
+% ============================================================
+
+\documentclass[11pt]{article}
+
+% ===================== PACKAGES =====================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[bahasa]{babel}
+\usepackage[a4paper,margin=2.5cm,top=2.8cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{icomma}
+
+% ===================== HEADER & FOOTER =====================
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small KUIS 1: Matematika (MAE)}
+\rhead{\small T.P. 2026/2027}
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ===================== KOTAK SOAL =====================
+\newtcolorbox{soal}[1]{
+  breakable,
+  colback=white,
+  colframe=black,
+  colbacktitle=black,
+  coltitle=white,
+  fonttitle=\bfseries\sffamily,
+  title={Nomor #1},
+  boxrule=0.8pt, arc=0pt,
+  left=3mm, right=3mm, top=2mm, bottom=2mm}
+
+% ===================== PILIHAN GANDA KOMPLEKS (Benar/Salah) =====================
+\newenvironment{bstabel}{%
+  \par\smallskip\begin{center}\renewcommand{\arraystretch}{1.35}%
+  \begin{tabular}{@{}p{0.72\textwidth}>{\centering\arraybackslash}m{1.5cm}>{\centering\arraybackslash}m{1.5cm}@{}}
+  \toprule
+  \textbf{Pernyataan} & \textbf{Benar} & \textbf{Salah}\\\midrule}%
+  {\bottomrule\end{tabular}\end{center}}
+\newcommand{\bs}[1]{#1 & $\square$ & $\square$\\[1pt]}
+
+% ===================== SUB-SOAL URAIAN (a, b, c, ...) =====================
+\newenvironment{subsoal}{%
+  \begin{enumerate}[label=\textbf{(\alph*)},leftmargin=1.8em,itemsep=5pt,topsep=3pt]}%
+  {\end{enumerate}}
+
+% ===================== GAMBAR =====================
+\newcommand{\gambar}[2][0.6\textwidth]{%
+  \begin{center}\includegraphics[width=#1]{#2}\end{center}}
+
+\linespread{1.05}
+
+% ===================================================================
+%                         ISI DOKUMEN
+% ===================================================================
+\begin{document}
+\thispagestyle{empty}
+
+% ===================== COVER + PETUNJUK (satu halaman) =====================
+
+\begin{center}
+  \fbox{\parbox{0.45\textwidth}{\centering\bfseries\large LEMBAR SOAL}}
+\end{center}
+\vspace{0.4cm}
+
+\begin{center}
+  {\LARGE\bfseries KUIS 1: MATEMATIKA (MAE)}\\[0.3em]
+  {\large\itshape Studi Kasus Kevin Da Nendra dan \textit{Through Pass} Penentu Kemenangan}
+\end{center}
+\vspace{0.4cm}
+
+\begin{center}
+  \begin{tabular}{@{\hspace{2cm}}ll@{\hspace{0.4cm}:@{\hspace{0.4cm}}}l}
+    Jenjang      & & SMA / Madrasah Aliyah \\[0.3em]
+    Hari/Tanggal & & [\underline{\hspace{4cm}}] \\[0.3em]
+    Waktu        & & 120 menit \\[0.3em]
+    Paket Soal   & & -- \\
+  \end{tabular}
+\end{center}
+
+\vspace{0.4cm}
+\noindent\rule{\linewidth}{0.6pt}
+\vspace{0.2cm}
+
+\noindent\textbf{\underline{PETUNJUK UMUM}}
+\begin{enumerate}[leftmargin=*,itemsep=3pt,topsep=3pt]
+  \item Anda \textbf{tidak} diperbolehkan menggunakan sumber eksternal, termasuk
+        internet dan \textit{large language model} (ChatGPT, Claude, Gemini, dan
+        sebagainya). Kerjakan sendiri, karena kuis ini dibuat untuk
+        \textbf{mengukur} tingkat kepahaman Anda.
+  \item Soal terdiri atas \textbf{10 butir wajib (Nomor 1--10)} dan \textbf{2 butir
+        bonus (Nomor 11--12)}, dan saling \textbf{berkolaborasi}: hasil pada nomor
+        awal sering dipakai kembali pada nomor berikutnya. Kerjakan
+        \textbf{berurutan} dan simpan hasil antara Anda.
+  \item \textbf{Bagian A (Nomor 1--5)} berbentuk \textbf{pilihan ganda kompleks}:
+        untuk setiap pernyataan, beri tanda centang pada kolom \textbf{Benar}
+        atau \textbf{Salah}. Penilaian dihitung per pernyataan.
+  \item \textbf{Bagian B (Nomor 6--10)} berbentuk \textbf{uraian bercabang}
+        (a, b, c, \ldots). Tuliskan proses pengerjaan secara lengkap dan runtut;
+        proses ikut dinilai.
+  \item \textbf{Bagian C (Nomor 11--12): soal BONUS.} Definisi lambang yang
+        diperlukan diberikan di dalam tiap soal. Bila dikerjakan benar menambah
+        poin; bila salah atau dikosongkan tidak mengurangi. Kerjakan
+        \textbf{hanya jika} Nomor 1--10 telah selesai.
+  \item Topik inti yang diuji (Nomor 1--10) mencakup logaritma/eksponen,
+        trigonometri, dan vektor, yang dipadukan dengan barisan \& deret, fungsi
+        kuadrat, serta sistem persamaan linear.
+  \item \textbf{Nilai bantu} (boleh dipakai tanpa kalkulator):\\[0.2em]
+        \small
+        $\cos 32^\circ\!\approx\!0{,}848$;\ \ $\sin 32^\circ\!\approx\!0{,}530$;\ \
+        $\cos 30^\circ\!\approx\!0{,}866$;\ \ $\sin 30^\circ\!=\!0{,}5$;\ \
+        $\tan 30^\circ\!\approx\!0{,}577$;\ \
+        $\log 5\!\approx\!0{,}699$;\ \ $\log 7\!\approx\!0{,}845$;\ \
+        $\log 0{,}94\!\approx\!-0{,}0269$;\\[0.2em]
+        $\sqrt{773}\!\approx\!27{,}8$;\ \ $\sqrt{34}\!\approx\!5{,}83$;\ \
+        $\sqrt{45}\!\approx\!6{,}71$;\ \ $0{,}94^{1{,}2}\!\approx\!0{,}928$;\ \
+        $0{,}94^{5}\!\approx\!0{,}734$.
+  \item Isilah detail berikut.\\[0.3em]
+        \textbf{Nama}\hspace{0.45cm};\enspace\underline{\hspace{8cm}}
+\end{enumerate}
+
+\vspace{0.3cm}
+\noindent\textit{Dengan menandatangani kolom di bawah ini, saya menyatakan telah
+membaca, memahami, dan menyetujui seluruh peraturan di atas.}
+
+\vspace{0.4cm}
+\noindent\fbox{\parbox{5cm}{\vspace{1.6cm}\centering\small Tanda Tangan Peserta\vspace{0.3cm}}}
+
+\clearpage
+
+% ===================================================================
+%                 JUDUL + NARASI (data menyatu di cerita)
+% ===================================================================
+
+\begin{center}
+  {\Large\bfseries Kevin Da Nendra dan \textit{Through Pass} Penentu Kemenangan}
+\end{center}
+\vspace{0.3cm}
+
+\begin{center}
+  \includegraphics[width=0.42\textwidth]{kevin-da-nendra.jpg}\\[3pt]
+  {\small\textit{Kevin Da Nendra, gelandang serang Manchester City yang dijuluki \emph{``sang arsitek''}.}}
+\end{center}
+\vspace{0.3cm}
+
+Menit ke-$88$ di Etihad Stadium, papan skor menyala \textbf{2--2}. Di tengah
+gemuruh puluhan ribu penonton, \textbf{Kevin Da Nendra}, gelandang serang
+Manchester City yang dijuluki \emph{``sang arsitek''} karena visinya membaca
+ruang seperti membaca peta, menerima bola di tengah lapangan. Sekejap matanya
+menangkap seorang rekan yang melakukan \emph{diagonal run}, menusuk celah sempit
+di antara dua bek lawan. Celah itu hanya terbuka satu tarikan napas: salah sudut
+sedikit bola dipotong, kurang tenaga sedikit bola keburu direbut kiper. Kevin
+harus memutuskan arah, sudut, dan kecepatan umpan \textbf{seketika itu juga}.
+
+\smallskip
+Dari pelacakan \emph{tracking camera} (satuan meter), Kevin berada di titik
+$K(12,\,8)$ dan rekan penerima di $P(34,\,25)$, sementara dua bek lawan menjaga
+celah pada $B_1(21,\,15)$ dan $B_2(27,\,20)$. Kevin melepas umpan dengan
+\textbf{kelajuan awal $28$ m/s} yang meluruh akibat gesekan udara menurut
+$v(t)=28\,(0{,}94)^{t}$ (dengan $t$ dalam detik), dan bola meninggalkan kakinya
+pada \textbf{sudut elevasi $32^\circ$} terhadap permukaan lapangan. Pelatih
+menegaskan: sebuah \textit{through pass} disebut \textbf{efektif} apabila
+kecepatan bola saat diterima \emph{lebih dari} $20$ m/s \emph{dan} arah umpan
+berada pada rentang \textbf{$30^\circ$ sampai $45^\circ$} terhadap garis
+horizontal lapangan.
+
+\smallskip
+Ia menarik kaki ke belakang\dots\ dan melepas sebuah \textit{through pass} yang
+akan dibicarakan berhari-hari. Apakah secara \textbf{matematis} umpan itu memang
+sempurna, atau Kevin baru saja mengambil risiko paling nekat dalam kariernya?
+Buktikan melalui soal-soal berikut.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.34,>=Latex,font=\footnotesize]
+\draw[step=2,black!12,very thin] (10,4) grid (42,26);
+\draw[->,thick] (10,4)--(43,4) node[right]{$x$};
+\draw[->,thick] (10,4)--(10,27) node[above]{$y$};
+\foreach \x in {12,16,20,24,28,32,36,40} \node[below,font=\scriptsize] at (\x,4){\x};
+\foreach \y in {6,10,14,18,22,26} \node[left,font=\scriptsize] at (10,\y){\y};
+\draw[dashed,thick,->] (12,8)--(34,25)
+  node[midway,sloped,above,font=\scriptsize]{lintasan umpan $\vec{KP}$};
+\draw[line width=2pt] (40,20)--(40,24);
+\node[right,font=\scriptsize] at (40.3,22){gawang};
+\fill (12,8) circle(3pt); \node[below left,font=\scriptsize] at (12,8){$K(12,8)$};
+\fill (34,25) circle(3pt); \node[above left,font=\scriptsize] at (34,25){$P(34,25)$};
+\fill (21,15) circle(3pt); \node[below right,font=\scriptsize] at (21,15){$B_1(21,15)$};
+\fill (27,20) circle(3pt); \node[below right,font=\scriptsize] at (27,20){$B_2(27,20)$};
+\fill (40,20) circle(2.5pt) node[right,font=\scriptsize]{$G_1$};
+\fill (40,24) circle(2.5pt) node[right,font=\scriptsize]{$G_2$};
+\end{tikzpicture}\\[2pt]
+{\small\textbf{Peta situasi (tampak atas, satuan meter).} Semua data posisi pada
+narasi tergambar di sini: pemain, lintasan umpan $\vec{KP}$ (garis putus-putus),
+serta gawang. Jadikan acuan untuk Nomor 1--10.}
+\end{center}
+
+\vspace{0.3cm}
+\noindent\rule{\linewidth}{0.6pt}
+\vspace{0.1cm}
+
+\noindent{\large\bfseries BAGIAN A: Pilihan Ganda Kompleks (Nomor 1--5)}\\[0.2em]
+\small\emph{Untuk setiap pernyataan, beri tanda centang ($\checkmark$) pada
+kolom \textbf{Benar} atau \textbf{Salah}. Tidak ada opsi tunggal; setiap
+pernyataan dinilai sendiri-sendiri.}\normalsize
+
+\bigskip
+
+% ---------------------------- NOMOR 1 ----------------------------
+\begin{soal}{1 \normalfont\itshape(Logaritma \& Eksponen)}
+Tinjau model peluruhan kelajuan bola $v(t)=28\,(0{,}94)^{t}$ (m/s). Menurut
+pelatih, bola masih ``bertenaga'' selama kelajuannya di atas $20$ m/s. Tentukan
+Benar/Salah tiap pernyataan berikut.
+\begin{bstabel}
+  \bs{(1) Kelajuan awal bola (saat $t=0$) adalah $28$ m/s.}
+  \bs{(2) Setelah $3$ detik, kelajuan bola $v(3)\approx 23{,}3$ m/s.}
+  \bs{(3) Kelajuan bola turun tepat menjadi $20$ m/s pada sekitar $t\approx 5{,}4$ detik.}
+  \bs{(4) Pada $t=10$ detik, kelajuan bola masih di atas $20$ m/s.}
+\end{bstabel}
+\end{soal}
+
+% ---------------------------- NOMOR 2 ----------------------------
+\begin{soal}{2 \normalfont\itshape(Trigonometri: penguraian vektor kecepatan)}
+Bola diangkat dengan kelajuan awal $28$ m/s pada sudut elevasi $32^\circ$.
+Tentukan Benar/Salah tiap pernyataan berikut.
+
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=1.1,font=\small]
+\draw[->,very thick] (0,0)--(3.6,2.25) node[midway,sloped,above]{$28$ m/s};
+\draw[->] (0,0)--(3.6,0) node[midway,below]{$v_x$ (mendatar)};
+\draw[->] (3.6,0)--(3.6,2.25) node[midway,right]{$v_y$ (tegak)};
+\draw (0.7,0) arc (0:32:0.7); \node[font=\scriptsize] at (1.05,0.22){$32^\circ$};
+\end{tikzpicture}\\[2pt]
+{\small\textit{Petunjuk:} uraikan panah $28$ m/s menjadi sisi mendatar $v_x$ dan sisi tegak $v_y$.}
+\end{center}
+
+\begin{bstabel}
+  \bs{(1) Komponen mendatar kecepatan awal $\approx 23{,}7$ m/s.}
+  \bs{(2) Komponen tegak (naik) kecepatan awal $\approx 14{,}8$ m/s.}
+  \bs{(3) Komponen mendatar lebih besar daripada komponen tegak.}
+  \bs{(4) Jika sudut elevasi diperbesar (tetap $<90^\circ$), komponen mendatar ikut membesar.}
+\end{bstabel}
+\end{soal}
+
+% ---------------------------- NOMOR 3 ----------------------------
+\begin{soal}{3 \normalfont\itshape(Trigonometri: arah umpan)}
+Diproyeksikan ke permukaan lapangan (tampak atas), arah umpan dari $K$ ke $P$
+membentuk sudut $\theta$ terhadap horizontal dengan
+$\tan\theta=\dfrac{25-8}{34-12}=\dfrac{17}{22}$. Tentukan Benar/Salah tiap
+pernyataan berikut.
+
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=1.05,font=\small]
+\fill[black!15] (0,0)--(30:3) arc (30:45:3)--cycle;
+\draw[dashed,gray] (0,0)--(30:3.2); \draw[dashed,gray] (0,0)--(45:3.2);
+\node[gray,font=\scriptsize,below right] at (30:2.9){$30^\circ$};
+\node[gray,font=\scriptsize,above left] at (45:3.2){$45^\circ$};
+\draw[->] (0,0)--(4.0,0) node[right,font=\scriptsize]{horizontal};
+\draw[->,very thick] (0,0)--(38:2.7) node[above right,font=\scriptsize]{arah $\vec{KP}$};
+\draw (1.0,0) arc (0:38:1.0); \node at (19:1.3){$\theta$};
+\end{tikzpicture}\\[2pt]
+{\small\textit{Petunjuk:} arsir $=$ zona efektif $30^\circ$--$45^\circ$. Hitung $\theta$ dari $\tan\theta=\tfrac{17}{22}$, lalu periksa apakah arah $\vec{KP}$ jatuh di dalam zona.}
+\end{center}
+
+\begin{bstabel}
+  \bs{(1) $\tan\theta=\dfrac{17}{22}$ sehingga $\theta\approx 37{,}7^\circ$.}
+  \bs{(2) Arah umpan berada dalam rentang efektif $30^\circ$--$45^\circ$.}
+  \bs{(3) Besar sudut $\theta$ tepat sama dengan sudut elevasi $32^\circ$.}
+  \bs{(4) Bila komponen $x$ dan $y$ tertukar ($\tan\theta=\tfrac{22}{17}$), sudutnya menjadi $\approx 52{,}3^\circ$.}
+\end{bstabel}
+\end{soal}
+
+% ---------------------------- NOMOR 4 ----------------------------
+\begin{soal}{4 \normalfont\itshape(Vektor)}
+Lintasan umpan dinyatakan sebagai vektor $\vec{KP}=P-K$. Tentukan Benar/Salah
+tiap pernyataan berikut.
+\begin{bstabel}
+  \bs{(1) $\vec{KP}=(22,\,17)$.}
+  \bs{(2) Panjang umpan $|\vec{KP}|=\sqrt{773}\approx 27{,}8$ m.}
+  \bs{(3) Vektor satuan searah umpan $\approx (0{,}79,\ 0{,}61)$.}
+  \bs{(4) Panjang umpan sama dengan $22+17=39$ m.}
+\end{bstabel}
+\end{soal}
+
+% ---------------------------- NOMOR 5 ----------------------------
+\begin{soal}{5 \normalfont\itshape(Kolaborasi: kelayakan umpan)}
+Dari rekaman video, bola diterima $1{,}2$ detik setelah ditendang. Dengan
+menggabungkan hasil Nomor 1--4 (dan diketahui jarak garis lintasan ke $B_2$
+adalah $\tfrac{9}{\sqrt{773}}\approx 0{,}32$ m serta ke $B_1$ adalah
+$\tfrac{1}{\sqrt{773}}\approx 0{,}036$ m), tentukan Benar/Salah tiap pernyataan.
+\begin{bstabel}
+  \bs{(1) Kecepatan saat diterima $v(1{,}2)\approx 26{,}0$ m/s, sehingga $>20$ m/s.}
+  \bs{(2) Karena arah $37{,}7^\circ$ dan kecepatan terima $>20$ m/s, umpan memenuhi kedua kriteria efektif.}
+  \bs{(3) Bola melintas $\approx 0{,}32$ m dari bek $B_2$.}
+  \bs{(4) Karena jaraknya hanya $\approx 0{,}036$ m, bola melintas dengan aman jauh dari bek $B_1$.}
+\end{bstabel}
+\end{soal}
+
+\clearpage
+\noindent{\large\bfseries BAGIAN B: Uraian Bercabang (Nomor 6--10)}\\[0.2em]
+\small\emph{Kerjakan setiap sub-soal secara runtut. Tuliskan rumus, substitusi,
+dan kesimpulan. Proses ikut dinilai.}\normalsize
+
+\bigskip
+
+% ---------------------------- NOMOR 6 ----------------------------
+\begin{soal}{6 \normalfont\itshape(Gambar 1: dari \textit{through pass} hingga rekan mengejar bola)}
+Gambar 1 memperlihatkan momen Kevin melepas \textit{through pass} menembus
+barisan pertahanan, sementara rekannya berlari mengejar ruang di belakang bek.
+Gunakan data posisi pada narasi.
+\gambar[0.6\textwidth]{kdb-vs-manutd.png}
+
+\smallskip
+\noindent Sistem pelacakan mengeluarkan matriks biner berukuran $12\times14$
+berikut. Vektor lari penerima $\vec{u}=(u_x,u_y)$ dibaca dari dua baris yang
+dicetak tebal: $u_x$ adalah banyaknya angka $1$ pada baris bertanda
+$\leftarrow u_x$, dan $u_y$ adalah banyaknya angka $1$ pada baris bertanda
+$\leftarrow u_y$. Dengan aturan ini diperoleh $\vec{u}=(5,\,3)$ m/s.
+
+{\setlength{\arraycolsep}{3pt}\renewcommand{\arraystretch}{0.85}\footnotesize
+\[
+\left[\begin{array}{*{14}{c}|c}
+0&1&1&0&1&0&0&1&1&0&1&0&0&1 & \\
+1&0&0&1&0&1&1&0&0&1&0&1&1&0 & \\
+\mathbf1&\mathbf0&\mathbf0&\mathbf1&\mathbf0&\mathbf0&\mathbf0&\mathbf1&\mathbf0&\mathbf0&\mathbf1&\mathbf0&\mathbf0&\mathbf1 & \leftarrow u_x\\
+0&1&0&1&1&0&1&0&1&0&0&1&0&1 & \\
+1&1&0&0&1&0&0&1&0&1&1&0&1&0 & \\
+0&0&1&0&0&1&1&0&1&0&0&1&0&0 & \\
+1&0&1&1&0&0&1&0&0&1&0&1&1&0 & \\
+0&1&0&0&1&1&0&1&0&0&1&0&0&1 & \\
+\mathbf0&\mathbf0&\mathbf1&\mathbf0&\mathbf0&\mathbf0&\mathbf0&\mathbf1&\mathbf0&\mathbf0&\mathbf0&\mathbf0&\mathbf1&\mathbf0 & \leftarrow u_y\\
+1&0&0&1&0&1&0&0&1&0&1&0&0&1 & \\
+0&1&1&0&1&0&0&1&0&1&0&0&1&0 & \\
+1&0&0&1&0&0&1&0&1&0&0&1&0&1 & \\
+\end{array}\right]
+\]}
+
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=1.0,font=\small]
+\coordinate (O) at (0,0); \coordinate (A) at (6,3.6); \coordinate (B) at (2.6,0.5);
+\draw[->,thick] (O)--(A) node[midway,sloped,above,font=\scriptsize]{$\vec{v}_b=(18{,}8;\,14{,}5)$};
+\draw[->,thick,densely dashed] (O)--(B) node[midway,below,font=\scriptsize]{$\vec{u}=(5;\,3)$};
+\draw[->,very thick] (B)--(A) node[midway,sloped,below,font=\scriptsize]{$\vec{v}_b-\vec{u}=(13{,}8;\,11{,}5)$};
+\fill (O) circle(1.6pt) node[left,font=\scriptsize]{O};
+\end{tikzpicture}\\[2pt]
+{\small\textit{Petunjuk (bagian d):} kecepatan relatif $=$ vektor dari ujung $\vec{u}$ ke ujung $\vec{v}_b$ (\emph{tip-to-tip}); besarnya dihitung dengan Pythagoras. Sketsa tidak berskala.}
+\end{center}
+
+\begin{subsoal}
+  \item Tentukan vektor $\vec{KP}=P-K$ beserta panjangnya $|\vec{KP}|$.
+  \item Tentukan besar sudut arah umpan terhadap garis horizontal lapangan, lalu
+        simpulkan apakah arah tersebut memenuhi kriteria efektif ($30^\circ$--$45^\circ$).
+  \item Dari matriks sensor di atas, vektor lari penerima terbaca $\vec{u}=(5,\,3)$
+        m/s. Hitung kelajuan larinya $|\vec{u}|$ dan sudut arah larinya terhadap horizontal.
+  \item Pada saat umpan dilepas, kecepatan mendatar bola dapat diuraikan menjadi
+        $\vec{v}_b\approx(18{,}8,\ 14{,}5)$ m/s. Tentukan vektor kecepatan bola
+        \textbf{relatif terhadap rekan yang mengejar} ($\vec{v}_b-\vec{u}$) dan besarnya.
+  \item Seorang bek berupaya memotong. Lintasan lari rekan dimodelkan garis
+        $x+y=44$ dan lintasan lari bek dimodelkan garis $3x-2y=37$. Dengan
+        sistem persamaan linear, tentukan koordinat titik pertemuan (lokasi
+        perebutan bola) kedua lintasan tersebut.
+\end{subsoal}
+\end{soal}
+
+% ---------------------------- NOMOR 7 ----------------------------
+\begin{soal}{7 \normalfont\itshape(Peluruhan kelajuan: barisan, eksponen, logaritma)}
+Masih pada situasi \textit{through pass} yang sama, tinjau kelajuan bola
+$v(t)=28\,(0{,}94)^{t}$ selama menuju rekan yang mengejar.
+
+\begin{center}
+\begin{tikzpicture}[>=Latex,font=\footnotesize,xscale=0.6,yscale=0.135]
+\draw[->,gray] (0,0)--(11,0) node[right,font=\scriptsize]{$t$ (detik)};
+\draw[->,gray] (0,0)--(0,31) node[above,font=\scriptsize]{$v$ (m/s)};
+\foreach \t in {2,4,6,8,10} \node[below,font=\scriptsize] at (\t,0){\t};
+\foreach \v in {10,20,30} \node[left,font=\scriptsize] at (0,\v){\v};
+\draw[dashed] (0,20)--(10.6,20) node[right,font=\scriptsize]{ambang $20$ m/s};
+\draw[thick,domain=0:10,samples=80,smooth,variable=\t] plot (\t,{28*pow(0.94,\t)});
+\foreach \t in {0,1,2,3} \node[circle,fill=black,inner sep=1pt] at (\t,{28*pow(0.94,\t)}) {};
+\end{tikzpicture}\\[2pt]
+{\small\textit{Petunjuk:} kurva meluruh dari $28$ m/s (garis tebal); garis putus-putus $=$ ambang $20$ m/s. Titik pada $t=0,1,2,3$ membentuk barisan geometri (bagian a).}
+\end{center}
+
+\begin{subsoal}
+  \item Tuliskan kelajuan bola pada $t=0,1,2,3$ detik. Tunjukkan bahwa nilai-nilai
+        itu membentuk barisan geometri dan tentukan rasionya.
+  \item Dengan logaritma, tentukan pada detik ke berapa kelajuan bola tepat
+        menjadi $20$ m/s.
+  \item Periksa apakah pada $t=5$ detik bola masih ``bertenaga'' ($>20$ m/s)
+        menggunakan $0{,}94^{5}\approx0{,}734$.
+  \item Bila rekan baru menerima bola pada $t=1{,}2$ detik, tentukan kecepatan
+        bola saat diterima dan simpulkan apakah masih memenuhi syarat kecepatan
+        efektif ($>20$ m/s). Gunakan $0{,}94^{1{,}2}\approx0{,}928$.
+\end{subsoal}
+\end{soal}
+
+% ---------------------------- NOMOR 8 ----------------------------
+\begin{soal}{8 \normalfont\itshape(Gambar 2: lengkungan tembakan \textit{finesse})}
+Gambar 2 memperlihatkan rekan Kevin melepas tembakan \textit{finesse} yang
+melengkung melewati kiper. Modelkan tembakan itu sebagai gerak parabola dengan
+kelajuan awal $12$ m/s pada sudut elevasi $30^\circ$ dan percepatan gravitasi
+$g=10\ \text{m/s}^2$.
+\gambar[0.55\textwidth]{kdb-vs-nottingham.png}
+
+\begin{center}
+\begin{tikzpicture}[>=Latex,font=\small]
+\draw[->,gray] (0,0)--(6.6,0) node[right,font=\scriptsize]{jarak $x$};
+\draw[->,gray] (0,0)--(0,2.6) node[above,font=\scriptsize]{tinggi $y$};
+\draw[thick,domain=0:6,samples=40,smooth,variable=\t] plot (\t,{0.9*\t-0.15*\t*\t});
+\draw[dashed,gray] (3,0)--(3,1.35);
+\node[font=\scriptsize,align=center] at (3,2.35){tinggi maks $=\,?$};
+\node[below,font=\scriptsize] at (6,-0.05){jangkauan $=\,?$};
+\end{tikzpicture}\\[2pt]
+{\small\textit{Petunjuk:} lengkungan bersifat parabola: cari titik puncak (tinggi maks) dan titik jatuh (jangkauan). Sketsa tidak berskala.}
+\end{center}
+
+\begin{subsoal}
+  \item Uraikan kecepatan awal tembakan menjadi komponen mendatar $v_x$ dan
+        komponen tegak $v_y$.
+  \item Ketinggian bola dimodelkan $h(t)=v_y\,t-5t^{2}$. Tentukan tinggi
+        maksimum bola dan waktu saat tinggi itu tercapai (titik puncak parabola).
+  \item Tentukan waktu bola kembali menyentuh tanah dan jarak mendatar yang
+        ditempuh (jangkauan tembakan).
+  \item Nyatakan lengkungan tembakan sebagai persamaan parabola $y$ terhadap $x$
+        (eliminasi $t$), lalu sebutkan koordinat titik tertingginya.
+\end{subsoal}
+\end{soal}
+
+% ---------------------------- NOMOR 9 ----------------------------
+\begin{soal}{9 \normalfont\itshape(Trigonometri: geometri sudut tembak ke gawang)}
+Masih terkait situasi penyelesaian (Gambar 2), penyerang menembak dari titik
+$P(34,\,25)$ ke arah gawang yang dibatasi tiang $G_1(40,\,20)$ dan
+$G_2(40,\,24)$, dengan lebar gawang $|G_1G_2|=4$ m.
+
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=0.62,font=\footnotesize]
+\coordinate (P) at (0,5); \coordinate (G1) at (6,0.6); \coordinate (G2) at (6,4.4);
+\draw[line width=1.6pt] (G1)--(G2); \node[right] at (6,2.5){$4$ m};
+\draw (P)--(G1); \draw (P)--(G2);
+\fill (P) circle(2.5pt); \node[left] at (P){$P$};
+\fill (G1) circle(2.5pt); \node[right] at (G1){$G_1(40,20)$};
+\fill (G2) circle(2.5pt); \node[right] at (G2){$G_2(40,24)$};
+\node at (1.5,3.0){$\angle G_1PG_2$};
+\end{tikzpicture}\\[2pt]
+{\small\textit{Petunjuk:} sudut tembak $=\angle G_1PG_2$. Ketiga sisi segitiga $PG_1G_2$ diketahui $\Rightarrow$ pakai aturan kosinus.}
+\end{center}
+
+\begin{subsoal}
+  \item Hitung jarak penyerang ke masing-masing tiang, yaitu $|PG_1|$ dan $|PG_2|$.
+  \item Dengan aturan kosinus, tentukan besar \emph{sudut tembak} $\angle G_1PG_2$
+        (lebar gawang yang terlihat dari $P$).
+  \item Dengan aturan sinus, tentukan besar sudut $\angle PG_1G_2$.
+  \item Jika penyerang menembak dari jarak lebih jauh sehingga
+        $|PG_1|=|PG_2|=12$ m (lebar gawang tetap $4$ m), hitung sudut tembak yang
+        baru. Bandingkan dengan hasil (b) dan jelaskan maknanya bagi peluang gol.
+\end{subsoal}
+\end{soal}
+
+% ---------------------------- NOMOR 10 ----------------------------
+\begin{soal}{10 \normalfont\itshape(Vektor: resultan, hasil kali titik, dan proyeksi)}
+Gunakan kembali posisi $K(12,8)$, $B_1(21,15)$, $B_2(27,20)$, dan $P(34,25)$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.34,>=Latex,font=\footnotesize]
+\draw[->,thick] (12,8)--(21,15) node[midway,sloped,above,font=\scriptsize]{$\vec{KB_1}$};
+\draw[->,thick] (21,15)--(27,20) node[midway,sloped,above,font=\scriptsize]{$\vec{B_1B_2}$};
+\draw[->,thick] (27,20)--(34,25) node[midway,sloped,above,font=\scriptsize]{$\vec{B_2P}$};
+\draw[->,dashed] (13.6,6.2)--(35.6,23.2)
+  node[midway,sloped,below,font=\scriptsize]{$\vec{KP}$ (resultan)};
+\fill (12,8) circle(3pt) node[above left,font=\scriptsize]{$K$};
+\fill (21,15) circle(3pt) node[above left,font=\scriptsize]{$B_1$};
+\fill (27,20) circle(3pt) node[above left,font=\scriptsize]{$B_2$};
+\fill (34,25) circle(3pt) node[above left,font=\scriptsize]{$P$};
+\end{tikzpicture}\\[2pt]
+{\small\textit{Petunjuk:} perpindahan berantai $K\to B_1\to B_2\to P$ (garis penuh) menjumlah menjadi $\vec{KP}$ (garis putus-putus, digambar sejajar).}
+\end{center}
+
+\begin{subsoal}
+  \item Tentukan vektor $\vec{KB_1}$, $\vec{B_1B_2}$, dan $\vec{B_2P}$, lalu
+        tunjukkan bahwa $\vec{KB_1}+\vec{B_1B_2}+\vec{B_2P}=\vec{KP}$.
+  \item Hitung hasil kali titik $\vec{KP}\cdot\vec{B_1B_2}$ dan simpulkan apakah
+        kedua vektor membentuk sudut lancip (cenderung searah).
+  \item Tentukan panjang proyeksi (proyeksi skalar) $\vec{KB_2}$ pada arah
+        $\vec{KP}$, lalu bandingkan hasilnya dengan $|\vec{KB_2}|$.
+  \item Dari hasil (c), simpulkan posisi bek $B_2$ terhadap garis lintasan umpan,
+        dan tentukan pula vektor satuan searah $\vec{KP}$.
+\end{subsoal}
+\end{soal}
+
+\clearpage
+\noindent{\large\bfseries BAGIAN C: Soal Bonus (Nomor 11--12)}\\[0.2em]
+\small\emph{Kerjakan hanya bila Nomor 1--10 telah selesai. Jawaban benar menambah
+poin; salah atau dikosongkan tidak mengurangi. Definisi lambang yang diperlukan
+diberikan di dalam tiap soal.}\normalsize
+
+\bigskip
+
+% ---------------------------- NOMOR 11 (BONUS) ----------------------------
+\begin{soal}{11 \normalfont\bfseries[BONUS] \normalfont\itshape(Notasi Papan Analitik)}
+Papan analitik klub menampilkan parameter umpan dalam beberapa bentuk notasi.
+Tentukan nilai setiap parameter berikut. Keterangan pembacaan tiap notasi tersedia
+pada kolom ketiga.
+
+\smallskip
+\begin{center}\small
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{}l c p{5.7cm}@{}}
+\toprule
+\textbf{Parameter} & \textbf{Keluaran sistem} & \textbf{Keterangan} \\
+\midrule
+Kelajuan awal $v_0$ & $\sum_{k=1}^{7}4$ & jumlahkan angka $4$ sebanyak $7$ kali \\
+Sudut elevasi $\alpha$ & $392^\circ$ & kurangi kelipatan $360^\circ$ (sudut baku) \\
+Vektor lari $\vec{u}$ & $(101_2,\ \mathtt{0x3})$ & $101_2$ = biner; $\mathtt{0x3}$ = heksadesimal \\
+Cek ulang $v_0$ & $\lfloor\sqrt{800}\,\rfloor$ & $\lfloor x\rfloor$ = bilangan bulat terbesar $\le x$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{subsoal}
+  \item Hitung $v_0=\displaystyle\sum_{k=1}^{7}4$ (m/s). (Lambang $\sum$ = ``jumlahkan''.)
+  \item Nyatakan $392^\circ$ sebagai sudut baku ($0^\circ\le\alpha<360^\circ$).
+        Apakah hasilnya sama dengan sudut elevasi pada narasi?
+  \item Terjemahkan $\vec{u}=(101_2,\ \mathtt{0x3})$ ke pasangan bilangan desimal
+        biasa. (Petunjuk: $101_2=1\cdot4+0\cdot2+1\cdot1$; $\mathtt{0x3}=3$.)
+  \item Hitung $\lfloor\sqrt{800}\,\rfloor$ dan bandingkan dengan jawaban (a).
+\end{subsoal}
+\end{soal}
+
+% ---------------------------- NOMOR 12 (BONUS) ----------------------------
+\begin{soal}{12 \normalfont\bfseries[BONUS] \normalfont\itshape(Operasi dengan Berbagai Notasi)}
+Kerjakan keempat bagian berikut. Definisi setiap lambang yang digunakan diberikan
+di dalam soal.
+
+\begin{subsoal}
+  \item \textbf{(Produk $\prod$.)} Tiga kejadian saling bebas dengan
+        peluang $p_1=0{,}75$, $p_2=0{,}80$, $p_3=0{,}50$. Lambang $\prod$ berarti
+        ``kalikan semua''. Hitung $P(\text{gol})=\displaystyle\prod_{i=1}^{3}p_i$.
+        \begin{center}
+        \begin{tikzpicture}[>=Latex,font=\scriptsize]
+          \node (a) at (0,0){mulai};
+          \node (b) at (2.5,0){sampai};
+          \node (c) at (5.1,0){menembak};
+          \node (d) at (8.1,0){\textbf{GOL}};
+          \draw[->] (a)--(b) node[midway,above]{$0{,}75$};
+          \draw[->] (b)--(c) node[midway,above]{$0{,}80$};
+          \draw[->] (c)--(d) node[midway,above]{$0{,}50$};
+        \end{tikzpicture}
+        \end{center}
+  \item \textbf{(Determinan.)} Titik perebutan bola memenuhi
+        $\begin{cases}x+y=44\\ 3x-2y=37\end{cases}$. Selesaikan dengan
+        \emph{aturan Cramer} (cukup pola $ad-bc$ pada tiap determinan):
+        \[
+        D=\begin{vmatrix}1&1\\ 3&-2\end{vmatrix},\quad
+        D_x=\begin{vmatrix}44&1\\ 37&-2\end{vmatrix},\quad
+        D_y=\begin{vmatrix}1&44\\ 3&37\end{vmatrix},\quad
+        x=\frac{D_x}{D},\ \ y=\frac{D_y}{D}.
+        \]
+        Hitung $x$ dan $y$. \Big(Ingat $\begin{vmatrix}a&b\\ c&d\end{vmatrix}=ad-bc$.\Big)
+  \item \textbf{(Notasi himpunan.)} Tuliskan semua anggota
+        \[
+        S=\{\,x\in\mathbb{Z}\ \mid\ 30\le x\le 45\ \text{dan}\ x\equiv 2\ (\mathrm{mod}\ 5)\,\}.
+        \]
+        (``$x\equiv 2\ (\mathrm{mod}\ 5)$'' artinya sisa bagi $x$ oleh $5$ sama dengan $2$.)
+  \item \textbf{(Fungsi bercabang.)} Sudut elevasi efektif bergantung pada waktu
+        penguasaan bola $t$ (detik):
+        \[
+        \alpha(t)=\begin{cases}
+        18^\circ, & t<0{,}5\\
+        25^\circ, & 0{,}5\le t<1\\
+        32^\circ, & 1\le t<2\\
+        40^\circ, & 2\le t<3\\
+        48^\circ, & t\ge 3
+        \end{cases}
+        \]
+        Untuk $t=1{,}2$ s, tentukan $\alpha(1{,}2)$ (pilih \emph{satu} baris yang syaratnya terpenuhi).
+        \begin{center}
+        \begin{tikzpicture}[>=Latex,font=\scriptsize,xscale=1.35,yscale=0.085]
+          \draw[->,gray] (0,0)--(3.7,0) node[right]{$t$ (s)};
+          \draw[->,gray] (0,0)--(0,56) node[above]{$\alpha\,(^\circ)$};
+          \foreach \y in {18,25,32,40,48} \node[left,font=\tiny] at (0,\y){\y};
+          \draw[very thick] (0,18)--(0.5,18);
+          \draw[very thick] (0.5,25)--(1,25);
+          \draw[very thick] (1,32)--(2,32);
+          \draw[very thick] (2,40)--(3,40);
+          \draw[very thick] (3,48)--(3.6,48);
+          \draw[dashed] (1.2,0)--(1.2,32);
+          \node[circle,fill=black,inner sep=1.2pt] at (1.2,32){};
+          \node[below,font=\tiny] at (1.2,0){$1{,}2$};
+        \end{tikzpicture}
+        \end{center}
+\end{subsoal}
+\end{soal}
+\end{document}

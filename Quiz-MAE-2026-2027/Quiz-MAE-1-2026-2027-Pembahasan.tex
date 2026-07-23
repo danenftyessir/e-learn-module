@@ -1,0 +1,559 @@
+% ============================================================
+%  PEMBAHASAN — KUIS 1 MATEMATIKA (MAE)  T.P. 2026/2027
+%  Tema: "Kevin Da Nendra dan Through Pass Penentu Kemenangan"
+%  Mengupas 12 soal (5 PG kompleks + 5 uraian + 2 bonus)
+%  langkah demi langkah, lengkap dengan konsep kunci & jebakan.
+%  Kompilasi: pdfLaTeX (gambar berada di folder yang sama)
+% ============================================================
+\documentclass[11pt,a4paper]{article}
+
+% ---------- PAKET ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[bahasa]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{array,booktabs}
+\usepackage{pifont}
+\usepackage{icomma}
+\usepackage[colorlinks=true,linkcolor=biru,urlcolor=biru]{hyperref}
+
+\geometry{a4paper,margin=2.5cm,headheight=15pt}
+
+% ---------- WARNA ----------
+\definecolor{biru}{HTML}{1F4E79}
+\definecolor{birumuda}{HTML}{D6E4F0}
+\definecolor{hijau}{HTML}{2E7D32}
+\definecolor{hijaumuda}{HTML}{E3F2E1}
+\definecolor{oranye}{HTML}{C75B12}
+\definecolor{oranyemuda}{HTML}{FBE8DA}
+\definecolor{abu}{HTML}{F2F2F2}
+\definecolor{ungu}{HTML}{6A1B9A}
+\definecolor{ungumuda}{HTML}{EDE2F3}
+\definecolor{merah}{HTML}{C62828}
+\definecolor{merahmuda}{HTML}{FCE4E4}
+\definecolor{tosca}{HTML}{00838F}
+\definecolor{toscamuda}{HTML}{E0F2F1}
+
+% ---------- HEADER / FOOTER ----------
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.8pt}
+\fancyhead[L]{\small\textcolor{ungu}{Pembahasan Kuis 1: MAE}}
+\fancyhead[R]{\small\textcolor{ungu}{T.P. 2026/2027}}
+\fancyfoot[C]{\thepage}
+
+% ---------- KOTAK: SOAL (ungu) ----------
+\newtcolorbox{soalbox}[1]{
+  enhanced, breakable, colback=ungumuda, colframe=ungu, boxrule=0.8pt,
+  arc=3pt, left=10pt, right=10pt, top=8pt, bottom=8pt,
+  title={\textbf{#1}}, fonttitle=\bfseries\color{white}, coltitle=white,
+  attach boxed title to top left={xshift=10pt,yshift=-10pt},
+  boxed title style={colback=ungu,arc=2pt}}
+
+% ---------- KOTAK: KONSEP KUNCI (hijau) ----------
+\newtcolorbox{ingat}[1]{
+  enhanced, breakable, colback=hijaumuda, colframe=hijau, boxrule=0.6pt,
+  arc=3pt, left=10pt, right=10pt, top=6pt, bottom=6pt,
+  title={\textbf{Konsep Kunci: #1}}, fonttitle=\bfseries\color{white}, coltitle=white,
+  attach boxed title to top left={xshift=10pt,yshift=-10pt},
+  boxed title style={colback=hijau,arc=2pt}}
+
+% ---------- KOTAK: JEBAKAN (merah) ----------
+\newtcolorbox{jebakan}{
+  enhanced, breakable, colback=merahmuda, colframe=merah, boxrule=0.6pt,
+  arc=3pt, left=10pt, right=10pt, top=6pt, bottom=6pt,
+  title={\textbf{\ding{55}\ Jebakan yang Sering Terjadi}},
+  fonttitle=\bfseries\color{white}, coltitle=white,
+  attach boxed title to top left={xshift=10pt,yshift=-10pt},
+  boxed title style={colback=merah,arc=2pt}}
+
+% ---------- KOTAK: TIPS (tosca) ----------
+\newtcolorbox{tips}{
+  enhanced, breakable, colback=toscamuda, colframe=tosca, boxrule=0.6pt,
+  arc=3pt, left=10pt, right=10pt, top=6pt, bottom=6pt,
+  borderline west={3pt}{0pt}{tosca}}
+
+% ---------- PERINTAH BANTU ----------
+\newcommand{\jawab}{\par\smallskip\noindent\textit{\textcolor{oranye}{Penyelesaian:}}\par\smallskip}
+\newcommand{\langkah}[1]{\par\smallskip\noindent\textbf{\textcolor{biru}{Langkah #1.}}\ }
+\newcommand{\jadi}{\par\smallskip\noindent$\Rightarrow$\ \textbf{Jadi, }}
+\newcommand{\benar}{\textbf{\textcolor{hijau}{BENAR}}}
+\newcommand{\salah}{\textbf{\textcolor{merah}{SALAH}}}
+\newcommand{\pernyataan}[1]{\par\smallskip\noindent\textbf{Pernyataan (#1).}\ }
+\newcommand{\bagianjudul}[1]{\par\bigskip\noindent%
+  {\large\bfseries\color{ungu}\rule[-2pt]{4pt}{16pt}\ #1}\par\smallskip}
+\newcommand{\nomorjudul}[2]{\par\bigskip\noindent%
+  {\large\bfseries\color{ungu}Pembahasan Nomor #1}\ {\normalfont\itshape\color{gray}(#2)}\par\nopagebreak\smallskip}
+
+\linespread{1.04}
+
+% ============================================================
+\begin{document}
+
+% ---------- HALAMAN JUDUL ----------
+\thispagestyle{empty}
+\begin{center}
+\vspace*{1.5cm}
+{\color{ungu}\rule{\textwidth}{2pt}}\\[0.5cm]
+{\Huge\bfseries\color{ungu} PEMBAHASAN LENGKAP}\\[0.3cm]
+{\LARGE\bfseries KUIS 1: MATEMATIKA (MAE)}\\[0.4cm]
+{\large\itshape Kevin Da Nendra dan Through Pass Penentu Kemenangan}\\[0.3cm]
+{\color{ungu}\rule{\textwidth}{2pt}}\\[1cm]
+
+\begin{tcolorbox}[enhanced,width=0.9\textwidth,colback=ungumuda,colframe=ungu,arc=4pt,boxrule=1pt]
+\centering\small
+Buku ini membahas \textbf{seluruh 12 soal} secara runtut: konsep kunci yang
+dipakai, penyelesaian langkah demi langkah, dan jebakan yang sering menjerat.
+Bagian A (Nomor 1--5) pilihan ganda kompleks, Bagian B (Nomor 6--10) uraian,
+dan Bagian C (Nomor 11--12) bonus. Nilai antar-soal saling berkaitan, itulah
+sebabnya urutan pengerjaan penting.
+\end{tcolorbox}
+
+\vfill
+{\large Tahun Pelajaran 2026/2027}
+\end{center}
+\clearpage
+
+\begin{tips}
+\textbf{Ringkasan data (dipakai berulang).}
+Posisi (meter): $K(12,8)$, $P(34,25)$, $B_1(21,15)$, $B_2(27,20)$.
+Kelajuan awal $28$ m/s; peluruhan $v(t)=28(0{,}94)^t$; sudut elevasi $32^\circ$.
+Umpan \emph{efektif} bila kecepatan saat diterima $>20$ m/s \emph{dan} arah pada
+$30^\circ$--$45^\circ$.
+\end{tips}
+
+% ################################################################
+\bagianjudul{BAGIAN A: Pilihan Ganda Kompleks}
+% ################################################################
+
+% ================= NOMOR 1 =================
+\nomorjudul{1}{Logaritma \& Eksponen}
+\begin{soalbox}{Soal 1}
+Model peluruhan kelajuan bola $v(t)=28\,(0{,}94)^t$ (m/s). Nilai Benar/Salah untuk:
+(1) $v(0)=28$; (2) $v(3)\approx23{,}3$; (3) $v(t)=20$ pada $t\approx5{,}4$ s;
+(4) pada $t=10$ s kelajuan masih $>20$ m/s.
+\end{soalbox}
+
+\begin{ingat}{Eksponen \& logaritma}
+$a^0=1$ untuk $a\neq0$. Untuk menurunkan variabel dari posisi \emph{pangkat},
+gunakan logaritma: $a^t=b \Rightarrow t=\dfrac{\log b}{\log a}$.
+\end{ingat}
+
+\jawab
+\pernyataan{1} $v(0)=28(0{,}94)^0=28\cdot1=28$. \benar.
+
+\pernyataan{2} $v(3)=28(0{,}94)^3=28\cdot0{,}8306\approx23{,}3$ m/s. \benar.
+
+\pernyataan{3} $28(0{,}94)^t=20 \Rightarrow (0{,}94)^t=\dfrac{20}{28}=\dfrac57$. Maka
+\[
+t=\frac{\log(5/7)}{\log 0{,}94}=\frac{\log5-\log7}{\log0{,}94}
+ =\frac{0{,}699-0{,}845}{-0{,}0269}=\frac{-0{,}146}{-0{,}0269}\approx5{,}4\ \text{s}. \quad\benar.
+\]
+
+\pernyataan{4} $v(10)=28(0{,}94)^{10}=28\big((0{,}94)^5\big)^2=28(0{,}734)^2\approx28\cdot0{,}539\approx15{,}1$ m/s $<20$. Pernyataan ``masih $>20$'' \salah.
+
+\jadi \textbf{(1) B, (2) B, (3) B, (4) S}.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item $a^0=1$, \emph{bukan} $0$. Banyak yang menulis $v(0)=0$.
+  \item Basis $0{,}94<1$ membuat kedua ruas $\log$ \emph{negatif}; tanda saling
+  meniadakan sehingga $t$ tetap positif. Jangan panik melihat $\log0{,}94<0$.
+\end{itemize}
+\end{jebakan}
+
+% ================= NOMOR 2 =================
+\nomorjudul{2}{Trigonometri: penguraian vektor kecepatan}
+\begin{soalbox}{Soal 2}
+Kelajuan awal $28$ m/s pada elevasi $32^\circ$. Benar/Salah:
+(1) komponen mendatar $\approx23{,}7$; (2) komponen tegak $\approx14{,}8$;
+(3) mendatar $>$ tegak; (4) memperbesar sudut elevasi memperbesar komponen mendatar.
+\end{soalbox}
+
+\begin{ingat}{Penguraian kecepatan}
+Untuk kecepatan $v$ pada sudut $\theta$ terhadap horizontal:
+$v_x=v\cos\theta$ (mendatar), $v_y=v\sin\theta$ (tegak). Untuk $0^\circ<\theta<45^\circ$
+berlaku $\cos\theta>\sin\theta$, sehingga $v_x>v_y$.
+\end{ingat}
+
+\jawab
+\pernyataan{1} $v_x=28\cos32^\circ=28\cdot0{,}848\approx23{,}7$ m/s. \benar.
+
+\pernyataan{2} $v_y=28\sin32^\circ=28\cdot0{,}530\approx14{,}8$ m/s. \benar.
+
+\pernyataan{3} $23{,}7>14{,}8$ (karena $32^\circ<45^\circ$). \benar.
+
+\pernyataan{4} Saat $\theta$ membesar menuju $90^\circ$, $\cos\theta$ \emph{mengecil}, jadi
+$v_x=28\cos\theta$ justru \emph{turun}. \salah.
+
+\jadi \textbf{(1) B, (2) B, (3) B, (4) S}.
+
+\begin{jebakan}
+Tertukar sin dan cos. Ingat: komponen \emph{mendatar} memakai \textbf{cos},
+komponen \emph{tegak} memakai \textbf{sin}.
+\end{jebakan}
+
+% ================= NOMOR 3 =================
+\nomorjudul{3}{Trigonometri: arah umpan}
+\begin{soalbox}{Soal 3}
+$\tan\theta=\dfrac{17}{22}$. Benar/Salah: (1) $\theta\approx37{,}7^\circ$;
+(2) berada dalam $30^\circ$--$45^\circ$; (3) $\theta=32^\circ$;
+(4) jika komponen tertukar ($\tan\theta=\tfrac{22}{17}$) maka $\theta\approx52{,}3^\circ$.
+\end{soalbox}
+
+\jawab
+\pernyataan{1} $\theta=\arctan\dfrac{17}{22}=\arctan0{,}773\approx37{,}7^\circ$. \benar.
+
+\pernyataan{2} $30^\circ<37{,}7^\circ<45^\circ$. \benar\ (arah memenuhi syarat efektif).
+
+\pernyataan{3} $37{,}7^\circ\neq32^\circ$; sudut \emph{arah di lapangan} berbeda dari
+\emph{sudut elevasi}. \salah.
+
+\pernyataan{4} $\arctan\dfrac{22}{17}=\arctan1{,}294\approx52{,}3^\circ$. \benar\
+(perhatikan $37{,}7^\circ+52{,}3^\circ=90^\circ$: keduanya saling berpenyiku).
+
+\jadi \textbf{(1) B, (2) B, (3) S, (4) B}.
+
+\begin{jebakan}
+Menukar pembilang/penyebut pada $\tan$ menghasilkan sudut \emph{komplemen}
+($90^\circ-\theta$), bukan sudut yang sama.
+\end{jebakan}
+
+% ================= NOMOR 4 =================
+\nomorjudul{4}{Vektor}
+\begin{soalbox}{Soal 4}
+$\vec{KP}=P-K$. Benar/Salah: (1) $\vec{KP}=(22,17)$; (2) $|\vec{KP}|=\sqrt{773}\approx27{,}8$;
+(3) vektor satuan $\approx(0{,}79,\,0{,}61)$; (4) $|\vec{KP}|=22+17=39$.
+\end{soalbox}
+
+\begin{ingat}{Vektor selisih, panjang, satuan}
+$\vec{KP}=P-K=(x_P-x_K,\ y_P-y_K)$. Panjang $=\sqrt{x^2+y^2}$ (Pythagoras),
+\emph{bukan} $x+y$. Vektor satuan $=\dfrac{\vec{KP}}{|\vec{KP}|}$.
+\end{ingat}
+
+\jawab
+\pernyataan{1} $\vec{KP}=(34-12,\ 25-8)=(22,17)$. \benar.
+
+\pernyataan{2} $|\vec{KP}|=\sqrt{22^2+17^2}=\sqrt{484+289}=\sqrt{773}\approx27{,}8$ m. \benar.
+
+\pernyataan{3} $\hat{u}=\dfrac{(22,17)}{27{,}8}\approx(0{,}79,\ 0{,}61)$. \benar.
+
+\pernyataan{4} $22+17=39$ bukan panjang vektor (itu jumlah komponen). \salah.
+
+\jadi \textbf{(1) B, (2) B, (3) B, (4) S}.
+
+% ================= NOMOR 5 =================
+\nomorjudul{5}{Kolaborasi: kelayakan umpan}
+\begin{soalbox}{Soal 5}
+Bola diterima pada $t=1{,}2$ s. Benar/Salah: (1) $v(1{,}2)\approx26{,}0>20$;
+(2) memenuhi kedua kriteria efektif; (3) jarak $B_2$ ke lintasan $\approx0{,}32$ m;
+(4) karena jarak $B_1\approx0{,}036$ m, bola aman jauh dari $B_1$.
+\end{soalbox}
+
+\jawab
+\pernyataan{1} $v(1{,}2)=28(0{,}94)^{1{,}2}=28\cdot0{,}928\approx26{,}0$ m/s $>20$. \benar.
+
+\pernyataan{2} Arah $37{,}7^\circ\in[30^\circ,45^\circ]$ \emph{dan} $v_{\text{terima}}\approx26>20$;
+kedua syarat terpenuhi. \benar.
+
+\pernyataan{3} $\dfrac{|17(27)-22(20)-28|}{\sqrt{773}}=\dfrac{|459-440-28|}{27{,}8}=\dfrac{9}{27{,}8}\approx0{,}32$ m. \benar.
+
+\pernyataan{4} Jarak $\approx0{,}036$ m $=3{,}6$ cm, \emph{sangat dekat}; bola justru
+\emph{nyaris menyerempet} $B_1$. Klaim ``aman jauh'' \salah.
+
+\jadi \textbf{(1) B, (2) B, (3) B, (4) S}.
+
+\begin{tips}
+Inilah inti cerita: umpan Kevin memenuhi kriteria efektif, tetapi melintas hanya
+$3{,}6$ cm dari $B_1$, sebuah assist berisiko sangat tinggi. Jarak \emph{kecil}
+ke bek berarti \emph{bahaya}, bukan aman.
+\end{tips}
+
+% ################################################################
+\bagianjudul{BAGIAN B: Uraian Bercabang}
+% ################################################################
+
+% ================= NOMOR 6 =================
+\nomorjudul{6}{Vektor + trigonometri + kecepatan relatif + SPL (Gambar 1)}
+\begin{soalbox}{Soal 6}
+(a) $\vec{KP}$ dan $|\vec{KP}|$; (b) sudut arah umpan; (c) $|\vec{u}|$ dan sudut
+lari untuk $\vec{u}=(5,3)$; (d) kecepatan bola relatif terhadap penerima untuk
+$\vec{v}_b\approx(18{,}8,\,14{,}5)$; (e) titik potong garis $x+y=44$ dan $3x-2y=37$.
+\end{soalbox}
+
+\jawab
+\langkah{a} $\vec{KP}=(22,17)$, $|\vec{KP}|=\sqrt{773}\approx\textbf{27{,}8 m}$.
+
+\langkah{b} $\theta=\arctan\dfrac{17}{22}\approx\textbf{37{,}7}^\circ$. Karena
+$30^\circ<37{,}7^\circ<45^\circ$, \textbf{arah memenuhi} kriteria efektif.
+
+\langkah{c} $|\vec{u}|=\sqrt{5^2+3^2}=\sqrt{34}\approx\textbf{5{,}83 m/s}$; sudut lari
+$=\arctan\dfrac{3}{5}=\arctan0{,}6\approx\textbf{31{,}0}^\circ$.
+
+\langkah{d} Kecepatan relatif $=\vec{v}_b-\vec{u}=(18{,}8-5,\ 14{,}5-3)=(13{,}8,\ 11{,}5)$.
+Besarnya $\sqrt{13{,}8^2+11{,}5^2}=\sqrt{190{,}4+132{,}3}=\sqrt{322{,}7}\approx\textbf{18{,}0 m/s}$.
+
+\langkah{e} Dari $x+y=44 \Rightarrow x=44-y$. Substitusi ke $3x-2y=37$:
+\[
+3(44-y)-2y=37 \Rightarrow 132-5y=37 \Rightarrow 5y=95 \Rightarrow y=19,\ x=25.
+\]
+\jadi titik pertemuan $\textbf{(25, 19)}$.
+
+\begin{ingat}{Kecepatan relatif}
+Kecepatan benda A dilihat dari benda B adalah $\vec{v}_{A/B}=\vec{v}_A-\vec{v}_B$
+(kurangkan vektor, bukan skalar). Besarnya baru dihitung dengan Pythagoras
+\emph{setelah} pengurangan komponen.
+\end{ingat}
+
+% ================= NOMOR 7 =================
+\nomorjudul{7}{Barisan geometri + eksponen + logaritma}
+\begin{soalbox}{Soal 7}
+(a) $v(0),v(1),v(2),v(3)$ dan rasio; (b) $t$ saat $v=20$; (c) apakah $v(5)>20$;
+(d) apakah $v(1{,}2)>20$.
+\end{soalbox}
+
+\jawab
+\langkah{a} $v(0)=28$; $v(1)=28\cdot0{,}94=26{,}32$; $v(2)=28\cdot0{,}94^2=24{,}74$;
+$v(3)=28\cdot0{,}94^3=23{,}26$. Tiap suku $=0{,}94\times$ suku sebelumnya
+$\Rightarrow$ \textbf{barisan geometri}, rasio $\textbf{r=0{,}94}$.
+
+\langkah{b} $28(0{,}94)^t=20 \Rightarrow t=\dfrac{\log(5/7)}{\log0{,}94}\approx\textbf{5{,}4 s}$
+(seperti Nomor 1).
+
+\langkah{c} $v(5)=28(0{,}94)^5=28\cdot0{,}734\approx\textbf{20{,}5 m/s}>20$
+$\Rightarrow$ masih ``bertenaga''.
+
+\langkah{d} $v(1{,}2)=28(0{,}94)^{1{,}2}=28\cdot0{,}928\approx\textbf{26{,}0 m/s}>20$
+$\Rightarrow$ memenuhi syarat kecepatan.
+
+\begin{tips}
+Perhatikan konsistensi: $v(5)\approx20{,}5$ (masih di atas 20) sedangkan ambang
+$v=20$ tercapai di $t\approx5{,}4$ s, keduanya cocok.
+\end{tips}
+
+% ================= NOMOR 8 =================
+\nomorjudul{8}{Fungsi kuadrat + trigonometri (Gambar 2)}
+\begin{soalbox}{Soal 8}
+Tembakan \emph{finesse}: kelajuan $12$ m/s, elevasi $30^\circ$, $g=10$.
+(a) $v_x,v_y$; (b) tinggi maksimum \& waktunya; (c) waktu di udara \& jangkauan;
+(d) persamaan lengkungan $y(x)$ dan titik puncaknya.
+\end{soalbox}
+
+\begin{ingat}{Titik puncak parabola}
+Untuk $h(t)=v_y t-5t^2$ (bentuk $at^2+bt$ dengan $a=-5,\ b=v_y$), puncak di
+$t=-\dfrac{b}{2a}=\dfrac{v_y}{10}$, dan $h_{\max}=\dfrac{v_y^{2}}{2g}$.
+\end{ingat}
+
+\jawab
+\langkah{a} $v_x=12\cos30^\circ=12\cdot0{,}866\approx\textbf{10{,}4 m/s}$;\quad
+$v_y=12\sin30^\circ=12\cdot0{,}5=\textbf{6 m/s}$.
+
+\langkah{b} $h(t)=6t-5t^2$. Puncak di $t=\dfrac{6}{2\cdot5}=\textbf{0{,}6 s}$;
+$h_{\max}=6(0{,}6)-5(0{,}6)^2=3{,}6-1{,}8=\textbf{1{,}8 m}$.
+
+\langkah{c} Menyentuh tanah saat $h=0$: $t(6-5t)=0\Rightarrow t=\textbf{1{,}2 s}$.
+Jangkauan $R=v_x\cdot t=10{,}4\cdot1{,}2\approx\textbf{12{,}5 m}$.
+
+\langkah{d} Eliminasi $t$ dari $x=v_x t \Rightarrow t=\dfrac{x}{10{,}4}$:
+\[
+y=6t-5t^2=6\cdot\frac{x}{10{,}4}-5\left(\frac{x}{10{,}4}\right)^2
+ \approx \textbf{0{,}58x-0{,}046x}^2.
+\]
+Titik puncak $x=v_x\cdot0{,}6\approx6{,}2$ m, $y=1{,}8$ m $\Rightarrow \textbf{(6{,}2;\ 1{,}8)}$.
+
+\begin{center}
+\begin{tikzpicture}[xscale=0.62,yscale=1.35]
+\draw[->,gray] (0,0)--(13,0) node[right]{\scriptsize $x$ (m)};
+\draw[->,gray] (0,0)--(0,2.3) node[above]{\scriptsize $y$ (m)};
+\draw[thick,ungu,domain=0:12.5,samples=60,smooth] plot (\x,{0.58*\x-0.046*\x*\x});
+\fill[ungu] (6.2,1.8) circle (2pt) node[above=1pt]{\scriptsize $(6{,}2;\,1{,}8)$};
+\draw[dashed,gray] (6.2,0)--(6.2,1.8);
+\node[gray] at (12.5,-0.35) {\scriptsize $12{,}5$};
+\end{tikzpicture}\\
+{\small Lengkungan tembakan \emph{finesse}: naik ke puncak $1{,}8$ m lalu turun ke gawang.}
+\end{center}
+
+% ================= NOMOR 9 =================
+\nomorjudul{9}{Trigonometri: geometri sudut tembak}
+\begin{soalbox}{Soal 9}
+$P(34,25)$, tiang $G_1(40,20)$, $G_2(40,24)$, lebar gawang $4$ m.
+(a) $|PG_1|,|PG_2|$; (b) sudut tembak $\angle G_1PG_2$ (aturan kosinus);
+(c) $\angle PG_1G_2$ (aturan sinus); (d) sudut tembak bila $|PG_1|=|PG_2|=12$ m.
+\end{soalbox}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.55]
+\coordinate (P) at (0,4.5);
+\coordinate (G1) at (6,0);
+\coordinate (G2) at (6,3.4);
+\draw[very thick,biru] (G1)--(G2);
+\draw (P)--(G1); \draw (P)--(G2);
+\fill (P) circle(3pt) node[left]{$P$};
+\fill (G1) circle(3pt) node[right]{$G_1$};
+\fill (G2) circle(3pt) node[right]{$G_2$};
+\node[biru,right] at (6,1.7) {\small $4$ m};
+\node at (1.5,3.5) {\small $\angle P$};
+\end{tikzpicture}\\
+{\small Sketsa (tidak berskala): sudut tembak $\angle G_1PG_2$ dilihat dari $P$.}
+\end{center}
+
+\begin{ingat}{Aturan kosinus \& sinus}
+Aturan kosinus: $c^2=a^2+b^2-2ab\cos C \Rightarrow \cos C=\dfrac{a^2+b^2-c^2}{2ab}$.
+Aturan sinus: $\dfrac{\sin A}{a}=\dfrac{\sin B}{b}=\dfrac{\sin C}{c}$.
+\end{ingat}
+
+\jawab
+\langkah{a} $\vec{PG_1}=(6,-5)\Rightarrow|PG_1|=\sqrt{36+25}=\sqrt{61}\approx\textbf{7{,}81 m}$;\quad
+$\vec{PG_2}=(6,-1)\Rightarrow|PG_2|=\sqrt{36+1}=\sqrt{37}\approx\textbf{6{,}08 m}$.
+
+\langkah{b} Sisi seberang $\angle P$ adalah $|G_1G_2|=4$. Aturan kosinus:
+\[
+\cos\angle P=\frac{|PG_1|^2+|PG_2|^2-|G_1G_2|^2}{2|PG_1||PG_2|}
+ =\frac{61+37-16}{2\cdot7{,}81\cdot6{,}08}=\frac{82}{94{,}98}\approx0{,}863
+ \Rightarrow \angle P\approx\textbf{30{,}3}^\circ.
+\]
+
+\langkah{c} Aturan sinus terhadap $\angle P$ dan $\angle G_1$:
+\[
+\frac{\sin\angle G_1}{|PG_2|}=\frac{\sin\angle P}{|G_1G_2|}
+\Rightarrow \sin\angle G_1=\frac{6{,}08\cdot\sin30{,}3^\circ}{4}
+=\frac{6{,}08\cdot0{,}505}{4}\approx0{,}767
+\Rightarrow \angle G_1\approx\textbf{50{,}1}^\circ.
+\]
+
+\langkah{d} Untuk $|PG_1|=|PG_2|=12$, $|G_1G_2|=4$:
+\[
+\cos\angle P=\frac{12^2+12^2-4^2}{2\cdot12\cdot12}=\frac{272}{288}\approx0{,}944
+\Rightarrow \angle P\approx\textbf{19{,}2}^\circ.
+\]
+\jadi makin jauh penyerang, sudut gawang yang terlihat makin \emph{kecil}
+($30{,}3^\circ\to19{,}2^\circ$), sehingga peluang mencetak gol \textbf{menurun}.
+
+% ================= NOMOR 10 =================
+\nomorjudul{10}{Vektor: resultan, hasil kali titik, proyeksi}
+\begin{soalbox}{Soal 10}
+(a) tunjukkan $\vec{KB_1}+\vec{B_1B_2}+\vec{B_2P}=\vec{KP}$;
+(b) $\vec{KP}\cdot\vec{B_1B_2}$ dan jenis sudutnya;
+(c) proyeksi skalar $\vec{KB_2}$ pada $\vec{KP}$, bandingkan $|\vec{KB_2}|$;
+(d) kesimpulan posisi $B_2$ dan vektor satuan $\vec{KP}$.
+\end{soalbox}
+
+\begin{ingat}{Proyeksi skalar \& hasil kali titik}
+$\vec{a}\cdot\vec{b}=a_xb_x+a_yb_y$; jika $>0$ sudutnya lancip (searah).
+Proyeksi skalar $\vec{a}$ pada $\vec{b}$ adalah $\dfrac{\vec{a}\cdot\vec{b}}{|\vec{b}|}$.
+Jika proyeksi $\approx|\vec{a}|$, maka $\vec{a}$ hampir sejajar $\vec{b}$.
+\end{ingat}
+
+\jawab
+\langkah{a} $\vec{KB_1}=(9,7)$, $\vec{B_1B_2}=(6,5)$, $\vec{B_2P}=(7,5)$. Jumlahnya
+$(9+6+7,\ 7+5+5)=(22,17)=\vec{KP}$. \textbf{Terbukti} (perpindahan berantai =
+resultan).
+
+\langkah{b} $\vec{KP}\cdot\vec{B_1B_2}=22\cdot6+17\cdot5=132+85=\textbf{217}$. Karena
+$217>0$, sudut antara keduanya \textbf{lancip} (cenderung searah).
+
+\langkah{c} $\vec{KB_2}=(15,12)$, $\vec{KB_2}\cdot\vec{KP}=15\cdot22+12\cdot17=330+204=534$.
+\[
+\text{proyeksi}=\frac{534}{|\vec{KP}|}=\frac{534}{27{,}8}\approx\textbf{19{,}2 m},\qquad
+|\vec{KB_2}|=\sqrt{15^2+12^2}=\sqrt{369}\approx\textbf{19{,}2 m}.
+\]
+
+\langkah{d} Karena proyeksi $\approx|\vec{KB_2}|$, vektor $\vec{KB_2}$ hampir sejajar
+$\vec{KP}$ $\Rightarrow$ \textbf{bek $B_2$ hampir tepat berada di garis lintasan
+umpan} (bola menyerempetnya). Vektor satuan
+$\hat{u}_{KP}=\dfrac{(22,17)}{27{,}8}\approx\textbf{(0{,}79;\ 0{,}61)}$.
+
+% ################################################################
+\bagianjudul{BAGIAN C: Soal Bonus}
+% ################################################################
+
+% ================= NOMOR 11 =================
+\nomorjudul{11}{[BONUS] Notasi Papan Analitik}
+\begin{soalbox}{Soal 11}
+Pulihkan empat parameter: (a) $v_0=\sum_{k=1}^{7}4$; (b) sudut baku dari
+$392^\circ$; (c) $\vec{u}=(101_2,\ \mathtt{0x3})$ ke desimal; (d) $\lfloor\sqrt{800}\,\rfloor$.
+\end{soalbox}
+
+\begin{ingat}{Membaca empat notasi}
+$\sum$ = jumlahkan; sudut baku = kurangi kelipatan $360^\circ$; $101_2$ = biner
+(nilai tempat $4,2,1$); $\mathtt{0x}$ = heksadesimal; $\lfloor x\rfloor$ =
+bilangan bulat terbesar yang $\le x$.
+\end{ingat}
+
+\jawab
+\langkah{a} $\sum_{k=1}^{7}4$ berarti menjumlahkan angka $4$ sebanyak $7$ kali:
+$4\times7=\textbf{28}$ m/s.
+
+\langkah{b} $392^\circ$ melebihi satu putaran, jadi kurangi $360^\circ$:
+$392^\circ-360^\circ=\textbf{32}^\circ$. Nilai ini \textbf{sama} dengan sudut elevasi pada narasi.
+
+\langkah{c} $101_2=1\cdot4+0\cdot2+1\cdot1=5$ dan $\mathtt{0x3}=3$, sehingga
+$\vec{u}=\textbf{(5, 3)}$ m/s (cocok dengan Nomor 6).
+
+\langkah{d} $\sqrt{800}\approx28{,}28$, maka $\lfloor\sqrt{800}\rfloor=\textbf{28}$,
+sesuai hasil (a).
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item $392^\circ$ \emph{bukan} sudut baku; kurangi $360^\circ$ dulu.
+  \item $101_2\neq101$. Biner dibaca dengan nilai tempat $4,2,1$, hasilnya $5$.
+  \item $\lfloor28{,}28\rfloor=28$ (dibulatkan \emph{ke bawah}), bukan $29$.
+\end{itemize}
+\end{jebakan}
+
+% ================= NOMOR 12 =================
+\nomorjudul{12}{[BONUS] Operasi dengan Berbagai Notasi}
+\begin{soalbox}{Soal 12}
+(a) $P(\text{gol})=\prod_{i=1}^{3}p_i$ dengan $p=(0{,}75;\,0{,}80;\,0{,}50)$;
+(b) selesaikan $\begin{cases}x+y=44\\ 3x-2y=37\end{cases}$ dengan aturan Cramer;
+(c) daftar $S=\{x\in\mathbb{Z}\mid 30\le x\le45,\ x\equiv2\ (\mathrm{mod}\ 5)\}$;
+(d) $\alpha(1{,}2)$ dari fungsi bercabang.
+\end{soalbox}
+
+\begin{ingat}{Empat lambang}
+$\prod$ = kalikan semua. Determinan $\begin{vmatrix}a&b\\ c&d\end{vmatrix}=ad-bc$;
+aturan Cramer $x=\frac{D_x}{D}$, $y=\frac{D_y}{D}$. ``$x\equiv2\ (\mathrm{mod}\ 5)$''
+= sisa bagi $x$ oleh $5$ adalah $2$. Fungsi bercabang: pakai baris yang syaratnya terpenuhi.
+\end{ingat}
+
+\jawab
+\langkah{a} $\prod_{i=1}^{3}p_i=0{,}75\times0{,}80\times0{,}50=\textbf{0{,}30}$.
+
+\langkah{b} Hitung tiap determinan dengan pola $ad-bc$:
+\[
+D=\begin{vmatrix}1&1\\ 3&-2\end{vmatrix}=(1)(-2)-(1)(3)=-5,\ \
+D_x=\begin{vmatrix}44&1\\ 37&-2\end{vmatrix}=-88-37=-125,\ \
+D_y=\begin{vmatrix}1&44\\ 3&37\end{vmatrix}=37-132=-95.
+\]
+Maka $x=\dfrac{D_x}{D}=\dfrac{-125}{-5}=25$ dan $y=\dfrac{D_y}{D}=\dfrac{-95}{-5}=19$,
+sehingga titik potong $\textbf{(25, 19)}$ (sama dengan Nomor 6(e)).
+
+\langkah{c} Cari bilangan bulat pada $30\le x\le45$ yang bersisa $2$ saat dibagi $5$:
+$32,37,42$. Jadi $S=\textbf{\{32, 37, 42\}}$.
+
+\langkah{d} Untuk $t=1{,}2$, syarat yang terpenuhi adalah $1\le t<2$, sehingga
+$\alpha(1{,}2)=\textbf{32}^\circ$.
+
+\begin{jebakan}
+\begin{itemize}[leftmargin=*,topsep=2pt]
+  \item $\prod$ berarti \emph{mengalikan}, bukan menjumlahkan
+  ($0{,}75+0{,}80+0{,}50$ salah).
+  \item Determinan: perhatikan tanda. $D=(1)(-2)-(1)(3)=-5$, bukan $-2+3=1$.
+  \item Fungsi bercabang: pilih \emph{satu} baris yang syaratnya benar; $t=1{,}2$
+  tidak masuk $0{,}5\le t<1$.
+\end{itemize}
+\end{jebakan}
+
+\vfill
+\begin{center}\small\itshape
+Selesai. Semoga bermanfaat sebagai bahan belajar.
+\end{center}
+
+\end{document}
