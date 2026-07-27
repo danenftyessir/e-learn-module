@@ -1,0 +1,491 @@
+% ============================================================
+%  PEMBAHASAN — KUIS 2 MATEMATIKA (MAE)  T.P. 2026/2027
+%  Tema: "LEGO Architecture Challenge" (replika Empire State Building)
+%  Materi inti: Bab 2 Barisan & Deret, Bab 5 SPLTV, Bab 6 Fungsi Kuadrat
+%  Data sinkron blueprint: tinggi 55 cm, alas 21 x 13 cm; progressive blueprint.
+%  Kompilasi: pdfLaTeX (gambar berada di folder yang sama)
+% ============================================================
+\documentclass[11pt,a4paper]{article}
+
+% ---------- PAKET ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[bahasa]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{array,booktabs}
+\usepackage{pifont}
+\usepackage{icomma}
+\usepackage[colorlinks=true,linkcolor=biru,urlcolor=biru]{hyperref}
+
+\geometry{a4paper,margin=2.5cm,headheight=15pt}
+
+% ---------- WARNA ----------
+\definecolor{biru}{HTML}{1F4E79}
+\definecolor{birumuda}{HTML}{D6E4F0}
+\definecolor{hijau}{HTML}{2E7D32}
+\definecolor{hijaumuda}{HTML}{E3F2E1}
+\definecolor{oranye}{HTML}{C75B12}
+\definecolor{oranyemuda}{HTML}{FBE8DA}
+\definecolor{abu}{HTML}{F2F2F2}
+\definecolor{ungu}{HTML}{6A1B9A}
+\definecolor{ungumuda}{HTML}{EDE2F3}
+\definecolor{merah}{HTML}{C62828}
+\definecolor{merahmuda}{HTML}{FCE4E4}
+\definecolor{tosca}{HTML}{00838F}
+\definecolor{toscamuda}{HTML}{E0F2F1}
+
+% ---------- HEADER / FOOTER ----------
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.8pt}
+\fancyhead[L]{\small\textcolor{ungu}{Pembahasan Kuis 2: MAE}}
+\fancyhead[R]{\small\textcolor{ungu}{T.P. 2026/2027}}
+\fancyfoot[C]{\thepage}
+
+% ---------- KOTAK: SOAL (ungu) ----------
+\newtcolorbox{soalbox}[1]{
+  enhanced, breakable, colback=ungumuda, colframe=ungu, boxrule=0.8pt,
+  arc=3pt, left=10pt, right=10pt, top=8pt, bottom=8pt,
+  title={\textbf{#1}}, fonttitle=\bfseries\color{white}, coltitle=white,
+  attach boxed title to top left={xshift=10pt,yshift=-10pt},
+  boxed title style={colback=ungu,arc=2pt}}
+
+% ---------- KOTAK: KONSEP KUNCI (hijau) ----------
+\newtcolorbox{ingat}[1]{
+  enhanced, breakable, colback=hijaumuda, colframe=hijau, boxrule=0.6pt,
+  arc=3pt, left=10pt, right=10pt, top=6pt, bottom=6pt,
+  title={\textbf{Konsep Kunci: #1}}, fonttitle=\bfseries\color{white}, coltitle=white,
+  attach boxed title to top left={xshift=10pt,yshift=-10pt},
+  boxed title style={colback=hijau,arc=2pt}}
+
+% ---------- KOTAK: JEBAKAN (merah) ----------
+\newtcolorbox{jebakan}{
+  enhanced, breakable, colback=merahmuda, colframe=merah, boxrule=0.6pt,
+  arc=3pt, left=10pt, right=10pt, top=6pt, bottom=6pt,
+  title={\textbf{\ding{55}\ Jebakan yang Sering Terjadi}},
+  fonttitle=\bfseries\color{white}, coltitle=white,
+  attach boxed title to top left={xshift=10pt,yshift=-10pt},
+  boxed title style={colback=merah,arc=2pt}}
+
+% ---------- KOTAK: TIPS (tosca) ----------
+\newtcolorbox{tips}{
+  enhanced, breakable, colback=toscamuda, colframe=tosca, boxrule=0.6pt,
+  arc=3pt, left=10pt, right=10pt, top=6pt, bottom=6pt,
+  borderline west={3pt}{0pt}{tosca}}
+
+% ---------- PERINTAH BANTU ----------
+\newcommand{\jawab}{\par\smallskip\noindent\textit{\textcolor{oranye}{Penyelesaian:}}\par\smallskip}
+\newcommand{\langkah}[1]{\par\smallskip\noindent\textbf{\textcolor{biru}{Langkah #1.}}\ }
+\newcommand{\jadi}{\par\smallskip\noindent$\Rightarrow$\ \textbf{Jadi, }}
+\newcommand{\benar}{\textbf{\textcolor{hijau}{BENAR}}}
+\newcommand{\salah}{\textbf{\textcolor{merah}{SALAH}}}
+\newcommand{\pernyataan}[1]{\par\smallskip\noindent\textbf{Pernyataan (#1).}\ }
+\newcommand{\bagianjudul}[1]{\par\bigskip\noindent%
+  {\large\bfseries\color{ungu}\rule[-2pt]{4pt}{16pt}\ #1}\par\smallskip}
+\newcommand{\nomorjudul}[2]{\par\bigskip\noindent%
+  {\large\bfseries\color{ungu}Pembahasan Nomor #1}\ {\normalfont\itshape\color{gray}(#2)}\par\nopagebreak\smallskip}
+
+\linespread{1.04}
+
+% ============================================================
+\begin{document}
+
+% ---------- HALAMAN JUDUL ----------
+\thispagestyle{empty}
+\begin{center}
+\vspace*{1.5cm}
+{\color{ungu}\rule{\textwidth}{2pt}}\\[0.5cm]
+{\Huge\bfseries\color{ungu} PEMBAHASAN LENGKAP}\\[0.3cm]
+{\LARGE\bfseries KUIS 2: MATEMATIKA (MAE)}\\[0.4cm]
+{\large\itshape LEGO Architecture Challenge: Menara Sang Arsitek Muda}\\[0.3cm]
+{\color{ungu}\rule{\textwidth}{2pt}}\\[1cm]
+
+\begin{tcolorbox}[enhanced,width=0.9\textwidth,colback=ungumuda,colframe=ungu,arc=4pt,boxrule=1pt]
+\centering\small
+Buku ini membahas \textbf{seluruh 12 soal} secara runtut: konsep kunci, langkah
+demi langkah, dan jebakan. Materi: \textbf{Barisan \& Deret} (Bab 2),
+\textbf{SPLTV} (Bab 5), \textbf{Fungsi Kuadrat} (Bab 6). Data terbuka bertahap
+lewat \emph{Lembar A--E}; seluruh angka sinkron blueprint (tinggi $55$ cm, alas
+$21\times13$ cm).
+\end{tcolorbox}
+
+\vfill
+{\large Tahun Pelajaran 2026/2027}
+\end{center}
+\clearpage
+
+\begin{tips}
+\textbf{Ringkasan data (dipakai berulang).}
+Blueprint: tinggi $\mathbf{55}$ cm, alas $\mathbf{21\times13}$ cm.
+\textbf{$5$ tingkat:} tinggi $15,13,11,9,7$ ($d=-2$, $S_5=55$); brick
+$80,64,48,32,16$ ($d=-16$, $S_5=240$); lebar $21,17,13,9,5$ ($d=-4$, menurun
+$\Rightarrow$ stabil). \textbf{Lampu LED:} $2,4,8,16,32$ ($a=2,r=2$; $S_5=62$;
+daya $31$ W). \textbf{SPLTV:} $(x,y,z)=(100,80,60)$; poin $=820\ge800$, merah
+$41{,}7\%\ge40\%$. \textbf{Busur LED:} $y=-\tfrac14x^2+3x$. \textbf{Base plate:}
+$p+l=34$; maks $17\times17=289$; syarat memuat menara ($p\ge21$) $\Rightarrow
+21\times13=273$.
+\end{tips}
+
+% ################################################################
+\bagianjudul{BAGIAN A: Pilihan Ganda Kompleks}
+% ################################################################
+
+% ================= NOMOR 1 =================
+\nomorjudul{1}{Barisan Aritmetika: baca tinggi dari Lembar A}
+\begin{soalbox}{Soal 1}
+Baca tinggi tingkat dari skala. Benar/Salah: (1) $d=-2$; (2) $a_n=17-2n$;
+(3) tingkat ke-$4$ $=9$ cm; (4) tingkat ke-$5$ $=5$ cm.
+\end{soalbox}
+
+\begin{ingat}{Membaca grafik + barisan aritmetika}
+Tinggi tingkat $=$ selisih dua garis batas pada penggaris. $a_n=a_1+(n-1)d$.
+\end{ingat}
+
+\jawab
+Batas atas tingkat $1$--$5$ pada penggaris: $15,28,39,48,55$ cm, maka tinggi
+tingkat $=15,13,11,9,7$ cm.
+
+\pernyataan{1} $13-15=-2$, $11-13=-2$, \dots\ $d=-2$. \benar.
+
+\pernyataan{2} $a_n=15+(n-1)(-2)=17-2n$; cek $a_1=15$. \benar.
+
+\pernyataan{3} $a_4=17-8=9$. \benar.
+
+\pernyataan{4} $a_5=17-10=7\neq5$. \salah.
+
+\jadi \textbf{(1) B, (2) B, (3) B, (4) S}.
+
+\begin{jebakan}
+Membaca tinggi sebagai \emph{posisi} garis ($15,28,\ldots$), bukan
+\emph{selisihnya}. Tinggi tingkat $=$ selisih dua garis berurutan.
+\end{jebakan}
+
+% ================= NOMOR 2 =================
+\nomorjudul{2}{Deret Aritmetika: hitung brick dari kisi}
+\begin{soalbox}{Soal 2}
+Baca brick tiap tingkat dari kisi. Benar/Salah: (1) $d=-16$; (2) $3$ teratas $=96$;
+(3) dasar $=100$; (4) total $=240$.
+\end{soalbox}
+
+\jawab
+Dari kisi (kolom $\times$ baris): $20\times4,16\times4,12\times4,8\times4,4\times4$,
+yakni $80,64,48,32,16$ brick.
+
+\pernyataan{1} $64-80=-16$, \dots\ $d=-16$. \benar.
+
+\pernyataan{2} $48+32+16=96$. \benar.
+
+\pernyataan{3} Dasar $=80$, bukan $100$. \salah.
+
+\pernyataan{4} $S_5=\tfrac{5}{2}(80+16)=240$. \benar.
+
+\jadi \textbf{(1) B, (2) B, (3) S, (4) B}.
+
+\begin{jebakan}
+Menyamakan barisan \emph{brick} ($d=-16$), \emph{tinggi} ($d=-2$), dan
+\emph{lebar} ($d=-4$). Ketiganya berbeda meski pada tingkat yang sama.
+\end{jebakan}
+
+% ================= NOMOR 3 =================
+\nomorjudul{3}{SPLTV: komposisi brick (modelkan sendiri dari Lembar B)}
+\begin{soalbox}{Soal 3}
+Komposisi diklaim $100$ merah, $80$ biru, $60$ kuning (persamaan \emph{tidak}
+diberikan). Benar/Salah: (1) total brick $240$; (2) total massa $500$ g;
+(3) biru $>$ merah; (4) total poin $820$.
+\end{soalbox}
+
+\begin{ingat}{Memodelkan dari inventaris (Lembar B)}
+Jumlah $=$ merah $+$ biru $+$ kuning; massa $=2(\text{merah})+3(\text{biru})+1(\text{kuning})$;
+poin $=3(\text{merah})+5(\text{biru})+2(\text{kuning})$.
+\end{ingat}
+
+\jawab
+\pernyataan{1} Jumlah $=100+80+60=240$. \benar.
+
+\pernyataan{2} Massa $=2(100)+3(80)+1(60)=200+240+60=500$ g. \benar.
+
+\pernyataan{3} Biru $80<100$ merah; klaim ``biru $>$ merah'' \salah.
+
+\pernyataan{4} Poin $=3(100)+5(80)+2(60)=300+400+120=820$. \benar.
+
+\jadi \textbf{(1) B, (2) B, (3) S, (4) B}.
+
+% ================= NOMOR 4 =================
+\nomorjudul{4}{Fungsi Kuadrat: busur lampu LED}
+\begin{soalbox}{Soal 4}
+$y=-\tfrac14x^2+3x$. Benar/Salah: (1) terbuka ke bawah; (2) sumbu $x=6$;
+(3) tinggi maks $9$; (4) lebar di tanah $8$.
+\end{soalbox}
+
+\begin{ingat}{Sifat parabola $y=ax^2+bx+c$}
+Terbuka ke bawah bila $a<0$; sumbu $x=-\tfrac{b}{2a}$; nilai ekstrem $=y$ pada
+sumbu; titik potong sumbu-$x$ dari $y=0$.
+\end{ingat}
+
+\jawab
+\pernyataan{1} $a=-\tfrac14<0\Rightarrow$ terbuka ke bawah. \benar.
+
+\pernyataan{2} $x=-\dfrac{3}{2(-\frac14)}=6$. \benar.
+
+\pernyataan{3} $y(6)=-9+18=9$ cm. \benar.
+
+\pernyataan{4} $y=0\Rightarrow x=0$ atau $12$; lebar $=12$ cm, bukan $8$. \salah.
+
+\jadi \textbf{(1) B, (2) B, (3) B, (4) S}.
+
+% ================= NOMOR 5 =================
+\nomorjudul{5}{Kolaborasi: mencocokkan dengan blueprint}
+\begin{soalbox}{Soal 5}
+Benar/Salah: (1) tinggi $5$ tingkat $=55$; (2) brick $=240$; (3) alas $21\times13$
+persegi; (4) lebar menurun $\Rightarrow$ stabil.
+\end{soalbox}
+
+\jawab
+\pernyataan{1} $S_5=\tfrac{5}{2}(15+7)=55$ cm. \benar.
+
+\pernyataan{2} $80+64+48+32+16=240$. \benar.
+
+\pernyataan{3} $21\neq13\Rightarrow$ persegi \emph{panjang}. \salah.
+
+\pernyataan{4} $21>17>13>9>5$ ($d=-4$): tiap tingkat lebih sempit dari bawahnya
+$\Rightarrow$ stabil. \benar.
+
+\jadi \textbf{(1) B, (2) B, (3) S, (4) B}.
+
+% ################################################################
+\bagianjudul{BAGIAN B: Uraian Bercabang}
+% ################################################################
+
+% ================= NOMOR 6 =================
+\nomorjudul{6}{SPLTV: menghitung komposisi brick}
+\begin{soalbox}{Soal 6}
+Dari Lembar B: $240$ brick, $500$ g, $820$ poin. (a) susun SPLTV; (b) eliminasi
+$z$; (c) selesaikan; (d) verifikasi; (e) cek syarat estetika merah $\ge40\%$.
+\end{soalbox}
+
+\begin{ingat}{Menyelesaikan SPLTV (eliminasi)}
+Hilangkan satu variabel dari dua pasangan persamaan $\to$ SPLDV, selesaikan, lalu
+substitusi balik.
+\end{ingat}
+
+\jawab
+\langkah{a} $\text{(I) } x+y+z=240$;\ $\text{(II) } 2x+3y+z=500$;\
+$\text{(III) } 3x+5y+2z=820$.
+
+\langkah{b} (II)$-$(I): $x+2y=260$ (IV);\quad (III)$-2\times$(I): $x+3y=340$ (V).
+
+\langkah{c} (V)$-$(IV): $y=80$; lalu $x=260-2(80)=100$; dan $z=240-100-80=60$.
+\jadi $\textbf{(x,y,z)=(100,80,60)}$.
+
+\langkah{d} $100+80+60=240$ \checkmark;\ $2(100)+3(80)+60=500$ \checkmark;\
+$3(100)+5(80)+2(60)=820$ \checkmark.
+
+\langkah{e} Merah $=\dfrac{100}{240}\approx\textbf{41{,}7\%}\ge40\%$
+$\Rightarrow$ syarat estetika (proporsi merah) \textbf{terpenuhi}.
+
+\begin{jebakan}
+Saat (III)$-$(I), kalikan (I) dengan $2$ lebih dulu agar koefisien $z$ sama.
+Lupa mengalikan membuat $z$ tidak hilang.
+\end{jebakan}
+
+% ================= NOMOR 7 =================
+\nomorjudul{7}{Barisan \& Deret: analisis revisi blueprint}
+\begin{soalbox}{Soal 7}
+Pola: tinggi ($a_1=15,d=-2$), brick ($a_1=80,d=-16$), lebar ($a_1=21,d=-4$).
+(a) revisi $8$ tingkat (tinggi); (b) brick sanggup? kapan $=0$; (c) lebar \&
+stabilitas; (d) lampu \& daya; (e) simpulan revisi.
+\end{soalbox}
+
+\begin{ingat}{Suku ke-$n$ dan tanda barisan}
+$a_n=a_1+(n-1)d$. Bila $d<0$, barisan menurun dan dapat mencapai $0$ lalu negatif;
+nilai negatif tak bermakna fisik (mis. banyak brick).
+\end{ingat}
+
+\jawab
+\langkah{a} \emph{Tinggi} $a_n=17-2n$. Tingkat ke-$8$: $a_8=17-16=\textbf{1 cm}$.
+Total $8$ tingkat: $S_8=\tfrac{8}{2}(a_1+a_8)=4(15+1)=\textbf{64 cm}$.
+
+\langkah{b} \emph{Brick} $a_n=96-16n$. Nol saat $96-16n=0\Rightarrow n=\textbf{6}$
+(tingkat ke-$6$ butuh $0$ brick; ke-$7,8$ bernilai negatif). Artinya pola brick
+\textbf{hanya sanggup untuk $5$ tingkat berisi}; revisi $8$ tingkat \emph{mustahil}.
+
+\langkah{c} \emph{Lebar} $a_n=25-4n$: $21,17,13,9,5$ \textbf{menurun} ($d=-4<0$).
+Tiap tingkat lebih sempit daripada bawahnya, tumpuan melebar ke bawah
+$\Rightarrow$ menara \textbf{stabil}.
+
+\langkah{d} \emph{Lampu} (geometri $a=2,r=2$): $U_5=2\cdot2^4=\textbf{32}$;
+$S_5=\dfrac{2(2^5-1)}{1}=\textbf{62}$ lampu. Daya $=62\times0{,}5=\textbf{31 W}$.
+
+\langkah{e} Meski \emph{tinggi} $8$ tingkat masih masuk akal ($64$ cm), \emph{brick}
+sudah habis di tingkat ke-$6$. \jadi revisi $8$ tingkat \textbf{tidak layak}
+(terbatas pasokan brick), maks $5$ tingkat berisi.
+
+\begin{tips}
+Pelajaran desain: suatu perluasan bisa saja \emph{mungkin secara satu aspek}
+(tinggi) tetapi \emph{mustahil secara aspek lain} (brick). Selalu cek semua
+barisan pembatas.
+\end{tips}
+
+% ================= NOMOR 8 =================
+\nomorjudul{8}{Fungsi Kuadrat: busur lampu LED (Lembar D)}
+\begin{soalbox}{Soal 8}
+$y=-\tfrac14x^2+3x$. (a) titik potong sumbu-$x$; (b) sumbu; (c) puncak;
+(d) lebar \& tinggi; (e) lebar pada $y=5$.
+\end{soalbox}
+
+\jawab
+\langkah{a} $y=0$: $x(-\tfrac14x+3)=0\Rightarrow x=0$ atau $12$. Kaki
+$\textbf{(0,0)}$ dan $\textbf{(12,0)}$.
+
+\langkah{b} Sumbu $x=\dfrac{0+12}{2}=\textbf{6}$.
+
+\langkah{c} $y(6)=-9+18=9\Rightarrow$ puncak $\textbf{(6,9)}$.
+
+\langkah{d} Lebar $=\textbf{12 cm}$; tinggi maksimum $=\textbf{9 cm}$.
+
+\langkah{e} $y=5$: $-\tfrac14x^2+3x=5\Rightarrow x^2-12x+20=0$,
+\[
+x=\frac{12\pm\sqrt{144-80}}{2}=\frac{12\pm8}{2}\Rightarrow x=2 \text{ atau } 10.
+\]
+\jadi lebar busur pada $y=5$ adalah $10-2=\textbf{8 cm}$.
+
+\begin{center}
+\begin{tikzpicture}[xscale=0.34,yscale=0.34]
+\draw[->,gray] (0,0)--(13.5,0) node[right]{\scriptsize $x$};
+\draw[->,gray] (0,0)--(0,10.5) node[above]{\scriptsize $y$};
+\draw[thick,ungu,domain=0:12,samples=60,smooth] plot (\x,{-0.25*\x*\x+3*\x});
+\fill[ungu] (6,9) circle (3pt) node[above=1pt]{\scriptsize $(6,9)$};
+\draw[dashed,gray] (6,0)--(6,9);
+\draw[dashed,gray] (2,5)--(10,5) node[right]{\scriptsize $y=5$ (lebar $8$)};
+\fill[ungu] (2,5) circle(2pt); \fill[ungu] (10,5) circle(2pt);
+\node[gray] at (12,-0.7){\scriptsize $12$};
+\end{tikzpicture}
+\end{center}
+
+% ================= NOMOR 9 =================
+\nomorjudul{9}{Fungsi Kuadrat: rancangan base plate (Lembar E)}
+\begin{soalbox}{Soal 9}
+$p+l=34$. (a) $L(p)$; (b) grafik \& sumbu; (c) maks; (d) syarat $p\ge21$;
+(e) banding blueprint $21\times13$.
+\end{soalbox}
+
+\begin{ingat}{Optimasi kuadrat dengan kendala}
+$L$ maksimum di sumbu simetri $p=-\tfrac{b}{2a}$. Jika ada kendala (mis.
+$p\ge21$) dan puncak di luar daerah kendala, ambil nilai di \emph{batas} kendala.
+\end{ingat}
+
+\jawab
+\langkah{a} $l=34-p$, maka $L(p)=p(34-p)=\textbf{34p-p}^2$.
+
+\langkah{b} $a=-1<0\Rightarrow$ terbuka ke bawah; sumbu $p=-\tfrac{34}{2(-1)}=\textbf{17}$.
+
+\langkah{c} Maks di $p=17$: $L=17\cdot17=\textbf{289 cm}^2$ (persegi $17\times17$).
+
+\langkah{d} Menara harus muat: $p\ge21$. Pada $p\ge21$, $L(p)$ sudah
+\emph{menurun} (kanan puncak), jadi maksimum di batas $p=21$:
+$l=34-21=13$, $L=21\cdot13=\textbf{273 cm}^2$.
+
+\langkah{e} Ukuran ini \emph{tepat} alas blueprint $\mathbf{21\times13}$.
+Persegi $17\times17$ (luas $289$) memang lebih luas, tetapi \textbf{terlalu sempit}
+(sisi $17<21$) untuk menopang tingkat pertama. \jadi blueprint memilih $21\times13$
+sebagai \emph{luas terbesar yang masih memuat menara} (selisih $289-273=16$ cm$^2$
+dikorbankan demi kestabilan).
+
+\begin{jebakan}
+Menjawab (d) tetap $p=17$. Karena $17<21$ (di luar kendala $p\ge21$), ambil nilai
+di batas $p=21$, bukan puncak.
+\end{jebakan}
+
+% ================= NOMOR 10 =================
+\nomorjudul{10}{Kolaborasi: gabungkan seluruh Lembar A--E}
+\begin{soalbox}{Soal 10}
+(a) hemat brick; (b) tepat tinggi; (c) stabil; (d) estetis (dua syarat juri);
+(e) simpulan keempat syarat.
+\end{soalbox}
+
+\jawab
+\langkah{a} \emph{Hemat (Lembar A):} brick $5$ tingkat $=240=$ pasokan; \textbf{sisa $0$}.
+
+\langkah{b} \emph{Tepat tinggi (Lembar A):} $S_5=55$ cm $=$ blueprint. \checkmark
+
+\langkah{c} \emph{Stabil (Lembar C):} lebar $21,17,13,9,5$ menurun; tiap tingkat
+lebih sempit dari bawahnya. \checkmark
+
+\langkah{d} \emph{Estetis (Lembar B):} poin $=3(100)+5(80)+2(60)=\textbf{820}\ge800$
+\checkmark; merah $=\dfrac{100}{240}\approx\textbf{41{,}7\%}\ge40\%$ \checkmark.
+Kedua syarat juri terpenuhi.
+
+\langkah{e} \jadi \textbf{keempat syarat terpenuhi} (hemat, tepat tinggi, stabil,
+estetis) $\Rightarrow$ replika \textbf{layak menang}.
+
+% ################################################################
+\bagianjudul{BAGIAN C: Soal Bonus}
+% ################################################################
+
+% ================= NOMOR 11 =================
+\nomorjudul{11}{[BONUS] Pola Tersembunyi pada Blueprint}
+\begin{soalbox}{Soal 11}
+Ukuran kunci $13,21,34,55$. (a) aturan rekursif; (b) $U_5,U_6$; (c) rasio antar
+suku; (d) suku pertama $>300$.
+\end{soalbox}
+
+\begin{ingat}{Barisan rekursif \& rasio emas}
+Bila $U_n=U_{n-1}+U_{n-2}$ (barisan \emph{Fibonacci}), rasio
+$\dfrac{U_{n+1}}{U_n}$ mendekati \emph{rasio emas}
+$\varphi=\dfrac{1+\sqrt5}{2}\approx1{,}618$.
+\end{ingat}
+
+\jawab
+\langkah{a} $13+21=34$ dan $21+34=55$: tiap suku (mulai suku ke-$3$) $=$ jumlah dua
+suku sebelumnya, \textbf{$U_n=U_{n-1}+U_{n-2}$} (Fibonacci), $U_1=13$, $U_2=21$.
+
+\langkah{b} $U_5=55+34=\textbf{89}$;\ $U_6=89+55=\textbf{144}$.
+
+\langkah{c} $\dfrac{21}{13}\approx1{,}615$;\ $\dfrac{34}{21}\approx1{,}619$;\
+$\dfrac{55}{34}\approx1{,}618$. Rasio mendekati nilai tetap
+$\approx\textbf{1{,}618}$ (rasio emas $\varphi$).
+
+\langkah{d} $U_7=144+89=233$; $U_8=233+144=377$. Karena $U_7=233<300<377=U_8$,
+suku pertama yang melebihi $300$ adalah suku ke-$\textbf{8}$.
+
+\begin{tips}
+Rasio emas kerap muncul pada proporsi arsitektur yang dianggap ``enak
+dipandang''; pola tersembunyi di balik ukuran blueprint, selaras
+dengan syarat \emph{estetis}.
+\end{tips}
+
+% ================= NOMOR 12 =================
+\nomorjudul{12}{[BONUS] SPLTV bertemu Fungsi Kuadrat}
+\begin{soalbox}{Soal 12}
+$y=ax^2+bx+c$ melalui $(0,0),(1,3),(2,4)$. (a) susun SPLTV; (b) selesaikan;
+(c) persamaan; (d) puncak \& lebar.
+\end{soalbox}
+
+\jawab
+\langkah{a} $(0,0)\!:c=0$;\ $(1,3)\!:a+b+c=3$;\ $(2,4)\!:4a+2b+c=4$.
+
+\langkah{b} $c=0\Rightarrow a+b=3$ dan $2a+b=2$. Kurangi: $a=-1$; $b=4$; $c=0$.
+
+\langkah{c} $y=\textbf{-x}^2\textbf{+4x}$.
+
+\langkah{d} Puncak $x=-\dfrac{4}{2(-1)}=2$, $y=-4+8=4\Rightarrow\textbf{(2,4)}$.
+Akar $x=0$ atau $4$; lebar atap $=\textbf{4}$.
+
+\begin{tips}
+Menentukan fungsi kuadrat (Bab 6) ternyata \emph{adalah} menyelesaikan SPLTV
+(Bab 5) dalam $a,b,c$, jembatan langsung antara kedua bab.
+\end{tips}
+
+\vfill
+\begin{center}\small\itshape
+Selesai. Semoga bermanfaat sebagai bahan belajar.
+\end{center}
+
+\end{document}
