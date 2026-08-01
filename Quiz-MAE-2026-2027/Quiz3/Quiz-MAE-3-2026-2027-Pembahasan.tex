@@ -1,0 +1,599 @@
+% ============================================================
+%  PEMBAHASAN — KUIS 3 MATEMATIKA (MAE)  T.P. 2026/2027
+%  Tema: "National Card Strategy Championship (NCSC)"
+%  Materi inti: Bab 6 Statistika (6.1-6.5), Bab 7 Peluang (7.1-7.5)
+%  Data sinkron: rekap skor 40 peserta (x=25), set remi standar 52 kartu.
+%  Kompilasi: pdfLaTeX (gambar berada di folder yang sama)
+% ============================================================
+\documentclass[11pt,a4paper]{article}
+
+% ---------- PAKET ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[bahasa]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{array,booktabs}
+\usepackage{pifont}
+\usepackage{icomma}
+\usepackage[colorlinks=true,linkcolor=biru,urlcolor=biru]{hyperref}
+
+\geometry{a4paper,margin=2.5cm,headheight=15pt}
+
+% ---------- WARNA ----------
+\definecolor{biru}{HTML}{1F4E79}
+\definecolor{birumuda}{HTML}{D6E4F0}
+\definecolor{hijau}{HTML}{2E7D32}
+\definecolor{hijaumuda}{HTML}{E3F2E1}
+\definecolor{oranye}{HTML}{C75B12}
+\definecolor{oranyemuda}{HTML}{FBE8DA}
+\definecolor{abu}{HTML}{F2F2F2}
+\definecolor{ungu}{HTML}{6A1B9A}
+\definecolor{ungumuda}{HTML}{EDE2F3}
+\definecolor{merah}{HTML}{C62828}
+\definecolor{merahmuda}{HTML}{FCE4E4}
+\definecolor{tosca}{HTML}{00838F}
+\definecolor{toscamuda}{HTML}{E0F2F1}
+
+% ---------- HEADER / FOOTER ----------
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.8pt}
+\fancyhead[L]{\small\textcolor{ungu}{Pembahasan Kuis 3: MAE}}
+\fancyhead[R]{\small\textcolor{ungu}{T.P. 2026/2027}}
+\fancyfoot[C]{\thepage}
+
+% ---------- KOTAK: SOAL (ungu) ----------
+\newtcolorbox{soalbox}[1]{
+  enhanced, breakable, colback=ungumuda, colframe=ungu, boxrule=0.8pt,
+  arc=3pt, left=10pt, right=10pt, top=8pt, bottom=8pt,
+  title={\textbf{#1}}, fonttitle=\bfseries\color{white}, coltitle=white,
+  attach boxed title to top left={xshift=10pt,yshift=-10pt},
+  boxed title style={colback=ungu,arc=2pt}}
+
+% ---------- KOTAK: KONSEP KUNCI (hijau) ----------
+\newtcolorbox{ingat}[1]{
+  enhanced, breakable, colback=hijaumuda, colframe=hijau, boxrule=0.6pt,
+  arc=3pt, left=10pt, right=10pt, top=6pt, bottom=6pt,
+  title={\textbf{Konsep Kunci: #1}}, fonttitle=\bfseries\color{white}, coltitle=white,
+  attach boxed title to top left={xshift=10pt,yshift=-10pt},
+  boxed title style={colback=hijau,arc=2pt}}
+
+% ---------- KOTAK: JEBAKAN (merah) ----------
+\newtcolorbox{jebakan}{
+  enhanced, breakable, colback=merahmuda, colframe=merah, boxrule=0.6pt,
+  arc=3pt, left=10pt, right=10pt, top=6pt, bottom=6pt,
+  title={\textbf{\ding{55}\ Jebakan yang Sering Terjadi}},
+  fonttitle=\bfseries\color{white}, coltitle=white,
+  attach boxed title to top left={xshift=10pt,yshift=-10pt},
+  boxed title style={colback=merah,arc=2pt}}
+
+% ---------- KOTAK: TIPS (tosca) ----------
+\newtcolorbox{tips}{
+  enhanced, breakable, colback=toscamuda, colframe=tosca, boxrule=0.6pt,
+  arc=3pt, left=10pt, right=10pt, top=6pt, bottom=6pt,
+  borderline west={3pt}{0pt}{tosca}}
+
+% ---------- PERINTAH BANTU ----------
+\newcommand{\jawab}{\par\smallskip\noindent\textit{\textcolor{oranye}{Penyelesaian:}}\par\smallskip}
+\newcommand{\langkah}[1]{\par\smallskip\noindent\textbf{\textcolor{biru}{Langkah #1.}}\ }
+\newcommand{\jadi}{\par\smallskip\noindent$\Rightarrow$\ \textbf{Jadi, }}
+\newcommand{\benar}{\textbf{\textcolor{hijau}{BENAR}}}
+\newcommand{\salah}{\textbf{\textcolor{merah}{SALAH}}}
+\newcommand{\pernyataan}[1]{\par\smallskip\noindent\textbf{Pernyataan (#1).}\ }
+\newcommand{\bagianjudul}[1]{\par\bigskip\noindent%
+  {\large\bfseries\color{ungu}\rule[-2pt]{4pt}{16pt}\ #1}\par\smallskip}
+\newcommand{\nomorjudul}[2]{\par\bigskip\noindent%
+  {\large\bfseries\color{ungu}Pembahasan Nomor #1}\ {\normalfont\itshape\color{gray}(#2)}\par\nopagebreak\smallskip}
+
+\linespread{1.04}
+
+% ============================================================
+\begin{document}
+
+% ---------- HALAMAN JUDUL ----------
+\thispagestyle{empty}
+\begin{center}
+\vspace*{1.5cm}
+{\color{ungu}\rule{\textwidth}{2pt}}\\[0.5cm]
+{\Huge\bfseries\color{ungu} PEMBAHASAN LENGKAP}\\[0.3cm]
+{\LARGE\bfseries KUIS 3: MATEMATIKA (MAE)}\\[0.4cm]
+{\large\itshape National Card Strategy Championship: Panggung Sang Analis}\\[0.3cm]
+{\color{ungu}\rule{\textwidth}{2pt}}\\[1cm]
+
+\begin{tcolorbox}[enhanced,width=0.9\textwidth,colback=ungumuda,colframe=ungu,arc=4pt,boxrule=1pt]
+\centering\small
+Buku ini membahas \textbf{seluruh 12 soal} secara runtut: konsep kunci, langkah
+demi langkah, dan jebakan. Materi: \textbf{Statistika} (Bab 6: distribusi
+frekuensi, pemusatan, letak, penyebaran, diagram pencar) dan \textbf{Peluang}
+(Bab 7: pencacahan, ruang sampel, peluang kejadian, frekuensi harapan, kejadian
+majemuk). Data terbuka bertahap lewat \emph{Berkas A--D}; seluruh angka sinkron
+dengan rekap turnamen (rata-rata skor $25$, set remi $52$ kartu).
+\end{tcolorbox}
+
+\vfill
+{\large Tahun Pelajaran 2026/2027}
+\end{center}
+\clearpage
+
+\begin{tips}
+\textbf{Ringkasan data (dipakai berulang).}
+\textbf{Berkas A} (skor $40$ peserta; kelas $0$--$9,\dots,40$--$49$; $f=4,10,12,8,6$;
+titik tengah $x=4{,}5;14{,}5;24{,}5;34{,}5;44{,}5$): $\bar{x}=25$; $Me=24{,}5$;
+$Mo\approx22{,}83$; $Q_1=15{,}5$; $Q_3=34{,}5$; JAK$=19$; ragam $=144{,}75$;
+$s\approx12{,}03$; simpangan rata-rata $=9{,}65$. \textbf{Berkas B} ($15$ finalis):
+korelasi \emph{negatif kuat} ($r\approx-0{,}87$) --- pencilan \textbf{Bima}; tanpa
+Bima menguat ke $r\approx-0{,}98$. \textbf{Berkas C} (remi $52$):
+$P(\mathrm{As})=\tfrac{1}{13}$, $P(\text{merah})=\tfrac12$,
+$P(\text{gambar})=\tfrac{3}{13}$; frekuensi harapan (dari $1.300$): As $=100$,
+merah $=650$, gambar $=300$; tangan $5$ hati $=\tfrac{1287}{2598960}$.
+\textbf{Berkas D} ($2,4,8,14,19,23,24,31,38,44$): $\bar{x}=20{,}7$; $Me=21$;
+$Q_1=8$, $Q_3=31$.
+\end{tips}
+
+% ################################################################
+\bagianjudul{BAGIAN A: Analisis Statistik (PG Kompleks)}
+% ################################################################
+
+\begin{ingat}{Rumus statistika data berkelompok}
+Titik tengah $x_i=\tfrac{\text{batas bawah}+\text{batas atas}}{2}$;\quad
+$\bar{x}=\dfrac{\sum f_ix_i}{\sum f_i}$;\quad
+$Mo=L+\left(\dfrac{d_1}{d_1+d_2}\right)c$;\quad
+$Q_i=L+\left(\dfrac{\frac{i\,n}{4}-F}{f}\right)c$ (median $=Q_2$);\quad
+ragam $s^2=\dfrac{\sum f_i(x_i-\bar{x})^2}{n}$, simpangan baku $s=\sqrt{s^2}$.
+Di sini $L=$ tepi bawah kelas, $F=$ frekuensi kumulatif sebelum kelas, $c=$
+panjang kelas.
+\end{ingat}
+
+% ================= NOMOR 1 =================
+\nomorjudul{1}{6.1 Distribusi Frekuensi: membaca Berkas A}
+\begin{soalbox}{Soal 1}
+Benar/Salah: (1) titik tengah $10$--$19$ $=14{,}5$; (2) panjang kelas $=10$;
+(3) frekuensi kumulatif $<29{,}5$ adalah $26$; (4) kelas modus $=30$--$39$.
+\end{soalbox}
+
+\jawab
+Tepi kelas: $-0{,}5$; $9{,}5$; $19{,}5$; $29{,}5$; $39{,}5$; $49{,}5$. Frekuensi
+kumulatif ($\le$ tepi atas): $4,14,26,34,40$.
+
+\pernyataan{1} Titik tengah $10$--$19=\tfrac{10+19}{2}=14{,}5$. \benar.
+
+\pernyataan{2} Panjang kelas $=9{,}5-(-0{,}5)=10$. \benar.
+
+\pernyataan{3} Frekuensi kumulatif $<29{,}5=4+10+12=26$. \benar.
+
+\pernyataan{4} Frekuensi tertinggi $f=12$ ada pada kelas $20$--$29$, bukan
+$30$--$39$ ($f=8$). \salah.
+
+\jadi \textbf{(1) B, (2) B, (3) B, (4) S}.
+
+\begin{jebakan}
+Menganggap ``kelas modus'' sekadar kelas terakhir atau kelas dengan angka
+terbesar. Kelas modus $=$ kelas dengan \emph{frekuensi} terbesar.
+\end{jebakan}
+
+% ================= NOMOR 2 =================
+\nomorjudul{2}{6.2 Ukuran Pemusatan: mean, median, modus}
+\begin{soalbox}{Soal 2}
+Benar/Salah: (1) $\bar{x}=25$; (2) median di kelas $20$--$29$; (3) $Mo=24{,}5$;
+(4) mean $>$ median $>$ modus $\Rightarrow$ condong kanan.
+\end{soalbox}
+
+\jawab
+\pernyataan{1} $\sum f x=4(4{,}5)+10(14{,}5)+12(24{,}5)+8(34{,}5)+6(44{,}5)=1000$,
+maka $\bar{x}=\tfrac{1000}{40}=25$. \benar.
+
+\pernyataan{2} $\tfrac{n}{2}=20$; frekuensi kumulatif mencapai $20$ pada kelas
+$20$--$29$ (kum $14\to26$). Median di kelas $20$--$29$. \benar.
+
+\pernyataan{3} Kelas modus $20$--$29$: $d_1=12-10=2$, $d_2=12-8=4$,
+\[
+Mo=19{,}5+\left(\tfrac{2}{2+4}\right)10=19{,}5+3{,}33=22{,}83\neq24{,}5.
+\]
+(Nilai $24{,}5$ justru median, lihat bawah.) \salah.
+
+\pernyataan{4} Median $=19{,}5+\tfrac{20-14}{12}\cdot10=24{,}5$. Karena
+$\bar{x}=25>Me=24{,}5>Mo=22{,}83$, sebaran \emph{condong ke kanan (positif)}. \benar.
+
+\jadi \textbf{(1) B, (2) B, (3) S, (4) B}.
+
+% ================= NOMOR 3 =================
+\nomorjudul{3}{6.3 Ukuran Letak: kuartil}
+\begin{soalbox}{Soal 3}
+Benar/Salah: (1) $Q_1=15{,}5$; (2) $Q_3=39{,}5$; (3) $Q_2=24{,}5$;
+(4) JAK $=Q_3-Q_1=19$.
+\end{soalbox}
+
+\jawab
+\pernyataan{1} $\tfrac{n}{4}=10$; kelas $Q_1$ $=10$--$19$ ($F=4,f=10$):
+$Q_1=9{,}5+\tfrac{10-4}{10}\cdot10=15{,}5$. \benar.
+
+\pernyataan{2} $\tfrac{3n}{4}=30$; kelas $Q_3$ $=30$--$39$ ($F=26,f=8$):
+$Q_3=29{,}5+\tfrac{30-26}{8}\cdot10=34{,}5$, \emph{bukan} $39{,}5$. \salah.
+
+\pernyataan{3} $Q_2=Me=24{,}5$ (Nomor 2). \benar.
+
+\pernyataan{4} JAK $=Q_3-Q_1=34{,}5-15{,}5=19$. \benar.
+
+\jadi \textbf{(1) B, (2) S, (3) B, (4) B}.
+
+\begin{jebakan}
+Salah tepi bawah kelas: untuk kelas $30$--$39$, $L=29{,}5$ (bukan $30$). Salah
+$L$ menggeser seluruh kuartil.
+\end{jebakan}
+
+% ================= NOMOR 4 =================
+\nomorjudul{4}{6.4 Ukuran Penyebaran: ragam \& simpangan baku}
+\begin{soalbox}{Soal 4}
+Benar/Salah: (1) ragam $=144{,}75$; (2) $s\approx12{,}03$; (3) $s>$ JAK;
+(4) simpangan rata-rata $=9{,}65$.
+\end{soalbox}
+
+\jawab
+Dengan $\bar{x}=25$, hitung $\sum f(x-\bar{x})^2$:
+\begin{center}\small
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}c c c c c@{}}
+\toprule
+$x$ & $f$ & $x-25$ & $(x-25)^2$ & $f(x-25)^2$\\
+\midrule
+$4{,}5$  & $4$  & $-20{,}5$ & $420{,}25$ & $1681{,}0$\\
+$14{,}5$ & $10$ & $-10{,}5$ & $110{,}25$ & $1102{,}5$\\
+$24{,}5$ & $12$ & $-0{,}5$  & $0{,}25$   & $3{,}0$\\
+$34{,}5$ & $8$  & $9{,}5$   & $90{,}25$  & $722{,}0$\\
+$44{,}5$ & $6$  & $19{,}5$  & $380{,}25$ & $2281{,}5$\\
+\midrule
+\multicolumn{4}{@{}r}{$\sum=$} & $\mathbf{5790}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\pernyataan{1} Ragam $s^2=\tfrac{5790}{40}=144{,}75$. \benar.
+
+\pernyataan{2} $s=\sqrt{144{,}75}\approx12{,}03$. \benar.
+
+\pernyataan{3} $s\approx12{,}03$ \emph{lebih kecil} daripada JAK $=19$; jadi ``lebih
+besar'' \salah.
+
+\pernyataan{4} Simpangan rata-rata:
+\[
+\frac{\sum f|x-\bar{x}|}{n}
+=\frac{4(20{,}5)+10(10{,}5)+12(0{,}5)+8(9{,}5)+6(19{,}5)}{40}
+=\frac{386}{40}=9{,}65.
+\]
+\benar.
+
+\jadi \textbf{(1) B, (2) B, (3) S, (4) B}.
+
+% ================= NOMOR 5 =================
+\nomorjudul{5}{6.5 Diagram Pencar: baca Berkas B}
+\begin{soalbox}{Soal 5}
+Diagram pencar $15$ finalis (waktu berpikir vs poin minus); Bima $(40,26)$.
+Benar/Salah: (1) arah negatif; (2) Bima pencilan; (3) pencilan membuat korelasi
+hilang; (4) tanpa Bima korelasi makin kuat.
+\end{soalbox}
+
+\begin{ingat}{Membaca diagram pencar: arah, kekuatan, pencilan}
+Amati tiga hal: \emph{arah} (positif/negatif), \emph{kekuatan} (titik makin rapat
+ke garis $\Rightarrow$ makin kuat), dan \emph{pencilan/outlier} (titik yang jauh
+menyimpang dari pola). Satu pencilan dapat \emph{memperlemah} korelasi tetapi
+tidak selalu menghapus arah hubungan.
+\end{ingat}
+
+\jawab
+Mayoritas dari $15$ titik menurun saat $x$ naik; hanya \textbf{Bima} $(40,26)$ yang
+melonjak ke atas (berpikir lama tetapi poin minus tinggi).
+
+\pernyataan{1} Kecenderungan umum: $x$ naik, $y$ turun $\Rightarrow$ arah
+\emph{negatif}. \benar.
+
+\pernyataan{2} Pada $x=40$ tren titik lain memperkirakan $y\approx8$--$9$, tetapi
+Bima $y=26$ --- menyimpang jauh $\Rightarrow$ \emph{pencilan}. \benar.
+
+\pernyataan{3} Meski Bima memperlemah korelasi (dari $r\approx-0{,}98$ menjadi
+$\approx-0{,}87$), arah negatif \emph{tetap kuat}; korelasi tidak hilang. \salah.
+
+\pernyataan{4} Tanpa Bima, titik-titik makin rapat pada garis menurun
+($r\approx-0{,}98$) $\Rightarrow$ hubungan makin kuat. \benar.
+
+\jadi \textbf{(1) B, (2) B, (3) S, (4) B}.
+
+\begin{tips}
+\textbf{Pengaruh pencilan.} Dengan Bima, $r\approx-0{,}87$; tanpa Bima
+$r\approx-0{,}98$. Sebuah pencilan menyeret nilai korelasi mendekati nol --- karena
+itu analis selalu memeriksa pencilan sebelum menyimpulkan kekuatan hubungan. Bima
+layak ditelaah khusus (ditindaklanjuti pada Nomor 10d): mengapa berpikir lama tak
+menurunkan poin minusnya?
+\end{tips}
+
+% ################################################################
+\bagianjudul{BAGIAN B: Analisis Peluang (Uraian)}
+% ################################################################
+
+\begin{ingat}{Pencacahan \& peluang}
+Aturan perkalian: $n$ tahap dengan $n_1,n_2,\dots$ cara $\Rightarrow n_1\cdot
+n_2\cdots$. Permutasi $\,_nP_r=\dfrac{n!}{(n-r)!}$; kombinasi
+$\,_nC_r=\dfrac{n!}{r!(n-r)!}=\dfrac{{}_nP_r}{r!}$.
+Peluang $P(A)=\dfrac{n(A)}{n(S)}$; frekuensi harapan $=N\cdot P(A)$.
+\end{ingat}
+
+% ================= NOMOR 6 =================
+\nomorjudul{6}{7.1 Aturan Pencacahan: perkalian, permutasi, kombinasi}
+\begin{soalbox}{Soal 6}
+(a) susunan berurutan $3$ kartu; (b) cara memilih $3$ kartu (tanpa urutan);
+(c) tangan $5$ kartu; (d) tangan $5$ hati.
+\end{soalbox}
+
+\jawab
+\langkah{a} Aturan perkalian (tanpa pengembalian, \emph{urutan diperhatikan}):
+\[
+52\times51\times50=132.600={}_{52}P_{3}.
+\]
+
+\langkah{b} Urutan tak diperhatikan (kombinasi):
+${}_{52}C_{3}=\dfrac{{}_{52}P_{3}}{3!}=\dfrac{132.600}{6}=\mathbf{22.100}$.
+Hubungannya: tiap pilihan $3$ kartu dapat diurutkan dalam $3!=6$ cara, sehingga
+$_{52}P_3=6\times{}_{52}C_3$.
+
+\langkah{c} Tangan $5$ kartu (urutan tak penting):
+${}_{52}C_{5}=\mathbf{2.598.960}$.
+
+\langkah{d} Semua hati $\Rightarrow$ pilih $5$ dari $13$ hati:
+${}_{13}C_{5}=\mathbf{1.287}$. (Peluangnya dihitung di Nomor 7(e).)
+
+\begin{jebakan}
+Memakai permutasi untuk ``tangan'' kartu. Sebuah tangan tidak memedulikan urutan
+$\Rightarrow$ pakai \emph{kombinasi}, bukan permutasi.
+\end{jebakan}
+
+% ================= NOMOR 7 =================
+\nomorjudul{7}{7.2--7.3 Ruang Sampel \& Peluang Kejadian}
+\begin{soalbox}{Soal 7}
+(a) $n(S)$; (b) $P(\mathrm{As})$; (c) $P(\text{merah})$; (d) $P(\text{gambar})$;
+(e) peluang tangan $5$ hati (pakai Nomor 6).
+\end{soalbox}
+
+\jawab
+\langkah{a} Satu kartu dari $52$: $n(S)=\mathbf{52}$.
+
+\langkah{b} $4$ As: $P(\mathrm{As})=\dfrac{4}{52}=\dfrac{1}{13}\approx0{,}077$.
+
+\langkah{c} $26$ merah: $P(\text{merah})=\dfrac{26}{52}=\dfrac{1}{2}$.
+
+\langkah{d} $12$ kartu gambar ($\mathrm{J,Q,K}$):
+$P(\text{gambar})=\dfrac{12}{52}=\dfrac{3}{13}\approx0{,}231$.
+
+\langkah{e} Tangan $5$ hati: pakai $_{13}C_5=1.287$ (Nomor 6d) dan
+$_{52}C_5=2.598.960$ (Nomor 6c):
+\[
+P(\text{5 hati})=\frac{{}_{13}C_5}{{}_{52}C_5}=\frac{1.287}{2.598.960}
+\approx\mathbf{0{,}000495}\ (\approx0{,}05\%).
+\]
+
+\begin{tips}
+Peluang kejadian yang ``rumit'' dihitung sama saja: $\dfrac{n(A)}{n(S)}$, dengan
+$n(A)$ dan $n(S)$ dicari lewat \emph{kombinatorika} (Nomor 6). Inilah jembatan
+antara pencacahan (7.1) dan peluang (7.3).
+\end{tips}
+
+% ================= NOMOR 8 =================
+\nomorjudul{8}{7.4 Frekuensi Harapan}
+\begin{soalbox}{Soal 8}
+$N=1.300$ pengambilan (dengan pengembalian). (a) As; (b) merah; (c) gambar;
+(d) As sekop; (e) bandingkan dengan pengamatan $92$.
+\end{soalbox}
+
+\jawab
+Frekuensi harapan $=N\cdot P$.
+
+\langkah{a} As: $1.300\cdot\tfrac{1}{13}=\mathbf{100}$.
+
+\langkah{b} Merah: $1.300\cdot\tfrac12=\mathbf{650}$.
+
+\langkah{c} Gambar: $1.300\cdot\tfrac{3}{13}=\mathbf{300}$.
+
+\langkah{d} As sekop (satu kartu tertentu): $1.300\cdot\tfrac{1}{52}=\mathbf{25}$.
+
+\langkah{e} Selisih $=100-92=\mathbf{8}$. Sebagai persentase terhadap frekuensi
+harapan: $\dfrac{8}{100}\times100\%=\mathbf{8\%}$. Karena $8\%<10\%$, tergolong
+\textbf{selisih kecil} $\Rightarrow$ frekuensi nyata konsisten dengan model
+peluang (pembagian kartu tampak acak).
+
+\begin{tips}
+Makin banyak percobaan $N$, frekuensi relatif $\tfrac{92}{\cdots}$ cenderung makin
+dekat ke peluang teoretis $\tfrac{1}{13}$ (\emph{Hukum Bilangan Besar}).
+\end{tips}
+
+% ================= NOMOR 9 =================
+\nomorjudul{9}{7.5 Kejadian Majemuk}
+\begin{soalbox}{Soal 9}
+(a) bukan As; (b) As atau King; (c) As atau merah; (d) dua merah dengan
+pengembalian; (e) dua merah tanpa pengembalian, bandingkan.
+\end{soalbox}
+
+\begin{ingat}{Aturan kejadian majemuk}
+Komplemen $P(A^c)=1-P(A)$. Saling lepas: $P(A\cup B)=P(A)+P(B)$. Tidak saling
+lepas: $P(A\cup B)=P(A)+P(B)-P(A\cap B)$. Dua kejadian bebas:
+$P(A\cap B)=P(A)P(B)$. Tak bebas (bersyarat): $P(A\cap B)=P(A)\,P(B\mid A)$.
+\end{ingat}
+
+\jawab
+\langkah{a} $P(\text{bukan As})=1-\dfrac{4}{52}=\dfrac{48}{52}=\dfrac{12}{13}$.
+
+\langkah{b} As dan King \emph{saling lepas} (tak ada irisan):
+$P(\mathrm{As}\cup\mathrm{K})=\dfrac{4}{52}+\dfrac{4}{52}=\dfrac{8}{52}=\dfrac{2}{13}$.
+
+\langkah{c} As dan merah \emph{tidak saling lepas} (ada $2$ As merah):
+\[
+P(\mathrm{As}\cup\text{merah})=\dfrac{4}{52}+\dfrac{26}{52}-\dfrac{2}{52}
+=\dfrac{28}{52}=\dfrac{7}{13}.
+\]
+
+\langkah{d} Dengan pengembalian (bebas):
+$P(\text{merah, merah})=\dfrac12\cdot\dfrac12=\dfrac14=0{,}25$.
+
+\langkah{e} Tanpa pengembalian (tak bebas):
+\[
+P(\text{merah, merah})=\dfrac{26}{52}\cdot\dfrac{25}{51}
+=\dfrac12\cdot\dfrac{25}{51}=\dfrac{25}{102}\approx0{,}245.
+\]
+Sedikit lebih kecil daripada (d) karena setelah satu kartu merah diambil,
+\emph{sisa} kartu merah berkurang ($25$ dari $51$), sehingga peluang kartu kedua
+merah menurun.
+
+\begin{jebakan}
+Menganggap ``As atau merah'' saling lepas lalu menjumlah $\tfrac{4}{52}+\tfrac{26}{52}
+=\tfrac{30}{52}$. Salah: irisan (As merah) terhitung dua kali, harus dikurangi.
+\end{jebakan}
+
+% ################################################################
+\bagianjudul{BAGIAN C: Sintesis Statistika--Peluang}
+% ################################################################
+
+% ================= NOMOR 10 =================
+\nomorjudul{10}{Sintesis: sebaran $\to$ kuartil-sebagai-peluang $\to$ pencilan}
+\begin{soalbox}{Soal 10}
+Berkas A ($n=40$), Berkas B (Nomor 5), Berkas C. (a) $P(20$--$29)$, $P(<20)$;
+(b) mengapa $P(\text{unggulan})=25\%$ \& mengapa kuartil bukan rata-rata;
+(c) frekuensi harapan unggulan, dua peserta tanpa pengembalian, gabungan bebas
+dengan As; (d) tindak lanjut pencilan Bima; (e) rekomendasi.
+\end{soalbox}
+
+\begin{ingat}{Ukuran letak \emph{adalah} peluang}
+Menurut definisi, kuartil/persentil ke-$p$ adalah nilai yang membuat
+$P(X<\text{nilai})=p$. Jadi $Q_1$ memenuhi $P(X<Q_1)=25\%$: sebuah \emph{ukuran
+letak} (Bab 6) sekaligus sebuah \emph{peluang} (Bab 7).
+\end{ingat}
+
+\jawab
+Frekuensi kelas: $0$--$9\,(4)$, $10$--$19\,(10)$, $20$--$29\,(12)$, $30$--$39\,(8)$,
+$40$--$49\,(6)$; $n=40$.
+
+\langkah{a} Peluang empiris (frekuensi relatif):
+\[
+P(20\text{--}29)=\frac{12}{40}=0{,}3;\qquad
+P(\text{skor}<20)=\frac{4+10}{40}=\frac{7}{20}=0{,}35.
+\]
+
+\langkah{b} \textbf{(i)} Gelar unggulan $=$ berada di bawah $Q_1$. Menurut
+\emph{definisi} kuartil, tepat $25\%$ data ada di bawah $Q_1$ --- berapa pun
+frekuensi tiap kelasnya. Maka peluang peserta acak bergelar unggulan
+$=P(X<Q_1)=\mathbf{25\%}$, \emph{tanpa} menghitung frekuensi lagi.
+\textbf{(ii)} Sebaran \emph{condong ke kanan} (Nomor 2: $\bar{x}=25>Me=24{,}5>Mo$),
+sehingga rata-rata $25$ \emph{tertarik} oleh sedikit peserta ber-poin minus besar
+dan tak lagi mewakili ``$25\%$ terbaik''. Kuartil bersifat \emph{posisional}:
+selalu memotong tepat $25\%$ data dan \emph{tahan} terhadap nilai ekstrem --- itu
+sebabnya kuartil dipakai sebagai ambang, bukan rata-rata.
+
+\langkah{c} \textbf{(i)} Unggulan dari $200$: $200\times\tfrac14=\mathbf{50}$.
+\textbf{(ii)} Dua peserta \emph{tanpa} pengembalian:
+$P=\dfrac{10}{40}\cdot\dfrac{9}{39}=\dfrac14\cdot\dfrac{3}{13}=\dfrac{3}{52}\approx0{,}058$.
+\textbf{(iii)} Peserta \& kartu \emph{bebas}, kalikan (dengan $P(\mathrm{As})=\tfrac1{13}$):
+$P(\text{unggulan}\cap\mathrm{As})=\dfrac14\cdot\dfrac1{13}=\dfrac{1}{52}\approx0{,}019$.
+
+\langkah{d} \textbf{(i)} \emph{Tidak}. Dari $15$ finalis, $14$ mengikuti pola
+``berpikir lebih lama $\to$ poin minus lebih kecil''; korelasi keseluruhan tetap
+kuat ($r\approx-0{,}87$). Satu pencilan tak membatalkan kesimpulan
+\emph{keterampilan}; Bima hanya kasus khusus untuk ditelaah.
+\textbf{(ii)} Mengeluarkan Bima membuat korelasi \textbf{menguat}
+($r\approx-0{,}87\to-0{,}98$): titik Bima yang menyimpang tadinya menyeret $r$
+mendekati nol; tanpa Bima titik-titik makin rapat ke garis.
+
+\langkah{e} \emph{Rekomendasi} (dua indikator panitia).
+\emph{Indikator I (keseimbangan peluang):} As nyata $92$ vs harapan $100$
+(Nomor 8; selisih $8\%<10\%$), $P(\text{merah})=\tfrac12$ seimbang $\Rightarrow$
+\textbf{terpenuhi}. \emph{Indikator II (sebaran terkendali \& keterampilan):}
+$s\approx12{,}03$, JAK $=19$ (Nomor 3--4) terkendali; korelasi $r\approx-0{,}87$
+(Nomor 5) condong ke keterampilan $\Rightarrow$ \textbf{terpenuhi}.
+\jadi sistem \textbf{cukup adil dan seimbang}. Bukti: $\ge2$ statistik
+($s\approx12{,}03$, JAK $=19$, $r\approx-0{,}87$) dan $\ge1$ peluang (harapan As
+$100$ vs nyata $92$). \textbf{Saran:} perbanyak ronde (Hukum Bilangan Besar) \&
+telaah pencilan Bima; atau seragamkan batas waktu berpikir.
+
+\begin{tips}
+\textbf{Momen ``menggabung''.} $Q_1$ --- sebuah \emph{ukuran letak} (Bab 6) ---
+langsung memberi \emph{peluang} $25\%$ (Bab 7): persentil \emph{adalah} peluang.
+Statistik menata data; peluang membacanya sebagai kesempatan. Dua bab yang tampak
+terpisah ternyata satu bahasa.
+\end{tips}
+
+\begin{jebakan}
+Pada (c)(ii) memakai peluang \emph{dengan} pengembalian
+$\left(\tfrac14\right)^2=\tfrac{1}{16}$. Karena peserta tak dikembalikan,
+pengambilan kedua memakai $\tfrac{9}{39}$, sehingga
+$\tfrac{3}{52}\approx0{,}058$, sedikit lebih kecil.
+\end{jebakan}
+
+% ################################################################
+\bagianjudul{BAGIAN D: Soal Bonus}
+% ################################################################
+
+% ================= NOMOR 11 =================
+\nomorjudul{11}{[BONUS] Statistik ``Sepuluh Kartu Penentu Kemenangan''}
+\begin{soalbox}{Soal 11}
+Nomor $10$ kartu penentu (dari $52$ kartu bernomor $1$--$52$):
+$2,4,8,14,19,23,24,31,38,44$ ($n=10$). (a) mean; (b) median \& modus;
+(c) $Q_1,Q_3$, JAK; (d) jangkauan.
+\end{soalbox}
+
+\jawab
+\langkah{a} $\sum x=2+4+8+14+19+23+24+31+38+44=207$,
+maka $\bar{x}=\dfrac{207}{10}=\mathbf{20{,}7}$.
+
+\langkah{b} $n=10$ (genap): median $=\dfrac{x_5+x_6}{2}=\dfrac{19+23}{2}=\mathbf{21}$.
+Semua nilai berbeda $\Rightarrow$ \textbf{tidak ada modus}.
+
+\langkah{c} Bagi dua (tanpa menyertakan median):
+\emph{bawah} $2,4,8,14,19\Rightarrow Q_1=8$ (nilai tengah);
+\emph{atas} $23,24,31,38,44\Rightarrow Q_3=31$.
+JAK $=Q_3-Q_1=31-8=\mathbf{23}$.
+
+\langkah{d} Jangkauan $=44-2=\mathbf{42}$. Interpretasi: nomor kartu penentu
+\emph{tersebar luas} (dari $2$ hingga $44$ dari kemungkinan $1$--$52$), tidak
+terpusat pada satu wilayah --- kemenangan tidak bergantung pada segelintir kartu
+saja.
+
+% ================= NOMOR 12 =================
+\nomorjudul{12}{[BONUS] Peluang Kombinatorik: menguji keadilan tangan}
+\begin{soalbox}{Soal 12}
+(a) peluang dua kartu berpasangan; (b) peluang tangan $5$ berisi tepat dua As;
+(c) interpretasi keadilan.
+\end{soalbox}
+
+\jawab
+\langkah{a} Kartu pertama bebas; agar berpasangan, kartu kedua harus satu rank
+dengan kartu pertama. Sisa kartu serank $=3$ dari $51$:
+\[
+P(\text{pasangan})=\dfrac{3}{51}=\dfrac{1}{17}\approx0{,}059.
+\]
+
+\langkah{b} Tepat dua As $=$ pilih $2$ dari $4$ As dan $3$ dari $48$ non-As:
+\[
+P=\dfrac{\binom{4}{2}\binom{48}{3}}{\binom{52}{5}}
+=\dfrac{6\times17.296}{2.598.960}
+=\dfrac{103.776}{2.598.960}\approx\mathbf{0{,}0399}\ (\approx3{,}99\%).
+\]
+
+\langkah{c} \emph{Interpretasi.} Peluang $\approx4\%$ tergolong \textbf{kecil},
+sehingga memperoleh ``tepat dua As'' \emph{jarang} terjadi. Karena peluang ini
+sama bagi setiap pemain dan tidak besar, tak ada pemain yang mudah memperoleh
+tangan istimewa $\Rightarrow$ permainan tetap \textbf{seimbang dan adil}.
+
+\begin{tips}
+Bonus ini menautkan \emph{kombinatorika} (Bab 7.1) dengan \emph{peluang}
+(Bab 7.3): menghitung peluang kejadian rumit $=$ membandingkan banyak
+\emph{kombinasi} kejadian yang diinginkan terhadap seluruh kemungkinan.
+\end{tips}
+
+\vfill
+\begin{center}\small\itshape
+Selesai. Semoga bermanfaat sebagai bahan belajar.
+\end{center}
+
+\end{document}
