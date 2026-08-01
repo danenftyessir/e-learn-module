@@ -1,5 +1,5 @@
 % ============================================================
-%  PEMBAHASAN — KUIS 3 MATEMATIKA (MAE)  T.P. 2026/2027
+%  PEMBAHASAN KUIS 3 MATEMATIKA (MAE)  T.P. 2026/2027
 %  Tema: "National Card Strategy Championship (NCSC)"
 %  Materi inti: Bab 6 Statistika (6.1-6.5), Bab 7 Peluang (7.1-7.5)
 %  Data sinkron: rekap skor 40 peserta (x=25), set remi standar 52 kartu.
@@ -127,9 +127,10 @@ dengan rekap turnamen (rata-rata skor $25$, set remi $52$ kartu).
 \textbf{Berkas A} (skor $40$ peserta; kelas $0$--$9,\dots,40$--$49$; $f=4,10,12,8,6$;
 titik tengah $x=4{,}5;14{,}5;24{,}5;34{,}5;44{,}5$): $\bar{x}=25$; $Me=24{,}5$;
 $Mo\approx22{,}83$; $Q_1=15{,}5$; $Q_3=34{,}5$; JAK$=19$; ragam $=144{,}75$;
-$s\approx12{,}03$; simpangan rata-rata $=9{,}65$. \textbf{Berkas B} ($15$ finalis):
-korelasi \emph{negatif kuat} ($r\approx-0{,}87$) --- pencilan \textbf{Bima}; tanpa
-Bima menguat ke $r\approx-0{,}98$. \textbf{Berkas C} (remi $52$):
+$s\approx12{,}03$ ($s/\bar{x}\approx48\%$ $\Rightarrow$ beragam/timpang).
+\textbf{Berkas B} ($15$ finalis):
+korelasi \emph{negatif kuat} ($r\approx-0{,}90$), pencilan \textbf{Bima}; tanpa
+Bima menguat ke $r\approx-0{,}99$. \textbf{Berkas C} (remi $52$):
 $P(\mathrm{As})=\tfrac{1}{13}$, $P(\text{merah})=\tfrac12$,
 $P(\text{gambar})=\tfrac{3}{13}$; frekuensi harapan (dari $1.300$): As $=100$,
 merah $=650$, gambar $=300$; tangan $5$ hati $=\tfrac{1287}{2598960}$.
@@ -138,7 +139,7 @@ $Q_1=8$, $Q_3=31$.
 \end{tips}
 
 % ################################################################
-\bagianjudul{BAGIAN A: Analisis Statistik (PG Kompleks)}
+\bagianjudul{BAGIAN A: Memeriksa Hasil Pertandingan (PG Kompleks)}
 % ################################################################
 
 \begin{ingat}{Rumus statistika data berkelompok}
@@ -181,33 +182,32 @@ terbesar. Kelas modus $=$ kelas dengan \emph{frekuensi} terbesar.
 % ================= NOMOR 2 =================
 \nomorjudul{2}{6.2 Ukuran Pemusatan: mean, median, modus}
 \begin{soalbox}{Soal 2}
-Benar/Salah: (1) $\bar{x}=25$; (2) median di kelas $20$--$29$; (3) $Mo=24{,}5$;
-(4) mean $>$ median $>$ modus $\Rightarrow$ condong kanan.
+Benar/Salah: (1) $\bar{x}=25$ \& $Me=24{,}5$; (2) $Mo=24{,}5$; (3) mean $>$ median
+$>$ modus $\Rightarrow$ condong kanan; (4) \emph{klaim} ``rata-rata sudah bagus''
+dapat diterima.
 \end{soalbox}
 
 \jawab
-\pernyataan{1} $\sum f x=4(4{,}5)+10(14{,}5)+12(24{,}5)+8(34{,}5)+6(44{,}5)=1000$,
-maka $\bar{x}=\tfrac{1000}{40}=25$. \benar.
+\pernyataan{1} $\sum fx=4(4{,}5)+10(14{,}5)+12(24{,}5)+8(34{,}5)+6(44{,}5)=1000\Rightarrow\bar{x}=25$;
+median $=19{,}5+\tfrac{20-14}{12}\cdot10=24{,}5$. Keduanya benar. \benar.
 
-\pernyataan{2} $\tfrac{n}{2}=20$; frekuensi kumulatif mencapai $20$ pada kelas
-$20$--$29$ (kum $14\to26$). Median di kelas $20$--$29$. \benar.
+\pernyataan{2} Kelas modus $20$--$29$: $d_1=12-10=2$, $d_2=12-8=4$,
+$Mo=19{,}5+\left(\tfrac{2}{6}\right)10=22{,}83\neq24{,}5$ (nilai $24{,}5$ itu median). \salah.
 
-\pernyataan{3} Kelas modus $20$--$29$: $d_1=12-10=2$, $d_2=12-8=4$,
-\[
-Mo=19{,}5+\left(\tfrac{2}{2+4}\right)10=19{,}5+3{,}33=22{,}83\neq24{,}5.
-\]
-(Nilai $24{,}5$ justru median, lihat bawah.) \salah.
+\pernyataan{3} $\bar{x}=25>Me=24{,}5>Mo=22{,}83\Rightarrow$ sebaran \emph{condong ke
+kanan (positif)}. \benar.
 
-\pernyataan{4} Median $=19{,}5+\tfrac{20-14}{12}\cdot10=24{,}5$. Karena
-$\bar{x}=25>Me=24{,}5>Mo=22{,}83$, sebaran \emph{condong ke kanan (positif)}. \benar.
+\pernyataan{4} \emph{Menilai klaim:} poin minus (makin kecil makin baik) rata-rata
+$=25$ tepat di pertengahan skala $0$--$49$; jadi ``sudah bagus'' \emph{tidak}
+didukung, hasil hanya biasa-biasa saja. Klaim \textbf{tak} dapat diterima. \salah.
 
-\jadi \textbf{(1) B, (2) B, (3) S, (4) B}.
+\jadi \textbf{(1) B, (2) S, (3) B, (4) S}.
 
 % ================= NOMOR 3 =================
 \nomorjudul{3}{6.3 Ukuran Letak: kuartil}
 \begin{soalbox}{Soal 3}
 Benar/Salah: (1) $Q_1=15{,}5$; (2) $Q_3=39{,}5$; (3) $Q_2=24{,}5$;
-(4) JAK $=Q_3-Q_1=19$.
+(4) \emph{terapkan ambang}: poin $12\to$ unggulan, poin $40\to$ zona evaluasi.
 \end{soalbox}
 
 \jawab
@@ -219,7 +219,8 @@ $Q_3=29{,}5+\tfrac{30-26}{8}\cdot10=34{,}5$, \emph{bukan} $39{,}5$. \salah.
 
 \pernyataan{3} $Q_2=Me=24{,}5$ (Nomor 2). \benar.
 
-\pernyataan{4} JAK $=Q_3-Q_1=34{,}5-15{,}5=19$. \benar.
+\pernyataan{4} Unggulan $=$ poin $<Q_1=15{,}5$: $12<15{,}5$ \checkmark. Zona evaluasi
+$=$ poin $>Q_3=34{,}5$: $40>34{,}5$ \checkmark. Kedua penerapan benar. \benar.
 
 \jadi \textbf{(1) B, (2) S, (3) B, (4) B}.
 
@@ -232,7 +233,7 @@ $L$ menggeser seluruh kuartil.
 \nomorjudul{4}{6.4 Ukuran Penyebaran: ragam \& simpangan baku}
 \begin{soalbox}{Soal 4}
 Benar/Salah: (1) ragam $=144{,}75$; (2) $s\approx12{,}03$; (3) $s>$ JAK;
-(4) simpangan rata-rata $=9{,}65$.
+(4) \emph{menilai persaingan}: $s$ besar dibanding $\bar{x}$ $\Rightarrow$ timpang.
 \end{soalbox}
 
 \jawab
@@ -261,15 +262,17 @@ $44{,}5$ & $6$  & $19{,}5$  & $380{,}25$ & $2281{,}5$\\
 \pernyataan{3} $s\approx12{,}03$ \emph{lebih kecil} daripada JAK $=19$; jadi ``lebih
 besar'' \salah.
 
-\pernyataan{4} Simpangan rata-rata:
-\[
-\frac{\sum f|x-\bar{x}|}{n}
-=\frac{4(20{,}5)+10(10{,}5)+12(0{,}5)+8(9{,}5)+6(19{,}5)}{40}
-=\frac{386}{40}=9{,}65.
-\]
-\benar.
+\pernyataan{4} \emph{Menilai persaingan:} $s\approx12$ terhadap $\bar{x}=25$ berarti
+simpangan $\approx48\%$ dari rata-rata, \emph{cukup besar}. Banyak skor jauh dari
+rata-rata, jadi persaingan \emph{timpang}, bukan seragam. \benar.
 
 \jadi \textbf{(1) B, (2) B, (3) S, (4) B}.
+
+\begin{tips}
+\textbf{Ambang ``besar/kecil''.} Simpangan baku tak berarti tanpa pembanding.
+Membandingkannya dengan rata-rata ($\tfrac{s}{\bar{x}}\approx48\%$) memberi ukuran
+\emph{relatif} keberagaman, cara sederhana menilai timpang/seragamnya sebaran.
+\end{tips}
 
 % ================= NOMOR 5 =================
 \nomorjudul{5}{6.5 Diagram Pencar: baca Berkas B}
@@ -294,26 +297,26 @@ melonjak ke atas (berpikir lama tetapi poin minus tinggi).
 \emph{negatif}. \benar.
 
 \pernyataan{2} Pada $x=40$ tren titik lain memperkirakan $y\approx8$--$9$, tetapi
-Bima $y=26$ --- menyimpang jauh $\Rightarrow$ \emph{pencilan}. \benar.
+Bima $y=26$, menyimpang jauh $\Rightarrow$ \emph{pencilan}. \benar.
 
-\pernyataan{3} Meski Bima memperlemah korelasi (dari $r\approx-0{,}98$ menjadi
-$\approx-0{,}87$), arah negatif \emph{tetap kuat}; korelasi tidak hilang. \salah.
+\pernyataan{3} Meski Bima memperlemah korelasi (dari $r\approx-0{,}99$ menjadi
+$\approx-0{,}90$), arah negatif \emph{tetap kuat}; korelasi tidak hilang. \salah.
 
 \pernyataan{4} Tanpa Bima, titik-titik makin rapat pada garis menurun
-($r\approx-0{,}98$) $\Rightarrow$ hubungan makin kuat. \benar.
+($r\approx-0{,}99$) $\Rightarrow$ hubungan makin kuat. \benar.
 
 \jadi \textbf{(1) B, (2) B, (3) S, (4) B}.
 
 \begin{tips}
-\textbf{Pengaruh pencilan.} Dengan Bima, $r\approx-0{,}87$; tanpa Bima
-$r\approx-0{,}98$. Sebuah pencilan menyeret nilai korelasi mendekati nol --- karena
+\textbf{Pengaruh pencilan.} Dengan Bima, $r\approx-0{,}90$; tanpa Bima
+$r\approx-0{,}99$. Sebuah pencilan menyeret nilai korelasi mendekati nol; karena
 itu analis selalu memeriksa pencilan sebelum menyimpulkan kekuatan hubungan. Bima
 layak ditelaah khusus (ditindaklanjuti pada Nomor 10d): mengapa berpikir lama tak
 menurunkan poin minusnya?
 \end{tips}
 
 % ################################################################
-\bagianjudul{BAGIAN B: Analisis Peluang (Uraian)}
+\bagianjudul{BAGIAN B: Menguji Sistem Pembagian Kartu (Uraian)}
 % ################################################################
 
 \begin{ingat}{Pencacahan \& peluang}
@@ -330,26 +333,49 @@ Peluang $P(A)=\dfrac{n(A)}{n(S)}$; frekuensi harapan $=N\cdot P(A)$.
 (c) tangan $5$ kartu; (d) tangan $5$ hati.
 \end{soalbox}
 
+\begin{ingat}{Permutasi atau kombinasi? Uji ``urutan penting?''}
+Tanyakan: \emph{jika urutan objek ditukar, apakah hasilnya dianggap berbeda?}
+\textbf{Ya} $\Rightarrow$ \textbf{permutasi} $_nP_r=\dfrac{n!}{(n-r)!}$ (mis.\ kartu
+dibuka satu per satu, peringkat juara, kode PIN). \textbf{Tidak} $\Rightarrow$
+\textbf{kombinasi} $_nC_r=\dfrac{n!}{r!(n-r)!}=\dfrac{_nP_r}{r!}$ (mis.\ tangan
+kartu, memilih anggota tim). Keduanya berkait: $_nP_r=r!\times{}_nC_r$, sebab tiap
+kombinasi $r$ objek dapat disusun dalam $r!$ urutan.
+\end{ingat}
+
 \jawab
-\langkah{a} Aturan perkalian (tanpa pengembalian, \emph{urutan diperhatikan}):
+\langkah{a} Kartu dibuka \emph{satu per satu dan urutannya dicatat}, jadi susunan
+$(A,B,C)$ dianggap \textbf{berbeda} dari $(B,A,C)$ $\Rightarrow$ urutan penting
+(\emph{permutasi}). Aturan perkalian: kartu ke-$1$ ada $52$ pilihan; satu terpakai,
+ke-$2$ tinggal $51$; ke-$3$ tinggal $50$:
 \[
 52\times51\times50=132.600={}_{52}P_{3}.
 \]
 
-\langkah{b} Urutan tak diperhatikan (kombinasi):
-${}_{52}C_{3}=\dfrac{{}_{52}P_{3}}{3!}=\dfrac{132.600}{6}=\mathbf{22.100}$.
-Hubungannya: tiap pilihan $3$ kartu dapat diurutkan dalam $3!=6$ cara, sehingga
-$_{52}P_3=6\times{}_{52}C_3$.
+\langkah{b} Kini urutan \emph{tidak} diperhatikan --- memilih $\{A,B,C\}$ sama saja
+apa pun urutan pengambilannya ($\Rightarrow$ \emph{kombinasi}). Kuncinya: pada (a),
+setiap kelompok $3$ kartu yang sama sudah terhitung $3!=6$ kali (sebagai $6$ urutan
+berbeda). Maka bagi hasil (a) dengan $6$:
+\[
+{}_{52}C_{3}=\frac{{}_{52}P_{3}}{3!}=\frac{132.600}{6}=\mathbf{22.100}.
+\]
+Hubungan dengan (a): ${}_{52}P_3=3!\times{}_{52}C_3=6\times22.100$.
 
-\langkah{c} Tangan $5$ kartu (urutan tak penting):
-${}_{52}C_{5}=\mathbf{2.598.960}$.
+\langkah{c} \emph{Tangan $5$ kartu} $=$ kumpulan kartu yang dipegang; menerima kartu
+dalam urutan berbeda tetap menghasilkan tangan yang \textbf{sama} $\Rightarrow$
+kombinasi:
+\[
+{}_{52}C_{5}=\frac{52\cdot51\cdot50\cdot49\cdot48}{5!}=\mathbf{2.598.960}.
+\]
 
-\langkah{d} Semua hati $\Rightarrow$ pilih $5$ dari $13$ hati:
-${}_{13}C_{5}=\mathbf{1.287}$. (Peluangnya dihitung di Nomor 7(e).)
+\langkah{d} ``Seluruhnya hati'': pilih $5$ kartu dari \emph{$13$ kartu hati saja}
+(urutan tetap tak penting): ${}_{13}C_{5}=\dfrac{13\cdot12\cdot11\cdot10\cdot9}{5!}
+=\mathbf{1.287}$. (Peluang tangan ini dihitung di Nomor 7(e).)
 
 \begin{jebakan}
-Memakai permutasi untuk ``tangan'' kartu. Sebuah tangan tidak memedulikan urutan
-$\Rightarrow$ pakai \emph{kombinasi}, bukan permutasi.
+\textbf{Cara membedakan:} tukar urutan objeknya. Kalau hasil \emph{dianggap berbeda}
+(kartu dibuka berurutan, peringkat, kode) $\to$ \emph{permutasi}; kalau \emph{tetap
+sama} (tangan kartu, kelompok/tim) $\to$ \emph{kombinasi}. Memakai permutasi untuk
+``tangan'' $5$ kartu membuat jawaban $5!=120$ kali terlalu besar.
 \end{jebakan}
 
 % ================= NOMOR 7 =================
@@ -400,10 +426,10 @@ Frekuensi harapan $=N\cdot P$.
 
 \langkah{d} As sekop (satu kartu tertentu): $1.300\cdot\tfrac{1}{52}=\mathbf{25}$.
 
-\langkah{e} Selisih $=100-92=\mathbf{8}$. Sebagai persentase terhadap frekuensi
-harapan: $\dfrac{8}{100}\times100\%=\mathbf{8\%}$. Karena $8\%<10\%$, tergolong
-\textbf{selisih kecil} $\Rightarrow$ frekuensi nyata konsisten dengan model
-peluang (pembagian kartu tampak acak).
+\langkah{e} Selisih $=100-92=\mathbf{8}$, yakni $\dfrac{8}{100}\times100\%=\mathbf{8\%}$
+dari frekuensi harapan. Karena $8\%<10\%$ (ambang panitia), tergolong
+\textbf{selisih kecil} $\Rightarrow$ frekuensi nyata konsisten dengan model peluang;
+\textbf{tudingan ``As lebih jarang keluar'' tidak didukung data}.
 
 \begin{tips}
 Makin banyak percobaan $N$, frekuensi relatif $\tfrac{92}{\cdots}$ cenderung makin
@@ -435,17 +461,22 @@ P(\mathrm{As}\cup\text{merah})=\dfrac{4}{52}+\dfrac{26}{52}-\dfrac{2}{52}
 =\dfrac{28}{52}=\dfrac{7}{13}.
 \]
 
-\langkah{d} Dengan pengembalian (bebas):
-$P(\text{merah, merah})=\dfrac12\cdot\dfrac12=\dfrac14=0{,}25$.
-
-\langkah{e} Tanpa pengembalian (tak bebas):
+\langkah{d} \emph{Dengan pengembalian:} kartu pertama dikembalikan lalu dikocok,
+keadaan kembali seperti semula. Peluang kartu ke-$2$ merah \textbf{tidak bergantung}
+pada kartu ke-$1$ $\Rightarrow$ dua kejadian \emph{bebas}, keduanya $\tfrac{26}{52}=\tfrac12$:
 \[
-P(\text{merah, merah})=\dfrac{26}{52}\cdot\dfrac{25}{51}
-=\dfrac12\cdot\dfrac{25}{51}=\dfrac{25}{102}\approx0{,}245.
+P(\text{merah, merah})=\dfrac{26}{52}\cdot\dfrac{26}{52}=\dfrac12\cdot\dfrac12=\dfrac14=0{,}25.
 \]
-Sedikit lebih kecil daripada (d) karena setelah satu kartu merah diambil,
-\emph{sisa} kartu merah berkurang ($25$ dari $51$), sehingga peluang kartu kedua
-merah menurun.
+
+\langkah{e} \emph{Tanpa pengembalian:} kartu pertama \textbf{tidak} dikembalikan,
+jadi tersisa $51$ kartu (bila yang pertama merah, sisa merah $=25$). Kejadian ke-$2$
+\emph{bergantung} pada ke-$1$ (\emph{tak bebas}/bersyarat),
+$P(\text{merah}_2\mid\text{merah}_1)=\tfrac{25}{51}$:
+\[
+P=\dfrac{26}{52}\cdot\dfrac{25}{51}=\dfrac12\cdot\dfrac{25}{51}=\dfrac{25}{102}\approx0{,}245.
+\]
+Nilainya \emph{sedikit lebih kecil} daripada (d) ($0{,}245<0{,}25$) karena stok kartu
+merah berkurang setelah pengambilan pertama.
 
 \begin{jebakan}
 Menganggap ``As atau merah'' saling lepas lalu menjumlah $\tfrac{4}{52}+\tfrac{26}{52}
@@ -453,7 +484,7 @@ Menganggap ``As atau merah'' saling lepas lalu menjumlah $\tfrac{4}{52}+\tfrac{2
 \end{jebakan}
 
 % ################################################################
-\bagianjudul{BAGIAN C: Sintesis Statistika--Peluang}
+\bagianjudul{BAGIAN C: Vonis, Apakah Protes Berdasar?}
 % ################################################################
 
 % ================= NOMOR 10 =================
@@ -462,7 +493,7 @@ Menganggap ``As atau merah'' saling lepas lalu menjumlah $\tfrac{4}{52}+\tfrac{2
 Berkas A ($n=40$), Berkas B (Nomor 5), Berkas C. (a) $P(20$--$29)$, $P(<20)$;
 (b) mengapa $P(\text{unggulan})=25\%$ \& mengapa kuartil bukan rata-rata;
 (c) frekuensi harapan unggulan, dua peserta tanpa pengembalian, gabungan bebas
-dengan As; (d) tindak lanjut pencilan Bima; (e) rekomendasi.
+dengan As; (d) tindak lanjut pencilan Bima; (e) vonis atas protes.
 \end{soalbox}
 
 \begin{ingat}{Ukuran letak \emph{adalah} peluang}
@@ -482,13 +513,13 @@ P(\text{skor}<20)=\frac{4+10}{40}=\frac{7}{20}=0{,}35.
 \]
 
 \langkah{b} \textbf{(i)} Gelar unggulan $=$ berada di bawah $Q_1$. Menurut
-\emph{definisi} kuartil, tepat $25\%$ data ada di bawah $Q_1$ --- berapa pun
+\emph{definisi} kuartil, tepat $25\%$ data ada di bawah $Q_1$, berapa pun
 frekuensi tiap kelasnya. Maka peluang peserta acak bergelar unggulan
 $=P(X<Q_1)=\mathbf{25\%}$, \emph{tanpa} menghitung frekuensi lagi.
 \textbf{(ii)} Sebaran \emph{condong ke kanan} (Nomor 2: $\bar{x}=25>Me=24{,}5>Mo$),
 sehingga rata-rata $25$ \emph{tertarik} oleh sedikit peserta ber-poin minus besar
 dan tak lagi mewakili ``$25\%$ terbaik''. Kuartil bersifat \emph{posisional}:
-selalu memotong tepat $25\%$ data dan \emph{tahan} terhadap nilai ekstrem --- itu
+selalu memotong tepat $25\%$ data dan \emph{tahan} terhadap nilai ekstrem; itu
 sebabnya kuartil dipakai sebagai ambang, bukan rata-rata.
 
 \langkah{c} \textbf{(i)} Unggulan dari $200$: $200\times\tfrac14=\mathbf{50}$.
@@ -499,25 +530,29 @@ $P(\text{unggulan}\cap\mathrm{As})=\dfrac14\cdot\dfrac1{13}=\dfrac{1}{52}\approx
 
 \langkah{d} \textbf{(i)} \emph{Tidak}. Dari $15$ finalis, $14$ mengikuti pola
 ``berpikir lebih lama $\to$ poin minus lebih kecil''; korelasi keseluruhan tetap
-kuat ($r\approx-0{,}87$). Satu pencilan tak membatalkan kesimpulan
+kuat ($r\approx-0{,}90$). Satu pencilan tak membatalkan kesimpulan
 \emph{keterampilan}; Bima hanya kasus khusus untuk ditelaah.
 \textbf{(ii)} Mengeluarkan Bima membuat korelasi \textbf{menguat}
-($r\approx-0{,}87\to-0{,}98$): titik Bima yang menyimpang tadinya menyeret $r$
+($r\approx-0{,}90\to-0{,}99$): titik Bima yang menyimpang tadinya menyeret $r$
 mendekati nol; tanpa Bima titik-titik makin rapat ke garis.
 
-\langkah{e} \emph{Rekomendasi} (dua indikator panitia).
-\emph{Indikator I (keseimbangan peluang):} As nyata $92$ vs harapan $100$
+\langkah{e} \emph{Vonis atas protes} (lewat dua indikator panitia).
+\emph{Indikator I, keseimbangan peluang:} As nyata $92$ vs harapan $100$
 (Nomor 8; selisih $8\%<10\%$), $P(\text{merah})=\tfrac12$ seimbang $\Rightarrow$
-\textbf{terpenuhi}. \emph{Indikator II (sebaran terkendali \& keterampilan):}
-$s\approx12{,}03$, JAK $=19$ (Nomor 3--4) terkendali; korelasi $r\approx-0{,}87$
+\textbf{terpenuhi}. \emph{Indikator II, sebaran terkendali \& keterampilan:}
+$s\approx12{,}03$, JAK $=19$ (Nomor 3--4) terkendali; korelasi $r\approx-0{,}90$
 (Nomor 5) condong ke keterampilan $\Rightarrow$ \textbf{terpenuhi}.
-\jadi sistem \textbf{cukup adil dan seimbang}. Bukti: $\ge2$ statistik
-($s\approx12{,}03$, JAK $=19$, $r\approx-0{,}87$) dan $\ge1$ peluang (harapan As
-$100$ vs nyata $92$). \textbf{Saran:} perbanyak ronde (Hukum Bilangan Besar) \&
-telaah pencilan Bima; atau seragamkan batas waktu berpikir.
+\jadi \textbf{protes TIDAK berdasar}: tak ada bukti pembagian kartu berat sebelah,
+dan hasil yang ``timpang'' justru mencerminkan perbedaan \emph{keterampilan}
+(pemain yang berpikir lebih cermat berpoin minus lebih kecil), bukan
+ketidakadilan. Bukti: $\ge2$ statistik ($s\approx12{,}03$, JAK $=19$,
+$r\approx-0{,}90$) dan $\ge1$ peluang (harapan As $100$ vs nyata $92$).
+\textbf{Saran:} perbanyak ronde/pengamatan (Hukum Bilangan Besar), telaah pencilan
+Bima, dan umumkan hasil uji keadilan ini agar peserta menerima; musim depan
+bebas protes serupa.
 
 \begin{tips}
-\textbf{Momen ``menggabung''.} $Q_1$ --- sebuah \emph{ukuran letak} (Bab 6) ---
+\textbf{Momen ``menggabung''.} $Q_1$, sebuah \emph{ukuran letak} (Bab 6),
 langsung memberi \emph{peluang} $25\%$ (Bab 7): persentil \emph{adalah} peluang.
 Statistik menata data; peluang membacanya sebagai kesempatan. Dua bab yang tampak
 terpisah ternyata satu bahasa.
@@ -549,14 +584,18 @@ maka $\bar{x}=\dfrac{207}{10}=\mathbf{20{,}7}$.
 \langkah{b} $n=10$ (genap): median $=\dfrac{x_5+x_6}{2}=\dfrac{19+23}{2}=\mathbf{21}$.
 Semua nilai berbeda $\Rightarrow$ \textbf{tidak ada modus}.
 
-\langkah{c} Bagi dua (tanpa menyertakan median):
-\emph{bawah} $2,4,8,14,19\Rightarrow Q_1=8$ (nilai tengah);
-\emph{atas} $23,24,31,38,44\Rightarrow Q_3=31$.
+\langkah{c} Karena $n=10$ \emph{genap}, median ($21$) jatuh di antara dua data,
+sehingga data langsung terbagi rata menjadi $5$ nilai bawah dan $5$ nilai atas.
+$Q_1$ = median kelompok bawah, $Q_3$ = median kelompok atas:
+\[
+\underbrace{2,\;4,\;\mathbf{8},\;14,\;19}_{Q_1=8}\qquad\qquad
+\underbrace{23,\;24,\;\mathbf{31},\;38,\;44}_{Q_3=31}.
+\]
 JAK $=Q_3-Q_1=31-8=\mathbf{23}$.
 
 \langkah{d} Jangkauan $=44-2=\mathbf{42}$. Interpretasi: nomor kartu penentu
 \emph{tersebar luas} (dari $2$ hingga $44$ dari kemungkinan $1$--$52$), tidak
-terpusat pada satu wilayah --- kemenangan tidak bergantung pada segelintir kartu
+terpusat pada satu wilayah; kemenangan tidak bergantung pada segelintir kartu
 saja.
 
 % ================= NOMOR 12 =================
@@ -573,7 +612,10 @@ dengan kartu pertama. Sisa kartu serank $=3$ dari $51$:
 P(\text{pasangan})=\dfrac{3}{51}=\dfrac{1}{17}\approx0{,}059.
 \]
 
-\langkah{b} Tepat dua As $=$ pilih $2$ dari $4$ As dan $3$ dari $48$ non-As:
+\langkah{b} Tangan $5$ kartu $\Rightarrow$ urutan tak penting (\emph{kombinasi}).
+``Tepat dua As'': pilih $2$ dari $4$ As \textbf{dan} $3$ dari $48$ kartu non-As
+(aturan perkalian pada kombinasi). Penyebut $\binom{52}{5}$ = seluruh tangan yang
+mungkin:
 \[
 P=\dfrac{\binom{4}{2}\binom{48}{3}}{\binom{52}{5}}
 =\dfrac{6\times17.296}{2.598.960}

@@ -1,5 +1,5 @@
 % ============================================================
-%  KUIS 3 — MATEMATIKA (MAE)  T.P. 2026/2027
+%  KUIS 3 MATEMATIKA (MAE)  T.P. 2026/2027
 %  Tema: "National Card Strategy Championship (NCSC)"
 %  Bentuk: 1-5 PG Kompleks (Benar/Salah); 6-9 Uraian; 10 Rekomendasi;
 %          11-12 BONUS
@@ -178,43 +178,48 @@ permainan. Seluruh pertandingan direkam secara digital.
 \smallskip
 Panitia mengumpulkan berbagai data: \textbf{skor akhir tiap peserta}, \textbf{lama
 waktu berpikir pemain}, \textbf{jenis kartu yang muncul}, serta \textbf{distribusi
-kombinasi kartu} selama turnamen. Sebagian rekap
-dicatat pada lembar digital seperti berikut (contoh satu meja empat pemain
-beserta \emph{poin minus} akhir dan sepuluh nomor \emph{kartu penentu kemenangan}
-yang tercatat).
+kombinasi kartu}. Mereka juga menyimpan \textbf{daftar sepuluh kartu yang paling
+sering menentukan kemenangan}. Sebagian rekap dicatat pada lembar digital berikut.
 
 \begin{center}
   \includegraphics[width=0.7\textwidth]{tournament-score.jpg}\\[3pt]
   {\small\textit{Lembar rekap skor: makin kecil \emph{poin minus}, makin baik
   performa pemain. Empat pemain di atas memperoleh poin minus $23, 14, 0,$ dan
-  $32$; sepuluh nomor kartu penentu: $2\text{-}4\text{-}8\text{-}14\text{-}19\text{-}23\text{-}24\text{-}31\text{-}38\text{-}44$.}}
+  $32$; sepuluh \emph{kartu penentu kemenangan}: $2\text{-}4\text{-}8\text{-}14\text{-}19\text{-}23\text{-}24\text{-}31\text{-}38\text{-}44$ (Anda periksa di Bonus).}}
 \end{center}
 
 \smallskip
-Sebagai \textbf{\textit{Tournament Analyst}}, Anda diminta mengevaluasi hasil
-turnamen dan memberikan rekomendasi kepada panitia \emph{berdasarkan analisis
-matematika}. \textbf{Misi Anda:} menilai apakah sistem pertandingan telah
-berlangsung secara \textbf{adil, seimbang, dan sesuai rancangan panitia}. Data
-tidak diberikan sekaligus; ia terbuka bertahap dalam \textbf{Berkas A--D}, persis
-seperti seorang analis membedah arsip pertandingan.
+\textbf{Namun tahun ini timbul masalah.} Beberapa peserta yang kalah
+\textbf{mengajukan protes}: mereka menuding \textbf{sistem pembagian kartu tidak
+adil} diduga menguntungkan meja tertentu sehingga hasil turnamen dianggap
+\emph{timpang} dan tak layak dipakai musim depan. Tuduhan itu tak bisa diabaikan.
 
 \smallskip
-Alur analisis Anda menempuh tiga tahap: \textbf{(A) Analisis Statistik} atas hasil
-pertandingan (Berkas A--B), \textbf{(B) Analisis Peluang} atas sistem pembagian
-kartu (Berkas C), dan \textbf{(C) Sintesis \& Rekomendasi} yang memadukan
-statistik dan peluang untuk menilai keadilan sistem. Selamat bertugas, Analis!
+Anda ditunjuk sebagai \textbf{\textit{Tournament Analyst}} untuk menyelidiki satu
+pertanyaan: \textbf{apakah protes itu berdasar?} Anda hanya boleh menyimpulkan dari
+\textbf{bukti matematis}, bukan opini. Berkas bukti dibuka bertahap
+(\textbf{Berkas A--D}), seperti map sebuah perkara. Penyelidikan menempuh tiga
+tahap:
+\begin{itemize}[leftmargin=1.6em,itemsep=1pt,topsep=2pt]
+  \item \textbf{(A) Periksa hasil pertandingan} apakah sebaran skor
+        \emph{wajar} dan adakah pemain yang \emph{menyimpang}? (Berkas A--B, Nomor 1--5)
+  \item \textbf{(B) Uji sistem pembagian kartu} apakah kemunculan kartu benar-benar
+        \emph{acak dan adil}? (Berkas C, Nomor 6--9)
+  \item \textbf{(C) Jatuhkan vonis} apakah protes itu berdasar? (Nomor 10)
+\end{itemize}
+Selamat bertugas, Analis. Sebuah keputusan menanti di akhir berkas.
 
 \vspace{0.3cm}
 \noindent\rule{\linewidth}{0.6pt}
 \vspace{0.1cm}
 
-\noindent{\large\bfseries BAGIAN A: Analisis Statistik --- Pilihan Ganda Kompleks (Nomor 1--5)}\\[0.2em]
-\small\emph{Panitia meminta Anda menyiapkan tiga keputusan dari data pertandingan:
-\textbf{(i)} menguji klaim ``peserta rata-rata sudah bagus'' (Nomor 1--2),
-\textbf{(ii)} menetapkan ambang \emph{gelar unggulan} dan \emph{zona evaluasi}
-(Nomor 3), dan \textbf{(iii)} menilai ketat atau timpangnya persaingan (Nomor 4).
-Baca berkas dengan teliti. Untuk tiap pernyataan, centang \textbf{Benar}/\textbf{Salah}.
-Nomor 1--4 memakai Berkas A; Nomor 5 memakai Berkas B.}\normalsize
+\noindent{\large\bfseries BAGIAN A: Memeriksa Hasil Pertandingan (Nomor 1--5)}\\[0.2em]
+\small\emph{\textbf{Langkah pertama penyidikan:} apakah sebaran skor \emph{wajar}
+dan adakah pemain yang \emph{menyimpang}? Untuk itu Anda memeriksa: \textbf{(i)}
+benarkah klaim ``peserta rata-rata sudah bagus'' (Nomor 1--2); \textbf{(ii)} ambang
+\emph{gelar unggulan}/\emph{zona evaluasi} (Nomor 3); \textbf{(iii)} persaingan
+ketat atau timpang (Nomor 4); \textbf{(iv)} adakah pemain menyimpang (Nomor 5).
+Centang \textbf{Benar}/\textbf{Salah}. Nomor 1--4 memakai Berkas A; Nomor 5 Berkas B.}\normalsize
 
 \bigskip
 
@@ -274,10 +279,10 @@ Benar/Salah tiap pernyataan.
 klaim itu lewat ukuran pemusatan Berkas A. Tentukan Benar/Salah tiap pernyataan
 (bila perlu, bulatkan sampai dua desimal).
 \begin{bstabel}
-  \bs{(1) Rata-rata (mean) skor peserta adalah $25$.}
-  \bs{(2) Median data terletak pada kelas interval $20$--$29$.}
-  \bs{(3) Modus data adalah $24{,}5$.}
-  \bs{(4) Karena mean $>$ median $>$ modus, sebaran skor condong ke kanan (positif).}
+  \bs{(1) Rata-rata (mean) $=25$ dan median $=24{,}5$.}
+  \bs{(2) Modus data adalah $24{,}5$.}
+  \bs{(3) Karena mean $>$ median $>$ modus, sebaran skor condong ke kanan (positif).}
+  \bs{(4) \emph{Menilai klaim:} karena rata-rata poin minus $=25$ berada tepat di pertengahan skala $0$--$49$, klaim panitia ``peserta rata-rata sudah bagus'' dapat diterima.}
 \end{bstabel}
 \end{soal}
 
@@ -288,9 +293,9 @@ poin minus terkecil $\to Q_1$) dan \textbf{zona evaluasi} ($25\%$ terbesar $\to
 Q_3$), panitia butuh kuartil Berkas A. Tentukan Benar/Salah tiap pernyataan.
 \begin{bstabel}
   \bs{(1) Kuartil bawah $Q_1=15{,}5$ (ambang gelar unggulan).}
-  \bs{(2) Kuartil atas $Q_3=39{,}5$.}
+  \bs{(2) Kuartil atas $Q_3=39{,}5$ (ambang zona evaluasi).}
   \bs{(3) Kuartil tengah (median) $Q_2=24{,}5$.}
-  \bs{(4) Jangkauan antarkuartil (JAK/IQR) $=Q_3-Q_1=19$.}
+  \bs{(4) \emph{Menerapkan ambang:} peserta berpoin minus $12$ berhak bergelar unggulan, sedangkan peserta berpoin minus $40$ masuk zona evaluasi.}
 \end{bstabel}
 \end{soal}
 
@@ -302,7 +307,7 @@ panitia mengukur penyebaran Berkas A (mean $=25$). Tentukan Benar/Salah tiap per
   \bs{(1) Ragam (variansi) data adalah $144{,}75$.}
   \bs{(2) Simpangan baku data kira-kira $12{,}03$.}
   \bs{(3) Simpangan baku lebih besar daripada jangkauan antarkuartil.}
-  \bs{(4) Simpangan rata-rata (deviasi rata-rata) data adalah $9{,}65$.}
+  \bs{(4) \emph{Menilai persaingan:} karena simpangan baku ($\approx12$) cukup besar dibanding rata-rata ($25$), skor antarpeserta beragam sehingga persaingan lebih timpang daripada seragam.}
 \end{bstabel}
 \end{soal}
 
@@ -313,24 +318,21 @@ panitia mengukur penyebaran Berkas A (mean $=25$). Tentukan Benar/Salah tiap per
 Untuk mengukur apakah hasil ditentukan \emph{keterampilan} atau
 \emph{keberuntungan}, panitia memasangkan \textbf{rata-rata waktu berpikir per
 ronde} ($x$, detik) dengan \textbf{skor akhir/poin minus} ($y$) bagi seluruh
-\textbf{$15$ finalis} (enam di antaranya diberi nama).
+\textbf{$15$ finalis}.
 \begin{center}
-\begin{tikzpicture}[xscale=0.255,yscale=0.145]
-\draw[->,gray] (14,0)--(50,0) node[right,font=\scriptsize]{$x$: waktu (detik)};
-\draw[->,gray] (15,-1)--(15,37) node[above,font=\scriptsize]{$y$: skor (poin minus)};
+\begin{tikzpicture}[xscale=0.31,yscale=0.17]
+\foreach \y in {10,20,30} \draw[gray!22,thin](15,\y)--(49.5,\y);
+\foreach \x in {20,25,30,35,40,45} \draw[gray!16,thin](\x,0)--(\x,35);
+\draw[->,gray] (14,0)--(50.5,0);
+\draw[->,gray] (15,-1)--(15,38) node[above=2pt,font=\scriptsize]{$y$ : poin minus};
 \foreach \x in {20,25,30,35,40,45} \draw[gray](\x,-0.6)--(\x,0.6) node[below=2pt,font=\tiny]{\x};
 \foreach \y in {0,10,20,30} \draw[gray](14.4,\y)--(15.6,\y) node[left=2pt,font=\tiny]{\y};
-\foreach \px/\py in {20/32,22/29,24/25,25/27,27/22,28/24,30/23,32/17,34/12,35/14,38/10,42/7,45/0,47/4}
-  \fill[teal!70!black] (\px,\py) circle(5pt);
-\fill[teal!70!black] (40,26) circle(5pt);
-\node[above,font=\tiny] at (20,32){Alex};
-\node[above right,font=\tiny] at (25,27){Rio};
-\node[above right,font=\tiny] at (30,23){Udo};
-\node[below right,font=\tiny] at (35,14){Peter};
-\node[above,font=\tiny] at (40,26){\textbf{Bima}};
-\node[above right,font=\tiny] at (45,0){Markus};
+\node[font=\scriptsize] at (32,-4){$x$ : waktu berpikir (detik)};
+\foreach \px/\py/\nm in {18/34/Nadia,20/32/Alex,22/30/Bayu,24/28/Rio,26/25/Cindy,28/21/Doni,30/23/Udo,32/19/Elga,34/16/Fikri,36/14/Peter,38/11/Gita,40/26/Bima,42/7/Hana,44/5/Iqbal,46/0/Markus}{
+  \fill[teal!75!black] (\px,\py) circle(4pt);
+  \node[above,font=\tiny] at (\px,\py){\nm};}
 \end{tikzpicture}\\[2pt]
-{\small\textit{Diagram pencar (\emph{scatter plot}) waktu berpikir vs poin minus, $15$ finalis.}}
+{\small\textit{Diagram pencar $15$ finalis: waktu berpikir vs poin minus (semua pemain diberi nama).}}
 \end{center}
 \end{berkas}
 
@@ -346,10 +348,10 @@ Tentukan Benar/Salah tiap pernyataan.
 \end{soal}
 
 \clearpage
-\noindent{\large\bfseries BAGIAN B: Analisis Peluang --- Uraian Bercabang (Nomor 6--9)}\\[0.2em]
-\small\emph{Fokus berpindah: apakah sistem pembagian kartu sudah adil? Kerjakan
-runtut; tuliskan rumus, substitusi, dan kesimpulan. Seluruh nomor memakai
-Berkas C.}\normalsize
+\noindent{\large\bfseries BAGIAN B: Menguji Sistem Pembagian Kartu (Nomor 6--9)}\\[0.2em]
+\small\emph{\textbf{Inti protes:} benarkah pembagian kartu berat sebelah? Uji
+apakah kemunculan kartu sesuai peluang teoretis (\emph{acak dan adil}). Kerjakan
+runtut: rumus, substitusi, kesimpulan. Seluruh nomor memakai Berkas C.}\normalsize
 
 \bigskip
 
@@ -427,10 +429,13 @@ dikembalikan lalu dikocok ulang, sehingga peluang tiap kejadian tetap).
   \item Tentukan frekuensi harapan munculnya kartu \textbf{bergambar}.
   \item Tentukan frekuensi harapan munculnya \textbf{As sekop} ($\mathrm{A}\spadesuit$)
         secara spesifik.
-  \item Pengamatan nyata mencatat As muncul \textbf{$92$ kali}. Hitung selisihnya
-        terhadap frekuensi harapan (a), nyatakan selisih itu sebagai
-        \textbf{persentase} dari frekuensi harapan, lalu simpulkan: tergolong
-        \emph{selisih kecil} (di bawah $10\%$) atau \emph{selisih besar} ($\ge10\%$)?
+  \item Salah satu tudingan peserta: ``As lebih jarang keluar dari seharusnya.''
+        Pengamatan nyata mencatat As muncul \textbf{$92$ kali}. \emph{(Dalam evaluasi
+        internal panitia, selisih di bawah $10\%$ dari frekuensi harapan dianggap
+        masih mendekati peluang teoretis; wajar bagi proses acak.)} Hitung
+        selisihnya terhadap frekuensi harapan (a), nyatakan sebagai \textbf{persentase}
+        dari frekuensi harapan, lalu simpulkan tergolong \emph{selisih kecil}
+        ($<10\%$) atau \emph{besar} ($\ge10\%$), dan apa artinya bagi tudingan itu.
 \end{subsoal}
 \end{soal}
 
@@ -450,11 +455,10 @@ Gunakan \textbf{Berkas C}. Satu kartu diambil \textbf{acak}, kecuali disebutkan 
 \end{soal}
 
 \clearpage
-\noindent{\large\bfseries BAGIAN C: Sintesis Statistika--Peluang (Nomor 10)}\\[0.2em]
-\small\emph{Kini seluruh berkas terbuka. Satukan temuan Bagian A--B untuk keputusan
-akhir panitia --- termasuk \textbf{menindaklanjuti pencilan yang Anda temukan di
-Nomor 5}. Kenali sendiri konsep yang diperlukan tiap bagian; tutup dengan simpulan
-seorang analis.}\normalsize
+\noindent{\large\bfseries BAGIAN C: Vonis, Apakah Protes Berdasar? (Nomor 10)}\\[0.2em]
+\small\emph{Seluruh berkas kini terbuka. Satukan temuan Bagian A--B termasuk
+\textbf{pencilan yang Anda temukan di Nomor 5} untuk menjatuhkan vonis atas
+protes. Kenali sendiri konsep tiap bagian; tutup dengan simpulan seorang analis.}\normalsize
 
 \bigskip
 
@@ -470,9 +474,10 @@ disebutkan lain.
         kepada $25\%$ peserta ber-poin minus terkecil, yaitu yang berada di bawah
         $Q_1=15{,}5$ (Nomor 3). \textbf{(i)} \emph{Tanpa} menghitung ulang frekuensi,
         jelaskan mengapa peluang seorang peserta acak bergelar unggulan \emph{pasti}
-        sama dengan $25\%$. \textbf{(ii)} Rata-rata skor $=25$, padahal $Q_1=15{,}5$.
-        Jelaskan mengapa panitia memakai \emph{kuartil}, bukan \emph{rata-rata},
-        sebagai ambang gelar (kaitkan dengan sebaran condong kanan pada Nomor 2).
+        sama dengan $25\%$. \emph{(Petunjuk: apa arti $Q_1$ menurut definisinya?)}
+        \textbf{(ii)} Rata-rata skor $=25$, padahal $Q_1=15{,}5$. Jelaskan mengapa
+        panitia memakai \emph{kuartil}, bukan \emph{rata-rata}, sebagai ambang gelar
+        (kaitkan dengan sebaran condong kanan pada Nomor 2).
   \item \textbf{(Frekuensi harapan \& gabungan.)} Musim depan $200$ peserta,
         distribusi sama. \textbf{(i)} Tentukan frekuensi harapan peserta unggulan.
         \textbf{(ii)} Dua peserta dipilih \textbf{tanpa pengembalian}; tentukan
@@ -486,12 +491,14 @@ disebutkan lain.
         ``hasil ditentukan keterampilan''? Jelaskan. \textbf{(ii)} Jika data Bima
         dikeluarkan, apakah korelasi waktu--skor \emph{menguat} atau \emph{melemah}?
         Mengapa?
-  \item \textbf{(Rekomendasi.)} Panitia menyebut sistem \textbf{adil dan seimbang}
+  \item \textbf{(Vonis.)} Protes menuduh sistem \emph{tidak adil} (pembagian kartu
+        berat sebelah, hasil timpang). Sistem dinyatakan \textbf{adil dan seimbang}
         bila: \textbf{(I)} frekuensi kemunculan kartu mendekati peluang teoretisnya,
         \textbf{dan (II)} sebaran skor terkendali serta hasil condong ke keterampilan.
-        Nilailah sistem NCSC dengan kedua indikator itu: dukung dengan \textbf{minimal
-        dua hasil statistik} (Nomor 2--5) dan \textbf{minimal satu hasil peluang}
-        (Nomor 7--9), lalu beri \textbf{satu saran perbaikan}.
+        \textbf{Jatuhkan vonis: apakah protes itu berdasar?} Dukung dengan
+        \textbf{minimal dua hasil statistik} (Nomor 2--5) dan \textbf{minimal satu
+        hasil peluang} (Nomor 7--9), lalu beri \textbf{satu saran perbaikan} agar
+        musim depan bebas dari protes serupa.
 \end{subsoal}
 \end{soal}
 
